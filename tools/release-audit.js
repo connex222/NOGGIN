@@ -25,7 +25,7 @@ for(const avatar of avatars){
   if(!fs.existsSync(img)){errors.push('Missing runtime avatar '+link);continue;}
   const webp=fs.readFileSync(img).subarray(0,12);
   need('Fast WebP avatar '+avatar.id+' '+state,webp.toString('ascii',0,4)==='RIFF'&&webp.toString('ascii',8,12)==='WEBP');
-  const archival=img.replace('/thumbs/','/').replace(/\.webp$/,'.png');
+  const archival=img.replace(/[\\/]thumbs[\\/]/,path.sep).replace(/\.webp$/,'.png');
   if(!fs.existsSync(archival)){errors.push('Missing archival PNG '+archival);continue;}
   const fd=fs.openSync(archival,'r');const b=Buffer.alloc(24);fs.readSync(fd,b,0,b.length,0);fs.closeSync(fd);
   need('Original PNG '+avatar.id+' '+state,b.toString('ascii',1,4)==='PNG'&&b.readUInt32BE(16)===1024&&b.readUInt32BE(20)===1024);

@@ -1,8 +1,39 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"></head>
+<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/welcome.css"></head>
 <body class="tv">
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
+<section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN opening screen">
+<div class="welcome-shell">
+  <div class="welcome-top"><div id="welcomeCast" class="welcome-cast" aria-label="The twelve contestants"></div></div>
+  <div class="welcome-centre"><div class="welcome-bulbs" aria-hidden="true"></div>
+    <p class="welcome-eyebrow">THE LIVING ROOM GAME SHOW</p>
+    <h1 class="welcome-logo">NOGGIN!</h1>
+    <div class="welcome-tagline">USE YOUR HEAD</div>
+    <p class="welcome-deck">12 wild characters &nbsp; ★ &nbsp; 16 mini-games &nbsp; ★ &nbsp; One champion</p>
+    <div class="welcome-platform" aria-hidden="true"></div>
+  </div>
+  <div class="welcome-actions">
+    <button type="button" id="welcomeStart" class="welcome-action play"><span class="welcome-icon" aria-hidden="true">▶</span> Start game</button>
+    <button type="button" id="welcomeHowTo" class="welcome-action rules"><span class="welcome-icon" aria-hidden="true">▣</span> How to play</button>
+    <button type="button" id="welcomeSettings" class="welcome-action settings"><span class="welcome-icon" aria-hidden="true">⚙</span> Settings</button>
+  </div>
+  <div class="welcome-bottom">
+    <span class="welcome-footer-copy">★ BIG BRAINS. BIGGER LAUGHS. ★</span>
+    <div class="welcome-join"><img id="welcomeQR" alt="Scan to join NOGGIN" hidden>
+      <div><span>JOIN WITH YOUR PHONE</span><strong id="welcomeRoomCode">····</strong><small id="welcomePhoneUrl">Room preparing…</small><small id="welcomeJoinHint">Scan the QR when it appears</small></div>
+    </div>
+  </div>
+</div>
+</section>
+<div id="welcomeRulesDialog" class="welcome-rules" hidden role="dialog" aria-modal="true" aria-label="How to play NOGGIN">
+ <div class="welcome-rules-panel">
+  <h2>HOW TO PLAY NOGGIN</h2>
+  <ol><li>Leave NOGGIN on your TV or computer.</li><li>Each player scans the QR code on their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>Roll, choose your route, win mini-games and collect Sparks. First to the chosen target wins!</li></ol>
+  <p>Change music, sound effects and game length in Settings before the show starts.</p>
+  <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
+ </div>
+</div>
 <main class="tv-shell">
   <header class="tv-header">
     <div><p class="eyebrow">THE LIVING-ROOM GAME SHOW</p><h1 class="noggin-title">NOG<span>G</span>IN<span>!</span></h1><p class="subtitle">USE YOUR HEAD. TRUST YOUR NERVE. WIN THE SPARKS.</p></div>
@@ -43,5 +74,5 @@
   <div id="message" class="error hidden" role="alert"></div>
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>
 </main>
-<script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script>
+<script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/welcome.js"></script>
 </body></html>
