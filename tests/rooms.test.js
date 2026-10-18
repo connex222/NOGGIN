@@ -53,7 +53,7 @@ test('host may change settings but players may not; invalid patches fail atomica
   const f=fixture();join(f);
   assert.throws(()=>f.rooms.setSettings(f.code,'phone-A',{target:16}),e=>e.code==='AUTH');
   assert.throws(()=>f.rooms.setSettings(f.code,'tv-1',{target:999}),e=>e.code==='SETTINGS');
-  assert.deepEqual(f.rooms.state(f.code).settings,{target:12,familyFriendly:true,timerSpeed:'normal',reduceMotion:false});
+  assert.deepEqual(f.rooms.state(f.code).settings,{target:12,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic'});
   f.rooms.setSettings(f.code,'tv-1',{target:16,timerSpeed:'relaxed',reduceMotion:true});
   assert.equal(f.rooms.state(f.code).settings.target,16);
   assert.equal(f.rooms.state(f.code).settings.reduceMotion,true);
@@ -124,4 +124,9 @@ test('QR link replaces localhost with LAN IPv4 and honours Render forwarded HTTP
 test('normalizes room code and rejects invalid room ids',()=>{
   const f=fixture();assert.equal(f.rooms.find(f.code.toLowerCase()).code,f.code);
   assert.throws(()=>f.rooms.find('!bad'),e=>e.code==='ROOM');
+});
+
+
+test('QR joins the actual Host port when Windows fallback selects 3001',()=>{
+  assert.equal(joinBaseUrl({headers:{host:'localhost:3001'},secure:false},{lanAddresses:['192.168.200.12']}),'http://192.168.200.12:3001');
 });

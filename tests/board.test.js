@@ -6,7 +6,7 @@ function fixture(n=3) {
  let now=1000;const sequence=[];const rooms=new GameRooms({now:()=>now,randomInt:max=>(sequence.length?sequence.shift():0)%max});
  const {code}=rooms.create('tv');let people=[];
  for(let i=1;i<=n;i++) {const sock='phone'+i;rooms.join({code,name:'Player '+i,avatarId:i,socketId:sock});rooms.setReady(code,sock,true);people.push(sock);}
- rooms.startGame(code,'tv');return {rooms,code,people,room:rooms.find(code),now:()=>now,advance:n=>{now+=n},dice:d=>sequence.push(...d)};
+ rooms.setSettings(code,'tv',{rules:'showtime'});rooms.startGame(code,'tv');return {rooms,code,people,room:rooms.find(code),now:()=>now,advance:n=>{now+=n},dice:d=>sequence.push(...d)};
 }
 function challengeAnswer(f,correctPlayer=0){const c=f.room.board.challenge;if(!c)return;const participants=c.participants.slice();participants.forEach((id,index)=>{
  const player=f.room.players.find(p=>p.id===id);const ans=player===f.room.players[correctPlayer]?c.correct:(c.correct+1)%3;

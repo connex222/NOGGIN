@@ -13,7 +13,7 @@ function setup(){
    rooms.join({code,name:'Player '+(i+1),avatarId:i+1,socketId:'p'+i});
    rooms.setReady(code,'p'+i,true);
  }
- rooms.startGame(code,'tv');
+ rooms.setSettings(code,'tv',{rules:'showtime'});rooms.startGame(code,'tv');
  return {rooms,code,room:rooms.find(code),now:()=>time,forward:(ms)=>time+=ms};
 }
 

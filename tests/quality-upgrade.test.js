@@ -6,7 +6,7 @@ const phase5=require('../server/games/phase5');
 function game(n=4){
  let time=10000;const gr=new GameRooms({now:()=>time,randomInt:()=>0});const {code}=gr.create('tv');const sockets=[];
  for(let i=0;i<n;i++){let s='p'+i;sockets.push(s);gr.join({code,name:'Player '+i,avatarId:i+1,socketId:s});gr.setReady(code,s,true);}
- gr.startGame(code,'tv');return {gr,room:gr.find(code),code,sockets,now:()=>time};
+ gr.setSettings(code,'tv',{rules:'showtime'});gr.startGame(code,'tv');return {gr,room:gr.find(code),code,sockets,now:()=>time};
 }
 test('two-player random game selection never chooses forced draw-only social games',()=>{
  for(const category of ['create','together']){

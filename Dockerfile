@@ -5,6 +5,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev --no-audit --no-fund
 COPY server/ ./server/
+# Only the compressed runtime avatars in public/ are shipped to the container.
+# source-art/ is excluded by .dockerignore and is deliberately never copied.
 COPY public/ ./public/
 COPY data/ ./data/
 RUN mkdir -p /data && chown -R node:node /app /data

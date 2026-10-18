@@ -29,10 +29,14 @@ if not exist "state" mkdir "state"
 set "NOGGIN_STATE_FILE=%~dp0state\rooms.json"
 if not defined PORT set "PORT=3000"
 set "NOGGIN_AUTO_PORT=1"
+set "NOGGIN_OPEN_BROWSER=1"
+set "NOGGIN_PORT_FILE=%~dp0state\active-port.txt"
 echo Starting NOGGIN on port %PORT%...
 echo If the port is busy, the game will try the next free port.
 echo WAIT for the message NOGGIN SERVER IS RUNNING.
-echo Then open the exact TV address printed in this window.
+echo The TV page will open automatically when the server is ready.
+echo If it does not, use the exact TV address printed in this window.
+echo If you see a blank page, try the /check/ URL on the same port.
 echo Leave this black window open while you play.
 echo.
 node server\index.js

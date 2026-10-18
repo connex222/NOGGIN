@@ -27,7 +27,9 @@ function joinBaseUrl(req, {publicUrl = process.env.NOGGIN_PUBLIC_URL || '', lanA
   const forwardedHost = behindProxy ? String(req.headers['x-forwarded-host'] || '').split(',')[0].trim() : '';
   const host = forwardedHost || String(req.headers.host || '').trim();
   const isLocalhost = /^(localhost|127\.0\.0\.1|\[::1\])(?::\d+)?$/i.test(host);
-  const port = Number(process.env.PORT) || 3000;
+  // Keep the port actually serving this HTTP request, including a launcher fallback.
+  const hostPort = /:(\d+)$/.exec(host)?.[1];
+  const port = Number(hostPort) || Number(process.env.NOGGIN_ACTIVE_PORT) || Number(process.env.PORT) || 3000;
   if (isLocalhost && lanAddresses.length) return `http://${lanAddresses[0]}:${port}`;
   const validHost = /^[a-zA-Z0-9.\-\[\]:]+(?::\d+)?$/.test(host) && host.length <= 255;
   if (!validHost) return `http://${lanAddresses[0] || 'localhost'}:${port}`;

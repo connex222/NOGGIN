@@ -50,7 +50,7 @@ function allIds(m,arr){return m.participants.every(id=>Object.hasOwn(arr,id));}
 function resolve(room,now,winners,message,finishTurn){const b=room.board,m=b.showdown;const unique=[...new Set(winners)].filter(id=>m.participants.includes(id));
  // Locked early audience predictions award a capped Cue, not Sparks.
  const predictors=[];
- if(m.kind!=='tiebreak' && unique.length===1){
+ if(room.settings.rules==='showtime' && m.kind!=='tiebreak' && unique.length===1){
    for(const [id,pick] of Object.entries(m.cheers||{})){
      const spectator=player(room,id);
      if(spectator && !m.participants.includes(id) && pick===unique[0] && (spectator.cues||0)<2){
@@ -73,6 +73,7 @@ function finishTug(room,now,finishTurn){const m=room.board.showdown;const winner
 function finishNerve(room,now,finishTurn){const m=room.board.showdown;const scores=m.participants.map(id=>({id,amount:m.banks[id]||0}));const best=Math.max(...scores.map(x=>x.amount));const winners=best>0?scores.filter(s=>s.amount===best).map(s=>s.id):[];resolve(room,now,winners,`Nerve: hidden bust was ${m.bustAt}. ${best>0?'Best safe bank: '+best+'.':'Nobody banked safely.'}`,finishTurn);}
 function endBuzzerQuestion(room,now,finishTurn){const m=room.board.showdown;if(Object.values(m.points).some(x=>x>=4)||m.questionIndex>=7||now>=m.hardStop){finishBuzzer(room,now,finishTurn);}else nextBuzzer(room,now);}
 function cheer(room,id,targetId){
+ if(room.settings.rules!=='showtime')error('RULES','Spotlight Picks are disabled in Classic.');
  const m=room.board.showdown;
  if(!m||room.board.step!=='showdown'||m.kind==='tiebreak')error('STEP','There is no corner Showdown to predict.');
  if(m.phase!=='intro')error('LATE','Spotlight Picks close when the duel begins.');
@@ -174,7 +175,7 @@ function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board
 function publicState(room,forTv=false,viewerId=null){const m=room.board.showdown;if(!m)return null;
  const pub={kind:m.kind,title:m.title,phase:m.phase,participants:m.participants,openAt:m.openAt,deadline:m.deadline,hardStop:m.hardStop,roundKey:m.roundKey,answered:m.answered||[],question:'',display:{},private:null};
  if(m.kind!=='tiebreak'){
-  pub.cheerOpen=m.phase==='intro';
+  pub.cheerOpen=room.settings.rules==='showtime'&&m.phase==='intro';
   pub.cheerCounts=Object.fromEntries(m.participants.map(id=>[id,Object.values(m.cheers||{}).filter(v=>v===id).length]));
   if(viewerId&&Object.hasOwn(m.cheers||{},viewerId))pub.myCheer=m.cheers[viewerId];
  }

@@ -11,7 +11,7 @@ class NogginBoardView {
     for(let k=0;k<7;k++)P[8+k]=[118+k*29,554-k*65];
     for(let k=0;k<6;k++)P[16+k]=[376+k*68,104];
     for(let k=0;k<7;k++)P[23+k]=[820+k*29,164+k*65];
-    for(let k=0;k<5;k++)P[31+k]=[955-k*74,625];
+    for(let k=0;k<5;k++)P[31+k]=[955-k*82,625];
     return P;
   }
   el(name,props={},text) {const e=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(props))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=text;return e;}
@@ -65,7 +65,7 @@ class NogginBoardView {
       });
       options.append(crowd);
     }
-    if(m.phase==='intro'){if(m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID A NUMBER · THEN NAME THEM':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
+    if(m.phase==='intro'){if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID A NUMBER · THEN NAME THEM':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
     if(m.kind==='buzzer'){
       const pts=m.participants.map(id=>m.display.points[id]);label(`${names[0]} ${pts[0]} : ${pts[1]} ${names[1]}`,'p4-big');
       label(`QUESTION ${m.round} OF 7 · ${m.phase==='buzz'?'BUZZ TO ANSWER':m.phase==='answer'?'FIRST BUZZER IS ANSWERING':'SECOND CHALLENGER GETS A CHANCE'}`);
@@ -151,7 +151,7 @@ class NogginBoardView {
       return;
     }
     if(m.id==='odd-spot'){
-      const grid=document.createElement('div');grid.className='mini-tv-grid';m.display.grid.forEach(sym=>{const e=document.createElement('span');e.textContent=sym;grid.append(e);});options.append(grid);
+      const grid=document.createElement('div');grid.className='mini-tv-grid';m.display.grid.forEach((sym,i)=>{const e=document.createElement('span');e.className='odd-tv-cell';const icon=document.createElement('b');icon.textContent=sym;const number=document.createElement('small');number.textContent=String(i+1);e.append(icon,number);grid.append(e);});options.append(grid);
     }else if(m.id==='colour-clash'){
       prompt.classList.add('stroop-tv');prompt.style.color=({RED:'#ff7284',BLUE:'#78c7ff',GREEN:'#a5f480',YELLOW:'#ffe37a'})[m.display.ink];
     }else if(m.id==='higher-lower'){
@@ -255,17 +255,31 @@ class NogginBoardView {
   renderScores(state){const root=document.getElementById('scoreboard');root.replaceChildren();const b=state.board;
     state.players.forEach(p=>{const avatar=this.avatars.find(a=>a.id===p.avatarId);const item=document.createElement('div');item.className=`score-seat ${b.leaderIds.includes(p.id)?'leader':''}`;
     const img=document.createElement('img');img.src=(b.step==='finished'&&b.winnerIds.includes(p.id)?avatar?.images?.win:b.step==='result'?(b.result?.winners?.includes(p.id)?avatar?.images?.win:avatar?.images?.lose):avatar?.think)||'';img.alt='';img.onerror=()=>{img.style.display='none';};
-    const label=document.createElement('span');label.textContent=p.name;const count=document.createElement('strong');count.textContent=`✦ ${p.sparks}  ·  🎬 ${p.cues||0}`;const meter=document.createElement('div');meter.className='spark-meter';meter.setAttribute('role','progressbar');meter.setAttribute('aria-valuemin','0');meter.setAttribute('aria-valuemax',String(state.settings.target));meter.setAttribute('aria-valuenow',String(Math.min(state.settings.target,p.sparks)));
+    const label=document.createElement('span');label.textContent=p.name;const count=document.createElement('strong');count.textContent=`✦ ${p.sparks}${state.settings.rules==='showtime'?` · 🎬 ${p.cues||0}`:''}`;const meter=document.createElement('div');meter.className='spark-meter';meter.setAttribute('role','progressbar');meter.setAttribute('aria-valuemin','0');meter.setAttribute('aria-valuemax',String(state.settings.target));meter.setAttribute('aria-valuenow',String(Math.min(state.settings.target,p.sparks)));
     const bar=document.createElement('i');bar.style.width=`${Math.min(100,Math.round(p.sparks/state.settings.target*100))}%`;meter.append(bar);
     item.append(img,label,count,meter);root.append(item);});
   }
-  paintTokens(players,override=null){if(!this.tokenGroup)return;const E=this.el.bind(this);this.tokenGroup.replaceChildren();
+  paintTokens(players,override=null){
+    if(!this.tokenGroup)return;
+    const E=this.el.bind(this),activeId=this.latestState?.board?.activeId;
+    this.tokenGroup.replaceChildren();
     const grouped=new Map();players.forEach(p=>{const position=override?.playerId===p.id?override.position:p.position;const list=grouped.get(position)||[];list.push({...p,position});grouped.set(position,list);});
+    const rings=['#ffd968','#74f0eb','#ffa8c9','#a5ff88','#e0b2ff','#ffb178','#92baff','#fffcba'];
     for(const [pos,list] of grouped)for(let j=0;j<list.length;j++){
       const p=list[j],point=this.points[pos];if(!point)continue;
-      const dx=(j%3-1)*19,dy=-31-Math.floor(j/3)*20;
-      const g=E('g',{class:'stage-token',transform:`translate(${point[0]+dx},${point[1]+dy})`});g.append(E('circle',{cx:0,cy:0,r:14,fill:['#ffd968','#74f0eb','#ffa8c9','#a5ff88','#e0b2ff','#ffb178','#92baff','#fffcba'][(p.seat-1)%8]}));
-      g.append(E('text',{x:0,y:1},String(p.seat)));this.tokenGroup.append(g);
+      const cols=Math.min(4,list.length),row=Math.floor(j/4),col=j%4;
+      const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*25;
+      const dy=-29-row*27;const active=p.id===activeId,r=active?17:14;
+      const g=E('g',{class:`stage-token ${active?'active-token':''}`,transform:`translate(${point[0]+dx},${point[1]+dy})`});
+      const avatar=this.avatars.find(a=>a.id===p.avatarId);
+      if(active)g.append(E('circle',{r:r+5,fill:'#ffed82',opacity:'.32'}));
+      const clipId=`token-clip-${p.seat}`;
+      const clip=E('clipPath',{id:clipId});clip.append(E('circle',{r:r-2}));g.append(clip);
+      if(avatar?.think)g.append(E('image',{href:avatar.think,x:-r+2,y:-r+2,width:2*r-4,height:2*r-4,preserveAspectRatio:'xMidYMid slice','clip-path':`url(#${clipId})`}));
+      else g.append(E('circle',{r:r-2,fill:'#28345d'}));
+      g.append(E('circle',{r:r-1,fill:'none',stroke:rings[(p.seat-1)%8],'stroke-width':active?4:3}));
+      g.append(E('title',{},`${p.name}, space ${pos+1}`));
+      this.tokenGroup.append(g);
     }
   }
   showDie(numbers,tumble){

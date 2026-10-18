@@ -7,7 +7,7 @@ const phase3=require('../server/games/phase3');
 function fixture(){
  let now=30000,queue=[];const rooms=new GameRooms({now:()=>now,randomInt:n=>queue.length?queue.shift()%n:0});
  const {code}=rooms.create('tv');for(let i=0;i<3;i++){rooms.join({code,name:'Contestant '+(i+1),avatarId:i+1,socketId:'p'+i});rooms.setReady(code,'p'+i,true);}
- rooms.startGame(code,'tv');return {room:rooms.find(code),rooms,code,now:()=>now,advance:ms=>now+=ms,dice:(...d)=>queue.push(...d)};
+ rooms.setSettings(code,'tv',{rules:'showtime'});rooms.startGame(code,'tv');return {room:rooms.find(code),rooms,code,now:()=>now,advance:ms=>now+=ms,dice:(...d)=>queue.push(...d)};
 }
 test('Headline Bet is opt-in, requires a Spark and is announced to clients',()=>{
  const f=fixture();assert.equal(f.rooms.state(f.code).board.headline,false);

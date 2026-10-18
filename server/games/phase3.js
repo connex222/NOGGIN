@@ -7,7 +7,7 @@ const words=require('../../data/unscramble.json');
 const SPECS=Object.freeze({
  'quick-draw':{name:'Quick Draw',category:'speed',rounds:3,rule:'Wait for DRAW! First clean tap takes the point. Tap early and you misfire.'},
  'count-flash':{name:'Count Flash',category:'speed',rounds:3,rule:'SURPRISE TARGET! Memorise all three types of object; only AFTER the flash will you learn which one to count.'},
- 'odd-spot':{name:'Odd Spot',category:'speed',rounds:5,rule:'Find the one different icon in a 6×6 grid. Wrong taps lock you for three seconds.'},
+ 'odd-spot':{name:'Odd Spot',category:'speed',rounds:5,rule:'Find the different icon on the TV grid; tap its NUMBER on your phone. Wrong taps lock you for three seconds.'},
  'colour-clash':{name:'Colour Clash',category:'speed',rounds:8,rule:'Tap the COLOUR of the ink, not the colour word. Correct +1; wrong −1.'},
  'higher-lower':{name:'Higher or Lower',category:'brain',rounds:8,rule:'Higher or lower? You have TWO strikes before you are eliminated — survive and earn points.'},
  'memory-lane':{name:'Memory Lane',category:'brain',rounds:4,rule:'Copy the pad sequence. In the FINAL round, play it BACKWARDS!'},
@@ -24,6 +24,11 @@ function chooseGame(b,category,rng=crypto.randomInt){
  const pool=(never.length?never:ids).filter(id=>id!==b.lastGame);
  const id=pick(pool.length?pool:ids,rng);b.lastGame=id;b.seenGames=[...(b.seenGames||[]),id].slice(-12);return id;
 }
+function ruleFor(room,id){
+ if(room.settings.rules!=='showtime'&&id==='count-flash')return 'The target symbol is shown before the flash. Count only that symbol on the TV.';
+ if(room.settings.rules!=='showtime'&&id==='memory-lane')return 'Copy the TV pad sequence in its original order, including the final round.';
+ return SPECS[id].rule;
+}
 function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  const b=room.board,id=forcedId||chooseGame(b,category,rng),spec=SPECS[id];
  if(!spec||spec.category!==category)bad('GAME','Unrecognised mini-game.');
@@ -36,7 +41,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  m.openAt+=intro;m.deadline+=intro;
  for(const key of ['readyAt','flashEndsAt','revealAt'])if(Number.isFinite(m.display[key]))m.display[key]+=intro;
  b.deadline=m.deadline;
- b.event={type:'minigame',category,text:`${spec.name}: ${spec.rule}`};
+ b.event={type:'minigame',category,text:`${spec.name}: ${ruleFor(room,id)}`};
  return b.minigame;
 }
 function fresh(m,now){m.round++;m.roundKey++;m.phase='play';m.roundAnswers={};m.progress={};m.blocked={};m.attempts={};m.privateTv=null;m.lastRoundResult=null;m.openAt=now;m.deadline=now+12_000;m.question='';m.hint='';m.display={};}
@@ -44,7 +49,7 @@ function nextRound(room,now,rng=crypto.randomInt){
  const m=room.board.minigame;if(!m)return;
  const spec=SPECS[m.id];fresh(m,now);
  const relaxed=room.settings.timerSpeed==='relaxed'?1.45:1;
- const set=(seconds)=>{m.deadline=now+Math.round(seconds*1000*relaxed);};
+ const set=(ms)=>{m.deadline=now+Math.round(ms*relaxed);};
  switch(m.id){
  case 'quick-draw':{
    const wait=2000+rng(4001);m.phase='wait';m.openAt=now+wait;m.deadline=m.openAt+Math.round(3500*relaxed);
@@ -56,13 +61,13 @@ function nextRound(room,now,rng=crypto.randomInt){
    const counts=[9+rng(6),9+rng(6)];counts.push(36-counts[0]-counts[1]);
    const target=rng(3),count=counts[target];
    m.secret={count,targetIcon:icons[target]};m.phase='flash';m.openAt=now+2400;m.deadline=m.openAt+Math.round(8500*relaxed);
-   m.question='MEMORISE ALL THREE SYMBOLS — THE TARGET IS A SURPRISE!';
+   m.question=room.settings.rules==='showtime'?'MEMORISE ALL THREE SYMBOLS — THE TARGET IS A SURPRISE!':`COUNT THE ${icons[target]} SYMBOLS ON THE TV!`;
    m.privateTv={count,icon:icons[0],distractor:icons[1],icons,counts,total:36,seed:rng(1000000)};
-   m.display={flashEndsAt:m.openAt,targetIcon:null};break;
+   m.display={flashEndsAt:m.openAt,targetIcon:room.settings.rules==='showtime'?null:icons[target]};break;
  }
  case 'odd-spot':{
    const pair=pick([['●','◆'],['★','✦'],['▲','▼'],['♣','♠'],['♥','♦'],['☀','☼']],rng),index=rng(36);
-   m.secret={index};m.question='Tap the different symbol!';m.display={grid:Array.from({length:36},(_,i)=>i===index?pair[1]:pair[0])};set(8500);break;
+   m.secret={index};m.question='Find the different symbol on the TV. Tap its number on your phone!';m.display={grid:Array.from({length:36},(_,i)=>i===index?pair[1]:pair[0])};set(8500);break;
  }
  case 'colour-clash':{
    const labels=['RED','BLUE','GREEN','YELLOW'];const word=rng(4),ink=(word+1+rng(3))%4;
@@ -81,8 +86,8 @@ function nextRound(room,now,rng=crypto.randomInt){
    m.memorySequence.push(rng(6));if(m.round===1)m.memorySequence.push(rng(6));
    const sequence=m.memorySequence.slice();
    m.secret={sequence};m.phase='flash';m.openAt=now+1000+sequence.length*750;m.deadline=m.openAt+Math.round(8500*relaxed);
-   m.question=m.round===SPECS[m.id].rounds?'FINAL ROUND: watch the pads, then tap them in REVERSE order!':'Watch the TV pads, then repeat the sequence.';
-   m.privateTv={sequence};m.display={padCount:6,sequenceLength:sequence.length,flashEndsAt:m.openAt,reverse:m.round===SPECS[m.id].rounds};break;
+   m.question=m.round===SPECS[m.id].rounds&&room.settings.rules==='showtime'?'FINAL ROUND: watch the pads, then tap them in REVERSE order!':'Watch the TV pads, then repeat the sequence in the SAME order.';
+   m.privateTv={sequence};m.display={padCount:6,sequenceLength:sequence.length,flashEndsAt:m.openAt,reverse:room.settings.rules==='showtime'&&m.round===SPECS[m.id].rounds};break;
  }
  case 'close-call':{
    const pool=closeCall.filter(q=>!m.usedIds.includes(q.id));const item=pick(pool.length?pool:closeCall,rng);m.usedIds.push(item.id);m.secret={answer:item.answer};m.question=item.question;m.display={unit:item.unit};set(11500);break;
@@ -232,7 +237,7 @@ function tick(room,now,finishTurn,rng=crypto.randomInt){
 function publicState(room,forTv=false){
  const m=room.board.minigame;if(!m)return null;
  const spec=SPECS[m.id];
- return {id:m.id,category:m.category,title:spec.name,rule:spec.rule,round:m.round,totalRounds:spec.rounds,roundKey:m.roundKey,phase:m.phase,introUntil:m.introUntil||null,question:m.question,hint:m.hint,display:m.display,deadline:m.deadline,openAt:m.openAt,participants:m.players,eliminated:m.eliminated,answered:Object.keys(m.roundAnswers),progress:m.progress,scores:m.scores,strikes:m.strikes,blocked:m.blocked,
+ return {id:m.id,category:m.category,title:spec.name,rule:ruleFor(room,m.id),round:m.round,totalRounds:spec.rounds,roundKey:m.roundKey,phase:m.phase,introUntil:m.introUntil||null,question:m.question,hint:m.hint,display:m.id==='odd-spot'&&!forTv?{}:m.display,deadline:m.deadline,openAt:m.openAt,participants:m.players,eliminated:m.eliminated,answered:Object.keys(m.roundAnswers),progress:m.progress,scores:m.scores,strikes:m.strikes,blocked:m.blocked,
   ...(m.phase==='reveal'?{lastRoundResult:m.lastRoundResult}:{}),
   ...(forTv&&m.privateTv?{tvCue:m.privateTv}:{})};
 }

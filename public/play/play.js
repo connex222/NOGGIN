@@ -207,6 +207,7 @@
     currentDeadline=m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
     if(!mine){
       if(m.kind==='tiebreak'){info('SUDDEN DEATH — WATCH THE FINALISTS');return;}
+      if(roomState.settings.rules!=='showtime'){info('WATCH THE SHOWDOWN ON THE TV');return;}
       info('🎬 SPOTLIGHT PICK · Back the winner BEFORE the duel. Earn 1 Director Cue if correct (max 2); no Sparks at risk.');
       if(m.myCheer)info(`PREDICTION LOCKED: ${roomState.players.find(p=>p.id===m.myCheer)?.name||'CHALLENGER'}`);
       else if(m.cheerOpen)for(const id of m.participants){
@@ -270,7 +271,7 @@
     else if(m.id==='unscramble') numericOrWordControl(m,false);
     else if(m.id==='odd-spot'){
       const grid=document.createElement('div');grid.className='mini-grid';
-      m.display.grid.forEach((symbol,i)=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';btn.textContent=symbol;btn.disabled=!socket.connected;
+      Array.from({length:36},(_,i)=>i).forEach(i=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';btn.textContent=String(i+1);btn.setAttribute('aria-label',`Square ${i+1}`);btn.disabled=!socket.connected;
         btn.onclick=async()=>{btn.disabled=true;try{const r=await U.request(socket,'game:input',{value:i,roundKey:m.roundKey});roomState=r.state;render();error('');}
           catch(e){error(e.message);btn.disabled=false;}};grid.append(btn);});
       $('gameButtons').append(grid);
@@ -300,7 +301,7 @@
     const avatar=avatars.find(a=>a.id===player.avatarId),won=(b.result?.winners||b.winnerIds||[]).includes(player.id);
     const image=b.step==='finished'?(b.winnerIds.includes(player.id)?avatar?.images?.win:avatar?.images?.lose):b.step==='result'?(won?avatar?.images?.win:avatar?.images?.lose):avatar?.think;
     $('gameAvatar').src=image||'';$('gameAvatar').alt=avatar?.name||player.name;
-    $('gameName').textContent=player.name;$('gameSparks').textContent=`✦ ${player.sparks} SPARKS · 🎬 ${player.cues||0} CUES${b.headline?' · 🔥 HEADLINE BET':''}`;
+    $('gameName').textContent=player.name;$('gameSparks').textContent=`✦ ${player.sparks} SPARKS${roomState.settings.rules==='showtime'?` · 🎬 ${player.cues||0} CUES${b.headline?' · 🔥 HEADLINE BET':''}`:''}`;
     $('gameRoom').textContent=`ROOM ${session.code} · SEAT ${player.seat}`;
     $('gameTurn').textContent=b.step==='finished'?'GAME OVER':`TURN ${b.turn} · ${active?.name||'PLAYER'}'S TURN`;
     const priorInput=$('gameButtons').querySelector('form input');
@@ -346,11 +347,11 @@
     if(b.step==='minigame'&&b.minigame){if(phase4Ids.has(b.minigame.id)){renderPhase4(player,b.minigame);if(priorFocused){const el=$('gameButtons').querySelector('.p4-form input');if(el){el.focus();if(el.type==='text')el.setSelectionRange(el.value.length,el.value.length);}}}else renderMiniGame(player,b.minigame);return;}
     if(b.step==='await_roll'){
       title.textContent=me?'YOUR TURN!':'WATCH THE DICE';
-      detail.textContent=me?(b.routePlan?'DIRECTOR’S CUT: roll, then select a landing. Nudging costs one Cue.':'Your call: choose your landing, or risk a Spark on the next challenge. Earn fresh Cues by WINNING challenges.'): `It's ${active?.name}'s turn. Watch the stage.`;
+      detail.textContent=me&&roomState.settings.rules!=='showtime'?'Tap ROLL DICE to play.':me?(b.routePlan?'DIRECTOR’S CUT: roll, then select a landing. Nudging costs one Cue.':'Your call: choose your landing, or risk a Spark on the next challenge. Earn fresh Cues by WINNING challenges.'): `It's ${active?.name}'s turn. Watch the stage.`;
       if(me){
         gameButton('🎲 ROLL DICE','game:roll',{},'button-primary');
-        if(player.cues>0 || b.routePlan) gameButton(b.routePlan?'✕ CANCEL DIRECTOR’S CUT':`🎬 PLAN A LANDING · ${player.cues||0} CUES`, 'game:choose',{action:b.routePlan?'normal':'director'},'button-director');
-        if(player.sparks>0||b.headline)gameButton(b.headline?'🛡 CANCEL HEADLINE BET':`🔥 HEADLINE BET · +2 IF YOU WIN / −1 EXTRA IF YOU LOSE`, 'game:choose',{action:b.headline?'safe':'headline'},'button-headline');
+        if(roomState.settings.rules==='showtime'&&(player.cues>0 || b.routePlan)) gameButton(b.routePlan?'✕ CANCEL DIRECTOR’S CUT':`🎬 PLAN A LANDING · ${player.cues||0} CUES`, 'game:choose',{action:b.routePlan?'normal':'director'},'button-director');
+        if(roomState.settings.rules==='showtime'&&(player.sparks>0||b.headline))gameButton(b.headline?'🛡 CANCEL HEADLINE BET':`🔥 HEADLINE BET · +2 IF YOU WIN / −1 EXTRA IF YOU LOSE`, 'game:choose',{action:b.headline?'safe':'headline'},'button-headline');
       }
     } else if(b.step==='choose_route'){
       title.textContent='🎬 DIRECTOR’S CUT';detail.textContent=me?'Choose where to land. Your normal roll is FREE; ±1 space costs one Cue. Make the crowd gasp!':`${active?.name} is selecting their landing.`;

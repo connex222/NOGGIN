@@ -16,7 +16,7 @@ test('12 unique character records with 36 original full-size RGBA avatar files',
       const webp=fs.readFileSync(display).subarray(0,12);
       assert.equal(webp.toString('ascii',0,4),'RIFF',display);
       assert.equal(webp.toString('ascii',8,12),'WEBP',display);
-      const file=path.join(base,avatar.images[state].replace('/thumbs/','/').replace(/\.webp$/,'.png'));
+      const file=path.join(__dirname,'..','source-art','avatars',path.posix.basename(avatar.images[state],'.webp')+'.png');
       const header=fs.readFileSync(file).subarray(0,26);
       assert.equal(header.subarray(0,8).toString('hex'),'89504e470d0a1a0a',file);
       assert.equal(header.readUInt32BE(16),1024,`width of ${file}`);

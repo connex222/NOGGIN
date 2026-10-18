@@ -10,3 +10,6 @@ tests
 tools
 *.md
 start-noggin.bat
+
+# Development-only 1024px PNG originals must never enter runtime images.
+source-art/

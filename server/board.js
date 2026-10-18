@@ -30,16 +30,17 @@ function fail(code,message){const e=new Error(message);e.code=code;throw e;}
 function requireStep(b,step){if(b.step!==step)fail('STEP','That action is not available right now.');}
 function actor(room){return room.players.find(p=>p.id===room.board.activeId);}
 function random(n,randomInt=crypto.randomInt){return randomInt(n);}
+function showtime(room){return room.settings.rules==='showtime';}
 function publicBoard(room,forTv=false,viewerId=null) {
  const b=room.board;
  if (!b) return null;
  const challenge=b.challenge ? {kind:b.challenge.kind,title:b.challenge.title,question:b.challenge.question,choices:b.challenge.choices,participants:b.challenge.participants,answered:Object.keys(b.challenge.answers),deadline:b.challenge.deadline} : null;
- return {routePlan:Boolean(b.routePlan),routeOptions:b.step==='choose_route'?(b.routeOptions||[]):[],headline:Boolean(b.headline),showdown:phase5.publicState(room,forTv,viewerId),minigame:(room.board?.minigame && phase4.SPECS[room.board.minigame.id] ? phase4.publicState(room,forTv,viewerId): phase3.publicState(room,forTv)),step:b.step,turn:b.turn,activeId:b.activeId,rolls:b.rolls,landing:b.landing,lastMove:b.lastMove,event:b.event,deadline:b.deadline,nextAt:b.nextAt,challenge,result:b.result,leaderIds:b.leaderIds,finalists:b.finalists,winnerIds:b.winnerIds,history:b.history.slice(-8),paused:Boolean(b.pausedAt),pauseReason:b.pauseReason};
+ return {routePlan:showtime(room)&&Boolean(b.routePlan),routeOptions:b.step==='choose_route'?(b.routeOptions||[]):[],headline:Boolean(b.headline),showdown:phase5.publicState(room,forTv,viewerId),minigame:(room.board?.minigame && phase4.SPECS[room.board.minigame.id] ? phase4.publicState(room,forTv,viewerId): phase3.publicState(room,forTv)),step:b.step,turn:b.turn,activeId:b.activeId,rolls:b.rolls,landing:b.landing,lastMove:b.lastMove,event:b.event,deadline:b.deadline,nextAt:b.nextAt,challenge,result:b.result,leaderIds:b.leaderIds,finalists:b.finalists,winnerIds:b.winnerIds,history:b.history.slice(-8),paused:Boolean(b.pausedAt),pauseReason:b.pauseReason};
 }
 function start(room){
  if(room.phase!=='lobby')fail('PHASE','Game already started.');
  if(!room.hostSocketId || room.players.length<2 || !room.players.every(p=>p.ready && p.socketId))fail('READY','Two to eight connected, ready players required.');
- for(const p of room.players){p.sparks=0;p.position=0;p.cues=DIRECTORS_CUES;}
+ for(const p of room.players){p.sparks=0;p.position=0;p.cues=showtime(room)?DIRECTORS_CUES:0;}
  room.phase='board';room.board={step:'await_roll',turn:1,activeId:room.players[0].id,rolls:[],landing:0,lastMove:null,event:{type:'intro',text:'Welcome to the NOGGIN stage!'},deadline:null,nextAt:null,challenge:null,result:null,leaderIds:[],finalists:[],winnerIds:[],history:[],pausedAt:null,pauseReason:null,showdown:null,tieQuestions:[],seenQuestions:[],seenGames:[],lastGame:null,minigame:null,moveRevision:0,routePlan:false,routeOptions:[],headline:false,headlineEligible:false,turnStartSparks:Object.fromEntries(room.players.map(p=>[p.id,p.sparks]))};
 }
 function currentIs(room,id){if(room.board.activeId!==id)fail('TURN','It is not your turn.');}
@@ -51,15 +52,15 @@ function beginMove(room,die,now,rng=crypto.randomInt){
  const crossed=path.includes(0);
  if(crossed && to!==0) p.sparks+=1;
  // Completing a lap refreshes a single Director Cue, capped at two.
- if(crossed) p.cues=Math.min(DIRECTORS_CUES,(p.cues||0)+1);
+ if(crossed && showtime(room)) p.cues=Math.min(DIRECTORS_CUES,(p.cues||0)+1);
  resolveLanding(room,now,crossed&&to!==0,rng);
 }
 function roll(room,id,now,randomInt){
  const b=room.board;requireStep(b,'await_roll');currentIs(room,id);
  const low=Math.min(...room.players.map(p=>p.sparks));
- const diceCount=actor(room).sparks===low && room.players.some(p=>p.sparks>low) ? 2 : 1;
+ const diceCount=showtime(room)&&actor(room).sparks===low && room.players.some(p=>p.sparks>low) ? 2 : 1;
  b.rolls=Array.from({length:diceCount},()=>1+random(6,randomInt));
- if(b.routePlan){
+ if(showtime(room)&&b.routePlan){
    const p=actor(room);const options=[];
    for(let i=0;i<b.rolls.length;i++)for(const offset of [0,-1,1]){
      const steps=b.rolls[i]+offset;
@@ -112,6 +113,7 @@ function resolveLanding(room,now,passed,rng=crypto.randomInt){
 }
 function choose(room,id,payload,now,randomInt){
  const b=room.board;currentIs(room,id);
+ if(!showtime(room) && b.step==='await_roll' && ['headline','safe','director','normal'].includes(payload?.action))fail('RULES','Extra options are disabled in Classic.');
  if(b.step==='await_roll' && ['headline','safe'].includes(payload?.action)){
    if(payload.action==='headline' && actor(room).sparks<1)fail('SPARKS','You need at least one Spark to call a Headline Bet.');
    b.headline=payload.action==='headline';
@@ -193,14 +195,14 @@ function finishTurn(room,now,text,winners=[]){
  // winner can claim it; passive board spaces never pay a bonus.
  // The Headline Bet is an opt-in risk on contested spaces only.
  // Passive squares neither pay nor punish the wager.
- if(b.headline && b.headlineEligible){
+ if(showtime(room) && b.headline && b.headlineEligible){
    const headliner=actor(room);
    if(winners.includes(headliner.id)){headliner.sparks+=HEADLINE_WIN_BONUS;text+=` · HEADLINE HIT: ${headliner.name} earns +${HEADLINE_WIN_BONUS} bonus Sparks!`;}
    else {headliner.sparks=Math.max(0,headliner.sparks-HEADLINE_LOSS_PENALTY);text+=` · HEADLINE FLOP: ${headliner.name} loses ${HEADLINE_LOSS_PENALTY} Spark.`;}
  }
  // Winning contests earns a new Director Cue. This works without completing a lap.
  const newCues=[];
- for(const id of new Set(winners)){const winner=room.players.find(p=>p.id===id);if(winner && (winner.cues||0)<DIRECTORS_CUES){winner.cues=(winner.cues||0)+1;newCues.push(winner.name);}}
+ for(const id of showtime(room)?new Set(winners):[]){const winner=room.players.find(p=>p.id===id);if(winner && (winner.cues||0)<DIRECTORS_CUES){winner.cues=(winner.cues||0)+1;newCues.push(winner.name);}}
  if(newCues.length)text+=` · Director Cue earned: ${newCues.join(' & ')}.`;
  const snapshot=b.turnStartSparks||{};
  const initialLeader=Math.max(0,...Object.values(snapshot));

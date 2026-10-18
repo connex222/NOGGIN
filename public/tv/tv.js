@@ -112,7 +112,7 @@
       : state.canStart ? 'All contestants ready! Lobby check complete.' : 'Waiting for every contestant to tap READY on their phone…';
     $('stageReady').disabled = !state.canStart;
     $('stageReady').textContent = state.canStart ? '▶ START THE SHOW' : `WAITING FOR ${state.players.length < 2 ? '2 PLAYERS' : 'EVERYONE'}`;
-    for(const [id,val] of [['target',state.settings.target],['timerSpeed',state.settings.timerSpeed]]) $(id).value=String(val);
+    for(const [id,val] of [['target',state.settings.target],['timerSpeed',state.settings.timerSpeed],['rules',state.settings.rules||'classic']]) $(id).value=String(val);
     $('familyFriendly').checked=state.settings.familyFriendly;
     $('reduceMotion').checked=state.settings.reduceMotion;
     document.documentElement.classList.toggle('reduce-motion',state.settings.reduceMotion);
@@ -153,6 +153,7 @@
     try {render((await U.request(socket,'room:settings',{patch})).state);error('');}
     catch(err){error(err.message);}
   }
+  $('rules').onchange = e => updateSettings({rules:e.target.value});
   $('target').onchange = e => updateSettings({target:Number(e.target.value)});
   $('timerSpeed').onchange = e => updateSettings({timerSpeed:e.target.value});
   $('familyFriendly').onchange = e => updateSettings({familyFriendly:e.target.checked});

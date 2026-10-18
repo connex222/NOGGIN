@@ -61,7 +61,7 @@ class GameRooms {
     const room = {
       code, phase: 'lobby', createdAt: this.now(), updatedAt: this.now(),
       hostToken: crypto.randomBytes(24).toString('base64url'), hostSocketId,
-      players: [], settings: {target: 12, familyFriendly: true, timerSpeed: 'normal', reduceMotion: false}
+      players: [], settings: {target: 12, familyFriendly: true, timerSpeed: 'normal', reduceMotion: false, rules: 'classic'}
     };
     this.rooms.set(code, room);
     return {code, token: room.hostToken, state: this.state(code)};
@@ -166,10 +166,11 @@ class GameRooms {
     assert(room.phase === 'lobby', 'PHASE', 'Game settings are locked while playing.');
     assert(patch && typeof patch === 'object' && !Array.isArray(patch), 'SETTINGS', 'Invalid game settings.');
     const keys = Object.keys(patch);
-    assert(keys.length > 0 && keys.every(k => ['target', 'familyFriendly', 'timerSpeed', 'reduceMotion'].includes(k)), 'SETTINGS', 'Unknown game setting.');
+    assert(keys.length > 0 && keys.every(k => ['target', 'familyFriendly', 'timerSpeed', 'reduceMotion', 'rules'].includes(k)), 'SETTINGS', 'Unknown game setting.');
     for (const [key, value] of Object.entries(patch)) {
       if (key === 'target') assert([8,12,16].includes(value), 'SETTINGS', 'Choose 8, 12 or 16 Sparks.');
       if (key === 'timerSpeed') assert(['normal', 'relaxed'].includes(value), 'SETTINGS', 'Invalid timer speed.');
+      if (key === 'rules') assert(['classic','showtime'].includes(value),'SETTINGS','Choose Classic or Showtime.');
       if (['familyFriendly', 'reduceMotion'].includes(key)) assert(typeof value === 'boolean', 'SETTINGS', 'Invalid toggle value.');
     }
     Object.assign(room.settings, patch);

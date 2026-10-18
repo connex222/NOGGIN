@@ -60,6 +60,7 @@ test('release ZIP required hosting, docs and all 36 original avatars are present
  for(const name of ['Dockerfile','docker-compose.yml','render.yaml','start-noggin.bat','INSTALL.md','HOW-TO-PLAY.pdf','deploy/oracle/Caddyfile','.github/workflows/ci.yml']){
   assert.ok(fs.statSync(path.join(root,name)).size>0,name);
  }
- const avatars=fs.readdirSync(path.join(root,'public/avatars')).filter(x=>x.endsWith('.png'));
+ const avatars=fs.readdirSync(path.join(root,'source-art/avatars')).filter(x=>x.endsWith('.png'));
  assert.equal(avatars.length,36);
+ assert.equal(fs.readdirSync(path.join(root,'public/avatars')).filter(x=>x.endsWith('.png')).length,0);
 });

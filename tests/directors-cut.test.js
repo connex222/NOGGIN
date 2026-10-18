@@ -6,7 +6,7 @@ const board=require('../server/board');
 const phase3=require('../server/games/phase3');
 function fixture(n=3){
  let now=10000,queue=[],rooms=new GameRooms({now:()=>now,randomInt:max=>(queue.length?queue.shift():0)%max});
- const {code}=rooms.create('tv');for(let i=0;i<n;i++){rooms.join({code,name:`Player ${i+1}`,avatarId:i+1,socketId:`p${i}`});rooms.setReady(code,`p${i}`,true);}rooms.startGame(code,'tv');
+ const {code}=rooms.create('tv');for(let i=0;i<n;i++){rooms.join({code,name:`Player ${i+1}`,avatarId:i+1,socketId:`p${i}`});rooms.setReady(code,`p${i}`,true);}rooms.setSettings(code,'tv',{rules:'showtime'});rooms.startGame(code,'tv');
  return {rooms,code,room:rooms.find(code),time:()=>now,set:t=>{now=t},advance:d=>{now+=d},dice:(...nums)=>queue.push(...nums),sock:i=>`p${i}`};
 }
 test('Director Cues are limited, opt-in, and absent from hidden-room tokens',()=>{

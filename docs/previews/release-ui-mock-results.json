@@ -1,0 +1,464 @@
+[
+  {
+    "scenario": "tv-board-4p-1920x1080.png",
+    "metrics": {
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "documentHeight": 1080,
+      "board": {
+        "left": 26,
+        "right": 1427,
+        "top": 156,
+        "bottom": 989,
+        "width": 1401,
+        "height": 833
+      },
+      "boardCentre": {
+        "left": 1446,
+        "right": 1875,
+        "top": 169,
+        "bottom": 977,
+        "width": 430,
+        "height": 808
+      },
+      "stage": {
+        "left": 24,
+        "right": 1896,
+        "top": 154,
+        "bottom": 991,
+        "width": 1872,
+        "height": 837
+      },
+      "challenge": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-board-4p-1280x720.png",
+    "metrics": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "board": {
+        "left": 14,
+        "right": 953,
+        "top": 102,
+        "bottom": 663,
+        "width": 939,
+        "height": 561
+      },
+      "boardCentre": {
+        "left": 966,
+        "right": 1253,
+        "top": 111,
+        "bottom": 655,
+        "width": 288,
+        "height": 544
+      },
+      "stage": {
+        "left": 12,
+        "right": 1268,
+        "top": 100,
+        "bottom": 665,
+        "width": 1256,
+        "height": 565
+      },
+      "challenge": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-board-8p-1920x1080.png",
+    "metrics": {
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "documentHeight": 1080,
+      "board": {
+        "left": 26,
+        "right": 1427,
+        "top": 156,
+        "bottom": 989,
+        "width": 1401,
+        "height": 833
+      },
+      "boardCentre": {
+        "left": 1446,
+        "right": 1875,
+        "top": 169,
+        "bottom": 977,
+        "width": 430,
+        "height": 808
+      },
+      "stage": {
+        "left": 24,
+        "right": 1896,
+        "top": 154,
+        "bottom": 991,
+        "width": 1872,
+        "height": 837
+      },
+      "challenge": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 8,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-board-8p-1280x720.png",
+    "metrics": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "board": {
+        "left": 14,
+        "right": 953,
+        "top": 102,
+        "bottom": 663,
+        "width": 939,
+        "height": 561
+      },
+      "boardCentre": {
+        "left": 966,
+        "right": 1253,
+        "top": 111,
+        "bottom": 655,
+        "width": 288,
+        "height": 544
+      },
+      "stage": {
+        "left": 12,
+        "right": 1268,
+        "top": 100,
+        "bottom": 665,
+        "width": 1256,
+        "height": 565
+      },
+      "challenge": {
+        "left": 0,
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 0,
+        "height": 0
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 8,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "phone-odd-spot-360x640.png",
+    "metrics": {
+      "width": 360,
+      "height": 640,
+      "documentWidth": 360,
+      "documentHeight": 640,
+      "board": null,
+      "boardCentre": null,
+      "stage": null,
+      "challenge": null,
+      "canvas": null,
+      "phoneGrid": {
+        "left": 28,
+        "right": 332,
+        "top": 261,
+        "bottom": 540,
+        "width": 304,
+        "height": 279
+      },
+      "phoneButtons": 36,
+      "smallTapTargets": 0,
+      "tokens": 0,
+      "spaces": 0,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "phone-odd-spot-430x932.png",
+    "metrics": {
+      "width": 430,
+      "height": 932,
+      "documentWidth": 430,
+      "documentHeight": 932,
+      "board": null,
+      "boardCentre": null,
+      "stage": null,
+      "challenge": null,
+      "canvas": null,
+      "phoneGrid": {
+        "left": 32,
+        "right": 398,
+        "top": 548,
+        "bottom": 827,
+        "width": 366,
+        "height": 279
+      },
+      "phoneButtons": 36,
+      "smallTapTargets": 0,
+      "tokens": 0,
+      "spaces": 0,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-sketch-1920x1080.png",
+    "metrics": {
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "documentHeight": 1080,
+      "board": {
+        "left": 26,
+        "right": 1427,
+        "top": 156,
+        "bottom": 989,
+        "width": 1401,
+        "height": 833
+      },
+      "boardCentre": {
+        "left": 1446,
+        "right": 1875,
+        "top": 169,
+        "bottom": 977,
+        "width": 430,
+        "height": 808
+      },
+      "stage": {
+        "left": 24,
+        "right": 1896,
+        "top": 154,
+        "bottom": 991,
+        "width": 1872,
+        "height": 837
+      },
+      "challenge": {
+        "left": 101,
+        "right": 1408,
+        "top": 173,
+        "bottom": 787,
+        "width": 1308,
+        "height": 614
+      },
+      "canvas": {
+        "left": 414,
+        "right": 1095,
+        "top": 318,
+        "bottom": 713,
+        "width": 680,
+        "height": 395
+      },
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-sketch-1280x720.png",
+    "metrics": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "board": {
+        "left": 14,
+        "right": 953,
+        "top": 102,
+        "bottom": 663,
+        "width": 939,
+        "height": 561
+      },
+      "boardCentre": {
+        "left": 966,
+        "right": 1253,
+        "top": 111,
+        "bottom": 655,
+        "width": 288,
+        "height": 544
+      },
+      "stage": {
+        "left": 12,
+        "right": 1268,
+        "top": 100,
+        "bottom": 665,
+        "width": 1256,
+        "height": 565
+      },
+      "challenge": {
+        "left": 64,
+        "right": 940,
+        "top": 114,
+        "bottom": 579,
+        "width": 876,
+        "height": 465
+      },
+      "canvas": {
+        "left": 275,
+        "right": 729,
+        "top": 246,
+        "bottom": 509,
+        "width": 454,
+        "height": 263
+      },
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-odd-spot-1920x1080.png",
+    "metrics": {
+      "width": 1920,
+      "height": 1080,
+      "documentWidth": 1920,
+      "documentHeight": 1080,
+      "board": {
+        "left": 26,
+        "right": 1427,
+        "top": 156,
+        "bottom": 989,
+        "width": 1401,
+        "height": 833
+      },
+      "boardCentre": {
+        "left": 1446,
+        "right": 1875,
+        "top": 169,
+        "bottom": 977,
+        "width": 430,
+        "height": 808
+      },
+      "stage": {
+        "left": 24,
+        "right": 1896,
+        "top": 154,
+        "bottom": 991,
+        "width": 1872,
+        "height": 837
+      },
+      "challenge": {
+        "left": 101,
+        "right": 1408,
+        "top": 173,
+        "bottom": 674,
+        "width": 1308,
+        "height": 501
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  },
+  {
+    "scenario": "tv-odd-spot-1280x720.png",
+    "metrics": {
+      "width": 1280,
+      "height": 720,
+      "documentWidth": 1280,
+      "documentHeight": 720,
+      "board": {
+        "left": 14,
+        "right": 953,
+        "top": 102,
+        "bottom": 663,
+        "width": 939,
+        "height": 561
+      },
+      "boardCentre": {
+        "left": 966,
+        "right": 1253,
+        "top": 111,
+        "bottom": 655,
+        "width": 288,
+        "height": 544
+      },
+      "stage": {
+        "left": 12,
+        "right": 1268,
+        "top": 100,
+        "bottom": 665,
+        "width": 1256,
+        "height": 565
+      },
+      "challenge": {
+        "left": 64,
+        "right": 940,
+        "top": 114,
+        "bottom": 585,
+        "width": 876,
+        "height": 471
+      },
+      "canvas": null,
+      "phoneGrid": null,
+      "phoneButtons": 0,
+      "smallTapTargets": 0,
+      "tokens": 4,
+      "spaces": 36,
+      "fonts": true
+    },
+    "errors": []
+  }
+]

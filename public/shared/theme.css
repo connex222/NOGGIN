@@ -1,7 +1,10 @@
+/* Bundled OFL fonts; no font CDN or runtime network fetches. */
+@font-face{font-family:'Noggin Display';src:url('/shared/fonts/cabin-bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:'Noggin Body';src:url('/shared/fonts/lato-regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
 :root{--ink:#0b102a;--stage:#10172f;--stage-2:#1b2750;--panel:#212a4f;--frost:#303e6a;--pink:#ff4caa;--blue:#5de8f5;--yellow:#ffd968;--lime:#b5f87e;--white:#fbfdff;--muted:#c4d3eb;--line:rgba(220,235,255,.19);--radius:22px;--shadow:0 22px 70px rgba(0,0,0,.26);color-scheme:dark}
 *{box-sizing:border-box}
 html{height:100%;-webkit-text-size-adjust:100%}
-body{margin:0;min-height:100%;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--white);background:radial-gradient(ellipse at 50% -27%,#33488a 0,transparent 50%),radial-gradient(ellipse at 8% 90%,#1f245d 0,transparent 40%),var(--ink);line-height:1.4}
+body{margin:0;min-height:100%;font-family:'Noggin Body',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--white);background:radial-gradient(ellipse at 50% -27%,#33488a 0,transparent 50%),radial-gradient(ellipse at 8% 90%,#1f245d 0,transparent 40%),var(--ink);line-height:1.4}
 button,input,select{font:inherit}
 button,select,input[type=checkbox],input[type=range]{cursor:pointer}
 button{border:0}
@@ -33,3 +36,5 @@ button:not(:disabled):active{transform:scale(.97)}
 .glow-card{background:radial-gradient(circle at 20% 0%,rgba(92,224,249,.12),transparent 60%),linear-gradient(140deg,#273967,#17234a)}
 .checkrow{display:flex;align-items:center;gap:13px;color:#f5f8ff;font-size:18px;cursor:pointer;min-height:56px}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+h1,h2,h3,.noggin-title,.room-code{font-family:'Noggin Display',system-ui,sans-serif}
