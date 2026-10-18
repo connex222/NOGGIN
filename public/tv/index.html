@@ -71,7 +71,14 @@
       <div class="board-centre" id="boardCentre"><p class="eyebrow">THE NOGGIN PANEL</p><div id="scoreboard" class="stage-scoreboard" aria-label="Live contestant scores"></div></div>
       <svg id="boardGraphic" viewBox="0 0 1600 580" preserveAspectRatio="none" role="img" aria-label="36-space NOGGIN showtime racetrack with player tokens"></svg>
       <div class="arena-hub" aria-live="polite"><div class="arena-hub-brain" aria-hidden="true">🧠</div><h2 id="boardMessage">ROLL TO BEGIN</h2><div class="arena-hub-pips" aria-hidden="true">⚄ &nbsp; ⚂</div></div>
-      <div id="diceOverlay" class="dice-overlay hidden" aria-live="polite"><div id="diceCube" class="dice-cube">⚄</div><div id="diceInfo" class="dice-info">ROLL!</div></div>
+      <div id="diceOverlay" class="dice-overlay hidden" role="status" aria-live="polite" aria-atomic="true">
+        <div class="dice-showcase">
+          <div class="dice-marquee">✦ &nbsp; THE NOGGIN DICE &nbsp; ✦</div>
+          <div id="diceTray" class="dice-tray" aria-hidden="true"></div>
+          <div id="diceInfo" class="dice-info">ROLLING…</div>
+          <div class="dice-footnote">THE RESULT IS DECIDED BY THE GAME SERVER</div>
+        </div>
+      </div>
       <div id="resultSpotlight" class="result-spotlight hidden" aria-live="polite"></div>
       <div id="challengePanel" class="stage-challenge surface hidden"><p class="eyebrow" id="challengeType">QUICK CHOICE</p><h2 id="challengeTitle">Challenge</h2><div id="challengePrompt"></div><div id="challengeChoices" class="challenge-choices"></div><p id="challengeCountdown" class="challenge-clock"></p></div>
       <div class="stage-bottom surface">

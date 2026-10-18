@@ -15,3 +15,11 @@ Files are listed in `sound-manifest.json`. To replace an effect with a licensed 
 ## Licensing and commercial use
 
 These audio files were created from original synthesis without third-party samples. They are supplied as part of this NOGGIN build. For additional recorded effects, use sources with clear commercial rights such as Kenney CC0 packs (https://kenney.nl/assets/interface-sounds) and retain license attribution as required. Avoid television-game-show samples, broadcast jingles, or sound effects from commercial games.
+
+## NOGGIN Dice Theatre (v2)
+
+The TV now calls `sfx-dice-roll` when the die starts tumbling and `sfx-dice-land` when it stops.
+If no `sfx-dice-land.mp3` is included in `sound-manifest.json`, the game plays the
+existing `sfx-reel-stop.mp3` as its temporary landing sound. You can replace that
+with a recorded wooden or resin dice clack in future. Add its filename to the manifest
+`files` array when supplying the replacement. Audio never chooses the roll result.

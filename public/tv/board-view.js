@@ -1,6 +1,6 @@
 'use strict';
 class NogginBoardView {
-  constructor(avatars,onHop) {this.avatars=avatars;this.onHop=onHop;this.data=[];this.lastRevision=-1;this.animTimer=null;this.tokenGroup=null;this.latestState=null;this.lastCueKey=null;this.flashHandles=[];}
+  constructor(avatars,onHop,onDiceFx) {this.avatars=avatars;this.onHop=onHop;this.onDiceFx=onDiceFx;this.data=[];this.lastRevision=-1;this.animTimer=null;this.moveAnimating=false;this.pendingMove=null;this.diceTimers=[];this.diceSequence=0;this.diceKey=null;this.tokenGroup=null;this.latestState=null;this.lastCueKey=null;this.flashHandles=[];}
   async initialize() {
     const res=await fetch('/shared/board-data.json');if(!res.ok)throw Error('Board layout metadata missing.');
     this.data=await res.json();this.buildBoard();
@@ -241,10 +241,24 @@ class NogginBoardView {
       document.getElementById('challengePrompt').textContent=c.question;
       const options=document.getElementById('challengeChoices');options.replaceChildren();for(const a of c.choices){const el=document.createElement('span');el.textContent=a;options.append(el);}this.clockAt=c.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();}
     else if(!b.minigame&&!b.showdown) this.clockAt=null;
-    this.paintTokens(state.players);this.paintRouteOptions(b);this.renderResultSpotlight(b,state);
-    if(['choose_die','choose_route'].includes(b.step)){this.showDie(b.rolls,false);if(b.step==='choose_route')document.getElementById('diceInfo').textContent='DIRECTOR’S CUT';}
-    else if(!['choose_die','choose_route'].includes(b.step) && !b.lastMove)this.hideDie();
-    if(b.lastMove?.revision!==undefined && b.lastMove.revision!==this.lastRevision){this.lastRevision=b.lastMove.revision;this.showDie([b.lastMove.die],true);this.animateMove(b.lastMove,state.players);}
+    this.paintRouteOptions(b);this.renderResultSpotlight(b,state);
+    // Movement is replayed only for a NEW server-authoritative revision. Never
+    // generate a number locally or restart the show when room:state repeats.
+    const freshMove=b.lastMove?.revision!==undefined && b.lastMove.revision!==this.lastRevision;
+    if(freshMove){
+      this.lastRevision=b.lastMove.revision;
+      this.pendingMove=b.lastMove;
+      this.paintTokens(state.players,{playerId:b.lastMove.playerId,position:b.lastMove.from});
+      this.showDie([b.lastMove.die],true,()=>{
+        if(this.pendingMove?.revision!==b.lastMove.revision)return;
+        this.pendingMove=null;
+        this.animateMove(b.lastMove,this.latestState?.players||state.players);
+      },`move-${b.lastMove.revision}`);
+    }else if(!this.pendingMove&&!this.moveAnimating){this.paintTokens(state.players);}
+    if(!freshMove && ['choose_die','choose_route'].includes(b.step)){
+      this.showDie(b.rolls,true,null,`choice-${b.turn}-${b.activeId}-${b.rolls.join('-')}`,true,
+        b.step==='choose_route'?'DIRECTOR’S CUT · PICK A LANDING':'CHOOSE YOUR DIE');
+    }else if(!freshMove && !this.pendingMove && !this.moveAnimating && !['choose_die','choose_route'].includes(b.step))this.hideDie();
   }
   renderResultSpotlight(b,state){
     const root=document.getElementById('resultSpotlight');if(!root)return;
@@ -311,19 +325,88 @@ class NogginBoardView {
       this.tokenGroup.append(g);
     }
   }
-  showDie(numbers,tumble){
-    const box=document.getElementById('diceOverlay'),cube=document.getElementById('diceCube');
-    if(!numbers?.length)return;
-    box.classList.remove('hidden');cube.textContent=numbers.map(n=>['','⚀','⚁','⚂','⚃','⚄','⚅'][n]||'🎲').join(' ');
-    cube.classList.remove('tumbling');if(tumble){void cube.offsetWidth;cube.classList.add('tumbling');}
-    document.getElementById('diceInfo').textContent=numbers.length>1?'CHOOSE A DIE':`ROLLED ${numbers[0]}`;
-    clearTimeout(this.diceTimer);
-    if(tumble)this.diceTimer=setTimeout(()=>this.hideDie(),1300);
+  // Every 3D die has six physical faces. This is presentation only: the final
+  // value is always read from the authoritative server state.
+  createDie(value){
+    const outer=document.createElement('div');outer.className='noggin-die-wrap';
+    const cube=document.createElement('div');cube.className='noggin-die';
+    const faces=[['front',1],['back',6],['right',3],['left',4],['top',2],['bottom',5]];
+    const pips={1:[5],2:[1,9],3:[1,5,9],4:[1,3,7,9],5:[1,3,5,7,9],6:[1,3,4,6,7,9]};
+    for(const [direction,faceValue] of faces){
+      const face=document.createElement('div');face.className=`noggin-die-face die-${direction}`;
+      for(const n of pips[faceValue]){
+        const dot=document.createElement('i');dot.className='noggin-pip';
+        dot.style.gridColumn=String((n-1)%3+1);dot.style.gridRow=String(Math.ceil(n/3));face.append(dot);
+      }
+      cube.append(face);
+    }
+    outer.append(cube);outer.dataset.result=String(value);
+    return {outer,cube};
   }
-  hideDie(){document.getElementById('diceOverlay').classList.add('hidden');}
-  animateMove(move,players){clearInterval(this.animTimer);if(document.documentElement.classList.contains('reduce-motion'))return;let step=0;
+  // Return the orientation which leaves the required face towards the audience.
+  dieAngles(n){return ({1:[0,0],2:[-90,0],3:[0,-90],4:[0,90],5:[90,0],6:[0,180]})[n]||[0,0];}
+  clearDiceTimers(){for(const id of this.diceTimers)clearTimeout(id);this.diceTimers=[];}
+  showDie(numbers,tumble,onReveal=null,key=null,persist=false,customLabel=''){
+    if(!Array.isArray(numbers)||!numbers.length)return;
+    const values=numbers.filter(n=>Number.isInteger(n)&&n>=1&&n<=6);
+    if(values.length!==numbers.length)return;
+    const box=document.getElementById('diceOverlay');const tray=document.getElementById('diceTray');
+    const text=document.getElementById('diceInfo');if(!box||!tray||!text)return;
+    const identity=key||`roll-${numbers.join('-')}`;
+    if(identity===this.diceKey&&!box.classList.contains('hidden'))return;
+    this.diceKey=identity;
+    this.clearDiceTimers();const seq=++this.diceSequence;
+    const reduced=document.documentElement.classList.contains('reduce-motion')||
+      Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches);
+    const animate=Boolean(tumble&&!reduced);
+    const dice=values.map(value=>this.createDie(value));
+    tray.replaceChildren(...dice.map(d=>d.outer));
+    tray.classList.toggle('double-roll',values.length===2);
+    box.classList.remove('hidden');box.classList.toggle('dice-is-rolling',animate);
+    text.textContent=animate?'ROLLING THE DICE…':(customLabel|| (values.length===2?'CHOOSE YOUR DIE':`IT'S A ${values[0]}!`));
+    box.setAttribute('aria-label',`Dice roll: ${animate?'rolling':values.join(' and ')}`);
+    for(const [i,{cube}] of dice.entries()){
+      const [x,y]=this.dieAngles(values[i]);
+      cube.style.transform=`rotateX(${x}deg) rotateY(${y}deg)`;
+      if(animate&&typeof cube.animate==='function'){
+        // Extra whole rotations keep the final face mathematically identical.
+        cube.animate([
+          {transform:'rotateX(-30deg) rotateY(22deg) rotateZ(-10deg) scale(.8)',offset:0},
+          {transform:`rotateX(${390+x}deg) rotateY(${470+y}deg) rotateZ(32deg) scale(1.16)`,offset:.43},
+          {transform:`rotateX(${790+x}deg) rotateY(${740+y}deg) rotateZ(-14deg) scale(.95)`,offset:.75},
+          {transform:`rotateX(${1080+x}deg) rotateY(${1080+y}deg) rotateZ(0deg) scale(1)`,offset:1}
+        ],{duration:1120+i*120,easing:'cubic-bezier(.21,.62,.28,1)',fill:'none'});
+      }
+    }
+    this.onDiceFx?.('start');
+    const finish=()=>{
+      if(seq!==this.diceSequence)return;
+      box.classList.remove('dice-is-rolling');
+      text.textContent=customLabel?(values.length===2?`${customLabel} · ${values.join(' OR ')}`:customLabel):(values.length===2?`YOU ROLLED ${values[0]} & ${values[1]}`:`IT'S A ${values[0]}!`);
+      box.setAttribute('aria-label',`Dice roll: ${values.join(' and ')}`);
+      this.onDiceFx?.('land');
+      onReveal?.();
+      if(!persist)this.diceTimers.push(setTimeout(()=>{if(seq===this.diceSequence)this.hideDie();},650));
+    };
+    this.diceTimers.push(setTimeout(finish,animate?1240:0));
+  }
+  hideDie(){
+    const box=document.getElementById('diceOverlay');if(!box)return;
+    box.classList.add('hidden');box.classList.remove('dice-is-rolling');
+    this.clearDiceTimers();this.diceSequence++;this.diceKey=null;
+  }
+  animateMove(move,players){
+    clearInterval(this.animTimer);
+    if(document.documentElement.classList.contains('reduce-motion')||window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
+      this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);return;
+    }
+    this.moveAnimating=true;let step=0;
     this.paintTokens(players,{playerId:move.playerId,position:move.from});
-    this.animTimer=setInterval(()=>{if(step>=move.path.length){clearInterval(this.animTimer);this.paintTokens(this.latestState?.players||players);return;}this.paintTokens(this.latestState?.players||players,{playerId:move.playerId,position:move.path[step++]});this.onHop?.(1+step*.085);},160);
+    this.animTimer=setInterval(()=>{
+      if(step>=move.path.length){clearInterval(this.animTimer);this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);return;}
+      this.paintTokens(this.latestState?.players||players,{playerId:move.playerId,position:move.path[step++]});
+      this.onHop?.(1+step*.085);
+    },150);
   }
   updateClock(){if(this.latestState?.board?.paused){document.getElementById('challengeCountdown').textContent='⏸ CLOCK PAUSED';return;}if(this.clockAt){const remain=Math.max(0,Math.ceil((this.clockAt-(this.clockServer+Date.now()-this.clockLocal))/1000));document.getElementById('challengeCountdown').textContent=`${remain} SECONDS REMAINING`;}}
 }

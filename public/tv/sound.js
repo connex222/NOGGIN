@@ -18,6 +18,7 @@ class NogginSound {
   switch(name){
    case 'sfx-join':return notes([[440,0],[660,.11],[880,.22]]);
    case 'sfx-dice-roll':return notes([[150,0,.10],[220,.08,.10],[310,.16,.10],[490,.24,.10]],'square');
+   case 'sfx-dice-land':return notes([[260,0,.11],[150,.05,.14]],'triangle');
    case 'sfx-hop':return this.beep(540,.085,'sine');
    case 'sfx-reel':return notes([[220,0],[330,.1],[440,.2],[550,.3]],'sawtooth');
    case 'sfx-reel-stop':return notes([[700,0],[490,.09],[810,.19]]);

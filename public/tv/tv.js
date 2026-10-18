@@ -5,7 +5,7 @@
   const sessionKey = 'noggin-tv-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
   let avatars = [], activeRoom = null, priorCount = 0, boardView = null, currentState = null;
-  const audio=new window.NogginSound();let lastFxKey='',lastBeat=-1,lastMove=-1;
+  const audio=new window.NogginSound();let lastFxKey='',lastBeat=-1;
   const message = $('message');
 
   function error(text) {
@@ -39,7 +39,6 @@
   }
   function gameFx(state){const b=state.board;if(!b)return;
     const key=[state.phase,b.step,b.turn,b.event?.text,b.minigame?.id,b.minigame?.roundKey,b.showdown?.kind,b.showdown?.phase].join('|');
-    if(b.lastMove?.revision!==lastMove){lastMove=b.lastMove?.revision; if(lastMove!==undefined)audio.play('sfx-dice-roll');}
     if(key===lastFxKey)return;lastFxKey=key;
     if(b.step==='showdown'&&b.showdown?.phase==='intro')audio.play('sfx-showdown');
     if(b.step==='minigame'&&b.minigame?.phase==='intro')audio.play('sfx-reel');
@@ -207,7 +206,7 @@
     const response = await fetch('/shared/avatars.json');
     if(!response.ok)throw new Error('Avatar catalogue is missing.');
     avatars = await response.json();
-    boardView = new window.NogginBoardView(avatars,playSound);await boardView.initialize();
+    boardView = new window.NogginBoardView(avatars,playSound,stage=>audio.play(stage==='start'?'sfx-dice-roll':'sfx-dice-land',stage==='land'?'sfx-reel-stop':''));await boardView.initialize();
     drawRoster({players:[]});if(currentState)render(currentState);
   } catch(err){error(err.message);}
 })();

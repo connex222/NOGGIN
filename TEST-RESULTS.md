@@ -1,6 +1,15 @@
+# NOGGIN v2 — Dice Theatre release check
+
+- Node.js automated tests: **178 passed, 0 failed, 1 skipped**.
+- Source checks: `npm run check` passed.
+- Static release audit: **104 checks passed, 0 errors**.
+- Browser mock: 1280×720, 1366×768, 1920×1080; 36 live spaces, players, 3D tumbling/reveal, catch-up two-dice roll, repeated state and Reduce Motion. No page errors, horizontal or vertical overflow.
+- Result, dice values and token movement come from existing server state; the animation never randomises an outcome.
+- One live HTTP test needs locally installed dependencies; **no real TV-to-phone multiplayer round was verified** in this release.
+
 # NOGGIN v2 — Board redesign validation
 
-- Node.js suite: **173 passed**, 0 failed, 1 skipped (live HTTP integration test requires installed server dependencies).
+- Node.js suite: **173 passed** in the preceding board-only release (historical result).
 - `npm run check`: passed JavaScript syntax checks.
 - `npm run audit`: 104 checks; **0 errors**.
 - Mock browser viewports: **1280×720, 1366×768, 1920×1080**.

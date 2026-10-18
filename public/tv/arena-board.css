@@ -130,3 +130,80 @@ body.tv.playing .board-container:before{
   background:linear-gradient(90deg,#031029bb 0%,#030b2af0 13%,#030b2af2 87%,#031029bb 100%);
   backdrop-filter:blur(18px) brightness(.72);
 }
+
+
+/* NOGGIN v2 — Dice Theatre: real six-faced CSS 3D dice, server-determined result. */
+body.tv.playing .dice-overlay{
+  position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);
+  width:min(490px,43%);max-width:calc(100% - 30px);
+  z-index:12;pointer-events:none;padding:0;isolation:isolate;
+  background:transparent;border:0;border-radius:0;filter:none;
+}
+body.tv.playing .dice-overlay.hidden{display:none!important}
+body.tv.playing .dice-showcase{
+  position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;
+  padding:clamp(10px,1.4vw,19px) clamp(15px,2vw,28px);
+  border:3px solid #ffd268;border-radius:clamp(17px,1.7vw,29px);
+  background:linear-gradient(155deg,#10316bf2 0%,#080e37fb 70%,#1c165df5 100%);
+  box-shadow:0 0 0 5px #08123f,0 0 0 7px #6fafffaa,0 0 45px #ffb447c4,0 15px 50px #02071ed9,inset 0 0 26px #3063c5a1;
+  overflow:visible;
+}
+body.tv.playing .dice-showcase:before{
+  content:'';position:absolute;inset:-12px;z-index:-1;border-radius:34px;
+  background:radial-gradient(ellipse at 50% 65%,#ffd25865,transparent 66%);
+}
+body.tv.playing .dice-marquee{color:#ffe893;font-weight:1000;letter-spacing:.17em;font-size:clamp(10px,1.08vw,18px);text-shadow:0 2px 8px #080e2f;white-space:nowrap}
+body.tv.playing .dice-tray{
+  --die-size:clamp(64px,7.6vw,120px);
+  display:flex;gap:clamp(27px,3vw,56px);align-items:center;justify-content:center;
+  perspective:650px;min-height:calc(var(--die-size) + 24px);width:100%;margin:clamp(9px,1.3vw,21px) 0 4px;
+}
+body.tv.playing .dice-tray.double-roll{--die-size:clamp(59px,6.4vw,104px)}
+body.tv.playing .noggin-die-wrap{
+  width:var(--die-size);height:var(--die-size);position:relative;flex:none;
+  filter:drop-shadow(0 15px 9px #030823d9) drop-shadow(0 0 16px #ffeea199);
+  transform-style:preserve-3d;
+}
+body.tv.playing .noggin-die-wrap:after{
+  content:'';position:absolute;top:calc(100% + 3px);left:5%;width:90%;height:13%;
+  border-radius:50%;background:#fdb944a8;filter:blur(9px);z-index:-1;
+}
+body.tv.playing .noggin-die{
+  width:100%;height:100%;position:relative;transform-style:preserve-3d;
+  --half-die:calc(var(--die-size) / 2);
+}
+body.tv.playing .noggin-die-face{
+  position:absolute;inset:0;box-sizing:border-box;
+  display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);
+  padding:16%;border:2px solid #bed3f7;border-radius:19%;
+  background:linear-gradient(145deg,#fff 0%,#f7f9ff 46%,#b4c8e7 100%);
+  box-shadow:inset 5px 5px 14px #fff,inset -6px -7px 10px #869bb8,0 0 9px #e8faffb8;
+  backface-visibility:hidden;
+}
+body.tv.playing .noggin-die-face.die-front{transform:rotateY(0deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-die-face.die-back{transform:rotateY(180deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-die-face.die-right{transform:rotateY(90deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-die-face.die-left{transform:rotateY(-90deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-die-face.die-top{transform:rotateX(90deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-die-face.die-bottom{transform:rotateX(-90deg) translateZ(var(--half-die))}
+body.tv.playing .noggin-pip{
+  width:78%;height:78%;align-self:center;justify-self:center;display:block;
+  border-radius:50%;background:radial-gradient(circle at 35% 25%,#425b8f 0%,#0b1534 38%,#010614 100%);
+  box-shadow:inset 2px 2px 2px #010615,0 1px 2px #e8f8ff;
+}
+body.tv.playing .dice-overlay .dice-info{
+  font-family:'Arial Black',system-ui,sans-serif;font-weight:1000;
+  color:#ffe667;text-shadow:0 2px 1px #643214,0 0 15px #ffad4aa1;
+  font-size:clamp(17px,2.15vw,32px);line-height:1.16;letter-spacing:.035em;
+  margin:clamp(6px,.75vw,12px) 0 3px;min-height:1.17em;text-align:center;
+}
+body.tv.playing .dice-footnote{color:#b6d6f8;font-size:clamp(8px,.66vw,11px);font-weight:800;letter-spacing:.075em;text-align:center}
+body.tv.playing .dice-is-rolling .dice-marquee{text-shadow:0 0 15px #ffbd4c;color:#fff6c6}
+@media(max-width:859px){
+  body.tv.playing .dice-overlay{left:50%;top:53%;width:min(460px,77%)}
+  body.tv.playing .dice-tray{--die-size:clamp(60px,12vw,90px)}
+  body.tv.playing .dice-tray.double-roll{--die-size:clamp(54px,9vw,80px)}
+  body.tv.playing .dice-overlay .dice-info{font-size:clamp(18px,3vw,27px)}
+}
+@media(prefers-reduced-motion:reduce){body.tv.playing .noggin-die{animation:none!important}}
+.reduce-motion body.tv.playing .noggin-die{animation:none!important}

@@ -1,3 +1,7 @@
+## NOGGIN v2 — Dice Theatre upgrade
+
+The TV board now has **3D animated dice** with a dramatic roll, landed number, a clack sound and then contestant token movement. Showtime catch-up rounds animate two dice. The actual outcome is always supplied by the multiplayer server. Animation respects reduced-motion settings. See [DICE-ROLL-ANIMATION.md](DICE-ROLL-ANIMATION.md) for replacement audio filenames, code changes and testing limits.
+
 ## NOGGIN v2 — Show arena board update (18 October 2026)
 
 The main TV gameplay board now matches the selected illuminated studio concept. The original static illustration is bundled as a venue backdrop, with 36 **live** numbered tiles, contestant position tokens, player portraits and Sparks overlaid by the actual game engine. Both two-player and eight-player layouts are supported. The lobby, real QR join and redesigned phone UIs are preserved.
