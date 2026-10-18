@@ -1,0 +1,4 @@
+{$NOGGIN_DOMAIN} {
+  encode zstd gzip
+  reverse_proxy noggin:3000
+}

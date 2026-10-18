@@ -1,0 +1,22 @@
+[
+ {"id":"q01","prompt":"What is 7 + 8?","options":["14","15","16"],"correct":1},
+ {"id":"q02","prompt":"What is 6 × 3?","options":["18","21","24"],"correct":0},
+ {"id":"q03","prompt":"What is 40 − 13?","options":["27","23","31"],"correct":0},
+ {"id":"q04","prompt":"What is half of 54?","options":["24","27","29"],"correct":1},
+ {"id":"q05","prompt":"What is 11 + 19?","options":["29","31","30"],"correct":2},
+ {"id":"q06","prompt":"What is 9 × 4?","options":["36","32","38"],"correct":0},
+ {"id":"q07","prompt":"What is 72 ÷ 8?","options":["8","9","7"],"correct":1},
+ {"id":"q08","prompt":"What is 17 + 16?","options":["31","33","35"],"correct":1},
+ {"id":"q09","prompt":"What is 90 − 47?","options":["43","46","44"],"correct":0},
+ {"id":"q10","prompt":"What is 5 × 7?","options":["30","42","35"],"correct":2},
+ {"id":"q11","prompt":"What is one quarter of 80?","options":["20","25","15"],"correct":0},
+ {"id":"q12","prompt":"What is 21 + 24?","options":["47","45","43"],"correct":1},
+ {"id":"q13","prompt":"What is 12 × 2?","options":["22","26","24"],"correct":2},
+ {"id":"q14","prompt":"What is 50 − 18?","options":["32","34","36"],"correct":0},
+ {"id":"q15","prompt":"What is 8 × 8?","options":["56","64","72"],"correct":1},
+ {"id":"q16","prompt":"What is 63 ÷ 7?","options":["8","7","9"],"correct":2},
+ {"id":"q17","prompt":"What is 15 + 19?","options":["34","33","36"],"correct":0},
+ {"id":"q18","prompt":"What is 100 − 37?","options":["73","63","67"],"correct":1},
+ {"id":"q19","prompt":"What is 4 × 12?","options":["44","46","48"],"correct":2},
+ {"id":"q20","prompt":"What is double 26?","options":["52","48","56"],"correct":0}
+]

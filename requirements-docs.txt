@@ -1,0 +1,2 @@
+# Only needed to regenerate HOW-TO-PLAY.pdf; not required to run the game.
+reportlab>=4.0,<5.0

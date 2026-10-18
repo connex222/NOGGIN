@@ -1,0 +1,310 @@
+[
+  {
+    "screen": "tv720",
+    "rendered": 7,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      }
+    ]
+  },
+  {
+    "screen": "tv1080",
+    "rendered": 7,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      }
+    ]
+  },
+  {
+    "screen": "phone640",
+    "rendered": 7,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 4,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 3,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      }
+    ]
+  },
+  {
+    "screen": "phone932",
+    "rendered": 7,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 4,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 3,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      }
+    ]
+  }
+]

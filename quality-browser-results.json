@@ -1,0 +1,392 @@
+[
+  {
+    "screen": "tv720",
+    "rendered": 9,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "audience",
+        "phase": "cheer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": [],
+          "meter": "Player 2 \u00b7 2 CHEERSPlayer 3 \u00b7 1 CHEER"
+        }
+      },
+      {
+        "kind": "reveal",
+        "phase": "reveal",
+        "metrics": {
+          "overflow": 0,
+          "tv": "BRAIN \u00b7 ROUND 2/3\u2605 ANSWER REVEAL \u2605ROUND 2 RESULTSANSWER: 42WINNERS: Player 1NEXT ROUND IN A MOMENT2 SECONDS REMAINING",
+          "phone": "",
+          "buttons": 0
+        }
+      }
+    ]
+  },
+  {
+    "screen": "tv1080",
+    "rendered": 9,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 0,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "audience",
+        "phase": "cheer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": [],
+          "meter": "Player 2 \u00b7 2 CHEERSPlayer 3 \u00b7 1 CHEER"
+        }
+      },
+      {
+        "kind": "reveal",
+        "phase": "reveal",
+        "metrics": {
+          "overflow": 0,
+          "tv": "BRAIN \u00b7 ROUND 2/3\u2605 ANSWER REVEAL \u2605ROUND 2 RESULTSANSWER: 42WINNERS: Player 1NEXT ROUND IN A MOMENT2 SECONDS REMAINING",
+          "phone": "",
+          "buttons": 0
+        }
+      }
+    ]
+  },
+  {
+    "screen": "phone640",
+    "rendered": 9,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 4,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 3,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "audience",
+        "phase": "cheer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": [
+            "\ud83d\ude4c CHEER Player 2",
+            "\ud83d\ude4c CHEER Player 3"
+          ],
+          "meter": ""
+        }
+      },
+      {
+        "kind": "reveal",
+        "phase": "reveal",
+        "metrics": {
+          "overflow": 0,
+          "tv": "",
+          "phone": "CORRECT ANSWER: 42",
+          "buttons": 0
+        }
+      }
+    ]
+  },
+  {
+    "screen": "phone932",
+    "rendered": 9,
+    "errors": [],
+    "screens": [
+      {
+        "kind": "buzzer",
+        "phase": "buzz",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "buzzer",
+        "phase": "answer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 4,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tug",
+        "phase": "play",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "auction",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 3,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "bid",
+        "phase": "name",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "nerve",
+        "phase": "rising",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "tiebreak",
+        "phase": "guess",
+        "metrics": {
+          "overflow": 0,
+          "buttons": 1,
+          "show": true,
+          "stage": true
+        }
+      },
+      {
+        "kind": "audience",
+        "phase": "cheer",
+        "metrics": {
+          "overflow": 0,
+          "buttons": [
+            "\ud83d\ude4c CHEER Player 2",
+            "\ud83d\ude4c CHEER Player 3"
+          ],
+          "meter": ""
+        }
+      },
+      {
+        "kind": "reveal",
+        "phase": "reveal",
+        "metrics": {
+          "overflow": 0,
+          "tv": "",
+          "phone": "CORRECT ANSWER: 42",
+          "buttons": 0
+        }
+      }
+    ]
+  }
+]

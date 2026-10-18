@@ -1,0 +1,422 @@
+[
+  {
+    "id": "fb-001",
+    "question": "A standard chessboard contains this many squares ___",
+    "answer": "64",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-002",
+    "question": "A traditional dartboard has this many numbered sections ___",
+    "answer": "20",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-003",
+    "question": "The alphabet used in English contains this many letters ___",
+    "answer": "26",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-004",
+    "question": "A football team has this many players on the pitch at kick-off ___",
+    "answer": "11",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-005",
+    "question": "A standard six-sided die has this many numbered faces ___",
+    "answer": "6",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-006",
+    "question": "The planets in our Solar System number ___",
+    "answer": "8",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-007",
+    "question": "An octopus has this many arms ___",
+    "answer": "8",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-008",
+    "question": "The capital city of Scotland is ___",
+    "answer": "Edinburgh",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-009",
+    "question": "The capital city of Wales is ___",
+    "answer": "Cardiff",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-010",
+    "question": "The capital city of Northern Ireland is ___",
+    "answer": "Belfast",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-011",
+    "question": "The first month of the calendar year is ___",
+    "answer": "January",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-012",
+    "question": "The shortest month of the year is ___",
+    "answer": "February",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-013",
+    "question": "The planet known as the Red Planet is ___",
+    "answer": "Mars",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-014",
+    "question": "Earth's natural moon is called the ___",
+    "answer": "Moon",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-015",
+    "question": "The largest planet in the Solar System is ___",
+    "answer": "Jupiter",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-016",
+    "question": "The closest star to Earth is the ___",
+    "answer": "Sun",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-017",
+    "question": "The colour of chlorophyll-rich leaves is usually ___",
+    "answer": "green",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-018",
+    "question": "The chemical symbol for gold is ___",
+    "answer": "Au",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-019",
+    "question": "The chemical formula for water is ___",
+    "answer": "H2O",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-020",
+    "question": "The chemical symbol for oxygen is ___",
+    "answer": "O",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-021",
+    "question": "The human skeleton typically has this many bones in adulthood ___",
+    "answer": "206",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-022",
+    "question": "The longest side of a right triangle is called the ___",
+    "answer": "hypotenuse",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-023",
+    "question": "A triangle has this many sides ___",
+    "answer": "3",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-024",
+    "question": "A square has this many equal sides ___",
+    "answer": "4",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-025",
+    "question": "An ordinary hexagon has this many sides ___",
+    "answer": "6",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-026",
+    "question": "An ordinary octagon has this many sides ___",
+    "answer": "8",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-027",
+    "question": "A full circle contains this many degrees ___",
+    "answer": "360",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-028",
+    "question": "There are this many minutes in an hour ___",
+    "answer": "60",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-029",
+    "question": "There are this many seconds in a minute ___",
+    "answer": "60",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-030",
+    "question": "There are this many hours in a day ___",
+    "answer": "24",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-031",
+    "question": "One dozen means this many items ___",
+    "answer": "12",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-032",
+    "question": "A baker's dozen traditionally contains this many ___",
+    "answer": "13",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-033",
+    "question": "The freezing point of pure water at standard pressure in Celsius is ___",
+    "answer": "0",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-034",
+    "question": "The boiling point of pure water at standard pressure in Celsius is ___",
+    "answer": "100",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-035",
+    "question": "The smallest prime number is ___",
+    "answer": "2",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-036",
+    "question": "The Roman numeral X means ___",
+    "answer": "10",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-037",
+    "question": "The Roman numeral L means ___",
+    "answer": "50",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-038",
+    "question": "The Roman numeral C means ___",
+    "answer": "100",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-039",
+    "question": "A baby frog is commonly called a ___",
+    "answer": "tadpole",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-040",
+    "question": "A baby sheep is called a ___",
+    "answer": "lamb",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-041",
+    "question": "A baby horse is called a ___",
+    "answer": "foal",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-042",
+    "question": "A group of lions is commonly called a ___",
+    "answer": "pride",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-043",
+    "question": "A group of fish is commonly called a ___",
+    "answer": "school",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-044",
+    "question": "Honey is produced by ___",
+    "answer": "bees",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-045",
+    "question": "Silk is famously produced by ___",
+    "answer": "silkworms",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-046",
+    "question": "A whale is a type of ___",
+    "answer": "mammal",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-047",
+    "question": "A penguin is a type of ___",
+    "answer": "bird",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-048",
+    "question": "A dolphin is a type of ___",
+    "answer": "mammal",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-049",
+    "question": "The tallest land animal is the ___",
+    "answer": "giraffe",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-050",
+    "question": "The fastest bird in a hunting dive is the ___",
+    "answer": "peregrine falcon",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-051",
+    "question": "The Great Pyramid of Giza is in ___",
+    "answer": "Egypt",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-052",
+    "question": "The Eiffel Tower stands in ___",
+    "answer": "Paris",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-053",
+    "question": "The Colosseum stands in ___",
+    "answer": "Rome",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-054",
+    "question": "The Statue of Liberty stands in ___",
+    "answer": "New York",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-055",
+    "question": "The River Thames flows through ___",
+    "answer": "London",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-056",
+    "question": "The Leaning Tower is in the Italian city of ___",
+    "answer": "Pisa",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-057",
+    "question": "The continent containing Brazil is ___",
+    "answer": "South America",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-058",
+    "question": "The continent containing Kenya is ___",
+    "answer": "Africa",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-059",
+    "question": "The usual first day of a Monday-to-Friday working week is ___",
+    "answer": "Monday",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-060",
+    "question": "The sport played at Wimbledon is ___",
+    "answer": "tennis",
+    "editorialStatus": "review-pending",
+    "familyFriendly": true
+  }
+]

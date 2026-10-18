@@ -1,0 +1,172 @@
+[
+  {
+    "screen": "tv720",
+    "scenarios": [
+      {
+        "scenario": "normal-roll",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "PLAYER 1 \u00b7 ROLL THE DICE!",
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "directors-cut",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "\ud83c\udfac DIRECTOR\u2019S CUT \u00b7 PICK A LANDING",
+          "routeRings": 3,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "count-flash",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "PLAYER 1 \u00b7 USE YOUR HEAD",
+          "routeRings": 0,
+          "flashItems": 36
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "screen": "tv1080",
+    "scenarios": [
+      {
+        "scenario": "normal-roll",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "PLAYER 1 \u00b7 ROLL THE DICE!",
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "directors-cut",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "\ud83c\udfac DIRECTOR\u2019S CUT \u00b7 PICK A LANDING",
+          "routeRings": 3,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "count-flash",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": null,
+          "tv": "PLAYER 1 \u00b7 USE YOUR HEAD",
+          "routeRings": 0,
+          "flashItems": 36
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "screen": "phone640",
+    "scenarios": [
+      {
+        "scenario": "normal-roll",
+        "data": {
+          "overflow": 0,
+          "buttons": [
+            "\ud83c\udfb2 ROLL DICE",
+            "\ud83c\udfac PLAN A LANDING \u00b7 2 CUES"
+          ],
+          "h": "YOUR TURN!",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "directors-cut",
+        "data": {
+          "overflow": 0,
+          "buttons": [
+            "\u2713 4 STEPS \u00b7 CREATE (FREE)",
+            "\ud83c\udfac 3 STEPS \u00b7 SWAP (\u22121 CUE)",
+            "\ud83c\udfac 5 STEPS \u00b7 TOGETHER (\u22121 CUE)"
+          ],
+          "h": "\ud83c\udfac DIRECTOR\u2019S CUT",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "count-flash",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": "COUNT FLASH \u00b7 1/3",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "screen": "phone932",
+    "scenarios": [
+      {
+        "scenario": "normal-roll",
+        "data": {
+          "overflow": 0,
+          "buttons": [
+            "\ud83c\udfb2 ROLL DICE",
+            "\ud83c\udfac PLAN A LANDING \u00b7 2 CUES"
+          ],
+          "h": "YOUR TURN!",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "directors-cut",
+        "data": {
+          "overflow": 0,
+          "buttons": [
+            "\u2713 4 STEPS \u00b7 CREATE (FREE)",
+            "\ud83c\udfac 3 STEPS \u00b7 SWAP (\u22121 CUE)",
+            "\ud83c\udfac 5 STEPS \u00b7 TOGETHER (\u22121 CUE)"
+          ],
+          "h": "\ud83c\udfac DIRECTOR\u2019S CUT",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      },
+      {
+        "scenario": "count-flash",
+        "data": {
+          "overflow": 0,
+          "buttons": [],
+          "h": "COUNT FLASH \u00b7 1/3",
+          "tv": null,
+          "routeRings": 0,
+          "flashItems": 0
+        }
+      }
+    ],
+    "errors": []
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "id": "bid-01",
+    "prompt": "Name months of the year",
+    "answers": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  {
+    "id": "bid-02",
+    "prompt": "Name days of the week",
+    "answers": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ]
+  },
+  {
+    "id": "bid-03",
+    "prompt": "Name the four UK constituent countries",
+    "answers": [
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland"
+    ]
+  },
+  {
+    "id": "bid-04",
+    "prompt": "Name the four capital cities of the UK constituent countries",
+    "answers": [
+      "London",
+      "Edinburgh",
+      "Cardiff",
+      "Belfast"
+    ]
+  },
+  {
+    "id": "bid-05",
+    "prompt": "Name the eight planets in our Solar System",
+    "answers": [
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune"
+    ]
+  },
+  {
+    "id": "bid-06",
+    "prompt": "Name the five oceans",
+    "answers": [
+      "Pacific Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Southern Ocean",
+      "Arctic Ocean"
+    ]
+  },
+  {
+    "id": "bid-07",
+    "prompt": "Name the seven continents",
+    "answers": [
+      "Africa",
+      "Antarctica",
+      "Asia",
+      "Europe",
+      "North America",
+      "South America",
+      "Australia"
+    ]
+  },
+  {
+    "id": "bid-08",
+    "prompt": "Name the four cardinal compass directions",
+    "answers": [
+      "North",
+      "East",
+      "South",
+      "West"
+    ]
+  },
+  {
+    "id": "bid-09",
+    "prompt": "Name the eight main compass directions",
+    "answers": [
+      "North",
+      "North East",
+      "East",
+      "South East",
+      "South",
+      "South West",
+      "West",
+      "North West"
+    ]
+  },
+  {
+    "id": "bid-10",
+    "prompt": "Name the five senses traditionally taught at school",
+    "answers": [
+      "Sight",
+      "Hearing",
+      "Smell",
+      "Taste",
+      "Touch"
+    ]
+  },
+  {
+    "id": "bid-11",
+    "prompt": "Name six letters in the word GUITAR",
+    "answers": [
+      "G",
+      "U",
+      "I",
+      "T",
+      "A",
+      "R"
+    ]
+  },
+  {
+    "id": "bid-12",
+    "prompt": "Name the seven letters used for musical notes",
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ]
+  },
+  {
+    "id": "bid-13",
+    "prompt": "Name the four suits in a standard deck of cards",
+    "answers": [
+      "Hearts",
+      "Diamonds",
+      "Clubs",
+      "Spades"
+    ]
+  },
+  {
+    "id": "bid-14",
+    "prompt": "Name six faces of a standard numbered die",
+    "answers": [
+      "One",
+      "Two",
+      "Three",
+      "Four",
+      "Five",
+      "Six"
+    ]
+  },
+  {
+    "id": "bid-15",
+    "prompt": "Name the five Olympic rings colours",
+    "answers": [
+      "Blue",
+      "Yellow",
+      "Black",
+      "Green",
+      "Red"
+    ]
+  },
+  {
+    "id": "bid-16",
+    "prompt": "Name the six letters in the word NOGGIN, without repeats",
+    "answers": [
+      "N",
+      "O",
+      "G",
+      "I"
+    ]
+  },
+  {
+    "id": "bid-17",
+    "prompt": "Name the four seasons",
+    "answers": [
+      "Spring",
+      "Summer",
+      "Autumn",
+      "Winter"
+    ]
+  },
+  {
+    "id": "bid-18",
+    "prompt": "Name the twelve Chinese zodiac animals",
+    "answers": [
+      "Rat",
+      "Ox",
+      "Tiger",
+      "Rabbit",
+      "Dragon",
+      "Snake",
+      "Horse",
+      "Goat",
+      "Monkey",
+      "Rooster",
+      "Dog",
+      "Pig"
+    ]
+  },
+  {
+    "id": "bid-19",
+    "prompt": "Name the eight main moon phases",
+    "answers": [
+      "New Moon",
+      "Waxing Crescent",
+      "First Quarter",
+      "Waxing Gibbous",
+      "Full Moon",
+      "Waning Gibbous",
+      "Last Quarter",
+      "Waning Crescent"
+    ]
+  },
+  {
+    "id": "bid-20",
+    "prompt": "Name the five vowels in English",
+    "answers": [
+      "A",
+      "E",
+      "I",
+      "O",
+      "U"
+    ]
+  },
+  {
+    "id": "bid-21",
+    "prompt": "Name the first ten positive integers (use digits)",
+    "answers": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ]
+  },
+  {
+    "id": "bid-22",
+    "prompt": "Name even positive numbers below 20 (use digits)",
+    "answers": [
+      "2",
+      "4",
+      "6",
+      "8",
+      "10",
+      "12",
+      "14",
+      "16",
+      "18"
+    ]
+  },
+  {
+    "id": "bid-23",
+    "prompt": "Name odd positive numbers below 20 (use digits)",
+    "answers": [
+      "1",
+      "3",
+      "5",
+      "7",
+      "9",
+      "11",
+      "13",
+      "15",
+      "17",
+      "19"
+    ]
+  },
+  {
+    "id": "bid-24",
+    "prompt": "Name prime numbers below 20 (use digits)",
+    "answers": [
+      "2",
+      "3",
+      "5",
+      "7",
+      "11",
+      "13",
+      "17",
+      "19"
+    ]
+  },
+  {
+    "id": "bid-25",
+    "prompt": "Name the square numbers from 1 to 100 (use digits)",
+    "answers": [
+      "1",
+      "4",
+      "9",
+      "16",
+      "25",
+      "36",
+      "49",
+      "64",
+      "81",
+      "100"
+    ]
+  },
+  {
+    "id": "bid-26",
+    "prompt": "Name common chess pieces",
+    "answers": [
+      "King",
+      "Queen",
+      "Rook",
+      "Bishop",
+      "Knight",
+      "Pawn"
+    ]
+  },
+  {
+    "id": "bid-27",
+    "prompt": "Name the first seven letters of the English alphabet",
+    "answers": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ]
+  },
+  {
+    "id": "bid-28",
+    "prompt": "Name the first four months of the year",
+    "answers": [
+      "January",
+      "February",
+      "March",
+      "April"
+    ]
+  },
+  {
+    "id": "bid-29",
+    "prompt": "Name the last four months of the year",
+    "answers": [
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  {
+    "id": "bid-30",
+    "prompt": "Name the first four even positive integers",
+    "answers": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ]
+  },
+  {
+    "id": "bid-31",
+    "prompt": "Name the four smallest non-negative whole numbers",
+    "answers": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  {
+    "id": "bid-32",
+    "prompt": "Name the four Beatles",
+    "answers": [
+      "John Lennon",
+      "Paul McCartney",
+      "George Harrison",
+      "Ringo Starr"
+    ]
+  },
+  {
+    "id": "bid-33",
+    "prompt": "Name the six official UN languages",
+    "answers": [
+      "Arabic",
+      "Chinese",
+      "English",
+      "French",
+      "Russian",
+      "Spanish"
+    ]
+  },
+  {
+    "id": "bid-34",
+    "prompt": "Name the first eight chemical elements",
+    "answers": [
+      "Hydrogen",
+      "Helium",
+      "Lithium",
+      "Beryllium",
+      "Boron",
+      "Carbon",
+      "Nitrogen",
+      "Oxygen"
+    ]
+  },
+  {
+    "id": "bid-35",
+    "prompt": "Name the five inner Solar System bodies from Mercury through Jupiter",
+    "answers": [
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter"
+    ]
+  },
+  {
+    "id": "bid-36",
+    "prompt": "Name the seven colours of the rainbow",
+    "answers": [
+      "Red",
+      "Orange",
+      "Yellow",
+      "Green",
+      "Blue",
+      "Indigo",
+      "Violet"
+    ]
+  },
+  {
+    "id": "bid-37",
+    "prompt": "Name the four basic arithmetic operations",
+    "answers": [
+      "Addition",
+      "Subtraction",
+      "Multiplication",
+      "Division"
+    ]
+  },
+  {
+    "id": "bid-38",
+    "prompt": "Name the seven SI base units",
+    "answers": [
+      "Metre",
+      "Kilogram",
+      "Second",
+      "Ampere",
+      "Kelvin",
+      "Mole",
+      "Candela"
+    ]
+  },
+  {
+    "id": "bid-39",
+    "prompt": "Name the first eight multiples of three",
+    "answers": [
+      "3",
+      "6",
+      "9",
+      "12",
+      "15",
+      "18",
+      "21",
+      "24"
+    ]
+  },
+  {
+    "id": "bid-40",
+    "prompt": "Name the five fingers of one hand",
+    "answers": [
+      "Thumb",
+      "Index",
+      "Middle",
+      "Ring",
+      "Little"
+    ]
+  }
+]

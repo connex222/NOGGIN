@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "slug": "judge",
+    "name": "The Judge",
+    "think": "/avatars/thumbs/av-01-judge-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-01-judge-think.webp",
+      "win": "/avatars/thumbs/av-01-judge-win.webp",
+      "lose": "/avatars/thumbs/av-01-judge-lose.webp"
+    },
+    "banter": {
+      "win": "The evidence was overwhelming.",
+      "lose": "I object to the entire evening."
+    }
+  },
+  {
+    "id": 2,
+    "slug": "nun",
+    "name": "Sister Checkmate",
+    "think": "/avatars/thumbs/av-02-nun-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-02-nun-think.webp",
+      "win": "/avatars/thumbs/av-02-nun-win.webp",
+      "lose": "/avatars/thumbs/av-02-nun-lose.webp"
+    },
+    "banter": {
+      "win": "Checkmate. As expected.",
+      "lose": "Even saints have off days."
+    }
+  },
+  {
+    "id": 3,
+    "slug": "surgeon",
+    "name": "Dr Steady",
+    "think": "/avatars/thumbs/av-03-surgeon-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-03-surgeon-think.webp",
+      "win": "/avatars/thumbs/av-03-surgeon-win.webp",
+      "lose": "/avatars/thumbs/av-03-surgeon-lose.webp"
+    },
+    "banter": {
+      "win": "Another successful operation!",
+      "lose": "I need a second opinion."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "captain",
+    "name": "The Captain",
+    "think": "/avatars/thumbs/av-04-captain-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-04-captain-think.webp",
+      "win": "/avatars/thumbs/av-04-captain-win.webp",
+      "lose": "/avatars/thumbs/av-04-captain-lose.webp"
+    },
+    "banter": {
+      "win": "Full steam ahead to victory!",
+      "lose": "This compass is clearly defective."
+    }
+  },
+  {
+    "id": 5,
+    "slug": "professor",
+    "name": "Professor Orbit",
+    "think": "/avatars/thumbs/av-05-professor-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-05-professor-think.webp",
+      "win": "/avatars/thumbs/av-05-professor-win.webp",
+      "lose": "/avatars/thumbs/av-05-professor-lose.webp"
+    },
+    "banter": {
+      "win": "The universe agrees with me.",
+      "lose": "I may have misplaced a galaxy."
+    }
+  },
+  {
+    "id": 6,
+    "slug": "inspector",
+    "name": "Inspector Grey",
+    "think": "/avatars/thumbs/av-06-inspector-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-06-inspector-think.webp",
+      "win": "/avatars/thumbs/av-06-inspector-win.webp",
+      "lose": "/avatars/thumbs/av-06-inspector-lose.webp"
+    },
+    "banter": {
+      "win": "Case closed.",
+      "lose": "I have no further clues."
+    }
+  },
+  {
+    "id": 7,
+    "slug": "pigeon",
+    "name": "Sir Reginald Pigeon",
+    "think": "/avatars/thumbs/av-07-pigeon-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-07-pigeon-think.webp",
+      "win": "/avatars/thumbs/av-07-pigeon-win.webp",
+      "lose": "/avatars/thumbs/av-07-pigeon-lose.webp"
+    },
+    "banter": {
+      "win": "Naturally, the best bird wins.",
+      "lose": "I shall write to the authorities."
+    }
+  },
+  {
+    "id": 8,
+    "slug": "nan",
+    "name": "Turbo Nan",
+    "think": "/avatars/thumbs/av-08-nan-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-08-nan-think.webp",
+      "win": "/avatars/thumbs/av-08-nan-win.webp",
+      "lose": "/avatars/thumbs/av-08-nan-lose.webp"
+    },
+    "banter": {
+      "win": "Still got it, pet!",
+      "lose": "Put the kettle on. I’m finished."
+    }
+  },
+  {
+    "id": 9,
+    "slug": "ghost",
+    "name": "Gloom",
+    "think": "/avatars/thumbs/av-09-ghost-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-09-ghost-think.webp",
+      "win": "/avatars/thumbs/av-09-ghost-win.webp",
+      "lose": "/avatars/thumbs/av-09-ghost-lose.webp"
+    },
+    "banter": {
+      "win": "Oh no. I’m happy.",
+      "lose": "I knew happiness was temporary."
+    }
+  },
+  {
+    "id": 10,
+    "slug": "kettlebot",
+    "name": "Kettlebot",
+    "think": "/avatars/thumbs/av-10-kettlebot-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-10-kettlebot-think.webp",
+      "win": "/avatars/thumbs/av-10-kettlebot-win.webp",
+      "lose": "/avatars/thumbs/av-10-kettlebot-lose.webp"
+    },
+    "banter": {
+      "win": "I’m positively steaming!",
+      "lose": "My circuit needs a cuppa."
+    }
+  },
+  {
+    "id": 11,
+    "slug": "goat",
+    "name": "Kevin the Goat",
+    "think": "/avatars/thumbs/av-11-goat-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-11-goat-think.webp",
+      "win": "/avatars/thumbs/av-11-goat-win.webp",
+      "lose": "/avatars/thumbs/av-11-goat-lose.webp"
+    },
+    "banter": {
+      "win": "GOAAAAAT!",
+      "lose": "That ball came from nowhere!"
+    }
+  },
+  {
+    "id": 12,
+    "slug": "sausage",
+    "name": "Big Banger",
+    "think": "/avatars/thumbs/av-12-sausage-think.webp",
+    "images": {
+      "think": "/avatars/thumbs/av-12-sausage-think.webp",
+      "win": "/avatars/thumbs/av-12-sausage-win.webp",
+      "lose": "/avatars/thumbs/av-12-sausage-lose.webp"
+    },
+    "banter": {
+      "win": "Born to roll. Built to win.",
+      "lose": "I’ve crumbled under pressure."
+    }
+  }
+]

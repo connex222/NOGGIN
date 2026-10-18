@@ -1,0 +1,17 @@
+# Render Blueprint — SINGLE service only. Free plan is suitable for testing,
+# not guaranteed uptime or durable match state. See INSTALL.md.
+services:
+  - type: web
+    name: noggin
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev --no-audit --no-fund
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: '22'
+      - key: TRUST_PROXY
+        value: '1'

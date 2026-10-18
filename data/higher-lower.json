@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "element-001",
+    "label": "Hydrogen: atomic number",
+    "value": 1,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-002",
+    "label": "Helium: atomic number",
+    "value": 2,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-003",
+    "label": "Lithium: atomic number",
+    "value": 3,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-004",
+    "label": "Beryllium: atomic number",
+    "value": 4,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-005",
+    "label": "Boron: atomic number",
+    "value": 5,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-006",
+    "label": "Carbon: atomic number",
+    "value": 6,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-007",
+    "label": "Nitrogen: atomic number",
+    "value": 7,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-008",
+    "label": "Oxygen: atomic number",
+    "value": 8,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-009",
+    "label": "Fluorine: atomic number",
+    "value": 9,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-010",
+    "label": "Neon: atomic number",
+    "value": 10,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-011",
+    "label": "Sodium: atomic number",
+    "value": 11,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-012",
+    "label": "Magnesium: atomic number",
+    "value": 12,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-013",
+    "label": "Aluminium: atomic number",
+    "value": 13,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-014",
+    "label": "Silicon: atomic number",
+    "value": 14,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-015",
+    "label": "Phosphorus: atomic number",
+    "value": 15,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-016",
+    "label": "Sulfur: atomic number",
+    "value": 16,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-017",
+    "label": "Chlorine: atomic number",
+    "value": 17,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-018",
+    "label": "Argon: atomic number",
+    "value": 18,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-019",
+    "label": "Potassium: atomic number",
+    "value": 19,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-020",
+    "label": "Calcium: atomic number",
+    "value": 20,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-021",
+    "label": "Scandium: atomic number",
+    "value": 21,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-022",
+    "label": "Titanium: atomic number",
+    "value": 22,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-023",
+    "label": "Vanadium: atomic number",
+    "value": 23,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-024",
+    "label": "Chromium: atomic number",
+    "value": 24,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-025",
+    "label": "Manganese: atomic number",
+    "value": 25,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-026",
+    "label": "Iron: atomic number",
+    "value": 26,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-027",
+    "label": "Cobalt: atomic number",
+    "value": 27,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-028",
+    "label": "Nickel: atomic number",
+    "value": 28,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-029",
+    "label": "Copper: atomic number",
+    "value": 29,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-030",
+    "label": "Zinc: atomic number",
+    "value": 30,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-031",
+    "label": "Gallium: atomic number",
+    "value": 31,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-032",
+    "label": "Germanium: atomic number",
+    "value": 32,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-033",
+    "label": "Arsenic: atomic number",
+    "value": 33,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-034",
+    "label": "Selenium: atomic number",
+    "value": 34,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-035",
+    "label": "Bromine: atomic number",
+    "value": 35,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-036",
+    "label": "Krypton: atomic number",
+    "value": 36,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-037",
+    "label": "Rubidium: atomic number",
+    "value": 37,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-038",
+    "label": "Strontium: atomic number",
+    "value": 38,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-039",
+    "label": "Yttrium: atomic number",
+    "value": 39,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-040",
+    "label": "Zirconium: atomic number",
+    "value": 40,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-041",
+    "label": "Niobium: atomic number",
+    "value": 41,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-042",
+    "label": "Molybdenum: atomic number",
+    "value": 42,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-043",
+    "label": "Technetium: atomic number",
+    "value": 43,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-044",
+    "label": "Ruthenium: atomic number",
+    "value": 44,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-045",
+    "label": "Rhodium: atomic number",
+    "value": 45,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-046",
+    "label": "Palladium: atomic number",
+    "value": 46,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-047",
+    "label": "Silver: atomic number",
+    "value": 47,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-048",
+    "label": "Cadmium: atomic number",
+    "value": 48,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-049",
+    "label": "Indium: atomic number",
+    "value": 49,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-050",
+    "label": "Tin: atomic number",
+    "value": 50,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-051",
+    "label": "Antimony: atomic number",
+    "value": 51,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-052",
+    "label": "Tellurium: atomic number",
+    "value": 52,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-053",
+    "label": "Iodine: atomic number",
+    "value": 53,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-054",
+    "label": "Xenon: atomic number",
+    "value": 54,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-055",
+    "label": "Caesium: atomic number",
+    "value": 55,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-056",
+    "label": "Barium: atomic number",
+    "value": 56,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-057",
+    "label": "Lanthanum: atomic number",
+    "value": 57,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-058",
+    "label": "Cerium: atomic number",
+    "value": 58,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-059",
+    "label": "Praseodymium: atomic number",
+    "value": 59,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-060",
+    "label": "Neodymium: atomic number",
+    "value": 60,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-061",
+    "label": "Promethium: atomic number",
+    "value": 61,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-062",
+    "label": "Samarium: atomic number",
+    "value": 62,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-063",
+    "label": "Europium: atomic number",
+    "value": 63,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-064",
+    "label": "Gadolinium: atomic number",
+    "value": 64,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-065",
+    "label": "Terbium: atomic number",
+    "value": 65,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-066",
+    "label": "Dysprosium: atomic number",
+    "value": 66,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-067",
+    "label": "Holmium: atomic number",
+    "value": 67,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-068",
+    "label": "Erbium: atomic number",
+    "value": 68,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-069",
+    "label": "Thulium: atomic number",
+    "value": 69,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-070",
+    "label": "Ytterbium: atomic number",
+    "value": 70,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-071",
+    "label": "Lutetium: atomic number",
+    "value": 71,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-072",
+    "label": "Hafnium: atomic number",
+    "value": 72,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-073",
+    "label": "Tantalum: atomic number",
+    "value": 73,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-074",
+    "label": "Tungsten: atomic number",
+    "value": 74,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-075",
+    "label": "Rhenium: atomic number",
+    "value": 75,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-076",
+    "label": "Osmium: atomic number",
+    "value": 76,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-077",
+    "label": "Iridium: atomic number",
+    "value": 77,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-078",
+    "label": "Platinum: atomic number",
+    "value": 78,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-079",
+    "label": "Gold: atomic number",
+    "value": 79,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-080",
+    "label": "Mercury: atomic number",
+    "value": 80,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-081",
+    "label": "Thallium: atomic number",
+    "value": 81,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-082",
+    "label": "Lead: atomic number",
+    "value": 82,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-083",
+    "label": "Bismuth: atomic number",
+    "value": 83,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-084",
+    "label": "Polonium: atomic number",
+    "value": 84,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-085",
+    "label": "Astatine: atomic number",
+    "value": 85,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-086",
+    "label": "Radon: atomic number",
+    "value": 86,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-087",
+    "label": "Francium: atomic number",
+    "value": 87,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-088",
+    "label": "Radium: atomic number",
+    "value": 88,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-089",
+    "label": "Actinium: atomic number",
+    "value": 89,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-090",
+    "label": "Thorium: atomic number",
+    "value": 90,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-091",
+    "label": "Protactinium: atomic number",
+    "value": 91,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "element-092",
+    "label": "Uranium: atomic number",
+    "value": 92,
+    "unit": "",
+    "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
+    "verified": "derived-from-reference"
+  },
+  {
+    "id": "unit-1",
+    "label": "Pence in a pound",
+    "value": 100,
+    "unit": "pence",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-2",
+    "label": "Minutes in an hour",
+    "value": 60,
+    "unit": "minutes",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-3",
+    "label": "Seconds in a minute",
+    "value": 60,
+    "unit": "seconds",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-4",
+    "label": "Hours in a day",
+    "value": 24,
+    "unit": "hours",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-5",
+    "label": "Days in a week",
+    "value": 7,
+    "unit": "days",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-6",
+    "label": "Months in a year",
+    "value": 12,
+    "unit": "months",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-7",
+    "label": "Millimetres in a centimetre",
+    "value": 10,
+    "unit": "mm",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-8",
+    "label": "Centimetres in a metre",
+    "value": 100,
+    "unit": "cm",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-9",
+    "label": "Metres in a kilometre",
+    "value": 1000,
+    "unit": "m",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-10",
+    "label": "Grams in a kilogram",
+    "value": 1000,
+    "unit": "g",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-11",
+    "label": "Millilitres in a litre",
+    "value": 1000,
+    "unit": "ml",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-12",
+    "label": "Inches in a foot",
+    "value": 12,
+    "unit": "inches",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-13",
+    "label": "Feet in a yard",
+    "value": 3,
+    "unit": "feet",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-14",
+    "label": "Ounces in a pound (avoirdupois)",
+    "value": 16,
+    "unit": "ounces",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-15",
+    "label": "Cards in a standard deck without jokers",
+    "value": 52,
+    "unit": "cards",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-16",
+    "label": "Sides on a regular octagon",
+    "value": 8,
+    "unit": "sides",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-17",
+    "label": "Degrees in a right angle",
+    "value": 90,
+    "unit": "degrees",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-18",
+    "label": "Degrees in a full turn",
+    "value": 360,
+    "unit": "degrees",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-19",
+    "label": "Players in a football team on the pitch",
+    "value": 11,
+    "unit": "players",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-20",
+    "label": "Balls in a standard snooker set including cue ball",
+    "value": 22,
+    "unit": "balls",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-21",
+    "label": "Squares on a chessboard",
+    "value": 64,
+    "unit": "squares",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-22",
+    "label": "Pawns at the start of a chess game",
+    "value": 16,
+    "unit": "pawns",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-23",
+    "label": "Keys in a standard piano",
+    "value": 88,
+    "unit": "keys",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "unit-24",
+    "label": "Spots on a standard six-sided die, all faces combined",
+    "value": 21,
+    "unit": "spots",
+    "source": "Fixed unit definition or standard game equipment",
+    "verified": "definition"
+  },
+  {
+    "id": "duration-1",
+    "label": "Minutes in 2 hours",
+    "value": 120,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-2",
+    "label": "Minutes in 3 hours",
+    "value": 180,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-3",
+    "label": "Minutes in 4 hours",
+    "value": 240,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-4",
+    "label": "Minutes in 5 hours",
+    "value": 300,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-5",
+    "label": "Minutes in 6 hours",
+    "value": 360,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-6",
+    "label": "Minutes in 7 hours",
+    "value": 420,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-7",
+    "label": "Minutes in 8 hours",
+    "value": 480,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-8",
+    "label": "Minutes in 9 hours",
+    "value": 540,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-9",
+    "label": "Minutes in 10 hours",
+    "value": 600,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-10",
+    "label": "Minutes in 12 hours",
+    "value": 720,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-11",
+    "label": "Minutes in 15 hours",
+    "value": 900,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-12",
+    "label": "Minutes in 18 hours",
+    "value": 1080,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-13",
+    "label": "Minutes in 20 hours",
+    "value": 1200,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-14",
+    "label": "Minutes in 24 hours",
+    "value": 1440,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-15",
+    "label": "Minutes in 30 hours",
+    "value": 1800,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-16",
+    "label": "Minutes in 36 hours",
+    "value": 2160,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-17",
+    "label": "Minutes in 40 hours",
+    "value": 2400,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-18",
+    "label": "Minutes in 48 hours",
+    "value": 2880,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-19",
+    "label": "Minutes in 50 hours",
+    "value": 3000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-20",
+    "label": "Minutes in 60 hours",
+    "value": 3600,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-21",
+    "label": "Minutes in 72 hours",
+    "value": 4320,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-22",
+    "label": "Minutes in 90 hours",
+    "value": 5400,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-23",
+    "label": "Minutes in 100 hours",
+    "value": 6000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-24",
+    "label": "Minutes in 120 hours",
+    "value": 7200,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-25",
+    "label": "Minutes in 150 hours",
+    "value": 9000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-26",
+    "label": "Minutes in 180 hours",
+    "value": 10800,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-27",
+    "label": "Minutes in 200 hours",
+    "value": 12000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-28",
+    "label": "Minutes in 240 hours",
+    "value": 14400,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-29",
+    "label": "Minutes in 300 hours",
+    "value": 18000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-30",
+    "label": "Minutes in 360 hours",
+    "value": 21600,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-31",
+    "label": "Minutes in 420 hours",
+    "value": 25200,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-32",
+    "label": "Minutes in 480 hours",
+    "value": 28800,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-33",
+    "label": "Minutes in 540 hours",
+    "value": 32400,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  },
+  {
+    "id": "duration-34",
+    "label": "Minutes in 600 hours",
+    "value": 36000,
+    "unit": "minutes",
+    "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
+    "verified": "calculated"
+  }
+]

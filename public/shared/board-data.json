@@ -1,0 +1,254 @@
+[
+  {
+    "index": 0,
+    "type": "start",
+    "color": "#fff",
+    "icon": "⌂",
+    "label": "Start"
+  },
+  {
+    "index": 1,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 2,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 3,
+    "type": "swap",
+    "color": "#be95ff",
+    "icon": "⇄",
+    "label": "Swap Seats"
+  },
+  {
+    "index": 4,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 5,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 6,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 7,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Showdown"
+  },
+  {
+    "index": 8,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 9,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 10,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 11,
+    "type": "lift",
+    "color": "#72f2ec",
+    "icon": "⇧",
+    "label": "Stage Lift"
+  },
+  {
+    "index": 12,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 13,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 14,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 15,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Showdown"
+  },
+  {
+    "index": 16,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 17,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 18,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 19,
+    "type": "wildcard",
+    "color": "#ff9ed9",
+    "icon": "✳",
+    "label": "Wildcard"
+  },
+  {
+    "index": 20,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 21,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 22,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Showdown"
+  },
+  {
+    "index": 23,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 24,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 25,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 26,
+    "type": "lift",
+    "color": "#72f2ec",
+    "icon": "⇧",
+    "label": "Stage Lift"
+  },
+  {
+    "index": 27,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 28,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 29,
+    "type": "drain",
+    "color": "#98a1bc",
+    "icon": "−",
+    "label": "Brain Drain"
+  },
+  {
+    "index": 30,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Showdown"
+  },
+  {
+    "index": 31,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
+    "index": 32,
+    "type": "together",
+    "color": "#9de97c",
+    "icon": "✚",
+    "label": "Together"
+  },
+  {
+    "index": 33,
+    "type": "swap",
+    "color": "#be95ff",
+    "icon": "⇄",
+    "label": "Swap Seats"
+  },
+  {
+    "index": 34,
+    "type": "create",
+    "color": "#ffe477",
+    "icon": "✎",
+    "label": "Create"
+  },
+  {
+    "index": 35,
+    "type": "pickpocket",
+    "color": "#adb8cb",
+    "icon": "◈",
+    "label": "Pickpocket"
+  }
+]

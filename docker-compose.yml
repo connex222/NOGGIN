@@ -1,0 +1,38 @@
+# Oracle Linux/Ubuntu VM — one NOGGIN backend, one HTTPS reverse proxy.
+services:
+  noggin:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      TRUST_PROXY: '1'
+      NOGGIN_PUBLIC_URL: https://${NOGGIN_DOMAIN:?Set NOGGIN_DOMAIN in .env}
+      NOGGIN_STATE_FILE: /data/rooms.json
+    volumes:
+      - noggin_state:/data
+    expose:
+      - '3000'
+    healthcheck:
+      test: ['CMD','node','-e',"fetch('http://127.0.0.1:3000/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      NOGGIN_DOMAIN: ${NOGGIN_DOMAIN:?Set NOGGIN_DOMAIN in .env}
+    volumes:
+      - ./deploy/oracle/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - noggin
+volumes:
+  noggin_state:
+  caddy_data:
+  caddy_config:

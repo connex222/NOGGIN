@@ -1,0 +1,98 @@
+body{font-size:18px;min-height:100svh;display:flex;flex-direction:column;padding:0;overflow-x:hidden}
+.phone-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;background:rgba(14,20,48,.92);border-bottom:2px solid #30416e}
+.phone-top h1{font-size:39px;letter-spacing:-.07em;line-height:1;color:var(--yellow);margin:0;font-weight:700}
+.phone-top h1 span{color:var(--pink)}
+.phone-top .pill{font-size:11px;padding:7px;gap:7px}
+.phone-top .dot{width:8px;height:8px}
+.phone-shell{flex:1;max-width:650px;width:100%;margin:auto;padding:22px 18px 38px}
+.welcome{margin-bottom:22px}
+.welcome h2{font-size:clamp(30px,7.6vw,43px);line-height:1.1;letter-spacing:-.04em;margin:8px 0 12px;color:#ffe08f}
+.welcome p{color:var(--muted);margin:0}
+.join-form{display:flex;flex-direction:column;gap:12px}
+.join-form>label{font-size:15px;letter-spacing:.1em;font-weight:700;color:var(--blue);margin-top:4px}
+.join-form>h3{font-size:21px;margin:14px 0 0}
+#code{font-size:30px;letter-spacing:.35em;text-transform:uppercase;text-align:center;font-weight:700}
+.field-hint{font-size:16px;color:#d1deef}
+.avatar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.avatar-choice{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;padding:8px 5px;border:3px solid #5269a2;background:#25325d;border-radius:17px;min-height:165px;font-size:18px;font-weight:700;color:var(--white);line-height:1.15;position:relative}
+.avatar-choice img{height:112px;width:100%;object-fit:contain;filter:drop-shadow(0 4px 6px #111637)}
+.avatar-choice.selected{border-color:var(--yellow);background:linear-gradient(140deg,#49416f,#293963);box-shadow:0 0 0 2px #ffe596}
+.avatar-choice.taken{filter:grayscale(1);opacity:.43}
+.avatar-choice .taken-tag{background:var(--white);color:var(--ink);font-size:12px;border-radius:7px;padding:3px 5px;position:absolute;top:9px;right:6px}
+.join-button{width:100%;margin-top:9px;min-height:66px;font-size:20px}
+.leave-button{width:100%;margin-top:30px;background:#50274b;color:#fff}
+.player-hero{display:flex;align-items:center;padding:14px;gap:16px;margin:20px 0}
+.player-hero img{height:140px;max-width:45%;object-fit:contain}
+.player-hero h3{font-size:23px;margin:4px 0}
+.sparks{color:var(--yellow);font-size:22px;font-weight:700}
+.centre{text-align:center}
+#swapPanel{margin-top:18px}
+#swapPanel p{font-size:18px;color:var(--muted)}
+#error,#notice{margin-top:14px}
+.phone-footer{font-size:12px;letter-spacing:.08em;color:var(--muted);text-align:center;padding:20px 8px}
+@media(min-width:500px){.avatar-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.phone-shell{padding:30px}}
+/* Phone legibility: ordinary text never falls below 18px. */
+.phone-shell .eyebrow,.join-form>label,.field-hint,.phone-footer,.phone-top .pill,.avatar-choice .taken-tag{font-size:18px}
+.phone-footer{line-height:1.5}
+/* Phase 2 phone controller */
+.game-player{padding:10px 14px;display:flex;align-items:center;gap:14px;margin-bottom:15px}.game-player img{width:112px;height:112px;object-fit:contain}.game-player h2{font-size:24px;margin:3px 0}.game-player .eyebrow{margin:0}
+.game-action{padding:20px 16px;min-height:280px}.game-action h2{font-size:clamp(26px,7vw,37px);color:var(--yellow);margin:6px 0 12px;line-height:1.15}.game-action>p{font-size:18px}.game-countdown{font-size:28px!important;font-weight:900;color:var(--blue);text-align:center;min-height:38px}
+.game-buttons{display:flex;flex-direction:column;gap:14px;margin-top:18px}.game-buttons button{min-height:68px;font-size:22px}.game-buttons .small{font-size:18px;min-height:61px}.game-help{font-size:18px;color:var(--muted);margin-top:17px}.game-buttons .already-answered{background:#293a55;border:2px solid #90acb6;padding:14px;text-align:center;border-radius:12px;font-weight:700}
+body.game-mode .phone-shell{padding:12px 14px 16px}
+body.game-mode .phone-footer{display:none}
+body.game-mode .game-help{display:none}
+body.game-mode .game-player{margin-bottom:10px}
+body.game-mode .game-action{min-height:0}
+body.game-mode .game-buttons{gap:8px;margin-top:8px}
+body.game-mode .game-buttons button{min-height:59px}
+@media(max-height:740px){
+ body.game-mode .phone-top{padding:7px 13px}
+ body.game-mode .phone-top h1{font-size:32px}
+ body.game-mode .game-player{padding:7px 9px;gap:10px}
+ body.game-mode .game-player img{width:64px;height:64px}
+ body.game-mode .game-player h2{font-size:21px;margin:0}
+ body.game-mode .game-player .sparks{font-size:19px}
+ body.game-mode .game-player .eyebrow{font-size:14px}
+ body.game-mode .game-action{padding:12px}
+ body.game-mode .game-action h2{font-size:25px;margin:4px 0 6px}
+ body.game-mode .game-action>p{margin:3px 0}
+ body.game-mode .game-action .game-countdown{font-size:23px!important;min-height:31px;margin:8px 0}
+ body.game-mode .game-buttons button{min-height:56px;font-size:20px}
+ body.game-mode #notice{display:none!important}
+}
+
+/* Directors Cut: clear opt-in tactical choice; never use colour alone. */
+.button-director{background:linear-gradient(135deg,#693e9e,#3c4c95);border:3px solid #ebbbff;color:#fff;font-weight:850;box-shadow:0 4px 0 #1f204b;}
+button.button-director:focus-visible{outline:4px solid #fff;outline-offset:2px;}
+/* Phase 3 interactive mini-games */
+.mini-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin-top:8px}
+.mini-grid-button{min-height:47px!important;padding:0!important;font-size:23px!important;border-radius:8px;background:#304b81;color:#fff;border:2px solid #a4bfec}
+.memory-pads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+.memory-pad{min-height:75px!important;font-size:35px!important;color:#101830!important;border:3px solid #fff!important}
+.pad-0{background:#ff7a91}.pad-1{background:#ffe179}.pad-2{background:#72c8fd}.pad-3{background:#a1f197}.pad-4{background:#cf9cfd}.pad-5{background:#ffb57c}
+.stroop-word{font-weight:900;font-size:clamp(42px,12vw,72px);text-align:center;letter-spacing:.08em;text-shadow:0 2px 4px #111b3f}
+.mini-answer{display:flex;flex-direction:column;gap:12px}.mini-answer input{width:100%;min-height:66px;font-size:26px;padding:12px;color:#152443;background:#fff;border:3px solid #7caddd;border-radius:13px}
+.mini-answer button{min-height:65px}.mini-help{font-size:18px;font-weight:700;color:#ffe9b2}
+
+/* During dense 6×6 rounds the scoring portrait yields space to the tap grid. */
+body.mini-mode .mini-grid{display:grid;grid-template-columns:repeat(6,minmax(56px,1fr));gap:0;width:calc(100% + 32px);margin-left:-16px}
+body.mini-mode .mini-grid-button{min-height:56px!important;min-width:56px;border-radius:5px;font-size:27px!important;padding:0!important}
+@media(max-height:740px){
+ body.game-mode.mini-mode .game-player{display:none}
+ body.game-mode.mini-mode .game-action{padding:8px 12px}
+ body.game-mode.mini-mode #gameTurn{display:none}
+ body.game-mode.mini-mode .game-action h2{font-size:25px;margin:3px 0}
+ body.game-mode.mini-mode .game-action>p{margin:3px 0}
+ body.game-mode.mini-mode .game-buttons{margin-top:5px}
+ body.game-mode.mini-mode .game-countdown{font-size:22px!important;min-height:24px}
+}
+/* Phase 4 – Create & Together controllers */
+.sketch-canvas{display:block;width:100%;aspect-ratio:10/7;touch-action:none;background:#fff;border:4px solid #ffe477;border-radius:13px;box-shadow:0 8px 21px #10172888;cursor:crosshair}
+body.game-mode .game-buttons .p4-form input{font-size:23px;min-height:56px}
+.p4-form{width:100%;}
+.game-buttons .mini-help{line-height:1.35;overflow-wrap:anywhere}
+@media(max-height:740px){body.game-mode .game-buttons .sketch-canvas{max-height:45svh;aspect-ratio:auto;height:45svh}}
+
+/* v0.9 - clear risk/reward control distinct from movement choices */
+.button-headline{border:2px solid #ffd66d;background:linear-gradient(110deg,#6a1f56,#a53b53);color:#fff7dd;font-weight:900;min-height:60px;letter-spacing:.01em;box-shadow:0 4px 14px #5d163d55}
+.button-headline:focus-visible{outline:3px solid #fff;outline-offset:3px}

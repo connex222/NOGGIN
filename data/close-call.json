@@ -1,0 +1,422 @@
+[
+  {
+    "id": "cc-min-2",
+    "question": "How many minutes are in 2 hours?",
+    "answer": 120,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-3",
+    "question": "How many minutes are in 3 hours?",
+    "answer": 180,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-4",
+    "question": "How many minutes are in 4 hours?",
+    "answer": 240,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-5",
+    "question": "How many minutes are in 5 hours?",
+    "answer": 300,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-6",
+    "question": "How many minutes are in 6 hours?",
+    "answer": 360,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-7",
+    "question": "How many minutes are in 7 hours?",
+    "answer": 420,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-8",
+    "question": "How many minutes are in 8 hours?",
+    "answer": 480,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-9",
+    "question": "How many minutes are in 9 hours?",
+    "answer": 540,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-10",
+    "question": "How many minutes are in 10 hours?",
+    "answer": 600,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-11",
+    "question": "How many minutes are in 11 hours?",
+    "answer": 660,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-12",
+    "question": "How many minutes are in 12 hours?",
+    "answer": 720,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-14",
+    "question": "How many minutes are in 14 hours?",
+    "answer": 840,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-15",
+    "question": "How many minutes are in 15 hours?",
+    "answer": 900,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-16",
+    "question": "How many minutes are in 16 hours?",
+    "answer": 960,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-18",
+    "question": "How many minutes are in 18 hours?",
+    "answer": 1080,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-20",
+    "question": "How many minutes are in 20 hours?",
+    "answer": 1200,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-21",
+    "question": "How many minutes are in 21 hours?",
+    "answer": 1260,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-24",
+    "question": "How many minutes are in 24 hours?",
+    "answer": 1440,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-25",
+    "question": "How many minutes are in 25 hours?",
+    "answer": 1500,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-min-28",
+    "question": "How many minutes are in 28 hours?",
+    "answer": 1680,
+    "unit": "minutes",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-2",
+    "question": "How many seconds are in 2 minutes?",
+    "answer": 120,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-3",
+    "question": "How many seconds are in 3 minutes?",
+    "answer": 180,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-4",
+    "question": "How many seconds are in 4 minutes?",
+    "answer": 240,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-5",
+    "question": "How many seconds are in 5 minutes?",
+    "answer": 300,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-6",
+    "question": "How many seconds are in 6 minutes?",
+    "answer": 360,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-7",
+    "question": "How many seconds are in 7 minutes?",
+    "answer": 420,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-8",
+    "question": "How many seconds are in 8 minutes?",
+    "answer": 480,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-9",
+    "question": "How many seconds are in 9 minutes?",
+    "answer": 540,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-10",
+    "question": "How many seconds are in 10 minutes?",
+    "answer": 600,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-11",
+    "question": "How many seconds are in 11 minutes?",
+    "answer": 660,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-12",
+    "question": "How many seconds are in 12 minutes?",
+    "answer": 720,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-14",
+    "question": "How many seconds are in 14 minutes?",
+    "answer": 840,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-15",
+    "question": "How many seconds are in 15 minutes?",
+    "answer": 900,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-16",
+    "question": "How many seconds are in 16 minutes?",
+    "answer": 960,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-18",
+    "question": "How many seconds are in 18 minutes?",
+    "answer": 1080,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-20",
+    "question": "How many seconds are in 20 minutes?",
+    "answer": 1200,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-21",
+    "question": "How many seconds are in 21 minutes?",
+    "answer": 1260,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-24",
+    "question": "How many seconds are in 24 minutes?",
+    "answer": 1440,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-25",
+    "question": "How many seconds are in 25 minutes?",
+    "answer": 1500,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-sec-28",
+    "question": "How many seconds are in 28 minutes?",
+    "answer": 1680,
+    "unit": "seconds",
+    "source": "Exact time conversion"
+  },
+  {
+    "id": "cc-cm-2",
+    "question": "How many centimetres are in 2 metres?",
+    "answer": 200,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-3",
+    "question": "How many centimetres are in 3 metres?",
+    "answer": 300,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-4",
+    "question": "How many centimetres are in 4 metres?",
+    "answer": 400,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-5",
+    "question": "How many centimetres are in 5 metres?",
+    "answer": 500,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-6",
+    "question": "How many centimetres are in 6 metres?",
+    "answer": 600,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-7",
+    "question": "How many centimetres are in 7 metres?",
+    "answer": 700,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-8",
+    "question": "How many centimetres are in 8 metres?",
+    "answer": 800,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-9",
+    "question": "How many centimetres are in 9 metres?",
+    "answer": 900,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-10",
+    "question": "How many centimetres are in 10 metres?",
+    "answer": 1000,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-11",
+    "question": "How many centimetres are in 11 metres?",
+    "answer": 1100,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-12",
+    "question": "How many centimetres are in 12 metres?",
+    "answer": 1200,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-14",
+    "question": "How many centimetres are in 14 metres?",
+    "answer": 1400,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-15",
+    "question": "How many centimetres are in 15 metres?",
+    "answer": 1500,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-16",
+    "question": "How many centimetres are in 16 metres?",
+    "answer": 1600,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-18",
+    "question": "How many centimetres are in 18 metres?",
+    "answer": 1800,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-20",
+    "question": "How many centimetres are in 20 metres?",
+    "answer": 2000,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-21",
+    "question": "How many centimetres are in 21 metres?",
+    "answer": 2100,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-24",
+    "question": "How many centimetres are in 24 metres?",
+    "answer": 2400,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-25",
+    "question": "How many centimetres are in 25 metres?",
+    "answer": 2500,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-cm-28",
+    "question": "How many centimetres are in 28 metres?",
+    "answer": 2800,
+    "unit": "cm",
+    "source": "Exact metric conversion"
+  }
+]

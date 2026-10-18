@@ -1,0 +1,218 @@
+[
+  {
+    "character": "The Judge",
+    "expression": "think",
+    "file": "av-01-judge-think.png",
+    "original": "av-01-judge-think.png"
+  },
+  {
+    "character": "The Judge",
+    "expression": "win",
+    "file": "av-01-judge-win.png",
+    "original": "av-01-judge-win.png"
+  },
+  {
+    "character": "The Judge",
+    "expression": "lose",
+    "file": "av-01-judge-lose.png",
+    "original": "av-01-judge-lose.png"
+  },
+  {
+    "character": "Sister Checkmate",
+    "expression": "think",
+    "file": "av-02-nun-think.png",
+    "original": "av-02-nun-think.png"
+  },
+  {
+    "character": "Sister Checkmate",
+    "expression": "win",
+    "file": "av-02-nun-win.png",
+    "original": "av-02-nun-win.png"
+  },
+  {
+    "character": "Sister Checkmate",
+    "expression": "lose",
+    "file": "av-02-nun-lose.png",
+    "original": "av-02-nun-lose.png"
+  },
+  {
+    "character": "Dr Steady",
+    "expression": "think",
+    "file": "av-03-surgeon-think.png",
+    "original": "av-03-surgeon-think.png"
+  },
+  {
+    "character": "Dr Steady",
+    "expression": "win",
+    "file": "av-03-surgeon-win.png",
+    "original": "av-03-surgeon-win.png"
+  },
+  {
+    "character": "Dr Steady",
+    "expression": "lose",
+    "file": "av-03-surgeon-lose.png",
+    "original": "av-03-surgeon-lose.png"
+  },
+  {
+    "character": "The Captain",
+    "expression": "think",
+    "file": "av-04-captain-think.png",
+    "original": "av-04-captain-think.png"
+  },
+  {
+    "character": "The Captain",
+    "expression": "win",
+    "file": "av-04-captain-win.png",
+    "original": "av-04-captain-win.png"
+  },
+  {
+    "character": "The Captain",
+    "expression": "lose",
+    "file": "av-04-captain-lose.png",
+    "original": "av-04-captain-lose.png"
+  },
+  {
+    "character": "Professor Orbit",
+    "expression": "think",
+    "file": "av-05-professor-think.png",
+    "original": "av-05-astrophysicist-think.png"
+  },
+  {
+    "character": "Professor Orbit",
+    "expression": "win",
+    "file": "av-05-professor-win.png",
+    "original": "av-05-astrophysicist-win.png"
+  },
+  {
+    "character": "Professor Orbit",
+    "expression": "lose",
+    "file": "av-05-professor-lose.png",
+    "original": "av-05-astrophysicist-lose.png"
+  },
+  {
+    "character": "Inspector Grey",
+    "expression": "think",
+    "file": "av-06-inspector-think.png",
+    "original": "av-06-detective-think.png"
+  },
+  {
+    "character": "Inspector Grey",
+    "expression": "win",
+    "file": "av-06-inspector-win.png",
+    "original": "av-06-detective-win.png"
+  },
+  {
+    "character": "Inspector Grey",
+    "expression": "lose",
+    "file": "av-06-inspector-lose.png",
+    "original": "av-06-detective-lose.png"
+  },
+  {
+    "character": "Sir Reginald Pigeon",
+    "expression": "think",
+    "file": "av-07-pigeon-think.png",
+    "original": "av-07-pigeon-think.png"
+  },
+  {
+    "character": "Sir Reginald Pigeon",
+    "expression": "win",
+    "file": "av-07-pigeon-win.png",
+    "original": "av-07-pigeon-win.png"
+  },
+  {
+    "character": "Sir Reginald Pigeon",
+    "expression": "lose",
+    "file": "av-07-pigeon-lose.png",
+    "original": "av-07-pigeon-lose.png"
+  },
+  {
+    "character": "Turbo Nan",
+    "expression": "think",
+    "file": "av-08-nan-think.png",
+    "original": "av-08-grandma-think.png"
+  },
+  {
+    "character": "Turbo Nan",
+    "expression": "win",
+    "file": "av-08-nan-win.png",
+    "original": "av-08-grandma-win.png"
+  },
+  {
+    "character": "Turbo Nan",
+    "expression": "lose",
+    "file": "av-08-nan-lose.png",
+    "original": "av-08-grandma-lose.png"
+  },
+  {
+    "character": "Gloom",
+    "expression": "think",
+    "file": "av-09-ghost-think.png",
+    "original": "av-09-ghost-think.png"
+  },
+  {
+    "character": "Gloom",
+    "expression": "win",
+    "file": "av-09-ghost-win.png",
+    "original": "av-09-ghost-win.png"
+  },
+  {
+    "character": "Gloom",
+    "expression": "lose",
+    "file": "av-09-ghost-lose.png",
+    "original": "av-09-ghost-lose.png"
+  },
+  {
+    "character": "Kettlebot",
+    "expression": "think",
+    "file": "av-10-kettlebot-think.png",
+    "original": "av-10-kettle-think.png"
+  },
+  {
+    "character": "Kettlebot",
+    "expression": "win",
+    "file": "av-10-kettlebot-win.png",
+    "original": "av-10-kettle-win.png"
+  },
+  {
+    "character": "Kettlebot",
+    "expression": "lose",
+    "file": "av-10-kettlebot-lose.png",
+    "original": "av-10-kettle-lose.png"
+  },
+  {
+    "character": "Kevin the Goat",
+    "expression": "think",
+    "file": "av-11-goat-think.png",
+    "original": "av-11-goat-think.png"
+  },
+  {
+    "character": "Kevin the Goat",
+    "expression": "win",
+    "file": "av-11-goat-win.png",
+    "original": "av-11-goat-win.png"
+  },
+  {
+    "character": "Kevin the Goat",
+    "expression": "lose",
+    "file": "av-11-goat-lose.png",
+    "original": "av-11-goat-lose.png"
+  },
+  {
+    "character": "Big Banger",
+    "expression": "think",
+    "file": "av-12-sausage-think.png",
+    "original": "av-12-sausage-think.png"
+  },
+  {
+    "character": "Big Banger",
+    "expression": "win",
+    "file": "av-12-sausage-win.png",
+    "original": "av-12-sausage-win.png"
+  },
+  {
+    "character": "Big Banger",
+    "expression": "lose",
+    "file": "av-12-sausage-lose.png",
+    "original": "av-12-sausage-lose.png"
+  }
+]

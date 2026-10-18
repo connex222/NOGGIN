@@ -1,0 +1,4 @@
+{
+  "description": "Add bundled MP3 filenames to files to override Web Audio fallback sounds.",
+  "files": []
+}

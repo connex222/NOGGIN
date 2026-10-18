@@ -1,0 +1,12 @@
+.git
+.gitignore
+node_modules
+state
+coverage
+*.zip
+phase*-results.json
+phase*-simulation.jsonl
+tests
+tools
+*.md
+start-noggin.bat

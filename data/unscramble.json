@@ -1,0 +1,602 @@
+[
+  {
+    "id": "word-uk-places-london",
+    "word": "LONDON",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-bristol",
+    "word": "BRISTOL",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-glasgow",
+    "word": "GLASGOW",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-belfast",
+    "word": "BELFAST",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-cardiff",
+    "word": "CARDIFF",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-dundee",
+    "word": "DUNDEE",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-exeter",
+    "word": "EXETER",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-oxford",
+    "word": "OXFORD",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-norwich",
+    "word": "NORWICH",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-reading",
+    "word": "READING",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-swansea",
+    "word": "SWANSEA",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-coventry",
+    "word": "COVENTRY",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-plymouth",
+    "word": "PLYMOUTH",
+    "category": "UK places"
+  },
+  {
+    "id": "word-uk-places-brighton",
+    "word": "BRIGHTON",
+    "category": "UK places"
+  },
+  {
+    "id": "word-animals-badger",
+    "word": "BADGER",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-rabbit",
+    "word": "RABBIT",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-donkey",
+    "word": "DONKEY",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-otters",
+    "word": "OTTERS",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-pigeon",
+    "word": "PIGEON",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-beaver",
+    "word": "BEAVER",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-magpie",
+    "word": "MAGPIE",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-pandas",
+    "word": "PANDAS",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-giraffe",
+    "word": "GIRAFFE",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-penguin",
+    "word": "PENGUIN",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-wombat",
+    "word": "WOMBAT",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-falcon",
+    "word": "FALCON",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-lizard",
+    "word": "LIZARD",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-lemurs",
+    "word": "LEMURS",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-zebras",
+    "word": "ZEBRAS",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-kitten",
+    "word": "KITTEN",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-chicken",
+    "word": "CHICKEN",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-squirrel",
+    "word": "SQUIRREL",
+    "category": "Animals"
+  },
+  {
+    "id": "word-animals-ferret",
+    "word": "FERRET",
+    "category": "Animals"
+  },
+  {
+    "id": "word-food-and-drink-biscuit",
+    "word": "BISCUIT",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-teapot",
+    "word": "TEAPOT",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-crumpet",
+    "word": "CRUMPET",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-sausage",
+    "word": "SAUSAGE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-pastry",
+    "word": "PASTRY",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-toffee",
+    "word": "TOFFEE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-pudding",
+    "word": "PUDDING",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-brownie",
+    "word": "BROWNIE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-custard",
+    "word": "CUSTARD",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-cheddar",
+    "word": "CHEDDAR",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-pickles",
+    "word": "PICKLES",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-orange",
+    "word": "ORANGE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-banana",
+    "word": "BANANA",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-muffin",
+    "word": "MUFFIN",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-waffle",
+    "word": "WAFFLE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-doughnut",
+    "word": "DOUGHNUT",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-ketchup",
+    "word": "KETCHUP",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-mustard",
+    "word": "MUSTARD",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-tomato",
+    "word": "TOMATO",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-carrot",
+    "word": "CARROT",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-radish",
+    "word": "RADISH",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-spinach",
+    "word": "SPINACH",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-omelette",
+    "word": "OMELETTE",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-food-and-drink-yoghurt",
+    "word": "YOGHURT",
+    "category": "Food and drink"
+  },
+  {
+    "id": "word-things-and-objects-cushion",
+    "word": "CUSHION",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-blanket",
+    "word": "BLANKET",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-mirror",
+    "word": "MIRROR",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-kettle",
+    "word": "KETTLE",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-planner",
+    "word": "PLANNER",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-camera",
+    "word": "CAMERA",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-lantern",
+    "word": "LANTERN",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-jumper",
+    "word": "JUMPER",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-football",
+    "word": "FOOTBALL",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-compass",
+    "word": "COMPASS",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-goggles",
+    "word": "GOGGLES",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-bagpipe",
+    "word": "BAGPIPE",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-trumpet",
+    "word": "TRUMPET",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-violin",
+    "word": "VIOLIN",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-hammer",
+    "word": "HAMMER",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-ladder",
+    "word": "LADDER",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-bottle",
+    "word": "BOTTLE",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-button",
+    "word": "BUTTON",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-zipper",
+    "word": "ZIPPER",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-battery",
+    "word": "BATTERY",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-trophy",
+    "word": "TROPHY",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-jacket",
+    "word": "JACKET",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-balloon",
+    "word": "BALLOON",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-things-and-objects-keyboard",
+    "word": "KEYBOARD",
+    "category": "Things and objects"
+  },
+  {
+    "id": "word-nature-and-space-planet",
+    "word": "PLANET",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-comets",
+    "word": "COMETS",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-nebula",
+    "word": "NEBULA",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-galaxy",
+    "word": "GALAXY",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-rocket",
+    "word": "ROCKET",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-saturn",
+    "word": "SATURN",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-jupiter",
+    "word": "JUPITER",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-mercury",
+    "word": "MERCURY",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-meteor",
+    "word": "METEOR",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-asteroid",
+    "word": "ASTEROID",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-sunrise",
+    "word": "SUNRISE",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-rainbow",
+    "word": "RAINBOW",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-thunder",
+    "word": "THUNDER",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-drought",
+    "word": "DROUGHT",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-tornado",
+    "word": "TORNADO",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-blizzard",
+    "word": "BLIZZARD",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-glacier",
+    "word": "GLACIER",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-iceberg",
+    "word": "ICEBERG",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-volcano",
+    "word": "VOLCANO",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-oceans",
+    "word": "OCEANS",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-forest",
+    "word": "FOREST",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-meadow",
+    "word": "MEADOW",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-daisies",
+    "word": "DAISIES",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-flowers",
+    "word": "FLOWERS",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-mountain",
+    "word": "MOUNTAIN",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-moonlit",
+    "word": "MOONLIT",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-stardust",
+    "word": "STARDUST",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-sunbeam",
+    "word": "SUNBEAM",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-rainfall",
+    "word": "RAINFALL",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-snowfall",
+    "word": "SNOWFALL",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-fogbound",
+    "word": "FOGBOUND",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-storming",
+    "word": "STORMING",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-eclipse",
+    "word": "ECLIPSE",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-skyline",
+    "word": "SKYLINE",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-drizzle",
+    "word": "DRIZZLE",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-freezing",
+    "word": "FREEZING",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-dolphin",
+    "word": "DOLPHIN",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-seashell",
+    "word": "SEASHELL",
+    "category": "Nature and space"
+  },
+  {
+    "id": "word-nature-and-space-wildfire",
+    "word": "WILDFIRE",
+    "category": "Nature and space"
+  }
+]
