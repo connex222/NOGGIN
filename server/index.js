@@ -9,6 +9,8 @@ const {GameRooms} = require('./rooms');
 const stateStore=require('./state-store');
 const {allLanAddresses} = require('./network');
 const {listenWithFallback} = require('./port-listener');
+const fs = require('node:fs');
+const {execFile} = require('node:child_process');
 
 const app = express();
 app.disable('x-powered-by');
@@ -23,8 +25,10 @@ app.use((req,res,next) => {
 });
 const publicDir = path.join(__dirname,'..','public');
 app.get('/', (req,res) => res.redirect('/tv/'));
-app.get('/tv', (req,res) => res.redirect('/tv/'));
-app.get('/play', (req,res) => res.redirect('/play/'));
+// Express 4 routes ignore trailing slashes by default. Exact-match redirects
+// prevent /tv/ and /play/ from endlessly redirecting to themselves.
+app.get(/^\/tv$/, (req,res) => res.redirect('/tv/'));
+app.get(/^\/play$/, (req,res) => res.redirect('/play/'));
 app.get('/health', (req,res) => res.json({ok:true, game:'NOGGIN', phase:'playtest', version:require('../package.json').version}));
 app.use(express.static(publicDir,{dotfiles:'deny',maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0}));
 app.use((req,res) => res.status(404).send('Not found'));
@@ -55,6 +59,22 @@ listenWithFallback(server, {
     if (ip) console.log(`PHONES ON THE SAME NETWORK: http://${ip}:${port}/play/`);
     console.log('=========================================');
     console.log('Leave this window open while playing.');
+    // Only the local Windows .bat launcher enables these convenience features.
+    // Public hosts (Render / Oracle / Docker) never launch browsers or change ports.
+    if (process.env.NOGGIN_PORT_FILE && process.env.NOGGIN_OPEN_BROWSER === '1' && process.platform === 'win32') {
+      try {
+        fs.mkdirSync(path.dirname(process.env.NOGGIN_PORT_FILE), {recursive: true});
+        fs.writeFileSync(process.env.NOGGIN_PORT_FILE, String(port) + '\n', 'utf8');
+      } catch (error) {
+        console.warn('Could not write the active-port file:', error.message);
+      }
+    }
+    if (process.env.NOGGIN_OPEN_BROWSER === '1' && process.platform === 'win32') {
+      const tvUrl = `http://localhost:${port}/tv/`;
+      execFile('cmd.exe', ['/d', '/s', '/c', `start "" "${tvUrl}"`], {windowsHide:true, timeout:10000}, error => {
+        if (error) console.warn(`Could not open the browser automatically. Open ${tvUrl} yourself.`);
+      });
+    }
   },
   onFailure: (error, port) => {
     if (error.code === 'EADDRINUSE') {
