@@ -1,0 +1,108 @@
+/* TV front-of-show art: user-selected graphics are background only.
+   All live data and clickable areas remain genuine HTML controls. */
+:root{--showcase-gold:#ffd65b}
+.welcome-screen[hidden],.welcome-rules[hidden]{display:none!important}
+.welcome-screen{position:fixed;inset:0;z-index:80;background:#020518;overflow:hidden;display:grid;place-items:center;transition:opacity .18s ease}
+.welcome-screen.welcome-dismissed{opacity:0;pointer-events:none}
+.stage-canvas{width:min(100vw,177.68vh);aspect-ratio:1672 / 941;position:relative;margin:auto;overflow:hidden;background:#03062c url('/tv/art/welcome-stage.webp') center/100% 100% no-repeat}
+.showcase-cast{position:absolute;z-index:4;top:5.8%;left:1.0%;width:97.9%;height:19.5%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:.3%;pointer-events:none}
+.showcase-cast-frame{position:relative;border:clamp(1px,.27vw,5px) solid #ffc14e;border-radius:9%;background:radial-gradient(ellipse at 50% 30%,#3744a0,#140e49 80%);box-shadow:0 0 10px #ffc45da8,inset 0 0 10px #19184f;overflow:hidden;display:block}
+.showcase-cast-frame:nth-child(3n){background:radial-gradient(ellipse at 50% 30%,#445daa,#181245 78%)}
+.showcase-cast-frame:nth-child(4n){background:radial-gradient(ellipse at 50% 30%,#743774,#11123c 78%)}
+.showcase-cast-frame img{width:100%;height:100%;object-fit:contain;object-position:bottom center;filter:drop-shadow(0 3px 5px #040323);display:block}
+.showcase-hit{position:absolute;z-index:5;cursor:pointer;background:transparent;border:0;border-radius:21%;color:transparent}
+.showcase-hit:focus-visible,.showcase-hit:hover{outline:3px solid #fff5be;outline-offset:-2px;background:#ffffff10;box-shadow:0 0 26px #fff4a0}
+.welcome-hit-start{top:67.2%;left:10.35%;width:31.1%;height:15.1%}
+.welcome-hit-join{top:67.2%;left:41.65%;width:23.2%;height:15.1%}
+.welcome-hit-rules{top:67.2%;left:65.35%;width:24.0%;height:15.1%}
+.welcome-live-join{position:absolute;z-index:5;right:2%;bottom:2%;width:22.8%;min-height:9.6%;background:linear-gradient(130deg,#030e39f5,#1a1f67f3);border:2px solid #fdd775;border-radius:13px;display:flex;align-items:center;gap:6%;padding:1%;color:white;box-shadow:0 0 20px #edbd66aa}
+.welcome-live-join img{display:block;aspect-ratio:1;width:25%;height:auto;max-width:78px;background:white;padding:2px;border-radius:4px}
+.welcome-live-join img[hidden]{display:none}
+.welcome-live-join div{min-width:0;flex:1}
+.welcome-live-join span,.welcome-live-join small{display:block;font:700 clamp(9px,1.1vw,18px)/1.25 system-ui,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.welcome-live-join small{font-size:clamp(8px,.7vw,12px);font-weight:500;overflow-wrap:anywhere;white-space:normal;max-height:2.5em}
+.welcome-live-join strong{font:1000 clamp(17px,2.4vw,36px)/1.15 system-ui,sans-serif;color:#ffe783;letter-spacing:.12em}
+.welcome-rules{position:fixed;inset:0;z-index:100;background:#010922e8;display:grid;place-items:center;padding:20px}
+.welcome-rules-panel{width:min(680px,95vw);max-height:90vh;overflow-y:auto;padding:clamp(20px,3vw,40px);border-radius:22px;background:linear-gradient(150deg,#1c2b77,#100d38);color:white;border:3px solid #ffc459;box-shadow:0 0 55px #daa14f9c}
+.welcome-rules-panel h2{color:#ffe880;font-size:clamp(24px,3vw,42px);margin:0 0 16px}
+.welcome-rules-panel li,.welcome-rules-panel p{line-height:1.55;font-size:clamp(16px,1.5vw,21px)}
+.welcome-rules-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:20px}
+.welcome-rules-actions button{min-width:160px;flex:1}
+body.tv:not(.playing) {background:#030923}
+body.tv:not(.playing) .tv-shell{width:min(100vw,177.68vh);max-width:none;height:min(100vh,56.28vw);min-height:0;position:relative;display:block;margin:auto;padding:0;overflow:hidden;isolation:isolate;background:#040929 url('/tv/art/lobby-stage.webp') center/100% 100% no-repeat}
+body.tv:not(.playing) .tv-header{position:absolute;right:1%;bottom:1%;z-index:5;max-width:43%;border:0;background:#0c1f4cf0;border-radius:12px;padding:4px 12px;display:block;box-shadow:0 0 14px #2547b4}
+body.tv:not(.playing) .tv-header>div:first-child{display:none}
+body.tv:not(.playing) .header-actions{display:flex;gap:8px;justify-content:end;flex-wrap:wrap}
+body.tv:not(.playing) .sound-tools{display:flex;flex-wrap:wrap;gap:4px}
+body.tv:not(.playing) .sound-tools button{padding:5px;font-size:clamp(10px,.8vw,14px)}
+body.tv:not(.playing) .sound-label{font-size:clamp(10px,.7vw,13px)}
+body.tv:not(.playing) .sound-label input{max-width:64px}
+body.tv:not(.playing) #lobbyGrid{position:absolute;z-index:2;left:9.2%;top:36%;width:55.9%;height:34%;min-height:0!important;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:2%;background:transparent;border:none;padding:0;margin:0;max-width:none}
+body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel,body.tv:not(.playing) #lobbyControls{background:linear-gradient(150deg,#081b53,#0b113b);border:clamp(2px,.2vw,4px) solid #ffb944;border-radius:20px;box-shadow:0 0 14px #fb923c9c,inset 0 0 18px #322d90b8;color:white}
+body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel{height:100%;overflow:hidden;padding:5% 6%;display:flex;align-items:center;flex-direction:column;gap:1.2%;text-align:center}
+body.tv:not(.playing) .join-panel h2,body.tv:not(.playing) .phone-panel h2,body.tv:not(.playing) #lobbyControls h2{margin:0;color:#ffe177;text-shadow:0 2px 4px #09011d;font-size:clamp(11px,1.5vw,26px);letter-spacing:.04em}
+body.tv:not(.playing) .join-panel .step,body.tv:not(.playing) #lobbyControls .step{display:none}
+body.tv:not(.playing) .code-label{font-size:clamp(10px,.85vw,16px);color:#bce6ff;margin:1% 0}
+body.tv:not(.playing) #roomCode{font-family:system-ui,sans-serif;font-weight:1000;font-size:clamp(31px,4.25vw,75px);letter-spacing:.035em;line-height:1.2;background:#010c41;border:2px solid #33b8ff;border-radius:15px;text-shadow:0 0 18px #79bdff;margin:2% 0;width:100%;padding:2% 0;box-shadow:0 0 15px #158aff}
+body.tv:not(.playing) #lobbyGrid .tip{color:#cbdcff;font-size:clamp(9px,.92vw,17px);line-height:1.35;margin:1% 0}
+body.tv:not(.playing) #rosterHelp{font-size:clamp(9px,.88vw,16px);line-height:1.3;color:#ffe49b;margin-top:auto}
+body.tv:not(.playing) .phone-instructions{display:flex;flex-direction:column;gap:3px;align-self:stretch;font-size:clamp(9px,.95vw,17px);color:#ddecff;text-align:left;line-height:1.3}
+body.tv:not(.playing) .phone-instructions span:before{content:'✓ ';color:#ffe77b}
+body.tv:not(.playing) .qr-wrap{margin:auto;padding:1%;border:none;background:none;min-height:0}
+body.tv:not(.playing) #qrImage{width:clamp(70px,14vh,154px);height:clamp(70px,14vh,154px);background:#fff;border:3px solid white;border-radius:6px;object-fit:contain;display:block;margin:auto}
+body.tv:not(.playing) .qr-hint{margin:0;color:#fff3c4;font-size:clamp(9px,.75vw,13px)}
+body.tv:not(.playing) #joinUrl{font-size:clamp(9px,.7vw,14px);line-height:1.2;color:#badfff;overflow-wrap:anywhere;margin:2% 0;max-height:3em;overflow:hidden}
+body.tv:not(.playing) #lobbyControls{position:absolute;top:36%;left:66.5%;height:34%;width:25.0%;z-index:3;padding:1.5% 1.6%;display:flex;flex-direction:column;gap:2%;margin:0;max-width:none}
+body.tv:not(.playing) #lobbyControls .control-heading{margin-bottom:2%}
+body.tv:not(.playing) #lobbyControls .control-heading p{font-size:clamp(9px,.8vw,15px);margin:0}
+body.tv:not(.playing) #lobbyControls label{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0;font-size:clamp(9px,.9vw,17px);font-weight:750;color:#e8eefe}
+body.tv:not(.playing) #lobbyControls select{font-size:clamp(10px,.88vw,16px);width:56%;margin:0;padding:5px 3px;border:2px solid #497fff;border-radius:8px;color:#fff;background:#13225a}
+body.tv:not(.playing) #lobbyControls .toggles{display:flex;flex-direction:column;gap:3px;margin:0}
+body.tv:not(.playing) #lobbyControls .checkrow{font-size:clamp(10px,.9vw,15px);justify-content:flex-start}
+body.tv:not(.playing) #lobbyControls .checkrow input{margin-right:4px}
+body.tv:not(.playing) #lobbyControls .controls-actions{display:contents;min-width:0}
+body.tv:not(.playing) #newRoom{margin-top:auto;align-self:flex-end;padding:5px 10px;font-size:clamp(9px,.85vw,16px)}
+body.tv:not(.playing) #stageReady{position:fixed;z-index:6;left:35%;top:82%;width:30%;height:10.5%;border-radius:26px;font-size:clamp(15px,2.3vw,34px);font-weight:1000;background:linear-gradient(#ffed80,#ffc829 70%,#f08b0c);color:#09174b;border:3px solid #ffed9f;box-shadow:0 0 22px #fdad32,0 7px 0 #62301e;text-shadow:none}
+body.tv:not(.playing) #stageReady:disabled{background:linear-gradient(#605f6d,#3d436b);border-color:#929bad;color:#f1f3fe;box-shadow:none}
+body.tv:not(.playing) .phase-warning{display:none}
+body.tv:not(.playing) .roster-panel{position:absolute;top:102%;left:0;width:146%;height:24%;max-height:none;overflow:hidden;background:linear-gradient(90deg,#08123ddf,#101958df);border:1px solid #385bc4;border-radius:12px;padding:1% 1.7%;box-shadow:0 0 13px #b36ca654}
+body.tv:not(.playing) .roster-top{display:flex;justify-content:space-between;align-items:center;margin:0 0 4px}
+body.tv:not(.playing) .roster-top h2{font-size:clamp(9px,.85vw,16px);margin:0}
+body.tv:not(.playing) .roster-top .pill{font-size:clamp(9px,.8vw,14px)}
+body.tv:not(.playing) #roster{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;margin:0}
+body.tv:not(.playing) #roster .seat{min-width:0;min-height:0;padding:1px;background:#101a4eea;border:1px dashed #647abc;border-radius:6px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+body.tv:not(.playing) #roster .seat.filled{border:1px solid #ffc357}
+body.tv:not(.playing) #roster .seat img,body.tv:not(.playing) #roster .seat .placeholder{height:clamp(26px,4.5vh,55px);width:clamp(26px,4.5vh,55px);object-fit:contain;margin:0}
+body.tv:not(.playing) #roster .seat .seat-label{font-size:clamp(7px,.7vw,13px);line-height:1.0;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+body.tv:not(.playing) #roster .seat .seat-detail{display:none}
+body.tv:not(.playing) #roster .seat .seat-flag{font-size:clamp(7px,.65vw,11px);line-height:1.1}
+body.tv:not(.playing) .tv-footer{display:none}
+body.tv:not(.playing) .lobby-cast{z-index:4}
+body.tv.playing .lobby-cast{display:none!important}
+body.tv.playing .welcome-screen{display:none!important}
+@media(max-width:900px){body.tv:not(.playing) .tv-shell{width:100%;height:auto;aspect-ratio:auto;min-height:100vh;overflow:auto;background-size:auto 100vh;background-repeat:no-repeat;background-position:center top;padding:27vw 10px 120px}
+body.tv:not(.playing) .lobby-cast{position:absolute;top:1%;height:auto;aspect-ratio:12/1.9}
+body.tv:not(.playing) #lobbyGrid,body.tv:not(.playing) #lobbyControls{position:relative;inset:auto;width:100%;height:auto;display:flex;flex-direction:column;gap:12px;margin:12px 0}
+body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel{min-height:180px}
+body.tv:not(.playing) .roster-panel{position:relative;inset:auto;width:100%;height:auto;min-height:120px}
+body.tv:not(.playing) #lobbyControls{padding:20px}
+body.tv:not(.playing) #stageReady{position:relative;inset:auto;width:100%;height:64px}
+body.tv:not(.playing) .tv-header{position:relative;inset:auto;width:100%;max-width:none}
+.welcome-live-join{display:none}}
+@media(prefers-reduced-motion:reduce){.welcome-screen{transition:none}}
+/* Keep compact lobby widgets inside their panel at 720p. */
+body.tv:not(.playing) #lobbyControls{flex-wrap:nowrap!important;align-items:stretch!important;overflow:hidden;gap:4px;justify-content:flex-start}
+body.tv:not(.playing) #lobbyControls>label{min-width:0!important;width:100%!important;flex:none;line-height:1.25}
+body.tv:not(.playing) #lobbyControls .toggles{min-width:0!important;width:100%;flex:none;max-width:100%;gap:1px;margin:0}
+body.tv:not(.playing) #lobbyControls .toggles label{min-width:0!important;width:100%;min-height:22px;justify-content:flex-start;display:flex;flex-direction:row;font-size:clamp(10px,.88vw,15px)}
+body.tv:not(.playing) #lobbyControls .toggles label input{flex:none;width:17px;height:17px}
+body.tv:not(.playing) #newRoom{position:absolute;bottom:5%;right:5%;padding:5px 9px;min-height:0;font-size:clamp(9px,.8vw,14px)}
+body.tv:not(.playing) #stageReady:disabled{opacity:1!important;color:#e2eaff;background:#26366e!important;border:3px solid #91a8ff!important;box-shadow:0 0 12px #18348b!important;text-shadow:none!important}
+body.tv:not(.playing) .roster-panel{background:#08143b!important;border:2px solid #476cdb!important;top:98%!important;height:29%!important;box-shadow:0 0 15px #2d4ca3!important}
+body.tv:not(.playing) #roster .seat{min-height:0!important;padding:1px!important;gap:2px!important}
+body.tv:not(.playing) #roster .seat .placeholder{font-size:19px!important;height:22px!important;line-height:20px}
+body.tv:not(.playing) .roster-panel{top:91%!important;height:38%!important}
+body.tv:not(.playing) #stageReady{left:32%;top:82%;width:36%;height:10.8%;font-size:clamp(16px,2.1vw,30px);white-space:nowrap;}
+body.tv:not(.playing) #stageReady:disabled{border-radius:24px}
+/* Match the TV gameplay wordmark to the same gold show-brand used on both front screens. */
+body.tv.playing .noggin-title{font-family:Impact,'Arial Black',system-ui,sans-serif;letter-spacing:-.035em;color:#ffd348;background:linear-gradient(175deg,#fff8b0,#ffdd49 42%,#ff9729 83%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 0 #6e2a0d) drop-shadow(0 6px 0 #0e2c78) drop-shadow(0 9px 6px #020c27);-webkit-text-stroke:1px #ffc951}

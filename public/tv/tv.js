@@ -25,8 +25,12 @@
   const playSound=(pitch=1)=>audio.beep(550*pitch,.11,'sine');
   $('soundVolume').value=String(Math.round(audio.volume*100));
   $('soundVolume').oninput=e=>audio.setVolume(Number(e.target.value)/100);
+  $('musicVolume').value=String(Math.round(audio.musicVolume*100));
+  $('musicVolume').oninput=e=>audio.setMusicVolume(Number(e.target.value)/100);
+  function updateMusicButton(){const on=!audio.musicMuted;$('musicButton').textContent=on?'♫ Music on':'♫ Music off';$('musicButton').setAttribute('aria-pressed',String(on));}
+  $('musicButton').onclick=()=>{audio.setMusicMuted(!audio.musicMuted);updateMusicButton();};updateMusicButton();
   function updateSoundButton(){$('soundButton').textContent=!audio.enabled?'▶ Enable sound':audio.muted?'♫ Unmute TV':'♫ Mute TV';}
-  $('soundButton').onclick=async()=>{try{const wasEnabled=audio.enabled;await audio.unlock();audio.setMuted(wasEnabled?!audio.muted:false);if(!audio.muted){audio.play('sfx-join');audio.startMusic(currentState?.phase==='lobby'?'lobby':'board');}updateSoundButton();}catch{error('Your browser blocked sound. Click the button again.');}};
+  $('soundButton').onclick=async()=>{try{const wasEnabled=audio.enabled;await audio.unlock();audio.setMuted(wasEnabled?!audio.muted:false);if(!audio.muted){audio.play('sfx-join');audio.startMusic(currentState?.phase==='lobby'?'lobby':currentState?.board?.step==='minigame'||currentState?.board?.step==='showdown'?'tension':'board');}updateSoundButton();}catch{error('Your browser blocked sound. Click the button again.');}};
   updateSoundButton();
   function showConfetti(){if(document.documentElement.classList.contains('reduce-motion'))return;
     const root=$('showFx');if(!root)return;root.replaceChildren();const colours=['#ffe478','#72ecf0','#ff7799','#c9a1ff','#a6f67a'];
@@ -107,7 +111,7 @@
       ? 'Need at least two contestants to play.'
       : state.canStart ? 'All contestants ready! Lobby check complete.' : 'Waiting for every contestant to tap READY on their phone…';
     $('stageReady').disabled = !state.canStart;
-    $('stageReady').textContent = state.canStart ? '✓ LOBBY READY' : `WAITING FOR ${state.players.length < 2 ? '2 PLAYERS' : 'EVERYONE'}`;
+    $('stageReady').textContent = state.canStart ? '▶ START THE SHOW' : `WAITING FOR ${state.players.length < 2 ? '2 PLAYERS' : 'EVERYONE'}`;
     for(const [id,val] of [['target',state.settings.target],['timerSpeed',state.settings.timerSpeed]]) $(id).value=String(val);
     $('familyFriendly').checked=state.settings.familyFriendly;
     $('reduceMotion').checked=state.settings.reduceMotion;

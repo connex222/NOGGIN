@@ -1,64 +1,59 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/welcome.css"></head>
+<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"></head>
 <body class="tv">
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
-<section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN opening screen">
-<div class="welcome-shell">
-  <div class="welcome-top"><div id="welcomeCast" class="welcome-cast" aria-label="The twelve contestants"></div></div>
-  <div class="welcome-centre"><div class="welcome-bulbs" aria-hidden="true"></div>
-    <p class="welcome-eyebrow">THE LIVING ROOM GAME SHOW</p>
-    <h1 class="welcome-logo">NOGGIN!</h1>
-    <div class="welcome-tagline">USE YOUR HEAD</div>
-    <p class="welcome-deck">12 wild characters &nbsp; ★ &nbsp; 16 mini-games &nbsp; ★ &nbsp; One champion</p>
-    <div class="welcome-platform" aria-hidden="true"></div>
-  </div>
-  <div class="welcome-actions">
-    <button type="button" id="welcomeStart" class="welcome-action play"><span class="welcome-icon" aria-hidden="true">▶</span> Start game</button>
-    <button type="button" id="welcomeHowTo" class="welcome-action rules"><span class="welcome-icon" aria-hidden="true">▣</span> How to play</button>
-    <button type="button" id="welcomeSettings" class="welcome-action settings"><span class="welcome-icon" aria-hidden="true">⚙</span> Settings</button>
-  </div>
-  <div class="welcome-bottom">
-    <span class="welcome-footer-copy">★ BIG BRAINS. BIGGER LAUGHS. ★</span>
-    <div class="welcome-join"><img id="welcomeQR" alt="Scan to join NOGGIN" hidden>
-      <div><span>JOIN WITH YOUR PHONE</span><strong id="welcomeRoomCode">····</strong><small id="welcomePhoneUrl">Room preparing…</small><small id="welcomeJoinHint">Scan the QR when it appears</small></div>
+<div id="startupProblem" class="startup-problem" hidden role="alert"></div>
+<section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN welcome screen">
+  <div class="stage-canvas welcome-canvas">
+    <div id="welcomeCast" class="showcase-cast" aria-label="Twelve NOGGIN characters, a new expression each visit"></div>
+    <button id="welcomeStart" class="showcase-hit welcome-hit-start" type="button" aria-label="Start game — open the lobby"></button>
+    <button id="welcomeJoin" class="showcase-hit welcome-hit-join" type="button" aria-label="Join with phones — show the lobby QR code"></button>
+    <button id="welcomeHowTo" class="showcase-hit welcome-hit-rules" type="button" aria-label="How to play"></button>
+    <div class="welcome-live-join" aria-label="Live room and phone QR code">
+      <img id="welcomeQR" alt="Live QR code for players to join" hidden>
+      <div><span>SCAN WITH YOUR PHONE</span><strong id="welcomeRoomCode" aria-live="polite">····</strong><small id="welcomePhoneUrl">Preparing room…</small></div>
     </div>
   </div>
-</div>
 </section>
 <div id="welcomeRulesDialog" class="welcome-rules" hidden role="dialog" aria-modal="true" aria-label="How to play NOGGIN">
- <div class="welcome-rules-panel">
-  <h2>HOW TO PLAY NOGGIN</h2>
-  <ol><li>Leave NOGGIN on your TV or computer.</li><li>Each player scans the QR code on their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>Roll, choose your route, win mini-games and collect Sparks. First to the chosen target wins!</li></ol>
-  <p>Change music, sound effects and game length in Settings before the show starts.</p>
-  <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
- </div>
+  <div class="welcome-rules-panel">
+    <h2>HOW TO PLAY NOGGIN</h2>
+    <ol><li>Leave this screen on your TV or computer.</li><li>Each player scans the QR code with their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>Roll, choose your route, face mini-games and collect Sparks. First to the chosen Spark target wins!</li></ol>
+    <p>Use the TV's Settings controls to adjust sound, music and game length before starting.</p>
+    <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
+  </div>
 </div>
 <main class="tv-shell">
   <header class="tv-header">
     <div><p class="eyebrow">THE LIVING-ROOM GAME SHOW</p><h1 class="noggin-title">NOG<span>G</span>IN<span>!</span></h1><p class="subtitle">USE YOUR HEAD. TRUST YOUR NERVE. WIN THE SPARKS.</p></div>
-    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">VOL <input id="soundVolume" aria-label="TV sound volume" type="range" min="0" max="100" value="55"></label></div></div>
+    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">FX <input id="soundVolume" aria-label="TV effects volume" type="range" min="0" max="100" value="55"></label><label for="musicVolume" class="sound-label">MUSIC <input id="musicVolume" aria-label="Background music volume" type="range" min="0" max="100" value="25"></label><button id="musicButton" class="button-secondary music-toggle" type="button" aria-pressed="true">♫ Music on</button></div></div>
   </header>
-  <section class="tv-grid" id="lobbyGrid">
+  <div id="lobbyCast" class="showcase-cast lobby-cast" aria-label="Twelve NOGGIN characters"></div>
+  <section class="tv-grid" id="lobbyGrid" aria-label="NOGGIN room lobby">
     <div class="join-panel surface glow-card">
-      <div class="step">1</div><h2>JOIN THE SHOW</h2>
-      <div class="code-label">ROOM CODE</div><p id="roomCode" class="room-code" aria-live="polite">····</p>
-      <div class="qr-wrap"><img id="qrImage" alt="QR code to join the game with your phone" width="200" height="200"/><p class="qr-hint">Scan using your phone camera</p></div>
-      <p class="join-url" id="joinUrl">Connecting…</p>
-      <p class="tip">Your phone and TV computer must be on the same network for local play.</p>
-    </div>
-    <div class="roster-panel surface">
-      <div class="roster-top"><div><div class="step">2</div><h2>MEET THE NOGGIN PANEL</h2></div><span class="pill"><span id="count">0</span> / 8 PLAYERS</span></div>
-      <div id="roster" class="roster" aria-live="polite"></div>
+      <div class="step">1</div><h2>YOUR ROOM CODE</h2>
+      <div class="code-label">SHARE THIS CODE WITH FRIENDS</div><p id="roomCode" class="room-code" aria-live="polite">····</p>
+      <p class="tip">Players enter this code on their phones. The QR code also works.</p>
       <p id="rosterHelp" class="roster-help">Waiting for contestants to join by phone…</p>
     </div>
+    <div class="phone-panel surface glow-card">
+      <h2>JOIN WITH PHONES</h2>
+      <div class="phone-instructions"><span>1. Scan the QR code</span><span>2. Pick your character</span><span>3. Tap READY!</span></div>
+      <div class="qr-wrap"><img id="qrImage" alt="Real NOGGIN QR code for your current room" width="200" height="200"/><p class="qr-hint">Scan with your phone camera</p></div>
+      <p class="join-url" id="joinUrl">Connecting…</p>
+    </div>
+    <div class="roster-panel surface">
+      <div class="roster-top"><h2>MEET THE NOGGIN PANEL</h2><span class="pill"><span id="count">0</span> / 8 PLAYERS</span></div>
+      <div id="roster" class="roster" aria-live="polite"></div>
+    </div>
   </section>
-  <section class="controls surface" id="lobbyControls">
-    <div class="control-heading"><div class="step">3</div><div><h2>SET THE STAKES</h2><p>The TV host chooses the rules before the show starts.</p></div></div>
-    <label>SPARK TARGET<select id="target"><option value="8">Quick • 8</option><option value="12" selected>Standard • 12</option><option value="16">Long • 16</option></select></label>
+  <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
+    <div class="control-heading"><div class="step">3</div><div><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div></div>
+    <label>SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12" selected>Standard · 12 Sparks</option><option value="16">Long · 16 Sparks</option></select></label>
     <label>GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
-    <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked>Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox">Reduce motion</label></div>
-    <div class="controls-actions"><button id="newRoom" class="button-secondary" type="button">New room</button><button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button><p class="phase-warning">16 category games · 4 corner Showdowns · host recovery controls available during play.</p></div>
+    <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
+    <div class="controls-actions"><button id="newRoom" class="button-secondary" type="button">NEW ROOM</button><button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button><p class="phase-warning">Players must be ready before the show can start.</p></div>
   </section>
   <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN live board">
     <div class="stage-bar surface"><span id="stageTurn">TURN 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">FIRST TO 12 SPARKS</span></div>
@@ -74,5 +69,5 @@
   <div id="message" class="error hidden" role="alert"></div>
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>
 </main>
-<script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/welcome.js"></script>
+<script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/showcase.js"></script>
 </body></html>

@@ -1,8 +1,8 @@
 {
   "name": "noggin-use-your-head",
-  "version": "1.2.0-rehearsal",
+  "version": "1.4.0-showcase",
   "private": true,
-  "description": "NOGGIN Rehearsal Edition: privacy-safe match reports, session hardening, simulated gateway integration",
+  "description": "NOGGIN \u2014 two-screen game-show showcase with live room QR and rotating cast portraits",
   "engines": {
     "node": ">=20"
   },

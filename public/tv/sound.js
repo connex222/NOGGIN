@@ -2,12 +2,15 @@
 // Local-first TV-only audio: dedicated /sounds file -> optional named substitute -> synthesised Web Audio.
 // The soundtrack works without third-party files, CDNs, cookies or audio permissions beyond a TV click.
 class NogginSound {
- constructor(){this.context=null;this.enabled=false;this.muted=localStorage.getItem('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(localStorage.getItem('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.timer=null;this.lastSound='';this.loadManifest();}
- async loadManifest(){try{const r=await fetch('/sounds/sound-manifest.json');if(r.ok){const x=await r.json();if(Array.isArray(x.files))this.files=new Set(x.files);}}catch{}}
+ constructor(){this.context=null;this.enabled=false;this.muted=localStorage.getItem('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(localStorage.getItem('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.desiredMusic=null;this.timer=null;this.lastSound='';this.musicFiles={};this.musicAudio=null;this.sfxLive=new Set();this.musicVolume=Math.max(0,Math.min(1,Number(localStorage.getItem('noggin-music-volume')??'.25')));this.musicMuted=localStorage.getItem('noggin-music-muted')==='true';this.loadManifest();}
+ async loadManifest(){try{const r=await fetch('/sounds/sound-manifest.json');if(r.ok){const x=await r.json();if(Array.isArray(x.files))this.files=new Set(x.files);if(x.music&&typeof x.music==='object')this.musicFiles=x.music;}}catch{}}
  async unlock(){const C=window.AudioContext||window.webkitAudioContext;if(!C)throw Error('Audio unsupported');this.context ||= new C();await this.context.resume();if(!this.master){this.master=this.context.createGain();this.master.connect(this.context.destination);}this.enabled=true;this.apply();}
  apply(){if(this.master)this.master.gain.setTargetAtTime(this.muted?0:this.volume*.33,this.context.currentTime,.025);}
  setVolume(v){this.volume=Math.max(0,Math.min(1,Number(v)));localStorage.setItem('noggin-volume',String(this.volume));this.apply();}
- setMuted(v){this.muted=Boolean(v);localStorage.setItem('noggin-muted',String(this.muted));this.apply();if(this.muted)this.stopMusic();}
+ setMusicVolume(v){this.musicVolume=Math.max(0,Math.min(1,Number(v)));localStorage.setItem('noggin-music-volume',String(this.musicVolume));this.applyMusicVolume();}
+ setMusicMuted(v){this.musicMuted=Boolean(v);localStorage.setItem('noggin-music-muted',String(this.musicMuted));if(this.musicMuted)this.stopMusic();else if(this.desiredMusic)this.startMusic(this.desiredMusic,true);this.applyMusicVolume();}
+ applyMusicVolume(){if(this.musicAudio){this.musicAudio.volume=this.muted||this.musicMuted?0:Math.min(.35,this.musicVolume*.32)*(this.sfxLive.size?.5:1);}}
+ setMuted(v){this.muted=Boolean(v);localStorage.setItem('noggin-muted',String(this.muted));this.apply();this.applyMusicVolume();if(this.muted)this.stopMusic();}
  beep(freq,duration=.16,style='sine',delay=0,amp=.35){if(!this.enabled||this.muted)return;const ctx=this.context,start=ctx.currentTime+delay;
   const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=style;osc.frequency.setValueAtTime(freq,start);gain.gain.setValueAtTime(.001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.001,amp),start+.013);gain.gain.exponentialRampToValueAtTime(.001,start+duration);osc.connect(gain).connect(this.master);osc.start(start);osc.stop(start+duration+.03);
  }
@@ -35,14 +38,27 @@ class NogginSound {
  play(name,fallback=''){if(!this.enabled||this.muted)return;const clip=`${name}.mp3`,sub=fallback?`${fallback}.mp3`:'';
   const available=this.files.has(clip)?clip:(this.files.has(sub)?sub:null);
   if(!available){this.synth(name);return;}
-  const audio=new Audio(`/sounds/${encodeURIComponent(available)}`);audio.volume=this.volume;let done=false;
-  audio.onerror=()=>{if(!done){done=true;this.synth(name);}};
-  audio.play().catch(()=>{if(!done){done=true;this.synth(name);}});
+  const audio=new Audio(`/sounds/${encodeURIComponent(available)}`);audio.volume=Math.min(.88,this.volume*.88);
+  const id=Symbol(name);this.sfxLive.add(id);this.applyMusicVolume();
+  const cleanup=()=>{this.sfxLive.delete(id);this.applyMusicVolume();};
+  audio.onended=cleanup;
+  audio.onerror=()=>{cleanup();this.synth(name);};
+  audio.play().catch(()=>{cleanup();this.synth(name);});
  }
- startMusic(which){if(this.music===which)return;this.stopMusic();this.music=which;if(!this.enabled||this.muted)return;
-  const themes={lobby:[392,494,587,784],board:[294,370,440,587],tension:[165,196,220,247]};const arr=themes[which];if(!arr)return;
-  let i=0;const note=()=>{if(this.muted||!this.enabled)return;this.beep(arr[i++%arr.length],.33,'sine',0,.055);};note();this.timer=setInterval(note,430);
+ startMusic(which,force=false){this.desiredMusic=which;if(this.music===which&&!force&&(this.musicAudio||this.timer))return;this.stopMusic();this.music=which;
+  if(!this.enabled||this.muted||this.musicMuted)return;
+  const filename=this.musicFiles[which];
+  if(!filename){this.startSynthMusic(which);return;}
+  const track=new Audio(`/sounds/${encodeURIComponent(filename)}`);track.loop=true;track.preload='auto';this.musicAudio=track;this.applyMusicVolume();
+  track.onerror=()=>{if(this.musicAudio!==track)return;this.musicAudio=null;this.startSynthMusic(which);};
+  track.play().catch(()=>{if(this.musicAudio!==track)return;this.musicAudio=null;this.startSynthMusic(which);});
  }
- stopMusic(){if(this.timer)clearInterval(this.timer);this.timer=null;this.music=null;}
+ startSynthMusic(which){
+  const themes={lobby:[392,494,587,784],board:[294,370,440,587],tension:[165,196,220,247]};const arr=themes[which];if(!arr||this.musicMuted)return;
+  let i=0;const note=()=>{if(this.muted||!this.enabled||this.musicMuted)return;this.beep(arr[i++%arr.length],.30,'sine',0,.022);};
+  note();this.timer=setInterval(note,900);
+ }
+ stopMusic(){if(this.timer)clearInterval(this.timer);this.timer=null;if(this.musicAudio){this.musicAudio.pause();this.musicAudio.removeAttribute('src');this.musicAudio.load();this.musicAudio=null;}this.music=null;}
+
 }
 window.NogginSound=NogginSound;
