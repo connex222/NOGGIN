@@ -32,29 +32,36 @@
   <div id="lobbyCast" class="showcase-cast lobby-cast" aria-label="Twelve NOGGIN characters"></div>
   <section class="tv-grid" id="lobbyGrid" aria-label="NOGGIN room lobby">
     <div class="join-panel surface glow-card">
-      <div class="step">1</div><h2>YOUR ROOM CODE</h2>
-      <div class="code-label">SHARE THIS CODE WITH FRIENDS</div><p id="roomCode" class="room-code" aria-live="polite">····</p>
-      <p class="tip">Players enter this code on their phones. The QR code also works.</p>
+      <h2>YOUR ROOM CODE</h2>
+      <p class="code-label">SHARE THIS CODE WITH FRIENDS</p>
+      <p id="roomCode" class="room-code" aria-live="polite">····</p>
+      <p class="tip">Enter this code on your phone, or scan the QR code alongside.</p>
       <p id="rosterHelp" class="roster-help">Waiting for contestants to join by phone…</p>
     </div>
     <div class="phone-panel surface glow-card">
       <h2>JOIN WITH PHONES</h2>
-      <div class="phone-instructions"><span>1. Scan the QR code</span><span>2. Pick your character</span><span>3. Tap READY!</span></div>
-      <div class="qr-wrap"><img id="qrImage" alt="Real NOGGIN QR code for your current room" width="200" height="200"/><p class="qr-hint">Scan with your phone camera</p></div>
+      <div class="phone-main">
+        <div class="phone-instructions"><span>1. Scan the QR code</span><span>2. Pick your character</span><span>3. Tap READY!</span></div>
+        <div class="qr-wrap"><img id="qrImage" alt="Scan this live QR code to join the current NOGGIN game room" width="200" height="200"/><p class="qr-hint">SCAN TO JOIN</p></div>
+      </div>
       <p class="join-url" id="joinUrl">Connecting…</p>
     </div>
-    <div class="roster-panel surface">
-      <div class="roster-top"><h2>MEET THE NOGGIN PANEL</h2><span class="pill"><span id="count">0</span> / 8 PLAYERS</span></div>
-      <div id="roster" class="roster" aria-live="polite"></div>
-    </div>
+    <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
+      <div class="control-heading"><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div>
+      <label for="target">SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12" selected>Standard · 12 Sparks</option><option value="16">Long · 16 Sparks</option></select></label>
+      <label for="timerSpeed">GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
+      <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
+      <button id="newRoom" class="button-secondary" type="button">NEW ROOM</button>
+    </section>
   </section>
-  <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
-    <div class="control-heading"><div class="step">3</div><div><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div></div>
-    <label>SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12" selected>Standard · 12 Sparks</option><option value="16">Long · 16 Sparks</option></select></label>
-    <label>GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
-    <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
-    <div class="controls-actions"><button id="newRoom" class="button-secondary" type="button">NEW ROOM</button><button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button><p class="phase-warning">Players must be ready before the show can start.</p></div>
-  </section>
+  <div class="roster-panel surface" id="lobbyRosterPanel">
+    <div class="roster-top"><h2>MEET THE NOGGIN PANEL</h2><span class="pill"><span id="count">0</span> / 8 PLAYERS</span></div>
+    <div id="roster" class="roster" aria-live="polite"></div>
+  </div>
+  <div id="lobbyLaunch" class="lobby-launch">
+    <button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button>
+    <p class="phase-warning">All contestants must tap READY before the show starts.</p>
+  </div>
   <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN live board">
     <div class="stage-bar surface"><span id="stageTurn">TURN 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">FIRST TO 12 SPARKS</span></div>
     <div class="board-container"><div class="show-fx" id="showFx" aria-hidden="true"></div>

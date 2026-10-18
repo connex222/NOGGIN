@@ -1,3 +1,25 @@
+# NOGGIN v2 — redesigned TV welcome and lobby
+
+The two-stage TV experience has a new balanced lobby. The top of both screens shows all twelve characters, with randomized expressions on opening. The second screen has three clearly separated panels (room code, **live** QR joining, and settings), an eight-seat roster, and a Start button that only becomes active when all players are ready. Audio controls are placed away from game controls. On smaller displays the panels stack vertically.
+
+**Windows:** Unzip to a new folder and double-click `start-noggin.bat`. Follow the exact TV address in its black console. **Render:** Deploy the contents of this folder at the GitHub repository root on the `main` branch. The server automatically supplies the correct QR code and URL for each room. Do not hardcode LAN links into the hosted build.
+
+See `NOGGIN-V2-CHANGES.md` for release details.
+
+---
+
+# NOGGIN v1.4 — Game-Show Showcase
+
+**NEW:** Two interactive TV screens based on the approved designs. Both feature the twelve original avatars in one of three randomly selected expressions on each opening. The first screen offers Start Game, Join With Phones, How To Play and a live phone QR. The second screen shows the actual live room code, a working QR code, player roster, game settings and Start The Show control. **Never use the room code shown in mockup screenshots.**
+
+The 16 mini-games, board, multiplayer logic, Windows launcher, Render/Oracle deployment settings and bundled soundtracks are retained. See `SHOWCASE-UPDATE.md` for details.
+
+## IMPORTANT: v1.2 TV and phone redirect fix (18 October 2026)
+
+Earlier v1.2 bundles accidentally redirected `/tv/` back to itself, causing Chrome's
+`ERR_TOO_MANY_REDIRECTS` even when `/health` reported healthy. That also affected
+`/play/`. Both have been corrected in this build. See `REDIRECT-FIX.md`.
+
 # Windows launch fix (18 October 2026)
 
 This build handles port 3000 already being used on Windows by selecting the next available local port. Read `STARTUP-FIX.md` before launching.

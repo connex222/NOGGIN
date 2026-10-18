@@ -28,81 +28,209 @@
 .welcome-rules-panel li,.welcome-rules-panel p{line-height:1.55;font-size:clamp(16px,1.5vw,21px)}
 .welcome-rules-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:20px}
 .welcome-rules-actions button{min-width:160px;flex:1}
-body.tv:not(.playing) {background:#030923}
-body.tv:not(.playing) .tv-shell{width:min(100vw,177.68vh);max-width:none;height:min(100vh,56.28vw);min-height:0;position:relative;display:block;margin:auto;padding:0;overflow:hidden;isolation:isolate;background:#040929 url('/tv/art/lobby-stage.webp') center/100% 100% no-repeat}
-body.tv:not(.playing) .tv-header{position:absolute;right:1%;bottom:1%;z-index:5;max-width:43%;border:0;background:#0c1f4cf0;border-radius:12px;padding:4px 12px;display:block;box-shadow:0 0 14px #2547b4}
-body.tv:not(.playing) .tv-header>div:first-child{display:none}
-body.tv:not(.playing) .header-actions{display:flex;gap:8px;justify-content:end;flex-wrap:wrap}
-body.tv:not(.playing) .sound-tools{display:flex;flex-wrap:wrap;gap:4px}
-body.tv:not(.playing) .sound-tools button{padding:5px;font-size:clamp(10px,.8vw,14px)}
-body.tv:not(.playing) .sound-label{font-size:clamp(10px,.7vw,13px)}
-body.tv:not(.playing) .sound-label input{max-width:64px}
-body.tv:not(.playing) #lobbyGrid{position:absolute;z-index:2;left:9.2%;top:36%;width:55.9%;height:34%;min-height:0!important;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;gap:2%;background:transparent;border:none;padding:0;margin:0;max-width:none}
-body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel,body.tv:not(.playing) #lobbyControls{background:linear-gradient(150deg,#081b53,#0b113b);border:clamp(2px,.2vw,4px) solid #ffb944;border-radius:20px;box-shadow:0 0 14px #fb923c9c,inset 0 0 18px #322d90b8;color:white}
-body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel{height:100%;overflow:hidden;padding:5% 6%;display:flex;align-items:center;flex-direction:column;gap:1.2%;text-align:center}
-body.tv:not(.playing) .join-panel h2,body.tv:not(.playing) .phone-panel h2,body.tv:not(.playing) #lobbyControls h2{margin:0;color:#ffe177;text-shadow:0 2px 4px #09011d;font-size:clamp(11px,1.5vw,26px);letter-spacing:.04em}
-body.tv:not(.playing) .join-panel .step,body.tv:not(.playing) #lobbyControls .step{display:none}
-body.tv:not(.playing) .code-label{font-size:clamp(10px,.85vw,16px);color:#bce6ff;margin:1% 0}
-body.tv:not(.playing) #roomCode{font-family:system-ui,sans-serif;font-weight:1000;font-size:clamp(31px,4.25vw,75px);letter-spacing:.035em;line-height:1.2;background:#010c41;border:2px solid #33b8ff;border-radius:15px;text-shadow:0 0 18px #79bdff;margin:2% 0;width:100%;padding:2% 0;box-shadow:0 0 15px #158aff}
-body.tv:not(.playing) #lobbyGrid .tip{color:#cbdcff;font-size:clamp(9px,.92vw,17px);line-height:1.35;margin:1% 0}
-body.tv:not(.playing) #rosterHelp{font-size:clamp(9px,.88vw,16px);line-height:1.3;color:#ffe49b;margin-top:auto}
-body.tv:not(.playing) .phone-instructions{display:flex;flex-direction:column;gap:3px;align-self:stretch;font-size:clamp(9px,.95vw,17px);color:#ddecff;text-align:left;line-height:1.3}
-body.tv:not(.playing) .phone-instructions span:before{content:'✓ ';color:#ffe77b}
-body.tv:not(.playing) .qr-wrap{margin:auto;padding:1%;border:none;background:none;min-height:0}
-body.tv:not(.playing) #qrImage{width:clamp(70px,14vh,154px);height:clamp(70px,14vh,154px);background:#fff;border:3px solid white;border-radius:6px;object-fit:contain;display:block;margin:auto}
-body.tv:not(.playing) .qr-hint{margin:0;color:#fff3c4;font-size:clamp(9px,.75vw,13px)}
-body.tv:not(.playing) #joinUrl{font-size:clamp(9px,.7vw,14px);line-height:1.2;color:#badfff;overflow-wrap:anywhere;margin:2% 0;max-height:3em;overflow:hidden}
-body.tv:not(.playing) #lobbyControls{position:absolute;top:36%;left:66.5%;height:34%;width:25.0%;z-index:3;padding:1.5% 1.6%;display:flex;flex-direction:column;gap:2%;margin:0;max-width:none}
-body.tv:not(.playing) #lobbyControls .control-heading{margin-bottom:2%}
-body.tv:not(.playing) #lobbyControls .control-heading p{font-size:clamp(9px,.8vw,15px);margin:0}
-body.tv:not(.playing) #lobbyControls label{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0;font-size:clamp(9px,.9vw,17px);font-weight:750;color:#e8eefe}
-body.tv:not(.playing) #lobbyControls select{font-size:clamp(10px,.88vw,16px);width:56%;margin:0;padding:5px 3px;border:2px solid #497fff;border-radius:8px;color:#fff;background:#13225a}
-body.tv:not(.playing) #lobbyControls .toggles{display:flex;flex-direction:column;gap:3px;margin:0}
-body.tv:not(.playing) #lobbyControls .checkrow{font-size:clamp(10px,.9vw,15px);justify-content:flex-start}
-body.tv:not(.playing) #lobbyControls .checkrow input{margin-right:4px}
-body.tv:not(.playing) #lobbyControls .controls-actions{display:contents;min-width:0}
-body.tv:not(.playing) #newRoom{margin-top:auto;align-self:flex-end;padding:5px 10px;font-size:clamp(9px,.85vw,16px)}
-body.tv:not(.playing) #stageReady{position:fixed;z-index:6;left:35%;top:82%;width:30%;height:10.5%;border-radius:26px;font-size:clamp(15px,2.3vw,34px);font-weight:1000;background:linear-gradient(#ffed80,#ffc829 70%,#f08b0c);color:#09174b;border:3px solid #ffed9f;box-shadow:0 0 22px #fdad32,0 7px 0 #62301e;text-shadow:none}
-body.tv:not(.playing) #stageReady:disabled{background:linear-gradient(#605f6d,#3d436b);border-color:#929bad;color:#f1f3fe;box-shadow:none}
-body.tv:not(.playing) .phase-warning{display:none}
-body.tv:not(.playing) .roster-panel{position:absolute;top:102%;left:0;width:146%;height:24%;max-height:none;overflow:hidden;background:linear-gradient(90deg,#08123ddf,#101958df);border:1px solid #385bc4;border-radius:12px;padding:1% 1.7%;box-shadow:0 0 13px #b36ca654}
-body.tv:not(.playing) .roster-top{display:flex;justify-content:space-between;align-items:center;margin:0 0 4px}
-body.tv:not(.playing) .roster-top h2{font-size:clamp(9px,.85vw,16px);margin:0}
-body.tv:not(.playing) .roster-top .pill{font-size:clamp(9px,.8vw,14px)}
-body.tv:not(.playing) #roster{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:4px;margin:0}
-body.tv:not(.playing) #roster .seat{min-width:0;min-height:0;padding:1px;background:#101a4eea;border:1px dashed #647abc;border-radius:6px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
-body.tv:not(.playing) #roster .seat.filled{border:1px solid #ffc357}
-body.tv:not(.playing) #roster .seat img,body.tv:not(.playing) #roster .seat .placeholder{height:clamp(26px,4.5vh,55px);width:clamp(26px,4.5vh,55px);object-fit:contain;margin:0}
-body.tv:not(.playing) #roster .seat .seat-label{font-size:clamp(7px,.7vw,13px);line-height:1.0;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+
+/* NOGGIN v2: screen-safe studio layout. The selected stage art is kept;
+   all text, links, live QR, game settings, and player seats are real HTML. */
+body.tv:not(.playing){background:#030923}
+body.tv:not(.playing) .tv-shell{
+  width:min(100vw,177.68vh);height:min(100vh,56.28vw);min-height:0;
+  max-width:none;margin:0 auto;padding:0;position:relative;display:block;
+  overflow:hidden;isolation:isolate;
+  background:#03072c url('/tv/art/lobby-stage.webp') center / 100% 100% no-repeat;
+}
+/* Cast fits in the frame of the stage artwork, above every lobby widget. */
+body.tv:not(.playing) .lobby-cast{z-index:4;top:5.7%;height:19.4%;}
+body.tv:not(.playing) #lobbyGrid{
+  position:absolute;z-index:5;top:36.3%;left:7.3%;width:85.4%;height:30.5%;
+  display:grid!important;grid-template-columns:1.04fr 1fr 1fr;
+  grid-template-rows:minmax(0,1fr);gap:1%;min-height:0!important;
+  padding:0;margin:0;border:0;background:none;align-items:stretch;
+}
+body.tv:not(.playing) #lobbyGrid>.surface{
+  box-sizing:border-box;min-width:0;min-height:0;height:100%;max-width:none;
+  overflow:hidden;border:clamp(2px,.22vw,4px) solid #ffc25a;
+  border-radius:clamp(10px,1.1vw,22px);background:#091640;
+  box-shadow:0 0 12px #f4a84bb8,inset 0 0 20px #223c99;
+  padding:clamp(8px,1vw,20px);color:#f9f8ff;
+}
+body.tv:not(.playing) #lobbyGrid h2{
+  margin:0;line-height:1.12;color:#ffda65;text-align:center;
+  text-shadow:0 2px 3px #010719;font-size:clamp(15px,1.82vw,30px);
+  font-weight:1000;letter-spacing:.015em;
+}
+body.tv:not(.playing) #lobbyGrid .join-panel{
+  display:flex;flex-direction:column;align-items:center;justify-content:space-around;
+  gap:2px;text-align:center;
+}
+body.tv:not(.playing) .code-label{color:#bfe7ff;letter-spacing:.14em;
+  font-size:clamp(9px,.9vw,16px);font-weight:900;margin:2px 0 0;}
+body.tv:not(.playing) #roomCode{
+  width:100%;min-width:0;margin:4px 0 2px;padding:clamp(5px,.6vw,12px) 1px;
+  color:#ffde5e;font:bold clamp(30px,4.4vw,82px)/1.03 system-ui,sans-serif;
+  letter-spacing:.025em;white-space:nowrap;border:2px solid #40cfff;
+  background:#071644;box-shadow:0 0 15px #008cffa9;border-radius:12px;
+  text-shadow:0 0 11px #ffa757;
+}
+body.tv:not(.playing) #lobbyGrid .tip{margin:2px 0;color:#d6e9ff;
+  font-size:clamp(9px,.86vw,16px);line-height:1.24;}
+body.tv:not(.playing) #rosterHelp{font-size:clamp(9px,.85vw,16px);line-height:1.15;
+  margin:0;color:#fff4ad;overflow:hidden;max-height:2.3em;}
+body.tv:not(.playing) #lobbyGrid .phone-panel{
+  display:flex;flex-direction:column;gap:clamp(3px,.4vw,8px);
+  justify-content:space-between;align-items:stretch;text-align:center;
+}
+body.tv:not(.playing) .phone-main{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(80px,.95fr);
+  align-items:center;gap:clamp(4px,.5vw,12px);flex:1;min-height:0;
+}
+body.tv:not(.playing) .phone-instructions{
+  min-width:0;display:flex;flex-direction:column;gap:clamp(7px,.75vw,13px);
+  font-size:clamp(9px,.94vw,18px);font-weight:650;line-height:1.18;text-align:left;
+  color:#f4f8ff;
+}
+body.tv:not(.playing) .phone-instructions span{display:block}
+body.tv:not(.playing) .phone-instructions span:before{content:''}
+body.tv:not(.playing) .qr-wrap{margin:0!important;padding:0!important;border:0!important;
+  box-shadow:none!important;background:none!important;min-width:0;min-height:0;
+  display:grid;place-items:center;gap:2px;}
+body.tv:not(.playing) #qrImage{display:block;box-sizing:border-box;
+  width:min(100%,clamp(75px,14vh,170px));height:auto;aspect-ratio:1;
+  border:5px solid white;border-radius:7px;background:white;padding:0;
+  box-shadow:0 0 14px #57adff;object-fit:contain;
+}
+body.tv:not(.playing) .qr-hint{font-size:clamp(8px,.72vw,12px);
+  color:#b8e6ff;margin:0;line-height:1.1;}
+body.tv:not(.playing) #joinUrl{margin:0;color:#cde6ff;font-size:clamp(9px,.85vw,14px);
+  line-height:1.18;min-height:1.18em;overflow-wrap:anywhere;overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+body.tv:not(.playing) #lobbyControls{position:relative!important;inset:auto!important;
+  z-index:auto!important;margin:0!important;width:auto!important;height:100%!important;
+  display:flex!important;flex-direction:column;flex-wrap:nowrap!important;gap:clamp(3px,.36vw,8px);
+  align-items:stretch;padding:clamp(8px,1vw,20px)!important;overflow:hidden;}
+body.tv:not(.playing) #lobbyControls .control-heading{display:block;margin:0 0 clamp(2px,.25vw,7px);}
+body.tv:not(.playing) #lobbyControls .control-heading p{text-align:center;
+  font-size:clamp(9px,.85vw,15px);margin:2px 0 0;}
+body.tv:not(.playing) #lobbyControls>label{display:flex;align-items:center;
+  justify-content:space-between;gap:clamp(3px,.6vw,10px);min-width:0;width:100%;
+  font-size:clamp(9px,.95vw,16px);font-weight:800;line-height:1.1;margin:0;}
+body.tv:not(.playing) #lobbyControls select{min-width:0;width:58%;
+  padding:clamp(4px,.43vw,8px) clamp(3px,.4vw,7px);font-size:clamp(10px,.96vw,16px);
+  min-height:0;border:2px solid #6797ff;border-radius:7px;color:#fff;background:#13235b;}
+body.tv:not(.playing) #lobbyControls .toggles{display:flex;flex-direction:column;
+  margin:0;gap:clamp(2px,.3vw,5px);}
+body.tv:not(.playing) #lobbyControls .toggles label{display:flex;
+  justify-content:flex-start;gap:6px;line-height:1.1;
+  font-size:clamp(10px,.92vw,16px);font-weight:650;margin:0;}
+body.tv:not(.playing) #lobbyControls .toggles input{
+  flex:none;width:clamp(14px,1.15vw,18px);height:clamp(14px,1.15vw,18px);margin:0;}
+body.tv:not(.playing) #newRoom{align-self:flex-end;margin-top:auto;
+  min-height:0;padding:clamp(4px,.37vw,7px) clamp(8px,.7vw,14px);
+  font-size:clamp(9px,.9vw,15px);border:2px solid #76bdff;
+  border-radius:12px;background:#1151aa;color:white;}
+body.tv:not(.playing) #lobbyRosterPanel{
+  display:block!important;position:absolute;z-index:5;top:68.1%;left:7.3%;
+  height:13.5%;width:85.4%;padding:clamp(3px,.6vw,9px) clamp(7px,.85vw,14px);
+  box-sizing:border-box;border-radius:14px;border:2px solid #459bff;
+  background:#06143c;box-shadow:0 0 13px #2574ee;
+  overflow:hidden;min-height:0;max-width:none;
+}
+body.tv:not(.playing) .roster-top{display:flex;justify-content:space-between;
+  align-items:center;gap:10px;margin:0 0 4px;line-height:1.12;}
+body.tv:not(.playing) .roster-top h2{font-size:clamp(12px,1.45vw,24px);
+  color:#ffe275;line-height:1;margin:0;}
+body.tv:not(.playing) .roster-top .pill{flex:none;font-size:clamp(9px,.85vw,15px);
+  padding:3px 10px;}
+body.tv:not(.playing) #roster{display:grid!important;
+  grid-template-columns:repeat(8,minmax(0,1fr));gap:clamp(3px,.6vw,8px);
+  padding:0;margin:0;width:100%;}
+body.tv:not(.playing) #roster .seat{display:flex;min-width:0;min-height:0;
+  align-items:center;justify-content:flex-start;flex-direction:column;
+  overflow:hidden;gap:1px;padding:2px;border:1px dashed #509efc;
+  border-radius:7px;background:#10235c;}
+body.tv:not(.playing) #roster .seat.filled{border:1px solid #ffcd65;}
+body.tv:not(.playing) #roster .seat img,
+body.tv:not(.playing) #roster .seat .placeholder{
+  flex:none;width:clamp(13px,2.7vh,36px);height:clamp(13px,2.7vh,36px);
+  margin:0;object-fit:contain;font-size:clamp(13px,1.5vw,24px);line-height:1;}
+body.tv:not(.playing) #roster .seat .seat-label{
+  width:100%;font-size:clamp(8px,.85vw,14px);line-height:1.1;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;
+}
 body.tv:not(.playing) #roster .seat .seat-detail{display:none}
-body.tv:not(.playing) #roster .seat .seat-flag{font-size:clamp(7px,.65vw,11px);line-height:1.1}
+body.tv:not(.playing) #roster .seat .seat-flag{
+  font-size:clamp(8px,.7vw,11px);line-height:1;color:#8effa7;}
+body.tv:not(.playing) #lobbyLaunch{
+  display:block;position:absolute;z-index:5;top:83.8%;left:31%;
+  height:10%;width:38%;margin:0;padding:0;
+}
+body.tv:not(.playing) #stageReady{position:relative!important;inset:auto!important;
+  display:block!important;width:100%!important;height:100%!important;
+  min-height:0!important;white-space:nowrap;
+  border:3px solid #ffe8a7;border-radius:25px;
+  background:linear-gradient(#fff48b,#ffd32a 60%,#f9ac1b);
+  color:#071542;font-size:clamp(16px,2.15vw,34px);font-weight:1000;
+  box-shadow:0 0 20px #ffb723,0 5px 0 #503215;
+  text-shadow:none;cursor:pointer;
+}
+body.tv:not(.playing) #stageReady:disabled{
+  opacity:1!important;color:#eaf2ff!important;border-color:#98acff!important;
+  background:linear-gradient(#344b92,#1e306c)!important;box-shadow:0 0 12px #123794!important;
+  cursor:default;
+}
+body.tv:not(.playing) .phase-warning{display:none}
+body.tv:not(.playing) .tv-header{position:absolute;z-index:6;
+  right:1.7%;bottom:1%;width:29%;max-width:none;display:block;
+  background:#081b49f5;border:2px solid #6eb4ff;border-radius:12px;
+  padding:clamp(4px,.5vw,9px);box-shadow:0 0 12px #132ea3;}
+body.tv:not(.playing) .tv-header>div:first-child{display:none}
+body.tv:not(.playing) .header-actions{display:flex;flex-direction:column;
+  gap:3px;align-items:end;justify-content:center;}
+body.tv:not(.playing) .header-actions>.pill{font-size:clamp(9px,.85vw,15px);padding:3px 10px;}
+body.tv:not(.playing) .sound-tools{display:flex;align-items:center;
+  flex-wrap:nowrap;gap:clamp(3px,.4vw,7px);width:100%;justify-content:end;}
+body.tv:not(.playing) .sound-tools button{
+  font-size:clamp(9px,.8vw,13px);padding:5px 6px;min-height:0;white-space:nowrap;
+}
+body.tv:not(.playing) .sound-label{font-size:clamp(9px,.7vw,12px);
+  display:flex;gap:2px;align-items:center;margin:0;min-width:0;}
+body.tv:not(.playing) .sound-label input{width:min(4.4vw,70px);min-width:18px;margin:0;}
 body.tv:not(.playing) .tv-footer{display:none}
-body.tv:not(.playing) .lobby-cast{z-index:4}
-body.tv.playing .lobby-cast{display:none!important}
-body.tv.playing .welcome-screen{display:none!important}
-@media(max-width:900px){body.tv:not(.playing) .tv-shell{width:100%;height:auto;aspect-ratio:auto;min-height:100vh;overflow:auto;background-size:auto 100vh;background-repeat:no-repeat;background-position:center top;padding:27vw 10px 120px}
-body.tv:not(.playing) .lobby-cast{position:absolute;top:1%;height:auto;aspect-ratio:12/1.9}
-body.tv:not(.playing) #lobbyGrid,body.tv:not(.playing) #lobbyControls{position:relative;inset:auto;width:100%;height:auto;display:flex;flex-direction:column;gap:12px;margin:12px 0}
-body.tv:not(.playing) #lobbyGrid .join-panel,body.tv:not(.playing) #lobbyGrid .phone-panel{min-height:180px}
-body.tv:not(.playing) .roster-panel{position:relative;inset:auto;width:100%;height:auto;min-height:120px}
-body.tv:not(.playing) #lobbyControls{padding:20px}
-body.tv:not(.playing) #stageReady{position:relative;inset:auto;width:100%;height:64px}
-body.tv:not(.playing) .tv-header{position:relative;inset:auto;width:100%;max-width:none}
-.welcome-live-join{display:none}}
+body.tv.playing .lobby-cast, body.tv.playing #lobbyRosterPanel,
+body.tv.playing #lobbyLaunch, body.tv.playing .welcome-screen{display:none!important}
+/* On smaller screens use a stacked, readable lobby rather than shrinking into tiny cards. */
+@media(max-width:850px){
+ body.tv:not(.playing) .tv-shell{width:100%;height:auto;min-height:100vh;
+   overflow:visible;background-size:100% auto;background-repeat:no-repeat;background-position:center top;
+   padding:27vw 12px 22px;}
+ body.tv:not(.playing) .lobby-cast{top:1%;left:1%;width:98%;height:auto;aspect-ratio:12 / 1.9;}
+ body.tv:not(.playing) #lobbyGrid{position:relative;inset:auto;
+   display:grid!important;grid-template-columns:1fr;grid-template-rows:auto;
+   width:100%;height:auto;gap:12px;margin-top:15px;}
+ body.tv:not(.playing) #lobbyGrid>.surface{height:auto;min-height:175px;padding:16px;}
+ body.tv:not(.playing) #lobbyControls{height:auto!important;min-height:220px;}
+ body.tv:not(.playing) #lobbyRosterPanel{position:relative;inset:auto;width:100%;height:auto;
+   margin:12px 0;padding:12px;min-height:120px;}
+ body.tv:not(.playing) #roster{grid-template-columns:repeat(4,minmax(0,1fr));}
+ body.tv:not(.playing) #lobbyLaunch{position:relative;inset:auto;
+   width:100%;height:62px;margin:12px 0;}
+ body.tv:not(.playing) .tv-header{position:relative;inset:auto;width:100%;margin-top:14px;}
+ body.tv:not(.playing) .sound-tools{justify-content:center;flex-wrap:wrap;}
+ body.tv:not(.playing) .phone-main{grid-template-columns:1fr 1fr;}
+ body.tv:not(.playing) #qrImage{width:140px;}
+ body.tv:not(.playing) .join-panel #roomCode{font-size:clamp(40px,9vw,78px);}
+ body.tv:not(.playing) #lobbyGrid h2{font-size:22px;}
+}
 @media(prefers-reduced-motion:reduce){.welcome-screen{transition:none}}
-/* Keep compact lobby widgets inside their panel at 720p. */
-body.tv:not(.playing) #lobbyControls{flex-wrap:nowrap!important;align-items:stretch!important;overflow:hidden;gap:4px;justify-content:flex-start}
-body.tv:not(.playing) #lobbyControls>label{min-width:0!important;width:100%!important;flex:none;line-height:1.25}
-body.tv:not(.playing) #lobbyControls .toggles{min-width:0!important;width:100%;flex:none;max-width:100%;gap:1px;margin:0}
-body.tv:not(.playing) #lobbyControls .toggles label{min-width:0!important;width:100%;min-height:22px;justify-content:flex-start;display:flex;flex-direction:row;font-size:clamp(10px,.88vw,15px)}
-body.tv:not(.playing) #lobbyControls .toggles label input{flex:none;width:17px;height:17px}
-body.tv:not(.playing) #newRoom{position:absolute;bottom:5%;right:5%;padding:5px 9px;min-height:0;font-size:clamp(9px,.8vw,14px)}
-body.tv:not(.playing) #stageReady:disabled{opacity:1!important;color:#e2eaff;background:#26366e!important;border:3px solid #91a8ff!important;box-shadow:0 0 12px #18348b!important;text-shadow:none!important}
-body.tv:not(.playing) .roster-panel{background:#08143b!important;border:2px solid #476cdb!important;top:98%!important;height:29%!important;box-shadow:0 0 15px #2d4ca3!important}
-body.tv:not(.playing) #roster .seat{min-height:0!important;padding:1px!important;gap:2px!important}
-body.tv:not(.playing) #roster .seat .placeholder{font-size:19px!important;height:22px!important;line-height:20px}
-body.tv:not(.playing) .roster-panel{top:91%!important;height:38%!important}
-body.tv:not(.playing) #stageReady{left:32%;top:82%;width:36%;height:10.8%;font-size:clamp(16px,2.1vw,30px);white-space:nowrap;}
-body.tv:not(.playing) #stageReady:disabled{border-radius:24px}
+
 /* Match the TV gameplay wordmark to the same gold show-brand used on both front screens. */
 body.tv.playing .noggin-title{font-family:Impact,'Arial Black',system-ui,sans-serif;letter-spacing:-.035em;color:#ffd348;background:linear-gradient(175deg,#fff8b0,#ffdd49 42%,#ff9729 83%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 0 #6e2a0d) drop-shadow(0 6px 0 #0e2c78) drop-shadow(0 9px 6px #020c27);-webkit-text-stroke:1px #ffc951}
+/* v2 final fit pass: prevent base-game checkbox height from overflowing 720p settings. */
+body.tv:not(.playing) #lobbyControls .toggles .checkrow{min-height:20px!important;height:20px!important;flex:none;}
+body.tv:not(.playing) #lobbyControls .toggles{gap:3px;flex:none;}
+body.tv:not(.playing) #newRoom{min-height:25px!important;line-height:1.1;flex:none;}
+body.tv:not(.playing) #lobbyRosterPanel{top:66.9%;height:14.2%;}
+@media (max-height:850px) and (min-width:851px){
+ body.tv:not(.playing) #lobbyControls .control-heading p{display:none}
+ body.tv:not(.playing) #lobbyControls .control-heading{margin:0 0 1px;}
+ body.tv:not(.playing) #lobbyControls{gap:3px}
+}

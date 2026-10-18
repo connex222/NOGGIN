@@ -1,8 +1,8 @@
 {
   "name": "noggin-use-your-head",
-  "version": "1.4.0-showcase",
+  "version": "2.0.0",
   "private": true,
-  "description": "NOGGIN \u2014 two-screen game-show showcase with live room QR and rotating cast portraits",
+  "description": "NOGGIN v2: game-show landing and responsive TV lobby with QR, avatars and multiplayer gameplay",
   "engines": {
     "node": ">=20"
   },
@@ -10,7 +10,7 @@
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
     "test": "node --test tests/*.test.js",
-    "check": "node --check server/match-report.js && node --check server/content-filter.js && node --check server/index.js && node --check server/rooms.js && node --check server/gateway.js && node --check server/board.js && node --check server/state-store.js && node --check server/games/phase3.js && node --check server/games/phase4.js && node --check server/games/phase5.js && node --check public/tv/sound.js && node --check public/tv/tv.js && node --check public/tv/board-view.js && node --check public/play/play.js && node --check tools/simulate.js && node --check tools/make-phase3-data.js && node --check tools/export-guide-data.js && node --check tools/release-audit.js",
+    "check": "node --check server/match-report.js && node --check server/content-filter.js && node --check server/index.js && node --check server/rooms.js && node --check server/gateway.js && node --check server/board.js && node --check server/state-store.js && node --check server/games/phase3.js && node --check server/games/phase4.js && node --check server/games/phase5.js && node --check public/tv/sound.js && node --check public/tv/tv.js && node --check public/tv/board-view.js && node --check public/play/play.js && node --check tools/simulate.js && node --check tools/make-phase3-data.js && node --check tools/export-guide-data.js && node --check tools/release-audit.js && node --check public/tv/showcase.js",
     "simulate": "node tools/simulate.js 1000",
     "audit": "node tools/release-audit.js",
     "guide": "python tools/make-how-to-play.py"
