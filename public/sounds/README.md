@@ -1,9 +1,17 @@
-# NOGGIN TV sounds
+# NOGGIN — original audio production pack
 
-**No MP3 files are necessary.** The TV creates sound effects and musical motifs with its local Web Audio engine in `/tv/sound.js`. Players must click **Enable sound** on the TV at least once because browsers block autoplay. Sound is TV-only; phones vibrate if supported.
+This build bundles **20 newly composed sound-effect cues** as MP3 and **three seamless original ambient music loops** in OGG format. The sounds are **newly rendered electronic audio designs**, not professionally recorded field sounds, and use no sampled third-party music, recordings, soundfonts or external assets. They are local files that work offline. Generated programmatically for this NOGGIN release.
 
-To supply professional MP3 files later, copy the files into this folder and add the actual filenames to `sound-manifest.json`'s `files` array. When a named clip is absent or fails to play, code synthesizes the requested cue. File names:
+## TV controls
 
-`sfx-join.mp3`, `sfx-dice-roll.mp3`, `sfx-hop.mp3`, `sfx-reel.mp3`, `sfx-reel-stop.mp3`, `sfx-countdown.mp3`, `sfx-go.mp3`, `sfx-tick.mp3`, `sfx-correct.mp3`, `sfx-wrong.mp3`, `sfx-buzz.mp3`, `sfx-gunshot.mp3`, `sfx-boom.mp3`, `sfx-spark-gain.mp3`, `sfx-spark-lose.mp3`, `sfx-swap.mp3`, `sfx-showdown.mp3`, `sfx-crowd-cheer.mp3`, `sfx-crowd-aww.mp3`, `mus-lobby.mp3`, `mus-board.mp3`, `mus-tension.mp3`, `mus-victory.mp3`.
+- Click **Enable sound** once per browser session: browsers require user interaction for audio.
+- **FX** changes the volume of effects; **MUSIC** separately sets ambient volume.
+- **Music on/off** independently switches background tracks. Your preferences persist on the TV browser.
+- Lobby, board and challenge/Showdown have separate music loops; winner events silence the music for the victory cue.
+- Music is automatically quieter while a sound effect plays. Phones remain silent.
 
-Sound file licensing and music composition remain separate release tasks. Do not copy licensed broadcast/game-show clips without appropriate rights.
+Files are listed in `sound-manifest.json`. To replace an effect with a licensed studio-produced recording, overwrite the named MP3. To replace background music, overwrite the `mus-lobby.ogg`, `mus-board.ogg`, or `mus-tension.ogg` file with OGG audio, or edit the music map in the manifest to a local MP3. Prefer edited loops without abrupt tails. NOGGIN uses the file extension only for browser loading; it does not fetch assets from external servers.
+
+## Licensing and commercial use
+
+These audio files were created from original synthesis without third-party samples. They are supplied as part of this NOGGIN build. For additional recorded effects, use sources with clear commercial rights such as Kenney CC0 packs (https://kenney.nl/assets/interface-sounds) and retain license attribution as required. Avoid television-game-show samples, broadcast jingles, or sound effects from commercial games.

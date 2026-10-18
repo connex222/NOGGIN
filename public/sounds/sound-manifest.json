@@ -1,4 +1,30 @@
 {
-  "description": "Add bundled MP3 filenames to files to override Web Audio fallback sounds.",
-  "files": []
+  "description": "Original NOGGIN locally rendered audio cues and looping ambient compositions. No external assets or networks required.",
+  "files": [
+    "sfx-join.mp3",
+    "sfx-dice-roll.mp3",
+    "sfx-hop.mp3",
+    "sfx-reel.mp3",
+    "sfx-reel-stop.mp3",
+    "sfx-countdown.mp3",
+    "sfx-tick.mp3",
+    "sfx-go.mp3",
+    "sfx-correct.mp3",
+    "sfx-wrong.mp3",
+    "sfx-buzz.mp3",
+    "sfx-spark-gain.mp3",
+    "sfx-spark-lose.mp3",
+    "sfx-swap.mp3",
+    "sfx-showdown.mp3",
+    "sfx-crowd-cheer.mp3",
+    "sfx-crowd-aww.mp3",
+    "sfx-boom.mp3",
+    "sfx-gunshot.mp3",
+    "mus-victory.mp3"
+  ],
+  "music": {
+    "lobby": "mus-lobby.ogg",
+    "board": "mus-board.ogg",
+    "tension": "mus-tension.ogg"
+  }
 }
