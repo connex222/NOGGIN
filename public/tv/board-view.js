@@ -5,44 +5,64 @@ class NogginBoardView {
     const res=await fetch('/shared/board-data.json');if(!res.ok)throw Error('Board layout metadata missing.');
     this.data=await res.json();this.buildBoard();
   }
+  // Screen-space geometry for the live 36-space, neon double-curve racetrack.
+  // Space indices are unchanged: only the TV positions move. Gameplay is server-owned.
   positions() {
-    const P={0:[555,625],7:[85,625],15:[310,104],22:[790,104],30:[1020,625]};
-    [1,2,3,4,5,6].forEach((i,k)=>P[i]=[488-67*k,625]);
-    for(let k=0;k<7;k++)P[8+k]=[118+k*29,554-k*65];
-    for(let k=0;k<6;k++)P[16+k]=[376+k*68,104];
-    for(let k=0;k<7;k++)P[23+k]=[820+k*29,164+k*65];
-    for(let k=0;k<5;k++)P[31+k]=[955-k*82,625];
-    return P;
+    const p={0:[740,472]};
+    for(let i=1;i<=7;i++){
+      const x=740-i*85;
+      p[i]=[x,472-18*(1-Math.pow((x-800)/710,2))];
+    }
+    [[8,90,415],[9,77,337],[10,91,252],[11,135,184]].forEach(([i,x,y])=>p[i]=[x,y]);
+    for(let i=12;i<=23;i++){
+      const x=195+(i-12)*110;
+      p[i]=[x,150+38*(1-Math.pow((x-800)/710,2))];
+    }
+    [[24,1465,185],[25,1506,252],[26,1522,336],[27,1497,414]].forEach(([i,x,y])=>p[i]=[x,y]);
+    for(let i=28;i<=35;i++){
+      const x=1432-(i-28)*85;
+      p[i]=[x,472-18*(1-Math.pow((x-800)/710,2))];
+    }
+    return p;
   }
   el(name,props={},text) {const e=document.createElementNS('http://www.w3.org/2000/svg',name);for(const [k,v] of Object.entries(props))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=text;return e;}
   buildBoard() {
-    const svg=document.getElementById('boardGraphic'),E=this.el.bind(this);svg.replaceChildren();this.points=this.positions();
-    const defs=E('defs'),grad=E('linearGradient',{id:'stageSurface',x1:'0%',y1:'0%',x2:'0%',y2:'100%'});
-    grad.append(E('stop',{offset:'0%','stop-color':'#345492'}),E('stop',{offset:'100%','stop-color':'#1a2e5e'}));defs.append(grad);
-    const shapes={speed:'M1 11 L11 1',brain:'M3 3 L4 4 M9 9 L10 10',create:'M1 4 L11 4',together:'M6 0 L6 12 M0 6 L12 6',showdown:'M0 0 L12 12 M12 0 L0 12',start:'M0 6 L12 6',swap:'M1 3 L11 3 M1 9 L11 9',pickpocket:'M2 2 L4 4 M8 8 L10 10',drain:'M0 3 L12 3 M0 9 L12 9',wildcard:'M0 0 L12 12 M2 10 L10 2',lift:'M3 0 L3 12 M9 0 L9 12'};
-    for(const [type,d] of Object.entries(shapes)){
-      const pattern=E('pattern',{id:`tile-${type}`,width:12,height:12,patternUnits:'userSpaceOnUse'});
-      pattern.append(E('path',{d,stroke:'#ffffff','stroke-width':1.7,'stroke-opacity':.85,fill:'none'}));defs.append(pattern);
-    }
-    svg.append(defs);
-    svg.append(E('ellipse',{cx:555,cy:660,rx:505,ry:37,fill:'#01061a',opacity:'.56'}));
-    svg.append(E('polygon',{points:'307,85 793,85 1055,672 55,672',fill:'url(#stageSurface)',stroke:'#83a8d9','stroke-width':6}));
-    for(let i=0;i<9;i++)svg.append(E('line',{x1:315+i*58,y1:115,x2:90+i*110,y2:652,stroke:'#6486be','stroke-width':1,opacity:'.25'}));
+    const svg=document.getElementById('boardGraphic'),E=this.el.bind(this);
+    svg.replaceChildren();this.points=this.positions();
+    const defs=E('defs');
+    const glow=E('filter',{id:'nogginTileGlow',x:'-80%',y:'-80%',width:'260%',height:'260%'});
+    glow.append(E('feGaussianBlur',{stdDeviation:'8',result:'blur'}),E('feMerge',{}));
+    // Tile colours are from the real board metadata, never the reference illustration.
+    this.data.forEach(({type,color})=>{
+      if(defs.querySelector('#arena-'+type))return;
+      const g=E('linearGradient',{id:'arena-'+type,x1:'0%',x2:'18%',y1:'0%',y2:'100%'});
+      g.append(E('stop',{offset:'0%','stop-color':'#ffffff','stop-opacity':'.64'}),E('stop',{offset:'35%','stop-color':color,'stop-opacity':'1'}),E('stop',{offset:'100%','stop-color':color,'stop-opacity':'.88'}));defs.append(g);
+    });svg.append(defs);
+    const pts=Array.from({length:36},(_,i)=>this.points[i]);
+    const d='M '+pts.map(p=>p.join(' ')).join(' L ')+' Z';
+    // Opaque illuminated rail covers static artwork tiles so there are never
+    // two conflicting board layouts. The stage painting remains behind it.
+    svg.append(E('path',{d,fill:'none',stroke:'#020823','stroke-width':111,'stroke-linejoin':'round','stroke-linecap':'round',opacity:'.99'}));
+    svg.append(E('path',{d,fill:'none',stroke:'#ffb644','stroke-width':105,'stroke-linejoin':'round','stroke-linecap':'round',opacity:'.95'}));
+    svg.append(E('path',{d,fill:'none',stroke:'#0c1e56','stroke-width':94,'stroke-linejoin':'round','stroke-linecap':'round'}));
+    svg.append(E('path',{d,fill:'none',stroke:'#ffe7a1','stroke-width':2.6,'stroke-linejoin':'round',opacity:'.78'}));
+    svg.append(E('path',{d,fill:'none',stroke:'#ffe9a6','stroke-width':5,'stroke-linejoin':'round','stroke-dasharray':'3 17',opacity:'.94'}));
     const edge=E('g',{id:'boardSpaces'});
-    this.data.forEach(({index,type,color,icon})=>{
-      const [x,y]=this.points[index];const size=type==='showdown'?60:(y<120?49:56);const g=E('g',{class:`board-space type-${type}`,transform:`translate(${x},${y})`});
-      const fill=color;
-      g.append(E('rect',{x:-size/2,y:-size/2,width:size,height:size,rx:11,fill:fill,stroke:type==='showdown'?'#fff':'#dce9ff','stroke-width':type==='showdown'?4:2}));
-      // CSS rect fills are overridden by inline attr using independent opacity background block.
-      g.append(E('rect',{x:-size/2+3,y:-size/2+3,width:size-6,height:size-6,rx:8,fill:`url(#tile-${type})`,opacity:'.26',stroke:'none'}));
-      g.append(E('text',{y:-6,class:'space-icon'},icon));g.append(E('text',{y:size/2-10,class:'space-number'},String(index+1)));
-      if(type==='start')g.append(E('title',{},'START — 2 Sparks if landed on, 1 Spark for passing'));
+    this.data.forEach(({index,type,icon,label})=>{
+      const xy=this.points[index];if(!xy)return;
+      const [x,y]=xy;const show=type==='showdown',w=show?79:76,h=show?70:64;
+      const g=E('g',{class:`board-space type-${type}`,transform:`translate(${x},${y})`});
+      g.append(E('rect',{x:-w/2-4,y:-h/2-2,width:w+8,height:h+8,rx:14,fill:'#060e32',stroke:'#ffe69a','stroke-width':2.2}));
+      g.append(E('rect',{x:-w/2,y:-h/2,width:w,height:h,rx:12,fill:`url(#arena-${type})`,stroke:show?'#fff9c0':'#fff2cc','stroke-width':2}));
+      g.append(E('path',{d:`M ${-w/2+9} ${-h/2+7} H ${w/2-9}`,stroke:'#fff','stroke-opacity':'.48','stroke-width':2.5,'stroke-linecap':'round'}));
+      g.append(E('text',{y:-2,class:'space-icon'},icon));
+      g.append(E('text',{y:h/2-10,class:'space-number'},String(index+1)));
+      g.append(E('title',{},`Space ${index+1}: ${label||type}`));
       edge.append(g);
     });svg.append(edge);
     this.routeLayer=E('g',{id:'directorRouteLayer','aria-hidden':'true'});svg.append(this.routeLayer);
-    const tokenLayer=E('g',{id:'boardTokens'});svg.append(tokenLayer);this.tokenGroup=tokenLayer;
+    this.tokenGroup=E('g',{id:'boardTokens'});svg.append(this.tokenGroup);
   }
-
   renderShowdown(m,state){
     const panel=document.getElementById('challengePanel'),prompt=document.getElementById('challengePrompt'),options=document.getElementById('challengeChoices');
     panel.classList.remove('hidden');panel.classList.add('mini-on-tv','duel-on-tv');options.replaceChildren();
@@ -204,6 +224,13 @@ class NogginBoardView {
     document.getElementById('stageHelp').textContent=b.paused?b.pauseReason:'The next turn starts automatically after results.';
     document.getElementById('boardMessage').textContent=b.paused?'⏸ SHOW PAUSED':b.step==='choose_route'?'🎬 DIRECTOR’S CUT · PICK A LANDING':b.step==='finished'?'★ WE HAVE A WINNER ★':b.step==='result'?b.result?.text:actor?`${actor.name.toUpperCase()} · ${b.step==='await_roll'?'ROLL THE DICE!':'USE YOUR HEAD'}`:'NOGGIN';
     this.renderScores(state);
+    const hero=document.getElementById('arenaActiveAvatar');
+    if(hero){const img=this.avatars.find(a=>a.id===actor?.avatarId)?.think;
+      hero.hidden=!img;if(img)hero.src=img;hero.alt=actor?`${actor.name} is the active contestant`:'';}
+    const cue=document.getElementById('arenaBottomCue');
+    if(cue){const actions={await_roll:'🎲 ROLL ON YOUR PHONE',choose_die:'🎲 CHOOSE YOUR DIE',choose_route:'✦ PICK YOUR LANDING',minigame:'⚡ CHALLENGE IN PROGRESS',showdown:'★ SHOWDOWN LIVE',result:'✦ THE VERDICT',finished:'🏆 SHOW COMPLETE'};
+      cue.textContent=b.paused?'⏸ SHOW PAUSED':actions[b.step]||'★ USE YOUR HEAD';}
+
     const panel=document.getElementById('challengePanel'), c=b.challenge;
     panel.classList.toggle('hidden',!c&&!b.minigame&&!b.showdown);
     panel.classList.toggle('mini-on-tv',Boolean(b.minigame||b.showdown));
@@ -249,11 +276,13 @@ class NogginBoardView {
     if(b.step!=='choose_route')return;
     const shown=new Set();for(const o of b.routeOptions||[]){if(shown.has(o.landing))continue;shown.add(o.landing);const xy=this.points[o.landing];if(!xy)continue;
       const g=this.el('g',{class:`route-hint ${o.cost?'route-cost':'route-free'}`,transform:`translate(${xy[0]},${xy[1]})`});
-      g.append(this.el('circle',{r:37,fill:'none',stroke:o.cost?'#ff8bbc':'#ffffff','stroke-width':6,'stroke-dasharray':o.cost?'9 6':'none'}));
+      g.append(this.el('circle',{r:51,fill:'none',stroke:o.cost?'#ff8bbc':'#ffffff','stroke-width':6,'stroke-dasharray':o.cost?'9 6':'none'}));
       this.routeLayer.append(g);}
   }
   renderScores(state){const root=document.getElementById('scoreboard');root.replaceChildren();const b=state.board;
-    state.players.forEach(p=>{const avatar=this.avatars.find(a=>a.id===p.avatarId);const item=document.createElement('div');item.className=`score-seat ${b.leaderIds.includes(p.id)?'leader':''}`;
+    state.players.forEach((p,index)=>{const avatar=this.avatars.find(a=>a.id===p.avatarId);const item=document.createElement('div');item.className=`score-seat ${b.leaderIds.includes(p.id)?'leader':''} ${p.id===b.activeId?'on-turn':''}`;
+    const split=Math.ceil(state.players.length/2);const sideIndex=index<split?index:index-split;
+    item.style.gridColumn=String(index<split?5-split+sideIndex:6+sideIndex);
     const img=document.createElement('img');img.src=(b.step==='finished'&&b.winnerIds.includes(p.id)?avatar?.images?.win:b.step==='result'?(b.result?.winners?.includes(p.id)?avatar?.images?.win:avatar?.images?.lose):avatar?.think)||'';img.alt='';img.onerror=()=>{img.style.display='none';};
     const label=document.createElement('span');label.textContent=p.name;const count=document.createElement('strong');count.textContent=`✦ ${p.sparks}${state.settings.rules==='showtime'?` · 🎬 ${p.cues||0}`:''}`;const meter=document.createElement('div');meter.className='spark-meter';meter.setAttribute('role','progressbar');meter.setAttribute('aria-valuemin','0');meter.setAttribute('aria-valuemax',String(state.settings.target));meter.setAttribute('aria-valuenow',String(Math.min(state.settings.target,p.sparks)));
     const bar=document.createElement('i');bar.style.width=`${Math.min(100,Math.round(p.sparks/state.settings.target*100))}%`;meter.append(bar);
@@ -268,8 +297,8 @@ class NogginBoardView {
     for(const [pos,list] of grouped)for(let j=0;j<list.length;j++){
       const p=list[j],point=this.points[pos];if(!point)continue;
       const cols=Math.min(4,list.length),row=Math.floor(j/4),col=j%4;
-      const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*25;
-      const dy=-29-row*27;const active=p.id===activeId,r=active?17:14;
+      const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*34;
+      const dy=-49-row*37;const active=p.id===activeId,r=active?23:20;
       const g=E('g',{class:`stage-token ${active?'active-token':''}`,transform:`translate(${point[0]+dx},${point[1]+dy})`});
       const avatar=this.avatars.find(a=>a.id===p.avatarId);
       if(active)g.append(E('circle',{r:r+5,fill:'#ffed82',opacity:'.32'}));

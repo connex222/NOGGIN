@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NOGGIN — Phone Controller</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/play/play.css"></head>
-<body><header class="phone-top"><h1>NOG<span>G</span>IN<span>!</span></h1><span id="status" class="pill"><span id="phoneDot" class="dot"></span><span id="statusText">CONNECTING</span></span></header>
+<title>NOGGIN — Phone Controller</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/play/play.css"><link rel="stylesheet" href="/play/studio.css"></head>
+<body><header class="phone-top"><h1 class="phone-brand"><img src="/play/art/noggin-logo.webp" width="255" height="85" alt="NOGGIN — Use Your Head"></h1><span id="status" class="pill"><span id="phoneDot" class="dot"></span><span id="statusText">CONNECTING</span></span></header>
 <main class="phone-shell">
   <section id="joinScreen">
-    <div class="welcome"><div class="eyebrow">YOU'RE THE CONTESTANT</div><h2>GET YOUR GAME FACE ON.</h2><p>Join the room on the TV, choose a character, then get ready to use your head.</p></div>
-    <form id="joinForm" class="join-form">
+    <div class="welcome studio-marquee"><div class="eyebrow">★ THE LIVING ROOM GAME SHOW ★</div><h2>JOIN <em>THE SHOW</em></h2><p>Enter the code on the TV, pick your contestant and step into the spotlight!</p></div>
+    <form id="joinForm" class="join-form studio-panel">
       <label for="code">THE FOUR-CHARACTER ROOM CODE</label><input id="code" name="code" type="text" placeholder="ABCD" required minlength="4" maxlength="4" autocapitalize="characters" autocomplete="off" spellcheck="false" inputmode="text" aria-describedby="roomHint"/>
       <span class="field-hint" id="roomHint">Look at the big screen for the code.</span>
       <label for="playerName">YOUR NAME</label><input id="playerName" name="name" type="text" placeholder="Your game-show name" required minlength="2" maxlength="20" autocomplete="nickname"/>
-      <h3>CHOOSE YOUR CONTESTANT</h3><div id="avatarGrid" class="avatar-grid" aria-label="Choose a contestant avatar"></div>
+      <div class="avatar-grid-title"><span>★ CHOOSE YOUR CONTESTANT</span><span class="avatar-subtitle">12 CHARACTERS</span></div><div id="avatarGrid" class="avatar-grid" aria-label="Choose a contestant avatar"></div>
       <button class="button-primary join-button" type="submit" id="joinButton" disabled>CHOOSE AN AVATAR</button>
     </form>
   </section>
   <section id="lobbyScreen" class="hidden" aria-live="polite">
-    <div class="welcome"><div class="eyebrow">YOU'RE ON THE NOGGIN PANEL</div><h2 id="greeting">WELCOME!</h2><p>Wait for the show to start on the TV. You can change your character until you ready up.</p></div>
+    <div class="welcome studio-marquee"><div class="eyebrow">★ YOUR SPOTLIGHT AWAITS ★</div><h2 id="greeting">WELCOME!</h2><p>Choose your character, tap READY, and watch the TV for the start of the show.</p></div>
     <div class="player-hero surface"><img id="yourAvatar" alt="Your chosen game-show character"/><div><p class="eyebrow">YOUR CHARACTER</p><h3 id="yourCharacter">Contestant</h3><div class="sparks">✦ <span id="yourSparks">0</span> SPARKS</div><p id="yourSeat" class="field-hint">Seat 1</p></div></div>
     <p id="lobbyCount" class="field-hint centre">Waiting for other players…</p>
     <button id="readyButton" class="button-primary join-button" type="button">I'M READY!</button>
@@ -23,17 +23,17 @@
     <button id="leaveButton" type="button" class="button-danger leave-button">Leave room</button>
   </section>
   <section id="gameScreen" class="hidden" aria-live="polite">
-    <div class="game-player surface"><img id="gameAvatar" alt="Your avatar"><div><p class="eyebrow" id="gameRoom">NOGGIN</p><h2 id="gameName">Contestant</h2><div class="sparks"><span id="gameSparks">✦ 0 SPARKS  ·  🎬 2 CUES</span></div></div></div>
+    <div class="game-player surface"><div class="game-portrait"><img id="gameAvatar" alt="Your avatar"></div><div class="game-player-details"><p class="eyebrow" id="gameRoom">NOGGIN</p><h2 id="gameName">Contestant</h2><div class="sparks"><span id="gameSparks">✦ 0 SPARKS  ·  🎬 2 CUES</span></div></div></div>
     <div class="game-action surface">
-      <p class="eyebrow" id="gameTurn">TURN 1</p><h2 id="gameHeadline">Welcome to NOGGIN</h2><p id="gameDescription">Look at the TV</p>
-      <p id="gameCountdown" class="game-countdown"></p>
+      <div class="game-action-head"><p class="eyebrow" id="gameTurn">TURN 1</p><span id="gameStateTag" class="state-tag">GET READY</span></div><h2 id="gameHeadline">Welcome to NOGGIN</h2><p id="gameDescription">Look at the TV</p>
+      <div class="clock-container" id="gameClockContainer"><p id="gameCountdown" class="game-countdown" role="timer" aria-label="Remaining time"></p><div class="clock-track" aria-hidden="true"><div class="clock-fill" id="gameClockFill"></div></div></div>
       <div id="gameButtons" class="game-buttons"></div>
     </div>
-    <div class="game-help">Your answers and dice are handled by the game server. Watch the TV for the board.</div>
+    <div class="game-help">🎬 Your phone is your controller. Watch the TV for the board and challenges.</div>
   </section>
   <div id="error" class="error hidden" role="alert"></div>
   <div id="notice" class="notice hidden" role="status"></div>
 </main>
-<footer class="phone-footer">NOGGIN · USE YOUR HEAD ✦ TV + PHONE PARTY GAME</footer>
+<footer class="phone-footer">★ QUICK BRAINS. BIG LAUGHS. ★</footer>
 <script src="/socket.io/socket.io.js"></script><script src="/shared/client.js"></script><script src="/play/play.js"></script>
 </body></html>

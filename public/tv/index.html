@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"></head>
+<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"><link rel="stylesheet" href="/tv/arena-board.css"></head>
 <body class="tv">
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
 <div id="startupProblem" class="startup-problem" hidden role="alert"></div>
@@ -63,16 +63,23 @@
     <button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button>
     <p class="phase-warning">All contestants must tap READY before the show starts.</p>
   </div>
-  <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN live board">
-    <div class="stage-bar surface"><span id="stageTurn">TURN 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">FIRST TO 12 SPARKS</span></div>
-    <div class="board-container"><div class="show-fx" id="showFx" aria-hidden="true"></div>
-      <svg id="boardGraphic" viewBox="0 0 1100 700" role="img" aria-label="36-space trapezium NOGGIN board with player tokens"></svg>
-      <div class="board-centre surface" id="boardCentre"><p class="eyebrow">THE NOGGIN PANEL</p><h2 id="boardMessage">ROLL TO BEGIN</h2><div id="scoreboard" class="stage-scoreboard"></div></div>
+  <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN 36-space live game board">
+    <div class="stage-bar surface"><span id="stageTurn">ROUND 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">FIRST TO 12 SPARKS</span></div>
+    <div class="board-container" id="arenaView">
+      <div class="show-fx" id="showFx" aria-hidden="true"></div>
+      <div class="arena-top-logo" aria-label="NOGGIN — Use Your Head"><img class="arena-logo-image" src="/play/art/noggin-logo.webp" alt="NOGGIN — Use Your Head"><span class="arena-logo-tagline">Quick brains. Big laughs.</span></div>
+      <div class="board-centre" id="boardCentre"><p class="eyebrow">THE NOGGIN PANEL</p><div id="scoreboard" class="stage-scoreboard" aria-label="Live contestant scores"></div></div>
+      <svg id="boardGraphic" viewBox="0 0 1600 580" preserveAspectRatio="none" role="img" aria-label="36-space NOGGIN showtime racetrack with player tokens"></svg>
+      <div class="arena-hub" aria-live="polite"><div class="arena-hub-brain" aria-hidden="true">🧠</div><h2 id="boardMessage">ROLL TO BEGIN</h2><div class="arena-hub-pips" aria-hidden="true">⚄ &nbsp; ⚂</div></div>
       <div id="diceOverlay" class="dice-overlay hidden" aria-live="polite"><div id="diceCube" class="dice-cube">⚄</div><div id="diceInfo" class="dice-info">ROLL!</div></div>
       <div id="resultSpotlight" class="result-spotlight hidden" aria-live="polite"></div>
       <div id="challengePanel" class="stage-challenge surface hidden"><p class="eyebrow" id="challengeType">QUICK CHOICE</p><h2 id="challengeTitle">Challenge</h2><div id="challengePrompt"></div><div id="challengeChoices" class="challenge-choices"></div><p id="challengeCountdown" class="challenge-clock"></p></div>
+      <div class="stage-bottom surface">
+        <div class="arena-live-info"><img id="arenaActiveAvatar" alt="" hidden><div><span id="stageEvent">Ready to play</span><small id="stageHelp">Players control the show on their phones.</small></div></div>
+        <div id="arenaBottomCue" class="arena-bottom-cue">🎲 ROLL ON YOUR PHONE</div>
+        <div class="showrunner-tools"><button id="showPause" class="button-secondary" type="button">⏸ PAUSE</button><button id="showReport" class="button-secondary" type="button">↓ MATCH REPORT</button><button id="showSkip" class="button-secondary hidden" type="button">SKIP OFFLINE</button></div><button id="gameReset" class="button-secondary hidden" type="button">NEW GAME</button>
+      </div>
     </div>
-    <div class="stage-bottom surface"><span id="stageEvent">Ready to play</span><span id="stageHelp">Players control the show on their phones.</span><div class="showrunner-tools"><button id="showPause" class="button-secondary" type="button">⏸ PAUSE</button><button id="showReport" class="button-secondary" type="button">↓ MATCH REPORT</button><button id="showSkip" class="button-secondary hidden" type="button">SKIP OFFLINE</button></div><button id="gameReset" class="button-secondary hidden" type="button">NEW GAME</button></div>
   </section>
   <div id="message" class="error hidden" role="alert"></div>
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>

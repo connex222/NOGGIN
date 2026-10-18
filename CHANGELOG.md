@@ -241,6 +241,16 @@ See `SHOWRUNNER-CHANGELOG.md` for the new release changes.
 
 # NOGGIN Change Log
 
+## v2.0.0 — Phone UI redesign (from user-supplied v1.3.0)
+
+- Matched phone presentation to the NOGGIN TV welcome/lobby using its bundled gold-logo artwork, stage lighting, blue panels and gold trim.
+- Created a single responsive phone design system for joining, avatar picking, ready-up, turn controls, all 16 mini-games, four Showdowns and results.
+- Restyled native interactive controls and timers without changing any game/Socket.IO server rules or QR join behavior.
+- Preserved existing reconnect/session keys.
+- Added tests and mock-browser screenshots. Real Windows/Render multiplayer still requires hands-on verification.
+
+
+
 ## v0.8.0 — Director’s Cut, sharper games and improved show presentation
 
 - Added opt-in tactical roll planning with 2 Director Cues, ±1-space landing changes, free standard choices, 8.5-second auto-selection, and lap-based Cue replenishment.

@@ -1,0 +1,6 @@
+{
+  "status": "static checks passed; mocked browser checks passed; live phone/Render test not run",
+  "tests": "173 passed, 1 skipped",
+  "audits": 104,
+  "browser_viewports": 3
+}

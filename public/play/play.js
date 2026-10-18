@@ -6,6 +6,25 @@
   let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', currentlyResuming = false, currentDeadline = null, clockServer = null, clockLocal = null;
   let entryDraft={key:null,text:''};
   let interactionKey=null;
+  let clockInitialMs=0;
+  // Visual state is presentation-only. Multiplayer authority remains on the server.
+  const gameLabels={
+    'quick-draw':'SPEED','count-flash':'SPEED','odd-spot':'SPEED','colour-clash':'SPEED',
+    'higher-lower':'BRAIN','memory-lane':'BRAIN','close-call':'BRAIN','unscramble':'BRAIN',
+    'sketch-sabotage':'CREATE','noise-annoys':'CREATE','caption-this':'CREATE','fib-factory':'CREATE',
+    'mind-meld':'TOGETHER','majority-rules':'TOGETHER','relay-sums':'TOGETHER','bomb-squad':'TOGETHER'
+  };
+  function setPhonePresentation(b){
+    const m=b.minigame,show=b.showdown;
+    document.body.dataset.nogginStep=b.step||'await_roll';
+    document.body.dataset.nogginGame=m?.id||show?.kind||'board';
+    document.body.dataset.gamePhase=m?.phase||show?.phase||(b.step==='result'?'result':'play');
+    $('gameStateTag').textContent=b.paused?'PAUSED':b.step==='finished'?'SHOW OVER':
+      b.step==='result'?'RESULTS':m?m.phase==='intro'?'GET READY':m.phase==='reveal'?'REVEAL':gameLabels[m.id]||'PLAY NOW':
+      show?show.phase==='intro'?'SHOWDOWN':show.title||'SHOWDOWN':
+      b.step==='await_roll'?'THE BOARD':b.step.startsWith('choose_')?'YOUR CHOICE':b.step==='challenge'?'QUESTION':'ON AIR';
+  }
+
   // A game-state broadcast should not replace the phone keyboard or drawing pad.
   function controlKey(player,b){
     if(b.step==='minigame'&&b.minigame){
@@ -297,6 +316,7 @@
     document.body.classList.add('game-mode');notice('');
     $('joinScreen').classList.add('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.remove('hidden');
     const b=roomState.board;document.body.classList.toggle('mini-mode',['minigame','showdown'].includes(b.step));
+    setPhonePresentation(b);
     const active=roomState.players.find(p=>p.id===b.activeId),me=player.id===b.activeId;
     const avatar=avatars.find(a=>a.id===player.avatarId),won=(b.result?.winners||b.winnerIds||[]).includes(player.id);
     const image=b.step==='finished'?(b.winnerIds.includes(player.id)?avatar?.images?.win:avatar?.images?.lose):b.step==='result'?(won?avatar?.images?.win:avatar?.images?.lose):avatar?.think;
@@ -335,6 +355,7 @@
       return;
     }
     interactionKey=freshKey;
+    clockInitialMs=Math.max(1000,Number(deadlineFor(b))-Number(roomState.serverNow));
     if(priorInput)entryDraft={key:entryDraft.key,text:priorInput.value};
     $('gameButtons').replaceChildren();currentDeadline=null;
     const title=$('gameHeadline'),detail=$('gameDescription');
@@ -379,10 +400,14 @@
     }
   }
   function updateGameClock(){
-    if(roomState?.board?.paused){$('gameCountdown').textContent='⏸ PAUSED';return;}
-    if(currentDeadline&&clockServer!==null){const seconds=Math.max(0,Math.ceil((currentDeadline-(clockServer+Date.now()-clockLocal))/1000));
-      $('gameCountdown').textContent=seconds?`${seconds} SECONDS`:'TIME!';
-    } else $('gameCountdown').textContent='';
+    if(roomState?.board?.paused){$('gameCountdown').textContent='⏸ PAUSED';$('gameClockFill').style.width='100%';document.body.classList.remove('time-critical');return;}
+    if(currentDeadline&&clockServer!==null){
+      const remaining=Math.max(0,currentDeadline-(clockServer+Date.now()-clockLocal));
+      const seconds=Math.ceil(remaining/1000);
+      $('gameCountdown').textContent=seconds?`⏱ ${seconds} SECONDS`:'⏱ TIME!';
+      $('gameClockFill').style.width=`${Math.min(100,Math.max(0,remaining/Math.max(1000,clockInitialMs)*100))}%`;
+      document.body.classList.toggle('time-critical',seconds>0&&seconds<=5);
+    }else{$('gameCountdown').textContent='';document.body.classList.remove('time-critical');}
   }
   function render() {
     if(!session || roomState?.phase==='lobby')buildPicker('avatarGrid',false);
@@ -390,7 +415,7 @@
     const player=currentPlayer();
     if(!player)return;
     if(roomState.phase!=='lobby'){renderGame(player);return;}
-    document.body.classList.remove('game-mode');$('gameScreen').classList.add('hidden');
+    document.body.classList.remove('game-mode','mini-mode','time-critical');document.body.dataset.nogginStep='lobby';$('gameScreen').classList.add('hidden');
     $('joinScreen').classList.add('hidden');$('lobbyScreen').classList.remove('hidden');
     $('greeting').textContent=`HELLO, ${player.name.toUpperCase()}!`;
     $('yourSeat').textContent=`SEAT ${player.seat} · ROOM ${session.code}`;
