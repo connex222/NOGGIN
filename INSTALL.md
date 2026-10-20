@@ -1,3 +1,26 @@
+# Install / Host NOGGIN
+
+## First option: play online on Render
+
+1. Open your real Render NOGGIN website with `/tv/` at the end on your TV or a laptop connected to a TV.
+2. If the service has been sleeping, allow the page to load. You might need to refresh after it wakes.
+3. Create a room and show the join QR code. Friends scan it with their phones. Nothing is installed.
+4. The first player to join is **VIP**. They can set options and start the game from their phone.
+5. Other players join and mark themselves ready. The TV can still manage the game.
+6. If the QR link is wrong, set `NOGGIN_PUBLIC_URL` to your actual HTTPS Render service origin and redeploy.
+
+## Backup: play locally on Windows
+
+1. Extract the `NOGGIN-main` folder.
+2. Install Node.js 20 or newer.
+3. In the extracted folder run `npm install` and then `npm start`.
+4. Open `http://localhost:3000/tv/` on the host computer.
+5. Connect phones to the same local network, and scan the TV QR code.
+
+**Sound:** A browser can block audio until a user presses a button, taps or uses the remote OK key on the **TV page**. A tap on a player's phone cannot unlock sound in the TV browser. Use the Enable sound button if it stays silent.
+
+---
+
 # NOGGIN Rehearsal v1.2
 
 **Start here:** `REHEARSAL-GUIDE.md` explains running the TV and phones on Windows, Render and Oracle, and saving match reports.
@@ -85,6 +108,6 @@ They will be **two separate NOGGIN installations**, each with its own 4-letter c
 - On a host, open `/health`: JSON should say `"ok":true`, `"phase":"playtest"`, version `1.0.0-playtest`.
 - Try `npm test`, `npm run check` and `npm run audit` (offline tests; not actual websocket delivery).
 - Test at least one TV, two phones, room joining, private answers, reconnect, audio, and one complete match.
-- Complete the checks in `RELEASE-CHECKLIST.md` before claiming production readiness.
+- Complete the archived release checklist in `DESIGN-NOTES.md` before claiming production readiness.
 
 **If a package fails to install:** check internet/DNS, current Node version and npm output. Dependencies are downloaded on first run; they were not bundled into the ZIP.

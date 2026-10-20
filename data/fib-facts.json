@@ -1,422 +1,2270 @@
 [
   {
     "id": "fb-001",
-    "question": "A standard chessboard contains this many squares ___",
+    "question": "A standard chessboard has ___ individual small squares (not counting larger squares).",
     "answer": "64",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-002",
     "question": "A traditional dartboard has this many numbered sections ___",
     "answer": "20",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-003",
     "question": "The alphabet used in English contains this many letters ___",
     "answer": "26",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-004",
-    "question": "A football team has this many players on the pitch at kick-off ___",
+    "question": "In association football, each team starts with ___ players on the pitch, including the goalkeeper.",
     "answer": "11",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-005",
     "question": "A standard six-sided die has this many numbered faces ___",
     "answer": "6",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-006",
     "question": "The planets in our Solar System number ___",
     "answer": "8",
-    "editorialStatus": "review-pending",
-    "familyFriendly": true
+    "editorialStatus": "source-checked",
+    "familyFriendly": true,
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
   },
   {
     "id": "fb-007",
     "question": "An octopus has this many arms ___",
     "answer": "8",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-008",
     "question": "The capital city of Scotland is ___",
     "answer": "Edinburgh",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-009",
     "question": "The capital city of Wales is ___",
     "answer": "Cardiff",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-010",
     "question": "The capital city of Northern Ireland is ___",
     "answer": "Belfast",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-011",
     "question": "The first month of the calendar year is ___",
     "answer": "January",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-012",
     "question": "The shortest month of the year is ___",
     "answer": "February",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-013",
     "question": "The planet known as the Red Planet is ___",
     "answer": "Mars",
-    "editorialStatus": "review-pending",
-    "familyFriendly": true
+    "editorialStatus": "source-checked",
+    "familyFriendly": true,
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
   },
   {
     "id": "fb-014",
     "question": "Earth's natural moon is called the ___",
     "answer": "Moon",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-015",
     "question": "The largest planet in the Solar System is ___",
     "answer": "Jupiter",
-    "editorialStatus": "review-pending",
-    "familyFriendly": true
+    "editorialStatus": "source-checked",
+    "familyFriendly": true,
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
   },
   {
     "id": "fb-016",
     "question": "The closest star to Earth is the ___",
     "answer": "Sun",
-    "editorialStatus": "review-pending",
-    "familyFriendly": true
+    "editorialStatus": "source-checked",
+    "familyFriendly": true,
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
   },
   {
     "id": "fb-017",
     "question": "The colour of chlorophyll-rich leaves is usually ___",
     "answer": "green",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-018",
     "question": "The chemical symbol for gold is ___",
     "answer": "Au",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-019",
     "question": "The chemical formula for water is ___",
     "answer": "H2O",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-020",
     "question": "The chemical symbol for oxygen is ___",
     "answer": "O",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-021",
     "question": "The human skeleton typically has this many bones in adulthood ___",
     "answer": "206",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-022",
     "question": "The longest side of a right triangle is called the ___",
     "answer": "hypotenuse",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-023",
     "question": "A triangle has this many sides ___",
     "answer": "3",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-024",
     "question": "A square has this many equal sides ___",
     "answer": "4",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-025",
     "question": "An ordinary hexagon has this many sides ___",
     "answer": "6",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-026",
     "question": "An ordinary octagon has this many sides ___",
     "answer": "8",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-027",
     "question": "A full circle contains this many degrees ___",
     "answer": "360",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-028",
     "question": "There are this many minutes in an hour ___",
     "answer": "60",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-029",
     "question": "There are this many seconds in a minute ___",
     "answer": "60",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-030",
     "question": "There are this many hours in a day ___",
     "answer": "24",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-031",
     "question": "One dozen means this many items ___",
     "answer": "12",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-032",
-    "question": "A baker's dozen traditionally contains this many ___",
+    "question": "A baker's dozen traditionally contains ___ items.",
     "answer": "13",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-033",
-    "question": "The freezing point of pure water at standard pressure in Celsius is ___",
+    "question": "At approximately one atmosphere of pressure, pure water freezes at ___ degrees Celsius.",
     "answer": "0",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-034",
-    "question": "The boiling point of pure water at standard pressure in Celsius is ___",
+    "question": "At approximately one atmosphere of pressure, pure water boils at ___ degrees Celsius.",
     "answer": "100",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-035",
     "question": "The smallest prime number is ___",
     "answer": "2",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-036",
     "question": "The Roman numeral X means ___",
     "answer": "10",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-037",
     "question": "The Roman numeral L means ___",
     "answer": "50",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-038",
     "question": "The Roman numeral C means ___",
     "answer": "100",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-039",
     "question": "A baby frog is commonly called a ___",
     "answer": "tadpole",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-040",
     "question": "A baby sheep is called a ___",
     "answer": "lamb",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-041",
     "question": "A baby horse is called a ___",
     "answer": "foal",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-042",
     "question": "A group of lions is commonly called a ___",
     "answer": "pride",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-043",
-    "question": "A group of fish is commonly called a ___",
+    "question": "A group of fish swimming together is commonly called a ___.",
     "answer": "school",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-044",
-    "question": "Honey is produced by ___",
-    "answer": "bees",
-    "editorialStatus": "review-pending",
+    "question": "The insect best known for producing honey is the honey ___.",
+    "answer": "bee",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-045",
-    "question": "Silk is famously produced by ___",
+    "question": "The larvae of silk moths, known as ___, make silk cocoons.",
     "answer": "silkworms",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-046",
     "question": "A whale is a type of ___",
     "answer": "mammal",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-047",
     "question": "A penguin is a type of ___",
     "answer": "bird",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-048",
     "question": "A dolphin is a type of ___",
     "answer": "mammal",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-049",
     "question": "The tallest land animal is the ___",
     "answer": "giraffe",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-050",
-    "question": "The fastest bird in a hunting dive is the ___",
+    "question": "The bird famous for the fastest hunting dive is the ___.",
     "answer": "peregrine falcon",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-051",
     "question": "The Great Pyramid of Giza is in ___",
     "answer": "Egypt",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-052",
     "question": "The Eiffel Tower stands in ___",
     "answer": "Paris",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-053",
     "question": "The Colosseum stands in ___",
     "answer": "Rome",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-054",
-    "question": "The Statue of Liberty stands in ___",
-    "answer": "New York",
-    "editorialStatus": "review-pending",
+    "question": "The Statue of Liberty is on an island in New York ___.",
+    "answer": "Harbour",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-055",
     "question": "The River Thames flows through ___",
     "answer": "London",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-056",
     "question": "The Leaning Tower is in the Italian city of ___",
     "answer": "Pisa",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-057",
     "question": "The continent containing Brazil is ___",
     "answer": "South America",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-058",
     "question": "The continent containing Kenya is ___",
     "answer": "Africa",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-059",
-    "question": "The usual first day of a Monday-to-Friday working week is ___",
+    "question": "In a usual Monday-to-Friday working week, the first working day is ___.",
     "answer": "Monday",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
   },
   {
     "id": "fb-060",
     "question": "The sport played at Wimbledon is ___",
     "answer": "tennis",
-    "editorialStatus": "review-pending",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced",
     "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-002",
+    "question": "There are ___ seconds in 2 minutes",
+    "answer": "120",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-003",
+    "question": "There are ___ seconds in 3 minutes",
+    "answer": "180",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-004",
+    "question": "There are ___ seconds in 4 minutes",
+    "answer": "240",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-005",
+    "question": "There are ___ seconds in 5 minutes",
+    "answer": "300",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-006",
+    "question": "There are ___ seconds in 6 minutes",
+    "answer": "360",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-007",
+    "question": "There are ___ seconds in 7 minutes",
+    "answer": "420",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-008",
+    "question": "There are ___ seconds in 8 minutes",
+    "answer": "480",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-009",
+    "question": "There are ___ seconds in 9 minutes",
+    "answer": "540",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-010",
+    "question": "There are ___ seconds in 10 minutes",
+    "answer": "600",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-011",
+    "question": "There are ___ seconds in 11 minutes",
+    "answer": "660",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-012",
+    "question": "There are ___ seconds in 12 minutes",
+    "answer": "720",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-013",
+    "question": "There are ___ seconds in 13 minutes",
+    "answer": "780",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-014",
+    "question": "There are ___ seconds in 14 minutes",
+    "answer": "840",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-015",
+    "question": "There are ___ seconds in 15 minutes",
+    "answer": "900",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-016",
+    "question": "There are ___ seconds in 16 minutes",
+    "answer": "960",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-017",
+    "question": "There are ___ seconds in 17 minutes",
+    "answer": "1020",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-018",
+    "question": "There are ___ seconds in 18 minutes",
+    "answer": "1080",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-019",
+    "question": "There are ___ seconds in 19 minutes",
+    "answer": "1140",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-020",
+    "question": "There are ___ seconds in 20 minutes",
+    "answer": "1200",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-021",
+    "question": "There are ___ seconds in 21 minutes",
+    "answer": "1260",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-022",
+    "question": "There are ___ seconds in 22 minutes",
+    "answer": "1320",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-023",
+    "question": "There are ___ seconds in 23 minutes",
+    "answer": "1380",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-024",
+    "question": "There are ___ seconds in 24 minutes",
+    "answer": "1440",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-025",
+    "question": "There are ___ seconds in 25 minutes",
+    "answer": "1500",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-026",
+    "question": "There are ___ seconds in 26 minutes",
+    "answer": "1560",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-027",
+    "question": "There are ___ seconds in 27 minutes",
+    "answer": "1620",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-028",
+    "question": "There are ___ seconds in 28 minutes",
+    "answer": "1680",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-029",
+    "question": "There are ___ seconds in 29 minutes",
+    "answer": "1740",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-030",
+    "question": "There are ___ seconds in 30 minutes",
+    "answer": "1800",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-031",
+    "question": "There are ___ seconds in 31 minutes",
+    "answer": "1860",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-032",
+    "question": "There are ___ seconds in 32 minutes",
+    "answer": "1920",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-033",
+    "question": "There are ___ seconds in 33 minutes",
+    "answer": "1980",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-034",
+    "question": "There are ___ seconds in 34 minutes",
+    "answer": "2040",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-035",
+    "question": "There are ___ seconds in 35 minutes",
+    "answer": "2100",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-036",
+    "question": "There are ___ seconds in 36 minutes",
+    "answer": "2160",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-037",
+    "question": "There are ___ seconds in 37 minutes",
+    "answer": "2220",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-038",
+    "question": "There are ___ seconds in 38 minutes",
+    "answer": "2280",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-039",
+    "question": "There are ___ seconds in 39 minutes",
+    "answer": "2340",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-040",
+    "question": "There are ___ seconds in 40 minutes",
+    "answer": "2400",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-041",
+    "question": "There are ___ seconds in 41 minutes",
+    "answer": "2460",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-042",
+    "question": "There are ___ seconds in 42 minutes",
+    "answer": "2520",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-043",
+    "question": "There are ___ seconds in 43 minutes",
+    "answer": "2580",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-044",
+    "question": "There are ___ seconds in 44 minutes",
+    "answer": "2640",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-045",
+    "question": "There are ___ seconds in 45 minutes",
+    "answer": "2700",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-046",
+    "question": "There are ___ seconds in 46 minutes",
+    "answer": "2760",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-047",
+    "question": "There are ___ seconds in 47 minutes",
+    "answer": "2820",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-048",
+    "question": "There are ___ seconds in 48 minutes",
+    "answer": "2880",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-049",
+    "question": "There are ___ seconds in 49 minutes",
+    "answer": "2940",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-050",
+    "question": "There are ___ seconds in 50 minutes",
+    "answer": "3000",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "fb-p6-051",
+    "question": "There are ___ seconds in 51 minutes",
+    "answer": "3060",
+    "editorialStatus": "verified-exact-arithmetic",
+    "familyFriendly": true
+  },
+  {
+    "id": "p6b2-fib-001",
+    "question": "The chemical symbol for silver is ___",
+    "answer": "Ag",
+    "familyFriendly": true,
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://periodic-table.rsc.org/element/47/Silver",
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified."
+  },
+  {
+    "id": "p6b2-fib-002",
+    "question": "A regular hexagon has ___ sides",
+    "answer": "6",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-003",
+    "question": "The capital city of Portugal is ___",
+    "answer": "Lisbon",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-004",
+    "question": "A right angle measures ___ degrees",
+    "answer": "90",
+    "familyFriendly": true,
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.mathsisfun.com/rightangle.html",
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified."
+  },
+  {
+    "id": "p6b2-fib-005",
+    "question": "The first element in the periodic table is ___",
+    "answer": "Hydrogen",
+    "familyFriendly": true,
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://periodic-table.rsc.org/element/1/H",
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified."
+  },
+  {
+    "id": "p6b2-fib-006",
+    "question": "An adult insect has ___ legs",
+    "answer": "6",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-007",
+    "question": "The Roman numeral for fifty is ___",
+    "answer": "L",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-008",
+    "question": "The famous leaning tower is in ___",
+    "answer": "Pisa",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-009",
+    "question": "The ocean to the east of Africa is the ___ Ocean",
+    "answer": "Indian",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-010",
+    "question": "A triangle has ___ vertices",
+    "answer": "3",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-011",
+    "question": "The next prime number after 11 is ___",
+    "answer": "13",
+    "familyFriendly": true,
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.mathsisfun.com/prime_numbers.html",
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified."
+  },
+  {
+    "id": "p6b2-fib-012",
+    "question": "A leap year normally contains ___ days",
+    "answer": "366",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-013",
+    "question": "In tennis, zero points is called ___",
+    "answer": "Love",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-014",
+    "question": "The currency used in Japan is the ___",
+    "answer": "Yen",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-015",
+    "question": "Water has the chemical formula ___",
+    "answer": "H2O",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-016",
+    "question": "The largest bone in the human body is the ___",
+    "answer": "Femur",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-017",
+    "question": "A large group of instrumental musicians is an ___.",
+    "answer": "Orchestra",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-018",
+    "question": "The capital city of Norway is ___",
+    "answer": "Oslo",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b2-fib-019",
+    "question": "A baby frog is called a ___",
+    "answer": "Tadpole",
+    "familyFriendly": true,
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6b3-fib-001",
+    "question": "11 hours contain this many minutes ___",
+    "answer": "660",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-002",
+    "question": "12 hours contain this many minutes ___",
+    "answer": "720",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-003",
+    "question": "13 hours contain this many minutes ___",
+    "answer": "780",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-004",
+    "question": "14 hours contain this many minutes ___",
+    "answer": "840",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-005",
+    "question": "15 hours contain this many minutes ___",
+    "answer": "900",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-006",
+    "question": "16 hours contain this many minutes ___",
+    "answer": "960",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-007",
+    "question": "17 hours contain this many minutes ___",
+    "answer": "1020",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-008",
+    "question": "18 hours contain this many minutes ___",
+    "answer": "1080",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-009",
+    "question": "19 hours contain this many minutes ___",
+    "answer": "1140",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-010",
+    "question": "20 hours contain this many minutes ___",
+    "answer": "1200",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-011",
+    "question": "21 hours contain this many minutes ___",
+    "answer": "1260",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-012",
+    "question": "22 hours contain this many minutes ___",
+    "answer": "1320",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-013",
+    "question": "23 hours contain this many minutes ___",
+    "answer": "1380",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-014",
+    "question": "24 hours contain this many minutes ___",
+    "answer": "1440",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-015",
+    "question": "25 hours contain this many minutes ___",
+    "answer": "1500",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-016",
+    "question": "26 hours contain this many minutes ___",
+    "answer": "1560",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-017",
+    "question": "27 hours contain this many minutes ___",
+    "answer": "1620",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-018",
+    "question": "28 hours contain this many minutes ___",
+    "answer": "1680",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-019",
+    "question": "29 hours contain this many minutes ___",
+    "answer": "1740",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-020",
+    "question": "30 hours contain this many minutes ___",
+    "answer": "1800",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-021",
+    "question": "31 hours contain this many minutes ___",
+    "answer": "1860",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-022",
+    "question": "32 hours contain this many minutes ___",
+    "answer": "1920",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-023",
+    "question": "33 hours contain this many minutes ___",
+    "answer": "1980",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-024",
+    "question": "34 hours contain this many minutes ___",
+    "answer": "2040",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b3-fib-025",
+    "question": "35 hours contain this many minutes ___",
+    "answer": "2100",
+    "familyFriendly": true,
+    "source": "Exact time conversion",
+    "verified": "arithmetic",
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6b6-fib-001",
+    "question": "The number of recognised planets in our Solar System is ___.",
+    "answer": "8",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-002",
+    "question": "The closest planet to the Sun is ___.",
+    "answer": "Mercury",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-003",
+    "question": "The second planet from the Sun is ___.",
+    "answer": "Venus",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-004",
+    "question": "The third planet from the Sun is ___.",
+    "answer": "Earth",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-005",
+    "question": "The fourth planet from the Sun is ___.",
+    "answer": "Mars",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-006",
+    "question": "The fifth planet from the Sun is ___.",
+    "answer": "Jupiter",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-007",
+    "question": "The sixth planet from the Sun is ___.",
+    "answer": "Saturn",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-008",
+    "question": "The seventh planet from the Sun is ___.",
+    "answer": "Uranus",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-009",
+    "question": "The eighth planet from the Sun is ___.",
+    "answer": "Neptune",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-010",
+    "question": "The biggest planet in our Solar System is ___.",
+    "answer": "Jupiter",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-011",
+    "question": "Pluto is officially classified as a ___ planet.",
+    "answer": "dwarf",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6b6-fib-012",
+    "question": "The planet second-largest in our Solar System is ___.",
+    "answer": "Saturn",
+    "familyFriendly": true,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "verified": "publisher-checked",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/"
+  },
+  {
+    "id": "p6final-fib-found-000",
+    "question": "A triangle has ___ sides.",
+    "answer": "3",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-001",
+    "question": "A pentagon has ___ sides.",
+    "answer": "5",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-002",
+    "question": "A hexagon has ___ sides.",
+    "answer": "6",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-003",
+    "question": "An octagon has ___ sides.",
+    "answer": "8",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-004",
+    "question": "A right angle measures ___ degrees.",
+    "answer": "90",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-005",
+    "question": "A straight angle measures ___ degrees.",
+    "answer": "180",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-006",
+    "question": "A full turn measures ___ degrees.",
+    "answer": "360",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-007",
+    "question": "A dozen means ___ items.",
+    "answer": "12",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-008",
+    "question": "A leap year usually contains ___ days.",
+    "answer": "366",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-009",
+    "question": "A standard year contains ___ months.",
+    "answer": "12",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-010",
+    "question": "A week contains ___ days.",
+    "answer": "7",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-011",
+    "question": "A day contains ___ hours.",
+    "answer": "24",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-012",
+    "question": "One metre contains ___ centimetres.",
+    "answer": "100",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-013",
+    "question": "A kilogram contains ___ grams.",
+    "answer": "1000",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-014",
+    "question": "The Roman numeral X represents ___.",
+    "answer": "10",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-015",
+    "question": "The Roman numeral L represents ___.",
+    "answer": "50",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-016",
+    "question": "The Roman numeral C represents ___.",
+    "answer": "100",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-017",
+    "question": "The chemical symbol for oxygen is ___.",
+    "answer": "O",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-018",
+    "question": "The chemical symbol for gold is ___.",
+    "answer": "Au",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-found-019",
+    "question": "The chemical symbol for iron is ___.",
+    "answer": "Fe",
+    "familyFriendly": true,
+    "verified": "editorial-review-required",
+    "editorialStatus": "editorially-reviewed-not-independently-sourced"
+  },
+  {
+    "id": "p6final-fib-0000",
+    "question": "2 groups of 2 objects contain ___ objects.",
+    "answer": "4",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 2,
+      "b": 2
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0001",
+    "question": "A regular 9-sided shape has ___ sides.",
+    "answer": "9",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 9,
+      "b": 13
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0002",
+    "question": "16 hours and 24 minutes contain ___ minutes altogether.",
+    "answer": "984",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 16,
+      "b": 24
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0003",
+    "question": "The sum of 23 and 3 is ___.",
+    "answer": "26",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 23,
+      "b": 3
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0004",
+    "question": "Twice 30, plus 14, equals ___.",
+    "answer": "74",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 30,
+      "b": 14
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0005",
+    "question": "37 groups of 25 objects contain ___ objects.",
+    "answer": "925",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 37,
+      "b": 25
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0006",
+    "question": "A regular 44-sided shape has ___ sides.",
+    "answer": "44",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 44,
+      "b": 4
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0007",
+    "question": "51 hours and 15 minutes contain ___ minutes altogether.",
+    "answer": "3075",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 51,
+      "b": 15
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0008",
+    "question": "The sum of 58 and 26 is ___.",
+    "answer": "84",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 58,
+      "b": 26
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0009",
+    "question": "Twice 6, plus 5, equals ___.",
+    "answer": "17",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 6,
+      "b": 5
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0010",
+    "question": "13 groups of 16 objects contain ___ objects.",
+    "answer": "208",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 13,
+      "b": 16
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0011",
+    "question": "A regular 20-sided shape has ___ sides.",
+    "answer": "20",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 20,
+      "b": 27
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0012",
+    "question": "27 hours and 6 minutes contain ___ minutes altogether.",
+    "answer": "1626",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 27,
+      "b": 6
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0013",
+    "question": "The sum of 34 and 17 is ___.",
+    "answer": "51",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 34,
+      "b": 17
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0014",
+    "question": "Twice 41, plus 28, equals ___.",
+    "answer": "110",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 41,
+      "b": 28
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0015",
+    "question": "48 groups of 7 objects contain ___ objects.",
+    "answer": "336",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 48,
+      "b": 7
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0016",
+    "question": "A regular 55-sided shape has ___ sides.",
+    "answer": "55",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 55,
+      "b": 18
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0017",
+    "question": "3 hours and 29 minutes contain ___ minutes altogether.",
+    "answer": "209",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 3,
+      "b": 29
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0018",
+    "question": "The sum of 10 and 8 is ___.",
+    "answer": "18",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 10,
+      "b": 8
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0019",
+    "question": "Twice 17, plus 19, equals ___.",
+    "answer": "53",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 17,
+      "b": 19
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0020",
+    "question": "24 groups of 30 objects contain ___ objects.",
+    "answer": "720",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 24,
+      "b": 30
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0021",
+    "question": "A regular 31-sided shape has ___ sides.",
+    "answer": "31",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 31,
+      "b": 9
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0022",
+    "question": "38 hours and 20 minutes contain ___ minutes altogether.",
+    "answer": "2300",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 38,
+      "b": 20
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0023",
+    "question": "The sum of 45 and 31 is ___.",
+    "answer": "76",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 45,
+      "b": 31
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0024",
+    "question": "Twice 52, plus 10, equals ___.",
+    "answer": "114",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 52,
+      "b": 10
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0025",
+    "question": "59 groups of 21 objects contain ___ objects.",
+    "answer": "1239",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 59,
+      "b": 21
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0026",
+    "question": "A regular 7-sided shape has ___ sides.",
+    "answer": "7",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 7,
+      "b": 32
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0027",
+    "question": "14 hours and 11 minutes contain ___ minutes altogether.",
+    "answer": "851",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 14,
+      "b": 11
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0028",
+    "question": "The sum of 21 and 22 is ___.",
+    "answer": "43",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 21,
+      "b": 22
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0029",
+    "question": "Twice 28, plus 33, equals ___.",
+    "answer": "89",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 28,
+      "b": 33
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0030",
+    "question": "35 groups of 12 objects contain ___ objects.",
+    "answer": "420",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 35,
+      "b": 12
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0031",
+    "question": "A regular 42-sided shape has ___ sides.",
+    "answer": "42",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 42,
+      "b": 23
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0032",
+    "question": "49 hours and 2 minutes contain ___ minutes altogether.",
+    "answer": "2942",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 49,
+      "b": 2
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0033",
+    "question": "The sum of 56 and 13 is ___.",
+    "answer": "69",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 56,
+      "b": 13
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0034",
+    "question": "Twice 4, plus 24, equals ___.",
+    "answer": "32",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 4,
+      "b": 24
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0035",
+    "question": "11 groups of 3 objects contain ___ objects.",
+    "answer": "33",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 11,
+      "b": 3
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0036",
+    "question": "A regular 18-sided shape has ___ sides.",
+    "answer": "18",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 18,
+      "b": 14
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0037",
+    "question": "25 hours and 25 minutes contain ___ minutes altogether.",
+    "answer": "1525",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 25,
+      "b": 25
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0038",
+    "question": "The sum of 32 and 4 is ___.",
+    "answer": "36",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 32,
+      "b": 4
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0039",
+    "question": "Twice 39, plus 15, equals ___.",
+    "answer": "93",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 39,
+      "b": 15
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0040",
+    "question": "46 groups of 26 objects contain ___ objects.",
+    "answer": "1196",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 46,
+      "b": 26
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0041",
+    "question": "A regular 53-sided shape has ___ sides.",
+    "answer": "53",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 53,
+      "b": 5
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0042",
+    "question": "60 hours and 16 minutes contain ___ minutes altogether.",
+    "answer": "3616",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 60,
+      "b": 16
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0043",
+    "question": "The sum of 8 and 27 is ___.",
+    "answer": "35",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 8,
+      "b": 27
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0044",
+    "question": "Twice 15, plus 6, equals ___.",
+    "answer": "36",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 15,
+      "b": 6
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0045",
+    "question": "22 groups of 17 objects contain ___ objects.",
+    "answer": "374",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 22,
+      "b": 17
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0046",
+    "question": "A regular 29-sided shape has ___ sides.",
+    "answer": "29",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 29,
+      "b": 28
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0047",
+    "question": "36 hours and 7 minutes contain ___ minutes altogether.",
+    "answer": "2167",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 36,
+      "b": 7
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0048",
+    "question": "The sum of 43 and 18 is ___.",
+    "answer": "61",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 43,
+      "b": 18
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0049",
+    "question": "Twice 50, plus 29, equals ___.",
+    "answer": "129",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 50,
+      "b": 29
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0050",
+    "question": "57 groups of 8 objects contain ___ objects.",
+    "answer": "456",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 57,
+      "b": 8
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0051",
+    "question": "A regular 5-sided shape has ___ sides.",
+    "answer": "5",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 5,
+      "b": 19
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0052",
+    "question": "12 hours and 30 minutes contain ___ minutes altogether.",
+    "answer": "750",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 12,
+      "b": 30
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0053",
+    "question": "The sum of 19 and 9 is ___.",
+    "answer": "28",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 19,
+      "b": 9
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0054",
+    "question": "Twice 26, plus 20, equals ___.",
+    "answer": "72",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 26,
+      "b": 20
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0055",
+    "question": "33 groups of 31 objects contain ___ objects.",
+    "answer": "1023",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 33,
+      "b": 31
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0056",
+    "question": "A regular 40-sided shape has ___ sides.",
+    "answer": "40",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 40,
+      "b": 10
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0057",
+    "question": "47 hours and 21 minutes contain ___ minutes altogether.",
+    "answer": "2841",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 47,
+      "b": 21
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0058",
+    "question": "The sum of 54 and 32 is ___.",
+    "answer": "86",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 54,
+      "b": 32
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0059",
+    "question": "Twice 2, plus 11, equals ___.",
+    "answer": "15",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "double-plus",
+      "a": 2,
+      "b": 11
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0060",
+    "question": "9 groups of 22 objects contain ___ objects.",
+    "answer": "198",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "multiplication",
+      "a": 9,
+      "b": 22
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0061",
+    "question": "A regular 16-sided shape has ___ sides.",
+    "answer": "16",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "identity",
+      "a": 16,
+      "b": 33
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0062",
+    "question": "23 hours and 12 minutes contain ___ minutes altogether.",
+    "answer": "1392",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 23,
+      "b": 12
+    },
+    "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "p6final-fib-0063",
+    "question": "The sum of 30 and 23 is ___.",
+    "answer": "53",
+    "familyFriendly": true,
+    "verified": "arithmetic",
+    "calc": {
+      "type": "addition",
+      "a": 30,
+      "b": 23
+    },
+    "editorialStatus": "logic-checked"
   }
 ]

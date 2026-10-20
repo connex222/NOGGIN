@@ -1,7 +1,7 @@
 'use strict';
 const {test} = require('node:test');
 const assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const duel=require('../server/games/phase5');
 const {attachGateway}=require('../server/gateway');
 function fixture(n=4){let now=1000;const rooms=new GameRooms({now:()=>now,randomInt:()=>0});const {code}=rooms.create('tv'),sockets=[];for(let i=0;i<n;i++){const socketId=`phone${i}`;sockets.push(socketId);rooms.join({code,name:`Guest ${i+1}`,avatarId:i+1,socketId});rooms.setReady(code,socketId,true);}rooms.setSettings(code,'tv',{rules:'showtime'});rooms.startGame(code,'tv');const room=rooms.find(code);return{rooms,room,code,sockets,now:()=>now,advance:ms=>{now+=ms;rooms.sweep();}};}

@@ -1,0 +1,251 @@
+﻿id,question,answer,editorial_status,arithmetic_recalculated,source_url,quality_note
+fb-001,A standard chessboard has ___ individual small squares (not counting larger squares).,64,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-002,A traditional dartboard has this many numbered sections ___,20,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-003,The alphabet used in English contains this many letters ___,26,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-004,"In association football, each team starts with ___ players on the pitch, including the goalkeeper.",11,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-005,A standard six-sided die has this many numbered faces ___,6,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-006,The planets in our Solar System number ___,8,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+fb-007,An octopus has this many arms ___,8,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-008,The capital city of Scotland is ___,Edinburgh,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-009,The capital city of Wales is ___,Cardiff,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-010,The capital city of Northern Ireland is ___,Belfast,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-011,The first month of the calendar year is ___,January,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-012,The shortest month of the year is ___,February,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-013,The planet known as the Red Planet is ___,Mars,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+fb-014,Earth's natural moon is called the ___,Moon,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-015,The largest planet in the Solar System is ___,Jupiter,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+fb-016,The closest star to Earth is the ___,Sun,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+fb-017,The colour of chlorophyll-rich leaves is usually ___,green,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-018,The chemical symbol for gold is ___,Au,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-019,The chemical formula for water is ___,H2O,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-020,The chemical symbol for oxygen is ___,O,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-021,The human skeleton typically has this many bones in adulthood ___,206,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-022,The longest side of a right triangle is called the ___,hypotenuse,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-023,A triangle has this many sides ___,3,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-024,A square has this many equal sides ___,4,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-025,An ordinary hexagon has this many sides ___,6,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-026,An ordinary octagon has this many sides ___,8,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-027,A full circle contains this many degrees ___,360,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-028,There are this many minutes in an hour ___,60,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-029,There are this many seconds in a minute ___,60,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-030,There are this many hours in a day ___,24,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-031,One dozen means this many items ___,12,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-032,A baker's dozen traditionally contains ___ items.,13,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-033,"At approximately one atmosphere of pressure, pure water freezes at ___ degrees Celsius.",0,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-034,"At approximately one atmosphere of pressure, pure water boils at ___ degrees Celsius.",100,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-035,The smallest prime number is ___,2,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-036,The Roman numeral X means ___,10,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-037,The Roman numeral L means ___,50,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-038,The Roman numeral C means ___,100,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-039,A baby frog is commonly called a ___,tadpole,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-040,A baby sheep is called a ___,lamb,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-041,A baby horse is called a ___,foal,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-042,A group of lions is commonly called a ___,pride,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-043,A group of fish swimming together is commonly called a ___.,school,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-044,The insect best known for producing honey is the honey ___.,bee,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-045,"The larvae of silk moths, known as ___, make silk cocoons.",silkworms,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-046,A whale is a type of ___,mammal,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-047,A penguin is a type of ___,bird,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-048,A dolphin is a type of ___,mammal,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-049,The tallest land animal is the ___,giraffe,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-050,The bird famous for the fastest hunting dive is the ___.,peregrine falcon,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-051,The Great Pyramid of Giza is in ___,Egypt,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-052,The Eiffel Tower stands in ___,Paris,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-053,The Colosseum stands in ___,Rome,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-054,The Statue of Liberty is on an island in New York ___.,Harbour,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-055,The River Thames flows through ___,London,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-056,The Leaning Tower is in the Italian city of ___,Pisa,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-057,The continent containing Brazil is ___,South America,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-058,The continent containing Kenya is ___,Africa,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-059,"In a usual Monday-to-Friday working week, the first working day is ___.",Monday,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-060,The sport played at Wimbledon is ___,tennis,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+fb-p6-002,There are ___ seconds in 2 minutes,120,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-003,There are ___ seconds in 3 minutes,180,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-004,There are ___ seconds in 4 minutes,240,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-005,There are ___ seconds in 5 minutes,300,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-006,There are ___ seconds in 6 minutes,360,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-007,There are ___ seconds in 7 minutes,420,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-008,There are ___ seconds in 8 minutes,480,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-009,There are ___ seconds in 9 minutes,540,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-010,There are ___ seconds in 10 minutes,600,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-011,There are ___ seconds in 11 minutes,660,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-012,There are ___ seconds in 12 minutes,720,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-013,There are ___ seconds in 13 minutes,780,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-014,There are ___ seconds in 14 minutes,840,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-015,There are ___ seconds in 15 minutes,900,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-016,There are ___ seconds in 16 minutes,960,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-017,There are ___ seconds in 17 minutes,1020,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-018,There are ___ seconds in 18 minutes,1080,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-019,There are ___ seconds in 19 minutes,1140,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-020,There are ___ seconds in 20 minutes,1200,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-021,There are ___ seconds in 21 minutes,1260,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-022,There are ___ seconds in 22 minutes,1320,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-023,There are ___ seconds in 23 minutes,1380,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-024,There are ___ seconds in 24 minutes,1440,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-025,There are ___ seconds in 25 minutes,1500,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-026,There are ___ seconds in 26 minutes,1560,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-027,There are ___ seconds in 27 minutes,1620,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-028,There are ___ seconds in 28 minutes,1680,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-029,There are ___ seconds in 29 minutes,1740,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-030,There are ___ seconds in 30 minutes,1800,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-031,There are ___ seconds in 31 minutes,1860,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-032,There are ___ seconds in 32 minutes,1920,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-033,There are ___ seconds in 33 minutes,1980,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-034,There are ___ seconds in 34 minutes,2040,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-035,There are ___ seconds in 35 minutes,2100,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-036,There are ___ seconds in 36 minutes,2160,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-037,There are ___ seconds in 37 minutes,2220,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-038,There are ___ seconds in 38 minutes,2280,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-039,There are ___ seconds in 39 minutes,2340,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-040,There are ___ seconds in 40 minutes,2400,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-041,There are ___ seconds in 41 minutes,2460,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-042,There are ___ seconds in 42 minutes,2520,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-043,There are ___ seconds in 43 minutes,2580,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-044,There are ___ seconds in 44 minutes,2640,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-045,There are ___ seconds in 45 minutes,2700,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-046,There are ___ seconds in 46 minutes,2760,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-047,There are ___ seconds in 47 minutes,2820,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-048,There are ___ seconds in 48 minutes,2880,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-049,There are ___ seconds in 49 minutes,2940,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-050,There are ___ seconds in 50 minutes,3000,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+fb-p6-051,There are ___ seconds in 51 minutes,3060,verified-exact-arithmetic,True,,Repetitive seconds/minutes template; replace for variety before content sign-off
+p6b2-fib-001,The chemical symbol for silver is ___,Ag,source-checked,False,https://periodic-table.rsc.org/element/47/Silver,
+p6b2-fib-002,A regular hexagon has ___ sides,6,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-003,The capital city of Portugal is ___,Lisbon,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-004,A right angle measures ___ degrees,90,source-checked,False,https://www.mathsisfun.com/rightangle.html,
+p6b2-fib-005,The first element in the periodic table is ___,Hydrogen,source-checked,False,https://periodic-table.rsc.org/element/1/H,
+p6b2-fib-006,An adult insect has ___ legs,6,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-007,The Roman numeral for fifty is ___,L,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-008,The famous leaning tower is in ___,Pisa,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-009,The ocean to the east of Africa is the ___ Ocean,Indian,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-010,A triangle has ___ vertices,3,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-011,The next prime number after 11 is ___,13,source-checked,False,https://www.mathsisfun.com/prime_numbers.html,
+p6b2-fib-012,A leap year normally contains ___ days,366,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-013,"In tennis, zero points is called ___",Love,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-014,The currency used in Japan is the ___,Yen,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-015,Water has the chemical formula ___,H2O,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-016,The largest bone in the human body is the ___,Femur,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-017,A large group of instrumental musicians is an ___.,Orchestra,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-018,The capital city of Norway is ___,Oslo,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b2-fib-019,A baby frog is called a ___,Tadpole,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6b3-fib-001,11 hours contain this many minutes ___,660,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-002,12 hours contain this many minutes ___,720,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-003,13 hours contain this many minutes ___,780,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-004,14 hours contain this many minutes ___,840,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-005,15 hours contain this many minutes ___,900,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-006,16 hours contain this many minutes ___,960,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-007,17 hours contain this many minutes ___,1020,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-008,18 hours contain this many minutes ___,1080,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-009,19 hours contain this many minutes ___,1140,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-010,20 hours contain this many minutes ___,1200,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-011,21 hours contain this many minutes ___,1260,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-012,22 hours contain this many minutes ___,1320,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-013,23 hours contain this many minutes ___,1380,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-014,24 hours contain this many minutes ___,1440,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-015,25 hours contain this many minutes ___,1500,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-016,26 hours contain this many minutes ___,1560,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-017,27 hours contain this many minutes ___,1620,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-018,28 hours contain this many minutes ___,1680,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-019,29 hours contain this many minutes ___,1740,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-020,30 hours contain this many minutes ___,1800,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-021,31 hours contain this many minutes ___,1860,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-022,32 hours contain this many minutes ___,1920,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-023,33 hours contain this many minutes ___,1980,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-024,34 hours contain this many minutes ___,2040,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b3-fib-025,35 hours contain this many minutes ___,2100,logic-checked,True,,Repetitive hours/minutes template; replace for variety before content sign-off
+p6b6-fib-001,The number of recognised planets in our Solar System is ___.,8,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-002,The closest planet to the Sun is ___.,Mercury,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-003,The second planet from the Sun is ___.,Venus,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-004,The third planet from the Sun is ___.,Earth,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-005,The fourth planet from the Sun is ___.,Mars,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-006,The fifth planet from the Sun is ___.,Jupiter,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-007,The sixth planet from the Sun is ___.,Saturn,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-008,The seventh planet from the Sun is ___.,Uranus,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-009,The eighth planet from the Sun is ___.,Neptune,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-010,The biggest planet in our Solar System is ___.,Jupiter,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-011,Pluto is officially classified as a ___ planet.,dwarf,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6b6-fib-012,The planet second-largest in our Solar System is ___.,Saturn,source-checked,False,https://science.nasa.gov/solar-system/planets/,
+p6final-fib-found-000,A triangle has ___ sides.,3,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-001,A pentagon has ___ sides.,5,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-002,A hexagon has ___ sides.,6,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-003,An octagon has ___ sides.,8,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-004,A right angle measures ___ degrees.,90,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-005,A straight angle measures ___ degrees.,180,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-006,A full turn measures ___ degrees.,360,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-007,A dozen means ___ items.,12,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-008,A leap year usually contains ___ days.,366,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-009,A standard year contains ___ months.,12,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-010,A week contains ___ days.,7,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-011,A day contains ___ hours.,24,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-012,One metre contains ___ centimetres.,100,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-013,A kilogram contains ___ grams.,1000,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-014,The Roman numeral X represents ___.,10,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-015,The Roman numeral L represents ___.,50,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-016,The Roman numeral C represents ___.,100,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-017,The chemical symbol for oxygen is ___.,O,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-018,The chemical symbol for gold is ___.,Au,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-found-019,The chemical symbol for iron is ___.,Fe,editorially-reviewed-not-independently-sourced,False,,Editorial consistency review only; independent source verification not recorded
+p6final-fib-0000,2 groups of 2 objects contain ___ objects.,4,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0001,A regular 9-sided shape has ___ sides.,9,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0002,16 hours and 24 minutes contain ___ minutes altogether.,984,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0003,The sum of 23 and 3 is ___.,26,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0004,"Twice 30, plus 14, equals ___.",74,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0005,37 groups of 25 objects contain ___ objects.,925,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0006,A regular 44-sided shape has ___ sides.,44,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0007,51 hours and 15 minutes contain ___ minutes altogether.,3075,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0008,The sum of 58 and 26 is ___.,84,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0009,"Twice 6, plus 5, equals ___.",17,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0010,13 groups of 16 objects contain ___ objects.,208,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0011,A regular 20-sided shape has ___ sides.,20,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0012,27 hours and 6 minutes contain ___ minutes altogether.,1626,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0013,The sum of 34 and 17 is ___.,51,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0014,"Twice 41, plus 28, equals ___.",110,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0015,48 groups of 7 objects contain ___ objects.,336,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0016,A regular 55-sided shape has ___ sides.,55,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0017,3 hours and 29 minutes contain ___ minutes altogether.,209,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0018,The sum of 10 and 8 is ___.,18,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0019,"Twice 17, plus 19, equals ___.",53,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0020,24 groups of 30 objects contain ___ objects.,720,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0021,A regular 31-sided shape has ___ sides.,31,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0022,38 hours and 20 minutes contain ___ minutes altogether.,2300,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0023,The sum of 45 and 31 is ___.,76,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0024,"Twice 52, plus 10, equals ___.",114,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0025,59 groups of 21 objects contain ___ objects.,1239,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0026,A regular 7-sided shape has ___ sides.,7,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0027,14 hours and 11 minutes contain ___ minutes altogether.,851,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0028,The sum of 21 and 22 is ___.,43,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0029,"Twice 28, plus 33, equals ___.",89,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0030,35 groups of 12 objects contain ___ objects.,420,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0031,A regular 42-sided shape has ___ sides.,42,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0032,49 hours and 2 minutes contain ___ minutes altogether.,2942,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0033,The sum of 56 and 13 is ___.,69,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0034,"Twice 4, plus 24, equals ___.",32,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0035,11 groups of 3 objects contain ___ objects.,33,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0036,A regular 18-sided shape has ___ sides.,18,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0037,25 hours and 25 minutes contain ___ minutes altogether.,1525,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0038,The sum of 32 and 4 is ___.,36,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0039,"Twice 39, plus 15, equals ___.",93,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0040,46 groups of 26 objects contain ___ objects.,1196,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0041,A regular 53-sided shape has ___ sides.,53,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0042,60 hours and 16 minutes contain ___ minutes altogether.,3616,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0043,The sum of 8 and 27 is ___.,35,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0044,"Twice 15, plus 6, equals ___.",36,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0045,22 groups of 17 objects contain ___ objects.,374,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0046,A regular 29-sided shape has ___ sides.,29,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0047,36 hours and 7 minutes contain ___ minutes altogether.,2167,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0048,The sum of 43 and 18 is ___.,61,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0049,"Twice 50, plus 29, equals ___.",129,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0050,57 groups of 8 objects contain ___ objects.,456,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0051,A regular 5-sided shape has ___ sides.,5,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0052,12 hours and 30 minutes contain ___ minutes altogether.,750,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0053,The sum of 19 and 9 is ___.,28,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0054,"Twice 26, plus 20, equals ___.",72,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0055,33 groups of 31 objects contain ___ objects.,1023,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0056,A regular 40-sided shape has ___ sides.,40,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0057,47 hours and 21 minutes contain ___ minutes altogether.,2841,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0058,The sum of 54 and 32 is ___.,86,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0059,"Twice 2, plus 11, equals ___.",15,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0060,9 groups of 22 objects contain ___ objects.,198,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0061,A regular 16-sided shape has ___ sides.,16,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0062,23 hours and 12 minutes contain ___ minutes altogether.,1392,logic-checked,True,,Formula-generated prompt; assess fun factor
+p6final-fib-0063,The sum of 30 and 23 is ___.,53,logic-checked,True,,Formula-generated prompt; assess fun factor

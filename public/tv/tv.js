@@ -32,6 +32,18 @@
   function updateSoundButton(){$('soundButton').textContent=!audio.enabled?'▶ Enable sound':audio.muted?'♫ Unmute TV':'♫ Mute TV';}
   $('soundButton').onclick=async()=>{try{const wasEnabled=audio.enabled;await audio.unlock();audio.setMuted(wasEnabled?!audio.muted:false);if(!audio.muted){audio.play('sfx-join');audio.startMusic(currentState?.phase==='lobby'?'lobby':currentState?.board?.step==='minigame'||currentState?.board?.step==='showdown'?'tension':'board');}updateSoundButton();}catch{error('Your browser blocked sound. Click the button again.');}};
   updateSoundButton();
+  // A genuine key or pointer gesture may unlock Web Audio; browsers still decide.
+  function enableSoundOnGesture() {
+    if (audio.enabled || audio.muted === true && localStorage.getItem('noggin-muted') === 'true') return;
+    audio.unlock().then(() => {
+      audio.setMuted(false);
+      updateSoundButton();
+      audio.startMusic(currentState?.phase === 'lobby' ? 'lobby' : 'board');
+    }).catch(() => {});
+  }
+  window.addEventListener('pointerdown',enableSoundOnGesture,{passive:true});
+  window.addEventListener('keydown',enableSoundOnGesture);
+
   function showConfetti(){if(document.documentElement.classList.contains('reduce-motion'))return;
     const root=$('showFx');if(!root)return;root.replaceChildren();const colours=['#ffe478','#72ecf0','#ff7799','#c9a1ff','#a6f67a'];
     for(let i=0;i<65;i++){const bit=document.createElement('i');bit.className='confetti-bit';bit.style.left=`${(i*37)%100}%`;bit.style.setProperty('--bit',colours[i%colours.length]);bit.style.setProperty('--duration',`${2+(i%10)*.17}s`);root.append(bit);}
@@ -82,6 +94,31 @@
   function render(state) {
     if (!activeRoom || state.code !== activeRoom) return;
     currentState=state;window.__nogginStateAt=Date.now();
+    // The TV host can adjudicate an unlisted Bid to Win answer, including
+    // when the VIP is the bidder and must not judge their own submission.
+    let reviewPanel=document.getElementById('bidReviewPanel');
+    if(!reviewPanel){
+      reviewPanel=document.createElement('section');reviewPanel.id='bidReviewPanel';
+      reviewPanel.setAttribute('aria-live','polite');
+      reviewPanel.style.cssText='position:fixed;bottom:7rem;left:50%;transform:translateX(-50%);z-index:9999;background:#15142c;color:white;border:3px solid #ffe478;border-radius:16px;padding:16px;text-align:center;max-width:90vw;box-shadow:0 8px 30px #000b';
+      document.body.append(reviewPanel);
+    }
+    const pending=state.board?.showdown?.kind==='bid'&&state.board.showdown.phase==='review'
+      ?state.board.showdown.display?.review:null;
+    reviewPanel.classList.toggle('hidden',!pending);
+    reviewPanel.replaceChildren();
+    if(pending){
+      const heading=document.createElement('strong');heading.textContent='BID TO WIN · ANSWER REVIEW';
+      const answer=document.createElement('p');answer.textContent=pending.answer;
+      reviewPanel.append(heading,answer);
+      for(const [text,accept] of [['✓ ACCEPT',true],['✕ REJECT',false]]){
+        const button=document.createElement('button');button.type='button';button.textContent=text;
+        button.style.cssText='margin:5px;padding:12px 20px;min-height:44px';
+        button.onclick=async()=>{button.disabled=true;try{const response=await U.request(socket,'game:bid-review',{accept});render(response.state);error('');}catch(e){error(e.message);button.disabled=false;}};
+        reviewPanel.append(button);
+      }
+    }
+    if ($('vipStatus')) $('vipStatus').textContent = state.vipName ? `★ VIP: ${state.vipName}` : 'VIP: waiting for first player';
     const playing=state.phase!=='lobby';document.body.classList.toggle('playing',playing);
     $('lobbyGrid').classList.toggle('hidden',playing);
     $('lobbyControls').classList.toggle('hidden',playing);
@@ -111,7 +148,7 @@
       : state.canStart ? 'All contestants ready! Lobby check complete.' : 'Waiting for every contestant to tap READY on their phone…';
     $('stageReady').disabled = !state.canStart;
     $('stageReady').textContent = state.canStart ? '▶ START THE SHOW' : `WAITING FOR ${state.players.length < 2 ? '2 PLAYERS' : 'EVERYONE'}`;
-    for(const [id,val] of [['target',state.settings.target],['timerSpeed',state.settings.timerSpeed],['rules',state.settings.rules||'classic']]) $(id).value=String(val);
+    for(const [id,val] of [['target',state.settings.target],['timerSpeed',state.settings.timerSpeed],['rules',state.settings.rules||'classic'],['roundStyle',state.settings.roundStyle||'sequential']]) $(id).value=String(val);
     $('familyFriendly').checked=state.settings.familyFriendly;
     $('reduceMotion').checked=state.settings.reduceMotion;
     document.documentElement.classList.toggle('reduce-motion',state.settings.reduceMotion);
@@ -142,8 +179,9 @@
     } catch(err) {error(err.message);}
   }
   socket.on('connect', () => {setConnected(true);startHost();});
-  socket.on('disconnect', () => setConnected(false));
+  socket.on('disconnect', () => {setConnected(false);if ($('connectionLabel')) $('connectionLabel').textContent='DISCONNECTED · SERVER MAY BE WAKING';});
   socket.on('room:state', state => {if(activeRoom && state.code === activeRoom) render(state);});
+  socket.on('game:stroke', stroke => {if (stroke.code === activeRoom) boardView?.appendSketchStroke(stroke);});
   socket.on('room:session-replaced', () => {error('This host session is open in another browser tab. Close this tab.');socket.disconnect();});
   socket.on('room:closed',() => {U.clearSession(sessionKey);activeRoom=null;error('Room was closed. Reload to create a new one.');});
 
@@ -153,6 +191,7 @@
     catch(err){error(err.message);}
   }
   $('rules').onchange = e => updateSettings({rules:e.target.value});
+  $('roundStyle').onchange = e => updateSettings({roundStyle:e.target.value});
   $('target').onchange = e => updateSettings({target:Number(e.target.value)});
   $('timerSpeed').onchange = e => updateSettings({timerSpeed:e.target.value});
   $('familyFriendly').onchange = e => updateSettings({familyFriendly:e.target.checked});

@@ -7,7 +7,7 @@ const words=require('../../data/unscramble.json');
 const SPECS=Object.freeze({
  'quick-draw':{name:'Quick Draw',category:'speed',rounds:3,rule:'Wait for DRAW! First clean tap takes the point. Tap early and you misfire.'},
  'count-flash':{name:'Count Flash',category:'speed',rounds:3,rule:'SURPRISE TARGET! Memorise all three types of object; only AFTER the flash will you learn which one to count.'},
- 'odd-spot':{name:'Odd Spot',category:'speed',rounds:5,rule:'Find the different icon on the TV grid; tap its NUMBER on your phone. Wrong taps lock you for three seconds.'},
+ 'odd-spot':{name:'Odd Spot',category:'speed',rounds:5,rule:'Find the different symbol. Tap the matching square on your phone. Wrong taps lock for three seconds.'},
  'colour-clash':{name:'Colour Clash',category:'speed',rounds:8,rule:'Tap the COLOUR of the ink, not the colour word. Correct +1; wrong −1.'},
  'higher-lower':{name:'Higher or Lower',category:'brain',rounds:8,rule:'Higher or lower? You have TWO strikes before you are eliminated — survive and earn points.'},
  'memory-lane':{name:'Memory Lane',category:'brain',rounds:4,rule:'Copy the pad sequence. In the FINAL round, play it BACKWARDS!'},
@@ -23,6 +23,10 @@ function chooseGame(b,category,rng=crypto.randomInt){
  const never=ids.filter(id=>!b.seenGames?.includes(id));
  const pool=(never.length?never:ids).filter(id=>id!==b.lastGame);
  const id=pick(pool.length?pool:ids,rng);b.lastGame=id;b.seenGames=[...(b.seenGames||[]),id].slice(-12);return id;
+}
+function roundsFor(room,id){
+ // Preserve the original Classic rule lengths; Showtime has five progressive stages.
+ return room.settings.rules==='showtime' ? Math.max(5, SPECS[id].rounds) : SPECS[id].rounds;
 }
 function ruleFor(room,id){
  if(room.settings.rules!=='showtime'&&id==='count-flash')return 'The target symbol is shown before the flash. Count only that symbol on the TV.';
@@ -52,26 +56,40 @@ function nextRound(room,now,rng=crypto.randomInt){
  const set=(ms)=>{m.deadline=now+Math.round(ms*relaxed);};
  switch(m.id){
  case 'quick-draw':{
-   const wait=2000+rng(4001);m.phase='wait';m.openAt=now+wait;m.deadline=m.openAt+Math.round(3500*relaxed);
-   m.question='Wait for the signal…';m.display={readyAt:m.openAt};break;
+   const wait=2000+rng(4001);m.phase='wait';m.openAt=now+wait;m.deadline=m.openAt+Math.round(Math.max(1900,3500-(m.round-1)*300)*relaxed);
+   m.question='Wait for the signal…';m.display={readyAt:m.openAt,difficulty:m.round};break;
  }
  case 'count-flash':{
    const pool=['🦆','⚽','☕','⭐','🍎'];
    const icons=[];for(let i=0;i<3;i++)icons.push(pool.splice(rng(pool.length),1)[0]);
-   const counts=[9+rng(6),9+rng(6)];counts.push(36-counts[0]-counts[1]);
+   // Showtime ramps the number of objects, not just the timer. Classic keeps 36.
+   const total=room.settings.rules==='showtime'?Math.min(36,6+m.round*6):36;
+   const first= Math.floor(total/3),second=Math.floor(total/3);
+   const counts=[first,second,total-first-second];
    const target=rng(3),count=counts[target];
-   m.secret={count,targetIcon:icons[target]};m.phase='flash';m.openAt=now+2400;m.deadline=m.openAt+Math.round(8500*relaxed);
+   m.secret={count,targetIcon:icons[target]};m.phase='flash';m.openAt=now+Math.max(1250,3000-(m.round-1)*350);m.deadline=m.openAt+Math.round(Math.max(5200,8500-(m.round-1)*500)*relaxed);
    m.question=room.settings.rules==='showtime'?'MEMORISE ALL THREE SYMBOLS — THE TARGET IS A SURPRISE!':`COUNT THE ${icons[target]} SYMBOLS ON THE TV!`;
-   m.privateTv={count,icon:icons[0],distractor:icons[1],icons,counts,total:36,seed:rng(1000000)};
-   m.display={flashEndsAt:m.openAt,targetIcon:room.settings.rules==='showtime'?null:icons[target]};break;
+   m.privateTv={count,icon:icons[0],distractor:icons[1],icons,counts,total,seed:rng(1000000)};
+   m.display={flashEndsAt:m.openAt,targetIcon:room.settings.rules==='showtime'?null:icons[target],difficulty:m.round,objectTotal:total};break;
  }
  case 'odd-spot':{
-   const pair=pick([['●','◆'],['★','✦'],['▲','▼'],['♣','♠'],['♥','♦'],['☀','☼']],rng),index=rng(36);
-   m.secret={index};m.question='Find the different symbol on the TV. Tap its number on your phone!';m.display={grid:Array.from({length:36},(_,i)=>i===index?pair[1]:pair[0])};set(8500);break;
+   const index=rng(36),level=m.round;
+   // The visual puzzle is intentionally shared with both screens; the answer index stays server-only.
+   const pair=pick([['●','◆'],['★','✦'],['▲','■'],['♥','◆']],rng);
+   const symbol=level<=2?pair[0]:level<=4?'▲':'●';
+   const oddSymbol=level<=2?pair[1]:symbol;
+   const grid=Array.from({length:36},(_,i)=>i===index?oddSymbol:symbol);
+   const styles=Array.from({length:36},(_,i)=>({
+     rotation:level>=3&&level<=4&&i===index?level===3?90:180:0,
+     tone:level===5?(i===index?'#c7d3ed':'#e7efff'):null
+   }));
+   m.secret={index};
+   m.question=level<=2?'Find the different shape.':level<=4?'Find the rotated shape.':'Find the slightly different shade.';
+   m.display={grid,styles,level};set(level===5?11000:9500);break;
  }
  case 'colour-clash':{
    const labels=['RED','BLUE','GREEN','YELLOW'];const word=rng(4),ink=(word+1+rng(3))%4;
-   m.secret={ink};m.question=labels[word];m.display={ink:labels[ink],word:labels[word]};set(2500);break;
+   m.secret={ink};m.question=labels[word];m.display={ink:labels[ink],word:labels[word],difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(1400,2800-(m.round-1)*180):2500);break;
  }
  case 'higher-lower':{
    const available=facts.filter(x=>!m.usedIds.includes(x.id));const a=pick(available.length>1?available:facts,rng);
@@ -80,23 +98,33 @@ function nextRound(room,now,rng=crypto.randomInt){
    m.usedIds.push(a.id,b.id);
    m.secret={answer:b.value>a.value?0:1,actual:b.value};
    m.question=`${a.label}: ${a.value}${a.unit?' '+a.unit:''}. ${b.label}: higher or lower?`;
-   m.display={options:['HIGHER','LOWER']};set(6000);break;
+   m.display={options:['HIGHER','LOWER'],difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(3600,6800-(m.round-1)*400):6000);break;
  }
  case 'memory-lane':{
    m.memorySequence.push(rng(6));if(m.round===1)m.memorySequence.push(rng(6));
    const sequence=m.memorySequence.slice();
    m.secret={sequence};m.phase='flash';m.openAt=now+1000+sequence.length*750;m.deadline=m.openAt+Math.round(8500*relaxed);
-   m.question=m.round===SPECS[m.id].rounds&&room.settings.rules==='showtime'?'FINAL ROUND: watch the pads, then tap them in REVERSE order!':'Watch the TV pads, then repeat the sequence in the SAME order.';
-   m.privateTv={sequence};m.display={padCount:6,sequenceLength:sequence.length,flashEndsAt:m.openAt,reverse:room.settings.rules==='showtime'&&m.round===SPECS[m.id].rounds};break;
+   m.question=m.round===roundsFor(room,m.id)&&room.settings.rules==='showtime'?'FINAL ROUND: watch the pads, then tap them in REVERSE order!':'Watch the TV pads, then repeat the sequence in the SAME order.';
+   m.privateTv={sequence};m.display={padCount:6,sequenceLength:sequence.length,flashEndsAt:m.openAt,reverse:room.settings.rules==='showtime'&&m.round===roundsFor(room,m.id)};break;
  }
  case 'close-call':{
-   const pool=closeCall.filter(q=>!m.usedIds.includes(q.id));const item=pick(pool.length?pool:closeCall,rng);m.usedIds.push(item.id);m.secret={answer:item.answer};m.question=item.question;m.display={unit:item.unit};set(11500);break;
+   const pool=closeCall.filter(q=>!m.usedIds.includes(q.id));const item=pick(pool.length?pool:closeCall,rng);m.usedIds.push(item.id);m.secret={answer:item.answer};m.question=item.question;m.display={unit:item.unit,difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(7000,12000-(m.round-1)*1100):11500);break;
  }
  case 'unscramble':{
-   const pool=words.filter(q=>!m.usedIds.includes(q.id));const item=pick(pool.length?pool:words,rng);m.usedIds.push(item.id);let shuffle=permutation(item.word,rng);
+   const freshWords=words.filter(q=>!m.usedIds.includes(q.id));
+   // Longer words are a transparent difficulty increase, unlike merely shortening the clock.
+   const pool=freshWords.length?freshWords:words;
+   const ordered=[...pool].sort((a,b)=>a.word.length-b.word.length);
+   const band=room.settings.rules==='showtime'
+    ?Math.min(4,m.round-1):null;
+   const from=band===null?0:Math.floor(ordered.length*band/5);
+   const to=band===null?ordered.length:Math.max(from+1,Math.ceil(ordered.length*(band+1)/5));
+   const candidates=ordered.slice(from,to);
+   const item=pick(candidates.length?candidates:pool,rng);
+   m.usedIds.push(item.id);let shuffle=permutation(item.word,rng);
    if(shuffle===item.word)shuffle=item.word.slice(1)+item.word[0];
    m.secret={answer:item.word};m.question=shuffle.split('').join(' ');m.hint=item.category;
-   m.display={hint:item.category,revealAt:now+5000,wordLength:item.word.length};set(10500);break;
+   m.display={hint:item.category,revealAt:now+(room.settings.rules==='showtime'?Math.min(7500,5000+(m.round-1)*650):5000),wordLength:item.word.length,difficulty:m.round};set(10500);break;
  }
  }
  room.board.deadline=m.deadline;
@@ -208,7 +236,7 @@ function advance(room,now,finishTurn,rng=crypto.randomInt){
  // The round key remains stable during reveal; late inputs are rejected.
  if(m.phase==='reveal'){nextRound(room,now,rng);return;}
  concludeRound(room);
- const stop=m.round>=SPECS[m.id].rounds||(m.id==='higher-lower'&&m.players.filter(id=>eligible(m,id)).length<=1);
+ const stop=m.round>=roundsFor(room,m.id)||(m.id==='higher-lower'&&m.players.filter(id=>eligible(m,id)).length<=1);
  if(!stop){m.phase='reveal';m.deadline=now+(room.settings.timerSpeed==='relaxed'?2400:1200);b.deadline=m.deadline;return;}
  const win=winners(m),host=room.players.find(p=>p.id===b.activeId);
  // Preserve Phase 2 scoring: host +2 if winning; other winners +1.
@@ -237,7 +265,7 @@ function tick(room,now,finishTurn,rng=crypto.randomInt){
 function publicState(room,forTv=false){
  const m=room.board.minigame;if(!m)return null;
  const spec=SPECS[m.id];
- return {id:m.id,category:m.category,title:spec.name,rule:ruleFor(room,m.id),round:m.round,totalRounds:spec.rounds,roundKey:m.roundKey,phase:m.phase,introUntil:m.introUntil||null,question:m.question,hint:m.hint,display:m.id==='odd-spot'&&!forTv?{}:m.display,deadline:m.deadline,openAt:m.openAt,participants:m.players,eliminated:m.eliminated,answered:Object.keys(m.roundAnswers),progress:m.progress,scores:m.scores,strikes:m.strikes,blocked:m.blocked,
+ return {id:m.id,category:m.category,title:spec.name,rule:ruleFor(room,m.id),round:m.round,totalRounds:roundsFor(room,m.id),roundKey:m.roundKey,phase:m.phase,introUntil:m.introUntil||null,question:m.question,hint:m.hint,display:m.display,deadline:m.deadline,openAt:m.openAt,participants:m.players,eliminated:m.eliminated,answered:Object.keys(m.roundAnswers),progress:m.progress,scores:m.scores,strikes:m.strikes,blocked:m.blocked,
   ...(m.phase==='reveal'?{lastRoundResult:m.lastRoundResult}:{}),
   ...(forTv&&m.privateTv?{tvCue:m.privateTv}:{})};
 }

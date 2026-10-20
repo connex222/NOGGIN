@@ -71,7 +71,7 @@ function makeBomb(players,rng){
 function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  const id=forcedId||chooseGame(room.board,category,rng,room.players.length),spec=SPECS[id];if(!spec||spec.category!==category)fail('GAME','Invalid game for category.');
  const b=room.board,participants=room.players.map(p=>p.id),host=b.activeId;
- const m={id,category,title:spec.name,rule:spec.rule,round:1,roundKey:1,totalRounds:id==='majority-rules'?3:id==='mind-meld'?3:1,
+ const m={id,category,title:spec.name,rule:spec.rule,round:1,roundKey:1,totalRounds:id==='majority-rules'||id==='mind-meld'?(room.settings.rules==='showtime'?5:3):1,
   phase:'intro',resumePhase:id==='mind-meld'?'partner':'play',introUntil:now+timer(room,3.5),deadline:now+timer(room,3.5),host,players:participants,
   secret:{},privateById:{},display:{},answers:{},scores:Object.fromEntries(participants.map(id=>[id,0])),
   usedIds:[],strokes:[],strokeCounts:{},lastResult:null,stageStarted:now+timer(room,3.5),seconds:0,choices:[],voters:{},optionOwners:[],voteStageAnswers:{}, roundWords:[]};
@@ -164,7 +164,7 @@ function finishMajorityRound(room,now,finishTurn,rng=crypto.randomInt){
  const m=room.board.minigame;const votes=Object.values(m.answers).map(a=>a.value),counts=[0,0,0,0];for(const n of votes)counts[n]++;
  const biggest=Math.max(...counts);if(biggest)for(const [id,a] of Object.entries(m.answers))if(counts[a.value]===biggest)m.scores[id]++;
  m.lastResult={question:m.question,winningOptions:counts.map((n,i)=>n===biggest&&biggest?i:-1).filter(i=>i>=0),totals:counts};
- if(m.round>=3){const top=Math.max(...Object.values(m.scores));const winners=top>0?m.players.filter(id=>m.scores[id]===top):[];finish(room,now,finishTurn,winners,`Majority Rules: ${winners.length?winners.map(id=>room.players.find(p=>p.id===id).name).join(' & ')+' know the crowd!':'No majority vote this time.'}`);return;}
+ if(m.round>=m.totalRounds){const top=Math.max(...Object.values(m.scores));const winners=top>0?m.players.filter(id=>m.scores[id]===top):[];finish(room,now,finishTurn,winners,`Majority Rules: ${winners.length?winners.map(id=>room.players.find(p=>p.id===id).name).join(' & ')+' know the crowd!':'No majority vote this time.'}`);return;}
  m.round++;prepareMajority(room,rng);setPhase(room,'play',now,15);
 }
 function finishRelay(room,now,finishTurn){
@@ -254,7 +254,7 @@ function finishMeldRound(room,now,finishTurn){
   finish(room,now,finishTurn,[m.host,m.partner],`${room.players.find(p=>p.id===m.host).name} and ${room.players.find(p=>p.id===m.partner).name} matched “${one}”!`,{team:true});return;
  }
  m.lastResult={words:[one||'(no word)',two||'(no word)'],attempt:m.round};
- if(m.round>=3){finish(room,now,finishTurn,[],'Mind Meld: three tries and no matching word.',{team:true});return;}
+ if(m.round>=m.totalRounds){finish(room,now,finishTurn,[],`Mind Meld: ${m.totalRounds} tries and no matching word.`,{team:true});return;}
  m.phase='reveal';m.deadline=now+3000;room.board.deadline=m.deadline;
 }
 function draw(room,id,points,roundKey,now){

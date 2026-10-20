@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const board=require('../server/board');
 const phase3=require('../server/games/phase3');
 function fixture(n=3){
@@ -60,10 +60,10 @@ test('No player can enable Director mode with zero Cues',()=>{
  assert.throws(()=>f.rooms.chooseGame(f.code,f.sock(0),{action:'director'}),e=>e.code==='CUES');
  assert.equal(f.room.board.step,'await_roll');
 });
-test('Target counting: counts 8–18 only, exactly 36 mixed objects, and never leaks the correct count to phones',()=>{
+test('Target counting: progressive Showtime object count never leaks the answer to phones',()=>{
  const f=fixture(2);phase3.start(f.room,'speed',f.time(),()=>0,'count-flash');
- const m=f.room.board.minigame;assert(m.secret.count>=8&&m.secret.count<=18);
- assert.equal(m.privateTv.total,36);assert.notEqual(m.privateTv.icon,m.privateTv.distractor);
+ const m=f.room.board.minigame;assert(m.secret.count>=1&&m.secret.count<=18);
+ assert.equal(m.privateTv.total,12);assert.notEqual(m.privateTv.icon,m.privateTv.distractor);
  const dto=f.rooms.state(f.code).board.minigame;
  assert.equal(dto.tvCue,undefined);assert(!JSON.stringify(dto).includes('"count":'));
  assert.equal(f.rooms.state(f.code,true).board.minigame.tvCue.count,m.secret.count);

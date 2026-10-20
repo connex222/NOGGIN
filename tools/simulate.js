@@ -11,12 +11,16 @@ const board=require('../server/board');
 const phase3=require('../server/games/phase3');
 const phase4=require('../server/games/phase4');
 const phase5=require('../server/games/phase5');
-function run(n){
- const room={phase:'lobby',hostSocketId:'tv',settings:{target:12,timerSpeed:'normal'},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
+function run(n,style='sequential'){
+ const room={phase:'lobby',hostSocketId:'tv',settings:{target:style==='everyone'?16:12,timerSpeed:'normal',roundStyle:style},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
  board.start(room);let now=1000,steps=0;const scores=[];const kinds={};const selectedGames={};const visitedGames=new WeakSet();
  while(room.phase==='board'&&steps++<1000){
  const b=room.board;
- if(b.step==='await_roll'){
+ if(b.step==='round_roll'){
+   for(const p of room.players)if(!b.round.rolls[p.id])board.roll(room,p.id,now,rand);
+ }else if(b.step==='round_moving'){
+   now=Math.max(now,b.nextAt+1);board.tick(room,now,rand);
+ }else if(b.step==='await_roll'){
   // Synthetic strategy model: in 35% of eligible turns, try a Director's Cut.
   // The strategy prefers high-reward board spaces, but conserves a Cue unless
   // a nudge scores clearly better than a free move. Human choices will differ.
@@ -134,9 +138,10 @@ function run(n){
  return {turns:room.board.turn,winnerAtHalfLeader:mid[index]===max,winnerAtHalfLast:mid[index]===min,kinds,selectedGames,finished:room.phase==='finished',steps};
 }
 const games=Number(process.argv[2]||1000);
+const style=process.argv.includes('--everyone')?'everyone':'sequential';
 if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000]');
 for(const count of [2,4,6,8]){
  let sum=0,leader=0,last=0,finished=0;const spaces={};const miniGames={};const runs=[];
- for(let i=0;i<games;i++){const r=run(count);sum+=r.turns;leader+=Number(r.winnerAtHalfLeader);last+=Number(r.winnerAtHalfLast);finished+=Number(r.finished);runs.push(r.turns);for(const [k,v]of Object.entries(r.kinds))spaces[k]=(spaces[k]||0)+v;for(const [k,v]of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
- runs.sort((a,b)=>a-b);console.log(JSON.stringify({players:count,games,finished,averageTurns:+(sum/games).toFixed(1),estimatedMinutes:+(sum/games*75/60).toFixed(1),medianTurns:runs[Math.floor(games/2)],leaderAtHalfWinsPct:+(leader/games*100).toFixed(1),lastAtHalfWinsPct:+(last/games*100).toFixed(1),landings:spaces,miniGames}));
+ for(let i=0;i<games;i++){const r=run(count,style);sum+=r.turns;leader+=Number(r.winnerAtHalfLeader);last+=Number(r.winnerAtHalfLast);finished+=Number(r.finished);runs.push(r.turns);for(const [k,v]of Object.entries(r.kinds))spaces[k]=(spaces[k]||0)+v;for(const [k,v]of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
+ runs.sort((a,b)=>a-b);console.log(JSON.stringify({roundStyle:style,players:count,games,finished,averageTurns:+(sum/games).toFixed(1),estimatedMinutes:+(sum/games*(style==='everyone'?125:75)/60).toFixed(1),averageRollsPerPlayer:+(sum/games*(style==='everyone'?1:1/count)).toFixed(1),medianTurns:runs[Math.floor(games/2)],leaderAtHalfWinsPct:+(leader/games*100).toFixed(1),lastAtHalfWinsPct:+(last/games*100).toFixed(1),landings:spaces,miniGames}));
 }

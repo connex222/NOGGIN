@@ -31,17 +31,118 @@ function requireStep(b,step){if(b.step!==step)fail('STEP','That action is not av
 function actor(room){return room.players.find(p=>p.id===room.board.activeId);}
 function random(n,randomInt=crypto.randomInt){return randomInt(n);}
 function showtime(room){return room.settings.rules==='showtime';}
+function everyone(room){return room.settings.roundStyle==='everyone';}
+const ROUND_ROLL_MS=12000;
+const ROUND_MOVE_MS=900;
 function publicBoard(room,forTv=false,viewerId=null) {
  const b=room.board;
  if (!b) return null;
  const challenge=b.challenge ? {kind:b.challenge.kind,title:b.challenge.title,question:b.challenge.question,choices:b.challenge.choices,participants:b.challenge.participants,answered:Object.keys(b.challenge.answers),deadline:b.challenge.deadline} : null;
- return {routePlan:showtime(room)&&Boolean(b.routePlan),routeOptions:b.step==='choose_route'?(b.routeOptions||[]):[],headline:Boolean(b.headline),showdown:phase5.publicState(room,forTv,viewerId),minigame:(room.board?.minigame && phase4.SPECS[room.board.minigame.id] ? phase4.publicState(room,forTv,viewerId): phase3.publicState(room,forTv)),step:b.step,turn:b.turn,activeId:b.activeId,rolls:b.rolls,landing:b.landing,lastMove:b.lastMove,event:b.event,deadline:b.deadline,nextAt:b.nextAt,challenge,result:b.result,leaderIds:b.leaderIds,finalists:b.finalists,winnerIds:b.winnerIds,history:b.history.slice(-8),paused:Boolean(b.pausedAt),pauseReason:b.pauseReason};
+ return {round:b.round ? {number:b.round.number,stage:b.round.stage,rolls:b.round.rolls,headlines:b.round.headlines,directors:b.round.directors,spotlightId:b.round.spotlightId,moveIndex:b.round.moveIndex,prioritySeat:b.round.prioritySeat} : null,routePlan:showtime(room)&&Boolean(b.routePlan),routeOptions:b.step==='choose_route'?(b.routeOptions||[]):[],headline:Boolean(b.headline),showdown:phase5.publicState(room,forTv,viewerId),minigame:(room.board?.minigame && phase4.SPECS[room.board.minigame.id] ? phase4.publicState(room,forTv,viewerId): phase3.publicState(room,forTv)),step:b.step,turn:b.turn,activeId:b.activeId,rolls:b.rolls,landing:b.landing,lastMove:b.lastMove,event:b.event,deadline:b.deadline,nextAt:b.nextAt,challenge,result:b.result,leaderIds:b.leaderIds,finalists:b.finalists,winnerIds:b.winnerIds,history:b.history.slice(-8),paused:Boolean(b.pausedAt),pauseReason:b.pauseReason};
 }
-function start(room){
+function start(room,now=Date.now()){
  if(room.phase!=='lobby')fail('PHASE','Game already started.');
  if(!room.hostSocketId || room.players.length<2 || !room.players.every(p=>p.ready && p.socketId))fail('READY','Two to eight connected, ready players required.');
  for(const p of room.players){p.sparks=0;p.position=0;p.cues=showtime(room)?DIRECTORS_CUES:0;}
  room.phase='board';room.board={step:'await_roll',turn:1,activeId:room.players[0].id,rolls:[],landing:0,lastMove:null,event:{type:'intro',text:'Welcome to the NOGGIN stage!'},deadline:null,nextAt:null,challenge:null,result:null,leaderIds:[],finalists:[],winnerIds:[],history:[],pausedAt:null,pauseReason:null,showdown:null,tieQuestions:[],seenQuestions:[],seenGames:[],lastGame:null,minigame:null,moveRevision:0,routePlan:false,routeOptions:[],headline:false,headlineEligible:false,turnStartSparks:Object.fromEntries(room.players.map(p=>[p.id,p.sparks]))};
+ if(everyone(room)) beginRound(room,now);
+}
+// Everyone Rolls is kept separate from the original sequential turn engine.
+// The server creates every die, including timeout rolls; clients cannot specify values.
+function beginRound(room,now){
+ const b=room.board,number=(b.round?.number||0)+1;
+ const seats=[...room.players].sort((a,z)=>a.seat-z.seat);
+ const spotlight=seats[(number-1)%seats.length];
+ b.round={number,stage:'rolling',rolls:{},moves:[],moveIndex:0,
+   spotlightId:spotlight.id,prioritySeat:seats[(number-1)%seats.length].seat,headlines:{},directors:{},
+   pendingMini:false,showdownId:null,showdownDone:false};
+ b.turn=number;b.activeId=spotlight.id;b.step='round_roll';b.rolls=[];
+ b.deadline=now+ROUND_ROLL_MS;b.nextAt=null;b.result=null;
+ b.event={type:'round',text:`Round ${number}: everyone roll now!`};
+ b.turnStartSparks=Object.fromEntries(room.players.map(p=>[p.id,p.sparks]));
+}
+function roundRoll(room,id,now,rng=crypto.randomInt){
+ const b=room.board,r=b.round;if(!everyone(room)||!r||r.stage!=='rolling')fail('STEP','Not time to roll.');
+ if(!room.players.some(p=>p.id===id))fail('PLAYER','Not in this room.');
+ if(Object.hasOwn(r.rolls,id))fail('ROLLED','Your roll is already locked in.');
+ const p=room.players.find(p=>p.id===id),lowest=Math.min(...room.players.map(x=>x.sparks));
+ const catchUp=showtime(room)&&p.sparks===lowest&&room.players.some(x=>x.sparks>lowest);
+ const dice=Array.from({length:catchUp?2:1},()=>1+random(6,rng));
+ // On a shared countdown, the server picks the higher catch-up die automatically.
+ let die=Math.max(...dice);
+ if(r.directors[id] && p.cues>0){
+   const scores={showdown:5,wildcard:4,brain:3,speed:3,create:3,together:3,start:5,pickpocket:4,drain:-5};
+   const options=[die,Math.max(1,die-1),Math.min(6,die+1)].filter((x,i,a)=>a.indexOf(x)===i);
+   const choice=options.sort((a,z)=>(scores[SPACES[(p.position+z)%36]]||0)-(scores[SPACES[(p.position+a)%36]]||0))[0];
+   if(choice!==die){die=choice;p.cues--; }
+ }
+ r.rolls[id]={dice,die,automatic:false};
+ if(room.players.every(x=>Object.hasOwn(r.rolls,x.id)))prepareRoundMoves(room,now,rng);
+}
+function prepareRoundMoves(room,now,rng=crypto.randomInt){
+ const b=room.board,r=b.round;if(r.stage!=='rolling')return;
+ for(const p of room.players){if(!Object.hasOwn(r.rolls,p.id)){
+   const lowest=Math.min(...room.players.map(x=>x.sparks));
+   const catchUp=showtime(room)&&p.sparks===lowest&&room.players.some(x=>x.sparks>lowest);
+   const dice=Array.from({length:catchUp?2:1},()=>1+random(6,rng));
+   r.rolls[p.id]={dice,die:Math.max(...dice),automatic:true};
+ }}
+ r.moves=[...room.players].sort((a,z)=>a.seat-z.seat).map(p=>({id:p.id,die:r.rolls[p.id].die}));
+ r.stage='moving';r.moveIndex=0;b.step='round_moving';b.deadline=null;b.nextAt=now+ROUND_MOVE_MS;
+ b.event={type:'round',text:'Dice locked! Watch everyone move.'};
+}
+function advanceRoundMove(room,now){
+ const b=room.board,r=b.round,entry=r.moves[r.moveIndex];
+ if(!entry){resolveRoundLandings(room,now);return;}
+ const p=room.players.find(x=>x.id===entry.id),from=p.position,path=[];
+ for(let k=1;k<=entry.die;k++)path.push((from+k)%SPACES.length);
+ p.position=path.at(-1);const to=p.position;
+ if(path.includes(0)&&to!==0){p.sparks++;if(showtime(room))p.cues=Math.min(DIRECTORS_CUES,(p.cues||0)+1);}
+ b.activeId=p.id;b.landing=to;
+ b.lastMove={playerId:p.id,from,to,path,die:entry.die,revision:++b.moveRevision};
+ b.event={type:'move',text:`Moving: ${p.name} (${entry.die})`};
+ r.moveIndex++;b.nextAt=now+ROUND_MOVE_MS;
+}
+function resolveRoundLandings(room,now){
+ const b=room.board,r=b.round,seats=[...room.players].sort((a,z)=>a.seat-z.seat);
+ const landings=seats.map(p=>({p,type:SPACES[p.position],landing:p.position}));
+ const contenders=landings.filter(x=>x.type==='showdown');
+ const ordered=contenders.sort((a,z)=>((a.p.seat-r.prioritySeat+seats.length)%seats.length)-((z.p.seat-r.prioritySeat+seats.length)%seats.length));
+ const chosen=ordered[0];
+ for(const {p,type} of landings){
+   if(type==='start')p.sparks+=2;
+   else if(type==='lift')p.position=LIFTS[p.position];
+   else if(type==='pickpocket'){
+     const victim=room.players.filter(x=>x.id!==p.id).sort((a,z)=>z.sparks-a.sparks||a.seat-z.seat)[0];
+     if(victim?.sparks>0){victim.sparks--;p.sparks++;}
+   }else if(type==='swap'){
+     const other=room.players.find(x=>x.id!==p.id);
+     if(other)[p.position,other.position]=[other.position,p.position];
+   }else if(type==='showdown'&&p.id!==chosen?.p.id)p.sparks++;
+   else if(type==='drain')p.sparks=Math.max(0,p.sparks-1);
+ }
+ r.stage='contest';r.pendingMini=true;
+ const spotlight=room.players.find(p=>p.id===r.spotlightId),type=landings.find(x=>x.p.id===spotlight.id).type;
+ r.category=CATEGORIES.includes(type)?type:'brain';
+ b.activeId=spotlight.id;b.landing=spotlight.position;
+ if(chosen){
+   const rival=room.players.filter(p=>p.id!==chosen.p.id).sort((a,z)=>z.sparks-a.sparks||a.seat-z.seat)[0];
+   b.activeId=chosen.p.id;b.landing=chosen.landing;r.showdownId=chosen.p.id;
+   phase5.start(room,'corner',now,rival.id);return;
+ }
+ startRoundMini(room,now);
+}
+function startRoundMini(room,now){
+ const b=room.board,r=b.round;r.stage='minigame';r.pendingMini=false;
+ b.activeId=r.spotlightId;
+ const category=r.category;
+ (category==='speed'||category==='brain'?phase3:phase4).start(room,category,now);
+}
+function tickRound(room,now,rng){
+ const b=room.board,r=b.round;
+ if(r.stage==='rolling'&&now>=b.deadline){prepareRoundMoves(room,now,rng);return true;}
+ if(r.stage==='moving'&&now>=b.nextAt){advanceRoundMove(room,now);return true;}
+ return false;
 }
 function currentIs(room,id){if(room.board.activeId!==id)fail('TURN','It is not your turn.');}
 function beginMove(room,die,now,rng=crypto.randomInt){
@@ -56,7 +157,7 @@ function beginMove(room,die,now,rng=crypto.randomInt){
  resolveLanding(room,now,crossed&&to!==0,rng);
 }
 function roll(room,id,now,randomInt){
- const b=room.board;requireStep(b,'await_roll');currentIs(room,id);
+ const b=room.board;if(everyone(room)){roundRoll(room,id,now,randomInt);return;}requireStep(b,'await_roll');currentIs(room,id);
  const low=Math.min(...room.players.map(p=>p.sparks));
  const diceCount=showtime(room)&&actor(room).sparks===low && room.players.some(p=>p.sparks>low) ? 2 : 1;
  b.rolls=Array.from({length:diceCount},()=>1+random(6,randomInt));
@@ -112,7 +213,20 @@ function resolveLanding(room,now,passed,rng=crypto.randomInt){
  b.event={type:'challenge',category:type,text:`${LABELS[type]} space! Quick Choice demo challenge for all players.`};
 }
 function choose(room,id,payload,now,randomInt){
- const b=room.board;currentIs(room,id);
+ const b=room.board;
+ if(everyone(room) && b.step==='round_roll'){
+   const r=b.round,p=room.players.find(x=>x.id===id);
+   if(!p)fail('PLAYER','Not seated.');
+   if(Object.hasOwn(r.rolls,id))fail('ROLLED','Your roll is already locked in.');
+   if(!showtime(room))fail('RULES','Showtime features are disabled in Classic.');
+   if(payload?.action==='headline'){if(p.sparks<1)fail('SPARKS','You need a Spark to place a bet.');r.headlines[id]=true;}
+   else if(payload?.action==='safe')delete r.headlines[id];
+   else if(payload?.action==='director'){if(!p.cues)fail('CUES','No Director Cues left.');r.directors[id]=true;}
+   else if(payload?.action==='normal')delete r.directors[id];
+   else fail('STEP','Unsupported shared-round action.');
+   return;
+ }
+ currentIs(room,id);
  if(!showtime(room) && b.step==='await_roll' && ['headline','safe','director','normal'].includes(payload?.action))fail('RULES','Extra options are disabled in Classic.');
  if(b.step==='await_roll' && ['headline','safe'].includes(payload?.action)){
    if(payload.action==='headline' && actor(room).sparks<1)fail('SPARKS','You need at least one Spark to call a Headline Bet.');
@@ -190,6 +304,13 @@ function resolveChallenge(room,now){
 }
 function finishTurn(room,now,text,winners=[]){
  const b=room.board;
+ if(everyone(room)&&b.round?.stage==='minigame'&&showtime(room)){
+   for(const [id,active] of Object.entries(b.round.headlines)){
+     if(!active)continue;const p=room.players.find(x=>x.id===id);if(!p)continue;
+     if(winners.includes(id)){p.sparks+=HEADLINE_WIN_BONUS;text+=` · ${p.name} wins their Headline Bet!`;}
+     else{p.sparks=Math.max(0,p.sparks-HEADLINE_LOSS_PENALTY);text+=` · ${p.name} loses their Headline Bet.`;}
+   }
+ }
  // The underdog bonus is calculated against scores at the START of this turn,
  // not after other players earned their rewards. Only an actual game/showdown
  // winner can claim it; passive board spaces never pay a bonus.
@@ -204,6 +325,16 @@ function finishTurn(room,now,text,winners=[]){
  const newCues=[];
  for(const id of showtime(room)?new Set(winners):[]){const winner=room.players.find(p=>p.id===id);if(winner && (winner.cues||0)<DIRECTORS_CUES){winner.cues=(winner.cues||0)+1;newCues.push(winner.name);}}
  if(newCues.length)text+=` · Director Cue earned: ${newCues.join(' & ')}.`;
+ // Two-player comeback: a trailing contestant gains one extra Spark only
+ // when winning a contested activity. The start-of-turn gap must be
+ // at least 2 Sparks in sequential mode, or 4 in Everyone Rolls mode. No passive rewards or free wins.
+ const twoPlayerSnapshot=b.turnStartSparks||{};
+ const comebackIds=room.players.length===2
+   ? [...new Set(winners)].filter(id=>Number.isInteger(twoPlayerSnapshot[id]) &&
+       Math.max(...Object.values(twoPlayerSnapshot))-twoPlayerSnapshot[id]>=(everyone(room)?4:2))
+   : [];
+ for(const id of comebackIds){room.players.find(p=>p.id===id).sparks+=2;}
+ if(comebackIds.length)text+=` · Comeback bonus: ${comebackIds.map(id=>room.players.find(p=>p.id===id).name).join(' & ')} +2 Sparks!`;
  const snapshot=b.turnStartSparks||{};
  const initialLeader=Math.max(0,...Object.values(snapshot));
  const underdogs=[...new Set(winners)].filter(id=>room.players.length>=4 && Number.isInteger(snapshot[id]) && initialLeader-snapshot[id]>=UNDERDOG_THRESHOLD);
@@ -219,6 +350,13 @@ function finishTurn(room,now,text,winners=[]){
 }
 function nextTurn(room,now){
  const b=room.board;
+ if(everyone(room)&&b.round?.pendingMini){startRoundMini(room,now);return;}
+ if(everyone(room)&&b.round&&!b.round.pendingMini){
+   const qualified=room.players.filter(p=>p.sparks>=room.settings.target);
+   if(qualified.length===1 && b.round.number>=8){b.winnerIds=[qualified[0].id];b.step='finished';room.phase='finished';b.event={type:'finished',text:`${qualified[0].name} wins NOGGIN!`};b.nextAt=null;return;}
+   if(qualified.length>1 && b.round.number>=8){b.finalists=qualified.map(p=>p.id);phase5.start(room,'tiebreak',now,null);return;}
+   beginRound(room,now);return;
+ }
  if(b.finalists.length===1){b.winnerIds=b.finalists.slice();b.step='finished';room.phase='finished';b.event={type:'finished',text:`${room.players.find(p=>p.id===b.winnerIds[0]).name} wins NOGGIN!`};b.nextAt=null;return;}
  if(b.finalists.length>1){phase5.start(room,'tiebreak',now,null);return;}
  const current=room.players.findIndex(p=>p.id===b.activeId);
@@ -279,6 +417,7 @@ function tick(room,now,rng=crypto.randomInt){
  const b=room.board;
  if(!room.hostSocketId)return false;
  if(b.pauseKind==='manual')return false;
+ if(everyone(room)&&b.round && ['rolling','moving'].includes(b.round.stage))return tickRound(room,now,rng);
  const p=actor(room);
  if(p&&!p.socketId && !['result','finished'].includes(b.step)){
    if(p.offlineSince!==null&&now-p.offlineSince>=30_000){
@@ -305,4 +444,4 @@ function tick(room,now,rng=crypto.randomInt){
  }
  return false;
 }
-module.exports={SPACES,COLORS,ICONS,LABELS,LIFTS,SHOWDOWNS,publicBoard,start,roll,pickDie,choose,answer,tick,finishTurn,nextTurn,beginMove,resolveChallenge,minigameInput,minigameDraw,hostPause,hostResume,skipDisconnected,resumeClocks,DIRECTORS_CUES,DIRECTORS_CHOICE_MS,HEADLINE_WIN_BONUS,HEADLINE_LOSS_PENALTY,UNDERDOG_THRESHOLD,UNDERDOG_BONUS_SMALL,UNDERDOG_BONUS_EIGHT};
+module.exports={beginRound,roundRoll,SPACES,COLORS,ICONS,LABELS,LIFTS,SHOWDOWNS,publicBoard,start,roll,pickDie,choose,answer,tick,finishTurn,nextTurn,beginMove,resolveChallenge,minigameInput,minigameDraw,hostPause,hostResume,skipDisconnected,resumeClocks,DIRECTORS_CUES,DIRECTORS_CHOICE_MS,HEADLINE_WIN_BONUS,HEADLINE_LOSS_PENALTY,UNDERDOG_THRESHOLD,UNDERDOG_BONUS_SMALL,UNDERDOG_BONUS_EIGHT};

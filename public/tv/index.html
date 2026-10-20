@@ -27,7 +27,7 @@
 <main class="tv-shell">
   <header class="tv-header">
     <div><p class="eyebrow">THE LIVING-ROOM GAME SHOW</p><h1 class="noggin-title">NOG<span>G</span>IN<span>!</span></h1><p class="subtitle">USE YOUR HEAD. TRUST YOUR NERVE. WIN THE SPARKS.</p></div>
-    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">FX <input id="soundVolume" aria-label="TV effects volume" type="range" min="0" max="100" value="55"></label><label for="musicVolume" class="sound-label">MUSIC <input id="musicVolume" aria-label="Background music volume" type="range" min="0" max="100" value="25"></label><button id="musicButton" class="button-secondary music-toggle" type="button" aria-pressed="true">♫ Music on</button></div></div>
+    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><span class="pill" id="vipStatus">VIP: waiting for first player</span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">FX <input id="soundVolume" aria-label="TV effects volume" type="range" min="0" max="100" value="55"></label><label for="musicVolume" class="sound-label">MUSIC <input id="musicVolume" aria-label="Background music volume" type="range" min="0" max="100" value="25"></label><button id="musicButton" class="button-secondary music-toggle" type="button" aria-pressed="true">♫ Music on</button></div></div>
   </header>
   <div id="lobbyCast" class="showcase-cast lobby-cast" aria-label="Twelve NOGGIN characters"></div>
   <section class="tv-grid" id="lobbyGrid" aria-label="NOGGIN room lobby">
@@ -48,8 +48,9 @@
     </div>
     <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
       <div class="control-heading"><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div>
-      <label for="target">SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12" selected>Standard · 12 Sparks</option><option value="16">Long · 16 Sparks</option></select></label>
+      <label for="target">SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12">Standard · 12 Sparks</option><option value="16" selected>Long · 16 Sparks</option></select></label>
       <label for="rules">RULES<select id="rules"><option value="classic" selected>Classic · Roll, Move, Play</option><option value="showtime">Showtime · All Extras</option></select></label>
+      <label for="roundStyle">ROUND STYLE<select id="roundStyle"><option value="everyone">Everyone rolls</option><option value="sequential">One at a time</option></select></label>
       <label for="timerSpeed">GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
       <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
       <button id="newRoom" class="button-secondary" type="button">NEW ROOM</button>

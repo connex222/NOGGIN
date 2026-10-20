@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const board=require('../server/board');
 const phase3=require('../server/games/phase3');
 function fixture(){
@@ -45,8 +45,8 @@ test('Count Flash hides the requested type until after all three types are shown
  const f=fixture();phase3.start(f.room,'speed',f.now(),()=>0,'count-flash');
  const m=f.room.board.minigame;
  assert.equal(m.display.targetIcon,null);assert.equal(m.privateTv.icons.length,3);
- assert.equal(m.privateTv.counts.reduce((a,b)=>a+b,0),36);
- assert(m.privateTv.counts.every(n=>n>=8&&n<=18));
+ assert.equal(m.privateTv.counts.reduce((a,b)=>a+b,0),12);
+ assert(m.privateTv.counts.every(n=>n===4));
  assert.equal(m.secret.count,m.privateTv.counts[m.privateTv.icons.indexOf(m.secret.targetIcon)]);
  const phone=phase3.publicState(f.room,false);
  assert.equal(phone.tvCue,undefined);assert.equal(phone.display.targetIcon,null);
@@ -56,10 +56,10 @@ test('Count Flash hides the requested type until after all three types are shown
  assert.equal(m.phase,'play');assert.equal(m.display.targetIcon,m.secret.targetIcon);
  assert.match(m.question,/How many/);
 });
-test('Memory Lane round four validates REVERSE order only',()=>{
+test('Memory Lane Showtime round five validates REVERSE order only',()=>{
  const f=fixture();phase3.start(f.room,'brain',f.now(),()=>0,'memory-lane');
- const m=f.room.board.minigame;m.round=3;m.memorySequence=[1,2];phase3.nextRound(f.room,f.now(),()=>3);
- assert.equal(m.round,4);assert.equal(m.display.reverse,true);
+ const m=f.room.board.minigame;m.round=4;m.memorySequence=[1,2];phase3.nextRound(f.room,f.now(),()=>3);
+ assert.equal(m.round,5);assert.equal(m.display.reverse,true);
  m.secret.sequence=[1,2,3];m.phase='play';m.openAt=f.now();
  const id=f.room.players[0].id;
  phase3.submit(f.room,id,3,m.roundKey,f.now());assert.equal(m.progress[id],1);

@@ -37,7 +37,7 @@ test('socket gateway creates room, looks up code, adds two players, ready states
     const a=await p1.send('room:join',{code:created.code,name:'Alice',avatarId:1});
     const b=await p2.send('room:join',{code:created.code,name:'Bob',avatarId:2});
     assert.equal(a.ok,true);assert.equal(b.ok,true);
-    const denied=await p1.send('room:settings',{patch:{target:16}});
+    const denied=await p2.send('room:settings',{patch:{target:16}});
     assert.equal(denied.code,'AUTH');
     assert.equal((await host.send('room:settings',{patch:{target:16}})).state.settings.target,16);
     assert.equal((await p1.send('room:ready',{ready:true})).state.canStart,false);
@@ -74,14 +74,16 @@ test('socket gateway resume takes over stale socket, and leaving frees avatar',a
   } finally {gateway.stop();}
 });
 
-test('gateway rejects oversized packets and cannot close room as a player',async()=>{
+test('gateway rejects oversized packets and cannot close room as a non-VIP player',async()=>{
   const io=new FakeIO();const gateway=attachGateway(io,{QRCode:fakeQRCode});
   try {
     const h=io.connect(new FakeSocket('tv'));
     const created=await h.send('room:create',{});
     const p=io.connect(new FakeSocket('p1'));
     await p.send('room:join',{code:created.code,name:'Alice',avatarId:1});
-    assert.equal((await p.send('room:close',{})).code,'AUTH');
+    const other=io.connect(new FakeSocket('p2'));
+    await other.send('room:join',{code:created.code,name:'Bob',avatarId:2});
+    assert.equal((await other.send('room:close',{})).code,'AUTH');
     assert.equal((await p.send('room:ready',{ready:true,extra:'X'.repeat(800)})).code,'INPUT');
     assert.equal((await h.send('room:close',{})).ok,true);
     assert.ok(io.broadcasts.some(x=>x.name==='room:closed'));
@@ -111,7 +113,7 @@ test('one TV and six independent Socket.IO gateway clients can join, ready and r
   }finally{gateway.stop();}
 });
 
-test('Phase 2 gateway: only host starts; players roll, choose and answer; secrets stay server-side',async()=>{
+test('Phase 2 gateway: VIP or TV host starts; players roll, choose and answer; secrets stay server-side',async()=>{
   const io=new FakeIO();const gateway=attachGateway(io,{QRCode:fakeQRCode});
   try{
     const host=io.connect(new FakeSocket('tv2','192.168.1.41'));
@@ -121,7 +123,8 @@ test('Phase 2 gateway: only host starts; players roll, choose and answer; secret
     await alice.send('room:join',{code:cr.code,name:'Alice',avatarId:1});
     await bob.send('room:join',{code:cr.code,name:'Bob',avatarId:2});
     await alice.send('room:ready',{ready:true});await bob.send('room:ready',{ready:true});
-    assert.equal((await alice.send('game:start',{})).code,'AUTH');
+    assert.equal((await host.send('room:settings',{patch:{roundStyle:'sequential'}})).ok,true);
+    assert.equal((await bob.send('game:start',{})).code,'AUTH');
     assert.equal((await host.send('game:start',{})).state.phase,'board');
     assert.equal((await bob.send('game:roll',{})).code,'TURN');
     const r=await alice.send('game:roll',{});assert.equal(r.ok,true);
@@ -143,7 +146,7 @@ test('Phase 2 gateway: only host starts; players roll, choose and answer; secret
 });
 
 test('Phase 3 Socket.IO inputs authenticate by seat and keep TV count cues off every phone',async()=>{
-  const {GameRooms}=require('../server/rooms');const games=require('../server/games/phase3');
+  const {GameRooms}=require('./helpers/sequential-rooms');const games=require('../server/games/phase3');
   let now=10_000;const rooms=new GameRooms({now:()=>now,randomInt:n=>0});
   const io=new FakeIO(),gateway=attachGateway(io,{QRCode:fakeQRCode,rooms});
   try{
@@ -165,7 +168,7 @@ test('Phase 3 Socket.IO inputs authenticate by seat and keep TV count cues off e
 });
 
 test('Phase 4 gateway: player-specific private cards and secured live sketch strokes',async()=>{
- const {GameRooms}=require('../server/rooms');const games=require('../server/games/phase4');
+ const {GameRooms}=require('./helpers/sequential-rooms');const games=require('../server/games/phase4');
  let now=10000;const rooms=new GameRooms({now:()=>now,randomInt:n=>0}),io=new FakeIO();
  const gateway=attachGateway(io,{QRCode:fakeQRCode,rooms});
  try{
@@ -179,14 +182,16 @@ test('Phase 4 gateway: player-specific private cards and secured live sketch str
   games.start(rooms.find(cr.code),'create',now,()=>0,'sketch-sabotage');now+=5001;rooms.sweep();
   const m=rooms.find(cr.code).board.minigame,word=m.secret.word,sabIndex=rooms.find(cr.code).players.findIndex(p=>p.id===m.secret.saboteur);
   const latest=socketId=>io.broadcasts.filter(e=>e.code===socketId&&e.name==='room:state').at(-1).payload.board.minigame;
-  assert.equal((await clients[0].send('game:draw',{roundKey:m.roundKey,points:[[1,1],[2,2]]})).ok,true);
-  assert.equal(latest('phone0').private.word,word);
-  assert.equal(latest('tv').private,undefined);
-  for(let i=1;i<4;i++)assert.equal(latest('phone'+i).private?.word,undefined);
+  const firstStroke=await clients[0].send('game:draw',{roundKey:m.roundKey,points:[[1,1],[2,2]]});
+  assert.equal(firstStroke.ok,true);
+  assert.equal(firstStroke.state.board.minigame.private.word,word);
+  assert.equal(rooms.state(cr.code,true).board.minigame.private,undefined);
+  for(let i=1;i<4;i++)assert.equal(rooms.state(cr.code,false,rooms.find(cr.code).players[i].id).board.minigame.private?.word,undefined);
   const guestIdx=[1,2,3].find(i=>i!==sabIndex);
   assert.equal((await clients[guestIdx].send('game:draw',{roundKey:m.roundKey,points:[[1,1],[2,2]]})).code,'ROLE');
   assert.equal((await clients[0].send('game:draw',{roundKey:m.roundKey,points:[[1,1],[2,2],[10,10]]})).ok,true);
-  assert.equal(latest('tv').display.strokes.length,2);
+  assert.equal(io.broadcasts.filter(e=>e.code==='tv'&&e.name==='game:stroke').length,2);
+  assert.equal(rooms.state(cr.code,true).board.minigame.display.strokes.length,2);
   assert.equal((await clients[0].send('game:draw',{roundKey:m.roundKey,points:Array.from({length:250},(_,i)=>[i,i])})).code,'INPUT');
   assert.equal((await host.send('game:draw',{roundKey:m.roundKey,points:[[1,1],[2,2]]})).code,'AUTH');
  }finally{gateway.stop();}
@@ -211,7 +216,7 @@ test('Phase 6: eight phones behind one public IP may each peek and join the same
 });
 
 test('Phase 6: one TV and six gateway clients can finish a match and observe the winner',async()=>{
- const {GameRooms}=require('../server/rooms');let now=10_000;
+ const {GameRooms}=require('./helpers/sequential-rooms');let now=10_000;
  const rooms=new GameRooms({now:()=>now,randomInt:()=>0});
  const io=new FakeIO();const gateway=attachGateway(io,{QRCode:fakeQRCode,rooms});
  try{
@@ -237,4 +242,29 @@ test('Phase 6: one TV and six gateway clients can finish a match and observe the
   assert.equal(rooms.state(code).phase,'finished');
   assert(io.broadcasts.some(event=>event.name==='room:state'&&event.payload.phase==='board'));
  }finally{gateway.stop();}
+});
+
+test('accepted sketch strokes reach the host as compact events without full room broadcasts', async () => {
+  const io = new FakeIO();
+  const gateway = attachGateway(io, {QRCode:fakeQRCode});
+  try {
+    const host = io.connect(new FakeSocket('sketch-tv'));
+    const created = await host.send('room:create', {});
+    const artist = io.connect(new FakeSocket('sketch-artist'));
+    await artist.send('room:join', {code:created.code, name:'Artist', avatarId:1});
+    const viewer = io.connect(new FakeSocket('sketch-viewer'));
+    await viewer.send('room:join', {code:created.code, name:'Viewer', avatarId:2});
+    // Replace the game handler to isolate delivery from the game's random setup.
+    gateway.rooms.drawGame = () => ({board:{minigame:{id:'sketch-sabotage',phase:'play',display:{strokes:[{points:[[0,0],[100,100]]}]}}}});
+    const prior = io.broadcasts.length;
+    const result = await artist.send('game:draw', {points:[[0,0],[100,100]],roundKey:7});
+    assert.equal(result.ok,true);
+    const events = io.broadcasts.slice(prior);
+    assert.equal(events.filter(x=>x.name==='room:state').length,0);
+    const strokes = events.filter(x=>x.name==='game:stroke');
+    assert.equal(strokes.length,1);
+    assert.equal(strokes[0].code,'sketch-tv');
+    assert.deepEqual(strokes[0].payload,{code:created.code,roundKey:7,index:0,points:[[0,0],[100,100]]});
+    assert.equal(JSON.stringify(strokes[0]).includes('players'),false);
+  } finally {gateway.stop();}
 });

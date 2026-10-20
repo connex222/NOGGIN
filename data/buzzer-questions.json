@@ -1098,5 +1098,4764 @@
       "Pb"
     ],
     "correct": 1
+  },
+  {
+    "id": "buzz-p6-011",
+    "question": "What is 11 × 14?",
+    "choices": [
+      "156",
+      "153",
+      "154",
+      "159"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-012",
+    "question": "What is 12 × 15?",
+    "choices": [
+      "182",
+      "179",
+      "180",
+      "185"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-013",
+    "question": "What is 13 × 16?",
+    "choices": [
+      "210",
+      "207",
+      "208",
+      "213"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-014",
+    "question": "What is 14 × 17?",
+    "choices": [
+      "240",
+      "237",
+      "238",
+      "243"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-015",
+    "question": "What is 15 × 18?",
+    "choices": [
+      "272",
+      "269",
+      "270",
+      "275"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-016",
+    "question": "What is 16 × 19?",
+    "choices": [
+      "306",
+      "303",
+      "304",
+      "309"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-017",
+    "question": "What is 17 × 20?",
+    "choices": [
+      "342",
+      "339",
+      "340",
+      "345"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-018",
+    "question": "What is 18 × 21?",
+    "choices": [
+      "380",
+      "377",
+      "378",
+      "383"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-019",
+    "question": "What is 19 × 22?",
+    "choices": [
+      "420",
+      "417",
+      "418",
+      "423"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-020",
+    "question": "What is 20 × 23?",
+    "choices": [
+      "462",
+      "459",
+      "460",
+      "465"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-021",
+    "question": "What is 21 × 24?",
+    "choices": [
+      "506",
+      "503",
+      "504",
+      "509"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-022",
+    "question": "What is 22 × 25?",
+    "choices": [
+      "552",
+      "549",
+      "550",
+      "555"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-023",
+    "question": "What is 23 × 26?",
+    "choices": [
+      "600",
+      "597",
+      "598",
+      "603"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-024",
+    "question": "What is 24 × 27?",
+    "choices": [
+      "650",
+      "647",
+      "648",
+      "653"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-025",
+    "question": "What is 25 × 28?",
+    "choices": [
+      "702",
+      "699",
+      "700",
+      "705"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-026",
+    "question": "What is 26 × 29?",
+    "choices": [
+      "756",
+      "753",
+      "754",
+      "759"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-027",
+    "question": "What is 27 × 30?",
+    "choices": [
+      "812",
+      "809",
+      "810",
+      "815"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-028",
+    "question": "What is 28 × 31?",
+    "choices": [
+      "870",
+      "867",
+      "868",
+      "873"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-029",
+    "question": "What is 29 × 32?",
+    "choices": [
+      "930",
+      "927",
+      "928",
+      "933"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-030",
+    "question": "What is 30 × 33?",
+    "choices": [
+      "992",
+      "989",
+      "990",
+      "995"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-031",
+    "question": "What is 31 × 34?",
+    "choices": [
+      "1056",
+      "1053",
+      "1054",
+      "1059"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-032",
+    "question": "What is 32 × 35?",
+    "choices": [
+      "1122",
+      "1119",
+      "1120",
+      "1125"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-033",
+    "question": "What is 33 × 36?",
+    "choices": [
+      "1190",
+      "1187",
+      "1188",
+      "1193"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-034",
+    "question": "What is 34 × 37?",
+    "choices": [
+      "1260",
+      "1257",
+      "1258",
+      "1263"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-035",
+    "question": "What is 35 × 38?",
+    "choices": [
+      "1332",
+      "1329",
+      "1330",
+      "1335"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-036",
+    "question": "What is 36 × 39?",
+    "choices": [
+      "1406",
+      "1403",
+      "1404",
+      "1409"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-037",
+    "question": "What is 37 × 40?",
+    "choices": [
+      "1482",
+      "1479",
+      "1480",
+      "1485"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-038",
+    "question": "What is 38 × 41?",
+    "choices": [
+      "1560",
+      "1557",
+      "1558",
+      "1563"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-039",
+    "question": "What is 39 × 42?",
+    "choices": [
+      "1640",
+      "1637",
+      "1638",
+      "1643"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-040",
+    "question": "What is 40 × 43?",
+    "choices": [
+      "1722",
+      "1719",
+      "1720",
+      "1725"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-041",
+    "question": "What is 41 × 44?",
+    "choices": [
+      "1806",
+      "1803",
+      "1804",
+      "1809"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-042",
+    "question": "What is 42 × 45?",
+    "choices": [
+      "1892",
+      "1889",
+      "1890",
+      "1895"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-043",
+    "question": "What is 43 × 46?",
+    "choices": [
+      "1980",
+      "1977",
+      "1978",
+      "1983"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-044",
+    "question": "What is 44 × 47?",
+    "choices": [
+      "2070",
+      "2067",
+      "2068",
+      "2073"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-045",
+    "question": "What is 45 × 48?",
+    "choices": [
+      "2162",
+      "2159",
+      "2160",
+      "2165"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-046",
+    "question": "What is 46 × 49?",
+    "choices": [
+      "2256",
+      "2253",
+      "2254",
+      "2259"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-047",
+    "question": "What is 47 × 50?",
+    "choices": [
+      "2352",
+      "2349",
+      "2350",
+      "2355"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-048",
+    "question": "What is 48 × 51?",
+    "choices": [
+      "2450",
+      "2447",
+      "2448",
+      "2453"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-049",
+    "question": "What is 49 × 52?",
+    "choices": [
+      "2550",
+      "2547",
+      "2548",
+      "2553"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-050",
+    "question": "What is 50 × 53?",
+    "choices": [
+      "2652",
+      "2649",
+      "2650",
+      "2655"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-051",
+    "question": "What is 51 × 54?",
+    "choices": [
+      "2756",
+      "2753",
+      "2754",
+      "2759"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-052",
+    "question": "What is 52 × 55?",
+    "choices": [
+      "2862",
+      "2859",
+      "2860",
+      "2865"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-053",
+    "question": "What is 53 × 56?",
+    "choices": [
+      "2970",
+      "2967",
+      "2968",
+      "2973"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-054",
+    "question": "What is 54 × 57?",
+    "choices": [
+      "3080",
+      "3077",
+      "3078",
+      "3083"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-055",
+    "question": "What is 55 × 58?",
+    "choices": [
+      "3192",
+      "3189",
+      "3190",
+      "3195"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-056",
+    "question": "What is 56 × 59?",
+    "choices": [
+      "3306",
+      "3303",
+      "3304",
+      "3309"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-057",
+    "question": "What is 57 × 60?",
+    "choices": [
+      "3422",
+      "3419",
+      "3420",
+      "3425"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-058",
+    "question": "What is 58 × 61?",
+    "choices": [
+      "3540",
+      "3537",
+      "3538",
+      "3543"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-059",
+    "question": "What is 59 × 62?",
+    "choices": [
+      "3660",
+      "3657",
+      "3658",
+      "3663"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "buzz-p6-060",
+    "question": "What is 60 × 63?",
+    "choices": [
+      "3782",
+      "3779",
+      "3780",
+      "3785"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "p6b2-buz-001",
+    "question": "What do you call a shape with six sides?",
+    "choices": [
+      "Pentagon",
+      "Hexagon",
+      "Octagon",
+      "Triangle"
+    ],
+    "correct": 1,
+    "review": false,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Polygon"
+  },
+  {
+    "id": "p6b2-buz-002",
+    "question": "Which animal is a marsupial?",
+    "choices": [
+      "Badger",
+      "Otter",
+      "Kangaroo",
+      "Fox"
+    ],
+    "correct": 2,
+    "review": false,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Kangaroo"
+  },
+  {
+    "id": "p6b2-buz-003",
+    "question": "Which tool measures temperature?",
+    "choices": [
+      "Barometer",
+      "Compass",
+      "Ruler",
+      "Thermometer"
+    ],
+    "correct": 3,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikisource.org/wiki/Encyclop%C3%A6dia_Britannica%2C_Ninth_Edition/Thermometer"
+  },
+  {
+    "id": "p6b2-buz-004",
+    "question": "Which chemical symbol stands for gold?",
+    "choices": [
+      "Ag",
+      "Au",
+      "Fe",
+      "Cu"
+    ],
+    "correct": 1,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://periodic-table.rsc.org/element/79/Gold"
+  },
+  {
+    "id": "p6b2-buz-005",
+    "question": "How many degrees are in a right angle?",
+    "choices": [
+      "45",
+      "60",
+      "90",
+      "180"
+    ],
+    "correct": 2,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Right_angle"
+  },
+  {
+    "id": "p6b2-buz-006",
+    "question": "Which organ pumps blood around the body?",
+    "choices": [
+      "Liver",
+      "Stomach",
+      "Lung",
+      "Heart"
+    ],
+    "correct": 3,
+    "review": false,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nhs.uk/tests-and-treatments/blood-pressure-test/"
+  },
+  {
+    "id": "p6b2-buz-007",
+    "question": "Which ocean lies between Africa and Australia?",
+    "choices": [
+      "Indian Ocean",
+      "Atlantic Ocean",
+      "Arctic Ocean",
+      "Southern Ocean"
+    ],
+    "correct": 0,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://education.nationalgeographic.org/resource/indian-ocean-video/"
+  },
+  {
+    "id": "p6b2-buz-008",
+    "question": "Which English city is associated with the Beatles?",
+    "choices": [
+      "Leeds",
+      "Liverpool",
+      "Bristol",
+      "Norwich"
+    ],
+    "correct": 1,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.thebeatles.com/beatles-anthology"
+  },
+  {
+    "id": "p6b2-buz-009",
+    "question": "Which gas makes up most of Earth’s atmosphere?",
+    "choices": [
+      "Oxygen",
+      "Carbon dioxide",
+      "Nitrogen",
+      "Helium"
+    ],
+    "correct": 2,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.noaa.gov/jetstream/atmosphere"
+  },
+  {
+    "id": "p6b2-buz-010",
+    "question": "What is the largest planet in the Solar System?",
+    "choices": [
+      "Saturn",
+      "Neptune",
+      "Earth",
+      "Jupiter"
+    ],
+    "correct": 3,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/solar-system/planet-sizes-and-locations-in-our-solar-system/"
+  },
+  {
+    "id": "p6b2-buz-011",
+    "question": "What is the main ingredient of traditional hummus?",
+    "choices": [
+      "Chickpeas",
+      "Rice",
+      "Potatoes",
+      "Peas"
+    ],
+    "correct": 0,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://dictionary.cambridge.org/dictionary/english/hummus"
+  },
+  {
+    "id": "p6b2-buz-012",
+    "question": "How many legs does an adult insect have?",
+    "choices": [
+      "Four",
+      "Six",
+      "Eight",
+      "Ten"
+    ],
+    "correct": 1,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.britannica.com/animal/insect"
+  },
+  {
+    "id": "p6b2-buz-013",
+    "question": "Which body part contains the smallest bones in humans?",
+    "choices": [
+      "Hand",
+      "Foot",
+      "Ear",
+      "Jaw"
+    ],
+    "correct": 2,
+    "sourceNote": "Editorially checked against general reference knowledge; external per-item citation pending",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.leedsth.nhs.uk/services/hearing-and-balance-service-audiology/the-ear/"
+  },
+  {
+    "id": "p6b2-buz-014",
+    "question": "What is the name for molten rock below Earth’s surface?",
+    "choices": [
+      "Lava",
+      "Granite",
+      "Basalt",
+      "Magma"
+    ],
+    "correct": 3,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.usgs.gov/programs/VHP/about-volcanoes"
+  },
+  {
+    "id": "p6b2-buz-015",
+    "question": "What type of animal is a frog?",
+    "choices": [
+      "Amphibian",
+      "Reptile",
+      "Mammal",
+      "Fish"
+    ],
+    "correct": 0,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Frog"
+  },
+  {
+    "id": "p6b2-buz-016",
+    "question": "Which continent is the Sahara Desert in?",
+    "choices": [
+      "Asia",
+      "Africa",
+      "Australia",
+      "Europe"
+    ],
+    "correct": 1,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Sahara"
+  },
+  {
+    "id": "p6b2-buz-017",
+    "question": "What name is given to the line at 0° latitude?",
+    "choices": [
+      "Prime meridian",
+      "Tropic of Cancer",
+      "Equator",
+      "International Date Line"
+    ],
+    "correct": 2,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://education.nationalgeographic.org/resource/latitude/"
+  },
+  {
+    "id": "p6b2-buz-018",
+    "question": "Which sport uses a shuttlecock?",
+    "choices": [
+      "Tennis",
+      "Squash",
+      "Cricket",
+      "Badminton"
+    ],
+    "correct": 3,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.uksport.gov.uk/sports/olympic/badminton"
+  },
+  {
+    "id": "p6b2-buz-019",
+    "question": "Which part of a plant usually absorbs water from the soil?",
+    "choices": [
+      "Roots",
+      "Petals",
+      "Fruit",
+      "Seeds"
+    ],
+    "correct": 0,
+    "review": false,
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.rhs.org.uk/advice/understanding-plants/how-plants-absorb-water"
+  },
+  {
+    "id": "p6b2-buz-020",
+    "question": "What is water’s chemical formula?",
+    "choices": [
+      "CO₂",
+      "H₂O",
+      "O₂",
+      "NaCl"
+    ],
+    "correct": 1,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nasa.gov/wp-content/uploads/2023/06/fuel-cell-activity-5-12.pdf"
+  },
+  {
+    "id": "p6b2-buz-021",
+    "question": "Which month comes immediately after September?",
+    "choices": [
+      "August",
+      "November",
+      "October",
+      "December"
+    ],
+    "correct": 2,
+    "review": false,
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.timeanddate.com/calendar/months/"
+  },
+  {
+    "id": "p6b2-buz-022",
+    "question": "Which number is a prime number?",
+    "choices": [
+      "15",
+      "21",
+      "27",
+      "17"
+    ],
+    "correct": 3,
+    "review": false,
+    "sourceNote": "Published reference confirms answer; one-source check, not triple-verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.mathsisfun.com/prime_numbers.html"
+  },
+  {
+    "id": "p6b2-buz-023",
+    "question": "What is the common name for a young sheep?",
+    "choices": [
+      "Lamb",
+      "Foal",
+      "Calf",
+      "Cub"
+    ],
+    "correct": 0,
+    "review": false,
+    "sourceNote": "Checked against one named published reference on 20 October 2026; not triple-source verified.",
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Lamb"
+  },
+  {
+    "id": "p6b3-buzz-001",
+    "question": "A shop has 18 balloons and sells 11 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-002",
+    "question": "A shop has 19 balloons and sells 12 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-003",
+    "question": "A shop has 20 balloons and sells 13 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-004",
+    "question": "A shop has 21 balloons and sells 14 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-005",
+    "question": "A shop has 22 balloons and sells 15 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-006",
+    "question": "A shop has 23 balloons and sells 16 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-007",
+    "question": "A shop has 24 balloons and sells 17 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-008",
+    "question": "A shop has 25 balloons and sells 18 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-009",
+    "question": "A shop has 26 balloons and sells 19 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-010",
+    "question": "A shop has 27 balloons and sells 20 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-011",
+    "question": "A shop has 28 balloons and sells 21 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-012",
+    "question": "A shop has 29 balloons and sells 22 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-013",
+    "question": "A shop has 30 balloons and sells 23 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-014",
+    "question": "A shop has 31 balloons and sells 24 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-015",
+    "question": "A shop has 32 balloons and sells 25 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-016",
+    "question": "A shop has 33 balloons and sells 26 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-017",
+    "question": "A shop has 34 balloons and sells 27 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-018",
+    "question": "A shop has 35 balloons and sells 28 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-019",
+    "question": "A shop has 36 balloons and sells 29 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-020",
+    "question": "A shop has 37 balloons and sells 30 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-021",
+    "question": "A shop has 38 balloons and sells 31 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-022",
+    "question": "A shop has 39 balloons and sells 32 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-023",
+    "question": "A shop has 40 balloons and sells 33 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-024",
+    "question": "A shop has 41 balloons and sells 34 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-025",
+    "question": "A shop has 42 balloons and sells 35 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-026",
+    "question": "A shop has 43 balloons and sells 36 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-027",
+    "question": "A shop has 44 balloons and sells 37 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "9",
+      "7"
+    ],
+    "correct": 3,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-028",
+    "question": "A shop has 45 balloons and sells 38 of them. How many remain?",
+    "choices": [
+      "7",
+      "6",
+      "8",
+      "9"
+    ],
+    "correct": 0,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-029",
+    "question": "A shop has 46 balloons and sells 39 of them. How many remain?",
+    "choices": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "correct": 1,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-buzz-030",
+    "question": "A shop has 47 balloons and sells 40 of them. How many remain?",
+    "choices": [
+      "6",
+      "8",
+      "7",
+      "9"
+    ],
+    "correct": 2,
+    "source": "Exact subtraction; independently recalculated",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b6-buzz-001",
+    "question": "How many planets orbit the Sun in our Solar System?",
+    "choices": [
+      "Seven",
+      "Eight",
+      "Nine",
+      "Ten"
+    ],
+    "correct": 1,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-002",
+    "question": "Which is the largest planet in our Solar System?",
+    "choices": [
+      "Mars",
+      "Saturn",
+      "Jupiter",
+      "Neptune"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-004",
+    "question": "Which planet is second from the Sun?",
+    "choices": [
+      "Mars",
+      "Mercury",
+      "Venus",
+      "Earth"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-005",
+    "question": "Which planet is third from the Sun?",
+    "choices": [
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter"
+    ],
+    "correct": 1,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-006",
+    "question": "Which planet is fourth from the Sun?",
+    "choices": [
+      "Earth",
+      "Saturn",
+      "Mars",
+      "Venus"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-007",
+    "question": "Which planet is fifth from the Sun?",
+    "choices": [
+      "Saturn",
+      "Jupiter",
+      "Neptune",
+      "Mars"
+    ],
+    "correct": 1,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-008",
+    "question": "Which planet is sixth from the Sun?",
+    "choices": [
+      "Jupiter",
+      "Uranus",
+      "Saturn",
+      "Neptune"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-009",
+    "question": "Which planet is seventh from the Sun?",
+    "choices": [
+      "Neptune",
+      "Jupiter",
+      "Saturn",
+      "Uranus"
+    ],
+    "correct": 3,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-010",
+    "question": "Which planet is eighth from the Sun?",
+    "choices": [
+      "Uranus",
+      "Mars",
+      "Neptune",
+      "Saturn"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-011",
+    "question": "Which planet is known for its prominent rings?",
+    "choices": [
+      "Mercury",
+      "Mars",
+      "Saturn",
+      "Venus"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-012",
+    "question": "What classification does Pluto have under the 2006 planet definition?",
+    "choices": [
+      "Planet",
+      "Star",
+      "Dwarf planet",
+      "Moon"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-013",
+    "question": "Which of these planets is an ice giant?",
+    "choices": [
+      "Mercury",
+      "Mars",
+      "Neptune",
+      "Venus"
+    ],
+    "correct": 2,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-014",
+    "question": "Which of these planets is a gas giant?",
+    "choices": [
+      "Earth",
+      "Venus",
+      "Mars",
+      "Jupiter"
+    ],
+    "correct": 3,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6b6-buzz-015",
+    "question": "Which planet is the smallest of the eight planets?",
+    "choices": [
+      "Mars",
+      "Mercury",
+      "Venus",
+      "Neptune"
+    ],
+    "correct": 1,
+    "source": "https://science.nasa.gov/solar-system/planets/",
+    "review": false,
+    "verified": "publisher-checked"
+  },
+  {
+    "id": "p6final-buzz-0000",
+    "question": "A theatre has 9 rows with 3 seats in each row. How many seats are there?",
+    "choices": [
+      "27",
+      "25",
+      "28",
+      "37"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0002",
+    "question": "A library receives 23 books on Monday and 29 on Tuesday. How many is that altogether?",
+    "choices": [
+      "55",
+      "52",
+      "64",
+      "48"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0003",
+    "question": "A train journey lasts 30 hours and 21 minutes. How many minutes is that?",
+    "choices": [
+      "1834",
+      "1816",
+      "1821",
+      "1825"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 30,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0004",
+    "question": "Two identical bags hold 37 marbles each, and 20 marbles are loose. How many marbles are there?",
+    "choices": [
+      "88",
+      "94",
+      "108",
+      "99"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-buzz-0005",
+    "question": "What is the perimeter of a rectangle 44 cm long and 33 cm wide?",
+    "choices": [
+      "147",
+      "169",
+      "160",
+      "154"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0006",
+    "question": "A theatre has 51 rows with 11 seats in each row. How many seats are there?",
+    "choices": [
+      "553",
+      "561",
+      "568",
+      "577"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0007",
+    "question": "A market stall displays 58 oranges and sells 5. How many remain?",
+    "choices": [
+      "70",
+      "53",
+      "51",
+      "61"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-buzz-0008",
+    "question": "A library receives 65 books on Monday and 2 on Tuesday. How many is that altogether?",
+    "choices": [
+      "85",
+      "64",
+      "67",
+      "68"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 2
+    }
+  },
+  {
+    "id": "p6final-buzz-0009",
+    "question": "A train journey lasts 72 hours and 3 minutes. How many minutes is that?",
+    "choices": [
+      "4323",
+      "4319",
+      "4325",
+      "4342"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 72,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0010",
+    "question": "Two identical bags hold 79 marbles each, and 28 marbles are loose. How many marbles are there?",
+    "choices": [
+      "206",
+      "181",
+      "186",
+      "189"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-buzz-0011",
+    "question": "What is the perimeter of a rectangle 86 cm long and 6 cm wide?",
+    "choices": [
+      "184",
+      "178",
+      "188",
+      "194"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 6
+    }
+  },
+  {
+    "id": "p6final-buzz-0012",
+    "question": "A theatre has 9 rows with 19 seats in each row. How many seats are there?",
+    "choices": [
+      "164",
+      "176",
+      "171",
+      "182"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0013",
+    "question": "A market stall displays 16 oranges and sells 3. How many remain?",
+    "choices": [
+      "5",
+      "19",
+      "13",
+      "25"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 16,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0014",
+    "question": "A library receives 23 books on Monday and 10 on Tuesday. How many is that altogether?",
+    "choices": [
+      "40",
+      "31",
+      "46",
+      "33"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-buzz-0015",
+    "question": "A train journey lasts 30 hours and 45 minutes. How many minutes is that?",
+    "choices": [
+      "1845",
+      "1842",
+      "1853",
+      "1859"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 30,
+      "b": 45
+    }
+  },
+  {
+    "id": "p6final-buzz-0016",
+    "question": "Two identical bags hold 37 marbles each, and 1 marbles are loose. How many marbles are there?",
+    "choices": [
+      "71",
+      "75",
+      "90",
+      "76"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 1
+    }
+  },
+  {
+    "id": "p6final-buzz-0017",
+    "question": "What is the perimeter of a rectangle 44 cm long and 14 cm wide?",
+    "choices": [
+      "132",
+      "116",
+      "118",
+      "111"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 14
+    }
+  },
+  {
+    "id": "p6final-buzz-0018",
+    "question": "A theatre has 51 rows with 27 seats in each row. How many seats are there?",
+    "choices": [
+      "1394",
+      "1380",
+      "1377",
+      "1371"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0019",
+    "question": "A market stall displays 58 oranges and sells 23. How many remain?",
+    "choices": [
+      "28",
+      "53",
+      "35",
+      "39"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-buzz-0020",
+    "question": "A library receives 65 books on Monday and 18 on Tuesday. How many is that altogether?",
+    "choices": [
+      "102",
+      "83",
+      "75",
+      "88"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 18
+    }
+  },
+  {
+    "id": "p6final-buzz-0021",
+    "question": "A train journey lasts 72 hours and 27 minutes. How many minutes is that?",
+    "choices": [
+      "4367",
+      "4347",
+      "4345",
+      "4353"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 72,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0022",
+    "question": "Two identical bags hold 79 marbles each, and 9 marbles are loose. How many marbles are there?",
+    "choices": [
+      "174",
+      "177",
+      "164",
+      "167"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0023",
+    "question": "What is the perimeter of a rectangle 86 cm long and 22 cm wide?",
+    "choices": [
+      "212",
+      "224",
+      "227",
+      "216"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 22
+    }
+  },
+  {
+    "id": "p6final-buzz-0024",
+    "question": "A theatre has 9 rows with 35 seats in each row. How many seats are there?",
+    "choices": [
+      "310",
+      "327",
+      "316",
+      "315"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6final-buzz-0025",
+    "question": "A market stall displays 16 oranges and sells 7. How many remain?",
+    "choices": [
+      "11",
+      "9",
+      "3",
+      "22"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 16,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0026",
+    "question": "A library receives 23 books on Monday and 26 on Tuesday. How many is that altogether?",
+    "choices": [
+      "52",
+      "42",
+      "49",
+      "63"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6final-buzz-0027",
+    "question": "A train journey lasts 30 hours and 9 minutes. How many minutes is that?",
+    "choices": [
+      "1824",
+      "1809",
+      "1801",
+      "1813"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 30,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0028",
+    "question": "Two identical bags hold 37 marbles each, and 17 marbles are loose. How many marbles are there?",
+    "choices": [
+      "107",
+      "91",
+      "96",
+      "89"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-buzz-0029",
+    "question": "What is the perimeter of a rectangle 44 cm long and 30 cm wide?",
+    "choices": [
+      "145",
+      "165",
+      "154",
+      "148"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-buzz-0030",
+    "question": "A theatre has 51 rows with 8 seats in each row. How many seats are there?",
+    "choices": [
+      "404",
+      "415",
+      "426",
+      "408"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 8
+    }
+  },
+  {
+    "id": "p6final-buzz-0031",
+    "question": "A market stall displays 58 oranges and sells 3. How many remain?",
+    "choices": [
+      "55",
+      "74",
+      "63",
+      "50"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0032",
+    "question": "A library receives 65 books on Monday and 34 on Tuesday. How many is that altogether?",
+    "choices": [
+      "100",
+      "119",
+      "93",
+      "99"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 34
+    }
+  },
+  {
+    "id": "p6final-buzz-0033",
+    "question": "A train journey lasts 72 hours and 51 minutes. How many minutes is that?",
+    "choices": [
+      "4364",
+      "4373",
+      "4381",
+      "4371"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 72,
+      "b": 51
+    }
+  },
+  {
+    "id": "p6final-buzz-0034",
+    "question": "Two identical bags hold 79 marbles each, and 25 marbles are loose. How many marbles are there?",
+    "choices": [
+      "183",
+      "186",
+      "175",
+      "194"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-buzz-0035",
+    "question": "What is the perimeter of a rectangle 86 cm long and 3 cm wide?",
+    "choices": [
+      "182",
+      "176",
+      "190",
+      "178"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0036",
+    "question": "A theatre has 9 rows with 16 seats in each row. How many seats are there?",
+    "choices": [
+      "157",
+      "144",
+      "149",
+      "141"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 16
+    }
+  },
+  {
+    "id": "p6final-buzz-0037",
+    "question": "A market stall displays 16 oranges and sells 11. How many remain?",
+    "choices": [
+      "1",
+      "19",
+      "5",
+      "11"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 16,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0038",
+    "question": "A library receives 23 books on Monday and 7 on Tuesday. How many is that altogether?",
+    "choices": [
+      "45",
+      "37",
+      "30",
+      "25"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0039",
+    "question": "A train journey lasts 30 hours and 33 minutes. How many minutes is that?",
+    "choices": [
+      "1827",
+      "1849",
+      "1833",
+      "1841"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 30,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0040",
+    "question": "Two identical bags hold 37 marbles each, and 33 marbles are loose. How many marbles are there?",
+    "choices": [
+      "108",
+      "124",
+      "100",
+      "107"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0041",
+    "question": "What is the perimeter of a rectangle 44 cm long and 11 cm wide?",
+    "choices": [
+      "112",
+      "102",
+      "110",
+      "128"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0042",
+    "question": "A theatre has 51 rows with 24 seats in each row. How many seats are there?",
+    "choices": [
+      "1224",
+      "1227",
+      "1243",
+      "1222"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 24
+    }
+  },
+  {
+    "id": "p6final-buzz-0043",
+    "question": "A market stall displays 58 oranges and sells 21. How many remain?",
+    "choices": [
+      "41",
+      "57",
+      "37",
+      "34"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0044",
+    "question": "A library receives 65 books on Monday and 15 on Tuesday. How many is that altogether?",
+    "choices": [
+      "76",
+      "90",
+      "85",
+      "80"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0045",
+    "question": "A train journey lasts 72 hours and 15 minutes. How many minutes is that?",
+    "choices": [
+      "4330",
+      "4346",
+      "4335",
+      "4341"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 72,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0046",
+    "question": "Two identical bags hold 79 marbles each, and 6 marbles are loose. How many marbles are there?",
+    "choices": [
+      "176",
+      "158",
+      "164",
+      "171"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 6
+    }
+  },
+  {
+    "id": "p6final-buzz-0047",
+    "question": "What is the perimeter of a rectangle 86 cm long and 19 cm wide?",
+    "choices": [
+      "223",
+      "210",
+      "218",
+      "203"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0048",
+    "question": "A theatre has 9 rows with 32 seats in each row. How many seats are there?",
+    "choices": [
+      "280",
+      "289",
+      "288",
+      "302"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 32
+    }
+  },
+  {
+    "id": "p6final-buzz-0050",
+    "question": "A library receives 23 books on Monday and 23 on Tuesday. How many is that altogether?",
+    "choices": [
+      "43",
+      "46",
+      "49",
+      "62"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-buzz-0051",
+    "question": "A train journey lasts 30 hours and 57 minutes. How many minutes is that?",
+    "choices": [
+      "1874",
+      "1853",
+      "1857",
+      "1861"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 30,
+      "b": 57
+    }
+  },
+  {
+    "id": "p6final-buzz-0052",
+    "question": "Two identical bags hold 37 marbles each, and 14 marbles are loose. How many marbles are there?",
+    "choices": [
+      "106",
+      "88",
+      "93",
+      "83"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 14
+    }
+  },
+  {
+    "id": "p6final-buzz-0053",
+    "question": "What is the perimeter of a rectangle 44 cm long and 27 cm wide?",
+    "choices": [
+      "161",
+      "142",
+      "148",
+      "136"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0054",
+    "question": "A theatre has 51 rows with 5 seats in each row. How many seats are there?",
+    "choices": [
+      "248",
+      "262",
+      "275",
+      "255"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-buzz-0055",
+    "question": "A market stall displays 58 oranges and sells 1. How many remain?",
+    "choices": [
+      "67",
+      "65",
+      "57",
+      "49"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 1
+    }
+  },
+  {
+    "id": "p6final-buzz-0056",
+    "question": "A library receives 65 books on Monday and 31 on Tuesday. How many is that altogether?",
+    "choices": [
+      "94",
+      "96",
+      "97",
+      "107"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-buzz-0057",
+    "question": "A train journey lasts 72 hours and 39 minutes. How many minutes is that?",
+    "choices": [
+      "4371",
+      "4359",
+      "4361",
+      "4356"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "minutes",
+      "a": 72,
+      "b": 39
+    }
+  },
+  {
+    "id": "p6final-buzz-0058",
+    "question": "Two identical bags hold 79 marbles each, and 22 marbles are loose. How many marbles are there?",
+    "choices": [
+      "176",
+      "193",
+      "183",
+      "180"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 22
+    }
+  },
+  {
+    "id": "p6final-buzz-0059",
+    "question": "What is the perimeter of a rectangle 86 cm long and 35 cm wide?",
+    "choices": [
+      "256",
+      "246",
+      "237",
+      "242"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6final-buzz-0060",
+    "question": "A theatre has 9 rows with 13 seats in each row. How many seats are there?",
+    "choices": [
+      "111",
+      "122",
+      "117",
+      "132"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-buzz-0062",
+    "question": "A library receives 23 books on Monday and 4 on Tuesday. How many is that altogether?",
+    "choices": [
+      "27",
+      "19",
+      "34",
+      "44"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 4
+    }
+  },
+  {
+    "id": "p6final-buzz-0064",
+    "question": "Two identical bags hold 37 marbles each, and 30 marbles are loose. How many marbles are there?",
+    "choices": [
+      "105",
+      "123",
+      "101",
+      "104"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-buzz-0065",
+    "question": "What is the perimeter of a rectangle 44 cm long and 8 cm wide?",
+    "choices": [
+      "106",
+      "124",
+      "104",
+      "100"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 8
+    }
+  },
+  {
+    "id": "p6final-buzz-0066",
+    "question": "A theatre has 51 rows with 21 seats in each row. How many seats are there?",
+    "choices": [
+      "1074",
+      "1071",
+      "1066",
+      "1081"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0067",
+    "question": "A market stall displays 58 oranges and sells 19. How many remain?",
+    "choices": [
+      "50",
+      "33",
+      "43",
+      "39"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0068",
+    "question": "A library receives 65 books on Monday and 12 on Tuesday. How many is that altogether?",
+    "choices": [
+      "77",
+      "82",
+      "70",
+      "89"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 12
+    }
+  },
+  {
+    "id": "p6final-buzz-0070",
+    "question": "Two identical bags hold 79 marbles each, and 3 marbles are loose. How many marbles are there?",
+    "choices": [
+      "168",
+      "161",
+      "175",
+      "159"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0071",
+    "question": "What is the perimeter of a rectangle 86 cm long and 16 cm wide?",
+    "choices": [
+      "201",
+      "212",
+      "219",
+      "204"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 16
+    }
+  },
+  {
+    "id": "p6final-buzz-0072",
+    "question": "A theatre has 9 rows with 29 seats in each row. How many seats are there?",
+    "choices": [
+      "261",
+      "257",
+      "262",
+      "277"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0074",
+    "question": "A library receives 23 books on Monday and 20 on Tuesday. How many is that altogether?",
+    "choices": [
+      "43",
+      "46",
+      "37",
+      "61"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-buzz-0076",
+    "question": "Two identical bags hold 37 marbles each, and 11 marbles are loose. How many marbles are there?",
+    "choices": [
+      "85",
+      "77",
+      "90",
+      "105"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0077",
+    "question": "What is the perimeter of a rectangle 44 cm long and 24 cm wide?",
+    "choices": [
+      "136",
+      "142",
+      "146",
+      "134"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 24
+    }
+  },
+  {
+    "id": "p6final-buzz-0078",
+    "question": "A theatre has 51 rows with 2 seats in each row. How many seats are there?",
+    "choices": [
+      "99",
+      "109",
+      "102",
+      "113"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 2
+    }
+  },
+  {
+    "id": "p6final-buzz-0079",
+    "question": "A market stall displays 58 oranges and sells 37. How many remain?",
+    "choices": [
+      "29",
+      "17",
+      "33",
+      "21"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 37
+    }
+  },
+  {
+    "id": "p6final-buzz-0080",
+    "question": "A library receives 65 books on Monday and 28 on Tuesday. How many is that altogether?",
+    "choices": [
+      "88",
+      "94",
+      "106",
+      "93"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-buzz-0082",
+    "question": "Two identical bags hold 79 marbles each, and 19 marbles are loose. How many marbles are there?",
+    "choices": [
+      "177",
+      "192",
+      "180",
+      "170"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0083",
+    "question": "What is the perimeter of a rectangle 86 cm long and 32 cm wide?",
+    "choices": [
+      "240",
+      "236",
+      "252",
+      "228"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 32
+    }
+  },
+  {
+    "id": "p6final-buzz-0084",
+    "question": "A theatre has 9 rows with 10 seats in each row. How many seats are there?",
+    "choices": [
+      "90",
+      "95",
+      "107",
+      "88"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-buzz-0086",
+    "question": "A library receives 23 books on Monday and 1 on Tuesday. How many is that altogether?",
+    "choices": [
+      "43",
+      "24",
+      "20",
+      "31"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 1
+    }
+  },
+  {
+    "id": "p6final-buzz-0088",
+    "question": "Two identical bags hold 37 marbles each, and 27 marbles are loose. How many marbles are there?",
+    "choices": [
+      "102",
+      "111",
+      "95",
+      "101"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0089",
+    "question": "What is the perimeter of a rectangle 44 cm long and 5 cm wide?",
+    "choices": [
+      "98",
+      "109",
+      "100",
+      "91"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-buzz-0090",
+    "question": "A theatre has 51 rows with 18 seats in each row. How many seats are there?",
+    "choices": [
+      "921",
+      "910",
+      "930",
+      "918"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 18
+    }
+  },
+  {
+    "id": "p6final-buzz-0091",
+    "question": "A market stall displays 58 oranges and sells 17. How many remain?",
+    "choices": [
+      "41",
+      "39",
+      "45",
+      "54"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-buzz-0092",
+    "question": "A library receives 65 books on Monday and 9 on Tuesday. How many is that altogether?",
+    "choices": [
+      "71",
+      "74",
+      "88",
+      "79"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0094",
+    "question": "Two identical bags hold 79 marbles each, and 35 marbles are loose. How many marbles are there?",
+    "choices": [
+      "193",
+      "209",
+      "188",
+      "200"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6final-buzz-0095",
+    "question": "What is the perimeter of a rectangle 86 cm long and 13 cm wide?",
+    "choices": [
+      "198",
+      "206",
+      "215",
+      "192"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-buzz-0096",
+    "question": "A theatre has 9 rows with 26 seats in each row. How many seats are there?",
+    "choices": [
+      "252",
+      "234",
+      "235",
+      "227"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6final-buzz-0098",
+    "question": "A library receives 23 books on Monday and 17 on Tuesday. How many is that altogether?",
+    "choices": [
+      "60",
+      "38",
+      "43",
+      "40"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-buzz-0100",
+    "question": "Two identical bags hold 37 marbles each, and 8 marbles are loose. How many marbles are there?",
+    "choices": [
+      "82",
+      "93",
+      "87",
+      "78"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 8
+    }
+  },
+  {
+    "id": "p6final-buzz-0101",
+    "question": "What is the perimeter of a rectangle 44 cm long and 21 cm wide?",
+    "choices": [
+      "142",
+      "130",
+      "136",
+      "125"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0102",
+    "question": "A theatre has 51 rows with 34 seats in each row. How many seats are there?",
+    "choices": [
+      "1741",
+      "1728",
+      "1747",
+      "1734"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 34
+    }
+  },
+  {
+    "id": "p6final-buzz-0103",
+    "question": "A market stall displays 58 oranges and sells 35. How many remain?",
+    "choices": [
+      "31",
+      "37",
+      "16",
+      "23"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6final-buzz-0104",
+    "question": "A library receives 65 books on Monday and 25 on Tuesday. How many is that altogether?",
+    "choices": [
+      "105",
+      "82",
+      "91",
+      "90"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-buzz-0106",
+    "question": "Two identical bags hold 79 marbles each, and 16 marbles are loose. How many marbles are there?",
+    "choices": [
+      "191",
+      "171",
+      "174",
+      "177"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 16
+    }
+  },
+  {
+    "id": "p6final-buzz-0107",
+    "question": "What is the perimeter of a rectangle 86 cm long and 29 cm wide?",
+    "choices": [
+      "248",
+      "226",
+      "234",
+      "230"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0108",
+    "question": "A theatre has 9 rows with 7 seats in each row. How many seats are there?",
+    "choices": [
+      "63",
+      "82",
+      "58",
+      "68"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0110",
+    "question": "A library receives 23 books on Monday and 33 on Tuesday. How many is that altogether?",
+    "choices": [
+      "63",
+      "49",
+      "66",
+      "56"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0112",
+    "question": "Two identical bags hold 37 marbles each, and 24 marbles are loose. How many marbles are there?",
+    "choices": [
+      "99",
+      "96",
+      "98",
+      "110"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 24
+    }
+  },
+  {
+    "id": "p6final-buzz-0113",
+    "question": "What is the perimeter of a rectangle 44 cm long and 2 cm wide?",
+    "choices": [
+      "89",
+      "94",
+      "105",
+      "92"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 2
+    }
+  },
+  {
+    "id": "p6final-buzz-0114",
+    "question": "A theatre has 51 rows with 15 seats in each row. How many seats are there?",
+    "choices": [
+      "779",
+      "768",
+      "761",
+      "765"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0115",
+    "question": "A market stall displays 58 oranges and sells 15. How many remain?",
+    "choices": [
+      "47",
+      "43",
+      "58",
+      "38"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0116",
+    "question": "A library receives 65 books on Monday and 6 on Tuesday. How many is that altogether?",
+    "choices": [
+      "65",
+      "87",
+      "71",
+      "76"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 6
+    }
+  },
+  {
+    "id": "p6final-buzz-0118",
+    "question": "Two identical bags hold 79 marbles each, and 32 marbles are loose. How many marbles are there?",
+    "choices": [
+      "197",
+      "208",
+      "190",
+      "182"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 32
+    }
+  },
+  {
+    "id": "p6final-buzz-0119",
+    "question": "What is the perimeter of a rectangle 86 cm long and 10 cm wide?",
+    "choices": [
+      "192",
+      "190",
+      "200",
+      "211"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-buzz-0120",
+    "question": "A theatre has 9 rows with 23 seats in each row. How many seats are there?",
+    "choices": [
+      "208",
+      "227",
+      "204",
+      "207"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-buzz-0122",
+    "question": "A library receives 23 books on Monday and 14 on Tuesday. How many is that altogether?",
+    "choices": [
+      "48",
+      "40",
+      "32",
+      "37"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 14
+    }
+  },
+  {
+    "id": "p6final-buzz-0124",
+    "question": "Two identical bags hold 37 marbles each, and 5 marbles are loose. How many marbles are there?",
+    "choices": [
+      "72",
+      "79",
+      "84",
+      "92"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-buzz-0125",
+    "question": "What is the perimeter of a rectangle 44 cm long and 18 cm wide?",
+    "choices": [
+      "130",
+      "138",
+      "124",
+      "116"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 18
+    }
+  },
+  {
+    "id": "p6final-buzz-0126",
+    "question": "A theatre has 51 rows with 31 seats in each row. How many seats are there?",
+    "choices": [
+      "1588",
+      "1581",
+      "1596",
+      "1579"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-buzz-0127",
+    "question": "A market stall displays 58 oranges and sells 33. How many remain?",
+    "choices": [
+      "33",
+      "22",
+      "25",
+      "41"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0128",
+    "question": "A library receives 65 books on Monday and 22 on Tuesday. How many is that altogether?",
+    "choices": [
+      "104",
+      "83",
+      "87",
+      "88"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 22
+    }
+  },
+  {
+    "id": "p6final-buzz-0130",
+    "question": "Two identical bags hold 79 marbles each, and 13 marbles are loose. How many marbles are there?",
+    "choices": [
+      "165",
+      "174",
+      "171",
+      "190"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-buzz-0131",
+    "question": "What is the perimeter of a rectangle 86 cm long and 26 cm wide?",
+    "choices": [
+      "217",
+      "224",
+      "244",
+      "228"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6final-buzz-0132",
+    "question": "A theatre has 9 rows with 4 seats in each row. How many seats are there?",
+    "choices": [
+      "46",
+      "41",
+      "28",
+      "36"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 4
+    }
+  },
+  {
+    "id": "p6final-buzz-0134",
+    "question": "A library receives 23 books on Monday and 30 on Tuesday. How many is that altogether?",
+    "choices": [
+      "60",
+      "53",
+      "50",
+      "65"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-buzz-0136",
+    "question": "Two identical bags hold 37 marbles each, and 21 marbles are loose. How many marbles are there?",
+    "choices": [
+      "95",
+      "96",
+      "90",
+      "109"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0137",
+    "question": "What is the perimeter of a rectangle 44 cm long and 34 cm wide?",
+    "choices": [
+      "158",
+      "171",
+      "156",
+      "150"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 34
+    }
+  },
+  {
+    "id": "p6final-buzz-0138",
+    "question": "A theatre has 51 rows with 12 seats in each row. How many seats are there?",
+    "choices": [
+      "605",
+      "615",
+      "628",
+      "612"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 12
+    }
+  },
+  {
+    "id": "p6final-buzz-0139",
+    "question": "A market stall displays 58 oranges and sells 13. How many remain?",
+    "choices": [
+      "62",
+      "45",
+      "49",
+      "37"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-buzz-0140",
+    "question": "A library receives 65 books on Monday and 3 on Tuesday. How many is that altogether?",
+    "choices": [
+      "86",
+      "66",
+      "73",
+      "68"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0142",
+    "question": "Two identical bags hold 79 marbles each, and 29 marbles are loose. How many marbles are there?",
+    "choices": [
+      "187",
+      "207",
+      "183",
+      "194"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0143",
+    "question": "What is the perimeter of a rectangle 86 cm long and 7 cm wide?",
+    "choices": [
+      "194",
+      "186",
+      "181",
+      "196"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0144",
+    "question": "A theatre has 9 rows with 20 seats in each row. How many seats are there?",
+    "choices": [
+      "180",
+      "191",
+      "174",
+      "181"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-buzz-0146",
+    "question": "A library receives 23 books on Monday and 11 on Tuesday. How many is that altogether?",
+    "choices": [
+      "34",
+      "37",
+      "26",
+      "47"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0148",
+    "question": "Two identical bags hold 37 marbles each, and 2 marbles are loose. How many marbles are there?",
+    "choices": [
+      "81",
+      "91",
+      "73",
+      "76"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 2
+    }
+  },
+  {
+    "id": "p6final-buzz-0149",
+    "question": "What is the perimeter of a rectangle 44 cm long and 15 cm wide?",
+    "choices": [
+      "118",
+      "134",
+      "114",
+      "124"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0150",
+    "question": "A theatre has 51 rows with 28 seats in each row. How many seats are there?",
+    "choices": [
+      "1435",
+      "1428",
+      "1445",
+      "1423"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-buzz-0151",
+    "question": "A market stall displays 58 oranges and sells 31. How many remain?",
+    "choices": [
+      "27",
+      "21",
+      "45",
+      "35"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-buzz-0152",
+    "question": "A library receives 65 books on Monday and 19 on Tuesday. How many is that altogether?",
+    "choices": [
+      "103",
+      "85",
+      "77",
+      "84"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0154",
+    "question": "Two identical bags hold 79 marbles each, and 10 marbles are loose. How many marbles are there?",
+    "choices": [
+      "168",
+      "178",
+      "171",
+      "166"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-buzz-0155",
+    "question": "What is the perimeter of a rectangle 86 cm long and 23 cm wide?",
+    "choices": [
+      "229",
+      "218",
+      "215",
+      "222"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-buzz-0156",
+    "question": "A theatre has 9 rows with 1 seats in each row. How many seats are there?",
+    "choices": [
+      "21",
+      "9",
+      "5",
+      "14"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 1
+    }
+  },
+  {
+    "id": "p6final-buzz-0158",
+    "question": "A library receives 23 books on Monday and 27 on Tuesday. How many is that altogether?",
+    "choices": [
+      "50",
+      "64",
+      "44",
+      "57"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0160",
+    "question": "Two identical bags hold 37 marbles each, and 18 marbles are loose. How many marbles are there?",
+    "choices": [
+      "93",
+      "84",
+      "108",
+      "92"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 18
+    }
+  },
+  {
+    "id": "p6final-buzz-0161",
+    "question": "What is the perimeter of a rectangle 44 cm long and 31 cm wide?",
+    "choices": [
+      "150",
+      "148",
+      "167",
+      "152"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-buzz-0162",
+    "question": "A theatre has 51 rows with 9 seats in each row. How many seats are there?",
+    "choices": [
+      "456",
+      "462",
+      "477",
+      "459"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0163",
+    "question": "A market stall displays 58 oranges and sells 11. How many remain?",
+    "choices": [
+      "43",
+      "51",
+      "66",
+      "47"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0164",
+    "question": "A library receives 65 books on Monday and 35 on Tuesday. How many is that altogether?",
+    "choices": [
+      "95",
+      "100",
+      "120",
+      "105"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6final-buzz-0166",
+    "question": "Two identical bags hold 79 marbles each, and 26 marbles are loose. How many marbles are there?",
+    "choices": [
+      "195",
+      "191",
+      "184",
+      "177"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6final-buzz-0167",
+    "question": "What is the perimeter of a rectangle 86 cm long and 4 cm wide?",
+    "choices": [
+      "188",
+      "180",
+      "172",
+      "192"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 4
+    }
+  },
+  {
+    "id": "p6final-buzz-0168",
+    "question": "A theatre has 9 rows with 17 seats in each row. How many seats are there?",
+    "choices": [
+      "151",
+      "154",
+      "153",
+      "166"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-buzz-0170",
+    "question": "A library receives 23 books on Monday and 8 on Tuesday. How many is that altogether?",
+    "choices": [
+      "31",
+      "46",
+      "27",
+      "34"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 8
+    }
+  },
+  {
+    "id": "p6final-buzz-0172",
+    "question": "Two identical bags hold 37 marbles each, and 34 marbles are loose. How many marbles are there?",
+    "choices": [
+      "113",
+      "108",
+      "102",
+      "125"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 34
+    }
+  },
+  {
+    "id": "p6final-buzz-0173",
+    "question": "What is the perimeter of a rectangle 44 cm long and 12 cm wide?",
+    "choices": [
+      "130",
+      "112",
+      "118",
+      "105"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 12
+    }
+  },
+  {
+    "id": "p6final-buzz-0174",
+    "question": "A theatre has 51 rows with 25 seats in each row. How many seats are there?",
+    "choices": [
+      "1275",
+      "1267",
+      "1294",
+      "1282"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-buzz-0175",
+    "question": "A market stall displays 58 oranges and sells 29. How many remain?",
+    "choices": [
+      "37",
+      "49",
+      "29",
+      "27"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0176",
+    "question": "A library receives 65 books on Monday and 16 on Tuesday. How many is that altogether?",
+    "choices": [
+      "91",
+      "78",
+      "82",
+      "81"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 16
+    }
+  },
+  {
+    "id": "p6final-buzz-0178",
+    "question": "Two identical bags hold 79 marbles each, and 7 marbles are loose. How many marbles are there?",
+    "choices": [
+      "160",
+      "168",
+      "165",
+      "177"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0179",
+    "question": "What is the perimeter of a rectangle 86 cm long and 20 cm wide?",
+    "choices": [
+      "206",
+      "216",
+      "225",
+      "212"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-buzz-0180",
+    "question": "A theatre has 9 rows with 33 seats in each row. How many seats are there?",
+    "choices": [
+      "297",
+      "290",
+      "302",
+      "311"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0182",
+    "question": "A library receives 23 books on Monday and 24 on Tuesday. How many is that altogether?",
+    "choices": [
+      "54",
+      "63",
+      "45",
+      "47"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 24
+    }
+  },
+  {
+    "id": "p6final-buzz-0184",
+    "question": "Two identical bags hold 37 marbles each, and 15 marbles are loose. How many marbles are there?",
+    "choices": [
+      "89",
+      "90",
+      "85",
+      "107"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-buzz-0185",
+    "question": "What is the perimeter of a rectangle 44 cm long and 28 cm wide?",
+    "choices": [
+      "163",
+      "146",
+      "139",
+      "144"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-buzz-0186",
+    "question": "A theatre has 51 rows with 6 seats in each row. How many seats are there?",
+    "choices": [
+      "326",
+      "306",
+      "300",
+      "309"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 6
+    }
+  },
+  {
+    "id": "p6final-buzz-0187",
+    "question": "A market stall displays 58 oranges and sells 9. How many remain?",
+    "choices": [
+      "42",
+      "49",
+      "59",
+      "53"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0188",
+    "question": "A library receives 65 books on Monday and 32 on Tuesday. How many is that altogether?",
+    "choices": [
+      "89",
+      "97",
+      "108",
+      "102"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 32
+    }
+  },
+  {
+    "id": "p6final-buzz-0190",
+    "question": "Two identical bags hold 79 marbles each, and 23 marbles are loose. How many marbles are there?",
+    "choices": [
+      "181",
+      "178",
+      "194",
+      "188"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-buzz-0191",
+    "question": "What is the perimeter of a rectangle 86 cm long and 1 cm wide?",
+    "choices": [
+      "188",
+      "174",
+      "182",
+      "170"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 1
+    }
+  },
+  {
+    "id": "p6final-buzz-0192",
+    "question": "A theatre has 9 rows with 14 seats in each row. How many seats are there?",
+    "choices": [
+      "141",
+      "126",
+      "127",
+      "121"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 14
+    }
+  },
+  {
+    "id": "p6final-buzz-0194",
+    "question": "A library receives 23 books on Monday and 5 on Tuesday. How many is that altogether?",
+    "choices": [
+      "45",
+      "21",
+      "31",
+      "28"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-buzz-0196",
+    "question": "Two identical bags hold 37 marbles each, and 31 marbles are loose. How many marbles are there?",
+    "choices": [
+      "110",
+      "124",
+      "103",
+      "105"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-buzz-0197",
+    "question": "What is the perimeter of a rectangle 44 cm long and 9 cm wide?",
+    "choices": [
+      "112",
+      "103",
+      "126",
+      "106"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6final-buzz-0198",
+    "question": "A theatre has 51 rows with 22 seats in each row. How many seats are there?",
+    "choices": [
+      "1118",
+      "1132",
+      "1129",
+      "1122"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 22
+    }
+  },
+  {
+    "id": "p6final-buzz-0199",
+    "question": "A market stall displays 58 oranges and sells 27. How many remain?",
+    "choices": [
+      "31",
+      "42",
+      "26",
+      "39"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 27
+    }
+  },
+  {
+    "id": "p6final-buzz-0200",
+    "question": "A library receives 65 books on Monday and 13 on Tuesday. How many is that altogether?",
+    "choices": [
+      "72",
+      "90",
+      "78",
+      "79"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-buzz-0202",
+    "question": "Two identical bags hold 79 marbles each, and 4 marbles are loose. How many marbles are there?",
+    "choices": [
+      "165",
+      "154",
+      "162",
+      "176"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 4
+    }
+  },
+  {
+    "id": "p6final-buzz-0203",
+    "question": "What is the perimeter of a rectangle 86 cm long and 17 cm wide?",
+    "choices": [
+      "210",
+      "221",
+      "206",
+      "204"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-buzz-0204",
+    "question": "A theatre has 9 rows with 30 seats in each row. How many seats are there?",
+    "choices": [
+      "270",
+      "275",
+      "286",
+      "267"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-buzz-0206",
+    "question": "A library receives 23 books on Monday and 21 on Tuesday. How many is that altogether?",
+    "choices": [
+      "62",
+      "44",
+      "51",
+      "39"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-buzz-0208",
+    "question": "Two identical bags hold 37 marbles each, and 12 marbles are loose. How many marbles are there?",
+    "choices": [
+      "106",
+      "79",
+      "86",
+      "87"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 12
+    }
+  },
+  {
+    "id": "p6final-buzz-0209",
+    "question": "What is the perimeter of a rectangle 44 cm long and 25 cm wide?",
+    "choices": [
+      "138",
+      "130",
+      "148",
+      "140"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-buzz-0210",
+    "question": "A theatre has 51 rows with 3 seats in each row. How many seats are there?",
+    "choices": [
+      "156",
+      "153",
+      "151",
+      "164"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-buzz-0211",
+    "question": "A market stall displays 58 oranges and sells 7. How many remain?",
+    "choices": [
+      "51",
+      "48",
+      "63",
+      "55"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-buzz-0212",
+    "question": "A library receives 65 books on Monday and 29 on Tuesday. How many is that altogether?",
+    "choices": [
+      "90",
+      "94",
+      "107",
+      "99"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-buzz-0214",
+    "question": "Two identical bags hold 79 marbles each, and 20 marbles are loose. How many marbles are there?",
+    "choices": [
+      "193",
+      "178",
+      "172",
+      "185"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-buzz-0215",
+    "question": "What is the perimeter of a rectangle 86 cm long and 33 cm wide?",
+    "choices": [
+      "246",
+      "238",
+      "254",
+      "231"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 86,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-buzz-0216",
+    "question": "A theatre has 9 rows with 11 seats in each row. How many seats are there?",
+    "choices": [
+      "116",
+      "99",
+      "91",
+      "100"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 9,
+      "b": 11
+    }
+  },
+  {
+    "id": "p6final-buzz-0218",
+    "question": "A library receives 23 books on Monday and 2 on Tuesday. How many is that altogether?",
+    "choices": [
+      "44",
+      "28",
+      "25",
+      "22"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 23,
+      "b": 2
+    }
+  },
+  {
+    "id": "p6final-buzz-0220",
+    "question": "Two identical bags hold 37 marbles each, and 28 marbles are loose. How many marbles are there?",
+    "choices": [
+      "112",
+      "102",
+      "97",
+      "107"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 37,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-buzz-0221",
+    "question": "What is the perimeter of a rectangle 44 cm long and 6 cm wide?",
+    "choices": [
+      "111",
+      "94",
+      "106",
+      "100"
+    ],
+    "correct": 3,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "perimeter",
+      "a": 44,
+      "b": 6
+    }
+  },
+  {
+    "id": "p6final-buzz-0222",
+    "question": "A theatre has 51 rows with 19 seats in each row. How many seats are there?",
+    "choices": [
+      "976",
+      "962",
+      "969",
+      "981"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "multiply",
+      "a": 51,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6final-buzz-0223",
+    "question": "A market stall displays 58 oranges and sells 25. How many remain?",
+    "choices": [
+      "46",
+      "25",
+      "33",
+      "41"
+    ],
+    "correct": 2,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "difference",
+      "a": 58,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-buzz-0224",
+    "question": "A library receives 65 books on Monday and 10 on Tuesday. How many is that altogether?",
+    "choices": [
+      "75",
+      "89",
+      "73",
+      "76"
+    ],
+    "correct": 0,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "sum",
+      "a": 65,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-buzz-0226",
+    "question": "Two identical bags hold 79 marbles each, and 1 marbles are loose. How many marbles are there?",
+    "choices": [
+      "175",
+      "159",
+      "155",
+      "162"
+    ],
+    "correct": 1,
+    "verified": "arithmetic",
+    "source": "Exact arithmetic; recalculated by regression test",
+    "calc": {
+      "type": "double",
+      "a": 79,
+      "b": 1
+    }
   }
 ]

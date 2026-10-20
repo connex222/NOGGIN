@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const board=require('../server/board');
 const speed=require('../server/games/phase3');
 const {attachGateway}=require('../server/gateway');
@@ -48,7 +48,7 @@ test('Quick Draw readyAt and Unscramble revealAt shift with pause',()=>{
 
 test('host resume, pause and skip permissions are enforced and gameplay stays paused',()=>{
  const h=setup();
- assert.throws(()=>h.rooms.pauseGame(h.code,'p0'),{code:'AUTH'});
+ assert.throws(()=>h.rooms.pauseGame(h.code,'stranger'),{code:'AUTH'});
  assert.throws(()=>h.rooms.resumeGame(h.code,'tv'),{code:'PHASE'});
  h.rooms.pauseGame(h.code,'tv');
  assert.throws(()=>h.rooms.pauseGame(h.code,'tv'),{code:'PAUSED'});
@@ -136,7 +136,7 @@ test('host pause/resume/skip socket events require host binding and broadcast ne
       assert.equal((await p.send('room:ready',{ready:true})).ok,true);
    }
    assert.equal((await tv.send('game:start')).ok,true);
-   assert.equal((await p1.send('game:pause')).code,'AUTH');
+   assert.equal((await p2.send('game:pause')).code,'AUTH');
    assert.equal((await tv.send('game:pause')).state.board.paused,true);
    assert.equal((await p1.send('game:roll')).code,'PAUSED');
    assert.equal((await tv.send('game:resume')).state.board.paused,false);

@@ -1,0 +1,212 @@
+﻿Bank,ID,Question or category,Current answer / options,Review status,Evidence source(s),Editorial decision
+buzzer-questions,p6b2-buz-001,What do you call a shape with six sides?,"['Pentagon', 'Hexagon', 'Octagon', 'Triangle']",Pending,,
+buzzer-questions,p6b2-buz-002,Which animal is a marsupial?,"['Badger', 'Otter', 'Kangaroo', 'Fox']",Pending,,
+buzzer-questions,p6b2-buz-003,Which tool measures temperature?,"['Barometer', 'Compass', 'Ruler', 'Thermometer']",Source-checked 2026-10-20,https://en.wikisource.org/wiki/Encyclop%C3%A6dia_Britannica%2C_Ninth_Edition/Thermometer,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-004,Which chemical symbol stands for gold?,"['Ag', 'Au', 'Fe', 'Cu']",Source-checked 2026-10-20,https://periodic-table.rsc.org/element/79/Gold,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-005,How many degrees are in a right angle?,"['45', '60', '90', '180']",Source-checked 2026-10-20,https://en.wikipedia.org/wiki/Right_angle,Right angle equals 90 degrees; one published reference. Not triple independently verified.
+buzzer-questions,p6b2-buz-006,Which organ pumps blood around the body?,"['Liver', 'Stomach', 'Lung', 'Heart']",Pending,,
+buzzer-questions,p6b2-buz-007,Which ocean lies between Africa and Australia?,"['Indian Ocean', 'Atlantic Ocean', 'Arctic Ocean', 'Southern Ocean']",Source-checked 2026-10-20,https://education.nationalgeographic.org/resource/indian-ocean-video/,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-008,Which English city is associated with the Beatles?,"['Leeds', 'Liverpool', 'Bristol', 'Norwich']",Source-checked 2026-10-20,https://www.thebeatles.com/beatles-anthology,The Beatles official history identifies Liverpool as their early home. Not triple independently verified.
+buzzer-questions,p6b2-buz-009,Which gas makes up most of Earth’s atmosphere?,"['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Helium']",Source-checked 2026-10-20,https://www.noaa.gov/jetstream/atmosphere,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-010,What is the largest planet in the Solar System?,"['Saturn', 'Neptune', 'Earth', 'Jupiter']",Source-checked 2026-10-20,https://science.nasa.gov/solar-system/planet-sizes-and-locations-in-our-solar-system/,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-011,What is the main ingredient of traditional hummus?,"['Chickpeas', 'Rice', 'Potatoes', 'Peas']",Source-checked 2026-10-20,https://dictionary.cambridge.org/dictionary/english/hummus,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-012,How many legs does an adult insect have?,"['Four', 'Six', 'Eight', 'Ten']",Source-checked 2026-10-20,https://www.britannica.com/animal/insect,Britannica identifies three pairs of legs in adult insects. Not triple independently verified.
+buzzer-questions,p6b2-buz-013,Which body part contains the smallest bones in humans?,"['Hand', 'Foot', 'Ear', 'Jaw']",Source-checked 2026-10-20,https://www.leedsth.nhs.uk/services/hearing-and-balance-service-audiology/the-ear/,NHS hospital reference identifies ossicles as the smallest bones. Not triple independently verified.
+buzzer-questions,p6b2-buz-014,What is the name for molten rock below Earth’s surface?,"['Lava', 'Granite', 'Basalt', 'Magma']",Source-checked 2026-10-20,https://www.usgs.gov/programs/VHP/about-volcanoes,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-015,What type of animal is a frog?,"['Amphibian', 'Reptile', 'Mammal', 'Fish']",Source-checked 2026-10-20,https://en.wikipedia.org/wiki/Frog,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-016,Which continent is the Sahara Desert in?,"['Asia', 'Africa', 'Australia', 'Europe']",Source-checked 2026-10-20,https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Sahara,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-017,What name is given to the line at 0° latitude?,"['Prime meridian', 'Tropic of Cancer', 'Equator', 'International Date Line']",Source-checked 2026-10-20,https://education.nationalgeographic.org/resource/latitude/,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-018,Which sport uses a shuttlecock?,"['Tennis', 'Squash', 'Cricket', 'Badminton']",Source-checked 2026-10-20,https://www.uksport.gov.uk/sports/olympic/badminton,Published reference confirms keyed answer; single-source verification only.
+buzzer-questions,p6b2-buz-019,Which part of a plant usually absorbs water from the soil?,"['Roots', 'Petals', 'Fruit', 'Seeds']",Source-checked 2026-10-20,https://www.rhs.org.uk/advice/understanding-plants/how-plants-absorb-water,Keyed answer confirmed against cited published source; not independently triple-verified.
+buzzer-questions,p6b2-buz-020,What is water’s chemical formula?,"['CO₂', 'H₂O', 'O₂', 'NaCl']",Source-checked 2026-10-20,https://www.nasa.gov/wp-content/uploads/2023/06/fuel-cell-activity-5-12.pdf,Answer checked against named published source; not independently triple-source verified
+buzzer-questions,p6b2-buz-021,Which month comes immediately after September?,"['August', 'November', 'October', 'December']",Source-checked 2026-10-20,https://www.timeanddate.com/calendar/months/,Keyed answer confirmed against cited published source; not independently triple-verified.
+buzzer-questions,p6b2-buz-022,Which number is a prime number?,"['15', '21', '27', '17']",Source-checked 2026-10-20,https://www.mathsisfun.com/prime_numbers.html,Keyed answer confirmed against cited published source; not independently triple-verified.
+buzzer-questions,p6b2-buz-023,What is the common name for a young sheep?,"['Lamb', 'Foal', 'Calf', 'Cub']",Source-checked 2026-10-20,https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Lamb,Published reference confirms keyed answer; single-source verification only.
+fib-facts,fb-001,A standard chessboard has ___ individual small squares (not counting larger squares).,64,Pending,,
+fib-facts,fb-002,A traditional dartboard has this many numbered sections ___,20,Pending,,
+fib-facts,fb-003,The alphabet used in English contains this many letters ___,26,Pending,,
+fib-facts,fb-004,"In association football, each team starts with ___ players on the pitch, including the goalkeeper.",11,Pending,,
+fib-facts,fb-005,A standard six-sided die has this many numbered faces ___,6,Pending,,
+fib-facts,fb-006,The planets in our Solar System number ___,8,Source-checked 2026-10-20,https://science.nasa.gov/solar-system/planets/,Answer checked against named published source; not independently triple-source verified
+fib-facts,fb-007,An octopus has this many arms ___,8,Pending,,
+fib-facts,fb-008,The capital city of Scotland is ___,Edinburgh,Pending,,
+fib-facts,fb-009,The capital city of Wales is ___,Cardiff,Pending,,
+fib-facts,fb-010,The capital city of Northern Ireland is ___,Belfast,Pending,,
+fib-facts,fb-011,The first month of the calendar year is ___,January,Pending,,
+fib-facts,fb-012,The shortest month of the year is ___,February,Pending,,
+fib-facts,fb-013,The planet known as the Red Planet is ___,Mars,Pending,,
+fib-facts,fb-014,Earth's natural moon is called the ___,Moon,Pending,,
+fib-facts,fb-015,The largest planet in the Solar System is ___,Jupiter,Pending,,
+fib-facts,fb-016,The closest star to Earth is the ___,Sun,Pending,,
+fib-facts,fb-017,The colour of chlorophyll-rich leaves is usually ___,green,Pending,,
+fib-facts,fb-018,The chemical symbol for gold is ___,Au,Pending,,
+fib-facts,fb-019,The chemical formula for water is ___,H2O,Pending,,
+fib-facts,fb-020,The chemical symbol for oxygen is ___,O,Pending,,
+fib-facts,fb-021,The human skeleton typically has this many bones in adulthood ___,206,Pending,,
+fib-facts,fb-022,The longest side of a right triangle is called the ___,hypotenuse,Pending,,
+fib-facts,fb-023,A triangle has this many sides ___,3,Pending,,
+fib-facts,fb-024,A square has this many equal sides ___,4,Pending,,
+fib-facts,fb-025,An ordinary hexagon has this many sides ___,6,Pending,,
+fib-facts,fb-026,An ordinary octagon has this many sides ___,8,Pending,,
+fib-facts,fb-027,A full circle contains this many degrees ___,360,Pending,,
+fib-facts,fb-028,There are this many minutes in an hour ___,60,Pending,,
+fib-facts,fb-029,There are this many seconds in a minute ___,60,Pending,,
+fib-facts,fb-030,There are this many hours in a day ___,24,Pending,,
+fib-facts,fb-031,One dozen means this many items ___,12,Pending,,
+fib-facts,fb-032,A baker's dozen traditionally contains this many ___,13,Pending,,
+fib-facts,fb-033,"At approximately one atmosphere of pressure, pure water freezes at ___ degrees Celsius.",0,Pending,,
+fib-facts,fb-034,"At approximately one atmosphere of pressure, pure water boils at ___ degrees Celsius.",100,Pending,,
+fib-facts,fb-035,The smallest prime number is ___,2,Pending,,
+fib-facts,fb-036,The Roman numeral X means ___,10,Pending,,
+fib-facts,fb-037,The Roman numeral L means ___,50,Pending,,
+fib-facts,fb-038,The Roman numeral C means ___,100,Pending,,
+fib-facts,fb-039,A baby frog is commonly called a ___,tadpole,Pending,,
+fib-facts,fb-040,A baby sheep is called a ___,lamb,Pending,,
+fib-facts,fb-041,A baby horse is called a ___,foal,Pending,,
+fib-facts,fb-042,A group of lions is commonly called a ___,pride,Pending,,
+fib-facts,fb-043,A group of fish is commonly called a ___,school,Pending,,
+fib-facts,fb-044,The insect best known for producing honey is the honey ___.,bee,Pending,,
+fib-facts,fb-045,Silk is famously produced by ___,silkworms,Pending,,
+fib-facts,fb-046,A whale is a type of ___,mammal,Pending,,
+fib-facts,fb-047,A penguin is a type of ___,bird,Pending,,
+fib-facts,fb-048,A dolphin is a type of ___,mammal,Pending,,
+fib-facts,fb-049,The tallest land animal is the ___,giraffe,Pending,,
+fib-facts,fb-050,The fastest bird in a hunting dive is the ___,peregrine falcon,Pending,,
+fib-facts,fb-051,The Great Pyramid of Giza is in ___,Egypt,Pending,,
+fib-facts,fb-052,The Eiffel Tower stands in ___,Paris,Pending,,
+fib-facts,fb-053,The Colosseum stands in ___,Rome,Pending,,
+fib-facts,fb-054,The Statue of Liberty stands in New York ___.,Harbour,Pending,,
+fib-facts,fb-055,The River Thames flows through ___,London,Pending,,
+fib-facts,fb-056,The Leaning Tower is in the Italian city of ___,Pisa,Pending,,
+fib-facts,fb-057,The continent containing Brazil is ___,South America,Pending,,
+fib-facts,fb-058,The continent containing Kenya is ___,Africa,Pending,,
+fib-facts,fb-059,"In a usual Monday-to-Friday working week, the first working day is ___.",Monday,Pending,,
+fib-facts,fb-060,The sport played at Wimbledon is ___,tennis,Pending,,
+fib-facts,p6b2-fib-001,The chemical symbol for silver is ___,Ag,Source-checked 2026-10-20,https://periodic-table.rsc.org/element/47/Silver,Keyed answer confirmed against cited published source; not independently triple-verified.
+fib-facts,p6b2-fib-002,A regular hexagon has ___ sides,6,Pending,,
+fib-facts,p6b2-fib-003,The capital city of Portugal is ___,Lisbon,Pending,,
+fib-facts,p6b2-fib-004,A right angle measures ___ degrees,90,Source-checked 2026-10-20,https://www.mathsisfun.com/rightangle.html,Keyed answer confirmed against cited published source; not independently triple-verified.
+fib-facts,p6b2-fib-005,The first element in the periodic table is ___,Hydrogen,Source-checked 2026-10-20,https://periodic-table.rsc.org/element/1/H,Keyed answer confirmed against cited published source; not independently triple-verified.
+fib-facts,p6b2-fib-006,An adult insect has ___ legs,6,Pending,,
+fib-facts,p6b2-fib-007,The Roman numeral for fifty is ___,L,Pending,,
+fib-facts,p6b2-fib-008,The famous leaning tower is in ___,Pisa,Pending,,
+fib-facts,p6b2-fib-009,The ocean to the east of Africa is the ___ Ocean,Indian,Pending,,
+fib-facts,p6b2-fib-010,A triangle has ___ vertices,3,Pending,,
+fib-facts,p6b2-fib-011,The next prime number after 11 is ___,13,Source-checked 2026-10-20,https://www.mathsisfun.com/prime_numbers.html,Keyed answer confirmed against cited published source; not independently triple-verified.
+fib-facts,p6b2-fib-012,A leap year normally contains ___ days,366,Pending,,
+fib-facts,p6b2-fib-013,"In tennis, zero points is called ___",Love,Pending,,
+fib-facts,p6b2-fib-014,The currency used in Japan is the ___,Yen,Pending,,
+fib-facts,p6b2-fib-015,Water has the chemical formula ___,H2O,Pending,,
+fib-facts,p6b2-fib-016,The largest bone in the human body is the ___,Femur,Pending,,
+fib-facts,p6b2-fib-017,A group of musicians playing together is an ___,Orchestra,Pending,,
+fib-facts,p6b2-fib-018,The capital city of Norway is ___,Oslo,Pending,,
+fib-facts,p6b2-fib-019,A baby frog is called a ___,Tadpole,Pending,,
+fib-facts,p6final-fib-found-000,A triangle has ___ sides.,3,Pending,,
+fib-facts,p6final-fib-found-001,A pentagon has ___ sides.,5,Pending,,
+fib-facts,p6final-fib-found-002,A hexagon has ___ sides.,6,Pending,,
+fib-facts,p6final-fib-found-003,An octagon has ___ sides.,8,Pending,,
+fib-facts,p6final-fib-found-004,A right angle measures ___ degrees.,90,Pending,,
+fib-facts,p6final-fib-found-005,A straight angle measures ___ degrees.,180,Pending,,
+fib-facts,p6final-fib-found-006,A full turn measures ___ degrees.,360,Pending,,
+fib-facts,p6final-fib-found-007,A dozen means ___ items.,12,Pending,,
+fib-facts,p6final-fib-found-008,A leap year usually contains ___ days.,366,Pending,,
+fib-facts,p6final-fib-found-009,A standard year contains ___ months.,12,Pending,,
+fib-facts,p6final-fib-found-010,A week contains ___ days.,7,Pending,,
+fib-facts,p6final-fib-found-011,A day contains ___ hours.,24,Pending,,
+fib-facts,p6final-fib-found-012,One metre contains ___ centimetres.,100,Pending,,
+fib-facts,p6final-fib-found-013,A kilogram contains ___ grams.,1000,Pending,,
+fib-facts,p6final-fib-found-014,The Roman numeral X represents ___.,10,Pending,,
+fib-facts,p6final-fib-found-015,The Roman numeral L represents ___.,50,Pending,,
+fib-facts,p6final-fib-found-016,The Roman numeral C represents ___.,100,Pending,,
+fib-facts,p6final-fib-found-017,The chemical symbol for oxygen is ___.,O,Pending,,
+fib-facts,p6final-fib-found-018,The chemical symbol for gold is ___.,Au,Pending,,
+fib-facts,p6final-fib-found-019,The chemical symbol for iron is ___.,Fe,Pending,,
+bid-categories,p6b2-bid-001,Name eight human skeletal bones,"['Femur', 'Tibia', 'Fibula', 'Humerus', 'Radius', 'Ulna', 'Scapula', 'Clavicle']",Pending,,
+bid-categories,p6b2-bid-003,"Name the six open-string pitches of a standard-tuned guitar, from lowest to highest","['Low E', 'A', 'D', 'G', 'B', 'High E']",Pending,,
+bid-categories,p6b2-bid-004,Name eight types of triangle or angle,"['Acute triangle', 'Obtuse triangle', 'Right triangle', 'Equilateral triangle', 'Isosceles triangle', 'Scalene triangle', 'Acute angle', 'Reflex angle']",Pending,,
+bid-categories,p6b2-bid-006,Name eight common geometric plane shapes,"['Triangle', 'Square', 'Rectangle', 'Pentagon', 'Hexagon', 'Heptagon', 'Octagon', 'Circle']",Pending,,
+bid-categories,p6b2-bid-008,Name eight Greek alphabet letters,"['Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta']",Pending,,
+bid-categories,p6b2-bid-009,"Name eight Olympic track running race distances, in metres","['100', '200', '400', '800', '1500', '3000', '5000', '10000']",Pending,,
+bid-categories,p6b2-bid-010,Name the four swimming strokes represented in individual medley,"['Butterfly', 'Backstroke', 'Breaststroke', 'Freestyle']",Pending,,
+bid-categories,p6b2-bid-011,Name eight traditional musical tempo markings,"['Largo', 'Adagio', 'Andante', 'Moderato', 'Allegro', 'Vivace', 'Presto', 'Prestissimo']",Pending,,
+bid-categories,p6b4-bid-001,Name eight things you might pack for a beach day,"['Towel', 'Sun cream', 'Sunglasses', 'Hat', 'Swimsuit', 'Water bottle', 'Beach ball', 'Sandals']",Pending,,
+bid-categories,p6b4-bid-002,Name eight things commonly found in a kitchen,"['Kettle', 'Toaster', 'Saucepan', 'Frying pan', 'Plate', 'Mug', 'Spoon', 'Fridge']",Pending,,
+bid-categories,p6b4-bid-003,Name eight types of footwear,"['Trainers', 'Boots', 'Sandals', 'Slippers', 'Wellies', 'Loafers', 'Flip-flops', 'High heels']",Pending,,
+bid-categories,p6b4-bid-004,Name eight items you might find in a school classroom,"['Desk', 'Chair', 'Whiteboard', 'Pencil', 'Ruler', 'Textbook', 'Eraser', 'Clock']",Pending,,
+bid-categories,p6b4-bid-005,Name eight kinds of weather,"['Rain', 'Snow', 'Hail', 'Fog', 'Mist', 'Sunshine', 'Wind', 'Sleet']",Pending,,
+bid-categories,p6b4-bid-006,Name eight things people can do at a playground,"['Swing', 'Slide', 'Climb', 'Run', 'Jump', 'Balance', 'Spin', 'Seesaw']",Pending,,
+bid-categories,p6b4-bid-007,Name eight ways to travel,"['Walk', 'Cycle', 'Drive', 'Train', 'Bus', 'Boat', 'Fly', 'Tram']",Pending,,
+bid-categories,p6b4-bid-008,Name eight items used for cleaning,"['Broom', 'Mop', 'Sponge', 'Cloth', 'Brush', 'Vacuum cleaner', 'Dustpan', 'Bucket']",Pending,,
+bid-categories,p6b4-bid-009,Name eight places you might sit,"['Sofa', 'Chair', 'Bench', 'Stool', 'Armchair', 'Beanbag', 'Car seat', 'Swing']",Pending,,
+bid-categories,p6b4-bid-010,Name eight musical instruments,"['Piano', 'Guitar', 'Violin', 'Flute', 'Trumpet', 'Drums', 'Clarinet', 'Trombone']",Pending,,
+bid-categories,p6b4-bid-011,Name eight things you can buy at a garden centre,"['Plants', 'Seeds', 'Compost', 'Pots', 'Watering can', 'Spade', 'Gloves', 'Hose']",Pending,,
+bid-categories,p6b4-bid-012,Name eight materials used to make clothes,"['Cotton', 'Wool', 'Linen', 'Silk', 'Denim', 'Leather', 'Polyester', 'Nylon']",Pending,,
+bid-categories,p6b4-bid-013,Name eight things found in a bathroom,"['Sink', 'Bath', 'Shower', 'Toilet', 'Towel', 'Mirror', 'Soap', 'Toothbrush']",Pending,,
+bid-categories,p6b4-bid-014,Name eight things on a bicycle,"['Handlebars', 'Pedals', 'Wheels', 'Chain', 'Saddle', 'Brakes', 'Bell', 'Tyres']",Pending,,
+bid-categories,p6b4-bid-015,Name eight pieces of sports equipment,"['Ball', 'Racket', 'Bat', 'Helmet', 'Net', 'Goal', 'Gloves', 'Whistle']",Pending,,
+bid-categories,p6b6-bid-001,Name eight things in a sewing kit,"['Needle', 'Thread', 'Scissors', 'Pins', 'Thimble', 'Tape measure', 'Buttons', 'Seam ripper']",Pending,,
+bid-categories,p6b6-bid-002,Name eight items you might take camping,"['Tent', 'Sleeping bag', 'Torch', 'Water bottle', 'Camping stove', 'Rucksack', 'Groundsheet', 'Map']",Pending,,
+bid-categories,p6b6-bid-003,Name eight types of hat,"['Beret', 'Bowler', 'Fedora', 'Beanie', 'Sombrero', 'Top hat', 'Panama', 'Bucket hat']",Pending,,
+bid-categories,p6b6-bid-004,Name eight things a gardener might use,"['Spade', 'Rake', 'Hoe', 'Trowel', 'Watering can', 'Secateurs', 'Gloves', 'Wheelbarrow']",Pending,,
+bid-categories,p6b6-bid-005,Name eight objects you might find in a workshop,"['Hammer', 'Screwdriver', 'Spanner', 'Saw', 'Vice', 'Drill', 'Pliers', 'Tape measure']",Pending,,
+bid-categories,p6b6-bid-006,Name eight items commonly found in a first-aid kit,"['Plasters', 'Bandages', 'Sterile gauze', 'Adhesive tape', 'Safety pins', 'Disposable gloves', 'Antiseptic wipes', 'Dressing pads']",Pending,,
+bid-categories,p6b6-bid-007,Name eight items that might be on a breakfast table,"['Plate', 'Bowl', 'Spoon', 'Knife', 'Mug', 'Toast', 'Cereal', 'Jam']",Pending,,
+bid-categories,p6b6-bid-008,Name eight different types of bridge,"['Arch', 'Beam', 'Truss', 'Suspension', 'Cable-stayed', 'Cantilever', 'Bascule', 'Pontoon']",Pending,,
+bid-categories,p6b6-bid-009,Name eight common woodworking tools,"['Chisel', 'Plane', 'Mallet', 'Handsaw', 'Clamps', 'Try square', 'Marking gauge', 'Spirit level']",Pending,,
+bid-categories,p6b6-bid-010,Name eight things found on a traditional chessboard at the start of play,"['White king', 'White queen', 'White rook', 'White bishop', 'White knight', 'White pawn', 'Black king', 'Black queen']",Pending,,
+bid-categories,p6final-bid-000,Name things in a first-aid kit,"['bandage', 'plaster', 'gauze', 'tape', 'scissors', 'tweezers', 'gloves', 'wipes']",Pending,,
+bid-categories,p6final-bid-001,Name things you might see in a garden,"['flower', 'tree', 'grass', 'spade', 'rake', 'watering-can', 'hose', 'fence']",Pending,,
+bid-categories,p6final-bid-002,Name things you might pack for a hike,"['map', 'compass', 'water', 'snacks', 'torch', 'jacket', 'whistle', 'boots']",Pending,,
+bid-categories,p6final-bid-003,Name common kitchen utensils,"['spoon', 'fork', 'knife', 'spatula', 'whisk', 'ladle', 'tongs', 'peeler']",Pending,,
+bid-categories,p6final-bid-004,Name eight types of bread,"['Baguette', 'Ciabatta', 'Focaccia', 'Brioche', 'Pitta', 'Sourdough', 'Naan', 'Bagel']",Pending,,
+bid-categories,p6final-bid-005,Name things at a birthday party,"['cake', 'candles', 'balloons', 'presents', 'cards', 'plates', 'music', 'decorations']",Pending,,
+bid-categories,p6final-bid-006,Name types of transport,"['car', 'bus', 'train', 'tram', 'bicycle', 'ferry', 'aeroplane', 'taxi']",Pending,,
+bid-categories,p6final-bid-007,Name things you can buy at a stationer,"['pen', 'pencil', 'ruler', 'notebook', 'eraser', 'envelopes', 'glue', 'folder']",Pending,,
+bid-categories,p6final-bid-008,Name eight punctuation marks used in English writing,"['Full stop', 'Comma', 'Question mark', 'Exclamation mark', 'Colon', 'Semicolon', 'Apostrophe', 'Hyphen']",Pending,,
+bid-categories,p6final-bid-009,Name eight different types of dance,"['Waltz', 'Tango', 'Salsa', 'Ballet', 'Tap', 'Foxtrot', 'Flamenco', 'Breakdance']",Pending,,
+bid-categories,p6final-bid-010,Name objects on a picnic table,"['plate', 'cup', 'napkin', 'spoon', 'fork', 'sandwich', 'bottle', 'basket']",Pending,,
+bid-categories,p6final-bid-011,Name things found on a playground,"['swing', 'slide', 'roundabout', 'seesaw', 'climbing-frame', 'bench', 'sandpit', 'trampoline']",Pending,,
+bid-categories,p6final-bid-012,Name things you might use for painting,"['brush', 'roller', 'tray', 'paint', 'palette', 'easel', 'canvas', 'apron']",Pending,,
+bid-categories,p6final-bid-013,Name things used for baking,"['flour', 'sugar', 'eggs', 'butter', 'bowl', 'whisk', 'oven', 'tray']",Pending,,
+bid-categories,p6final-bid-014,Name things people wear in winter,"['coat', 'scarf', 'hat', 'gloves', 'boots', 'jumper', 'socks', 'earmuffs']",Pending,,
+bid-categories,p6final-bid-015,Name items commonly found at a library,"['book', 'shelf', 'desk', 'chair', 'computer', 'catalogue', 'card', 'printer']",Pending,,
+bid-categories,p6final-bid-016,Name things to take on a camping trip,"['tent', 'sleeping-bag', 'torch', 'stove', 'matches', 'map', 'water', 'lantern']",Pending,,
+bid-categories,p6final-bid-017,Name things you might see on a beach,"['sand', 'sea', 'shells', 'pebbles', 'bucket', 'spade', 'gulls', 'towels']",Pending,,
+bid-categories,p6final-bid-018,Name objects at a football match,"['ball', 'goal', 'whistle', 'corner-flag', 'boots', 'shirt', 'net', 'scoreboard']",Pending,,
+bid-categories,p6final-bid-019,Name eight parts of a car engine,"['Piston', 'Cylinder', 'Crankshaft', 'Camshaft', 'Spark plug', 'Valve', 'Connecting rod', 'Timing belt']",Pending,,
+bid-categories,p6final-bid-020,Name items on a dinner table,"['plate', 'fork', 'knife', 'spoon', 'glass', 'napkin', 'salt', 'pepper']",Pending,,
+bid-categories,p6final-bid-021,Name things found at a farm,"['tractor', 'barn', 'hay', 'fence', 'sheep', 'cow', 'gate', 'field']",Pending,,
+bid-categories,p6final-bid-022,Name things at a concert,"['stage', 'microphone', 'speakers', 'lights', 'tickets', 'audience', 'instruments', 'cables']",Pending,,
+bid-categories,p6final-bid-023,Name things used to write a letter,"['paper', 'pen', 'envelope', 'stamp', 'address', 'ink', 'desk', 'postbox']",Pending,,
+bid-categories,p6final-bid-024,Name eight standard computer keyboard keys besides letters and numbers,"['Enter', 'Escape', 'Tab', 'Shift', 'Control', 'Alt', 'Backspace', 'Space']",Pending,,
+bid-categories,p6final-bid-025,Name things at a swimming pool,"['water', 'lanes', 'goggles', 'towel', 'ladder', 'lifeguard', 'float', 'shower']",Pending,,
+bid-categories,p6final-bid-026,Name eight types of recyclable packaging or paper material (check local collection rules),"['paper', 'cardboard', 'cans', 'glass', 'bottles', 'jars', 'cartons', 'magazines']",Pending,,
+bid-categories,p6final-bid-027,Name things at a café,"['coffee', 'tea', 'cake', 'sandwich', 'mug', 'saucer', 'menu', 'till']",Pending,,
+bid-categories,p6final-bid-028,Name eight types of pasta,"['Penne', 'Fusilli', 'Rigatoni', 'Farfalle', 'Macaroni', 'Linguine', 'Tagliatelle', 'Spaghetti']",Pending,,
+bid-categories,p6final-bid-029,Name things on a boat,"['anchor', 'rope', 'sail', 'mast', 'deck', 'rudder', 'cabin', 'lifejacket']",Pending,,
+bid-categories,p6final-bid-030,Name things at a wedding,"['rings', 'cake', 'flowers', 'guests', 'music', 'invitations', 'tablecloth', 'photographer']",Pending,,
+bid-categories,p6final-bid-031,Name objects used in a science lab,"['beaker', 'flask', 'pipette', 'microscope', 'goggles', 'gloves', 'funnel', 'thermometer']",Pending,,
+bid-categories,p6final-bid-032,Name garden birds in Britain,"['robin', 'blackbird', 'sparrow', 'starling', 'finch', 'magpie', 'crow', 'pigeon']",Pending,,
+bid-categories,p6final-bid-033,Name types of fruit,"['apple', 'pear', 'banana', 'orange', 'peach', 'mango', 'plum', 'grape']",Pending,,
+bid-categories,p6final-bid-034,Name different vegetables,"['carrot', 'potato', 'cabbage', 'leek', 'pea', 'onion', 'beetroot', 'parsnip']",Pending,,
+bid-categories,p6final-bid-035,Name things in a toolbox,"['hammer', 'saw', 'pliers', 'screwdriver', 'drill', 'wrench', 'level', 'tape']",Pending,,
+bid-categories,p6final-bid-036,Name things you might find at a fair,"['rides', 'stalls', 'prizes', 'tickets', 'candyfloss', 'lights', 'music', 'balloons']",Pending,,
+bid-categories,p6final-bid-037,Name eight things at an airport,"['runway', 'terminal', 'gate', 'luggage', 'passport', 'check-in', 'trolley', 'aircraft']",Pending,,
+bid-categories,p6final-bid-038,Name eight parts of a bicycle,"['wheel', 'saddle', 'pedal', 'chain', 'handlebar', 'brake', 'frame', 'bell']",Pending,,
+bid-categories,bid-09,Name eight things used in a pottery studio,"['Clay', 'Kiln', 'Pottery wheel', 'Slip', 'Glaze', 'Rib', 'Sponge', 'Wire cutter']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-24,Name eight types of building material,"['Brick', 'Concrete', 'Slate', 'Timber', 'Steel', 'Glass', 'Plaster', 'Stone']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-27,Name eight types of furniture apart from chairs,"['Wardrobe', 'Bed', 'Bookcase', 'Chest of drawers', 'Sideboard', 'Desk', 'Coffee table', 'Dresser']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-28,Name eight pieces of astronomy equipment or observatory apparatus,"['Telescope', 'Eyepiece', 'Tripod', 'Star chart', 'Spectrograph', 'Mount', 'Finder scope', 'Dome']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-29,Name eight wild animals commonly found in Britain,"['Fox', 'Badger', 'Hedgehog', 'Otter', 'Stoat', 'Weasel', 'Roe deer', 'Red squirrel']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-30,Name eight common British garden vegetables,"['Carrot', 'Parsnip', 'Leek', 'Pea', 'Broad bean', 'Beetroot', 'Turnip', 'Courgette']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-31,Name eight types of cheese,"['Cheddar', 'Brie', 'Stilton', 'Gouda', 'Feta', 'Mozzarella', 'Parmesan', 'Camembert']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-35,Name eight types of biscuit,"['Digestive', 'Custard cream', 'Bourbon', 'Shortbread', 'Ginger nut', 'Rich tea', 'Garibaldi', 'Hobnob']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-36,Name eight card-game terms,"['Trump', 'Trick', 'Dealer', 'Hand', 'Discard', 'Shuffle', 'Suit', 'Bid']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-002,Name eight members of the cat family,"['Lion', 'Tiger', 'Leopard', 'Jaguar', 'Cheetah', 'Lynx', 'Puma', 'Ocelot']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-003,Name eight types of needlework or fibre craft,"['Knitting', 'Crochet', 'Embroidery', 'Cross-stitch', 'Quilting', 'Weaving', 'Tatting', 'Macramé']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-004,Name eight types of fruit used in jam,"['Strawberry', 'Raspberry', 'Blackcurrant', 'Apricot', 'Plum', 'Blackberry', 'Cherry', 'Gooseberry']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-006,Name eight metric prefixes used in SI units,"['Nano', 'Micro', 'Milli', 'Centi', 'Deci', 'Deca', 'Hecto', 'Kilo']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-007,Name eight common cloud types,"['Cirrus', 'Cirrostratus', 'Cirrocumulus', 'Altostratus', 'Altocumulus', 'Stratus', 'Stratocumulus', 'Cumulus']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-008,Name eight different types of boat or watercraft,"['Canoe', 'Kayak', 'Dinghy', 'Barge', 'Ferry', 'Yacht', 'Catamaran', 'Coracle']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-009,Name eight styles of painting or drawing,"['Watercolour', 'Oil painting', 'Pastel', 'Charcoal', 'Ink wash', 'Acrylic painting', 'Gouache', 'Pencil drawing']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting
+bid-categories,bid-p6-010,Name eight parts of a flowering plant,"['Root', 'Stem', 'Leaf', 'Petal', 'Sepal', 'Stamen', 'Pistil', 'Seed']",Pending,,Reworked to reduce overlap; verify accepted answers during playtesting

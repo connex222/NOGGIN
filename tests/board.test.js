@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const board=require('../server/board');
 function fixture(n=3) {
  let now=1000;const sequence=[];const rooms=new GameRooms({now:()=>now,randomInt:max=>(sequence.length?sequence.shift():0)%max});

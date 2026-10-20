@@ -7,6 +7,7 @@ const {isIP} = require('node:net');
 function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimiter(), QRCode} = {}) {
   if (!QRCode) throw new Error('Pass a QR generator to attachGateway.');
   const bindings = new Map();
+  const roomSockets = new Map();
   const MAX_PAYLOAD = 512;
   // Respect a verified reverse proxy (e.g. Render), otherwise use the direct socket IP.
   function clientIp(socket) {
@@ -18,20 +19,38 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
   }
 
   function broadcast(code) {
-    if (rooms.rooms.has(code)) {for(const [socketId,bound] of bindings){if(bound.code!==code)continue;io.to(socketId).emit('room:state',rooms.state(code,bound.role==='host',bound.role==='player'?bound.playerId:null));}}
+    if (!rooms.rooms.has(code)) return;
+    for (const socketId of roomSockets.get(code) || []) {
+      const bound = bindings.get(socketId);
+      if (!bound) continue;
+      io.to(socketId).emit('room:state', rooms.state(code, bound.role === 'host',
+        bound.role === 'player' ? bound.playerId : null));
+    }
+  }
+  function unbind(socketId) {
+    const old = bindings.get(socketId);
+    if (!old) return;
+    bindings.delete(socketId);
+    const ids = roomSockets.get(old.code);
+    if (ids) {
+      ids.delete(socketId);
+      if (!ids.size) roomSockets.delete(old.code);
+    }
   }
   function leaveBinding(socket) {
     const old = bindings.get(socket.id);
     if (!old) return;
     rooms.disconnect(old.code, socket.id);
     socket.leave(old.code);
-    bindings.delete(socket.id);
+    unbind(socket.id);
     broadcast(old.code);
   }
-  function bind(socket, code, role, playerId=null) {
+  function bind(socket, code, role, playerId = null) {
     const old = bindings.get(socket.id);
     if (old && old.code !== code) leaveBinding(socket);
     bindings.set(socket.id, {code, role, playerId});
+    if (!roomSockets.has(code)) roomSockets.set(code, new Set());
+    roomSockets.get(code).add(socket.id);
     socket.join(code);
   }
   function getBound(socket, role) {
@@ -101,7 +120,7 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
       if (result.oldSocketId && result.oldSocketId !== socket.id) {
         const older = io.sockets.sockets.get(result.oldSocketId);
         if (older) { older.emit('room:session-replaced'); older.leave(result.code); }
-        bindings.delete(result.oldSocketId);
+        unbind(result.oldSocketId);
       }
       bind(socket, result.code, result.role,result.playerId||null);
       broadcast(result.code);
@@ -121,38 +140,55 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
     }));
 
     socket.on('room:settings', wrap(async ({patch}) => {
-      const code = getBound(socket, 'host');
+      const code = getBound(socket);
       const state = rooms.setSettings(code, socket.id, patch);
       broadcast(code); return {state};
     }));
 
-    socket.on('game:report', wrap(async () => {const code=getBound(socket,'host');return {report:rooms.getMatchReport(code,socket.id)};}));
-    socket.on('game:pause', wrap(async () => {const code=getBound(socket,'host');const state=rooms.pauseGame(code,socket.id);broadcast(code);return {state};}));
-    socket.on('game:resume', wrap(async () => {const code=getBound(socket,'host');const state=rooms.resumeGame(code,socket.id);broadcast(code);return {state};}));
-    socket.on('game:skip-offline', wrap(async () => {const code=getBound(socket,'host');const state=rooms.skipDisconnectedGame(code,socket.id);broadcast(code);return {state};}));
-    socket.on('game:start', wrap(async () => {const code=getBound(socket,'host');const state=rooms.startGame(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:report', wrap(async () => {const code=getBound(socket);return {report:rooms.getMatchReport(code,socket.id)};}));
+    socket.on('game:pause', wrap(async () => {const code=getBound(socket);const state=rooms.pauseGame(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:resume', wrap(async () => {const code=getBound(socket);const state=rooms.resumeGame(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:skip-offline', wrap(async () => {const code=getBound(socket);const state=rooms.skipDisconnectedGame(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:start', wrap(async () => {const code=getBound(socket);const state=rooms.startGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:roll', wrap(async () => {const code=getBound(socket,'player');const state=rooms.rollGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:pick-die', wrap(async ({index}) => {const code=getBound(socket,'player');const state=rooms.pickGameDie(code,socket.id,index);broadcast(code);return {state};}));
-    socket.on('game:choose', wrap(async ({targetId,category}) => {const code=getBound(socket,'player');const state=rooms.chooseGame(code,socket.id,{targetId,category});broadcast(code);return {state};}));
+    socket.on('game:choose', wrap(async ({targetId,category,action,option}) => {const code=getBound(socket,'player');const state=rooms.chooseGame(code,socket.id,{targetId,category,action,option});broadcast(code);return {state};}));
     socket.on('game:answer', wrap(async ({choice}) => {const code=getBound(socket,'player');const state=rooms.answerGame(code,socket.id,choice);broadcast(code);return {state};}));
     socket.on('game:cheer', wrap(async ({targetId}) => {const code=getBound(socket,'player');const state=rooms.cheerGame(code,socket.id,targetId);broadcast(code);return {state};}));
+    socket.on('game:bid-review', wrap(async ({accept}) => {const code=getBound(socket);const state=rooms.adjudicateBid(code,socket.id,accept);broadcast(code);return {state};}));
     socket.on('game:input', wrap(async ({value,roundKey}) => {const code=getBound(socket,'player');const state=rooms.inputGame(code,socket.id,value,roundKey);broadcast(code);return {state};}));
-    socket.on('game:draw', wrap(async ({points,roundKey})=>{const code=getBound(socket,'player');const state=rooms.drawGame(code,socket.id,points,roundKey);broadcast(code);return {state};},4096));
+    socket.on('game:draw', wrap(async ({points,roundKey}) => {
+      const code = getBound(socket, 'player');
+      // rooms.drawGame validates the session, round, role, deadline and points.
+      const state = rooms.drawGame(code, socket.id, points, roundKey);
+      const mini = state.board?.minigame;
+      const strokeCount = mini?.display?.strokes?.length;
+      // Only TV hosts require live drawing updates. A new/reconnecting TV
+      // receives all previous strokes from its ordinary state snapshot.
+      if (mini?.id === 'sketch-sabotage' && mini.phase === 'play' && strokeCount) {
+        for (const socketId of roomSockets.get(code) || []) {
+          if (bindings.get(socketId)?.role === 'host') {
+            io.to(socketId).emit('game:stroke', {code, roundKey, index: strokeCount - 1, points});
+          }
+        }
+      }
+      return {state};
+    }, 4096));
 
     socket.on('room:leave', wrap(async () => {
       const code = getBound(socket, 'player');
       rooms.leave(code, socket.id);
-      bindings.delete(socket.id);
+      unbind(socket.id);
       socket.leave(code);
       broadcast(code);
       return {};
     }));
 
     socket.on('room:close', wrap(async () => {
-      const code = getBound(socket, 'host');
+      const code = getBound(socket);
       rooms.close(code, socket.id);
       io.to(code).emit('room:closed');
-      for (const [id, info] of bindings) if (info.code === code) bindings.delete(id);
+      for (const id of [...(roomSockets.get(code) || [])]) unbind(id);
       io.in(code).socketsLeave(code);
       return {};
     }));
