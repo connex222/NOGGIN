@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('./helpers/sequential-rooms');
+const {GameRooms}=require('../server/rooms');
 const phase4=require('../server/games/phase4');
 const phase5=require('../server/games/phase5');
 function game(n=4){
@@ -30,7 +30,7 @@ test('four-player random rotation still includes caption and majority games',()=
 });
 test('showdown audience cheers are one-per-person, private by voter, non-scoring and server owned',()=>{
  const f=game(4),players=f.room.players;
- f.room.board.landing=7;phase5.start(f.room,'corner',f.now(),players[1].id,()=>0);
+ f.room.board.landing=6;phase5.start(f.room,'corner',f.now(),players[1].id,()=>0);
  const before=players.map(p=>p.sparks);
  assert.throws(()=>f.gr.cheerGame(f.code,f.sockets[0],players[1].id),e=>e.code==='ROLE');
  assert.throws(()=>f.gr.cheerGame(f.code,f.sockets[2],players[2].id),e=>e.code==='TARGET');

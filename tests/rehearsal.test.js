@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
-const {GameRooms}=require('./helpers/sequential-rooms');
+const {GameRooms}=require('../server/rooms');
 const {attachGateway}=require('../server/gateway');
 const store=require('../server/state-store');
 class FakeSocket {
@@ -40,17 +40,24 @@ test('four phones + TV: entire gateway rehearsal includes round, pauses, skipped
  const anon=h.io.connect('anon');
  const peek=await anon.send('room:peek',{code});assert.equal(peek.ok,false);assert.equal(peek.code,'PHASE');
  const denied=await players[1].send('game:report');assert.equal(denied.code,'AUTH');
- assert.equal((await players[0].send('game:roll')).ok,true);
- assert.equal(h.rooms.find(code).board.step,'minigame');
+ // Round 1: every phone rolls once. With the injected die everyone lands on a
+ // Brain space, so each landing steals the call and the last roller hosts.
+ for(let i=0;i<4;i++){
+  assert.equal((await players[i].send('game:roll')).ok,true);
+  assert.equal(h.rooms.find(code).board.step,'result');h.advance(4_000);
+ }
+ const room=h.rooms.find(code);
+ assert.equal(room.board.stage,'round-game');assert.equal(room.board.step,'minigame');
+ assert.equal(room.board.minigame.category,'brain');assert.equal(room.board.activeId,room.players[3].id);
  assert.equal((await host.send('game:pause')).ok,true);
  h.advance(20_000);
- assert.equal(h.rooms.find(code).board.step,'minigame');
+ assert.equal(room.board.step,'minigame');
  assert.equal((await host.send('game:resume')).ok,true);
- // Timeout the intro and then the actual challenge, then advance the result card.
- h.advance(4_000);h.advance(70_000);
- assert.equal(h.rooms.find(code).board.step,'result');
- h.advance(4_000);assert.equal(h.rooms.find(code).board.step,'await_roll');
- assert.equal(h.rooms.find(code).board.activeId,h.rooms.find(code).players[1].id);
+ // Let every round of the game run out on the server clock, then advance the result card.
+ for(let i=0;i<60&&room.board.step==='minigame';i++)h.advance(15_000);
+ assert.equal(room.board.step,'result');
+ h.advance(4_000);assert.equal(room.board.step,'await_roll');assert.equal(room.board.round,2);
+ assert.equal(room.board.activeId,room.players[1].id);
  // A player loses Wi-Fi mid-turn, then uses a valid token to resume.
  players[1].disconnect();h.advance(2_000);
  assert.equal(h.rooms.find(code).board.pausedAt!==null,true);
@@ -62,7 +69,7 @@ test('four phones + TV: entire gateway rehearsal includes round, pauses, skipped
  const skipped=await host.send('game:skip-offline');assert.equal(skipped.ok,true);
  const out=(await host.send('game:report')).report;
  assert.equal(out.schema,'noggin.match-report.v1');assert.equal(out.playerCount,4);
- assert.equal(out.miniGames['sketch-sabotage'],1);
+ assert.equal(Object.values(out.miniGames).reduce((a,x)=>a+x,0),1);
  assert.ok(out.pausedSeconds>=20);assert.ok(out.skippedDisconnectedTurns>=1);
  assert.ok(out.outcomes===undefined);assert.ok(out.resultsShown>=2);
  assert.equal(JSON.stringify(out).includes(created.token),false);
@@ -108,8 +115,14 @@ test('eight players behind one router can join and host-only state never leaks p
    mobiles.push(phone);
   }
   assert.equal((await host.send('game:start')).ok,true);
+  // The first contestant hits a Wildcard and locks in a Create game; everyone else rolls.
+  h.rooms.find(created.code).players[0].position=13;
   assert.equal((await mobiles[0].send('game:roll')).ok,true);
+  assert.equal((await mobiles[0].send('game:choose',{category:'create'})).ok,true);
+  h.advance(4_000);
+  for(let n=1;n<8;n++){assert.equal((await mobiles[n].send('game:roll')).ok,true);h.advance(4_000);}
   const board=h.rooms.find(created.code).board;
+  assert.equal(board.stage,'round-game');assert.equal(board.activeId,h.rooms.find(created.code).players[0].id);
   assert.equal(board.minigame.id,'sketch-sabotage');
   const hostState=h.rooms.state(created.code,true);
   const artist=h.rooms.state(created.code,false,board.activeId);
@@ -128,6 +141,10 @@ test('deterministic dice and minigame selection obey injected source across turn
  let t=1000;const rooms=new GameRooms({now:()=>t,randomInt:()=>0});const {code}=rooms.create('tv');
  for(let n=0;n<3;n++){rooms.join({code,name:'Player '+n,socketId:'p'+n,avatarId:n+1});rooms.setReady(code,'p'+n,true);}
  rooms.startGame(code,'tv');rooms.rollGame(code,'p0');
- assert.equal(rooms.find(code).board.minigame.id,'sketch-sabotage');
  assert.equal(rooms.find(code).players[0].position,1);
+ assert.equal(rooms.find(code).board.roundCategory,'brain');
+ for(let n=1;n<3;n++){t+=4_000;rooms.sweep();rooms.rollGame(code,'p'+n);}
+ t+=4_000;rooms.sweep();
+ assert.equal(rooms.find(code).board.minigame.category,'brain');
+ assert.equal(rooms.find(code).board.minigame.id,require('../server/games/phase3').chooseGame({seenGames:[]},'brain',()=>0));
 });

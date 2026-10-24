@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
-const {GameRooms}=require('./helpers/sequential-rooms');
+const {GameRooms}=require('../server/rooms');
 const board=require('../server/board');
 const speed=require('../server/games/phase3');
 const {attachGateway}=require('../server/gateway');
@@ -48,7 +48,7 @@ test('Quick Draw readyAt and Unscramble revealAt shift with pause',()=>{
 
 test('host resume, pause and skip permissions are enforced and gameplay stays paused',()=>{
  const h=setup();
- assert.throws(()=>h.rooms.pauseGame(h.code,'stranger'),{code:'AUTH'});
+ assert.throws(()=>h.rooms.pauseGame(h.code,'p0'),{code:'AUTH'});
  assert.throws(()=>h.rooms.resumeGame(h.code,'tv'),{code:'PHASE'});
  h.rooms.pauseGame(h.code,'tv');
  assert.throws(()=>h.rooms.pauseGame(h.code,'tv'),{code:'PAUSED'});
@@ -59,16 +59,15 @@ test('host resume, pause and skip permissions are enforced and gameplay stays pa
  assert.equal(h.rooms.state(h.code).board.step,'await_roll');
 });
 
-test('offline player timeout skips only their turn and cancels unresolved stake',()=>{
+test('offline player timeout skips only their turn and costs them nothing',()=>{
  const h=setup(),active=h.room.players[0];
- active.sparks=3;h.rooms.chooseGame(h.code,'p0',{action:'headline'});
+ active.sparks=3;
  h.rooms.disconnect(h.code,'p0');h.forward(500);h.rooms.sweep();
  assert.equal(h.rooms.state(h.code).board.paused,true);
  h.forward(30_000);h.rooms.sweep();
  assert.equal(h.room.board.step,'result');
  assert.equal(h.room.board.minigame,null);
  assert.equal(active.sparks,3);
- assert.equal(h.room.board.headline,false);
  h.forward(3_000);h.rooms.sweep();
  assert.equal(h.room.board.step,'await_roll');
  assert.notEqual(h.room.board.activeId,active.id);
@@ -117,7 +116,7 @@ test('failed host QR regeneration cannot hijack or orphan the existing TV sessio
    const failed=await replacement.send('room:resume',{code:created.code,token:created.token,role:'host'});
    assert.equal(failed.ok,false);
    assert.equal(gw.rooms.find(created.code).hostSocketId,'tv');
-   assert.equal((await tv.send('room:settings',{patch:{target:16}})).ok,true);
+   assert.equal((await tv.send('room:settings',{patch:{rounds:10}})).ok,true);
    assert.equal(tv.out.some(x=>x.name==='room:session-replaced'),false);
    broken=false;
    assert.equal((await replacement.send('room:resume',{code:created.code,token:created.token,role:'host'})).ok,true);
@@ -136,7 +135,7 @@ test('host pause/resume/skip socket events require host binding and broadcast ne
       assert.equal((await p.send('room:ready',{ready:true})).ok,true);
    }
    assert.equal((await tv.send('game:start')).ok,true);
-   assert.equal((await p2.send('game:pause')).code,'AUTH');
+   assert.equal((await p1.send('game:pause')).code,'AUTH');
    assert.equal((await tv.send('game:pause')).state.board.paused,true);
    assert.equal((await p1.send('game:roll')).code,'PAUSED');
    assert.equal((await tv.send('game:resume')).state.board.paused,false);

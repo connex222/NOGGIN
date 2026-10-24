@@ -15,13 +15,15 @@ test('Windows filename lookup places original PNGs in source-art, not the public
  assert.ok(!win.includes('thumbs'));
 });
 
-test('All 36 runtime images are present without external source-art',()=>{
+test('All 36 runtime thumbnails have full-sized PNG originals in the intended folder',()=>{
  for(const avatar of avatars)for(const state of ['think','win','lose']){
-  const file=path.join(root,'public',avatar.images[state].replace(/^\//,''));
+  const link=avatar.images[state];
+  const file=path.join(root,'source-art','avatars',path.posix.basename(link,'.webp')+'.png');
   assert.ok(fs.existsSync(file),file);
-  const b=fs.readFileSync(file).subarray(0,12);
-  assert.equal(b.toString('ascii',0,4),'RIFF');
-  assert.equal(b.toString('ascii',8,12),'WEBP');
+  const b=fs.readFileSync(file).subarray(0,24);
+  assert.equal(b.toString('ascii',1,4),'PNG');
+  assert.equal(b.readUInt32BE(16),1024);
+  assert.equal(b.readUInt32BE(20),1024);
  }
 });
 

@@ -1,7 +1,7 @@
 'use strict';
 const {test} = require('node:test');
 const assert = require('node:assert/strict');
-const {GameRooms, LobbyError, normalizeName, safeTokenEquals} = require('./helpers/sequential-rooms');
+const {GameRooms, LobbyError, normalizeName, safeTokenEquals} = require('../server/rooms');
 const {AttemptLimiter} = require('../server/limiter');
 const {allLanAddresses, joinBaseUrl, joinUrl} = require('../server/network');
 
@@ -49,15 +49,13 @@ test('only own socket can ready or change avatar',()=>{
   f.rooms.setAvatar(f.code,'phone-A',3);
   assert.equal(f.rooms.state(f.code).players[0].ready,false);
 });
-test('VIP or host may change settings but others may not; invalid patches fail atomically',()=>{
+test('host may change settings but players may not; invalid patches fail atomically',()=>{
   const f=fixture();join(f);
-  join(f,'Bob',2,'phone-B');
-  assert.throws(()=>f.rooms.setSettings(f.code,'phone-B',{target:16}),e=>e.code==='AUTH');
-  assert.equal(f.rooms.setSettings(f.code,'phone-A',{target:12}).settings.target,12);
-  assert.throws(()=>f.rooms.setSettings(f.code,'tv-1',{target:999}),e=>e.code==='SETTINGS');
-  assert.deepEqual(f.rooms.state(f.code).settings,{target:12,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic',roundStyle:'sequential'});
-  f.rooms.setSettings(f.code,'tv-1',{target:16,timerSpeed:'relaxed',reduceMotion:true});
-  assert.equal(f.rooms.state(f.code).settings.target,16);
+  assert.throws(()=>f.rooms.setSettings(f.code,'phone-A',{rounds:10}),e=>e.code==='AUTH');
+  assert.throws(()=>f.rooms.setSettings(f.code,'tv-1',{rounds:999}),e=>e.code==='SETTINGS');
+  assert.deepEqual(f.rooms.state(f.code).settings,{rounds:'auto',familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic'});
+  f.rooms.setSettings(f.code,'tv-1',{rounds:10,timerSpeed:'relaxed',reduceMotion:true});
+  assert.equal(f.rooms.state(f.code).settings.rounds,10);
   assert.equal(f.rooms.state(f.code).settings.reduceMotion,true);
 });
 test('start eligibility requires two online ready players and connected host',()=>{

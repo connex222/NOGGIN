@@ -6,7 +6,7 @@ const path = require('node:path');
 const roster = require('../public/shared/avatars.json');
 const base = path.join(__dirname,'..','public');
 
-test('12 unique character records with 36 bundled playable WebP avatar files',()=>{
+test('12 unique character records with 36 original full-size RGBA avatar files',()=>{
   assert.equal(roster.length,12);
   assert.equal(new Set(roster.map(a=>a.id)).size,12);
   let count=0;
@@ -16,7 +16,12 @@ test('12 unique character records with 36 bundled playable WebP avatar files',()
       const webp=fs.readFileSync(display).subarray(0,12);
       assert.equal(webp.toString('ascii',0,4),'RIFF',display);
       assert.equal(webp.toString('ascii',8,12),'WEBP',display);
-      assert.ok(fs.statSync(display).size>1000,display);
+      const file=path.join(__dirname,'..','source-art','avatars',path.posix.basename(avatar.images[state],'.webp')+'.png');
+      const header=fs.readFileSync(file).subarray(0,26);
+      assert.equal(header.subarray(0,8).toString('hex'),'89504e470d0a1a0a',file);
+      assert.equal(header.readUInt32BE(16),1024,`width of ${file}`);
+      assert.equal(header.readUInt32BE(20),1024,`height of ${file}`);
+      assert.equal(header[25],6,`RGBA PNG expected ${file}`);
       count++;
     }
     const thumb=path.join(base,avatar.think);

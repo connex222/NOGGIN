@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('./helpers/sequential-rooms');const games=require('../server/games/phase3');
+const {GameRooms}=require('../server/rooms');const games=require('../server/games/phase3');
 const facts=require('../data/higher-lower.json'),close=require('../data/close-call.json'),words=require('../data/unscramble.json');
 function fixture(gameId,players=3){
  let t=100_000;const rooms=new GameRooms({now:()=>t,randomInt:n=>0});const {code}=rooms.create('tv');
@@ -15,7 +15,7 @@ test('Eight distinct playable Speed and Brain games with rules, category, and ro
  for(const g of games.CATALOG){assert(g.rule.length>25);assert(g.rounds>=3);}
 });
 test('150 numerical facts, 60 numeric questions and 120 anagrams are in local JSON with unique IDs',()=>{
- assert(facts.length>=150);assert(close.length>=60);assert(words.length>=120);
+ assert.equal(facts.length,150);assert.equal(close.length,60);assert.equal(words.length,120);
  for(const xs of [facts,close,words])assert.equal(new Set(xs.map(x=>x.id)).size,xs.length);
  for(const f of facts)assert(Number.isFinite(f.value));for(const q of close)assert(Number.isInteger(q.answer));
  for(const q of words)assert(q.word.length>=6&&q.word.length<=8);
@@ -91,10 +91,10 @@ test('all eight games reach results, award scores and clear mini-game state with
   assert(f.room.board.result?.text.includes(games.SPECS[id].name),id);
  }
 });
-test('speed and brain spaces initiate dedicated mini-game, while create remains a demo',()=>{
+test('a speed space calls a Speed round game instead of starting a mini-game mid-turn',()=>{
  const f=fixture('colour-clash');const b=f.room.board;
- b.step='await_roll';f.room.players[0].position=5;b.activeId=f.room.players[0].id;
- f.rooms.rollGame(f.code,f.sock[0]);assert.equal(b.step,'minigame');assert.equal(b.minigame.category,'speed');
+ b.step='await_roll';b.stage='board';b.minigame=null;f.room.players[0].position=1;b.activeId=f.room.players[0].id;
+ f.rooms.rollGame(f.code,f.sock[0]);assert.equal(b.step,'result');assert.equal(b.roundCategory,'speed');assert.equal(b.minigame,null);
 });
 
 test('round reveal hides answers until conclusion, then publishes answer, winners, and prevents late inputs',()=>{

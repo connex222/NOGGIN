@@ -42,8 +42,8 @@ test('all 16 mini-games and four Showdowns keep their original server actions',(
   assert.match(js,/gameClockFill/);
 });
 
-test('phone v2 release version is 2.x and preserves room credentials',()=>{
-  const pkg=require('../package.json');assert.match(pkg.version,/^2\./);
+test('release version is 3.x and phones keep saved room credentials',()=>{
+  const pkg=require('../package.json');assert.match(pkg.version,/^3\./);
   assert.match(js,/noggin-player-session-v1/); // Existing saved player sessions still resume.
   assert.match(js,/room:resume/);
 });
