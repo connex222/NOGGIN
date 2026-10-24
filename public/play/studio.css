@@ -96,7 +96,6 @@ body.time-critical .game-countdown{color:#ffe188}
 .game-buttons .pad-3{background:linear-gradient(#dbffd0,#6bea8c)}.game-buttons .pad-4{background:linear-gradient(#ebc1ff,#ba75f4)}.game-buttons .pad-5{background:linear-gradient(#ffe1c2,#ffa854)}
 .game-buttons .stroop-word{font-size:clamp(35px,12vw,66px);text-shadow:0 4px 0 #06113a,0 0 18px currentColor;padding:10px 3px;text-align:center}
 .game-buttons .sketch-canvas{width:100%;max-height:min(47svh,520px);aspect-ratio:10/7;touch-action:none;background:#fff;border:4px solid #ffcb5a;border-radius:13px;box-shadow:0 0 14px #fec14b7b;cursor:crosshair}
-.button-headline{border:2px solid #fbb9df;background:linear-gradient(#b84c9d,#662267);box-shadow:0 3px 0 #370b4c,0 0 12px #ed7eda66;color:white}
 .button-director{border:2px solid #d8a9ff;background:linear-gradient(#8652d6,#3c2f9d);box-shadow:0 3px 0 #251c65,0 0 12px #b879f954;color:white}
 body[data-noggin-game='quick-draw'] .game-buttons .button-primary{min-height:clamp(135px,27svh,260px);border-radius:50px;font-size:clamp(28px,9vw,45px);background:linear-gradient(#fff78e,#ffc317)}
 body[data-noggin-game='higher-lower'] .game-buttons,body[data-noggin-game='colour-clash'] .game-buttons{gap:13px}
@@ -119,24 +118,3 @@ body.game-mode.mini-mode #gameTurn{display:block}
 @media(max-height:745px){body.game-mode .phone-top{min-height:58px;padding:2px 10px}body.game-mode .phone-brand img{max-height:58px}body.game-mode .game-player{padding:6px 9px;margin-bottom:9px}body.game-mode .game-portrait{height:53px;width:53px}body.game-mode .game-player h2{font-size:19px}body.game-mode .game-player .sparks{font-size:13px}body.game-mode .game-player .eyebrow{font-size:10px!important}body.game-mode .game-action{padding:10px 9px 11px}body.game-mode .game-action h2{font-size:24px;margin:2px 0 5px}body.game-mode .game-action>p{margin:3px 0 7px}body.game-mode .game-countdown{font-size:19px!important}body.game-mode .game-buttons{gap:6px;margin-top:7px}body.game-mode .mini-grid-button{min-height:clamp(41px,12vw,51px)!important}body.game-mode .game-help{margin:9px 4px}}
 @media(max-height:610px){body.game-mode .game-player{display:none!important}body.game-mode .game-action-head{margin:0 0 6px}body.game-mode .game-buttons .mini-grid-button{min-height:41px!important}body.game-mode .clock-container{margin:4px 0 7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
-
-/* Phase 1: compact in-game identity and connection status; lobby stays full-size. */
-body.game-mode .phone-top{min-height:36px;height:36px;padding:2px 12px;justify-content:flex-end}
-body.game-mode .phone-brand{display:none}
-body.game-mode .phone-top .pill{padding:3px 7px;font-size:11px}
-body.game-mode .game-player{display:flex!important;min-height:44px;padding:5px 10px;margin:0 0 7px;gap:8px;border-radius:10px}
-body.game-mode .game-portrait{display:none}
-body.game-mode .game-player-details{display:flex;align-items:center;justify-content:space-between;gap:9px;width:100%}
-body.game-mode .game-player .eyebrow{display:none}
-body.game-mode .game-player h2{font-size:clamp(15px,4.4vw,20px);margin:0;max-width:43%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-body.game-mode .game-player .sparks{font-size:clamp(11px,3.1vw,14px);white-space:nowrap;text-align:right}
-body.game-mode .phone-shell{padding-top:7px}
-body.game-mode .game-mini-instruction{font-size:14px;color:#fff1ad;font-weight:800;margin:0 0 9px;line-height:1.35}
-
-/* Phase 3 — phone VIP console */
-.vip-panel{margin:16px 0;padding:16px;border:2px solid #76e6ee;border-radius:16px;background:#13243b;display:flex;flex-direction:column;gap:10px}
-.vip-panel.hidden{display:none}
-.vip-panel h3{margin:0;font-size:1rem;color:#bdfcff}
-.vip-panel label{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.8rem;color:#f1f7ff}
-.vip-panel select{max-width:60%;padding:9px;border-radius:8px;background:#fff;color:#13243b}
-.vip-panel button{min-height:44px;cursor:pointer}

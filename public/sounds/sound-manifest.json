@@ -1,5 +1,5 @@
 {
-  "description": "Local audio cues and loops; origins and redistribution licences require verification (see README.md).",
+  "description": "Original NOGGIN locally rendered audio cues and looping ambient compositions. No external assets or networks required.",
   "files": [
     "sfx-join.mp3",
     "sfx-dice-roll.mp3",

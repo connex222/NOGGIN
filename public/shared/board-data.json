@@ -2,30 +2,30 @@
   {
     "index": 0,
     "type": "start",
-    "color": "#fff",
+    "color": "#ffffff",
     "icon": "⌂",
     "label": "Start"
   },
   {
     "index": 1,
-    "type": "create",
-    "color": "#ffe477",
-    "icon": "✎",
-    "label": "Create"
-  },
-  {
-    "index": 2,
     "type": "brain",
     "color": "#64aeff",
     "icon": "◆",
     "label": "Brain"
   },
   {
+    "index": 2,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
     "index": 3,
-    "type": "swap",
-    "color": "#be95ff",
-    "icon": "⇄",
-    "label": "Swap Seats"
+    "type": "drain",
+    "color": "#98a1bc",
+    "icon": "−",
+    "label": "Brain Drain"
   },
   {
     "index": 4,
@@ -36,52 +36,55 @@
   },
   {
     "index": 5,
+    "type": "applause",
+    "color": "#ffb46b",
+    "icon": "♪",
+    "label": "Applause"
+  },
+  {
+    "index": 6,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Buzzer Battle",
+    "corner": true
+  },
+  {
+    "index": 7,
     "type": "together",
     "color": "#9de97c",
     "icon": "✚",
     "label": "Together"
   },
   {
-    "index": 6,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
-  },
-  {
-    "index": 7,
-    "type": "showdown",
-    "color": "#ffd168",
-    "icon": "★",
-    "label": "Showdown"
-  },
-  {
     "index": 8,
-    "type": "brain",
-    "color": "#64aeff",
-    "icon": "◆",
-    "label": "Brain"
-  },
-  {
-    "index": 9,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
-  },
-  {
-    "index": 10,
-    "type": "brain",
-    "color": "#64aeff",
-    "icon": "◆",
-    "label": "Brain"
-  },
-  {
-    "index": 11,
     "type": "lift",
     "color": "#72f2ec",
     "icon": "⇧",
-    "label": "Stage Lift"
+    "label": "Stage Lift",
+    "liftTo": 20
+  },
+  {
+    "index": 9,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
+  },
+  {
+    "index": 10,
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Tug of Wits",
+    "corner": true
+  },
+  {
+    "index": 11,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
   },
   {
     "index": 12,
@@ -92,31 +95,31 @@
   },
   {
     "index": 13,
-    "type": "together",
-    "color": "#9de97c",
-    "icon": "✚",
-    "label": "Together"
+    "type": "swap",
+    "color": "#be95ff",
+    "icon": "⇄",
+    "label": "Swap Seats"
   },
   {
     "index": 14,
+    "type": "wildcard",
+    "color": "#ff9ed9",
+    "icon": "✳",
+    "label": "Wildcard"
+  },
+  {
+    "index": 15,
     "type": "brain",
     "color": "#64aeff",
     "icon": "◆",
     "label": "Brain"
   },
   {
-    "index": 15,
-    "type": "showdown",
-    "color": "#ffd168",
-    "icon": "★",
-    "label": "Showdown"
-  },
-  {
     "index": 16,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
+    "type": "pickpocket",
+    "color": "#adb8cb",
+    "icon": "◈",
+    "label": "Pickpocket"
   },
   {
     "index": 17,
@@ -127,38 +130,41 @@
   },
   {
     "index": 18,
-    "type": "brain",
-    "color": "#64aeff",
-    "icon": "◆",
-    "label": "Brain"
+    "type": "showdown",
+    "color": "#ffd168",
+    "icon": "★",
+    "label": "Bid to Win",
+    "corner": true
   },
   {
     "index": 19,
-    "type": "wildcard",
-    "color": "#ff9ed9",
-    "icon": "✳",
-    "label": "Wildcard"
-  },
-  {
-    "index": 20,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
-  },
-  {
-    "index": 21,
     "type": "create",
     "color": "#ffe477",
     "icon": "✎",
     "label": "Create"
   },
   {
+    "index": 20,
+    "type": "lift",
+    "color": "#72f2ec",
+    "icon": "⇧",
+    "label": "Stage Lift",
+    "liftTo": 8
+  },
+  {
+    "index": 21,
+    "type": "speed",
+    "color": "#ff667e",
+    "icon": "⚡",
+    "label": "Speed"
+  },
+  {
     "index": 22,
     "type": "showdown",
     "color": "#ffd168",
     "icon": "★",
-    "label": "Showdown"
+    "label": "Nerve",
+    "corner": true
   },
   {
     "index": 23,
@@ -169,86 +175,30 @@
   },
   {
     "index": 24,
-    "type": "create",
-    "color": "#ffe477",
-    "icon": "✎",
-    "label": "Create"
-  },
-  {
-    "index": 25,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
-  },
-  {
-    "index": 26,
-    "type": "lift",
-    "color": "#72f2ec",
-    "icon": "⇧",
-    "label": "Stage Lift"
-  },
-  {
-    "index": 27,
-    "type": "together",
-    "color": "#9de97c",
-    "icon": "✚",
-    "label": "Together"
-  },
-  {
-    "index": 28,
-    "type": "brain",
-    "color": "#64aeff",
-    "icon": "◆",
-    "label": "Brain"
-  },
-  {
-    "index": 29,
     "type": "drain",
     "color": "#98a1bc",
     "icon": "−",
     "label": "Brain Drain"
   },
   {
-    "index": 30,
-    "type": "showdown",
-    "color": "#ffd168",
-    "icon": "★",
-    "label": "Showdown"
+    "index": 25,
+    "type": "applause",
+    "color": "#ffb46b",
+    "icon": "♪",
+    "label": "Applause"
   },
   {
-    "index": 31,
-    "type": "speed",
-    "color": "#ff667e",
-    "icon": "⚡",
-    "label": "Speed"
+    "index": 26,
+    "type": "wildcard",
+    "color": "#ff9ed9",
+    "icon": "✳",
+    "label": "Wildcard"
   },
   {
-    "index": 32,
-    "type": "together",
-    "color": "#9de97c",
-    "icon": "✚",
-    "label": "Together"
-  },
-  {
-    "index": 33,
-    "type": "swap",
-    "color": "#be95ff",
-    "icon": "⇄",
-    "label": "Swap Seats"
-  },
-  {
-    "index": 34,
-    "type": "create",
-    "color": "#ffe477",
-    "icon": "✎",
-    "label": "Create"
-  },
-  {
-    "index": 35,
-    "type": "pickpocket",
-    "color": "#adb8cb",
-    "icon": "◈",
-    "label": "Pickpocket"
+    "index": 27,
+    "type": "brain",
+    "color": "#64aeff",
+    "icon": "◆",
+    "label": "Brain"
   }
 ]

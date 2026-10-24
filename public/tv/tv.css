@@ -246,37 +246,3 @@ body.tv.playing .stage-challenge.mini-on-tv:has(.tv-sketch) .tv-sketch{
  width:min(94%,63vh)!important;height:auto!important;max-height:37vh!important;
  aspect-ratio:1000/580;object-fit:contain;flex-shrink:1;
 }
-
-/* Phase 4: large, matching 6 × 6 Odd Spot grids on TV and phones. */
-.stage-challenge.mini-on-tv:has(.mini-tv-grid){left:7%;right:7%;top:7%;max-height:90%;}
-.mini-tv-grid{width:min(86%,600px);gap:5px;}
-.mini-tv-grid .odd-tv-cell{display:flex;align-items:center;justify-content:center;min-height:clamp(42px,6.2vh,70px);border:2px solid #aebfe5;background:#263964;padding:0!important;}
-.mini-tv-grid .odd-tv-cell b{font-size:clamp(34px,4.3vw,62px);line-height:1;display:block;color:#e7efff;}
-@media(max-height:740px){.mini-tv-grid .odd-tv-cell{min-height:42px}.mini-tv-grid .odd-tv-cell b{font-size:38px;}}
-
-/* Phase 4 finishing pass: prioritise legible primary information on living-room TVs.
-   Longer authored prompts use a smaller, wrapping size to avoid clipping. */
-@media (min-width:1100px){
- .mini-on-tv #challengePrompt:not(.long-tv-prompt):not(.stroop-tv){font-size:clamp(42px,3.5vw,58px);line-height:1.12}
- .duel-on-tv #challengePrompt:not(.long-tv-prompt){font-size:clamp(42px,3.5vw,58px);line-height:1.12}
- .mini-on-tv #challengePrompt.long-tv-prompt{font-size:clamp(27px,2.35vw,37px);line-height:1.2;overflow-wrap:anywhere}
- .mini-on-tv .p4-big{font-size:clamp(32px,3vw,48px)}
- .mini-on-tv .p4-ballot,.mini-on-tv .showdown-choice{font-size:clamp(21px,1.9vw,29px);line-height:1.22}
- .tv-memory-pads{max-width:420px}
- .tv-memory-pads .tv-pad{min-height:72px;font-size:48px}
- .mini-tv-grid{width:min(94%,480px)}
- .mini-tv-grid span{font-size:clamp(37px,3.4vw,52px)!important;min-height:55px;display:flex;align-items:center;justify-content:center}
-}
-.stage-challenge.mini-on-tv{overflow-y:auto;overscroll-behaviour:contain}
-@media (max-height:760px) and (min-width:1100px){
- .mini-on-tv #challengePrompt:not(.long-tv-prompt):not(.stroop-tv){font-size:42px}
- .mini-on-tv .p4-ballot,.mini-on-tv .showdown-choice{font-size:22px;padding:5px 9px}
- .tv-memory-pads .tv-pad{min-height:60px;font-size:43px}
-}
-
-/* Phase 4: Count Flash now uses legible, regularly spaced objects in a 6×6 grid.
-   Earlier Showtime rounds contain fewer objects; empty cells remain empty. */
-.stage-challenge.mini-on-tv:has(.flash-scene){top:8%;max-height:86%;left:8%;right:8%}
-.flash-scene{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));height:min(49vh,360px);width:min(100%,650px);margin:auto;gap:2px;padding:4px}
-.flash-scene span,.flash-fakeout span{position:static!important;display:flex;align-items:center;justify-content:center;font-size:clamp(32px,3.6vw,53px)!important;line-height:1!important}
-@media(max-height:740px){.flash-scene{height:300px}.flash-scene span,.flash-fakeout span{font-size:42px!important}}

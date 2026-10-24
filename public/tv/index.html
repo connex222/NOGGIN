@@ -19,15 +19,15 @@
 <div id="welcomeRulesDialog" class="welcome-rules" hidden role="dialog" aria-modal="true" aria-label="How to play NOGGIN">
   <div class="welcome-rules-panel">
     <h2>HOW TO PLAY NOGGIN</h2>
-    <ol><li>Leave this screen on your TV or computer.</li><li>Each player scans the QR code with their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>In Classic: roll, move, play mini-games, and collect Sparks. In Showtime: add Director Cues, landing choices, bets and surprise twists. First to the chosen Spark target wins!</li></ol>
-    <p>Use the TV lobby to select Classic (default) or Showtime, timer speed and game length before starting. Sound and music controls are at the top.</p>
+    <ol><li>Leave this screen on your TV or computer.</li><li>Each player scans the QR code with their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>Each round, everyone rolls once. Land on a coloured space to call the round’s game and host it. Then everyone plays that game together.</li><li>Corners are Showdowns: challenge a rival and steal up to 2 Sparks. The final round is LAST ORDERS — every Spark you win is doubled. Most Sparks at the end wins!</li></ol>
+    <p>Use the TV lobby to choose Classic (default) or Showtime (Director Cues and catch-up dice), the game clock and the show length before starting. Sound and music controls are at the top.</p>
     <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
   </div>
 </div>
 <main class="tv-shell">
   <header class="tv-header">
     <div><p class="eyebrow">THE LIVING-ROOM GAME SHOW</p><h1 class="noggin-title">NOG<span>G</span>IN<span>!</span></h1><p class="subtitle">USE YOUR HEAD. TRUST YOUR NERVE. WIN THE SPARKS.</p></div>
-    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><span class="pill" id="vipStatus">VIP: waiting for first player</span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">FX <input id="soundVolume" aria-label="TV effects volume" type="range" min="0" max="100" value="55"></label><label for="musicVolume" class="sound-label">MUSIC <input id="musicVolume" aria-label="Background music volume" type="range" min="0" max="100" value="25"></label><button id="musicButton" class="button-secondary music-toggle" type="button" aria-pressed="true">♫ Music on</button></div></div>
+    <div class="header-actions"><span class="pill"><span class="dot" id="tvConnectionDot"></span><span id="connectionLabel">CONNECTING</span></span><div class="sound-tools"><button id="soundButton" class="button-blue" type="button">▶ Enable sound</button><label for="soundVolume" class="sound-label">FX <input id="soundVolume" aria-label="TV effects volume" type="range" min="0" max="100" value="55"></label><label for="musicVolume" class="sound-label">MUSIC <input id="musicVolume" aria-label="Background music volume" type="range" min="0" max="100" value="25"></label><button id="musicButton" class="button-secondary music-toggle" type="button" aria-pressed="true">♫ Music on</button></div></div>
   </header>
   <div id="lobbyCast" class="showcase-cast lobby-cast" aria-label="Twelve NOGGIN characters"></div>
   <section class="tv-grid" id="lobbyGrid" aria-label="NOGGIN room lobby">
@@ -48,9 +48,8 @@
     </div>
     <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
       <div class="control-heading"><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div>
-      <label for="target">SPARK TARGET<select id="target"><option value="8">Quick · 8 Sparks</option><option value="12">Standard · 12 Sparks</option><option value="16" selected>Long · 16 Sparks</option></select></label>
+      <label for="rounds">SHOW LENGTH<select id="rounds"><option value="auto" selected>Auto · fits your panel</option><option value="6">Quick · 6 rounds</option><option value="8">Standard · 8 rounds</option><option value="10">Long · 10 rounds</option><option value="12">Marathon · 12 rounds</option></select></label>
       <label for="rules">RULES<select id="rules"><option value="classic" selected>Classic · Roll, Move, Play</option><option value="showtime">Showtime · All Extras</option></select></label>
-      <label for="roundStyle">ROUND STYLE<select id="roundStyle"><option value="everyone">Everyone rolls</option><option value="sequential">One at a time</option></select></label>
       <label for="timerSpeed">GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
       <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
       <button id="newRoom" class="button-secondary" type="button">NEW ROOM</button>
@@ -64,13 +63,13 @@
     <button id="stageReady" type="button" class="button-primary" disabled>WAITING FOR 2 PLAYERS</button>
     <p class="phase-warning">All contestants must tap READY before the show starts.</p>
   </div>
-  <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN 36-space live game board">
-    <div class="stage-bar surface"><span id="stageTurn">ROUND 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">FIRST TO 12 SPARKS</span></div>
+  <section id="gameStage" class="game-stage hidden" aria-label="NOGGIN 28-space live game board">
+    <div class="stage-bar surface"><span id="stageTurn">ROUND 1</span><strong id="stageActive">Waiting for a dice roll</strong><span id="stageTarget">NEXT GAME: NOT CALLED YET</span></div>
     <div class="board-container" id="arenaView">
       <div class="show-fx" id="showFx" aria-hidden="true"></div>
       <div class="arena-top-logo" aria-label="NOGGIN — Use Your Head"><img class="arena-logo-image" src="/play/art/noggin-logo.webp" alt="NOGGIN — Use Your Head"><span class="arena-logo-tagline">Quick brains. Big laughs.</span></div>
       <div class="board-centre" id="boardCentre"><p class="eyebrow">THE NOGGIN PANEL</p><div id="scoreboard" class="stage-scoreboard" aria-label="Live contestant scores"></div></div>
-      <svg id="boardGraphic" viewBox="0 0 1600 580" preserveAspectRatio="none" role="img" aria-label="36-space NOGGIN showtime racetrack with player tokens"></svg>
+      <svg id="boardGraphic" viewBox="0 0 1600 580" preserveAspectRatio="none" role="img" aria-label="28-space NOGGIN trapezium board with a Showdown on every corner and player tokens"></svg>
       <div class="arena-hub" aria-live="polite"><div class="arena-hub-brain" aria-hidden="true">🧠</div><h2 id="boardMessage">ROLL TO BEGIN</h2><div class="arena-hub-pips" aria-hidden="true">⚄ &nbsp; ⚂</div></div>
       <div id="diceOverlay" class="dice-overlay hidden" role="status" aria-live="polite" aria-atomic="true">
         <div class="dice-showcase">
