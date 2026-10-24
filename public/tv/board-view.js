@@ -126,7 +126,8 @@ class NogginBoardView {
       prompt.textContent=`${actor?.name||'The host'} is performing a mystery sound aloud in the room.`;span('🎤   LISTEN CAREFULLY','mini-preview');
     }else if(m.id==='caption-this'){
       prompt.textContent=m.question;const faces=document.createElement('div');faces.className='caption-avatars';
-      for(const avatarId of m.display.avatars||[]){const avatar=this.avatars.find(a=>a.id===avatarId);if(!avatar)continue;const img=document.createElement('img');img.src=avatar.think;img.alt=avatar.name;faces.append(img);}options.append(faces);
+      if(m.display.image){const pic=document.createElement('img');pic.className='caption-scene';pic.src=m.display.image;pic.alt=m.question;faces.append(pic);}
+      else for(const avatarId of m.display.avatars||[]){const avatar=this.avatars.find(a=>a.id===avatarId);if(!avatar)continue;const img=document.createElement('img');img.src=avatar.think;img.alt=avatar.name;faces.append(img);}options.append(faces);
       if(m.phase==='vote')for(const c of m.display.options||[])span(`“${c}”`,'p4-ballot');else span(`${m.display.entryCount||0} CAPTIONS IN · ANONYMOUS VOTE NEXT`);
     }else if(m.id==='fib-factory'){
       prompt.textContent=m.question;if(m.phase==='vote')for(const c of m.display.options||[])span(c,'p4-ballot');else span(`${m.display.entryCount||0} FIBS IN · TRUTH IS HIDDEN`);

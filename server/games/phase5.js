@@ -45,7 +45,14 @@ function open(room,now){const m=room.board.showdown;if(!m||m.phase!=='intro')ret
  m.openAt=now;m.deadline=now+(m.kind==='bid'?ms(room,22000,31000):m.kind==='tiebreak'?ms(room,15000,24000):m.hardStop-now);
  room.board.deadline=m.deadline;
 }
-function nextBuzzer(room,now){const m=room.board.showdown;const available=BUZZER.filter(q=>!m.used.includes(q.id));const q=pick(available.length?available:BUZZER);
+// Buzzer Battle is a general-knowledge quiz. Quick-sum questions are only used if every
+// general question has been seen; questions are not repeated within a match.
+const BUZZER_GENERAL=BUZZER.filter(q=>q.topic!=='maths');
+function nextBuzzer(room,now){const m=room.board.showdown,seen=room.board.seenBuzzer||(room.board.seenBuzzer=[]);
+ const fresh=BUZZER_GENERAL.filter(q=>!m.used.includes(q.id)&&!seen.includes(q.id));
+ const pool=fresh.length?fresh:BUZZER_GENERAL.filter(q=>!m.used.includes(q.id));
+ const q=pick(pool.length?pool:BUZZER.filter(q=>!m.used.includes(q.id)));
+ seen.push(q.id);if(seen.length>=BUZZER_GENERAL.length)room.board.seenBuzzer=[];
  m.used.push(q.id);m.question=q;m.phase='buzz';m.buzzId=null;m.passId=null;m.questionIndex++;m.answered=[];m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,6000,8000));room.board.deadline=m.deadline;
 }
 function allIds(m,arr){return m.participants.every(id=>Object.hasOwn(arr,id));}

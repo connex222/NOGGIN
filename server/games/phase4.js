@@ -8,7 +8,18 @@ const {enforceFamilyText}=require('../content-filter');
 const sketch = require('../../data/sketch-words.json');
 const noises = require('../../data/noise-clues.json');
 const scenes = require('../../data/caption-scenes.json');
-const fibs = require('../../data/fib-facts.json');
+// Caption This pictures: drop public/art/captions/<scene id>.webp|png|jpg and the scene
+// shows that picture on the TV. Once ten or more scenes have pictures, only those are used.
+const captionArtDir=require('node:path').join(__dirname,'..','..','public','art','captions');
+let captionArtCache=null,captionArtAt=0;
+function captionArt(){if(captionArtCache&&Date.now()-captionArtAt<60000)return captionArtCache;
+ const map=new Map();try{for(const f of require('node:fs').readdirSync(captionArtDir)){const m=/^(.+)\.(webp|png|jpe?g)$/i.exec(f);if(m)map.set(m[1],`/art/captions/${f}`);}}catch{}
+ captionArtCache=map;captionArtAt=Date.now();return map;}
+function captionPool(){const art=captionArt();const pictured=scenes.filter(x=>art.has(x.id));return pictured.length>=10?pictured:scenes;}
+const fibsAll = require('../../data/fib-facts.json');
+// Fib Factory only works when the true answer is hard to guess. The v3 bank holds
+// obscure-but-true facts; older calculation and common-knowledge prompts are a fallback.
+const fibs = (()=>{const v3=fibsAll.filter(f=>f.id.startsWith('v3-fib-'));return v3.length>=20?v3:fibsAll;})();
 const melds = require('../../data/mind-categories.json');
 const majorities = require('../../data/majority-questions.json');
 const SPECS = Object.freeze({
@@ -89,7 +100,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
    m.question='Listen to the performer in the room. Type what sound you think it is.';m.seconds=45;break;
   }
   case 'caption-this':{
-   const item=pickFresh(m,scenes,rng);m.question=item.scene;m.display={avatars:item.avatars,scene:item.scene};m.seconds=35;break;
+   const item=pickFresh(m,captionPool(),rng);m.question=item.scene;m.display={avatars:item.avatars,scene:item.scene,image:captionArt().get(item.id)||null};m.seconds=35;break;
   }
   case 'fib-factory':{
    const item=pickFresh(m,fibs,rng);m.question=item.question;m.secret={answer:item.answer};m.seconds=28;break;

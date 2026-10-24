@@ -3,10 +3,11 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const bank = require('../data/fib-facts.json');
 
-test('all 250 Fib Factory entries have uniquely identified, answerable prompts and review status', () => {
-  assert.equal(bank.length, 250);
-  assert.equal(new Set(bank.map(x => x.id)).size, 250);
-  for (const row of bank) {
+test('all 250 original Fib Factory entries have uniquely identified, answerable prompts and review status', () => {
+  const originals = bank.filter(x => !x.id.startsWith('v3-fib-'));
+  assert.equal(originals.length, 250);
+  assert.equal(new Set(bank.map(x => x.id)).size, bank.length);
+  for (const row of originals) {
     assert.equal(typeof row.answer, 'string', row.id);
     assert.ok(row.answer.trim(), row.id);
     assert.ok(row.question.includes('___'), row.id);

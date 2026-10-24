@@ -32,6 +32,8 @@ test('release audit reports editorial flags across all content banks', () => {
 
 test('editorial review flags remain present until manually signed off', () => {
   const byBank = outstanding();
-  assert.equal(byBank['fib-facts'] || 0, 0, 'Fib Factory has completed editorial consistency review');
+  // The original 250 Fib facts completed review; the v3 additions wait for sign-off.
+  const fib = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'fib-facts.json'), 'utf8'));
+  assert.equal(fib.filter(f => !f.id.startsWith('v3-fib-') && (f.review === true || f.editorialStatus === 'review-pending')).length, 0, 'Fib Factory originals have completed editorial consistency review');
   assert.ok((byBank['bid-categories'] || 0) > 0);
 });

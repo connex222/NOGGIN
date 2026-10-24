@@ -1,3 +1,12 @@
+# NOGGIN v3.4.0 — content pass 1
+
+- Node.js tests: **284 passed, 0 failed** (1 live-HTTP test skipped without `npm install`). `npm run check` passed. Release audit **106/106**; 342 content items await editorial sign-off (including the 253 new ones).
+- Simulated Buzzer Battle (7 questions by timeout): seven different general-knowledge questions, no sums.
+- Caption This: a picture file named after a scene id is shown on the TV (tested).
+- Voice: 56 clips, 36/36 lines, loudness-matched.
+
+---
+
 # NOGGIN v3.3.0 — showmanship pass 2
 
 - Node.js tests with `npm install`: **279 passed, 0 failed, 0 skipped**. `npm run check` passed. Release audit **106/106**.

@@ -1,3 +1,15 @@
+# NOGGIN v3.4.0 — Content pass 1: real quizzing, real bluffing (24 October 2026)
+
+- **Host voice installed and levelled.** All 56 recorded clips (36 of 36 lines) are in. They were loudness-matched so no line is much quieter than another (spread cut from about 9 dB to under 4).
+- **Buzzer Battle is a quiz again.** 343 of the 400 questions were sums. Added 157 general-knowledge questions (geography, UK, food, animals, science, history, sport, words, everyday life). Every question now has a `topic`; Buzzer Battle asks only general questions and never repeats one within a match.
+- **Brain Drain** now asks a quick general-knowledge question instead of a sum.
+- **Fib Factory can be bluffed.** The old prompts were mostly calculations or common knowledge (e.g. seconds in 2 minutes), so nobody was ever fooled. Added 96 obscure-but-true facts with short answers (a group of flamingos is a ___; the national animal of Scotland is the ___). Fib Factory now uses these.
+- **Editorial honesty:** all 253 new questions and facts are flagged `review-pending` and listed in `docs/editorial/RELEASE-REVIEW-QUEUE.csv` until someone checks each against a published source.
+- **Caption This can show pictures.** Drop `public/art/captions/<scene id>.webp` (or .png/.jpg) and the TV shows the picture. Once 10 scenes have pictures, Caption This uses only pictured scenes. `CAPTION-ART-PROMPTS.md` has Creative Claw prompts for the first 60 scenes.
+- **Tests:** 284 passing (new `tests/content-v3.test.js`).
+
+---
+
 # NOGGIN v3.3.0 — Showmanship pass 2: title cards and a host voice (24 October 2026)
 
 - **How-to-play title cards.** Every round game and Showdown opens with a card on the TV: a category-coloured banner, three numbered steps that animate in one after another (icon + a few words each), and who is hosting — or "Judge VS Pixie" for a Showdown. Phones show the same three steps as a list. The data lives in `public/shared/howto.json` (21 games and duels).

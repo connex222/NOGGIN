@@ -2266,5 +2266,773 @@
       "b": 23
     },
     "editorialStatus": "logic-checked"
+  },
+  {
+    "id": "v3-fib-001",
+    "question": "A group of flamingos is called a ___.",
+    "answer": "flamboyance",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-002",
+    "question": "A group of owls is called a ___.",
+    "answer": "parliament",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-003",
+    "question": "A group of jellyfish is called a ___.",
+    "answer": "smack",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-004",
+    "question": "A group of rhinos is called a ___.",
+    "answer": "crash",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-005",
+    "question": "A group of ferrets is called a ___.",
+    "answer": "business",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-006",
+    "question": "A group of cats is called a ___.",
+    "answer": "clowder",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-007",
+    "question": "A huge swirling flock of starlings is called a ___.",
+    "answer": "murmuration",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-008",
+    "question": "A baby hedgehog is called a ___.",
+    "answer": "hoglet",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-009",
+    "question": "A baby puffin is called a ___.",
+    "answer": "puffling",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-010",
+    "question": "A baby echidna is called a ___.",
+    "answer": "puggle",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-011",
+    "question": "Wombats are famous for producing droppings shaped like ___.",
+    "answer": "cubes",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-012",
+    "question": "An octopus has ___-coloured blood.",
+    "answer": "blue",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-013",
+    "question": "Sea otters often hold ___ while they sleep so they don't drift apart.",
+    "answer": "hands",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-014",
+    "question": "A shrimp's heart is located in its ___.",
+    "answer": "head",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-015",
+    "question": "The national animal of Scotland is the ___.",
+    "answer": "unicorn",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-016",
+    "question": "The dot over a lowercase 'i' is called a ___.",
+    "answer": "tittle",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-017",
+    "question": "The plastic tip on the end of a shoelace is called an ___.",
+    "answer": "aglet",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-018",
+    "question": "The smooth patch of skin between your eyebrows is called the ___.",
+    "answer": "glabella",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-019",
+    "question": "The # symbol is also known as the ___.",
+    "answer": "octothorpe",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-020",
+    "question": "The pleasant earthy smell after rain on dry ground is called ___.",
+    "answer": "petrichor",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-021",
+    "question": "Botanically speaking, a banana is a ___.",
+    "answer": "berry",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-022",
+    "question": "Despite the name, peanuts are not nuts — they are ___.",
+    "answer": "legumes",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-023",
+    "question": "Edible honey has been found in ancient ___ tombs thousands of years old.",
+    "answer": "Egyptian",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-024",
+    "question": "A day on Venus is longer than a ___ on Venus.",
+    "answer": "year",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-025",
+    "question": "A 2015 study recorded 421 words for snow in the ___ language.",
+    "answer": "Scots",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-026",
+    "question": "The inventor of the ___ can had some of his ashes buried in one.",
+    "answer": "Pringles",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-027",
+    "question": "Bubble wrap was originally invented to be sold as ___.",
+    "answer": "wallpaper",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-028",
+    "question": "Play-Doh was first sold as a wallpaper ___.",
+    "answer": "cleaner",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-029",
+    "question": "The first item ever sold on eBay was a broken ___.",
+    "answer": "laser pointer",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-030",
+    "question": "In the 1830s, tomato ketchup was sold in America as a ___.",
+    "answer": "medicine",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-031",
+    "question": "Lobsters can taste with their ___.",
+    "answer": "legs",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-032",
+    "question": "Butterflies taste with their ___.",
+    "answer": "feet",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-033",
+    "question": "Cleopatra lived closer in time to the Moon landing than to the building of the Great ___ of Giza.",
+    "answer": "Pyramid",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-034",
+    "question": "Oxford University was already teaching before the ___ Empire was founded.",
+    "answer": "Aztec",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-035",
+    "question": "The shortest war in history, about 40 minutes long, was between Britain and ___ in 1896.",
+    "answer": "Zanzibar",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-036",
+    "question": "Napoleon was once mobbed by a horde of ___ during a hunt.",
+    "answer": "rabbits",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-037",
+    "question": "In Switzerland it is illegal to keep just one ___, because they get lonely.",
+    "answer": "guinea pig",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-038",
+    "question": "In medieval timekeeping, a 'moment' lasted ___ seconds.",
+    "answer": "90",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-039",
+    "question": "The fingerprints of a ___ are so like a human's they could confuse a crime scene.",
+    "answer": "koala",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-040",
+    "question": "A sloth can hold its breath for up to ___ minutes.",
+    "answer": "40",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-041",
+    "question": "A bolt of lightning is about ___ times hotter than the surface of the Sun.",
+    "answer": "five",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-042",
+    "question": "The Greenland ___ can live for around 400 years.",
+    "answer": "shark",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-043",
+    "question": "A crocodile cannot stick out its ___.",
+    "answer": "tongue",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-044",
+    "question": "Starfish don't have a ___.",
+    "answer": "brain",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-045",
+    "question": "Goats have ___-shaped pupils.",
+    "answer": "rectangular",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-046",
+    "question": "Among seahorses, it is the ___ who gives birth.",
+    "answer": "male",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-047",
+    "question": "Underneath their white fur, polar bears have ___ skin.",
+    "answer": "black",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-048",
+    "question": "The Mona Lisa has no visible ___.",
+    "answer": "eyebrows",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-049",
+    "question": "Australia is wider from east to west than the ___.",
+    "answer": "Moon",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-050",
+    "question": "Russia has a bigger surface area than the dwarf planet ___.",
+    "answer": "Pluto",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-051",
+    "question": "There is a village in Norway called ___.",
+    "answer": "Hell",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-052",
+    "question": "In English, 'orange' named the ___ before it named the colour.",
+    "answer": "fruit",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-053",
+    "question": "The word 'quarantine' comes from the Italian for ___ days.",
+    "answer": "forty",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-054",
+    "question": "The word 'salary' comes from the Latin word for ___.",
+    "answer": "salt",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-055",
+    "question": "The letter ___ is the only one that appears in no US state name.",
+    "answer": "Q",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-056",
+    "question": "A group of pugs is called a ___.",
+    "answer": "grumble",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-057",
+    "question": "Hot water sometimes freezing faster than cold water is called the ___ effect.",
+    "answer": "Mpemba",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-058",
+    "question": "The world's first webcam watched a coffee ___ at Cambridge University.",
+    "answer": "pot",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-059",
+    "question": "The original Twitter bird was named ___.",
+    "answer": "Larry",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-060",
+    "question": "Mr. Potato Head was the first toy ever advertised on ___.",
+    "answer": "television",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-061",
+    "question": "The Monopoly mascot is officially called Rich Uncle ___.",
+    "answer": "Pennybags",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-062",
+    "question": "Barbie's full name is Barbara Millicent ___.",
+    "answer": "Roberts",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-063",
+    "question": "The 'S' in US President Harry S. Truman stands for ___.",
+    "answer": "nothing",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-064",
+    "question": "By number of units, Lego is the world's biggest maker of ___.",
+    "answer": "tyres",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-065",
+    "question": "Nintendo was founded in 1889 to make playing ___.",
+    "answer": "cards",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-066",
+    "question": "Sound travels about ___ times faster through water than through air.",
+    "answer": "four",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-067",
+    "question": "The clouds of Venus are made of ___ acid.",
+    "answer": "sulphuric",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-068",
+    "question": "Jupiter spins so fast that its day lasts only about ___ hours.",
+    "answer": "ten",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-069",
+    "question": "Footprints on the Moon could last millions of years because there is no ___.",
+    "answer": "wind",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-070",
+    "question": "About 99.8 per cent of all the mass in our Solar System is in the ___.",
+    "answer": "Sun",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-071",
+    "question": "Bananas are slightly radioactive because they contain ___.",
+    "answer": "potassium",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-072",
+    "question": "Tug of war was an ___ event until 1920.",
+    "answer": "Olympic",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-073",
+    "question": "In 1971, astronaut Alan Shepard hit golf balls on the ___.",
+    "answer": "Moon",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-074",
+    "question": "Despite the films, Vikings did not wear ___ helmets.",
+    "answer": "horned",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-075",
+    "question": "In the 1700s you could see the lions at the Tower of London free if you brought a cat or dog to ___ them.",
+    "answer": "feed",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-076",
+    "question": "The London Underground's first line opened in ___.",
+    "answer": "1863",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-077",
+    "question": "In 1949, Big Ben's clock was slowed by a flock of ___ perched on the minute hand.",
+    "answer": "starlings",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-078",
+    "question": "The scheduled flight from Westray to Papa Westray in Orkney takes about ___ minutes.",
+    "answer": "two",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-079",
+    "question": "The Aztecs used cacao beans as ___.",
+    "answer": "money",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-080",
+    "question": "The world's first inter-city passenger railway, opened in 1830, linked Liverpool and ___.",
+    "answer": "Manchester",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-081",
+    "question": "The tin can was invented about 50 years before the tin ___.",
+    "answer": "opener",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-082",
+    "question": "Velcro was inspired by burrs sticking to a ___'s fur.",
+    "answer": "dog",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-083",
+    "question": "The word 'robot' comes from a Czech word meaning ___ labour.",
+    "answer": "forced",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-084",
+    "question": "The Eiffel Tower was meant to stand for only ___ years.",
+    "answer": "20",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-085",
+    "question": "A 'jiffy' was defined by chemist Gilbert Lewis as the time light takes to travel one ___.",
+    "answer": "centimetre",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-086",
+    "question": "Carrots were originally purple or ___ before orange ones became popular.",
+    "answer": "yellow",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-087",
+    "question": "The lead in a pencil is actually made of ___.",
+    "answer": "graphite",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-088",
+    "question": "In space, astronauts can grow up to ___ centimetres taller.",
+    "answer": "5",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-089",
+    "question": "The phrase 'OK' may come from a joke spelling of 'oll ___'.",
+    "answer": "korrect",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-090",
+    "question": "Before erasers, people used scrunched-up ___ to rub out pencil.",
+    "answer": "bread",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-091",
+    "question": "A day on Mars is called a ___.",
+    "answer": "sol",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-092",
+    "question": "The heart of a blue whale beats only about ___ times a minute when it dives deep.",
+    "answer": "two",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-093",
+    "question": "The first ever text message, sent in 1992, said 'Merry ___'.",
+    "answer": "Christmas",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-094",
+    "question": "The world's oldest known song is about 3,400 years old and was found in ___.",
+    "answer": "Syria",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-095",
+    "question": "Scotland's 'Loch Ness' contains more fresh water than all the lakes in England and ___ combined.",
+    "answer": "Wales",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "v3-fib-096",
+    "question": "The world's most-stolen food is reported to be ___.",
+    "answer": "cheese",
+    "familyFriendly": true,
+    "review": true,
+    "editorialStatus": "review-pending"
   }
 ]

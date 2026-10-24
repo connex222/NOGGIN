@@ -50,6 +50,9 @@ const UNDERDOG_BONUS_EIGHT = 2;
 // Values used when the server makes a Director's Cut nudge on a player's behalf.
 const SPACE_VALUE = {applause: 6, start: 6, showdown: 5, wildcard: 4, pickpocket: 4, speed: 3, brain: 3, create: 3, together: 3, swap: 2, lift: 1, drain: -6};
 const QUESTIONS = require('../data/demo-questions.json');
+// Brain Drain asks a quick general-knowledge question (the Buzzer bank without sums).
+const DRAIN_QUESTIONS = require('../data/buzzer-questions.json').filter(q => q.topic !== 'maths')
+  .map(q => ({id: q.id, prompt: q.question, options: q.choices, correct: q.correct}));
 const phase3 = require('./games/phase3');
 const phase4 = require('./games/phase4');
 const phase5 = require('./games/phase5');
@@ -252,15 +255,15 @@ function pickDie(room, id, index, now, rng = crypto.randomInt) {
   if (index !== 0 && index !== 1) fail('DIE', 'Choose die 1 or die 2.');
   beginMove(room, b.rolls[index], now, rng);
 }
-function sampleQuestion(b, randomInt) {
-  const pool = QUESTIONS.filter(q => !b.seenQuestions.includes(q.id));
-  const options = pool.length ? pool : QUESTIONS;
+function sampleQuestion(b, randomInt, bank = QUESTIONS) {
+  const pool = bank.filter(q => !b.seenQuestions.includes(q.id));
+  const options = pool.length ? pool : bank;
   const chosen = options[random(options.length, randomInt)];
-  b.seenQuestions.push(chosen.id); if (b.seenQuestions.length >= QUESTIONS.length) b.seenQuestions = [];
+  b.seenQuestions.push(chosen.id); if (b.seenQuestions.length >= bank.length) b.seenQuestions = [];
   return chosen;
 }
 function beginChallenge(room, kind, now, randomInt = crypto.randomInt) {
-  const b = room.board, q = sampleQuestion(b, randomInt);
+  const b = room.board, q = sampleQuestion(b, randomInt, kind === 'drain' ? DRAIN_QUESTIONS : QUESTIONS);
   const participants = kind === 'tiebreak' ? b.finalists.slice() : [b.activeId];
   const ms = (kind === 'drain' ? 5_000 : (room.settings.timerSpeed === 'relaxed' ? 24_000 : 16_000)) + presentationLeft(b, now);
   b.challenge = {kind, title: kind === 'drain' ? 'BRAIN DRAIN' : 'NOGGIN-OFF TIEBREAKER', question: q.prompt, choices: q.options, correct: q.correct, participants, answers: {}, deadline: now + ms};
