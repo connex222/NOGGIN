@@ -25,6 +25,21 @@
     "errors": []
   },
   {
+    "viewport": "1280x720-howto",
+    "card": {
+      "cat": "create",
+      "steps": [
+        "Host draws a secret word",
+        "A saboteur adds fake lines",
+        "Everyone else guesses"
+      ],
+      "host": "HOSTED BY SISTER SUE",
+      "visible": "1"
+    },
+    "duel": "JudgeVSPixie",
+    "errors": []
+  },
+  {
     "viewport": "1280x720-verdict",
     "hiddenWhileRolling": true,
     "chips": [

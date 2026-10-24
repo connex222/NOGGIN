@@ -4,6 +4,7 @@ class NogginBoardView {
   async initialize() {
     const res=await fetch('/shared/board-data.json');if(!res.ok)throw Error('Board layout metadata missing.');
     this.data=await res.json();this.buildBoard();
+    try{const h=await fetch('/shared/howto.json');this.howto=h.ok?await h.json():{};}catch{this.howto={};}
   }
   // Screen-space geometry for the 28-space trapezium (viewBox 1600×580).
   // The wide edge runs along the bottom, the narrow edge along the top, and a
@@ -66,7 +67,7 @@ class NogginBoardView {
     const panel=document.getElementById('challengePanel'),prompt=document.getElementById('challengePrompt'),options=document.getElementById('challengeChoices');
     panel.classList.remove('hidden');panel.classList.add('mini-on-tv','duel-on-tv');options.replaceChildren();
     document.getElementById('challengeType').textContent=m.kind==='tiebreak'?'★ SUDDEN DEATH ★':'★ CORNER SHOWDOWN ★';
-    document.getElementById('challengeTitle').textContent=m.phase==='intro'?'HOW TO PLAY · '+m.title.toUpperCase():m.title.toUpperCase();
+    document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
     prompt.textContent=m.question;prompt.classList.toggle('long-tv-prompt',String(m.question||'').length>85);
     this.clockAt=m.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();
     const label=(text,cls='p4-ballot')=>{const x=document.createElement('div');x.className=cls;x.textContent=text;options.append(x);return x;};
@@ -84,7 +85,8 @@ class NogginBoardView {
       });
       options.append(crowd);
     }
-    if(m.phase==='intro'){if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID HOW MANY YOU CAN NAME · OR CHALLENGE':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
+    if(m.phase==='intro'){const card=this.howToCard(m.kind,'showdown',state,'',m.participants);if(card){prompt.textContent='';options.append(card);if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · EARN 1 DIRECTOR CUE','mini-preview');return;}
+      if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID HOW MANY YOU CAN NAME · OR CHALLENGE':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
     if(m.kind==='buzzer'){
       const pts=m.participants.map(id=>m.display.points[id]);label(`${names[0]} ${pts[0]} : ${pts[1]} ${names[1]}`,'p4-big');
       label(`QUESTION ${m.round} OF 7 · ${m.phase==='buzz'?'BUZZ TO ANSWER':m.phase==='answer'?'FIRST BUZZER IS ANSWERING':'SECOND CHALLENGER GETS A CHANCE'}`);
@@ -109,7 +111,9 @@ class NogginBoardView {
     const span=(t,cls='')=>{const x=document.createElement('div');x.textContent=t;x.className=cls;options.append(x);return x;};
     const actor=state.players.find(p=>p.id===state.board.activeId);
     if(m.phase==='intro'){
-      document.getElementById('challengeTitle').textContent='HOW TO PLAY · '+m.title.toUpperCase();
+      document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
+      const card=this.howToCard(m.id,m.category,state,m.rule);
+      if(card){prompt.textContent='';options.append(card);return;}
       prompt.textContent=m.rule;
       span({'sketch-sabotage':'✎  DRAW · GUESS · SABOTAGE','noise-annoys':'🔊  MAKE THE SOUND!','caption-this':'✍  WRITE · THEN VOTE','fib-factory':'🎭  BLUFF · THEN FIND THE TRUTH','mind-meld':'♥  THINK AS ONE','majority-rules':'👥  PICK THE CROWD FAVOURITE','relay-sums':'➕  PASS THE BATON','bomb-squad':'✂  SHARE CLUES · DEFUSE'}[m.id],'mini-preview');return;
     }
@@ -141,6 +145,28 @@ class NogginBoardView {
     }
   }
 
+  // The title card shown while a game's intro clock runs: category banner, three
+  // animated "how to play" steps, and who is hosting (or who is duelling).
+  howToCard(id,category,state,rule='',duelists=null){
+    const steps=this.howto?.[id]?.steps;if(!steps)return null;
+    const card=document.createElement('div');card.className='howto-card';card.dataset.cat=category;
+    const banner=document.createElement('div');banner.className='howto-banner';
+    banner.textContent=category==='showdown'?(id==='tiebreak'?'★ NOGGIN-OFF ★':'★ SHOWDOWN ★'):`${({speed:'⚡',brain:'◆',create:'✎',together:'✚'})[category]||'★'} ${category.toUpperCase()} GAME`;
+    const row=document.createElement('ol');row.className='howto-steps';
+    steps.forEach(([icon,text],i)=>{const li=document.createElement('li');li.style.setProperty('--i',String(i));
+      const n=document.createElement('span');n.className='howto-n';n.textContent=String(i+1);
+      const ic=document.createElement('span');ic.className='howto-icon';ic.textContent=icon;ic.setAttribute('aria-hidden','true');
+      const t=document.createElement('span');t.className='howto-text';t.textContent=text;li.append(n,ic,t);row.append(li);});
+    card.append(banner,row);
+    const who=document.createElement('div');who.className='howto-host';
+    const face=p=>{const a=this.avatars.find(x=>x.id===p?.avatarId);const img=document.createElement('img');img.src=a?.think||'';img.alt='';img.onerror=()=>{img.style.display='none';};return img;};
+    if(duelists?.length){const ps=duelists.map(id=>state.players.find(p=>p.id===id)).filter(Boolean);
+      ps.forEach((p,i)=>{if(i)who.append(Object.assign(document.createElement('b'),{textContent:'VS',className:'howto-vs'}));who.append(face(p),Object.assign(document.createElement('span'),{textContent:p.name}));});}
+    else{const host=state.players.find(p=>p.id===state.board?.activeId);if(host)who.append(face(host),Object.assign(document.createElement('span'),{textContent:`HOSTED BY ${host.name.toUpperCase()}`}));}
+    if(who.childElementCount)card.append(who);
+    card.setAttribute('aria-label',`${rule||'How to play'}: ${steps.map(s=>s[1]).join(', then ')}`);
+    return card;
+  }
   renderMini(m,state){
     const panel=document.getElementById('challengePanel');panel.classList.remove('hidden');panel.classList.add('mini-on-tv');
     document.getElementById('challengeType').textContent=`${m.category.toUpperCase()} · ROUND ${m.round}/${m.totalRounds}`;
@@ -163,7 +189,9 @@ class NogginBoardView {
       span('NEXT ROUND IN A MOMENT','p4-ballot');return;
     }
     if(m.phase==='intro'){
-      document.getElementById('challengeTitle').textContent='HOW TO PLAY · '+m.title.toUpperCase();
+      document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
+      const card=this.howToCard(m.id,m.category,state,m.rule);
+      if(card){prompt.textContent='';options.append(card);return;}
       prompt.textContent=m.rule;
       const preview={'quick-draw':'WAIT…   ⚡ DRAW!','count-flash':'⚽ ⚽ ⚽ ⚽   →   ?','odd-spot':'●  ●  ◆  ●','colour-clash':'RED  ≠  BLUE','higher-lower':'12   →   ?','memory-lane':'●  ◆  ▲  ★','close-call':'❓  ≈  100','unscramble':'K  E  T  T  L  E'}[m.id];
       span(preview,'mini-preview');
@@ -287,7 +315,7 @@ class NogginBoardView {
     }else if(!freshMove && !presenting && !['choose_die','choose_route'].includes(b.step))this.hideDie();
   }
   // Called when a token finishes hopping: draw everything the move was hiding.
-  presentationDone(){this.movingMove=null;if(this.latestState&&!this.presenting())this.render(this.latestState);}
+  presentationDone(){this.movingMove=null;if(this.latestState&&!this.presenting()){this.render(this.latestState);this.onPresented?.();}}
   // What the round is building towards: shown permanently in the stage bar.
   nextGameLabel(b,state){
     const cat=b.roundGame?.category,host=state.players.find(p=>p.id===b.roundGame?.callerId);

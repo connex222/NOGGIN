@@ -3,7 +3,10 @@
   const U = window.Noggin, $ = U.el;
   const key = 'noggin-player-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
-  let lastStateRef = null, stateLocalAt = 0, presentTimer = null;
+  let lastStateRef = null, stateLocalAt = 0, presentTimer = null, howto = {};
+  // The same three how-to-play steps the TV animates, as a compact list on the phone.
+  function howToList(id){const steps=howto[id]?.steps;if(!steps)return null;const list=document.createElement('ol');list.className='phone-howto';
+    for(const [icon,text] of steps){const li=document.createElement('li');const i=document.createElement('span');i.textContent=icon;i.setAttribute('aria-hidden','true');li.append(i,document.createTextNode(' '+text));list.append(li);}return list;}
   let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', currentlyResuming = false, currentDeadline = null, clockServer = null, clockLocal = null;
   let entryDraft={key:null,text:''};
   let interactionKey=null;
@@ -160,7 +163,7 @@
     $('gameHeadline').textContent=`${m.title.toUpperCase()}${m.totalRounds>1?` · ${m.round}/${m.totalRounds}`:''}`;
     $('gameDescription').textContent=m.rule;
     currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
-    if(m.phase==='intro'){$('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';return;}
+    if(m.phase==='intro'){const list=howToList(m.id);if(list){$('gameButtons').replaceChildren(list);}else $('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';return;}
     const info=(text)=>{const d=document.createElement('div');d.className='mini-help';d.textContent=text;$('gameButtons').append(d);};
     const sent=m.answered.includes(id),voted=m.voted?.includes(id);
     const pick=(text,value,style='button-blue')=>gameButton(text,'game:input',{value,roundKey:m.roundKey},style);
@@ -246,7 +249,7 @@
       }else info('PREDICTIONS LOCKED — WATCH THE SHOWDOWN');
       return;
     }
-    if(m.phase==='intro'){info('WATCH THE TV. THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
+    if(m.phase==='intro'){const list=howToList(m.kind);if(list)$('gameButtons').append(list);info('THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
     if(m.kind==='buzzer'){
       info(`QUESTION ${m.round}/7 · ${Object.entries(m.display.points).map(([id,v])=>`${roomState.players.find(p=>p.id===id)?.name}: ${v}`).join(' vs ')}`);
       if(m.phase==='buzz')choose('⚡ BUZZ!','buzz');
@@ -283,7 +286,7 @@
     $('gameHeadline').textContent=`${m.title.toUpperCase()} · ${m.round}/${m.totalRounds}`;
     $('gameDescription').textContent=m.rule+'  '+m.question;
     currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
-    if(m.phase==='intro'){$('gameDescription').textContent=m.rule+' Watch the TV for a five-second example.';$('gameButtons').textContent='GET READY — WATCH THE TV DEMO';return;}
+    if(m.phase==='intro'){$('gameDescription').textContent=m.rule;const list=howToList(m.id);if(list)$('gameButtons').replaceChildren(list);else $('gameButtons').textContent='GET READY — WATCH THE TV DEMO';return;}
     if(m.phase==='reveal'){
       const result=m.lastRoundResult||{},answer=result.answer;
       $('gameDescription').textContent=answer===undefined?'ROUND COMPLETE':`CORRECT ANSWER: ${answer}`;
@@ -622,6 +625,7 @@
   try {
     const r=await fetch('/shared/avatars.json');if(!r.ok)throw new Error('Unable to load avatar catalogue.');
     avatars=await r.json();buildPicker('avatarGrid',false);
+    try{const h=await fetch('/shared/howto.json');if(h.ok)howto=await h.json();}catch{}
     if(socket.connected){await resumeSession();if(!session)peekRoom();}
   }catch(err){error(err.message);}
 })();

@@ -23,7 +23,7 @@ for avatar in avatars:
   uri='data:image/webp;base64,'+base64.b64encode((PUBLIC/path.lstrip('/')).read_bytes()).decode('ascii')
   if state=='think':avatar['think']=uri
   else:avatar['images'][state]=uri
-fetchmock="window.fetch=async(u)=>({ok:true,json:async()=>{if(String(u).includes('avatars'))return "+json.dumps(avatars)+";if(String(u).includes('board-data'))return "+(PUBLIC/'shared/board-data.json').read_text()+";return {files:[],music:{}};}});"
+fetchmock="window.fetch=async(u)=>({ok:true,json:async()=>{if(String(u).includes('avatars'))return "+json.dumps(avatars)+";if(String(u).includes('board-data'))return "+(PUBLIC/'shared/board-data.json').read_text()+";if(String(u).includes('howto'))return "+(PUBLIC/'shared/howto.json').read_text()+";return {files:[],music:{}};}});"
 MOCK=r'''(()=>{
 const listeners={};const socket={connected:true,on(k,cb){listeners[k]=cb;return this},timeout(){return this},emit(k,p,cb){
  if(k==='room:create')setTimeout(()=>cb?.(null,{ok:true,code:'ABCD',token:'1234567812345678',joinUrl:'http://example.test/play/?room=ABCD',qrDataUrl:'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',state:{code:'ABCD',phase:'lobby',players:[],canStart:false,settings:{rounds:'auto',timerSpeed:'normal',rules:'classic',familyFriendly:true,reduceMotion:false},serverNow:Date.now()}}),2);
@@ -75,6 +75,25 @@ with sync_playwright() as p:
       assert page.locator('#challengePanel').is_visible(),'Challenge panel missing';assert not errs,errs
       page.screenshot(path=str(PREVIEW/'arena-challenge-1280x720.png'))
       records.append({'viewport':'1280x720-challenge','panelVisible':True,'errors':errs})
+      # How-to-play title card during a round game's intro.
+      intro=json.loads(json.dumps(base))
+      intro['board']={**baseboard,'step':'minigame','stage':'round-game','activeId':'p2','minigame':{'category':'create','id':'sketch-sabotage','title':'Sketch & Sabotage','phase':'intro','round':1,'totalRounds':3,'rule':'The host sketches a secret word.','question':'','introUntil':now+4500,'deadline':now+4500,'display':{}}}
+      intro['serverNow']=int(time.time()*1000)
+      page.evaluate('(s)=>window.__tvTestState(s)',intro);page.wait_for_timeout(3200)
+      card=page.evaluate('''()=>{const c=document.querySelector('.howto-card');return c?{cat:c.dataset.cat,steps:[...c.querySelectorAll('.howto-text')].map(e=>e.textContent),host:c.querySelector('.howto-host')?.textContent||'',visible:getComputedStyle(c.querySelector('.howto-steps li:last-child')).opacity}:null}''')
+      assert card and card['cat']=='create' and len(card['steps'])==3,('title card missing',card)
+      assert 'SISTER SUE' in card['host'],('host chip',card)
+      assert float(card['visible'])>0.9,('steps did not animate in',card)
+      assert not errs,errs
+      page.screenshot(path=str(PREVIEW/'howto-card-1280x720.png'))
+      duel=json.loads(json.dumps(base))
+      duel['board']={**baseboard,'step':'showdown','showdown':{'kind':'nerve','title':'Nerve','phase':'intro','participants':['p1','p3'],'question':'','deadline':now+4500,'display':{}}}
+      duel['serverNow']=int(time.time()*1000)
+      page.evaluate('(s)=>window.__tvTestState(s)',duel);page.wait_for_timeout(3200)
+      vs=page.evaluate("()=>document.querySelector('.howto-card .howto-host')?.textContent||''")
+      assert 'Judge' in vs and 'VS' in vs and 'Pixie' in vs,('duel card',vs)
+      page.screenshot(path=str(PREVIEW/'howto-showdown-1280x720.png'))
+      records.append({'viewport':'1280x720-howto','card':card,'duel':vs,'errors':errs})
       # Presentation gate: a fresh roll whose verdict is already known must stay hidden
       # until the die has landed and the token has hopped; then the podium appears.
       verdict=json.loads(json.dumps(base));vp=verdict['players']
@@ -101,4 +120,4 @@ with sync_playwright() as p:
     ctx.close()
  browser.close()
 (PREVIEW/'browser-results.json').write_text(json.dumps(records,indent=2))
-print('ARENA BOARD UI SMOKE: 3 TV viewports, 28-space trapezium clear of the hub, 8 live avatar tokens and score cards, 1 challenge state, verdict hidden until the token lands then a Spark-change podium, no page errors or scrollbars')
+print('ARENA BOARD UI SMOKE: 3 TV viewports, 28-space trapezium clear of the hub, 8 live avatar tokens and score cards, 1 challenge state, verdict hidden until the token lands then a Spark-change podium, how-to-play title cards, no page errors or scrollbars')

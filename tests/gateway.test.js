@@ -156,7 +156,7 @@ test('Phase 3 Socket.IO inputs authenticate by seat and keep TV count cues off e
     await a.send('room:join',{code:cr.code,name:'Alice',avatarId:1});await b.send('room:join',{code:cr.code,name:'Bob',avatarId:2});
     await a.send('room:ready',{ready:true});await b.send('room:ready',{ready:true});await host.send('game:start',{});
     games.start(rooms.find(cr.code),'speed',now,()=>0,'count-flash');
-    now+=5001;rooms.sweep();now+=2200;const model=rooms.find(cr.code).board.minigame;
+    now+=6201;rooms.sweep();now+=2200;const model=rooms.find(cr.code).board.minigame;
     assert.equal((await host.send('game:input',{value:25,roundKey:model.roundKey})).code,'AUTH');
     assert.equal((await a.send('game:input',{value:model.secret.count,roundKey:0})).code,'STALE');
     assert.equal((await a.send('game:input',{value:model.secret.count,roundKey:model.roundKey})).ok,true);

@@ -1,0 +1,23 @@
+{
+  "quick-draw":      {"steps": [["⏳", "Wait for DRAW!"], ["👆", "Tap your phone first"], ["💥", "Too early? Misfire!"]]},
+  "count-flash":     {"steps": [["👀", "Remember every object"], ["⚡", "They vanish in a flash"], ["🔢", "Count the one we name"]]},
+  "odd-spot":        {"steps": [["🔍", "Find the odd symbol on TV"], ["👆", "Tap that square on your phone"], ["🔒", "Wrong tap locks you out"]]},
+  "colour-clash":    {"steps": [["🎨", "Read the INK colour"], ["🚫", "Ignore the word"], ["👆", "Tap fast — wrong costs a point"]]},
+  "higher-lower":    {"steps": [["🔢", "See the number"], ["⬆️⬇️", "Is the next one higher or lower?"], ["❌❌", "Two strikes and you’re out"]]},
+  "memory-lane":     {"steps": [["👀", "Watch the pads light up"], ["👆", "Copy the sequence"], ["🔁", "Final round: BACKWARDS!"]]},
+  "close-call":      {"steps": [["❓", "A number question"], ["✍️", "Type your best guess"], ["🎯", "Closest wins"]]},
+  "unscramble":      {"steps": [["🔀", "Jumbled letters + a clue"], ["✍️", "Type the word"], ["🏁", "First correct wins"]]},
+  "sketch-sabotage": {"steps": [["✏️", "Host draws a secret word"], ["😈", "A saboteur adds fake lines"], ["💬", "Everyone else guesses"]]},
+  "noise-annoys":    {"steps": [["🔊", "Host makes the noise out loud"], ["🤐", "No words, no miming"], ["💬", "First correct guess wins"]]},
+  "caption-this":    {"steps": [["🖼️", "Look at the scene"], ["✍️", "Write a funny caption"], ["🗳️", "Vote for the best (not yours!)"]]},
+  "fib-factory":     {"steps": [["❓", "A question with a weird answer"], ["🤥", "Write a believable fib"], ["🕵️", "Spot the real answer"]]},
+  "mind-meld":       {"steps": [["🤝", "Host picks a partner"], ["🤫", "Both write a word — no talking"], ["🧠", "Match within three tries"]]},
+  "majority-rules":  {"steps": [["❓", "A daft question"], ["🗳️", "Vote in secret"], ["👥", "Side with the most people"]]},
+  "relay-sums":      {"steps": [["🔢", "Your team gets a sum"], ["➡️", "Solve it to pass the baton"], ["🏁", "First team home wins"]]},
+  "bomb-squad":      {"steps": [["📜", "Everyone has secret clues"], ["🗣️", "Talk! Share them out loud"], ["✂️", "Cut the wires in order"]]},
+  "buzzer":          {"steps": [["❓", "Question on the TV"], ["🔔", "Buzz in first"], ["✅", "Answer right to score"]]},
+  "tug":             {"steps": [["🪢", "Both answer fast"], ["💪", "Each right answer pulls the rope"], ["🏁", "Pull it to your side"]]},
+  "bid":             {"steps": [["📣", "Bid how many you can name"], ["⚔️", "Rival raises or challenges"], ["✍️", "Prove it — name them all"]]},
+  "nerve":           {"steps": [["📈", "The number keeps climbing"], ["🏦", "BANK before it busts"], ["💣", "Bust and you get nothing"]]},
+  "tiebreak":        {"steps": [["❓", "One number question"], ["✍️", "Guess on your phone"], ["🎯", "Closest wins the show"]]}
+}

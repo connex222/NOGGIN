@@ -1,3 +1,13 @@
+# NOGGIN v3.3.0 — showmanship pass 2
+
+- Node.js tests with `npm install`: **279 passed, 0 failed, 0 skipped**. `npm run check` passed. Release audit **106/106**.
+- Live server: `/voice/voice-manifest.json` lists recordings dropped into `public/voice/` with no rebuild step.
+- TV browser smoke: title card for a Create game (3 steps visible after the animation, "HOSTED BY …") and a Showdown card ("Judge VS Pixie"). Screenshots: `docs/previews/arena-board/howto-card-1280x720.png`, `howto-showdown-1280x720.png`.
+- Phone browser smoke: 72 scenes, no errors or overflow.
+- **No host voice recordings yet; no real TV-to-phone multiplayer round verified.**
+
+---
+
 # NOGGIN v3.2.0 — showmanship pass 1
 
 - Node.js tests: **271 passed, 0 failed** (1 live-HTTP test skipped without `npm install`). `npm run check` passed. Release audit **106/106**.

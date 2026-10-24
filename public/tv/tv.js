@@ -5,7 +5,7 @@
   const sessionKey = 'noggin-tv-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
   let avatars = [], activeRoom = null, priorCount = 0, boardView = null, currentState = null;
-  const audio=new window.NogginSound();let lastFxKey='',lastBeat=-1;
+  const audio=new window.NogginSound();let lastFxKey='',lastBeat=-1,pendingFx=null;
   const message = $('message');
 
   function error(text) {
@@ -49,21 +49,48 @@
     for(let i=0;i<65;i++){const bit=document.createElement('i');bit.className='confetti-bit';bit.style.left=`${(i*37)%100}%`;bit.style.setProperty('--bit',colours[i%colours.length]);bit.style.setProperty('--duration',`${2+(i%10)*.17}s`);root.append(bit);}
     setTimeout(()=>root.replaceChildren(),4200);
   }
+  // Sound, voice and confetti for each new moment of the show. Held back while the
+  // TV is still rolling the die or hopping a token, then fired the moment it lands.
+  let lastVoiceKey='',lastRoundSaid=0,welcomed=false;
   function gameFx(state){const b=state.board;if(!b)return;
-    const key=[state.phase,b.step,b.turn,b.event?.text,b.minigame?.id,b.minigame?.roundKey,b.showdown?.kind,b.showdown?.phase].join('|');
+    if(boardView?.presenting()){pendingFx=state;return;}
+    const key=[state.phase,b.step,b.turn,b.event?.text,b.minigame?.id,b.minigame?.roundKey,b.minigame?.phase,b.showdown?.kind,b.showdown?.phase].join('|');
     if(key===lastFxKey)return;lastFxKey=key;
     if(b.step==='showdown'&&b.showdown?.phase==='intro')audio.play('sfx-showdown');
     if(b.step==='minigame'&&b.minigame?.phase==='intro')audio.play('sfx-reel');
     if(b.step==='result'){
-       const won=(b.result?.winners||[]).length>0;
-       audio.play(won?'sfx-spark-gain':'sfx-crowd-aww');
-       if(won)showConfetti();else if(!document.documentElement.classList.contains('reduce-motion')){
+       const deltas=Object.values(b.result?.deltas||{}),gain=Math.max(0,...deltas),loss=deltas.some(d=>d<0);
+       const won=(b.result?.winners||[]).length>0||gain>0;
+       if(won)audio.play('sfx-spark-gain');else if(loss)audio.play('sfx-crowd-aww');
+       if(won)showConfetti();else if(loss&&!document.documentElement.classList.contains('reduce-motion')){
          const board=$('boardCentre');board.classList.add('screen-shake');setTimeout(()=>board.classList.remove('screen-shake'),350);
        }
     }
     if(b.step==='finished'){audio.stopMusic();audio.play('mus-victory');showConfetti();}
-    if(b.step==='await_roll')audio.startMusic('board');
+    if(b.step==='await_roll'||b.step==='round_roll')audio.startMusic('board');
     if((b.step==='showdown'||b.step==='minigame')&&!audio.muted)audio.startMusic('tension');
+    hostVoice(state);
+  }
+  function hostVoice(state){const b=state.board,say=(id,fb)=>audio.say(id,fb);
+    const vkey=[b.step,b.turn,b.roundNumber,b.minigame?.id,b.minigame?.phase,b.showdown?.kind,b.showdown?.phase,b.result?.text].join('|');
+    if(vkey===lastVoiceKey)return;lastVoiceKey=vkey;
+    const newRound=(b.step==='round_roll'||(b.step==='await_roll'&&b.turnInRound===0))&&b.roundNumber!==lastRoundSaid;
+    if(newRound){lastRoundSaid=b.roundNumber;
+      if(!welcomed&&b.roundNumber===1){welcomed=true;say('welcome');return;}
+      say(b.lastOrders?'last-orders':'round-start');return;}
+    if(b.step==='minigame'&&b.minigame?.phase==='intro'){say(`game-${b.minigame.id}`,'game');return;}
+    if(b.step==='showdown'&&b.showdown?.phase==='intro'){say(b.showdown.kind==='tiebreak'?'noggin-off':`showdown-${b.showdown.kind}`,'showdown');return;}
+    if(b.step==='choose_category'){say('wildcard');return;}
+    if(b.step==='challenge'&&b.challenge?.kind==='drain'){say('brain-drain');return;}
+    if(b.step==='finished'){say('winner');return;}
+    if(b.step==='result'){
+      const type=boardView?.data?.[b.landing]?.type,deltas=Object.values(b.result?.deltas||{}),gain=Math.max(0,...deltas);
+      const fromMove=b.lastMove&&b.stage!=='round-game'&&!b.round;
+      if(fromMove&&['applause','pickpocket','swap','lift'].includes(type)){say(type);return;}
+      if(gain>=3){say('verdict-big','verdict-gain');return;}
+      if(gain>0){say('verdict-gain');return;}
+      if(deltas.some(d=>d<0))say('verdict-loss');
+    }
   }
   function drawRoster(state) {
     const area = $('roster');
@@ -246,6 +273,7 @@
     if(!response.ok)throw new Error('Avatar catalogue is missing.');
     avatars = await response.json();
     boardView = new window.NogginBoardView(avatars,playSound,stage=>audio.play(stage==='start'?'sfx-dice-roll':'sfx-dice-land',stage==='land'?'sfx-reel-stop':''));await boardView.initialize();
+    boardView.onPresented=()=>{if(pendingFx){const st=pendingFx;pendingFx=null;if(!st.board?.paused)gameFx(st);}};
     drawRoster({players:[]});if(currentState)render(currentState);
   } catch(err){error(err.message);}
 })();

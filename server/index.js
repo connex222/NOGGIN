@@ -30,6 +30,9 @@ app.get('/', (req,res) => res.redirect('/tv/'));
 app.get(/^\/tv$/, (req,res) => res.redirect('/tv/'));
 app.get(/^\/play$/, (req,res) => res.redirect('/play/'));
 app.get('/health', (req,res) => res.json({ok:true, game:'NOGGIN', phase:'stable-development', version:require('../package.json').version}));
+// Host voice: the manifest is built live from whatever recordings are in public/voice,
+// so adding a line is just dropping a file into that folder.
+app.get('/voice/voice-manifest.json', (req,res) => {const {takes}=require('./voice').scan();res.set('Cache-Control','no-store').json({lines:takes});});
 app.use(express.static(publicDir,{dotfiles:'deny',maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0}));
 app.use((req,res) => res.status(404).send('Not found'));
 const server = http.createServer(app);

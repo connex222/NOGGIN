@@ -1,3 +1,13 @@
+# NOGGIN v3.3.0 — Showmanship pass 2: title cards and a host voice (24 October 2026)
+
+- **How-to-play title cards.** Every round game and Showdown opens with a card on the TV: a category-coloured banner, three numbered steps that animate in one after another (icon + a few words each), and who is hosting — or "Judge VS Pixie" for a Showdown. Phones show the same three steps as a list. The data lives in `public/shared/howto.json` (21 games and duels).
+- **Intros are a little longer** so the card can be read: 4.5 s (6 s on Relaxed), up from 3.3–3.5 s.
+- **Host voice, ready for your recordings.** `VOICE-SCRIPT.md` lists 36 lines (welcome, each round, Last Orders, every game and Showdown, Wildcard, Brain Drain, Applause, Pickpocket, Swap, Stage Lift, big win, win, loss, Noggin-Off, winner) with suggested wording. Drop recordings into `public/voice/` named as in the script (extra takes `name-2.mp3`); the server finds them automatically and the TV plays a random take, ducking the music. Unrecorded lines stay silent.
+- **No audio spoilers.** Verdict sounds, confetti, the screen shake and the host voice now wait until the token lands. The verdict sound follows the actual Spark changes (gain → cheer, loss only → "aww", nothing changed → silence).
+- **Tests:** 279 with dependencies (new `tests/showmanship.test.js`). TV browser smoke now checks the title card (three steps animated in, host chip) and the Showdown "VS" card.
+
+---
+
 # NOGGIN v3.2.0 — Showmanship pass 1: no spoilers, a real verdict (24 October 2026)
 
 - **No more spoilers.** While the TV is tumbling the die or hopping a token, nothing gives the result away: no verdict text, no score change, no question panel, no result on any phone ("🎲 WATCH THE TV"). Everything appears the moment the token lands.

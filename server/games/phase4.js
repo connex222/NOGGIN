@@ -72,9 +72,9 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  const id=forcedId||chooseGame(room.board,category,rng,room.players.length),spec=SPECS[id];if(!spec||spec.category!==category)fail('GAME','Invalid game for category.');
  const b=room.board,participants=room.players.map(p=>p.id),host=b.activeId;
  const m={id,category,title:spec.name,rule:spec.rule,round:1,roundKey:1,totalRounds:id==='majority-rules'||id==='mind-meld'?(room.settings.rules==='showtime'?5:3):1,
-  phase:'intro',resumePhase:id==='mind-meld'?'partner':'play',introUntil:now+timer(room,3.5),deadline:now+timer(room,3.5),host,players:participants,
+  phase:'intro',resumePhase:id==='mind-meld'?'partner':'play',introUntil:now+timer(room,4.5),deadline:now+timer(room,4.5),host,players:participants,
   secret:{},privateById:{},display:{},answers:{},scores:Object.fromEntries(participants.map(id=>[id,0])),
-  usedIds:[],strokes:[],strokeCounts:{},lastResult:null,stageStarted:now+timer(room,3.5),seconds:0,choices:[],voters:{},optionOwners:[],voteStageAnswers:{}, roundWords:[]};
+  usedIds:[],strokes:[],strokeCounts:{},lastResult:null,stageStarted:now+timer(room,4.5),seconds:0,choices:[],voters:{},optionOwners:[],voteStageAnswers:{}, roundWords:[]};
  b.minigame=m;b.challenge=null;b.result=null;b.step='minigame';b.deadline=m.deadline;
  switch(id){
   case 'sketch-sabotage':{

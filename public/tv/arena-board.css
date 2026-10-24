@@ -214,3 +214,30 @@ body.tv.playing .dice-is-rolling .dice-marquee{text-shadow:0 0 15px #ffbd4c;colo
 body.tv.playing .arena-hub{display:none!important}
 body.tv.playing .arena-live-info #stageEvent{font-size:clamp(13px,1.2vw,20px);line-height:1.2}
 body.tv.playing .arena-bottom-cue{background:transparent;border:0;border-radius:0;box-shadow:none;color:#b7e6ff;padding:6px 4px;cursor:default;pointer-events:none;font-size:clamp(11px,1.15vw,19px);letter-spacing:.05em}
+
+/* v3.3 How-to-play title cards: category banner, three animated steps, host or duelists. */
+.howto-card{--cat:#ffd168;display:flex;flex-direction:column;align-items:center;gap:clamp(8px,1.6vh,18px);width:100%;padding:clamp(4px,1vh,10px) 0}
+.howto-card[data-cat="speed"]{--cat:#ff667e}.howto-card[data-cat="brain"]{--cat:#64aeff}.howto-card[data-cat="create"]{--cat:#ffe477}.howto-card[data-cat="together"]{--cat:#9de97c}.howto-card[data-cat="showdown"]{--cat:#ffd168}
+.howto-banner{font-weight:1000;letter-spacing:.16em;font-size:clamp(14px,1.5vw,24px);color:#071233;background:var(--cat);padding:5px 22px;border-radius:99px;box-shadow:0 0 22px color-mix(in srgb,var(--cat) 60%,transparent);animation:howto-pop .35s ease-out both}
+.howto-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,1.4vw,22px);width:min(100%,1000px)}
+.howto-steps li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:clamp(10px,2vh,22px) 10px;border-radius:18px;border:3px solid var(--cat);background:linear-gradient(170deg,#0d2a74,#071442);text-align:center;
+  opacity:0;transform:translateY(16px) scale(.92);animation:howto-step .45s ease-out forwards,howto-glow 1s ease-in-out;animation-delay:calc(var(--i)*.85s + .25s),calc(var(--i)*.85s + .25s)}
+.howto-n{position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:var(--cat);color:#071233;font-weight:1000;display:grid;place-items:center;font-size:16px}
+.howto-icon{font-size:clamp(30px,4.2vw,64px);line-height:1.1}
+.howto-text{font-weight:900;color:#fff;font-size:clamp(13px,1.45vw,24px);line-height:1.15;text-wrap:balance}
+.howto-host{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.06em;color:#ffe682;font-size:clamp(12px,1.2vw,20px);opacity:0;animation:howto-step .4s ease-out 2.6s forwards}
+.howto-host img{width:clamp(34px,4.6vh,56px);height:clamp(34px,4.6vh,56px);object-fit:contain}
+.howto-vs{color:#fff;font-size:1.3em;padding:0 4px}
+@keyframes howto-pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+@keyframes howto-step{to{opacity:1;transform:none}}
+@keyframes howto-glow{0%,100%{box-shadow:0 0 0 transparent}40%{box-shadow:0 0 28px var(--cat)}}
+.reduce-motion .howto-steps li,.reduce-motion .howto-host,.reduce-motion .howto-banner{animation:none;opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.howto-steps li,.howto-host,.howto-banner{animation:none;opacity:1;transform:none}}
+
+/* The title card lives inside .challenge-choices, whose generic answer-pill styling must not apply. */
+body.tv .challenge-choices .howto-card span,body.tv .challenge-choices .howto-card b{display:revert;border:0;border-radius:0;background:none;padding:0;box-shadow:none;min-width:0;font-size:inherit}
+body.tv .challenge-choices .howto-card .howto-n{position:absolute;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--cat);color:#071233;font-weight:1000;font-size:16px}
+body.tv .challenge-choices .howto-card .howto-icon{display:block;font-size:clamp(34px,4.6vw,70px);line-height:1.1}
+body.tv .challenge-choices .howto-card .howto-text{display:block;font-weight:900;color:#fff;font-size:clamp(14px,1.55vw,26px);line-height:1.15}
+body.tv .challenge-choices .howto-card .howto-host span{display:inline;color:#ffe682}
+body.tv .challenge-choices .howto-card .howto-steps li{padding-top:clamp(18px,2.6vh,28px)}

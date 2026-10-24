@@ -41,7 +41,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  b.step='minigame';b.challenge=null;b.result=null;
  nextRound(room,now,rng);
  // Studio rule card and five-second visual preview before the first timed round.
- const m=b.minigame;const intro=room.settings.timerSpeed==='relaxed'?5000:3300;m.introUntil=now+intro;m.resumePhase=m.phase;m.phase='intro';
+ const m=b.minigame;const intro=room.settings.timerSpeed==='relaxed'?6000:4500; // long enough to read the three how-to-play stepsm.introUntil=now+intro;m.resumePhase=m.phase;m.phase='intro';
  m.openAt+=intro;m.deadline+=intro;
  for(const key of ['readyAt','flashEndsAt','revealAt'])if(Number.isFinite(m.display[key]))m.display[key]+=intro;
  b.deadline=m.deadline;
