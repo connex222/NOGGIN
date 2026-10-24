@@ -10,4 +10,4 @@ The TV play screen uses the **user-selected neon game-show board illustration** 
 
 Design adapts at 1280×720, 1920×1080 and narrower screens. The original game board geometry is not changed server-side. See `tests/arena-board.test.js` for regression checks.
 
-Source illustration (pixel-identical, lossless WebP): `source-art/board-reference-selected.webp`. Browser-optimized stage image: `public/tv/art/board-stage.webp`. The complete v2 downloadable ZIP retains the original PNG source as well.
+Source illustration (unchanged): `source-art/board-reference-selected.png`. Browser-optimized stage image: `public/tv/art/board-stage.webp`.

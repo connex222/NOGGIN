@@ -1,0 +1,73 @@
+[
+  {
+    "viewport": "1280x720",
+    "playing": true,
+    "avatars": 8,
+    "tiles": 36,
+    "tokens": 8,
+    "overflowX": 0,
+    "overflowY": 0,
+    "hud": "\ud83c\udfb2 ROLL ON YOUR PHONE",
+    "logo": null,
+    "errors": []
+  },
+  {
+    "viewport": "1280x720-2players",
+    "scorecards": 2,
+    "tokens": 2,
+    "errors": []
+  },
+  {
+    "viewport": "1280x720-challenge",
+    "panelVisible": true,
+    "errors": []
+  },
+  {
+    "viewport": "1280x720-dice",
+    "roll": {
+      "dice": 1,
+      "faces": 6,
+      "pips": 21,
+      "shown": true,
+      "text": "ROLLING THE DICE\u2026",
+      "tokenCount": 8,
+      "animating": 1
+    },
+    "reveal": {
+      "dice": 1,
+      "shown": true,
+      "text": "IT'S A 5!",
+      "final": "5",
+      "tokenCount": 8,
+      "overflowX": 0,
+      "overflowY": 0
+    },
+    "choice": true,
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "viewport": "1920x1080",
+    "playing": true,
+    "avatars": 8,
+    "tiles": 36,
+    "tokens": 8,
+    "overflowX": 0,
+    "overflowY": 0,
+    "hud": "\ud83c\udfb2 ROLL ON YOUR PHONE",
+    "logo": null,
+    "errors": []
+  },
+  {
+    "viewport": "1366x768",
+    "playing": true,
+    "avatars": 8,
+    "tiles": 36,
+    "tokens": 8,
+    "overflowX": 0,
+    "overflowY": 0,
+    "hud": "\ud83c\udfb2 ROLL ON YOUR PHONE",
+    "logo": null,
+    "errors": []
+  }
+]

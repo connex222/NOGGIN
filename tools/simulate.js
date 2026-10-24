@@ -1,8 +1,7 @@
-'use strict';
-// Phase 6 model-based simulation of real board/mini-game outcome logic.
-// Human accuracy, response times and the 75-second average-turn duration are estimates.
-// Replace crypto.randomInt for deterministic in-process question/dice selection;
-// this is an offline model only, never a replacement for server randomness.
+// NOGGIN v3 round-loop simulation (model-based).
+// Human accuracy and response times are estimates; mini-game rounds are allowed to
+// run to their full server deadline. Minutes are SERVER time only: real rooms chat,
+// laugh and argue, so expect an evening to run roughly 1.5x the simulated figure.
 const crypto=require('node:crypto');
 let seed=76231;
 function rand(n){seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed%n;}
@@ -11,32 +10,32 @@ const board=require('../server/board');
 const phase3=require('../server/games/phase3');
 const phase4=require('../server/games/phase4');
 const phase5=require('../server/games/phase5');
-function run(n,style='sequential'){
- const room={phase:'lobby',hostSocketId:'tv',settings:{target:style==='everyone'?16:12,timerSpeed:'normal',roundStyle:style},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
- board.start(room);let now=1000,steps=0;const scores=[];const kinds={};const selectedGames={};const visitedGames=new WeakSet();
- while(room.phase==='board'&&steps++<1000){
+const TAP=4000; // a person reading their phone and tapping a choice
+function run(n,rounds){
+ const room={phase:'lobby',hostSocketId:'tv',settings:{rounds,timerSpeed:'normal',rules:'showtime'},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
+ board.start(room);const started=1000;let now=started,steps=0;const scores=[];const kinds={};const spaces={};const selectedGames={};const visitedGames=new WeakSet();
+ const rolls={};let showdowns=0,roundGames=0,laps=0;const visitedShowdowns=new WeakSet();
+ while(room.phase==='board'&&steps++<20000){
  const b=room.board;
- if(b.step==='round_roll'){
-   for(const p of room.players)if(!b.round.rolls[p.id])board.roll(room,p.id,now,rand);
- }else if(b.step==='round_moving'){
-   now=Math.max(now,b.nextAt+1);board.tick(room,now,rand);
- }else if(b.step==='await_roll'){
-  // Synthetic strategy model: in 35% of eligible turns, try a Director's Cut.
-  // The strategy prefers high-reward board spaces, but conserves a Cue unless
-  // a nudge scores clearly better than a free move. Human choices will differ.
+ if(b.step==='await_roll'){
   const active=room.players.find(p=>p.id===b.activeId);
+  now+=TAP;rolls[active.id]=(rolls[active.id]||0)+1;
   if(active.cues>0&&rand(100)<35)board.choose(room,b.activeId,{action:'director'},now,rand);
+  const before=active.position;
   board.roll(room,b.activeId,now,rand);
   if(b.step==='choose_route'){
-    const value={start:7,showdown:6,wildcard:5,speed:4,brain:4,create:4,together:4,pickpocket:4,swap:2,lift:1,drain:-6};
+    now+=TAP;
+    const value={applause:6,start:6,showdown:5,wildcard:4,pickpocket:4,speed:3,brain:3,create:3,together:3,swap:2,lift:1,drain:-6};
     const scored=b.routeOptions.map((o,index)=>({index,score:value[o.type]-o.cost*2})).sort((a,z)=>z.score-a.score||a.index-z.index);
     board.choose(room,b.activeId,{option:scored[0].index},now,rand);
   }
-  if(b.step==='choose_die')board.pickDie(room,b.activeId,b.rolls[0]>b.rolls[1]?0:1,now);
-  kinds[board.SPACES[b.landing]]=(kinds[board.SPACES[b.landing]]||0)+1;
+  if(b.step==='choose_die'){now+=TAP;board.pickDie(room,b.activeId,b.rolls[0]>b.rolls[1]?0:1,now);}
+  const type=board.SPACES[b.landing];kinds[type]=(kinds[type]||0)+1;spaces[b.landing]=(spaces[b.landing]||0)+1;
+  if(b.lastMove&&b.lastMove.path.includes(0))laps++;
+  now+=1300+150*(b.lastMove?.path.length||0); // dice theatre + token hops on the TV
  }else if(b.step==='minigame'){
   const m=b.minigame;
-  if(!visitedGames.has(m)){visitedGames.add(m);selectedGames[m.id]=(selectedGames[m.id]||0)+1;}
+  if(!visitedGames.has(m)){visitedGames.add(m);selectedGames[m.id]=(selectedGames[m.id]||0)+1;roundGames++;}
   if(phase4.SPECS[m.id]){
    if(m.phase==='intro'){now=m.introUntil+1;board.tick(room,now);continue;}
    const input=(id,value)=>{if(room.board.minigame===m)try{board.minigameInput(room,id,value,m.roundKey,now+rand(30));}catch{}};
@@ -90,6 +89,7 @@ function run(n,style='sequential'){
   now=m.deadline+1;board.tick(room,now);
  }else if(b.step==='showdown'){
   const m=b.showdown;
+  if(!visitedShowdowns.has(m)){visitedShowdowns.add(m);if(m.kind!=='tiebreak')showdowns++;}
   if(m.phase==='intro'){now=m.deadline+1;phase5.tick(room,now,board.finishTurn);continue;}
   const input=(id,value)=>{if(room.board.showdown===m)try{phase5.submit(room,id,value,m.roundKey,now,board.finishTurn);}catch{}};
   if(m.kind==='buzzer'){
@@ -119,29 +119,41 @@ function run(n,style='sequential'){
     for(const id of m.participants)input(id,Math.max(0,m.questionData.answer+(rand(99)-49)));now+=500;phase5.tick(room,now,board.finishTurn);
   }
  }else if(b.step==='choose_target'||b.step==='choose_opponent'){
-  const target=room.players.filter(p=>p.id!==b.activeId).sort((a,z)=>z.sparks-a.sparks)[0];board.choose(room,b.activeId,{targetId:target.id},now,rand);
- }else if(b.step==='choose_category')board.choose(room,b.activeId,{category:'brain'},now,rand);
+  now+=TAP;const target=room.players.filter(p=>p.id!==b.activeId).sort((a,z)=>z.sparks-a.sparks)[0];board.choose(room,b.activeId,{targetId:target.id},now,rand);
+ }else if(b.step==='choose_category'){now+=TAP;board.choose(room,b.activeId,{category:board.CATEGORIES[rand(4)]},now,rand);}
  else if(b.step==='challenge'){
-  const challenge=b.challenge;
+  const challenge=b.challenge;now+=2500;
   for(const id of challenge.participants){
    if(b.step!=='challenge'||b.challenge!==challenge)break;
-   const chosen=rand(100)<55?challenge.correct:rand(3);
-   board.answer(room,id,chosen,now+rand(1000));
+   board.answer(room,id,rand(100)<55?challenge.correct:(challenge.correct+1)%challenge.choices.length,now);
   }
-  if(b.step==='challenge'&&b.challenge===challenge)board.resolveChallenge(room,now+challenge.deadline-now+1);
  }else if(b.step==='result'){
-  scores.push(room.players.map(p=>p.sparks));now+=5000;board.nextTurn(room,now);
+  if(b.stage==='round-game')scores.push(room.players.map(p=>p.sparks));now=b.nextAt;board.nextTurn(room,now,rand);
  }
  }
- const winner=room.board.winnerIds[0];const mid=scores[Math.floor(scores.length/2)]||room.players.map(p=>p.sparks);const max=Math.max(...mid),min=Math.min(...mid);
- const index=room.players.findIndex(p=>p.id===winner);
- return {turns:room.board.turn,winnerAtHalfLeader:mid[index]===max,winnerAtHalfLast:mid[index]===min,kinds,selectedGames,finished:room.phase==='finished',steps};
+ const winner=room.board.winnerIds[0];const mid=scores[Math.floor((scores.length-1)/2)]||room.players.map(p=>p.sparks);const max=Math.max(...mid),min=Math.min(...mid);
+ const index=room.players.findIndex(p=>p.id===winner);const final=room.players.map(p=>p.sparks).sort((a,z)=>z-a);
+ return {rounds:room.board.round,minutes:(now-started)/60000,rollsPerPlayer:Object.values(rolls).reduce((a,x)=>a+x,0)/n,winnerAtHalfLeader:mid[index]===max,winnerAtHalfLast:mid[index]===min,
+  kinds,spaces,selectedGames,showdowns,roundGames,laps:laps/n,tiebreak:room.board.stage==='noggin-off',margin:final[0]-final[1],winningScore:final[0],finished:room.phase==='finished',steps};
 }
 const games=Number(process.argv[2]||1000);
-const style=process.argv.includes('--everyone')?'everyone':'sequential';
-if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000]');
+if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000] [rounds 6|8|10|12]');
+const roundsArg=process.argv[3]&&process.argv[3]!=='auto'?Number(process.argv[3]):'auto';
+if(!board.ROUND_OPTIONS.includes(roundsArg))throw Error('Rounds must be one of '+board.ROUND_OPTIONS.join(', '));
+const avg=(xs)=>+(xs.reduce((a,x)=>a+x,0)/xs.length).toFixed(1);
 for(const count of [2,4,6,8]){
- let sum=0,leader=0,last=0,finished=0;const spaces={};const miniGames={};const runs=[];
- for(let i=0;i<games;i++){const r=run(count,style);sum+=r.turns;leader+=Number(r.winnerAtHalfLeader);last+=Number(r.winnerAtHalfLast);finished+=Number(r.finished);runs.push(r.turns);for(const [k,v]of Object.entries(r.kinds))spaces[k]=(spaces[k]||0)+v;for(const [k,v]of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
- runs.sort((a,b)=>a-b);console.log(JSON.stringify({roundStyle:style,players:count,games,finished,averageTurns:+(sum/games).toFixed(1),estimatedMinutes:+(sum/games*(style==='everyone'?125:75)/60).toFixed(1),averageRollsPerPlayer:+(sum/games*(style==='everyone'?1:1/count)).toFixed(1),medianTurns:runs[Math.floor(games/2)],leaderAtHalfWinsPct:+(leader/games*100).toFixed(1),lastAtHalfWinsPct:+(last/games*100).toFixed(1),landings:spaces,miniGames}));
+ const runs=[];for(let i=0;i<games;i++)runs.push(run(count,roundsArg));
+ const kinds={},spaces={},miniGames={};
+ for(const r of runs){for(const [k,v] of Object.entries(r.kinds))kinds[k]=(kinds[k]||0)+v;for(const [k,v] of Object.entries(r.spaces))spaces[k]=(spaces[k]||0)+v;for(const [k,v] of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
+ const landings=Object.values(spaces).reduce((a,x)=>a+x,0);
+ const perSpace=Array.from({length:board.SPACES.length},(_,i)=>(spaces[i]||0)/landings*100);
+ const minutes=runs.map(r=>r.minutes).sort((a,z)=>a-z);
+ console.log(JSON.stringify({players:count,rounds:roundsArg==='auto'?board.autoRounds(count):roundsArg,games,finished:runs.filter(r=>r.finished).length,
+  rollsPerPlayer:avg(runs.map(r=>r.rollsPerPlayer)),lapsPerPlayer:avg(runs.map(r=>r.laps)),
+  minutesMedian:+minutes[Math.floor(games/2)].toFixed(1),minutesP90:+minutes[Math.floor(games*0.9)].toFixed(1),
+  roundGamesPerGame:avg(runs.map(r=>r.roundGames)),showdownsPerGame:avg(runs.map(r=>r.showdowns)),
+  tiebreakPct:+(runs.filter(r=>r.tiebreak).length/games*100).toFixed(1),winningScore:avg(runs.map(r=>r.winningScore)),winningMargin:avg(runs.map(r=>r.margin)),
+  leaderAtHalfWinsPct:+(runs.filter(r=>r.winnerAtHalfLeader).length/games*100).toFixed(1),lastAtHalfWinsPct:+(runs.filter(r=>r.winnerAtHalfLast).length/games*100).toFixed(1),
+  spaceShareMinPct:+Math.min(...perSpace).toFixed(2),spaceShareMaxPct:+Math.max(...perSpace).toFixed(2),
+  landings:kinds,miniGames}));
 }

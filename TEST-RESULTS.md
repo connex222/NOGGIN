@@ -1,3 +1,22 @@
+# NOGGIN v3.0.0 — Round Loop release check
+
+- Node.js automated tests: **183 passed, 0 failed, 1 skipped** (live HTTP test needs `npm install`).
+- `npm run check`: passed. Release audit: **106 checks, 0 errors** (60 Fib facts still pending editorial review).
+- TV browser smoke (`tools/arena-board-browser-smoke.py`): 1280×720, 1366×768, 1920×1080 — 28 tiles, 8 tokens, no tile or token under the centre hub, no page errors or scrollbars. Screenshots in `docs/previews/arena-board/`.
+- Simulator, 400 games each, Auto length (server time; expect real rooms ~1.5× longer):
+
+| Players | Rounds | Rolls each | Sim minutes | Showdowns | Noggin-Off |
+|---|---|---|---|---|---|
+| 2 | 12 | 12 | 11.8 | 3.9 | 6.8% |
+| 4 | 10 | 10 | 13.9 | 5.3 | 9.8% |
+| 6 | 8 | 8 | 14.4 | 5.4 | 15.8% |
+| 8 | 8 | 8 | 17.2 | 6.1 | 14.5% |
+
+- Older browser smoke scripts and preview images in other `docs/previews/` folders still show the v2 36-space board.
+- **No real TV-to-phone multiplayer round has been verified.**
+
+---
+
 # NOGGIN v2 — Dice Theatre release check
 
 - Node.js automated tests: **178 passed, 0 failed, 1 skipped**.

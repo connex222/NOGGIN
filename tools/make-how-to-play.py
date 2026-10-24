@@ -53,7 +53,7 @@ for i in range(4):
  c.setStrokeColor(HexColor(['#6fd4d7','#f9bf61','#fe789b','#ac8ff0'][i]));c.setLineWidth(5);c.line(35+145*i,H-133,103+145*i,H-133)
 text(36,H-60,'NOGGIN',35,GOLD,True)
 text(37,H-83,'USE YOUR HEAD',14,WHITE,True)
-text(37,H-110,f'{data["players"]["min"]}–{data["players"]["max"]} players  |  {data["boardSpaces"]} spaces  |  First to {data["targetOptions"][1]} Sparks wins',10,WHITE)
+text(37,H-110,f'{data["players"]["min"]}–{data["players"]["max"]} players  |  {data["boardSpaces"]}-space trapezium  |  Most Sparks after the final round wins',10,WHITE)
 
 L=34;R=306;CW=254;y=H-159
 # left column
@@ -61,25 +61,24 @@ ly=heading(L,y,'1  SET UP AND PLAY',CW)
 steps=[
  'Open the TV host at /tv/ and show the lobby on your television.',
  'Scan its QR code with each phone; choose an untaken avatar and tap Ready.',
- 'The active player may call a Headline Bet or Director’s Cut, then rolls on their phone.',
- 'Follow the game instructions on the TV and answer privately on phones.'
+ 'Each round, every player rolls once on their phone and moves round the board.',
+ 'Land on a coloured space to CALL that category for the round’s game — and host it. A later colour steals the call.',
+ 'When everyone has rolled, the whole panel plays the round’s game together.'
 ]
 for i,s in enumerate(steps,1):
  text(L+3,ly,str(i)+'.',8.8,BLUE,True);ly=para(L+21,ly,s,CW-23,8.65,12.4);ly-=7
 ly-=8
 ly=heading(L,ly,'2  WIN SPARKS',CW)
-for s in [f'Land on a game: the player who landed is the host. Host win +{data["roundScore"]["hostWin"]}; another winner +{data["roundScore"]["otherWinner"]}.',
-          'A host who finishes last can lose one Spark, but nobody goes below zero.',
-          f'Pass Start +{data["bonusStart"]["pass"]}; land exactly on Start +{data["bonusStart"]["land"]}.',
-          'Last-place rollers get two dice and choose one.',
-          f'Director’s Cut: start with {data["directorsCut"]["cues"]} Cues; shift the landing by one space for 1 Cue. Win a contest or pass Start to replenish 1 Cue (max 2).',
-          f'Headline Bet: before rolling, choose to risk {data["headlineBet"]["loss"]} Spark. Win your contest for +{data["headlineBet"]["win"]} bonus Sparks, or lose 1 extra Spark on top of normal host penalties. No risk on a non-contest square.']:
+for s in [f'Round game: the host wins +{data["roundScore"]["hostWin"]}; any other winner +{data["roundScore"]["otherWinner"]}. A host who finishes last loses one Spark (never below zero).',
+          f'Applause +{data["applause"]}. Pass Start +{data["bonusStart"]["pass"]}; land exactly on Start +{data["bonusStart"]["land"]}.',
+          'LAST ORDERS: in the final round, every Spark you gain is doubled.',
+          f'Showtime only — last place rolls two dice and picks one. Director’s Cut: start with {data["directorsCut"]["cues"]} Cues; nudge your landing by one space for 1 Cue. Win a contest or pass Start to earn 1 back (max 2).']:
  ly=para(L+8,ly,s,CW-13,8.2,11.4);ly-=5
 ly-=2
 ly=heading(L,ly,'3  THE UNDERDOG RULE',CW)
 ly=para(L+8,ly,f'With four or more players, a mini-game or Showdown winner who started the turn {data["catchUp"]["threshold"]}+ Sparks behind the leader earns an extra {data["catchUp"]["extraSmall"]} Spark. In an eight-player match, the bonus is {data["catchUp"]["extraEight"]} Sparks.',CW-13,8.6,12.2);ly-=12
 ly=heading(L,ly,'4  SPECIAL SPACES',CW)
-for s in ['Swap Seats — exchange board positions.', 'Pickpocket — steal one Spark from the leader.', 'Brain Drain — answer in five seconds or lose one.', 'Wildcard — choose the mini-game category.', 'Stage Lift — jump across to the other lift.']:
+for s in ['Wildcard — pick the round’s game, lock it so nobody can change it, and host it.', 'Swap Seats — exchange board positions.', 'Pickpocket — steal one Spark from the leader.', 'Brain Drain — answer in five seconds or lose one.', 'Stage Lift — jump across the stage to the other lift.']:
  ly=para(L+8,ly,s,CW-13,8.35,11.6);ly-=5
 # right column
 ry=heading(R,y,'THE 16 MINI-GAMES',CW)
@@ -89,12 +88,12 @@ for category,names in data['categories'].items():
  ry=para(R+8,ry,'  •  '.join(names),CW-13,8.4,12.3);ry-=14
 ry-=7
 ry=heading(R,ry,'CORNER SHOWDOWNS',CW)
-ry=para(R+8,ry,f'The active player challenges one rival. The winner takes up to {data["showdownTransfer"]} Sparks from the loser.',CW-13,8.55,12.3);ry-=11
+ry=para(R+8,ry,f'Every corner is a Showdown: challenge one rival; the winner takes up to {data["showdownTransfer"]} Sparks. One Showdown per round — later corner landings that round earn +{data["cornerBonus"]}.',CW-13,8.55,12.3);ry-=11
 for n in data['showdowns']:
  ry=tag(R+4,ry,n,CW-8)
 ry-=8
 ry=heading(R,ry,'GAME OVER',CW)
-ry=para(R+8,ry,f'First to {data["targetOptions"][1]} Sparks wins Standard mode. Quick and Long modes target {data["targetOptions"][0]} or {data["targetOptions"][2]}. If several reach the goal on the same turn, play a nearest-number Noggin-Off until one wins.',CW-13,8.6,12.5);ry-=14
+ry=para(R+8,ry,f'Most Sparks after the final round wins. Auto length plays {data["autoRounds"]["small"]} rounds for 2–3 players, {data["autoRounds"]["medium"]} for 4–5 and {data["autoRounds"]["large"]} for 6–8; or choose {", ".join(map(str,data["roundOptions"]))}. A tie for first goes to a nearest-number Noggin-Off.',CW-13,8.6,12.5);ry-=14
 ry=heading(R,ry,'PLAYING TOGETHER',CW)
 ry=para(R+8,ry,'The TV shows the board and results. Discuss team clues aloud. During Showdowns, spectators make Spotlight Picks during the intro. Correct picks earn 1 Director Cue (max 2), never Sparks. Two-player rooms skip '+', '.join(data['twoPlayerSkips'])+' to avoid automatic draws.',CW-13,8.35,12.0)
 # footer
