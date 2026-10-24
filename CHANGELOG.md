@@ -1,3 +1,16 @@
+# NOGGIN v3.2.0 — Showmanship pass 1: no spoilers, a real verdict (24 October 2026)
+
+- **No more spoilers.** While the TV is tumbling the die or hopping a token, nothing gives the result away: no verdict text, no score change, no question panel, no result on any phone ("🎲 WATCH THE TV"). Everything appears the moment the token lands.
+- **The server waits for the show.** Every roll records how long the TV needs (1.3 s die + 0.15 s per hop + 0.4 s settle). The result card, Brain Drain's five seconds, and Swap / Showdown / Wildcard decision clocks all start after that. Everyone Rolls paces each token move to its own animation instead of a fixed 0.9 s.
+- **Removed** the "THE RESULT IS DECIDED BY THE GAME SERVER" line from the TV dice.
+- **The Verdict podium:** every player whose Sparks changed appears with their win or lose face and a big **+2 ✦ / −1 ✦** chip, biggest gain first (up to five), plus the leader's banter line. Last Orders verdicts are labelled.
+- **Score strip faces** now follow the change: gainers smile, losers wince, everyone else stays neutral (previously everyone without a win looked sad).
+- **Phones:** results now say **+2 SPARKS!** / **−1 SPARK** with the matching face.
+- **Server:** each result carries `deltas` (per-player Spark change); `presentUntil` is published to clients.
+- **Tests:** 271 Node tests pass (new: presentation timing, deltas, Everyone Rolls pacing). TV browser smoke now proves the verdict is hidden while rolling and shows the podium after landing. Phone browser smoke proves the same gate and the personal result (and its stale Odd Spot mock was fixed).
+
+---
+
 # NOGGIN v3.1.0 — v3 merged onto the 20 October build (24 October 2026)
 
 **Why:** v3.0.0 was built from the 18 October zip. Uploading it over GitHub replaced the newer 20 October work (Everyone Rolls, VIP host, Bid to Win adjudication, editorial content). This release is a proper three-way merge: all of that work is restored and the v3 rules sit on top.

@@ -44,7 +44,7 @@ test('four phones + TV: entire gateway rehearsal includes round, pauses, skipped
  // Brain space, so each landing steals the call and the last roller hosts.
  for(let i=0;i<4;i++){
   assert.equal((await players[i].send('game:roll')).ok,true);
-  assert.equal(h.rooms.find(code).board.step,'result');h.advance(4_000);
+  assert.equal(h.rooms.find(code).board.step,'result');h.advance(6_000);
  }
  const room=h.rooms.find(code);
  assert.equal(room.board.stage,'round-game');assert.equal(room.board.step,'minigame');
@@ -56,7 +56,7 @@ test('four phones + TV: entire gateway rehearsal includes round, pauses, skipped
  // Let every round of the game run out on the server clock, then advance the result card.
  for(let i=0;i<60&&room.board.step==='minigame';i++)h.advance(15_000);
  assert.equal(room.board.step,'result');
- h.advance(4_000);assert.equal(room.board.step,'await_roll');assert.equal(room.board.roundNo,2);
+ h.advance(6_000);assert.equal(room.board.step,'await_roll');assert.equal(room.board.roundNo,2);
  assert.equal(room.board.activeId,room.players[1].id);
  // A player loses Wi-Fi mid-turn, then uses a valid token to resume.
  players[1].disconnect();h.advance(2_000);
@@ -119,8 +119,8 @@ test('eight players behind one router can join and host-only state never leaks p
   h.rooms.find(created.code).players[0].position=13;
   assert.equal((await mobiles[0].send('game:roll')).ok,true);
   assert.equal((await mobiles[0].send('game:choose',{category:'create'})).ok,true);
-  h.advance(4_000);
-  for(let n=1;n<8;n++){assert.equal((await mobiles[n].send('game:roll')).ok,true);h.advance(4_000);}
+  h.advance(6_000);
+  for(let n=1;n<8;n++){assert.equal((await mobiles[n].send('game:roll')).ok,true);h.advance(6_000);}
   const board=h.rooms.find(created.code).board;
   assert.equal(board.stage,'round-game');assert.equal(board.activeId,h.rooms.find(created.code).players[0].id);
   assert.equal(board.minigame.id,'sketch-sabotage');
@@ -143,8 +143,8 @@ test('deterministic dice and minigame selection obey injected source across turn
  rooms.startGame(code,'tv');rooms.rollGame(code,'p0');
  assert.equal(rooms.find(code).players[0].position,1);
  assert.equal(rooms.find(code).board.roundCategory,'brain');
- for(let n=1;n<3;n++){t+=4_000;rooms.sweep();rooms.rollGame(code,'p'+n);}
- t+=4_000;rooms.sweep();
+ for(let n=1;n<3;n++){t+=6_000;rooms.sweep();rooms.rollGame(code,'p'+n);}
+ t+=6_000;rooms.sweep();
  assert.equal(rooms.find(code).board.minigame.category,'brain');
  assert.equal(rooms.find(code).board.minigame.id,require('../server/games/phase3').chooseGame({seenGames:[]},'brain',()=>0));
 });

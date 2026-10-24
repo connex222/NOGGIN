@@ -3,6 +3,7 @@
   const U = window.Noggin, $ = U.el;
   const key = 'noggin-player-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
+  let lastStateRef = null, stateLocalAt = 0, presentTimer = null;
   let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', currentlyResuming = false, currentDeadline = null, clockServer = null, clockLocal = null;
   let entryDraft={key:null,text:''};
   let interactionKey=null;
@@ -348,11 +349,17 @@
     setPhonePresentation(b);
     const active=roomState.players.find(p=>p.id===b.activeId),me=player.id===b.activeId;
     const avatar=avatars.find(a=>a.id===player.avatarId),won=(b.result?.winners||b.winnerIds||[]).includes(player.id);
-    const image=b.step==='finished'?(b.winnerIds.includes(player.id)?avatar?.images?.win:avatar?.images?.lose):b.step==='result'?(won?avatar?.images?.win:avatar?.images?.lose):avatar?.think;
+    const myDelta=b.step==='result'?(b.result?.deltas?.[player.id]||0):0;
+    // While the TV is still rolling the die or hopping a token, the phone keeps
+    // the outcome hidden too, then re-renders the moment the TV lands.
+    const presentLeft=b.presentUntil?b.presentUntil-serverNowEstimate():0;
+    const presenting=presentLeft>0&&['result','challenge','choose_target','choose_opponent','choose_category'].includes(b.step);
+    clearTimeout(presentTimer);if(presenting)presentTimer=setTimeout(render,presentLeft+60);
+    const image=presenting?avatar?.think:b.step==='finished'?(b.winnerIds.includes(player.id)?avatar?.images?.win:avatar?.images?.lose):b.step==='result'?(won||myDelta>0?avatar?.images?.win:myDelta<0||(b.result?.winners||[]).length?avatar?.images?.lose:avatar?.think):avatar?.think;
     $('gameAvatar').src=image||'';$('gameAvatar').alt=avatar?.name||player.name;
     $('gameName').textContent=player.name;$('gameSparks').textContent=`✦ ${player.sparks} SPARKS${roomState.settings.rules==='showtime'?` · 🎬 ${player.cues||0} CUES`:''}`;
     $('gameRoom').textContent=`ROOM ${session.code} · SEAT ${player.seat}`;
-    $('gameTurn').textContent=b.step==='finished'?'GAME OVER':b.stage==='noggin-off'?'NOGGIN-OFF':b.stage==='round-game'?`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.roundNumber} GAME · ${active?.name||'HOST'} HOSTS`:`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.roundNumber}/${b.totalRounds} · ${active?.name||'PLAYER'}'S ROLL`;
+    $('gameTurn').textContent=b.step==='finished'?'GAME OVER':b.stage==='noggin-off'?'NOGGIN-OFF':b.stage==='round-game'?`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.roundNumber} GAME · ${active?.name||'HOST'} HOSTS`:`${b.lastOrders?'LAST ORDERS · ':''}${b.roundNumber?`ROUND ${b.roundNumber}/${b.totalRounds}`:`TURN ${b.turn}`} · ${active?.name||'PLAYER'}'S ROLL`;
     const priorInput=$('gameButtons').querySelector('form input');
     const priorFocused=Boolean(priorInput&&document.activeElement===priorInput);
     const activeCanvas=$('gameButtons').querySelector('canvas.sketch-canvas');
@@ -393,6 +400,7 @@
       title.textContent=b.winnerIds.includes(player.id)?'YOU WON NOGGIN!':'THE SHOW IS OVER';
       detail.textContent=b.event?.text||'The final scores are on the TV.';return;
     }
+    if(presenting){title.textContent='🎲 WATCH THE TV';detail.textContent=`${active?.name||'A contestant'} is on the move…`;currentDeadline=null;return;}
     if(b.step==='showdown'&&b.showdown){renderShowdown(player,b.showdown);return;}
     if(b.step==='minigame'&&b.minigame){if(phase4Ids.has(b.minigame.id)){renderPhase4(player,b.minigame);if(priorFocused){const el=$('gameButtons').querySelector('.p4-form input');if(el){el.focus();if(el.type==='text')el.setSelectionRange(el.value.length,el.value.length);}}}else renderMiniGame(player,b.minigame);return;}
     if(b.step==='round_roll'){
@@ -439,7 +447,8 @@
       if(eligible&&!answered)c.choices.forEach((answer,index)=>gameButton(answer,'game:answer',{choice:index},'button-primary'));
       else{const note=document.createElement('div');note.className='already-answered';note.textContent=!eligible?'Watch the TV — this round is for the challengers.':'ANSWER LOCKED IN ✓ — Watch the TV';$('gameButtons').append(note);}
     } else if(b.step==='result'){
-      title.textContent=won?'★ WINNING FACE ★':'RESULTS ARE IN';detail.textContent=b.result?.text||'Next turn starts shortly.';
+      title.textContent=myDelta>0?`+${myDelta} SPARK${myDelta===1?'':'S'}!`:myDelta<0?`−${-myDelta} SPARK${myDelta===-1?'':'S'}`:won?'★ WINNING FACE ★':'RESULTS ARE IN';
+      detail.textContent=b.result?.text||'Next turn starts shortly.';
       currentDeadline=b.nextAt;clockServer=roomState.serverNow;clockLocal=Date.now();
     }
   }
@@ -510,7 +519,10 @@
       add('CLOSE ROOM','room:close');
     }
   }
+  // Estimated server time now, from the last state the server sent.
+  function serverNowEstimate(){return (roomState?.serverNow||Date.now())+(Date.now()-stateLocalAt);}
   function render() {
+    if(roomState!==lastStateRef){lastStateRef=roomState;stateLocalAt=Date.now();}
     if(!session || roomState?.phase==='lobby')buildPicker('avatarGrid',false);
     if(!session || !roomState) return;
     const player=currentPlayer();

@@ -31,7 +31,14 @@ const DIRECTORS_CUES = 2;
 const DIRECTORS_CHOICE_MS = 6000;
 const DECISION_MS = 12000;
 const ROUND_ROLL_MS = 12000;
-const ROUND_MOVE_MS = 900;
+// Presentation timing. The TV tumbles the die for 1.24 s and hops a token every
+// 150 ms. The server waits for that before it starts any clock or advances, so
+// no result, question or countdown appears while the dice are still in the air.
+const DICE_SHOW_MS = 1300;
+const HOP_MS = 150;
+const SETTLE_MS = 400;
+function presentMs(steps) {return DICE_SHOW_MS + HOP_MS * Math.max(0, steps) + SETTLE_MS;}
+const ROUND_MOVE_MS = presentMs(0); // used before the first token moves
 const START_LAND_BONUS = 2;
 const START_PASS_BONUS = 1;
 const APPLAUSE_BONUS = 2;
@@ -55,6 +62,7 @@ function showtime(room) {return room.settings.rules === 'showtime';}
 function everyone(room) {return room.settings.roundStyle === 'everyone';}
 function nameOf(room, id) {return room.players.find(p => p.id === id)?.name || 'Contestant';}
 function plural(n, word) {return `${n} ${word}${n === 1 ? '' : 's'}`;}
+function presentationLeft(b, now) {return Math.max(0, (b.presentUntil || 0) - now);}
 function snapshot(room) {return Object.fromEntries(room.players.map(p => [p.id, p.sparks]));}
 function lastOrders(b) {return b.roundNo >= b.totalRounds;}
 function seats(room) {return [...room.players].sort((a, z) => a.seat - z.seat);}
@@ -77,7 +85,7 @@ function publicBoard(room, forTv = false, viewerId = null) {
     showdown: phase5.publicState(room, forTv, viewerId),
     minigame: (b.minigame && phase4.SPECS[b.minigame.id] ? phase4.publicState(room, forTv, viewerId) : phase3.publicState(room, forTv)),
     step: b.step, turn: b.turn, activeId: b.activeId, rolls: b.rolls, landing: b.landing, lastMove: b.lastMove, event: b.event,
-    deadline: b.deadline, nextAt: b.nextAt, challenge, result: b.result, leaderIds: b.leaderIds, finalists: b.finalists,
+    deadline: b.deadline, nextAt: b.nextAt, presentUntil: b.presentUntil || null, challenge, result: b.result, leaderIds: b.leaderIds, finalists: b.finalists,
     winnerIds: b.winnerIds, history: b.history.slice(-8), paused: Boolean(b.pausedAt), pauseReason: b.pauseReason
   };
 }
@@ -153,7 +161,7 @@ function advanceRoundMove(room, now, rng) {
   b.activeId = p.id; b.landing = to;
   b.lastMove = {playerId: p.id, from, to, path, die: entry.die, revision: ++b.moveRevision};
   b.event = {type: 'move', text: `Moving: ${p.name} (${entry.die})`};
-  r.moveIndex++; b.nextAt = now + ROUND_MOVE_MS;
+  r.moveIndex++; b.nextAt = now + presentMs(entry.die);
 }
 function resolveRoundLandings(room, now) {
   const b = room.board, r = b.round, lines = [];
@@ -212,6 +220,7 @@ function beginMove(room, die, now, rng = crypto.randomInt) {
   for (let k = 1; k <= die; k++) path.push((from + k) % SPACES.length);
   const to = path.at(-1);
   p.position = to; b.landing = to; b.lastMove = {playerId: p.id, from, to, path, die, revision: ++b.moveRevision}; b.rolls = [];
+  b.presentUntil = now + presentMs(path.length);
   const passed = path.includes(0) && to !== 0;
   if (passed) p.sparks += START_PASS_BONUS;
   if (path.includes(0) && showtime(room)) p.cues = Math.min(DIRECTORS_CUES, (p.cues || 0) + 1);
@@ -253,7 +262,7 @@ function sampleQuestion(b, randomInt) {
 function beginChallenge(room, kind, now, randomInt = crypto.randomInt) {
   const b = room.board, q = sampleQuestion(b, randomInt);
   const participants = kind === 'tiebreak' ? b.finalists.slice() : [b.activeId];
-  const ms = kind === 'drain' ? 5_000 : (room.settings.timerSpeed === 'relaxed' ? 24_000 : 16_000);
+  const ms = (kind === 'drain' ? 5_000 : (room.settings.timerSpeed === 'relaxed' ? 24_000 : 16_000)) + presentationLeft(b, now);
   b.challenge = {kind, title: kind === 'drain' ? 'BRAIN DRAIN' : 'NOGGIN-OFF TIEBREAKER', question: q.prompt, choices: q.options, correct: q.correct, participants, answers: {}, deadline: now + ms};
   b.step = 'challenge'; b.deadline = b.challenge.deadline;
   b.event = {type: 'challenge', text: kind === 'drain' ? `${actor(room).name} hit BRAIN DRAIN! Answer in five seconds or lose one Spark.` : 'Closest to the tie-break target wins.'};
@@ -281,11 +290,11 @@ function resolveLanding(room, now, passed, rng = crypto.randomInt) {
     callGame(room, p, type, false);
     finishTurn(room, now, `${p.name} called a ${label} game for this round and will host it${stolen}${pass}.`); return;
   }
-  if (type === 'swap') {b.step = 'choose_target'; b.deadline = now + DECISION_MS; b.event = {type: 'swap', text: `${p.name}: choose a player to swap board positions with.`}; return;}
-  if (type === 'wildcard') {b.step = 'choose_category'; b.deadline = now + DECISION_MS; b.event = {type: 'wildcard', text: `WILDCARD! ${p.name} picks this round's game, locks it in and hosts it.`}; return;}
+  if (type === 'swap') {b.step = 'choose_target'; b.deadline = now + presentationLeft(b, now) + DECISION_MS; b.event = {type: 'swap', text: `${p.name}: choose a player to swap board positions with.`}; return;}
+  if (type === 'wildcard') {b.step = 'choose_category'; b.deadline = now + presentationLeft(b, now) + DECISION_MS; b.event = {type: 'wildcard', text: `WILDCARD! ${p.name} picks this round's game, locks it in and hosts it.`}; return;}
   // One Showdown per round keeps the spotlight shared.
   if (type === 'showdown' && b.showdownPlayed) {p.sparks += CORNER_BONUS; finishTurn(room, now, `${SHOWDOWNS[p.position]} corner — this round's Showdown has already been played, so ${p.name} takes a +${CORNER_BONUS} Corner Bonus${pass}.`); return;}
-  if (type === 'showdown') {b.showdownPlayed = true; b.step = 'choose_opponent'; b.deadline = now + DECISION_MS; b.event = {type: 'showdown', text: `${SHOWDOWNS[p.position]} corner! ${p.name} challenges a rival — winner takes up to 2 Sparks.`}; return;}
+  if (type === 'showdown') {b.showdownPlayed = true; b.step = 'choose_opponent'; b.deadline = now + presentationLeft(b, now) + DECISION_MS; b.event = {type: 'showdown', text: `${SHOWDOWNS[p.position]} corner! ${p.name} challenges a rival — winner takes up to 2 Sparks.`}; return;}
   if (type === 'drain') {beginChallenge(room, 'drain', now, rng); return;}
   finishTurn(room, now, `${p.name} landed safely.`);
 }
@@ -396,8 +405,10 @@ function finishTurn(room, now, text, winners = []) {
     }
     if (doubled.length) text += ` · LAST ORDERS DOUBLES IT: ${doubled.join(', ')}.`;
   }
-  b.step = 'result'; b.deadline = null; b.nextAt = now + (room.settings.timerSpeed === 'relaxed' ? 4200 : 2900);
-  b.result = {text, winners: won, underdogs}; b.event = {type: 'result', text};
+  b.step = 'result'; b.deadline = null; b.nextAt = now + presentationLeft(b, now) + (room.settings.timerSpeed === 'relaxed' ? 4200 : 2900);
+  // Per-player Spark change for this verdict, so the TV podium and each phone can show it.
+  const deltas = Object.fromEntries(room.players.map(p => [p.id, p.sparks - (Number.isInteger(before[p.id]) ? before[p.id] : p.sparks)]).filter(([, d]) => d !== 0));
+  b.result = {text, winners: won, underdogs, deltas}; b.event = {type: 'result', text};
   b.history.push({turn: b.turn, round: b.roundNo, name: actor(room)?.name || 'Show', text}); if (b.history.length > 60) b.history.shift();
   const max = Math.max(...room.players.map(p => p.sparks));
   b.leaderIds = room.players.filter(p => p.sparks === max).map(p => p.id);
@@ -407,6 +418,7 @@ function finishTurn(room, now, text, winners = []) {
 
 function resetTurnFlags(room) {
   const b = room.board;
+  b.presentUntil = null;
   b.routePlan = false; b.routeOptions = []; b.rolls = []; b.result = null; b.deadline = null; b.nextAt = null;
   b.turnStartSparks = snapshot(room);
 }
@@ -543,6 +555,6 @@ module.exports = {
   SPACES, COLORS, ICONS, LABELS, LIFTS, SHOWDOWNS, CATEGORIES, ROUND_OPTIONS, DEFAULT_ROUNDS, autoRounds,
   publicBoard, start, beginRound, roundRoll, roll, pickDie, choose, answer, tick, finishTurn, nextTurn, startRoundGame, endGame, beginMove, resolveChallenge,
   minigameInput, minigameDraw, hostPause, hostResume, skipDisconnected, resumeClocks,
-  DIRECTORS_CUES, DIRECTORS_CHOICE_MS, ROUND_ROLL_MS, ROUND_MOVE_MS, START_LAND_BONUS, START_PASS_BONUS, APPLAUSE_BONUS, ROUND_GAME_BONUS, CORNER_BONUS,
+  DIRECTORS_CUES, DIRECTORS_CHOICE_MS, ROUND_ROLL_MS, ROUND_MOVE_MS, DICE_SHOW_MS, HOP_MS, SETTLE_MS, presentMs, START_LAND_BONUS, START_PASS_BONUS, APPLAUSE_BONUS, ROUND_GAME_BONUS, CORNER_BONUS,
   UNDERDOG_THRESHOLD, UNDERDOG_BONUS_SMALL, UNDERDOG_BONUS_EIGHT
 };

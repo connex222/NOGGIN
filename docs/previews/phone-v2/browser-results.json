@@ -1,5 +1,5 @@
 {
-  "checked": 69,
+  "checked": 72,
   "screens": [
     {
       "width": 360,
@@ -250,6 +250,13 @@
       "forms": 1
     },
     {
+      "width": 360,
+      "height": 640,
+      "id": "presentation-gate",
+      "before": "\ud83c\udfb2 WATCH THE TV",
+      "after": "+2 SPARKS!"
+    },
+    {
       "width": 390,
       "height": 844,
       "id": "quick-draw",
@@ -498,6 +505,13 @@
       "forms": 1
     },
     {
+      "width": 390,
+      "height": 844,
+      "id": "presentation-gate",
+      "before": "\ud83c\udfb2 WATCH THE TV",
+      "after": "+2 SPARKS!"
+    },
+    {
       "width": 430,
       "height": 932,
       "id": "quick-draw",
@@ -744,6 +758,13 @@
       "overflow": 0,
       "buttons": 1,
       "forms": 1
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "id": "presentation-gate",
+      "before": "\ud83c\udfb2 WATCH THE TV",
+      "after": "+2 SPARKS!"
     }
   ]
 }

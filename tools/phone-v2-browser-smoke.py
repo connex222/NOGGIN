@@ -23,7 +23,7 @@ for avatar in avatars:
 fetchmock='window.fetch=async()=>({ok:true,json:async()=>'+json.dumps(avatars)+'});'
 MOCK=r"""(()=>{
   Object.defineProperty(window,'localStorage',{configurable:true,value:{m:new Map(),getItem(k){return this.m.get(k)||null},setItem(k,v){this.m.set(k,v)},removeItem(k){this.m.delete(k)}}});
-  let handlers={},room={code:'ABCD',phase:'lobby',canStart:false,hostOnline:true,settings:{target:12,timerSpeed:'normal',reduceMotion:false,familyFriendly:true,rules:'showtime'},players:[],serverNow:Date.now(),board:null};
+  let handlers={},room={code:'ABCD',phase:'lobby',canStart:false,hostOnline:true,settings:{rounds:'auto',timerSpeed:'normal',reduceMotion:false,familyFriendly:true,rules:'showtime'},players:[],serverNow:Date.now(),board:null};
   const socket={connected:true,on(n,fn){handlers[n]=fn;return this},timeout(){return this},emit(n,p,callback){
     let r={ok:true,state:room};
     if(n==='room:resume')r={ok:false,message:'No previous seat'};
@@ -44,6 +44,7 @@ ids=['quick-draw','count-flash','odd-spot','colour-clash','higher-lower','memory
 def mini_state(ident):
  now=int(time.time()*1000)
  base={'id':ident,'title':ident.replace('-',' ').title(),'round':2,'totalRounds':5,'roundKey':2,'phase':'play','rule':'Pick the best answer and use your head!','question':'Look closely at the TV to solve this challenge.','introUntil':now-3000,'deadline':now+32000,'participants':['p1','p2'],'eliminated':[],'answered':[],'voted':[],'progress':{'p1':1},'scores':{},'strikes':{},'blocked':{},'private':{},'display':{'word':'BLUE','ink':'GREEN','reverse':False,'sequenceLength':5,'strokes':[],'category':'Objects','options':['The first answer','The second answer','The third answer'],'partners':['p2'],'teams':[['p1'],['p2']],'totals':[4,4],'progress':[0,0],'wires':['RED','BLUE','GREEN'],'cut':[],'keypadReady':False}}
+ if ident=='odd-spot':base['display']['grid']=['●']*35+['◆']
  if ident=='sketch-sabotage':base['private']={'role':'artist','word':'A GUITAR'}
  if ident=='noise-annoys':base['private']={'clue':'CRASHING WAVES'}
  if ident=='relay-sums':base['private']={'role':'relay-solver','prompt':'18 + 19 = ?'}
@@ -52,13 +53,13 @@ def mini_state(ident):
 
 def board(step='minigame',ident='odd-spot'):
  now=int(time.time()*1000)
- return {'step':step,'turn':5,'activeId':'p1','paused':False,'turnEnded':False,'event':{'type':'test','text':'TV is live'},'result':None,'winnerIds':[],
+ return {'step':step,'turn':5,'roundNumber':3,'totalRounds':10,'activeId':'p1','paused':False,'turnEnded':False,'event':{'type':'test','text':'TV is live'},'result':None,'winnerIds':[],
   'minigame':mini_state(ident) if step=='minigame' else None,
   'showdown':None,'deadline':now+35000,'nextAt':now+14000,'routeOptions':[{'steps':3,'cost':0,'type':'brain'},{'steps':4,'cost':1,'type':'speed'}], 'rolls':[3,5], 'history':[]}
 
 stats=[]
 with sync_playwright() as playwright:
- browser=playwright.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox','--disable-dev-shm-usage'])
+ browser=playwright.chromium.launch(headless=True,executable_path=('/usr/bin/chromium' if Path('/usr/bin/chromium').exists() else None),args=['--no-sandbox','--disable-dev-shm-usage'])
  for width,height in [(360,640),(390,844),(430,932)]:
   ctx=browser.new_context(viewport={'width':width,'height':height},device_scale_factor=1,has_touch=True,is_mobile=True)
   page=ctx.new_page();errs=[];page.on('pageerror',lambda e:errs.append(str(e)))
@@ -74,7 +75,7 @@ with sync_playwright() as playwright:
   if width==390:page.screenshot(path=str(OUT/'lobby-390.png'),full_page=True)
   for ident in ids:
    b=board('minigame',ident)
-   state={'code':'ABCD','phase':'board','settings':{'target':12,'rules':'showtime'},'players':[{'id':'p1','name':'GameNana','avatarId':8,'seat':1,'sparks':8,'cues':2,'ready':True,'online':True},{'id':'p2','name':'CaptainK','avatarId':4,'seat':2,'sparks':5,'cues':0,'ready':True,'online':True}], 'serverNow':int(time.time()*1000),'board':b}
+   state={'code':'ABCD','phase':'board','settings':{'rounds':'auto','rules':'showtime'},'players':[{'id':'p1','name':'GameNana','avatarId':8,'seat':1,'sparks':8,'cues':2,'ready':True,'online':True},{'id':'p2','name':'CaptainK','avatarId':4,'seat':2,'sparks':5,'cues':0,'ready':True,'online':True}], 'serverNow':int(time.time()*1000),'board':b}
    page.evaluate('s=>window.__fakeState(s)',state);page.wait_for_timeout(45)
    props=page.evaluate('''()=>({overflow:document.documentElement.scrollWidth-innerWidth,buttons:document.querySelectorAll('#gameButtons button').length,forms:document.querySelectorAll('#gameButtons form').length,
       logo:document.querySelector('.phone-brand img').naturalWidth,tag:document.querySelector('#gameStateTag').textContent.trim(),inputs:document.querySelectorAll('#gameButtons input').length,
@@ -109,6 +110,16 @@ with sync_playwright() as playwright:
    page.evaluate('s=>window.__fakeState(s)',s);page.wait_for_timeout(35)
    assert page.evaluate('document.documentElement.scrollWidth-innerWidth')<=1,(width,step,'overflow')
    if width==390 and step in ('await_roll','result'):page.screenshot(path=str(OUT/(step+'-390.png')),full_page=True)
+  # Presentation gate: a result whose token is still hopping on the TV stays hidden.
+  hidden={**state,'serverNow':int(time.time()*1000),'board':{**board('result'),'presentUntil':int(time.time()*1000)+900,'result':{'text':'APPLAUSE! +2 Sparks.','winners':[],'deltas':{'p1':2}}}}
+  page.evaluate('s=>window.__fakeState(s)',hidden);page.wait_for_timeout(60)
+  first=page.locator('#gameHeadline').text_content()
+  assert first=='🎲 WATCH THE TV',(width,'result shown before the TV landed',first)
+  page.wait_for_timeout(1000)
+  after=page.locator('#gameHeadline').text_content()
+  assert after=='+2 SPARKS!',(width,'personal result missing after landing',after)
+  if width==390:page.screenshot(path=str(OUT/'result-delta-390.png'),full_page=True)
+  stats.append({'width':width,'height':height,'id':'presentation-gate','before':first,'after':after})
   assert not errs,(width,errs)
   ctx.close()
  browser.close()

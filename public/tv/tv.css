@@ -280,3 +280,10 @@ body.tv.playing .stage-challenge.mini-on-tv:has(.tv-sketch) .tv-sketch{
 .flash-scene{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:repeat(6,minmax(0,1fr));height:min(49vh,360px);width:min(100%,650px);margin:auto;gap:2px;padding:4px}
 .flash-scene span,.flash-fakeout span{position:static!important;display:flex;align-items:center;justify-content:center;font-size:clamp(32px,3.6vw,53px)!important;line-height:1!important}
 @media(max-height:740px){.flash-scene{height:300px}.flash-scene span,.flash-fakeout span{font-size:42px!important}}
+
+/* v3.2 verdict podium: Spark change chips and room for up to five faces. */
+.spotlight-delta{font-weight:1000;font-size:clamp(16px,1.9vw,30px);line-height:1;padding:3px 10px;border-radius:99px;letter-spacing:.02em}
+.spotlight-delta.gain{color:#152000;background:linear-gradient(180deg,#e8ff8f,#8fe04a);box-shadow:0 0 14px #b7ff6a66}
+.spotlight-delta.loss{color:#fff;background:linear-gradient(180deg,#ff7d9a,#c2234a);box-shadow:0 0 12px #ff4f7a55}
+.spotlight-faces.cast-4 .spotlight-contestant img,.spotlight-faces.cast-5 .spotlight-contestant img{height:clamp(64px,14vh,140px);width:clamp(64px,14vh,140px)}
+.spotlight-faces.cast-4,.spotlight-faces.cast-5{gap:clamp(10px,2.4vw,40px)}

@@ -1,3 +1,13 @@
+# NOGGIN v3.2.0 — showmanship pass 1
+
+- Node.js tests: **271 passed, 0 failed** (1 live-HTTP test skipped without `npm install`). `npm run check` passed. Release audit **106/106**.
+- TV browser smoke (3 viewports): verdict hidden while the die rolls and the token hops; podium with +2 / −1 chips after landing; score updates only after landing. Screenshots: `docs/previews/arena-board/verdict-rolling-1280x720.png`, `verdict-podium-1280x720.png`.
+- Phone browser smoke: 72 scenes on 360/390/430-wide phones; result hidden until the TV lands, then "+2 SPARKS!". Screenshot: `docs/previews/phone-v2/result-delta-390.png`.
+- Simulator, Everyone Rolls, Auto length (moves now paced to the animation): 2 players 12 rounds ≈17 min, 4 players 12 rounds ≈21 min, 6 players 10 rounds ≈20 min, 8 players 10 rounds ≈22 min (real-room estimate, 1.5× server time).
+- **No real TV-to-phone multiplayer round has been verified.**
+
+---
+
 # NOGGIN v3.1.0 — merged release check
 
 - Node.js tests with `npm install`: **268 passed, 0 failed, 0 skipped**. `npm run check` passed. Release audit **106/106**.

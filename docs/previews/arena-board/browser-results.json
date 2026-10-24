@@ -25,6 +25,15 @@
     "errors": []
   },
   {
+    "viewport": "1280x720-verdict",
+    "hiddenWhileRolling": true,
+    "chips": [
+      "+2 \u2726",
+      "\u22121 \u2726"
+    ],
+    "errors": []
+  },
+  {
     "viewport": "1920x1080",
     "playing": true,
     "avatars": 8,

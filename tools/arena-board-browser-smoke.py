@@ -75,7 +75,30 @@ with sync_playwright() as p:
       assert page.locator('#challengePanel').is_visible(),'Challenge panel missing';assert not errs,errs
       page.screenshot(path=str(PREVIEW/'arena-challenge-1280x720.png'))
       records.append({'viewport':'1280x720-challenge','panelVisible':True,'errors':errs})
+      # Presentation gate: a fresh roll whose verdict is already known must stay hidden
+      # until the die has landed and the token has hopped; then the podium appears.
+      verdict=json.loads(json.dumps(base));vp=verdict['players']
+      vp[0]['sparks']=10;vp[0]['position']=8;vp[2]['sparks']=3
+      verdict['board']={**baseboard,'step':'result','activeId':'p1','turn':6,
+        'lastMove':{'playerId':'p1','from':5,'to':8,'path':[6,7,8],'die':3,'revision':77},
+        'result':{'text':'APPLAUSE! The studio loves Judge: +2 Sparks.','winners':[],'deltas':{'p1':2,'p3':-1}},
+        'event':{'text':'APPLAUSE! The studio loves Judge: +2 Sparks.'},'nextAt':now+9000,'presentUntil':now+2350}
+      verdict['serverNow']=int(time.time()*1000)
+      page.evaluate('(s)=>window.__tvTestState(s)',verdict);page.wait_for_timeout(250)
+      early=page.evaluate('''()=>({spot:!document.getElementById('resultSpotlight').classList.contains('hidden'),msg:document.getElementById('boardMessage').textContent,score:document.querySelector('.score-seat strong')?.textContent||''})''')
+      assert not early['spot'],('verdict shown while dice still rolling',early)
+      assert early['msg'].startswith('🎲'),('hub should show the roll in progress',early)
+      assert '10' not in early['score'],('score changed before the token landed',early)
+      page.screenshot(path=str(PREVIEW/'verdict-rolling-1280x720.png'))
+      page.wait_for_timeout(2300)
+      late=page.evaluate('''()=>({spot:!document.getElementById('resultSpotlight').classList.contains('hidden'),chips:[...document.querySelectorAll('.spotlight-delta')].map(e=>e.textContent),score:document.querySelector('.score-seat strong')?.textContent||''})''')
+      assert late['spot'],('verdict never appeared',late)
+      assert late['chips']==['+2 ✦','−1 ✦'],('podium chips',late)
+      assert '10' in late['score'],('score not updated after landing',late)
+      assert not errs,errs
+      page.screenshot(path=str(PREVIEW/'verdict-podium-1280x720.png'))
+      records.append({'viewport':'1280x720-verdict','hiddenWhileRolling':True,'chips':late['chips'],'errors':errs})
     ctx.close()
  browser.close()
 (PREVIEW/'browser-results.json').write_text(json.dumps(records,indent=2))
-print('ARENA BOARD UI SMOKE: 3 TV viewports, 28-space trapezium clear of the hub, 8 live avatar tokens and score cards, 1 challenge state, no page errors or scrollbars')
+print('ARENA BOARD UI SMOKE: 3 TV viewports, 28-space trapezium clear of the hub, 8 live avatar tokens and score cards, 1 challenge state, verdict hidden until the token lands then a Spark-change podium, no page errors or scrollbars')

@@ -227,36 +227,14 @@ class NogginBoardView {
     ctx.stroke();
     canvas.dataset.strokeCount = String(seen + 1);
   }
+  // True while the TV is still showing a die tumble or a token hopping. During
+  // that time nothing that would give away the result is drawn: no verdict, no
+  // score change, no question panel. The server waits for the same duration.
+  presenting(){return Boolean(this.pendingMove||this.moveAnimating);}
   render(state) {
     this.latestState=state;
     this.flashHandles.forEach(clearTimeout);this.flashHandles=[];
     const b=state.board;if(!b)return;
-    document.getElementById('stageTurn').textContent=b.lastOrders?`🍺 LAST ORDERS · ROUND ${b.roundNumber} OF ${b.totalRounds}`:`ROUND ${b.roundNumber} OF ${b.totalRounds}`;
-    const target=document.getElementById('stageTarget');target.textContent=this.nextGameLabel(b,state);target.title=target.textContent;
-    const actor=state.players.find(p=>p.id===b.activeId);
-    document.getElementById('stageActive').textContent=b.paused?'⏸ SHOW PAUSED':b.step==='finished'?'THE SHOW IS OVER':`${actor?.name||'Contestant'} IS IN THE SPOTLIGHT`;
-    document.getElementById('stageEvent').textContent=b.paused?'Show paused':b.step==='round_roll'?'EVERYONE ROLL NOW!':b.step==='round_moving'?(b.event?.text||'Moving contestants'):b.step==='await_roll'?`${actor?.name||'Contestant'} · roll the dice!`:b.event?.text||`${actor?.name||'Contestant'} · use your head!`;
-    document.getElementById('stageHelp').textContent=b.paused?b.pauseReason:'The next turn starts automatically after results.';
-    document.getElementById('boardMessage').textContent=b.paused?'⏸ SHOW PAUSED':b.step==='choose_route'?'🎬 DIRECTOR’S CUT · PICK A LANDING':b.step==='finished'?'★ WE HAVE A WINNER ★':b.step==='result'?b.result?.text:actor?`${actor.name.toUpperCase()} · ${b.step==='await_roll'?'ROLL THE DICE!':'USE YOUR HEAD'}`:'NOGGIN';
-    this.renderScores(state);
-    const hero=document.getElementById('arenaActiveAvatar');
-    if(hero){const img=this.avatars.find(a=>a.id===actor?.avatarId)?.think;
-      hero.hidden=!img;if(img)hero.src=img;hero.alt=actor?`${actor.name} is the active contestant`:'';}
-    const cue=document.getElementById('arenaBottomCue');
-    if(cue){const actions={round_roll:'🎲 EVERYONE ROLL NOW',round_moving:'🎲 MOVING PLAYERS',await_roll:'🎲 ROLL ON YOUR PHONE',choose_die:'🎲 CHOOSE YOUR DIE',choose_route:'✦ PICK YOUR LANDING',minigame:'⚡ CHALLENGE IN PROGRESS',showdown:'★ SHOWDOWN LIVE',result:'✦ THE VERDICT',finished:'🏆 SHOW COMPLETE'};
-      cue.textContent=b.paused?'⏸ SHOW PAUSED':actions[b.step]||'★ USE YOUR HEAD';}
-
-    const panel=document.getElementById('challengePanel'), c=b.challenge;
-    panel.classList.toggle('hidden',!c&&!b.minigame&&!b.showdown);
-    panel.classList.toggle('mini-on-tv',Boolean(b.minigame||b.showdown));
-    panel.classList.toggle('duel-on-tv',Boolean(b.showdown));
-    if(b.minigame){this.renderMini(b.minigame,state);}
-    if(b.showdown){this.renderShowdown(b.showdown,state);}
-    if(c){document.getElementById('challengeType').textContent=c.title;document.getElementById('challengeTitle').textContent=c.kind==='drain'?'FIVE-SECOND CHALLENGE':c.kind==='showdown'?'DUEL!':c.kind==='tiebreak'?'SUDDEN DEATH':'QUICK CHOICE';
-      document.getElementById('challengePrompt').textContent=c.question;
-      const options=document.getElementById('challengeChoices');options.replaceChildren();for(const a of c.choices){const el=document.createElement('span');el.textContent=a;options.append(el);}this.clockAt=c.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();}
-    else if(!b.minigame&&!b.showdown) this.clockAt=null;
-    this.paintRouteOptions(b);this.renderResultSpotlight(b,state);
     // Movement is replayed only for a NEW server-authoritative revision. Never
     // generate a number locally or restart the show when room:state repeats.
     const freshMove=b.lastMove?.revision!==undefined && b.lastMove.revision!==this.lastRevision;
@@ -269,12 +247,47 @@ class NogginBoardView {
         this.pendingMove=null;
         this.animateMove(b.lastMove,this.latestState?.players||state.players);
       },`move-${b.lastMove.revision}`);
-    }else if(!this.pendingMove&&!this.moveAnimating){this.paintTokens(state.players);}
+    }
+    const presenting=this.presenting();
+    document.getElementById('stageTurn').textContent=b.lastOrders?`🍺 LAST ORDERS · ROUND ${b.roundNumber} OF ${b.totalRounds}`:`ROUND ${b.roundNumber} OF ${b.totalRounds}`;
+    const target=document.getElementById('stageTarget');target.textContent=this.nextGameLabel(b,state);target.title=target.textContent;
+    const actor=state.players.find(p=>p.id===b.activeId);
+    const mover=presenting?state.players.find(p=>p.id===(this.pendingMove||this.movingMove)?.playerId)||actor:actor;
+    document.getElementById('stageActive').textContent=b.paused?'⏸ SHOW PAUSED':b.step==='finished'?'THE SHOW IS OVER':`${mover?.name||'Contestant'} IS IN THE SPOTLIGHT`;
+    document.getElementById('stageEvent').textContent=b.paused?'Show paused':presenting?`${mover?.name||'Contestant'} is on the move…`:b.step==='round_roll'?'EVERYONE ROLL NOW!':b.step==='round_moving'?(b.event?.text||'Moving contestants'):b.step==='await_roll'?`${actor?.name||'Contestant'} · roll the dice!`:b.event?.text||`${actor?.name||'Contestant'} · use your head!`;
+    document.getElementById('stageHelp').textContent=b.paused?b.pauseReason:presenting?'Watch the board…':'The next turn starts automatically after results.';
+    document.getElementById('boardMessage').textContent=b.paused?'⏸ SHOW PAUSED':presenting?`🎲 ${mover?.name?.toUpperCase()||'ROLLING'}…`:b.step==='choose_route'?'🎬 DIRECTOR’S CUT · PICK A LANDING':b.step==='finished'?'★ WE HAVE A WINNER ★':b.step==='result'?b.result?.text:actor?`${actor.name.toUpperCase()} · ${b.step==='await_roll'?'ROLL THE DICE!':'USE YOUR HEAD'}`:'NOGGIN';
+    // Scores stay as they were until the token has landed.
+    if(!presenting)this.renderScores(state);
+    const hero=document.getElementById('arenaActiveAvatar');
+    if(hero){const img=this.avatars.find(a=>a.id===mover?.avatarId)?.think;
+      hero.hidden=!img;if(img)hero.src=img;hero.alt=mover?`${mover.name} is the active contestant`:'';}
+    const cue=document.getElementById('arenaBottomCue');
+    if(cue){const actions={round_roll:'🎲 EVERYONE ROLL NOW',round_moving:'🎲 MOVING PLAYERS',await_roll:'🎲 ROLL ON YOUR PHONE',choose_die:'🎲 CHOOSE YOUR DIE',choose_route:'✦ PICK YOUR LANDING',minigame:'⚡ CHALLENGE IN PROGRESS',showdown:'★ SHOWDOWN LIVE',result:'✦ THE VERDICT',finished:'🏆 SHOW COMPLETE'};
+      cue.textContent=b.paused?'⏸ SHOW PAUSED':presenting?'🎲 ON THE MOVE':actions[b.step]||'★ USE YOUR HEAD';}
+
+    const panel=document.getElementById('challengePanel'), c=presenting?null:b.challenge;
+    const mini=presenting?null:b.minigame,duel=presenting?null:b.showdown;
+    panel.classList.toggle('hidden',!c&&!mini&&!duel);
+    panel.classList.toggle('mini-on-tv',Boolean(mini||duel));
+    panel.classList.toggle('duel-on-tv',Boolean(duel));
+    if(mini){this.renderMini(mini,state);}
+    if(duel){this.renderShowdown(duel,state);}
+    if(c){document.getElementById('challengeType').textContent=c.title;document.getElementById('challengeTitle').textContent=c.kind==='drain'?'FIVE-SECOND CHALLENGE':c.kind==='showdown'?'DUEL!':c.kind==='tiebreak'?'SUDDEN DEATH':'QUICK CHOICE';
+      document.getElementById('challengePrompt').textContent=c.question;
+      const options=document.getElementById('challengeChoices');options.replaceChildren();for(const a of c.choices){const el=document.createElement('span');el.textContent=a;options.append(el);}this.clockAt=c.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();}
+    else if(!mini&&!duel) this.clockAt=null;
+    this.paintRouteOptions(b);
+    if(presenting){document.getElementById('resultSpotlight')?.classList.add('hidden');}
+    else this.renderResultSpotlight(b,state);
+    if(!freshMove&&!presenting)this.paintTokens(state.players);
     if(!freshMove && ['choose_die','choose_route'].includes(b.step)){
       this.showDie(b.rolls,true,null,`choice-${b.turn}-${b.activeId}-${b.rolls.join('-')}`,true,
         b.step==='choose_route'?'DIRECTOR’S CUT · PICK A LANDING':'CHOOSE YOUR DIE');
-    }else if(!freshMove && !this.pendingMove && !this.moveAnimating && !['choose_die','choose_route'].includes(b.step))this.hideDie();
+    }else if(!freshMove && !presenting && !['choose_die','choose_route'].includes(b.step))this.hideDie();
   }
+  // Called when a token finishes hopping: draw everything the move was hiding.
+  presentationDone(){this.movingMove=null;if(this.latestState&&!this.presenting())this.render(this.latestState);}
   // What the round is building towards: shown permanently in the stage bar.
   nextGameLabel(b,state){
     const cat=b.roundGame?.category,host=state.players.find(p=>p.id===b.roundGame?.callerId);
@@ -284,28 +297,36 @@ class NogginBoardView {
     if(!cat||!host)return 'NEXT GAME: NOT CALLED YET';
     return `${b.roundGame.locked?'🔒 ':''}NEXT: ${cat.toUpperCase()} · HOST: ${host.name.toUpperCase()}`;
   }
+  // THE VERDICT podium: everyone whose Sparks changed, biggest gain first, with
+  // their win or lose face and the change in big type. Up to five faces.
   renderResultSpotlight(b,state){
     const root=document.getElementById('resultSpotlight');if(!root)return;
     const show=b.step==='result'||b.step==='finished';root.classList.toggle('hidden',!show);
     if(!show)return;
     const winnerIds=b.step==='finished'?b.winnerIds:(b.result?.winners||[]);
-    const winner=state.players.find(p=>winnerIds.includes(p.id));
-    const loser=state.players.find(p=>p.id===b.activeId && !winnerIds.includes(p.id));
-    const makeFace=(p,expression)=>{if(!p)return null;const a=this.avatars.find(item=>item.id===p.avatarId);
-      const portrait=document.createElement('figure');portrait.className=`spotlight-contestant ${expression}`;
-      const pic=document.createElement('img');pic.src=a?.images?.[expression==='champion'?'win':'lose']||a?.think||'';pic.alt=p.name;
-      pic.onerror=()=>{pic.style.display='none';};const name=document.createElement('figcaption');name.textContent=p.name;
-      portrait.append(pic,name);return portrait;};
-    const key=[b.step,b.turn,(b.result?.text||''),winnerIds.join(',')].join('|');
+    const deltas=b.step==='finished'?{}:(b.result?.deltas||{});
+    const key=[b.step,b.turn,(b.result?.text||''),winnerIds.join(','),JSON.stringify(deltas)].join('|');
     if(root.dataset.key===key)return;
     root.dataset.key=key;root.replaceChildren();
-    const label=document.createElement('div');label.className='spotlight-kicker';label.textContent=b.step==='finished'?'★ GRAND FINALE ★':'✦ THE VERDICT ✦';
-    const faces=document.createElement('div');faces.className='spotlight-faces';
-    if(winner){faces.append(makeFace(winner,'champion'));if(loser)faces.append(makeFace(loser,'runnerup'));}
-    else if(loser)faces.append(makeFace(loser,'runnerup'));
-    const lead=winner||loser,leadAvatar=this.avatars.find(a=>a.id===lead?.avatarId);
+    const makeFace=(p,mood,change)=>{const a=this.avatars.find(item=>item.id===p.avatarId);
+      const portrait=document.createElement('figure');portrait.className=`spotlight-contestant ${mood==='win'?'champion':'runnerup'}`;
+      const pic=document.createElement('img');pic.src=a?.images?.[mood]||a?.think||'';pic.alt=p.name;pic.onerror=()=>{pic.style.display='none';};
+      const name=document.createElement('figcaption');name.textContent=p.name;
+      portrait.append(pic,name);
+      if(change){const chip=document.createElement('strong');chip.className=`spotlight-delta ${change>0?'gain':'loss'}`;chip.textContent=`${change>0?'+':'−'}${Math.abs(change)} ✦`;portrait.append(chip);}
+      return portrait;};
+    let cast=[];
+    if(b.step==='finished')cast=state.players.filter(p=>winnerIds.includes(p.id)).map(p=>({p,mood:'win',change:0}));
+    else cast=Object.entries(deltas).map(([id,change])=>({p:state.players.find(x=>x.id===id),change})).filter(x=>x.p)
+      .sort((x,y)=>y.change-x.change||x.p.seat-y.p.seat).map(x=>({...x,mood:x.change>0||winnerIds.includes(x.p.id)?'win':'lose'}));
+    if(!cast.length){const p=state.players.find(x=>winnerIds.includes(x.id))||state.players.find(x=>x.id===b.activeId);if(p)cast=[{p,mood:winnerIds.includes(p.id)?'win':'lose',change:0}];}
+    cast=cast.slice(0,5);
+    const label=document.createElement('div');label.className='spotlight-kicker';label.textContent=b.step==='finished'?'★ GRAND FINALE ★':b.lastOrders?'🍺 LAST ORDERS · THE VERDICT':'✦ THE VERDICT ✦';
+    const faces=document.createElement('div');faces.className=`spotlight-faces cast-${cast.length}`;
+    for(const c of cast)faces.append(makeFace(c.p,c.mood,c.change));
+    const lead=cast[0],leadAvatar=this.avatars.find(a=>a.id===lead?.p.avatarId);
     const quote=document.createElement('div');quote.className='spotlight-quote';
-    quote.textContent=leadAvatar?.banter?.[winner?'win':'lose']||'';
+    const line=leadAvatar?.banter?.[lead?.mood==='win'?'win':'lose'];quote.textContent=line?`${lead.p.name}: “${line}”`:'';
     const summary=document.createElement('div');summary.className='spotlight-copy';summary.textContent=b.result?.text||b.event?.text||'The verdict is in!';
     root.append(label,faces,quote,summary);
   }
@@ -321,7 +342,7 @@ class NogginBoardView {
     state.players.forEach((p,index)=>{const avatar=this.avatars.find(a=>a.id===p.avatarId);const item=document.createElement('div');item.className=`score-seat ${b.leaderIds.includes(p.id)?'leader':''} ${p.id===b.activeId?'on-turn':''}`;
     const split=Math.ceil(state.players.length/2);const sideIndex=index<split?index:index-split;
     item.style.gridColumn=String(index<split?5-split+sideIndex:6+sideIndex);
-    const img=document.createElement('img');img.src=(b.step==='finished'&&b.winnerIds.includes(p.id)?avatar?.images?.win:b.step==='result'?(b.result?.winners?.includes(p.id)?avatar?.images?.win:avatar?.images?.lose):avatar?.think)||'';img.alt='';img.onerror=()=>{img.style.display='none';};
+    const img=document.createElement('img');img.src=(b.step==='finished'&&b.winnerIds.includes(p.id)?avatar?.images?.win:b.step==='result'?((b.result?.winners?.includes(p.id)||(b.result?.deltas?.[p.id]||0)>0)?avatar?.images?.win:(b.result?.deltas?.[p.id]||0)<0?avatar?.images?.lose:avatar?.think):avatar?.think)||'';img.alt='';img.onerror=()=>{img.style.display='none';};
     const label=document.createElement('span');label.textContent=p.name;const count=document.createElement('strong');count.textContent=`✦ ${p.sparks}${state.settings.rules==='showtime'?` · 🎬 ${p.cues||0}`:''}`;const top=Math.max(1,...state.players.map(x=>x.sparks||0));const meter=document.createElement('div');meter.className='spark-meter';meter.setAttribute('role','progressbar');meter.setAttribute('aria-label',`${p.name}: ${p.sparks} Sparks, leader has ${top}`);meter.setAttribute('aria-valuemin','0');meter.setAttribute('aria-valuemax',String(top));meter.setAttribute('aria-valuenow',String(p.sparks));
     const bar=document.createElement('i');bar.style.width=`${Math.round(p.sparks/top*100)}%`;meter.append(bar);
     item.append(img,label,count,meter);root.append(item);});
@@ -422,12 +443,12 @@ class NogginBoardView {
   animateMove(move,players){
     clearInterval(this.animTimer);
     if(document.documentElement.classList.contains('reduce-motion')||window.matchMedia?.('(prefers-reduced-motion: reduce)').matches){
-      this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);return;
+      this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);this.presentationDone();return;
     }
-    this.moveAnimating=true;let step=0;
+    this.moveAnimating=true;this.movingMove=move;let step=0;
     this.paintTokens(players,{playerId:move.playerId,position:move.from});
     this.animTimer=setInterval(()=>{
-      if(step>=move.path.length){clearInterval(this.animTimer);this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);return;}
+      if(step>=move.path.length){clearInterval(this.animTimer);this.moveAnimating=false;this.paintTokens(this.latestState?.players||players);this.presentationDone();return;}
       this.paintTokens(this.latestState?.players||players,{playerId:move.playerId,position:move.path[step++]});
       this.onHop?.(1+step*.085);
     },150);

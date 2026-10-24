@@ -17,7 +17,7 @@ function fixture(n=3,settings={}) {
 }
 // Put the active player `die` spaces before `space` and roll that number.
 function landOn(f,space,die=1){const p=f.room.players.find(x=>x.id===f.room.board.activeId);p.position=(space-die+28)%28;f.dice([die-1]);f.rooms.rollGame(f.code,f.phoneOf(p.id));return p;}
-function nextResult(f){f.advance(4501);f.rooms.sweep();}
+function nextResult(f){f.advance(6001);f.rooms.sweep();}
 
 test('28-space trapezium: a Showdown on all four corners, paired lifts and no doubled-up colours',()=>{
  assert.equal(board.SPACES.length,28);
@@ -176,4 +176,27 @@ test('gameplay reconnect keeps seat, pauses active turn, then skips after 30 sec
  f.advance(30_001);f.rooms.sweep();assert.equal(f.room.board.step,'result');assert.match(f.room.board.result.text,/skipped/);
  assert.equal(f.room.players.length,2);f.advance(4501);f.rooms.sweep();assert.equal(f.room.board.activeId,f.room.players[1].id);
  f.rooms.resume({code:f.code,role:'player',token:p.token,socketId:'back'});assert.equal(f.room.players[0].socketId,'back');
+});
+
+// ───── v3.2 presentation timing: nothing is revealed while the dice are in the air ─────
+test('the verdict waits for the dice and token hops; it carries each player\'s Spark change',()=>{
+ const f=fixture(2);const p=landOn(f,5,3);const b=f.room.board;
+ assert.equal(b.presentUntil,f.now()+board.presentMs(3));
+ assert.equal(b.nextAt,f.now()+board.presentMs(3)+2900);
+ assert.deepEqual(b.result.deltas,{[p.id]:2});
+ assert.equal(f.rooms.state(f.code).board.presentUntil,b.presentUntil);
+ f.advance(board.presentMs(3)+2800);f.rooms.sweep();assert.equal(b.step,'result');
+ f.advance(201);f.rooms.sweep();assert.equal(b.step,'await_roll');assert.equal(b.presentUntil,null);
+});
+test('Brain Drain\'s five seconds start only after the token lands; decisions get the same allowance',()=>{
+ const f=fixture(2);landOn(f,3,2);
+ assert.equal(f.room.board.challenge.deadline,f.now()+board.presentMs(2)+5000);
+ const g=fixture(3);landOn(g,13,4);
+ assert.equal(g.room.board.deadline,g.now()+board.presentMs(4)+12000);
+});
+test('the round-game result reports gains and losses for everyone involved',()=>{
+ const f=fixture(3);const b=f.room.board,[a,c]=[f.room.players[0],f.room.players[2]];
+ b.stage='round-game';b.turnStartSparks={[a.id]:0,[f.room.players[1].id]:0,[c.id]:2};a.sparks=2;c.sparks=1;
+ board.finishTurn(f.room,f.now(),'Game over',[a.id]);
+ assert.deepEqual(b.result.deltas,{[a.id]:3,[c.id]:-1});
 });

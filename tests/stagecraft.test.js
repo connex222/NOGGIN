@@ -25,7 +25,7 @@ test('Director Cues come from contests (round games, Showdowns), never from pass
 test('Wildcard decision timeout still picks, locks and hosts a category',()=>{
  const f=fixture();f.room.players[0].position=13;f.dice(0);f.rooms.rollGame(f.code,'p0');
  assert.equal(f.room.board.step,'choose_category');
- f.advance(12_001);f.rooms.sweep();
+ f.advance(15_001);f.rooms.sweep();
  assert.equal(f.room.board.step,'result');assert.equal(f.room.board.roundLocked,true);
  assert.equal(f.room.board.roundCaller,f.room.players[0].id);assert.ok(board.CATEGORIES.includes(f.room.board.roundCategory));
 });
