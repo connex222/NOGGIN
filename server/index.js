@@ -29,7 +29,7 @@ app.get('/', (req,res) => res.redirect('/tv/'));
 // prevent /tv/ and /play/ from endlessly redirecting to themselves.
 app.get(/^\/tv$/, (req,res) => res.redirect('/tv/'));
 app.get(/^\/play$/, (req,res) => res.redirect('/play/'));
-app.get('/health', (req,res) => res.json({ok:true, game:'NOGGIN', phase:'stable-development', version:require('../package.json').version}));
+app.get('/health', (req,res) => res.json({ok:true, game:'NOGGIN', phase:'release-candidate', version:require('../package.json').version}));
 app.use(express.static(publicDir,{dotfiles:'deny',maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0}));
 app.use((req,res) => res.status(404).send('Not found'));
 const server = http.createServer(app);

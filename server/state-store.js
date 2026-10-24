@@ -29,8 +29,6 @@ function save(rooms,filename,now=Date.now()){
  if(!filename)return false;
  const dir=path.dirname(filename);fs.mkdirSync(dir,{recursive:true});
  const tmp=`${filename}.tmp`;
- // Account for live activity at the checkpoint boundary, not when reading state.
- for (const room of rooms.rooms.values()) require('./match-report').observe(room, now);
  const data=JSON.stringify({format:1,savedAt:now,rooms:[...rooms.rooms.values()]});
  fs.writeFileSync(tmp,data,{encoding:'utf8',mode:0o600});fs.renameSync(tmp,filename);
  return true;
