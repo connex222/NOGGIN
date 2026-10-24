@@ -35,7 +35,7 @@ window.__tvTestState=s=>listeners['room:state']?.(s);
 players=[{'id':f'p{i}','name':name,'avatarId':i,'seat':i,'sparks':sparks,'cues':0,'position':pos,'online':True,'ready':True} for i,(name,sparks,pos) in enumerate([
     ('Judge',8,5),('Sister Sue',5,12),('Pixie',4,24),('Captain',2,22),('Dr Zee',1,3),('Agent',0,18),('Sir Pecks',3,27),('Nana',2,8)],1)]
 now=int(time.time()*1000)
-baseboard={'step':'await_roll','turn':5,'activeId':'p1','paused':False,'event':{'text':"Judge's turn: roll the die!"},'round':3,'totalRounds':8,'stage':'board','lastOrders':False,'turnInRound':0,'roundGame':{'category':'brain','callerId':'p2','locked':False},'leaderIds':['p1'],'result':None,'winnerIds':[], 'minigame':None,'showdown':None,'challenge':None, 'routeOptions':[],'rolls':[], 'lastMove':None}
+baseboard={'step':'await_roll','turn':5,'activeId':'p1','paused':False,'event':{'text':"Judge's turn: roll the die!"},'round':None,'roundNumber':3,'totalRounds':8,'stage':'board','lastOrders':False,'turnInRound':0,'roundGame':{'category':'brain','callerId':'p2','locked':False},'leaderIds':['p1'],'result':None,'winnerIds':[], 'minigame':None,'showdown':None,'challenge':None, 'routeOptions':[],'rolls':[], 'lastMove':None}
 base={'code':'ABCD','phase':'board','players':players,'settings':{'rounds':'auto','rules':'classic','familyFriendly':True,'reduceMotion':False},'serverNow':now,'board':baseboard}
 records=[]
 with sync_playwright() as p:

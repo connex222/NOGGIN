@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');const games=require('../server/games/phase3');
+const {GameRooms}=require('./helpers/sequential-rooms');const games=require('../server/games/phase3');
 for(const id of Object.keys(games.SPECS)){
   for(const timerSpeed of ['normal','relaxed']){
     test(`${id} (${timerSpeed}) round deadline is under 30 seconds`,()=>{

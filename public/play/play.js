@@ -224,6 +224,16 @@
     $('gameHeadline').textContent=m.title;
     $('gameDescription').textContent=m.question;
     currentDeadline=m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
+    if(m.kind==='bid' && m.phase==='review'){
+      info('ANSWER UNDER REVIEW — THE VIP WILL DECIDE.');
+      if(roomState.vipId===player.id && m.display.bidderId===player.id) info('AS BIDDER, YOU CANNOT JUDGE YOUR OWN ANSWER. THE TV HOST MUST DECIDE.');
+      if(roomState.vipId===player.id && m.display.bidderId!==player.id){
+        info(`PROPOSED ANSWER: ${m.display.review?.answer||''}`);
+        gameButton('✓ ACCEPT ANSWER','game:bid-review',{accept:true},'button-primary');
+        gameButton('✕ REJECT ANSWER','game:bid-review',{accept:false},'button-blue');
+      }
+      return;
+    }
     if(!mine){
       if(m.kind==='tiebreak'){info('SUDDEN DEATH — WATCH THE FINALISTS');return;}
       if(roomState.settings.rules!=='showtime'){info('WATCH THE SHOWDOWN ON THE TV');return;}
@@ -290,7 +300,7 @@
     else if(m.id==='unscramble') numericOrWordControl(m,false);
     else if(m.id==='odd-spot'){
       const grid=document.createElement('div');grid.className='mini-grid';
-      Array.from({length:36},(_,i)=>i).forEach(i=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';btn.textContent=String(i+1);btn.setAttribute('aria-label',`Square ${i+1}`);btn.disabled=!socket.connected;
+      Array.from({length:36},(_,i)=>i).forEach(i=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';const glyph=document.createElement('span');glyph.textContent=m.display.grid[i];btn.append(glyph);const style=m.display.styles?.[i];if(style?.rotation)glyph.style.transform=`rotate(${style.rotation}deg)`;if(style?.tone)glyph.style.color=style.tone;btn.setAttribute('aria-label',`Square ${i+1}: ${m.display.grid[i]}`);btn.disabled=!socket.connected;
         btn.onclick=async()=>{btn.disabled=true;try{const r=await U.request(socket,'game:input',{value:i,roundKey:m.roundKey});roomState=r.state;render();error('');}
           catch(e){error(e.message);btn.disabled=false;}};grid.append(btn);});
       $('gameButtons').append(grid);
@@ -312,10 +322,29 @@
       const notice=document.createElement('div');notice.className='mini-help';notice.textContent='Wrong answer — short penalty before another try.';$('gameButtons').append(notice);
     }
   }
+  const shortInstructions=Object.freeze({
+    'quick-draw':'Wait for DRAW, then tap faster than everyone else.',
+    'count-flash':'Remember the objects, then count the requested type.',
+    'odd-spot':'Find the odd symbol; tap the same square.',
+    'colour-clash':'Tap the ink colour, not the written word.',
+    'higher-lower':'Guess higher or lower; two mistakes knock you out.',
+    'memory-lane':'Repeat the pads; reverse the final sequence in Showtime.',
+    'close-call':'Guess the number; the closest answer scores most.',
+    'unscramble':'Unscramble the word using its category clue.',
+    'sketch-sabotage':'Sketch or guess the word; watch for sneaky strokes.',
+    'noise-annoys':'Make or guess sounds; do not use words.',
+    'caption-this':'Write a funny caption, then vote for another.',
+    'fib-factory':'Invent a believable fib, then spot the truth.',
+    'mind-meld':'Write the same word as your partner without talking.',
+    'majority-rules':'Vote secretly; matching the majority earns points.',
+    'relay-sums':'Solve your sum to unlock the next teammate.',
+    'bomb-squad':'Share clues, cut wires in order, then enter the code.'
+  });
   function renderGame(player) {
     document.body.classList.add('game-mode');notice('');
     $('joinScreen').classList.add('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.remove('hidden');
     const b=roomState.board;document.body.classList.toggle('mini-mode',['minigame','showdown'].includes(b.step));
+    const instruction=$('gameMiniInstruction');instruction.textContent=b.step==='minigame'?shortInstructions[b.minigame?.id]||'':'';instruction.classList.toggle('hidden',!instruction.textContent);
     setPhonePresentation(b);
     const active=roomState.players.find(p=>p.id===b.activeId),me=player.id===b.activeId;
     const avatar=avatars.find(a=>a.id===player.avatarId),won=(b.result?.winners||b.winnerIds||[]).includes(player.id);
@@ -323,7 +352,7 @@
     $('gameAvatar').src=image||'';$('gameAvatar').alt=avatar?.name||player.name;
     $('gameName').textContent=player.name;$('gameSparks').textContent=`✦ ${player.sparks} SPARKS${roomState.settings.rules==='showtime'?` · 🎬 ${player.cues||0} CUES`:''}`;
     $('gameRoom').textContent=`ROOM ${session.code} · SEAT ${player.seat}`;
-    $('gameTurn').textContent=b.step==='finished'?'GAME OVER':b.stage==='noggin-off'?'NOGGIN-OFF':b.stage==='round-game'?`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.round} GAME · ${active?.name||'HOST'} HOSTS`:`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.round}/${b.totalRounds} · ${active?.name||'PLAYER'}'S ROLL`;
+    $('gameTurn').textContent=b.step==='finished'?'GAME OVER':b.stage==='noggin-off'?'NOGGIN-OFF':b.stage==='round-game'?`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.roundNumber} GAME · ${active?.name||'HOST'} HOSTS`:`${b.lastOrders?'LAST ORDERS · ':''}ROUND ${b.roundNumber}/${b.totalRounds} · ${active?.name||'PLAYER'}'S ROLL`;
     const priorInput=$('gameButtons').querySelector('form input');
     const priorFocused=Boolean(priorInput&&document.activeElement===priorInput);
     const activeCanvas=$('gameButtons').querySelector('canvas.sketch-canvas');
@@ -366,7 +395,21 @@
     }
     if(b.step==='showdown'&&b.showdown){renderShowdown(player,b.showdown);return;}
     if(b.step==='minigame'&&b.minigame){if(phase4Ids.has(b.minigame.id)){renderPhase4(player,b.minigame);if(priorFocused){const el=$('gameButtons').querySelector('.p4-form input');if(el){el.focus();if(el.type==='text')el.setSelectionRange(el.value.length,el.value.length);}}}else renderMiniGame(player,b.minigame);return;}
-    if(b.step==='await_roll'){
+    if(b.step==='round_roll'){
+      const rolled=Boolean(b.round?.rolls?.[player.id]);
+      title.textContent=rolled?'ROLL LOCKED IN':'EVERYONE ROLL!';
+      detail.textContent=rolled?'Waiting for the other contestants.':`${b.lastOrders?'LAST ORDERS — every Spark you win is doubled! ':''}Roll now. Land on a coloured space to call this round’s game and host it. The server rolls for you if the countdown runs out.`;
+      currentDeadline=b.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
+      if(!rolled){
+        gameButton('🎲 ROLL DICE','game:roll',{},'button-primary');
+        if(roomState.settings.rules==='showtime'){
+          const plan=Boolean(b.round?.directors?.[player.id]);
+          if(player.cues>0||plan)gameButton(plan?'✕ CANCEL DIRECTOR’S CUT':'🎬 DIRECTOR’S CUT · NUDGE ±1', 'game:choose',{action:plan?'normal':'director'},'button-director');
+        }
+      }
+    } else if(b.step==='round_moving'){
+      title.textContent='WATCH THE BOARD';detail.textContent=b.event?.text||'Moving everyone in seat order.';
+    } else if(b.step==='await_roll'){
       title.textContent=me?'YOUR TURN!':'WATCH THE DICE';
       const callNote=b.lastOrders?'LAST ORDERS: every Spark you win this round is doubled!':'Land on a coloured space to call this round’s game — and host it.';
       detail.textContent=!me?`It's ${active?.name}'s roll. Watch the stage.`:b.routePlan?'DIRECTOR’S CUT: roll, then pick your landing. Nudging one space costs a Cue.':callNote;
@@ -410,12 +453,69 @@
       document.body.classList.toggle('time-critical',seconds>0&&seconds<=5);
     }else{$('gameCountdown').textContent='';document.body.classList.remove('time-critical');}
   }
+  function renderVipControls() {
+    const player = currentPlayer();
+    const isVip = player && roomState?.vipId === player.id;
+    for (const id of ['vipControls', 'vipGameControls']) {
+      const panel = $(id);
+      panel.replaceChildren();
+      panel.classList.toggle('hidden', !isVip || (id === 'vipControls') !== (roomState.phase === 'lobby'));
+      if (!isVip || (id === 'vipControls') !== (roomState.phase === 'lobby')) continue;
+      const heading = document.createElement('h3');
+      heading.textContent = '★ VIP HOST CONTROLS';
+      panel.append(heading);
+      const add = (label, event, payload = {}) => {
+        const button = document.createElement('button');
+        button.type = 'button'; button.className = 'button-secondary vip-control';
+        button.textContent = label;button.disabled = !socket.connected;
+        button.onclick = async () => {
+          if (event === 'room:close' && !confirm('Close this room for everybody?')) return;
+          button.disabled = true;
+          try {
+            const response = await U.request(socket, event, payload);
+            if (response.state) roomState = response.state;
+            if (event === 'game:report') {
+              const blob = new Blob([JSON.stringify(response.report, null, 2)], {type:'application/json'});
+              const url = URL.createObjectURL(blob);
+              const link = document.createElement('a');link.href=url;
+              link.download=`noggin-match-${session.code}.json`;link.click();
+              setTimeout(() => URL.revokeObjectURL(url),1000);
+            }
+            if (event !== 'room:close') {error('');render();}
+          } catch(e) {error(e.message);button.disabled = false;}
+        };
+        panel.append(button);
+      };
+      if (roomState.phase === 'lobby') {
+        for(const [setting, choices] of Object.entries({
+          roundStyle: [['everyone','Everyone rolls'],['sequential','One at a time']],
+          rules: [['classic','Classic'],['showtime','Showtime']],
+          rounds: [['auto','Auto length'],[6,'6 rounds'],[8,'8 rounds'],[10,'10 rounds'],[12,'12 rounds']],
+          timerSpeed: [['normal','Normal'],['relaxed','Relaxed']]
+        })) {
+          const label = document.createElement('label');
+          label.textContent = ({roundStyle:'ROUND STYLE',rules:'GAME MODE',rounds:'SHOW LENGTH',timerSpeed:'TIMERS'})[setting];
+          const select = document.createElement('select');select.setAttribute('aria-label',label.textContent);
+          for (const [value,name] of choices) {const option=document.createElement('option');option.value=value;option.textContent=name;select.append(option);}
+          select.value=String(roomState.settings[setting]);
+          select.onchange=async()=>{try{const value=setting==='rounds'&&select.value!=='auto'?Number(select.value):select.value;const r=await U.request(socket,'room:settings',{patch:{[setting]:value}});roomState=r.state;render();error('');}catch(e){error(e.message);render();}};
+          label.append(select);panel.append(label);
+        }
+        add('▶ START SHOW','game:start');
+      } else {
+        add(roomState.board?.paused?'▶ RESUME':'⏸ PAUSE',roomState.board?.paused?'game:resume':'game:pause');
+        add('SKIP OFFLINE PLAYER','game:skip-offline');
+        add('DOWNLOAD MATCH REPORT','game:report');
+      }
+      add('CLOSE ROOM','room:close');
+    }
+  }
   function render() {
     if(!session || roomState?.phase==='lobby')buildPicker('avatarGrid',false);
     if(!session || !roomState) return;
     const player=currentPlayer();
     if(!player)return;
-    if(roomState.phase!=='lobby'){renderGame(player);return;}
+    if(roomState.phase!=='lobby'){renderGame(player);renderVipControls();return;}
     document.body.classList.remove('game-mode','mini-mode','time-critical');document.body.dataset.nogginStep='lobby';$('gameScreen').classList.add('hidden');
     $('joinScreen').classList.add('hidden');$('lobbyScreen').classList.remove('hidden');
     $('greeting').textContent=`HELLO, ${player.name.toUpperCase()}!`;
@@ -429,6 +529,7 @@
     $('readyButton').className=player.ready?'button-blue join-button':'button-primary join-button';
     $('changeAvatarButton').disabled=player.ready || !socket.connected;
     buildPicker('swapAvatarGrid',true);
+    renderVipControls();
     if(!roomState.hostOnline) notice('The TV host is disconnected. Your seat is being held temporarily.');
     else notice(roomState.canStart ? 'Everyone is ready! Watch the TV for the next step.' : 'Waiting for the rest of the panel.');
   }

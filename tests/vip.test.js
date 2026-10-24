@@ -10,9 +10,9 @@ test('VIP is first contestant; only VIP and TV host can act; handover occurs aft
   const alice = rooms.join({code, name:'Alice', avatarId:1, socketId:'a'});
   const bob = rooms.join({code, name:'Bob', avatarId:2, socketId:'b'});
   assert.equal(rooms.state(code).vipId,alice.playerId);
-  assert.throws(() => rooms.setSettings(code,'b',{target:12}),{code:'AUTH'});
-  assert.equal(rooms.setSettings(code,'a',{target:12}).settings.target,12);
-  assert.equal(rooms.setSettings(code,'tv',{target:16}).settings.target,16);
+  assert.throws(() => rooms.setSettings(code,'b',{rounds:8}),{code:'AUTH'});
+  assert.equal(rooms.setSettings(code,'a',{rounds:8}).settings.rounds,8);
+  assert.equal(rooms.setSettings(code,'tv',{rounds:10}).settings.rounds,10);
   rooms.disconnect(code,'a');
   time += 29_999;
   rooms.sweep();
@@ -20,9 +20,9 @@ test('VIP is first contestant; only VIP and TV host can act; handover occurs aft
   time += 1;
   rooms.sweep();
   assert.equal(rooms.state(code).vipId,bob.playerId);
-  assert.throws(() => rooms.setSettings(code,'a',{target:12}),{code:'AUTH'});
-  assert.equal(rooms.setSettings(code,'b',{target:12}).settings.target,12);
+  assert.throws(() => rooms.setSettings(code,'a',{rounds:8}),{code:'AUTH'});
+  assert.equal(rooms.setSettings(code,'b',{rounds:8}).settings.rounds,8);
   rooms.resume({code,token:alice.token,socketId:'a-rejoined',role:'player'});
   assert.equal(rooms.state(code).vipId,bob.playerId);
-  assert.throws(() => rooms.setSettings(code,'a-rejoined',{target:16}),{code:'AUTH'});
+  assert.throws(() => rooms.setSettings(code,'a-rejoined',{rounds:10}),{code:'AUTH'});
 });

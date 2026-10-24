@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const phase3=require('../server/games/phase3');
 const phase5=require('../server/games/phase5');
 function game(mode='classic',n=4){let now=50000;const rooms=new GameRooms({now:()=>now,randomInt:()=>0});const {code}=rooms.create('tv');
@@ -46,13 +46,13 @@ test('Classic final Memory Lane round does not reverse the answer sequence',()=>
  assert.doesNotMatch(m.question,/REVERSE/);
  assert.doesNotMatch(phase3.publicState(f.room).rule,/BACKWARDS/);
  const g=game('showtime');phase3.start(g.room,'brain',g.now(),()=>0,'memory-lane');
- const show=g.room.board.minigame;show.round=phase3.SPECS['memory-lane'].rounds-1;
+ const show=g.room.board.minigame;show.round=4;
  phase3.nextRound(g.room,g.now(),()=>0);assert.equal(show.display.reverse,true);
 });
-test('Odd Spot numbers are not shipped with icon data or the answer to any phone',()=>{
+test('Odd Spot phone receives matching visual grid but never a separate answer index',()=>{
  const f=game();phase3.start(f.room,'speed',f.now(),()=>0,'odd-spot');
  const tv=f.rooms.state(f.code,true).board.minigame;
  const phone=f.rooms.state(f.code,false,f.room.players[0].id).board.minigame;
- assert.equal(tv.display.grid.length,36);assert.deepEqual(phone.display,{});
+ assert.equal(tv.display.grid.length,36);assert.deepEqual(phone.display,tv.display);
  assert.equal(JSON.stringify(phone).includes('"index"'),false);
 });

@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),os=require('node:os'),fs=require('node:fs'),path=require('node:path');
-const {GameRooms}=require('../server/rooms'),store=require('../server/state-store');
+const {GameRooms}=require('./helpers/sequential-rooms'),store=require('../server/state-store');
 function one(now){const rooms=new GameRooms({now:()=>now,randomInt:()=>0});const {code}=rooms.create('tv1');const tokens=[];for(let n=1;n<=2;n++){const r=rooms.join({code,name:'Person'+n,avatarId:n,socketId:'phone'+n});tokens.push(r.token);rooms.setReady(code,'phone'+n,true);}rooms.startGame(code,'tv1');return {rooms,code,tokens};}
 test('single-instance checkpoint saves private reconnect credentials and restores paused game correctly',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'noggin-state-'));const filename=path.join(dir,'state.json');

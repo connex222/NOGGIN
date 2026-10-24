@@ -11,13 +11,24 @@ const phase3=require('../server/games/phase3');
 const phase4=require('../server/games/phase4');
 const phase5=require('../server/games/phase5');
 const TAP=4000; // a person reading their phone and tapping a choice
-function run(n,rounds){
- const room={phase:'lobby',hostSocketId:'tv',settings:{rounds,timerSpeed:'normal',rules:'showtime'},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
- board.start(room);const started=1000;let now=started,steps=0;const scores=[];const kinds={};const spaces={};const selectedGames={};const visitedGames=new WeakSet();
+function run(n,rounds,style){
+ const room={phase:'lobby',hostSocketId:'tv',settings:{rounds,timerSpeed:'normal',rules:'showtime',roundStyle:style},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
+ board.start(room,1000);const started=1000;let now=started,steps=0;const scores=[];const kinds={};const spaces={};const selectedGames={};const visitedGames=new WeakSet();
  const rolls={};let showdowns=0,roundGames=0,laps=0;const visitedShowdowns=new WeakSet();
+ let seenRevision=-1;
  while(room.phase==='board'&&steps++<20000){
  const b=room.board;
- if(b.step==='await_roll'){
+ if(b.step==='round_roll'){
+  now+=TAP; // everyone taps at once
+  for(const p of room.players){
+   if(b.round.rolls[p.id])continue;
+   if(p.cues>0&&rand(100)<35)board.choose(room,p.id,{action:'director'},now,rand);
+   rolls[p.id]=(rolls[p.id]||0)+1;board.roll(room,p.id,now,rand);
+  }
+ }else if(b.step==='round_moving'){
+  now=b.nextAt;board.tick(room,now,rand);
+  if(b.lastMove&&b.lastMove.revision!==seenRevision&&b.step==='round_moving'){seenRevision=b.lastMove.revision;const type=board.SPACES[b.lastMove.to];kinds[type]=(kinds[type]||0)+1;spaces[b.lastMove.to]=(spaces[b.lastMove.to]||0)+1;if(b.lastMove.path.includes(0))laps++;now+=150*b.lastMove.path.length;}
+ }else if(b.step==='await_roll'){
   const active=room.players.find(p=>p.id===b.activeId);
   now+=TAP;rolls[active.id]=(rolls[active.id]||0)+1;
   if(active.cues>0&&rand(100)<35)board.choose(room,b.activeId,{action:'director'},now,rand);
@@ -137,18 +148,20 @@ function run(n,rounds){
   kinds,spaces,selectedGames,showdowns,roundGames,laps:laps/n,tiebreak:room.board.stage==='noggin-off',margin:final[0]-final[1],winningScore:final[0],finished:room.phase==='finished',steps};
 }
 const games=Number(process.argv[2]||1000);
-if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000] [rounds 6|8|10|12]');
-const roundsArg=process.argv[3]&&process.argv[3]!=='auto'?Number(process.argv[3]):'auto';
+if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000] [auto|6|8|10|12] [--sequential]');
+const style=process.argv.includes('--sequential')?'sequential':'everyone';
+const roundsArgRaw=process.argv.slice(3).find(a=>!a.startsWith('--'));
+const roundsArg=roundsArgRaw&&roundsArgRaw!=='auto'?Number(roundsArgRaw):'auto';
 if(!board.ROUND_OPTIONS.includes(roundsArg))throw Error('Rounds must be one of '+board.ROUND_OPTIONS.join(', '));
 const avg=(xs)=>+(xs.reduce((a,x)=>a+x,0)/xs.length).toFixed(1);
 for(const count of [2,4,6,8]){
- const runs=[];for(let i=0;i<games;i++)runs.push(run(count,roundsArg));
+ const runs=[];for(let i=0;i<games;i++)runs.push(run(count,roundsArg,style));
  const kinds={},spaces={},miniGames={};
  for(const r of runs){for(const [k,v] of Object.entries(r.kinds))kinds[k]=(kinds[k]||0)+v;for(const [k,v] of Object.entries(r.spaces))spaces[k]=(spaces[k]||0)+v;for(const [k,v] of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
  const landings=Object.values(spaces).reduce((a,x)=>a+x,0);
  const perSpace=Array.from({length:board.SPACES.length},(_,i)=>(spaces[i]||0)/landings*100);
  const minutes=runs.map(r=>r.minutes).sort((a,z)=>a-z);
- console.log(JSON.stringify({players:count,rounds:roundsArg==='auto'?board.autoRounds(count):roundsArg,games,finished:runs.filter(r=>r.finished).length,
+ console.log(JSON.stringify({roundStyle:style,players:count,rounds:roundsArg==='auto'?board.autoRounds(count,style):roundsArg,games,finished:runs.filter(r=>r.finished).length,
   rollsPerPlayer:avg(runs.map(r=>r.rollsPerPlayer)),lapsPerPlayer:avg(runs.map(r=>r.laps)),
   minutesMedian:+minutes[Math.floor(games/2)].toFixed(1),minutesP90:+minutes[Math.floor(games*0.9)].toFixed(1),
   roundGamesPerGame:avg(runs.map(r=>r.roundGames)),showdownsPerGame:avg(runs.map(r=>r.showdowns)),

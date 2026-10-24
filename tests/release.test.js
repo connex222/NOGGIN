@@ -31,10 +31,10 @@ test('release underdog bonus: two in eight player match and no bonus for passive
  board.finishTurn(next,1234,'Picked up a Spark',[]);
  assert.equal(next.players[0].sparks,0);
 });
-test('release underdog bonus: does not apply to two-player games or to a player who was within three Sparks',()=>{
+test('release underdog bonus: two-player comeback is separate from the 4+ player underdog bonus',()=>{
  const duo=fixture(2);duo.players[1].sparks=7;
  duo.board.turnStartSparks=Object.fromEntries(duo.players.map(p=>[p.id,p.sparks]));
- duo.players[0].sparks=1;board.finishTurn(duo,1234,'Played',[duo.players[0].id]);assert.equal(duo.players[0].sparks,1);
+ duo.players[0].sparks=1;board.finishTurn(duo,1234,'Played',[duo.players[0].id]);assert.equal(duo.players[0].sparks,3);
  const four=fixture(4);four.players[1].sparks=2;four.board.turnStartSparks=Object.fromEntries(four.players.map(p=>[p.id,p.sparks]));
  four.players[0].sparks=1;board.finishTurn(four,1234,'Played',[four.players[0].id]);assert.equal(four.players[0].sparks,1);
 });
@@ -55,12 +55,12 @@ test('release guide uses board and catalogs, no manual retyping of game list',()
  assert.deepEqual(Object.values(guide.categories).map(x=>x.length),[4,4,4,4]);
  assert.equal(guide.showdowns.length,4);
 });
-test('release ZIP required hosting, docs and all 36 original avatars are present',()=>{
+test('release ZIP required hosting, docs and all runtime avatars are present',()=>{
  const root=path.join(__dirname,'..');
  for(const name of ['Dockerfile','docker-compose.yml','render.yaml','start-noggin.bat','INSTALL.md','HOW-TO-PLAY.pdf','deploy/oracle/Caddyfile','.github/workflows/ci.yml']){
   assert.ok(fs.statSync(path.join(root,name)).size>0,name);
  }
- const avatars=fs.readdirSync(path.join(root,'source-art/avatars')).filter(x=>x.endsWith('.png'));
- assert.equal(avatars.length,36);
- assert.equal(fs.readdirSync(path.join(root,'public/avatars')).filter(x=>x.endsWith('.png')).length,0);
+ const avatars=fs.readdirSync(path.join(root,'public/avatars/thumbs')).filter(x=>x.endsWith('.webp'));
+ assert.ok(avatars.length>=36);
+ assert.equal(fs.readdirSync(path.join(root,'public/avatars/thumbs')).filter(x=>x.endsWith('.png')).length,0);
 });

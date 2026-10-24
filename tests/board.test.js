@@ -2,7 +2,7 @@
 // NOGGIN v3 round loop: 28-space trapezium, called round games, Last Orders.
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const board=require('../server/board');
 const layout=require('../server/layout');
 const phase4=require('../server/games/phase4');
@@ -37,7 +37,7 @@ test('show length: Auto sizes rounds to the panel; host may pick a fixed length'
  assert.equal(fixture(4).room.board.totalRounds,10);
  assert.equal(fixture(6).room.board.totalRounds,8);
  assert.equal(fixture(3,{rounds:6}).room.board.totalRounds,6);
- const f=fixture(2);assert.equal(f.room.board.round,1);assert.equal(f.room.board.stage,'board');
+ const f=fixture(2);assert.equal(f.room.board.roundNo,1);assert.equal(f.room.board.stage,'board');
 });
 
 test('a category space CALLS the round game and makes the caller its host; a later colour steals the call',()=>{
@@ -71,7 +71,7 @@ test('after everyone rolls, the called round game starts with the caller as host
  assert.match(f.room.board.event.text,/ROUND 1 GAME/);
  assert.throws(()=>f.rooms.rollGame(f.code,f.people[0]),e=>e.code==='STEP');
  board.finishTurn(f.room,f.now(),'Round game over.',[]);nextResult(f);
- assert.equal(f.room.board.round,2);assert.equal(f.room.board.stage,'board');assert.equal(f.room.board.activeId,b.id);
+ assert.equal(f.room.board.roundNo,2);assert.equal(f.room.board.stage,'board');assert.equal(f.room.board.activeId,b.id);
  assert.equal(f.room.board.roundCategory,null);assert.equal(f.room.board.showdownPlayed,false);
  void c;
 });
@@ -142,7 +142,7 @@ test('every corner launches its own Showdown kind',()=>{
 });
 
 test('LAST ORDERS doubles Spark gains in the final round but never doubles losses',()=>{
- const f=fixture(2,{rounds:6});f.room.board.round=6;
+ const f=fixture(2,{rounds:6});f.room.board.roundNo=6;
  assert.equal(f.rooms.state(f.code).board.lastOrders,true);
  const p=landOn(f,5);assert.equal(p.sparks,4);assert.match(f.room.board.result.text,/LAST ORDERS DOUBLES IT/);
  nextResult(f);const q=f.room.players.find(x=>x.id===f.room.board.activeId);q.sparks=3;f.room.board.turnStartSparks[q.id]=3;landOn(f,3);
@@ -150,11 +150,11 @@ test('LAST ORDERS doubles Spark gains in the final round but never doubles losse
 });
 
 test('after the final round game the most Sparks wins; a tie for first goes to the Noggin-Off',()=>{
- const f=fixture(2,{rounds:6});const b=f.room.board;b.round=6;b.stage='round-game';b.activeId=f.room.players[0].id;
+ const f=fixture(2,{rounds:6});const b=f.room.board;b.roundNo=6;b.stage='round-game';b.activeId=f.room.players[0].id;
  f.room.players[0].sparks=9;f.room.players[1].sparks=7;b.turnStartSparks={[f.room.players[0].id]:9,[f.room.players[1].id]:7};
  board.finishTurn(f.room,f.now(),'Final game.',[]);nextResult(f);
  assert.equal(f.room.phase,'finished');assert.deepEqual(b.winnerIds,[f.room.players[0].id]);assert.match(b.event.text,/wins NOGGIN with 9 Sparks/);
- const g=fixture(2,{rounds:6});const gb=g.room.board;gb.round=6;gb.stage='round-game';
+ const g=fixture(2,{rounds:6});const gb=g.room.board;gb.roundNo=6;gb.stage='round-game';
  g.room.players.forEach(p=>{p.sparks=7;gb.turnStartSparks[p.id]=7;});board.finishTurn(g.room,g.now(),'Final game.',[]);nextResult(g);
  assert.equal(gb.stage,'noggin-off');assert.equal(gb.showdown.kind,'tiebreak');
  g.advance(5001);g.rooms.sweep();const c=gb.showdown;

@@ -4,8 +4,10 @@ const crypto = require('node:crypto');
 const {enforceFamilyText}=require('../content-filter');
 const BUZZER = require('../../data/buzzer-questions.json');
 const BID = require('../../data/bid-categories.json');
+const {acceptedAnswer} = require('../bid-answers');
 const CLOSE = require('../../data/close-call.json');
 const {SHOWDOWNS,SHOWDOWN_KINDS} = require('../layout');
+const BID_REVIEW_MS = 12000;
 const DURATION = {buzzer:84000,tug:50000,bid:75000,nerve:25000,tiebreak:25000};
 function error(code,msg){const e=new Error(msg);e.code=code;throw e;}
 function pick(items,rand=crypto.randomInt){return items[rand(items.length)];}
@@ -28,7 +30,7 @@ function start(room,kind,now,opponentId=null,randomInt=crypto.randomInt){
  const m=base(room,which,title,participants,now);
  if(which==='buzzer'){m.points={};participants.forEach(id=>m.points[id]=0);m.questionIndex=0;m.totalRounds=7;m.used=[];m.phase='intro';}
  if(which==='tug'){m.rope=0;m.correctCount={};m.sums={};participants.forEach(id=>{m.correctCount[id]=0;nextSum(m,id);});}
- if(which==='bid'){m.category=pick(BID,randomInt);m.phase='intro';m.bid=0;m.bidderId=null;m.turnId=participants[0];m.guesses=[];m.invalid=0;}
+ if(which==='bid'){m.category=pick(BID,randomInt);m.phase='intro';m.bid=0;m.bidderId=null;m.turnId=participants[0];m.guesses=[];m.invalid=0;m.pendingReview=null;m.reviewCount=0;}
  if(which==='nerve'){m.bustAt=3+randomInt(8);m.banks={};m.number=1;}
  if(which==='tiebreak'){
    const available=CLOSE.filter(x=>!b.tieQuestions.includes(x.id));if(!available.length)b.tieQuestions=[];
@@ -122,12 +124,19 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
      if(value.action!=='bid'||!Number.isInteger(value.count)||value.count<=m.bid||value.count>m.category.answers.length)error('BID','Bid higher, up to the complete category size.');
      m.bid=value.count;m.bidderId=id;m.turnId=m.participants.find(x=>x!==id);m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,13000,19000));b.deadline=m.deadline;return;
    }
+   if(m.phase==='review')error('WAIT','The VIP is reviewing the proposed answer.');
    if(m.phase!=='name'||id!==m.bidderId)error('TURN','Only the highest bidder can name answers.');
    if(typeof value!=='string'||value.length>70)error('INPUT','Enter an item name.');
    const answer=normalize(enforceFamilyText(room,value));if(answer.length<1||m.guesses.includes(answer))error('INPUT','Type a new answer.');
-   const allowed=m.category.answers.some(x=>normalize(x)===answer);
+   const matchIndex=acceptedAnswer(m.category,answer);
+   const allowed=matchIndex>=0 && !(m.usedBidAnswers||[]).includes(matchIndex);
+   if(allowed)(m.usedBidAnswers|| (m.usedBidAnswers=[])).push(matchIndex);
    if(allowed){m.guesses.push(answer);if(m.guesses.length>=m.bid){resolve(room,now,[id],`Bid to Win: delivered ${m.bid} correct names!`,finishTurn);return;}}
-   else {m.invalid++;if(m.invalid>=3){resolve(room,now,[m.participants.find(x=>x!==id)],'Bid to Win: three invalid answers; challenger wins.',finishTurn);return;}}
+   else if (matchIndex < 0 && m.reviewCount < 3) {
+     m.reviewCount++;m.pendingReview={answer,submittedBy:id,submittedAt:now};
+     m.phase='review';m.deadline=Math.min(m.hardStop,now+BID_REVIEW_MS);b.deadline=m.deadline;
+     m.roundKey++;return;
+   } else {m.invalid++;if(m.invalid>=3){resolve(room,now,[m.participants.find(x=>x!==id)],'Bid to Win: three invalid answers; challenger wins.',finishTurn);return;}}
    m.roundKey++;return;
  }
  if(m.kind==='nerve'){
@@ -164,6 +173,7 @@ function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board
  }
  if(m.kind==='tug'){finishTug(room,now,finishTurn);return true;}
  if(m.kind==='bid'){
+   if(m.phase==='review'){decideBid(room,false,now,finishTurn);return true;}
    if(m.phase==='auction'&&m.bidderId){m.phase='name';m.deadline=Math.min(m.hardStop,now+ms(room,30000,42000));room.board.deadline=m.deadline;m.roundKey++;return true;}
    const winners=m.bidderId?[m.participants.find(x=>x!==m.bidderId)]:[];
    resolve(room,now,winners,m.bidderId?'Bid to Win: bidder ran out of time.':'Bid to Win: nobody bid.',finishTurn);return true;
@@ -184,9 +194,27 @@ function publicState(room,forTv=false,viewerId=null){const m=room.board.showdown
    pub.display={choices:reveal?m.question?.choices:[],points:m.points,buzzId:m.buzzId,passId:m.passId,canBuzz:m.phase==='buzz',answerId:m.phase==='answer'?m.buzzId:m.phase==='pass'?m.passId:null};
  }
  if(m.kind==='tug'){pub.question='Answer the maths problems on your phone to pull the rope five notches.';pub.display={rope:m.rope,correctCount:m.correctCount};if(viewerId&&m.participants.includes(viewerId))pub.private={prompt:m.sums[viewerId].prompt,qid:m.sums[viewerId].n};}
- if(m.kind==='bid'){pub.question=reveal?m.category.prompt:'Bid how many category items you can name.';pub.display={bid:m.bid,bidderId:m.bidderId,turnId:m.turnId,correct:m.guesses.length,max:m.category.answers.length,invalid:m.invalid};}
+ if(m.kind==='bid'){pub.question=reveal?m.category.prompt:'Bid how many category items you can name.';pub.display={bid:m.bid,bidderId:m.bidderId,turnId:m.turnId,correct:m.guesses.length,max:m.category.answers.length,invalid:m.invalid};
+  if(m.phase==='review')pub.display.review={answer:m.pendingReview.answer,deadline:m.deadline};}
  if(m.kind==='nerve'){pub.question='Bank before the unseen bust point. Highest safe bank wins.';pub.display={number:m.number,banks:Object.keys(m.banks)};}
  if(m.kind==='tiebreak'){pub.question=reveal?m.questionData.question:'Nearest guess wins NOGGIN!';pub.display={unit:m.questionData.unit,answered:Object.keys(m.answers)};}
  return pub;
 }
-module.exports={start,submit,cheer,tick,publicState,normalize,DURATION};
+function decideBid(room,accept,now,finishTurn){
+ const b=room.board,m=b.showdown;
+ if(!m||m.kind!=='bid'||m.phase!=='review'||!m.pendingReview)error('STEP','No answer is awaiting review.');
+ if(typeof accept!=='boolean')error('INPUT','Choose accept or reject.');
+ if(now>m.deadline||now>m.hardStop)accept=false;
+ const {answer,submittedBy}=m.pendingReview;
+ m.pendingReview=null;m.phase='name';
+ if(accept){
+  if(m.guesses.includes(answer))error('DUPLICATE','This answer was already accepted.');
+  m.guesses.push(answer);
+  if(m.guesses.length>=m.bid){resolve(room,now,[submittedBy],`Bid to Win: delivered ${m.bid} correct names!`,finishTurn);return;}
+ }else{
+  m.invalid++;
+  if(m.invalid>=3){resolve(room,now,[m.participants.find(id=>id!==submittedBy)],'Bid to Win: three invalid answers; challenger wins.',finishTurn);return;}
+ }
+ m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,14000,19000));b.deadline=m.deadline;
+}
+module.exports={start,submit,cheer,tick,publicState,decideBid,normalize,DURATION};

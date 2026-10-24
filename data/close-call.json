@@ -418,5 +418,1395 @@
     "answer": 2800,
     "unit": "cm",
     "source": "Exact metric conversion"
+  },
+  {
+    "id": "cc-seconds-13",
+    "question": "How many seconds are in 13 minutes?",
+    "answer": 780,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-17",
+    "question": "How many seconds are in 17 minutes?",
+    "answer": 1020,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-19",
+    "question": "How many seconds are in 19 minutes?",
+    "answer": 1140,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-22",
+    "question": "How many seconds are in 22 minutes?",
+    "answer": 1320,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-23",
+    "question": "How many seconds are in 23 minutes?",
+    "answer": 1380,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-26",
+    "question": "How many seconds are in 26 minutes?",
+    "answer": 1560,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-27",
+    "question": "How many seconds are in 27 minutes?",
+    "answer": 1620,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-29",
+    "question": "How many seconds are in 29 minutes?",
+    "answer": 1740,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-30",
+    "question": "How many seconds are in 30 minutes?",
+    "answer": 1800,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-31",
+    "question": "How many seconds are in 31 minutes?",
+    "answer": 1860,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-32",
+    "question": "How many seconds are in 32 minutes?",
+    "answer": 1920,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-33",
+    "question": "How many seconds are in 33 minutes?",
+    "answer": 1980,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-34",
+    "question": "How many seconds are in 34 minutes?",
+    "answer": 2040,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-35",
+    "question": "How many seconds are in 35 minutes?",
+    "answer": 2100,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-36",
+    "question": "How many seconds are in 36 minutes?",
+    "answer": 2160,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-37",
+    "question": "How many seconds are in 37 minutes?",
+    "answer": 2220,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-38",
+    "question": "How many seconds are in 38 minutes?",
+    "answer": 2280,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-39",
+    "question": "How many seconds are in 39 minutes?",
+    "answer": 2340,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-40",
+    "question": "How many seconds are in 40 minutes?",
+    "answer": 2400,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-41",
+    "question": "How many seconds are in 41 minutes?",
+    "answer": 2460,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-42",
+    "question": "How many seconds are in 42 minutes?",
+    "answer": 2520,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-43",
+    "question": "How many seconds are in 43 minutes?",
+    "answer": 2580,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-44",
+    "question": "How many seconds are in 44 minutes?",
+    "answer": 2640,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-45",
+    "question": "How many seconds are in 45 minutes?",
+    "answer": 2700,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-46",
+    "question": "How many seconds are in 46 minutes?",
+    "answer": 2760,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-47",
+    "question": "How many seconds are in 47 minutes?",
+    "answer": 2820,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-48",
+    "question": "How many seconds are in 48 minutes?",
+    "answer": 2880,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-49",
+    "question": "How many seconds are in 49 minutes?",
+    "answer": 2940,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-50",
+    "question": "How many seconds are in 50 minutes?",
+    "answer": 3000,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "cc-seconds-51",
+    "question": "How many seconds are in 51 minutes?",
+    "answer": 3060,
+    "unit": "seconds",
+    "source": "Exact definition: 60 seconds per minute"
+  },
+  {
+    "id": "p6b2-clo-001",
+    "question": "How many hours are in 3 full days?",
+    "answer": 72,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-002",
+    "question": "How many hours are in 4 full days?",
+    "answer": 96,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-003",
+    "question": "How many hours are in 5 full days?",
+    "answer": 120,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-004",
+    "question": "How many hours are in 6 full days?",
+    "answer": 144,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-005",
+    "question": "How many hours are in 7 full days?",
+    "answer": 168,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-006",
+    "question": "How many hours are in 8 full days?",
+    "answer": 192,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-007",
+    "question": "How many hours are in 9 full days?",
+    "answer": 216,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-008",
+    "question": "How many hours are in 11 full days?",
+    "answer": 264,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-009",
+    "question": "How many hours are in 12 full days?",
+    "answer": 288,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-010",
+    "question": "How many hours are in 14 full days?",
+    "answer": 336,
+    "unit": "hours",
+    "source": "SI-defined time conversion: 24 hours per day",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-011",
+    "question": "How many grams are in 2 kilograms?",
+    "answer": 2000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-012",
+    "question": "How many grams are in 3 kilograms?",
+    "answer": 3000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-013",
+    "question": "How many grams are in 4 kilograms?",
+    "answer": 4000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-014",
+    "question": "How many grams are in 5 kilograms?",
+    "answer": 5000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-015",
+    "question": "How many grams are in 6 kilograms?",
+    "answer": 6000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-016",
+    "question": "How many grams are in 7 kilograms?",
+    "answer": 7000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-017",
+    "question": "How many grams are in 8 kilograms?",
+    "answer": 8000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-018",
+    "question": "How many grams are in 9 kilograms?",
+    "answer": 9000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-019",
+    "question": "How many grams are in 11 kilograms?",
+    "answer": 11000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b2-clo-020",
+    "question": "How many grams are in 12 kilograms?",
+    "answer": 12000,
+    "unit": "grams",
+    "source": "SI metric conversion: 1,000 grams per kilogram",
+    "verification": "exact arithmetic"
+  },
+  {
+    "id": "p6b3-cc-001",
+    "question": "How many seconds are in 11 hours?",
+    "answer": 39600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-002",
+    "question": "How many seconds are in 12 hours?",
+    "answer": 43200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-003",
+    "question": "How many seconds are in 13 hours?",
+    "answer": 46800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-004",
+    "question": "How many seconds are in 14 hours?",
+    "answer": 50400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-005",
+    "question": "How many seconds are in 15 hours?",
+    "answer": 54000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-006",
+    "question": "How many seconds are in 16 hours?",
+    "answer": 57600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-007",
+    "question": "How many seconds are in 17 hours?",
+    "answer": 61200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-008",
+    "question": "How many seconds are in 18 hours?",
+    "answer": 64800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-009",
+    "question": "How many seconds are in 19 hours?",
+    "answer": 68400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-010",
+    "question": "How many seconds are in 20 hours?",
+    "answer": 72000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-011",
+    "question": "How many seconds are in 21 hours?",
+    "answer": 75600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-012",
+    "question": "How many seconds are in 22 hours?",
+    "answer": 79200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-013",
+    "question": "How many seconds are in 23 hours?",
+    "answer": 82800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-014",
+    "question": "How many seconds are in 24 hours?",
+    "answer": 86400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-015",
+    "question": "How many seconds are in 25 hours?",
+    "answer": 90000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-016",
+    "question": "How many seconds are in 26 hours?",
+    "answer": 93600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-017",
+    "question": "How many seconds are in 27 hours?",
+    "answer": 97200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-018",
+    "question": "How many seconds are in 28 hours?",
+    "answer": 100800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-019",
+    "question": "How many seconds are in 29 hours?",
+    "answer": 104400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-020",
+    "question": "How many seconds are in 30 hours?",
+    "answer": 108000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-021",
+    "question": "How many seconds are in 31 hours?",
+    "answer": 111600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-022",
+    "question": "How many seconds are in 32 hours?",
+    "answer": 115200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-023",
+    "question": "How many seconds are in 33 hours?",
+    "answer": 118800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-024",
+    "question": "How many seconds are in 34 hours?",
+    "answer": 122400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-025",
+    "question": "How many seconds are in 35 hours?",
+    "answer": 126000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-026",
+    "question": "How many seconds are in 36 hours?",
+    "answer": 129600,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-027",
+    "question": "How many seconds are in 37 hours?",
+    "answer": 133200,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-028",
+    "question": "How many seconds are in 38 hours?",
+    "answer": 136800,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-029",
+    "question": "How many seconds are in 39 hours?",
+    "answer": 140400,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b3-cc-030",
+    "question": "How many seconds are in 40 hours?",
+    "answer": 144000,
+    "unit": "seconds",
+    "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
+    "verified": "arithmetic"
+  },
+  {
+    "id": "p6b6-cc-001",
+    "question": "How many square centimetres are in a rectangle 7 cm long and 9 cm wide?",
+    "answer": 63,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 7,
+      "b": 9
+    }
+  },
+  {
+    "id": "p6b6-cc-002",
+    "question": "How many square centimetres are in a rectangle 11 cm long and 12 cm wide?",
+    "answer": 132,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 11,
+      "b": 12
+    }
+  },
+  {
+    "id": "p6b6-cc-003",
+    "question": "How many square centimetres are in a rectangle 13 cm long and 14 cm wide?",
+    "answer": 182,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 13,
+      "b": 14
+    }
+  },
+  {
+    "id": "p6b6-cc-004",
+    "question": "How many square centimetres are in a rectangle 16 cm long and 19 cm wide?",
+    "answer": 304,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 16,
+      "b": 19
+    }
+  },
+  {
+    "id": "p6b6-cc-005",
+    "question": "How many square centimetres are in a rectangle 21 cm long and 23 cm wide?",
+    "answer": 483,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 21,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6b6-cc-006",
+    "question": "How many square centimetres are in a rectangle 24 cm long and 26 cm wide?",
+    "answer": 624,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 24,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6b6-cc-007",
+    "question": "How many square centimetres are in a rectangle 28 cm long and 31 cm wide?",
+    "answer": 868,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 28,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6b6-cc-008",
+    "question": "How many square centimetres are in a rectangle 32 cm long and 35 cm wide?",
+    "answer": 1120,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "rectangle",
+      "a": 32,
+      "b": 35
+    }
+  },
+  {
+    "id": "p6b6-cc-009",
+    "question": "How many legs do 6 ordinary three-legged stools have altogether?",
+    "answer": 18,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 6,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-010",
+    "question": "How many legs do 9 ordinary three-legged stools have altogether?",
+    "answer": 27,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 9,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-011",
+    "question": "How many legs do 12 ordinary three-legged stools have altogether?",
+    "answer": 36,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 12,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-012",
+    "question": "How many legs do 15 ordinary three-legged stools have altogether?",
+    "answer": 45,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 15,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-013",
+    "question": "How many legs do 18 ordinary three-legged stools have altogether?",
+    "answer": 54,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 18,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-014",
+    "question": "How many legs do 21 ordinary three-legged stools have altogether?",
+    "answer": 63,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 21,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-015",
+    "question": "How many legs do 24 ordinary three-legged stools have altogether?",
+    "answer": 72,
+    "unit": "legs",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "stools",
+      "a": 24,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6b6-cc-016",
+    "question": "How many minutes are there in 7 hours and 30 minutes?",
+    "answer": 450,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 7,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6b6-cc-017",
+    "question": "How many minutes are there in 11 hours and 30 minutes?",
+    "answer": 690,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 11,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6b6-cc-018",
+    "question": "How many minutes are there in 16 hours and 30 minutes?",
+    "answer": 990,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 16,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6b6-cc-019",
+    "question": "How many minutes are there in 19 hours and 30 minutes?",
+    "answer": 1170,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 19,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6b6-cc-020",
+    "question": "How many minutes are there in 23 hours and 30 minutes?",
+    "answer": 1410,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 23,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6b6-cc-021",
+    "question": "How many minutes are there in 27 hours and 30 minutes?",
+    "answer": 1650,
+    "unit": "minutes",
+    "source": "Exact arithmetic; locally recalculated",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "hours",
+      "a": 27,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-cc-0000",
+    "question": "How many square centimetres are in a rectangle 4 cm long and 3 cm wide?",
+    "answer": 12,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 4,
+      "b": 3
+    }
+  },
+  {
+    "id": "p6final-cc-0001",
+    "question": "How many millimetres are in 13 centimetres?",
+    "answer": 130,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 13,
+      "b": 16
+    }
+  },
+  {
+    "id": "p6final-cc-0002",
+    "question": "How many minutes are in 22 hours and 29 minutes?",
+    "answer": 1349,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 22,
+      "b": 29
+    }
+  },
+  {
+    "id": "p6final-cc-0003",
+    "question": "How many centimetres are in 31 metres?",
+    "answer": 3100,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 31,
+      "b": 42
+    }
+  },
+  {
+    "id": "p6final-cc-0004",
+    "question": "How many items are in 40 boxes of 55 items each?",
+    "answer": 2200,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 40,
+      "b": 55
+    }
+  },
+  {
+    "id": "p6final-cc-0005",
+    "question": "How many square centimetres are in a rectangle 49 cm long and 8 cm wide?",
+    "answer": 392,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 49,
+      "b": 8
+    }
+  },
+  {
+    "id": "p6final-cc-0006",
+    "question": "How many millimetres are in 58 centimetres?",
+    "answer": 580,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 58,
+      "b": 21
+    }
+  },
+  {
+    "id": "p6final-cc-0007",
+    "question": "How many minutes are in 67 hours and 34 minutes?",
+    "answer": 4054,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 67,
+      "b": 34
+    }
+  },
+  {
+    "id": "p6final-cc-0008",
+    "question": "How many centimetres are in 76 metres?",
+    "answer": 7600,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 76,
+      "b": 47
+    }
+  },
+  {
+    "id": "p6final-cc-0009",
+    "question": "How many items are in 85 boxes of 60 items each?",
+    "answer": 5100,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 85,
+      "b": 60
+    }
+  },
+  {
+    "id": "p6final-cc-0010",
+    "question": "How many square centimetres are in a rectangle 94 cm long and 13 cm wide?",
+    "answer": 1222,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 94,
+      "b": 13
+    }
+  },
+  {
+    "id": "p6final-cc-0011",
+    "question": "How many millimetres are in 8 centimetres?",
+    "answer": 80,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 8,
+      "b": 26
+    }
+  },
+  {
+    "id": "p6final-cc-0012",
+    "question": "How many minutes are in 17 hours and 39 minutes?",
+    "answer": 1059,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 17,
+      "b": 39
+    }
+  },
+  {
+    "id": "p6final-cc-0013",
+    "question": "How many centimetres are in 26 metres?",
+    "answer": 2600,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 26,
+      "b": 52
+    }
+  },
+  {
+    "id": "p6final-cc-0014",
+    "question": "How many items are in 35 boxes of 5 items each?",
+    "answer": 175,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 35,
+      "b": 5
+    }
+  },
+  {
+    "id": "p6final-cc-0015",
+    "question": "How many square centimetres are in a rectangle 44 cm long and 18 cm wide?",
+    "answer": 792,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 44,
+      "b": 18
+    }
+  },
+  {
+    "id": "p6final-cc-0016",
+    "question": "How many millimetres are in 53 centimetres?",
+    "answer": 530,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 53,
+      "b": 31
+    }
+  },
+  {
+    "id": "p6final-cc-0017",
+    "question": "How many minutes are in 62 hours and 44 minutes?",
+    "answer": 3764,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 62,
+      "b": 44
+    }
+  },
+  {
+    "id": "p6final-cc-0018",
+    "question": "How many centimetres are in 71 metres?",
+    "answer": 7100,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 71,
+      "b": 57
+    }
+  },
+  {
+    "id": "p6final-cc-0019",
+    "question": "How many items are in 80 boxes of 10 items each?",
+    "answer": 800,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 80,
+      "b": 10
+    }
+  },
+  {
+    "id": "p6final-cc-0020",
+    "question": "How many square centimetres are in a rectangle 89 cm long and 23 cm wide?",
+    "answer": 2047,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 89,
+      "b": 23
+    }
+  },
+  {
+    "id": "p6final-cc-0021",
+    "question": "How many millimetres are in 98 centimetres?",
+    "answer": 980,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 98,
+      "b": 36
+    }
+  },
+  {
+    "id": "p6final-cc-0022",
+    "question": "How many minutes are in 12 hours and 49 minutes?",
+    "answer": 769,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 12,
+      "b": 49
+    }
+  },
+  {
+    "id": "p6final-cc-0024",
+    "question": "How many items are in 30 boxes of 15 items each?",
+    "answer": 450,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 30,
+      "b": 15
+    }
+  },
+  {
+    "id": "p6final-cc-0025",
+    "question": "How many square centimetres are in a rectangle 39 cm long and 28 cm wide?",
+    "answer": 1092,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 39,
+      "b": 28
+    }
+  },
+  {
+    "id": "p6final-cc-0026",
+    "question": "How many millimetres are in 48 centimetres?",
+    "answer": 480,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 48,
+      "b": 41
+    }
+  },
+  {
+    "id": "p6final-cc-0027",
+    "question": "How many minutes are in 57 hours and 54 minutes?",
+    "answer": 3474,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 57,
+      "b": 54
+    }
+  },
+  {
+    "id": "p6final-cc-0028",
+    "question": "How many centimetres are in 66 metres?",
+    "answer": 6600,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 66,
+      "b": 7
+    }
+  },
+  {
+    "id": "p6final-cc-0029",
+    "question": "How many items are in 75 boxes of 20 items each?",
+    "answer": 1500,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 75,
+      "b": 20
+    }
+  },
+  {
+    "id": "p6final-cc-0030",
+    "question": "How many square centimetres are in a rectangle 84 cm long and 33 cm wide?",
+    "answer": 2772,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 84,
+      "b": 33
+    }
+  },
+  {
+    "id": "p6final-cc-0031",
+    "question": "How many millimetres are in 93 centimetres?",
+    "answer": 930,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 93,
+      "b": 46
+    }
+  },
+  {
+    "id": "p6final-cc-0032",
+    "question": "How many minutes are in 7 hours and 59 minutes?",
+    "answer": 479,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 7,
+      "b": 59
+    }
+  },
+  {
+    "id": "p6final-cc-0034",
+    "question": "How many items are in 25 boxes of 25 items each?",
+    "answer": 625,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 25,
+      "b": 25
+    }
+  },
+  {
+    "id": "p6final-cc-0035",
+    "question": "How many square centimetres are in a rectangle 34 cm long and 38 cm wide?",
+    "answer": 1292,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 34,
+      "b": 38
+    }
+  },
+  {
+    "id": "p6final-cc-0036",
+    "question": "How many millimetres are in 43 centimetres?",
+    "answer": 430,
+    "unit": "millimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "mm",
+      "a": 43,
+      "b": 51
+    }
+  },
+  {
+    "id": "p6final-cc-0037",
+    "question": "How many minutes are in 52 hours and 4 minutes?",
+    "answer": 3124,
+    "unit": "minutes",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "minutes",
+      "a": 52,
+      "b": 4
+    }
+  },
+  {
+    "id": "p6final-cc-0038",
+    "question": "How many centimetres are in 61 metres?",
+    "answer": 6100,
+    "unit": "centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "cm",
+      "a": 61,
+      "b": 17
+    }
+  },
+  {
+    "id": "p6final-cc-0039",
+    "question": "How many items are in 70 boxes of 30 items each?",
+    "answer": 2100,
+    "unit": "items",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 70,
+      "b": 30
+    }
+  },
+  {
+    "id": "p6final-cc-0040",
+    "question": "How many square centimetres are in a rectangle 79 cm long and 43 cm wide?",
+    "answer": 3397,
+    "unit": "square centimetres",
+    "source": "Exact arithmetic and defined metric/time units",
+    "verified": "arithmetic",
+    "calc": {
+      "type": "area",
+      "a": 79,
+      "b": 43
+    }
   }
 ]

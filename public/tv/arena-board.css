@@ -209,3 +209,8 @@ body.tv.playing .dice-is-rolling .dice-marquee{text-shadow:0 0 15px #ffbd4c;colo
 }
 @media(prefers-reduced-motion:reduce){body.tv.playing .noggin-die{animation:none!important}}
 .reduce-motion body.tv.playing .noggin-die{animation:none!important}
+
+/* Phase 1: the event text lives in the bottom information strip, never on the track. */
+body.tv.playing .arena-hub{display:none!important}
+body.tv.playing .arena-live-info #stageEvent{font-size:clamp(13px,1.2vw,20px);line-height:1.2}
+body.tv.playing .arena-bottom-cue{background:transparent;border:0;border-radius:0;box-shadow:none;color:#b7e6ff;padding:6px 4px;cursor:default;pointer-events:none;font-size:clamp(11px,1.15vw,19px);letter-spacing:.05em}

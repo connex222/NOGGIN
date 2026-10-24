@@ -5,7 +5,6 @@ class GameRooms extends original.GameRooms {
   create(...args) {
     const created = super.create(...args);
     this.find(created.code).settings.roundStyle = 'sequential';
-    this.find(created.code).settings.target = 12;
     return created;
   }
 }

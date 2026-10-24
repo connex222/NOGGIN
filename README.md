@@ -1,6 +1,17 @@
 ## NOGGIN v3 — The Round Loop
 
 Each round, everyone rolls once on a 28-space trapezium. Land on a coloured space to **call** the round's game and host it; corners are Showdowns. Then the whole panel plays that game together. After the final round — **Last Orders**, where Spark gains are doubled — the most Sparks wins. See [CHANGELOG.md](CHANGELOG.md) and [HOW-TO-PLAY.pdf](HOW-TO-PLAY.pdf).
+# NOGGIN — play online first
+
+**Easiest way:** Open your deployed NOGGIN Render web address on the TV (the `/tv/` page). Create a room; players scan its QR code on their phones and join in a browser. Nothing needs installing on players’ phones. The first person joining is the **VIP**, and can start the show and manage the game from their phone. The TV browser must initially be opened; it remains the shared game display.
+
+**If Render has been asleep:** Open the deployed site and allow the server to wake up, then refresh if needed. The welcome page can show a waking-up notice. On a free instance, the first connection may be delayed.
+
+**Backup, on Windows or a laptop:** Install Node.js 20 or later, download and extract `NOGGIN-main`, open a terminal in the project directory, run `npm install`, then `npm start`. Open `http://localhost:3000/tv/` on the laptop. Phones must reach the same computer over the network.
+
+**QR troubleshooting:** Set `NOGGIN_PUBLIC_URL=https://YOUR-SERVICE.onrender.com` on Render if the QR points to an incorrect local/private address. Use the actual public URL, without `/tv/` or `/play/`.
+
+---
 
 ## NOGGIN v2 — Dice Theatre upgrade
 
@@ -31,7 +42,7 @@ NOGGIN is a local-first party board game for **2–8 players**. The TV or laptop
 ## Run it on a Windows laptop
 
 1. Install **Node.js 20 or newer** if you have not already. An internet connection is needed **only on first install** to fetch the server dependencies.
-2. Right-click the NOGGIN ZIP and select **Extract All**. Open the `NOGGIN-v2` folder inside.
+2. Right-click the NOGGIN ZIP and select **Extract All**. Open the `NOGGIN-main` folder inside.
 3. Double-click **`start-noggin.bat`**. Keep the black command window open. If Windows asks about network access for Node.js, allow it on **Private** networks.
 4. On the laptop, open the exact **TV address** shown in the black window (for example `http://localhost:3000/tv/`). If port 3000 is busy it might show 3001 instead; use the displayed port.
 5. Make sure laptop and phones are on the **same home router/network** (laptop Ethernet plus phone Wi-Fi is fine). Scan the live QR on the TV, or type the displayed full join address into each phone browser.

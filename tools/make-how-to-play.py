@@ -61,7 +61,7 @@ ly=heading(L,y,'1  SET UP AND PLAY',CW)
 steps=[
  'Open the TV host at /tv/ and show the lobby on your television.',
  'Scan its QR code with each phone; choose an untaken avatar and tap Ready.',
- 'Each round, every player rolls once on their phone and moves round the board.',
+ 'Each round, every player rolls once on their phone — all at once (Everyone Rolls, the default) or one at a time.',
  'Land on a coloured space to CALL that category for the round’s game — and host it. A later colour steals the call.',
  'When everyone has rolled, the whole panel plays the round’s game together.'
 ]
@@ -93,9 +93,9 @@ for n in data['showdowns']:
  ry=tag(R+4,ry,n,CW-8)
 ry-=8
 ry=heading(R,ry,'GAME OVER',CW)
-ry=para(R+8,ry,f'Most Sparks after the final round wins. Auto length plays {data["autoRounds"]["small"]} rounds for 2–3 players, {data["autoRounds"]["medium"]} for 4–5 and {data["autoRounds"]["large"]} for 6–8; or choose {", ".join(map(str,data["roundOptions"]))}. A tie for first goes to a nearest-number Noggin-Off.',CW-13,8.6,12.5);ry-=14
+ry=para(R+8,ry,f'Most Sparks after the final round wins; a tie goes to a nearest-number Noggin-Off. Auto length: {data["autoRounds"]["everyoneSmall"]} rounds (2–5 players) or {data["autoRounds"]["everyoneLarge"]} (6–8) with Everyone Rolls.',CW-13,8.6,12.5);ry-=14
 ry=heading(R,ry,'PLAYING TOGETHER',CW)
-ry=para(R+8,ry,'The TV shows the board and results. Discuss team clues aloud. During Showdowns, spectators make Spotlight Picks during the intro. Correct picks earn 1 Director Cue (max 2), never Sparks. Two-player rooms skip '+', '.join(data['twoPlayerSkips'])+' to avoid automatic draws.',CW-13,8.35,12.0)
+ry=para(R+8,ry,'Discuss team clues aloud. In Showtime, spectators can predict a Showdown winner for 1 Director Cue. Two-player rooms skip '+', '.join(data['twoPlayerSkips'])+'.',CW-13,8.35,12.0)
 # footer
 footer=42
 c.setStrokeColor(LIGHT);c.line(34,footer+25,W-34,footer+25)

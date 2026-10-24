@@ -1,3 +1,20 @@
+# NOGGIN v3.1.0 — merged release check
+
+- Node.js tests with `npm install`: **268 passed, 0 failed, 0 skipped**. `npm run check` passed. Release audit **106/106**.
+- TV browser smoke: 1280×720, 1366×768, 1920×1080 — 28 tiles, 8 tokens, nothing under the centre hub, no errors or scrollbars.
+- Simulator, Everyone Rolls, Auto length, 300 games each (server time; real rooms run ~1.5× longer):
+
+| Players | Rounds | Rolls each | Sim minutes | Showdowns | Noggin-Off |
+|---|---|---|---|---|---|
+| 2 | 12 | 12 | 10.7 | 4.3 | 6% |
+| 4 | 12 | 12 | 12.8 | 7.0 | 9.3% |
+| 6 | 10 | 10 | 12.0 | 7.2 | 8.7% |
+| 8 | 10 | 10 | 12.4 | 8.0 | 13.7% |
+
+- **No real TV-to-phone multiplayer round has been verified.**
+
+---
+
 # NOGGIN v3.0.0 — Round Loop release check
 
 - Node.js automated tests: **183 passed, 0 failed, 1 skipped** (live HTTP test needs `npm install`).

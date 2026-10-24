@@ -9,7 +9,7 @@ const data={
  name:'NOGGIN — Use Your Head',
  players:{min:2,max:8},
  roundOptions:board.ROUND_OPTIONS.filter(Number.isInteger),
- autoRounds:{small:board.autoRounds(2),medium:board.autoRounds(4),large:board.autoRounds(8)},
+ autoRounds:{everyoneSmall:board.autoRounds(2,'everyone'),everyoneLarge:board.autoRounds(8,'everyone'),small:board.autoRounds(2,'sequential'),medium:board.autoRounds(4,'sequential'),large:board.autoRounds(8,'sequential')},
  boardSpaces:board.SPACES.length,
  catchUp:{threshold:board.UNDERDOG_THRESHOLD,extraSmall:board.UNDERDOG_BONUS_SMALL,extraEight:board.UNDERDOG_BONUS_EIGHT},
  bonusStart:{pass:board.START_PASS_BONUS,land:board.START_LAND_BONUS},

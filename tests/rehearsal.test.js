@@ -4,7 +4,7 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const {attachGateway}=require('../server/gateway');
 const store=require('../server/state-store');
 class FakeSocket {
@@ -56,7 +56,7 @@ test('four phones + TV: entire gateway rehearsal includes round, pauses, skipped
  // Let every round of the game run out on the server clock, then advance the result card.
  for(let i=0;i<60&&room.board.step==='minigame';i++)h.advance(15_000);
  assert.equal(room.board.step,'result');
- h.advance(4_000);assert.equal(room.board.step,'await_roll');assert.equal(room.board.round,2);
+ h.advance(4_000);assert.equal(room.board.step,'await_roll');assert.equal(room.board.roundNo,2);
  assert.equal(room.board.activeId,room.players[1].id);
  // A player loses Wi-Fi mid-turn, then uses a valid token to resume.
  players[1].disconnect();h.advance(2_000);

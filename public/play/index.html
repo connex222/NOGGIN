@@ -16,6 +16,7 @@
   <section id="lobbyScreen" class="hidden" aria-live="polite">
     <div class="welcome studio-marquee"><div class="eyebrow">★ YOUR SPOTLIGHT AWAITS ★</div><h2 id="greeting">WELCOME!</h2><p>Choose your character, tap READY, and watch the TV for the start of the show.</p></div>
     <div class="player-hero surface"><img id="yourAvatar" alt="Your chosen game-show character"/><div><p class="eyebrow">YOUR CHARACTER</p><h3 id="yourCharacter">Contestant</h3><div class="sparks">✦ <span id="yourSparks">0</span> SPARKS</div><p id="yourSeat" class="field-hint">Seat 1</p></div></div>
+    <div id="vipControls" class="vip-panel hidden" aria-label="VIP host controls"></div>
     <p id="lobbyCount" class="field-hint centre">Waiting for other players…</p>
     <button id="readyButton" class="button-primary join-button" type="button">I'M READY!</button>
     <button id="changeAvatarButton" type="button" class="button-secondary join-button">Change avatar</button>
@@ -25,10 +26,11 @@
   <section id="gameScreen" class="hidden" aria-live="polite">
     <div class="game-player surface"><div class="game-portrait"><img id="gameAvatar" alt="Your avatar"></div><div class="game-player-details"><p class="eyebrow" id="gameRoom">NOGGIN</p><h2 id="gameName">Contestant</h2><div class="sparks"><span id="gameSparks">✦ 0 SPARKS  ·  🎬 2 CUES</span></div></div></div>
     <div class="game-action surface">
-      <div class="game-action-head"><p class="eyebrow" id="gameTurn">TURN 1</p><span id="gameStateTag" class="state-tag">GET READY</span></div><h2 id="gameHeadline">Welcome to NOGGIN</h2><p id="gameDescription">Look at the TV</p>
+      <p id="gameMiniInstruction" class="game-mini-instruction hidden"></p><div class="game-action-head"><p class="eyebrow" id="gameTurn">TURN 1</p><span id="gameStateTag" class="state-tag">GET READY</span></div><h2 id="gameHeadline">Welcome to NOGGIN</h2><p id="gameDescription">Look at the TV</p>
       <div class="clock-container" id="gameClockContainer"><p id="gameCountdown" class="game-countdown" role="timer" aria-label="Remaining time"></p><div class="clock-track" aria-hidden="true"><div class="clock-fill" id="gameClockFill"></div></div></div>
       <div id="gameButtons" class="game-buttons"></div>
     </div>
+    <div id="vipGameControls" class="vip-panel hidden" aria-label="VIP host controls"></div>
     <div class="game-help">🎬 Your phone is your controller. Watch the TV for the board and challenges.</div>
   </section>
   <div id="error" class="error hidden" role="alert"></div>

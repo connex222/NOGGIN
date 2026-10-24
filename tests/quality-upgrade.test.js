@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict');
-const {GameRooms}=require('../server/rooms');
+const {GameRooms}=require('./helpers/sequential-rooms');
 const phase4=require('../server/games/phase4');
 const phase5=require('../server/games/phase5');
 function game(n=4){
