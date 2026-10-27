@@ -1,3 +1,9 @@
+# NOGGIN ALPHA — v3.5.0-alpha.0 (27 October 2026)
+
+- **Single baseline:** Consolidated the existing v3.5.0 code into NOGGIN Alpha on GitHub `main`; the published package version now marks its pre-release status.
+- All nine v3.5.0 gameplay development batches, tutorial, audio, assets and acceptance tests remain intact; existing historical development and backup branches are preserved rather than deleted.
+- This designation does not mean full real-device multiplayer acceptance, all audio licences or editorial fact-checking are complete.
+
 # NOGGIN v3.5.0 — Game-night ready (26 October 2026)
 
 **27 October 2026 — Batch 9 repository finalisation:** Verified mode-specific rules, current guide generation and 3.5.0 release metadata; added an explicit licence-release warning to README and `tests/batch9-release-readiness.test.js` to the automated acceptance suite. This is a release verification update, not a gameplay mechanics change.
