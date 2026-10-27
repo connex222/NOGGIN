@@ -1,88 +1,70 @@
-name: Vendor Creative Claw audio into NOGGIN
+name: Install NOGGIN Studio Voice Recordings
 on:
   push:
     branches: [main]
     paths:
-      - .github/workflows/vendor-creativeclaw-audio.yml
       - tools/creativeclaw-sources.json
+      - .github/workflows/vendor-creativeclaw-audio.yml
   workflow_dispatch:
 permissions:
   contents: write
 concurrency:
-  group: noggin-creativeclaw-audio-vendoring
+  group: noggin-studio-voice-install
   cancel-in-progress: false
 jobs:
-  vendor-audio:
+  install:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Download and validate all studio MP3 files; relink game to local assets
+      - name: Fetch and verify recorded host announcements
+        shell: bash
         run: |
           python3 - <<'PY'
-          import json
-          import pathlib
-          import re
-          import urllib.request
-          
-          root = pathlib.Path("public")
-          sources = json.loads(pathlib.Path("tools/creativeclaw-sources.json").read_text())
-          tutorial = json.loads((root / "tv/tutorial-narration.json").read_text())
-          tasks = []
-          for group, files in (("sounds", sources["sounds"]), ("voice", sources["voice"]), ("music", sources["music"])):
-              for name, url in files.items():
-                  target = root / ("voice" if group == "voice" else "sounds") / (("creativeclaw-" + name) if group == "music" else name)
-                  tasks.append((target, url))
-          for scene in tutorial["slides"]:
-              tasks.append((root / "audio/tutorial" / ("scene-%02d.mp3" % (scene["index"] + 1)), scene.get("sourceUrl", scene["url"])))
-          assert len(tasks) == len(sources['sounds']) + len(sources['voice']) + len(sources['music']) + len(tutorial['slides'])
-          for dest, url in tasks:
-              assert url.startswith("https://cdn.creativeclaw.co/") and url.endswith(".mp3")
-              req = urllib.request.Request(url, headers={"User-Agent": "NOGGIN-Audio-Vendor/1.0"})
-              with urllib.request.urlopen(req, timeout=75) as response:
-                  data = response.read(12_000_000)
-              if len(data) < 300 or not (data[:3] == b"ID3" or (data[0] == 255 and data[1] & 224 == 224)):
-                  raise RuntimeError("Invalid MP3 received for " + str(dest))
-              dest.parent.mkdir(parents=True, exist_ok=True)
-              dest.write_bytes(data)
-              print("Validated", dest, len(data), "bytes")
-          
-          # Only replace references after EVERY required download is present.
-          script = root / "tv/tutorial.js"
-          content = script.read_text()
-          for scene in tutorial["slides"]:
-              new_path = "/audio/tutorial/scene-%02d.mp3" % (scene["index"] + 1)
-              if scene.get("sourceUrl", scene["url"]) not in content and new_path not in content:
-                  raise RuntimeError("Missing tutorial mapping " + scene["url"])
-              content = content.replace(scene.get("sourceUrl", scene["url"]), new_path)
-          script.write_text(content)
-          for scene in tutorial["slides"]:
-              scene["sourceUrl"] = scene.get("sourceUrl", scene["url"])
-              scene["url"] = "/audio/tutorial/scene-%02d.mp3" % (scene["index"] + 1)
-          tutorial["hosting"] = "Self-hosted in NOGGIN; no Creative Claw CDN requests during game playback"
-          (root / "tv/tutorial-narration.json").write_text(json.dumps(tutorial, indent=2) + "\n")
-          
-          # Keep playback mapping compatible with the existing TV sound engine.
-          local = {"description": "All Creative Claw audio locally hosted by NOGGIN after vendor workflow",
-                   "sfx": {name: "/sounds/" + name for name in sources["sounds"]},
-                   "voice": {name: "/voice/" + name for name in sources["voice"]},
-                   "music": {name.removesuffix(".mp3"): "/sounds/creativeclaw-" + name for name in sources["music"]}}
-          (root / "shared").mkdir(parents=True, exist_ok=True)
-          (root / "shared/creativeclaw-audio.json").write_text(json.dumps(local, indent=2) + "\n")
-          print("All", len(tasks), "assets downloaded and references rewritten locally.")
+          import json, pathlib, urllib.request, time
+          root=pathlib.Path('public/voice')
+          root.mkdir(parents=True,exist_ok=True)
+          data=json.loads(pathlib.Path('tools/creativeclaw-sources.json').read_text())
+          expected=json.loads(pathlib.Path('public/shared/voice-lines.json').read_text())
+          ids={item['id'] for item in expected['lines']}
+          entries=data['voice']
+          assert len(ids)==36 and len(entries)==36, (len(ids),len(entries))
+          assert {key.removesuffix('.mp3') for key in entries}==ids
+          for name,url in entries.items():
+              assert name.endswith('.mp3') and url.startswith('https://cdn.creativeclaw.co/')
+              target=root/name
+              if target.exists() and target.stat().st_size>300:
+                  continue
+              for attempt in range(3):
+                  try:
+                      req=urllib.request.Request(url,headers={'User-Agent':'NOGGIN-asset-vendor/1.1'})
+                      with urllib.request.urlopen(req,timeout=40) as response: raw=response.read(12000000)
+                      if len(raw)<300 or not (raw.startswith(b'ID3') or (raw[0]==255 and raw[1]&224==224)):
+                          raise ValueError('not a valid MP3 '+name)
+                      target.write_bytes(raw)
+                      print('Installed',name,len(raw))
+                      break
+                  except Exception:
+                      if attempt==2: raise
+                      time.sleep(2*(attempt+1))
+          mapping=root/'voice-manifest.json'
+          mapping.write_text(json.dumps({'description':'All 36 Creative Claw host cues','lines':{id:[id+'.mp3'] for id in sorted(ids)}},indent=2)+'\n')
+          audio=pathlib.Path('public/shared/creativeclaw-audio.json')
+          current=json.loads(audio.read_text())
+          current['voice']={name:'/voice/'+name for name in entries}
+          audio.write_text(json.dumps(current,indent=2)+'\n')
+          assert all((root/(id+'.mp3')).exists() for id in ids)
           PY
-      - name: Check tutorial syntax and rules tests
+      - name: Validate host voice manifest
         run: |
-          node --check public/tv/tutorial.js
-          node --test tests/tutorial.test.js
-      - name: Commit verified assets to main
+          node -e "const m=require('./public/voice/voice-manifest.json'); if(Object.keys(m.lines).length!==36) process.exit(1)"
+      - name: Commit host recordings to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/audio/tutorial public/sounds public/voice public/tv/tutorial.js public/tv/tutorial-narration.json public/shared/creativeclaw-audio.json
-          git diff --cached --quiet || (git commit -m "build(audio): self-host complete Creative Claw audio pack" && git push origin HEAD:main)
+          git add public/voice public/shared/creativeclaw-audio.json
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(audio): install all 36 local host announcements"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
