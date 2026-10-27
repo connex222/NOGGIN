@@ -54,7 +54,9 @@ class NogginSound {
  hasVoice(id){return Boolean(this.voiceLines?.[id]?.length);}
  say(id,fallback=''){if(!this.enabled||this.muted)return false;const key=this.hasVoice(id)?id:(fallback&&this.hasVoice(fallback)?fallback:null);if(!key)return false;
   if(this.voiceAudio&&!this.voiceAudio.ended&&!this.voiceAudio.paused)return false;
-  const takes=this.voiceLines[key],file=takes[Math.floor(Math.random()*takes.length)];
+  const takes=this.voiceLines[key],premium=`${key}.mp3`;
+  // Prefer the verified, consistent studio performance over legacy alternate takes.
+  const file=takes.includes(premium)?premium:takes[Math.floor(Math.random()*takes.length)];
   const clip=new Audio(`/voice/${encodeURIComponent(file)}`);clip.volume=Math.min(1,this.volume*1.2+.2);this.voiceAudio=clip;
   const id_=Symbol('voice');this.sfxLive.add(id_);this.applyMusicVolume();
   const done=()=>{this.sfxLive.delete(id_);this.applyMusicVolume();if(this.voiceAudio===clip)this.voiceAudio=null;};
