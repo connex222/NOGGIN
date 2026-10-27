@@ -4,6 +4,12 @@ on:
     branches: [main]
     paths:
       - tests/audio-end-to-end.test.js
+      - tests/batch2-regression.test.js
+      - server/board.js
+      - server/rooms.js
+      - public/play/play.js
+      - public/tv/tv.js
+      - public/shared/client.js
       - .github/workflows/audio-acceptance.yml
       - public/voice/**
       - public/sounds/**
