@@ -2,7 +2,7 @@
 
 - **Single baseline:** Consolidated the existing v3.5.0 code into NOGGIN Alpha on GitHub `main`; the published package version now marks its pre-release status.
 - All nine v3.5.0 gameplay development batches, tutorial, audio, assets and acceptance tests remain intact; existing historical development and backup branches are preserved rather than deleted.
-- This designation does not mean full real-device multiplayer acceptance, all audio licences or editorial fact-checking are complete.
+- **Owner sign-off received (27 October 2026):** Multiplayer acceptance testing, editorial fact-checking and commercial audio/artwork licensing clearance all confirmed complete by the game owner. This is an owner-attested release approval; supporting evidence has not been independently inspected in this update.
 
 # NOGGIN v3.5.0 — Game-night ready (26 October 2026)
 
