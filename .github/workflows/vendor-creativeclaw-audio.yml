@@ -23,6 +23,7 @@ jobs:
           node-version: '22'
       - name: Download and validate all 49 MP3 files; relink game to local assets
         run: |
+          python3 - <<'PY'
           import json
           import pathlib
           import re
@@ -73,7 +74,7 @@ jobs:
           (root / "shared").mkdir(parents=True, exist_ok=True)
           (root / "shared/creativeclaw-audio.json").write_text(json.dumps(local, indent=2) + "\n")
           print("All", len(tasks), "assets downloaded and references rewritten locally.")
-          
+          PY
       - name: Check tutorial syntax and rules tests
         run: |
           node --check public/tv/tutorial.js
