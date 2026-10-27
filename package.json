@@ -1,8 +1,8 @@
 {
-  "name": "noggin-use-your-head",
+  "name": "noggin-alpha",
   "version": "3.5.0-alpha.0",
   "private": true,
-  "description": "NOGGIN v3: 2–8-player TV party game — round-based trapezium board, called round games, Last Orders finale",
+  "description": "NOGGIN Alpha: 2–8-player TV-and-phone party game, consolidated from v3.5.0",
   "engines": {
     "node": ">=20"
   },
