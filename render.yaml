@@ -2,7 +2,7 @@
 # not guaranteed uptime or durable match state. See INSTALL.md.
 services:
   - type: web
-    name: noggin-alpha
+    name: noggin
     runtime: node
     plan: free
     buildCommand: npm install --omit=dev --no-audit --no-fund
