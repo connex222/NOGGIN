@@ -287,6 +287,9 @@
 
   // ───────────────────────── the player ─────────────────────────
   let root = null, index = 0, playing = true, timer = null, cleanup = null, startedAt = 0, duration = 0, opener = null, raf = null;
+  // Premium Creative Claw narration for each of the 19 tutorial scenes.
+  const NARRATION = ["https://cdn.creativeclaw.co/u/f3e7a3b1/audio/0a1d95ee-db73-4266-a0b4-291f6d90799c.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/406de0c2-7d83-4531-abb3-93ed316067ea.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/771405a1-5d0b-40ee-9143-3cbbd037b956.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/d3e658c0-6c60-4a13-8fa3-f19f0932722a.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/b79648a5-3704-41da-8f5f-b97f69dfc4f9.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/73a63734-0ee1-410f-819a-de0ca3beb14c.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/775cb29a-dca9-4f4f-91dc-62f097fb8343.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/1f1487b4-bdda-419a-b8f0-ac1706cda1ef.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/dfa8b761-04c9-45d5-b28c-171375d63517.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/ff053472-b69f-4b6d-b134-4398a3f82597.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/02cb31e8-f814-4621-b2fb-82e364d07ff4.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/bea920ac-f1e3-4e72-bb91-4544b5f1cc20.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/3b548c04-831d-4b11-8553-294181a26112.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/080fd6a6-607e-4735-a7d3-6551f12483f8.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/208d4f27-f624-4d67-9ffa-13a71e0a2e2a.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/5a606af1-f1d1-4175-8755-880f145837c6.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2dff8dca-2afe-4acd-b5bd-f909a196e58a.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/e109d774-3d43-46c5-9922-f06ea98378c9.mp3","https://cdn.creativeclaw.co/u/f3e7a3b1/audio/fbae06e5-4ff8-46eb-971c-917f77b0c42e.mp3"];
+  let activeAudio = null, audioSlide = -1, speechSequence = 0;
   let readAloud = store.get('noggin-headstart-voice') !== 'false';
   const canSpeak = 'speechSynthesis' in window && typeof SpeechSynthesisUtterance === 'function';
 
@@ -317,7 +320,6 @@
     $('htExit').onclick = close; $('htBack').onclick = () => show(index - 1); $('htNext').onclick = () => show(index + 1);
     $('htPlay').onclick = () => setPlaying(!playing);
     $('htVoice').onclick = () => {readAloud = !readAloud; store.set('noggin-headstart-voice', readAloud); voiceLabel(); stopSpeech(); if (playing) schedule();};
-    if (!canSpeak) $('htVoice').hidden = true;
     const dots = $('htDots');
     SLIDES.forEach((s, i) => {const d = el('button', 'ht-dot'); d.type = 'button'; d.setAttribute('aria-label', `Slide ${i + 1}: ${s.title}`); d.onclick = () => show(i); dots.append(d);});
     root.addEventListener('keydown', onKey);
@@ -339,36 +341,76 @@
       else if (!e.shiftKey && document.activeElement === f.at(-1)) {e.preventDefault(); f[0].focus();}
     }
   }
-  function stopSpeech() {if (canSpeak) try {speechSynthesis.cancel();} catch {}}
+  function stopSpeech() {
+    speechSequence++;
+    if (activeAudio) { activeAudio.onended = null; activeAudio.onerror = null; activeAudio.pause(); activeAudio = null; }
+    audioSlide = -1;
+    if (canSpeak) try { speechSynthesis.cancel(); } catch {}
+  }
   function speak(text, onEnd) {
     if (!canSpeak || !readAloud) return false;
-    stopSpeech();
+    try { speechSynthesis.cancel(); } catch {}
     const u = new SpeechSynthesisUtterance(text);
     const voices = speechSynthesis.getVoices();
     u.voice = voices.find(v => /en-GB/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang)) || null;
     u.lang = u.voice?.lang || 'en-GB'; u.rate = 1; u.pitch = 1;
     u.onend = () => onEnd?.(); u.onerror = () => onEnd?.();
-    try {speechSynthesis.speak(u); return true;} catch {return false;}
+    try { speechSynthesis.speak(u); return true; } catch { return false; }
   }
-  function slideSeconds(s) {const words = (s.title + ' ' + s.lines.join(' ')).split(/\s+/).length; return Math.max(9, Math.round(words / 2.6) + 3);}
+  function slideSeconds(slide) {
+    const words = (slide.title + ' ' + slide.lines.join(' ')).split(/\\s+/).length;
+    return Math.max(9, Math.round(words / 2.6) + 3);
+  }
   function schedule() {
-    clearTimeout(timer); cancelAnimationFrame(raf);
-    const s = SLIDES[index]; if (!s || s.finale) {$('htBar').style.width = '100%'; return;}
-    duration = slideSeconds(s) * 1000; startedAt = performance.now();
-    const spoken = playing && speak(`${s.title}. ${s.lines.join(' ')}`, () => {if (playing && SLIDES[index] === s) timer = setTimeout(() => show(index + 1), 1200);});
-    if (!spoken && playing) timer = setTimeout(() => show(index + 1), duration);
+    clearTimeout(timer);
+    cancelAnimationFrame(raf);
+    const slide = SLIDES[index];
+    if (!slide || slide.finale) { $('htBar').style.width = '100%'; return; }
+    duration = slideSeconds(slide) * 1000;
+    startedAt = performance.now();
+    const seq = ++speechSequence;
+    const advance = () => {
+      if (!playing || seq !== speechSequence || SLIDES[index] !== slide) return;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        if (playing && seq === speechSequence) show(index + 1);
+      }, 1200);
+    };
+    if (playing && readAloud) {
+      const resume = activeAudio && audioSlide === index;
+      if (!resume) {
+        if (activeAudio) { activeAudio.pause(); activeAudio = null; }
+        const audio = new Audio(NARRATION[index]);
+        activeAudio = audio;
+        audioSlide = index;
+      }
+      const audio = activeAudio;
+      audio.onended = advance;
+      audio.onerror = () => {
+        if (!playing || seq !== speechSequence || activeAudio !== audio) return;
+        activeAudio = null; audioSlide = -1;
+        if (!speak(slide.title + '. ' + slide.lines.join(' '), advance)) {
+          timer = setTimeout(() => { if (playing && seq === speechSequence) show(index + 1); }, duration);
+        }
+      };
+      audio.play().catch(() => audio.onerror?.());
+    } else if (playing) {
+      timer = setTimeout(() => { if (playing && seq === speechSequence) show(index + 1); }, duration);
+    }
     const tick = () => {
-      if (!playing) return;
-      const p = Math.min(1, (performance.now() - startedAt) / duration);
-      $('htBar').style.width = `${Math.round(p * 100)}%`;
-      if (p < 1) raf = requestAnimationFrame(tick);
+      if (!playing || seq !== speechSequence) return;
+      const audio = activeAudio;
+      const position = audio && Number.isFinite(audio.duration) && audio.duration > 0
+        ? audio.currentTime / audio.duration : (performance.now() - startedAt) / duration;
+      $('htBar').style.width = Math.round(Math.min(1, Math.max(0, position)) * 100) + '%';
+      raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
   }
   function setPlaying(on) {
     playing = on;
     const b = $('htPlay'); b.textContent = on ? '⏸ PAUSE' : '▶ PLAY'; b.setAttribute('aria-label', on ? 'Pause' : 'Play');
-    if (on) schedule(); else {clearTimeout(timer); cancelAnimationFrame(raf); stopSpeech();}
+    if (on) schedule(); else {clearTimeout(timer); cancelAnimationFrame(raf); speechSequence++; if (activeAudio) activeAudio.pause(); if (canSpeak) try {speechSynthesis.cancel();} catch {}}
   }
   function show(i) {
     if (!root) return;
