@@ -361,6 +361,7 @@
     const words = (slide.title + ' ' + slide.lines.join(' ')).split(/\\s+/).length;
     return Math.max(9, Math.round(words / 2.6) + 3);
   }
+  function reportNarration(message) { const b = $('htVoice'); if (b && readAloud) { b.textContent = message; b.title = message; } }
   function schedule() {
     clearTimeout(timer);
     cancelAnimationFrame(raf);
@@ -385,15 +386,17 @@
         audioSlide = index;
       }
       const audio = activeAudio;
+      audio.onplaying = () => { if (seq === speechSequence) reportNarration('🔊 STUDIO NARRATION · DAN'); };
       audio.onended = advance;
       audio.onerror = () => {
         if (!playing || seq !== speechSequence || activeAudio !== audio) return;
         activeAudio = null; audioSlide = -1;
+        reportNarration('⚠ STUDIO AUDIO UNAVAILABLE · DEVICE VOICE');
         if (!speak(slide.title + '. ' + slide.lines.join(' '), advance)) {
           timer = setTimeout(() => { if (playing && seq === speechSequence) show(index + 1); }, duration);
         }
       };
-      audio.play().catch(() => audio.onerror?.());
+      audio.play().catch(() => { if (seq === speechSequence) audio.onerror?.(); });
     } else if (playing) {
       timer = setTimeout(() => { if (playing && seq === speechSequence) show(index + 1); }, duration);
     }
@@ -437,7 +440,7 @@
     opener = document.activeElement;
     await load();
     root.hidden = false; document.body.classList.add('headstart-open');
-    playing = true; setPlaying(true); show(0);
+    playing = true; show(0);
     $('htNext').focus();
   }
   function close() {
