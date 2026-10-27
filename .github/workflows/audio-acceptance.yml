@@ -11,6 +11,11 @@ on:
       - tests/batch6-answer-quality.test.js
       - tests/batch7-speed-accessibility.test.js
       - tests/batch8-board-engagement.test.js
+      - tests/batch9-release-readiness.test.js
+      - README.md
+      - CHANGELOG.md
+      - public/shared/howto.json
+      - public/sounds/README.md
       - server/board.js
       - server/games/phase4.js
       - server/games/phase5.js
