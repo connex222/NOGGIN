@@ -1,5 +1,7 @@
 # NOGGIN v3.5.0 — Game-night ready (26 October 2026)
 
+**27 October 2026 — Batch 9 repository finalisation:** Verified mode-specific rules, current guide generation and 3.5.0 release metadata; added an explicit licence-release warning to README and `tests/batch9-release-readiness.test.js` to the automated acceptance suite. This is a release verification update, not a gameplay mechanics change.
+
 Fairness, reliability and content fixes from the v3.5.0 review brief, delivered in nine batches. Every new fact and question is flagged `needs-owner-check` until checked against its source (see `docs/editorial/`).
 
 ## Batch 1 — Game-night blockers
