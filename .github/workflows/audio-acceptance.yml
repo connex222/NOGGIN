@@ -7,6 +7,10 @@ on:
       - tests/batch2-regression.test.js
       - tests/batch3-regression.test.js
       - tests/batch4-content-reveal.test.js
+      - tests/batch5-bid-fairness.test.js
+      - data/bid-categories.json
+      - server/games/phase5.js
+      - server/rooms.js
       - data/close-call.json
       - data/higher-lower.json
       - server/games/phase3.js
