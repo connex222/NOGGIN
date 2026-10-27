@@ -1,10 +1,10 @@
 {
   "provider": "Creative Claw",
   "model": "speech/elevenlabs-v4",
-  "voice": "Dan \u2014 British male",
+  "voice": "Dan — British male",
   "sceneCount": 19,
   "hosting": "Self-hosted in NOGGIN; no Creative Claw CDN requests during game playback",
-  "notes": "Files are remotely hosted; premium voice requires internet.",
+  "notes": "All 19 recorded narration files are bundled in NOGGIN under /public/audio/tutorial. Playback uses local app paths and requires no Creative Claw CDN. Browser speech remains a fallback.",
   "slides": [
     {
       "index": 0,
