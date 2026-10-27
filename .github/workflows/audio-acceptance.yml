@@ -9,6 +9,8 @@ on:
       - tests/batch4-content-reveal.test.js
       - tests/batch5-bid-fairness.test.js
       - tests/batch6-answer-quality.test.js
+      - tests/batch7-speed-accessibility.test.js
+      - public/tv/board-view.js
       - data/unscramble.json
       - data/noise-clues.json
       - data/sketch-words.json
