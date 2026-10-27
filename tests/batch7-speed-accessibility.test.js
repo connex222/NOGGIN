@@ -24,8 +24,10 @@ function game(id,accessible=false){
 }
 test('D7: server rejects Quick Draw early taps and ranks a later-arriving faster reaction correctly',()=>{
  const f=game('quick-draw');
- f.at(f.m().openAt-1500);
- assert.throws(()=>f.send(0,{value:1,reactionMs:180}),e=>['WAIT','EARLY','INPUT'].includes(e.code));
+ const early=game('quick-draw');
+ early.at(early.m().openAt-1500);
+ early.send(0,{value:1,reactionMs:180});
+ assert.equal(early.m().roundAnswers[early.room.players[0].id].misfire,true,'early tap is penalised');
  const open=f.m().openAt;
  f.at(open+900);
  f.send(0,{value:1,reactionMs:560});
