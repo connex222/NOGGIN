@@ -66,7 +66,7 @@ body.game-mode .game-buttons button{min-height:59px}
 button.button-director:focus-visible{outline:4px solid #fff;outline-offset:2px;}
 /* Phase 3 interactive mini-games */
 .mini-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin-top:8px}
-.mini-grid-button{min-height:47px!important;padding:0!important;font-size:23px!important;border-radius:8px;background:#304b81;color:#fff;border:2px solid #a4bfec}
+.mini-grid-button{min-height:48px!important;padding:0!important;font-size:23px!important;border-radius:8px;background:#304b81;color:#fff;border:2px solid #a4bfec}
 .memory-pads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
 .memory-pad{min-height:75px!important;font-size:35px!important;color:#101830!important;border:3px solid #fff!important}
 .pad-0{background:#ff7a91}.pad-1{background:#ffe179}.pad-2{background:#72c8fd}.pad-3{background:#a1f197}.pad-4{background:#cf9cfd}.pad-5{background:#ffb57c}
