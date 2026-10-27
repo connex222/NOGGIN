@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "notes": "Creative Claw source references for one-time vendoring. Live audio must use the local files after the vendoring job completes.",
+  "sounds": {
+    "sfx-correct.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/d9c3a482-2aee-4c87-90f8-dac019f5e0df.mp3",
+    "sfx-wrong.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2b0a8bc3-feac-472d-bf3a-d133444bb645.mp3",
+    "sfx-dice-roll.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/9c75b960-0966-493a-8cd7-c6459a9c1d2a.mp3",
+    "sfx-spark-gain.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2e5b870a-6561-47a3-aaea-7ca17cd89e48.mp3",
+    "sfx-showdown.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/266df152-478a-404f-b58c-147386e36206.mp3",
+    "sfx-countdown.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/6f68a4e2-400b-47f0-8732-90769af6f8fb.mp3",
+    "sfx-crowd-cheer.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/770af5d7-18f3-4fda-88cd-aca7b305e42f.mp3",
+    "sfx-join.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/19c7f3d9-d38b-4aaf-8a8d-84ddf983224f.mp3",
+    "sfx-buzz.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/d0900959-4eed-45d0-bb47-5b0d83d04ece.mp3",
+    "sfx-boom.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/02f63bc5-c862-4260-bb45-d9a0ad3ce6b2.mp3",
+    "sfx-crowd-aww.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/dca11a4d-4dcb-4996-bb5d-3edbd56f33d1.mp3",
+    "sfx-go.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/7cf88270-9b72-4c28-b123-0e37dfa24ceb.mp3",
+    "sfx-gunshot.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/d6bc42f5-9438-4cdb-a019-90f9a9bb68a2.mp3",
+    "sfx-hop.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/77b03842-2402-45f7-a111-97bf5cafcf1c.mp3",
+    "sfx-reel.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/5b2266c6-3494-4be7-8d4d-cfaeb92d0159.mp3",
+    "sfx-reel-stop.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/8f2dfed8-eda5-4df4-866f-715f92214dce.mp3",
+    "sfx-spark-lose.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/ac3a2cb2-0afa-4f84-8a32-a6b759e4f056.mp3",
+    "sfx-swap.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/e34e8a34-4aae-46cb-abc3-985a62e91196.mp3",
+    "sfx-tick.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/1df2fbb5-bda4-43cc-b223-c679eab6a509.mp3"
+  },
+  "voice": {
+    "welcome.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/3b1a82ab-fb68-4757-81ae-07dbd5044a10.mp3",
+    "round-start.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/1e719339-85c3-4bfd-82ac-9683622ec380.mp3",
+    "showdown.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/ba692572-24a6-4787-9cd4-55e5bda1116f.mp3",
+    "winner.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/8b4c9d27-c65b-417b-bbb5-8acbf7a91926.mp3",
+    "last-orders.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2d6db5c0-6e94-49ec-9f08-74c068b6329f.mp3",
+    "wildcard.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2b622908-58c0-4a2f-81ff-917f7ab0bd0a.mp3",
+    "game.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/6428b6cd-5d1d-4e27-a69f-0c146c7b8165.mp3",
+    "verdict-big.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/afd53f5c-f682-4cd4-95ec-e5b083c3282b.mp3"
+  },
+  "music": {
+    "lobby.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/1c6429e4-951d-4e3a-b892-714c16b1884f.mp3",
+    "board.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/b0408e49-a366-4661-b5a1-b6425351feb0.mp3",
+    "tension.mp3": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/04945fc5-b7bc-46fa-8be1-d27cf78a0ecf.mp3"
+  }
+}
