@@ -60,7 +60,12 @@ test('Everyone Rolls: landings call the round game; the last caller in move orde
  assert.equal(f.room.board.roundCategory,'speed');assert.equal(f.room.board.roundCaller,b.id);
  assert.equal(c.sparks,2);assert.match(f.room.board.result.text,/calls SPEED/);
  f.advance(6001);
+ // v3.5.0 G1: the caller now picks 1 of 2 Speed games on their phone.
+ assert.equal(f.room.board.step,'choose_game');assert.equal(f.room.board.activeId,b.id);
+ const options=f.rooms.state(f.code,true).board.gameOptions;assert.equal(options.length,2);
+ f.rooms.chooseGame(f.code,'phone1',{gameId:options[1].id});
  assert.equal(f.room.board.stage,'round-game');assert.equal(f.room.board.minigame.category,'speed');assert.equal(f.room.board.activeId,b.id);
+ assert.equal(f.room.board.minigame.id,options[1].id);
 });
 test('Everyone Rolls: a Wildcard holder picks and locks the game before it starts',()=>{
  const f=fixture(3),[a,b]=f.room.players;
@@ -70,15 +75,23 @@ test('Everyone Rolls: a Wildcard holder picks and locks the game before it start
  assert.equal(f.room.board.step,'choose_category');assert.equal(f.room.board.activeId,a.id);
  f.rooms.chooseGame(f.code,'phone0',{category:'create'});
  assert.equal(f.room.board.roundLocked,true);assert.equal(f.room.board.roundCaller,a.id);
- f.advance(6001);assert.equal(f.room.board.minigame.category,'create');assert.equal(f.room.board.activeId,a.id);
+ f.advance(6001);assert.equal(f.room.board.step,'choose_game'); // v3.5.0 G1
+ f.advance(8001);assert.equal(f.room.board.minigame.category,'create');assert.equal(f.room.board.activeId,a.id);
 });
-test('Everyone Rolls: the Showdown comes after the landings and before the round game; a swap cannot break it',()=>{
+test('Everyone Rolls: the Showdown comes after the landings; the lander picks a rival, or faces the leader on timeout',()=>{
+ // v3.5.0 G1: the lander chooses their rival (8 s); Swap Seats no longer exists (G7).
  const f=fixture(3),[a,b,c]=f.room.players;
  a.position=5;b.position=12;c.position=0;c.sparks=4;
- rollAll(f,[1,1,1]);            // A corner 6, B swap 13 (swaps with leader C), C brain
+ rollAll(f,[1,1,1]);            // A corner 6, B Steal the Call 13, C brain
  f.advance(6001);
+ assert.equal(f.room.board.step,'choose_opponent');assert.equal(f.room.board.activeId,a.id);
+ f.rooms.chooseGame(f.code,'phone0',{targetId:b.id});
  assert.equal(f.room.board.step,'showdown');assert.equal(f.room.board.showdown.kind,'buzzer');
- assert.deepEqual(f.room.board.showdown.participants,[a.id,c.id]);
+ assert.deepEqual(f.room.board.showdown.participants,[a.id,b.id]);
+ const g=fixture(3),[x,y,z]=g.room.players;
+ x.position=5;y.position=12;z.position=0;z.sparks=4;
+ rollAll(g,[1,1,1]);g.advance(6001);g.advance(8001);
+ assert.deepEqual(g.room.board.showdown.participants,[x.id,z.id]);
 });
 test('Everyone Rolls: show length, Last Orders and the final verdict',()=>{
  const f=fixture(4);assert.equal(f.room.board.totalRounds,board.autoRounds(4,'everyone'));

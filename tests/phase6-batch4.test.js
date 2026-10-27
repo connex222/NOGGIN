@@ -8,7 +8,7 @@ const plans = {
   'unscramble': { key: 'word', count: 19 },
   'mind-categories': { key: 'category', count: 15 },
   'majority-questions': { key: 'question', count: 20 },
-  'bid-categories': { key: 'prompt', count: 15 },
+  'bid-categories': { key: 'prompt', count: 11 }, // v3.5.0 Q7: 4 vague ones removed
   'caption-scenes': { key: 'scene', count: 8 },
 };
 for (const [bank, spec] of Object.entries(plans)) {
@@ -23,8 +23,9 @@ for (const [bank, spec] of Object.entries(plans)) {
       if (bank === 'unscramble') assert.ok(/^[A-Z]{6,8}$/.test(item.word));
       if (bank === 'majority-questions') assert.equal(new Set(item.options).size, 4);
       if (bank === 'bid-categories') {
-        assert.equal(item.answers.length, 8);
-        assert.equal(new Set(item.answers.map(a => a.toLowerCase())).size, 8);
+        // v3.5.0 Q7: open everyday categories now carry 40+ accepted answers.
+        assert.ok(item.answers.length >= 40, item.id);
+        assert.equal(new Set(item.answers.map(a => a.toLowerCase())).size, item.answers.length);
         assert.equal(item.review, true);
       }
       if (bank === 'caption-scenes') assert.equal(item.avatars.length, 2);

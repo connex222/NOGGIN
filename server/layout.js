@@ -15,7 +15,7 @@ const SPACES = Object.freeze([
   'showdown',                                                       // 6    corner: Buzzer Battle
   'together', 'lift', 'brain',                                      // 7-9  left side
   'showdown',                                                       // 10   corner: Tug of Wits
-  'speed', 'create', 'swap', 'wildcard', 'brain', 'pickpocket', 'together', // 11-17 top
+  'speed', 'create', 'steal', 'wildcard', 'brain', 'pickpocket', 'together', // 11-17 top (v3.5.0: Steal the Call replaces Swap Seats)
   'showdown',                                                       // 18   corner: Bid to Win
   'create', 'lift', 'speed',                                        // 19-21 right side
   'showdown',                                                       // 22   corner: Nerve
@@ -26,9 +26,9 @@ const SHOWDOWNS = Object.freeze({6: 'Buzzer Battle', 10: 'Tug of Wits', 18: 'Bid
 const SHOWDOWN_KINDS = Object.freeze({6: 'buzzer', 10: 'tug', 18: 'bid', 22: 'nerve'});
 const LIFTS = Object.freeze({8: 20, 20: 8});
 const CATEGORIES = Object.freeze(['speed', 'brain', 'create', 'together']);
-const COLORS = Object.freeze({speed: '#ff667e', brain: '#64aeff', create: '#ffe477', together: '#9de97c', showdown: '#ffd168', start: '#ffffff', swap: '#be95ff', pickpocket: '#adb8cb', drain: '#98a1bc', wildcard: '#ff9ed9', lift: '#72f2ec', applause: '#ffb46b'});
-const ICONS = Object.freeze({speed: '⚡', brain: '◆', create: '✎', together: '✚', showdown: '★', start: '⌂', swap: '⇄', pickpocket: '◈', drain: '−', wildcard: '✳', lift: '⇧', applause: '♪'});
-const LABELS = Object.freeze({speed: 'Speed', brain: 'Brain', create: 'Create', together: 'Together', showdown: 'Showdown', start: 'Start', swap: 'Swap Seats', pickpocket: 'Pickpocket', drain: 'Brain Drain', wildcard: 'Wildcard', lift: 'Stage Lift', applause: 'Applause'});
+const COLORS = Object.freeze({speed: '#ff667e', brain: '#64aeff', create: '#ffe477', together: '#9de97c', showdown: '#ffd168', start: '#ffffff', steal: '#be95ff', pickpocket: '#adb8cb', drain: '#98a1bc', wildcard: '#ff9ed9', lift: '#72f2ec', applause: '#ffb46b'});
+const ICONS = Object.freeze({speed: '⚡', brain: '◆', create: '✎', together: '✚', showdown: '★', start: '⌂', steal: '⚑', pickpocket: '◈', drain: '−', wildcard: '✳', lift: '⇧', applause: '♪'});
+const LABELS = Object.freeze({speed: 'Speed', brain: 'Brain', create: 'Create', together: 'Together', showdown: 'Showdown', start: 'Start', steal: 'Steal the Call', pickpocket: 'Pickpocket', drain: 'Brain Drain', wildcard: 'Wildcard', lift: 'Stage Lift', applause: 'Applause'});
 
 function boardData() {
   return SPACES.map((type, index) => ({

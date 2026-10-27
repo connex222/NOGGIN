@@ -36,7 +36,7 @@ function run(n,rounds,style){
   board.roll(room,b.activeId,now,rand);
   if(b.step==='choose_route'){
     now+=TAP;
-    const value={applause:6,start:6,showdown:5,wildcard:4,pickpocket:4,speed:3,brain:3,create:3,together:3,swap:2,lift:1,drain:-6};
+    const value={applause:6,start:6,showdown:5,wildcard:4,pickpocket:4,speed:3,brain:3,create:3,together:3,steal:3,lift:1,drain:-6};
     const scored=b.routeOptions.map((o,index)=>({index,score:value[o.type]-o.cost*2})).sort((a,z)=>z.score-a.score||a.index-z.index);
     board.choose(room,b.activeId,{option:scored[0].index},now,rand);
   }
@@ -129,7 +129,8 @@ function run(n,rounds,style){
   }else if(m.kind==='tiebreak'){
     for(const id of m.participants)input(id,Math.max(0,m.questionData.answer+(rand(99)-49)));now+=500;phase5.tick(room,now,board.finishTurn);
   }
- }else if(b.step==='choose_target'||b.step==='choose_opponent'){
+ }else if(b.step==='choose_game'){now+=TAP;board.choose(room,b.activeId,{gameId:b.gameOptions[rand(b.gameOptions.length)]},now,rand);
+ }else if(b.step==='choose_opponent'){
   now+=TAP;const target=room.players.filter(p=>p.id!==b.activeId).sort((a,z)=>z.sparks-a.sparks)[0];board.choose(room,b.activeId,{targetId:target.id},now,rand);
  }else if(b.step==='choose_category'){now+=TAP;board.choose(room,b.activeId,{category:board.CATEGORIES[rand(4)]},now,rand);}
  else if(b.step==='challenge'){

@@ -5,7 +5,7 @@
   const sessionKey = 'noggin-tv-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
   let avatars = [], activeRoom = null, priorCount = 0, boardView = null, currentState = null;
-  const audio=new window.NogginSound();let lastFxKey='',lastBeat=-1,pendingFx=null;
+  const audio=new window.NogginSound();let lastFxKey='',pendingFx=null,beatFor=null,beatDone=false,beatSkip=false;
   const message = $('message');
 
   function error(text) {
@@ -34,7 +34,7 @@
   updateSoundButton();
   // A genuine key or pointer gesture may unlock Web Audio; browsers still decide.
   function enableSoundOnGesture() {
-    if (audio.enabled || audio.muted === true && localStorage.getItem('noggin-muted') === 'true') return;
+    if (audio.enabled || audio.muted === true && U.storageGet('noggin-muted') === 'true') return;
     audio.unlock().then(() => {
       audio.setMuted(false);
       updateSoundButton();
@@ -58,6 +58,8 @@
     if(key===lastFxKey)return;lastFxKey=key;
     if(b.step==='showdown'&&b.showdown?.phase==='intro')audio.play('sfx-showdown');
     if(b.step==='minigame'&&b.minigame?.phase==='intro')audio.play('sfx-reel');
+    // Q8: a short sting as each answer is revealed.
+    if(b.step==='minigame'&&b.minigame?.phase==='reveal')audio.play('sfx-reel-stop');
     if(b.step==='result'){
        const deltas=Object.values(b.result?.deltas||{}),gain=Math.max(0,...deltas),loss=deltas.some(d=>d<0);
        const won=(b.result?.winners||[]).length>0||gain>0;
@@ -86,7 +88,7 @@
     if(b.step==='result'){
       const type=boardView?.data?.[b.landing]?.type,deltas=Object.values(b.result?.deltas||{}),gain=Math.max(0,...deltas);
       const fromMove=b.lastMove&&b.stage!=='round-game'&&!b.round;
-      if(fromMove&&['applause','pickpocket','swap','lift'].includes(type)){say(type);return;}
+      if(fromMove&&['applause','pickpocket','steal','lift'].includes(type)){say(type);return;}
       if(gain>=3){say('verdict-big','verdict-gain');return;}
       if(gain>0){say('verdict-gain');return;}
       if(deltas.some(d=>d<0))say('verdict-loss');
@@ -121,8 +123,9 @@
   function render(state) {
     if (!activeRoom || state.code !== activeRoom) return;
     currentState=state;window.__nogginStateAt=Date.now();
-    // The TV host can adjudicate an unlisted Bid to Win answer, including
-    // when the VIP is the bidder and must not judge their own submission.
+    touchSession(state);
+    // The TV host can adjudicate an unlisted Bid to Win answer. Any phone that is
+    // not in the duel can too (D10); neither duellist can, not even the VIP.
     let reviewPanel=document.getElementById('bidReviewPanel');
     if(!reviewPanel){
       reviewPanel=document.createElement('section');reviewPanel.id='bidReviewPanel';
@@ -130,19 +133,26 @@
       reviewPanel.style.cssText='position:fixed;bottom:7rem;left:50%;transform:translateX(-50%);z-index:9999;background:#15142c;color:white;border:3px solid #ffe478;border-radius:16px;padding:16px;text-align:center;max-width:90vw;box-shadow:0 8px 30px #000b';
       document.body.append(reviewPanel);
     }
-    const pending=state.board?.showdown?.kind==='bid'&&state.board.showdown.phase==='review'
-      ?state.board.showdown.display?.review:null;
+    const duel=state.board?.showdown;
+    const pending=duel?.kind==='bid'&&duel.phase==='review'?duel.display?.review:null;
     reviewPanel.classList.toggle('hidden',!pending);
-    reviewPanel.replaceChildren();
-    if(pending){
-      const heading=document.createElement('strong');heading.textContent='BID TO WIN · ANSWER REVIEW';
-      const answer=document.createElement('p');answer.textContent=pending.answer;
-      reviewPanel.append(heading,answer);
-      for(const [text,accept] of [['✓ ACCEPT',true],['✕ REJECT',false]]){
-        const button=document.createElement('button');button.type='button';button.textContent=text;
-        button.style.cssText='margin:5px;padding:12px 20px;min-height:44px';
-        button.onclick=async()=>{button.disabled=true;try{const response=await U.request(socket,'game:bid-review',{accept});render(response.state);error('');}catch(e){error(e.message);button.disabled=false;}};
-        reviewPanel.append(button);
+    // D6/D10: only rebuild when a NEW answer arrives, so a tap on ACCEPT is never lost.
+    const reviewKey=pending?`${duel.roundKey}|${pending.answer}`:'';
+    if(reviewPanel.dataset.key!==reviewKey){
+      reviewPanel.dataset.key=reviewKey;
+      reviewPanel.replaceChildren();
+      if(pending){
+        const heading=document.createElement('strong');heading.textContent='BID TO WIN · IS THIS A VALID ANSWER?';
+        const category=document.createElement('p');category.textContent=duel.question||'';
+        const answer=document.createElement('p');answer.style.cssText='font-size:1.6em;font-weight:900;margin:.3em 0';answer.textContent=`“${pending.text||pending.answer}”`;
+        const note=document.createElement('p');note.style.cssText='opacity:.85;margin:.2em 0 .5em';note.textContent='Judge here, or on any phone that is not in the duel. The first decision counts.';
+        reviewPanel.append(heading,category,answer,note);
+        for(const [text,accept] of [['✓ ACCEPT',true],['✕ REJECT',false]]){
+          const button=document.createElement('button');button.type='button';button.textContent=text;
+          button.style.cssText='margin:5px;padding:12px 20px;min-height:48px;min-width:120px';
+          button.onclick=async()=>{button.disabled=true;try{const response=await U.request(socket,'game:bid-review',{accept});render(response.state);error('');}catch(e){error(e.message);button.disabled=false;}};
+          reviewPanel.append(button);
+        }
       }
     }
     if ($('vipStatus')) $('vipStatus').textContent = state.vipName ? `★ VIP: ${state.vipName}` : 'VIP: waiting for first player';
@@ -158,7 +168,8 @@
       $('showPause').disabled=!socket.connected;
       $('showReport').disabled=!socket.connected;
       const active=state.players.find(p=>p.id===b.activeId);
-      $('showSkip').classList.toggle('hidden',state.phase!=='board'||Boolean(active?.online)||!active||['result','finished'].includes(b.step)||b.pauseReason==='The TV host has paused the show.');
+      // D5: SKIP only appears while the show is actually waiting for an offline player.
+      $('showSkip').classList.toggle('hidden',state.phase!=='board'||Boolean(active?.online)||!active||['result','finished'].includes(b.step)||!(b.paused&&b.pauseKind==='player'));
       $('showSkip').disabled=!socket.connected;
       if(boardView)boardView.render(state);
       if(!b.paused)gameFx(state);
@@ -178,6 +189,7 @@
     for(const [id,val] of [['rounds',state.settings.rounds??'auto'],['timerSpeed',state.settings.timerSpeed],['rules',state.settings.rules||'classic'],['roundStyle',state.settings.roundStyle||'sequential']]) $(id).value=String(val);
     $('familyFriendly').checked=state.settings.familyFriendly;
     $('reduceMotion').checked=state.settings.reduceMotion;
+    $('colourBlindSafe').checked=Boolean(state.settings.colourBlindSafe);
     document.documentElement.classList.toggle('reduce-motion',state.settings.reduceMotion);
   }
   function showCreated(result) {
@@ -191,20 +203,58 @@
     error(''); priorCount=0;
     render(result.state);
   }
-  async function startHost() {
-    const previous = U.readSession(sessionKey);
-    if (previous?.code && previous?.token) {
-      try {
-        const result = await U.request(socket,'room:resume',{code:previous.code,token:previous.token,role:'host'});
-        showCreated(result);return;
-      } catch {U.clearSession(sessionKey);}
-    }
-    try {
-      const result = await U.request(socket,'room:create',{});
-      U.saveSession(sessionKey,{code:result.code,token:result.token});
-      showCreated(result);
-    } catch(err) {error(err.message);}
+  // D3: remember when this TV last saw its room, so a lost room can be explained.
+  // Only a room seen in the last 3 hours counts as "tonight's game".
+  const RECENT_MS = 3 * 60 * 60_000;
+  let lastTouch = 0;
+  function touchSession(state) {
+    if (!activeRoom || state.code !== activeRoom || Date.now() - lastTouch < 30_000) return;
+    const saved = U.readSession(sessionKey);
+    if (!saved?.token || saved.code !== activeRoom) return;
+    lastTouch = Date.now();
+    U.saveSession(sessionKey, {...saved, lastSeen: lastTouch, phase: state.phase});
   }
+  function showRestartBanner(newCode) {
+    $('restartText').textContent = `The game server restarted — the previous game was lost. New room code: ${newCode}. Players: scan the new QR.`;
+    $('restartBanner').classList.remove('hidden');
+  }
+  $('restartDismiss').onclick = () => $('restartBanner').classList.add('hidden');
+  let hostRetry = null, hostStarting = false;
+  async function startHost() {
+    if (hostStarting) return;
+    hostStarting = true; clearTimeout(hostRetry);
+    try {
+      const previous = U.readSession(sessionKey);
+      let lostGame = false;
+      if (previous?.code && previous?.token) {
+        try {
+          const result = await U.request(socket,'room:resume',{code:previous.code,token:previous.token,role:'host'});
+          showCreated(result); return;
+        } catch (err) {
+          if (!['ROOM','AUTH'].includes(err.code)) {
+            // A timeout or hiccup is not a lost room: keep the session and try again.
+            error(`Reconnecting to room ${previous.code}… (${err.message})`);
+            hostRetry = setTimeout(() => {if (socket.connected) startHost();}, 3000);
+            return;
+          }
+          U.clearSession(sessionKey);
+          lostGame = Number.isFinite(previous.lastSeen) && Date.now() - previous.lastSeen < RECENT_MS;
+        }
+      }
+      try {
+        const result = await U.request(socket,'room:create',{});
+        U.saveSession(sessionKey,{code:result.code,token:result.token,lastSeen:Date.now(),phase:'lobby'});
+        showCreated(result);
+        if (lostGame) showRestartBanner(result.code);
+      } catch(err) {error(err.message);}
+    } finally {hostStarting = false;}
+  }
+  // D3: Render's free tier sleeps after a quiet spell. While a room is open, a tiny
+  // request every 4 minutes counts as activity. It is cheap insurance, not a guarantee.
+  setInterval(() => {
+    if (!activeRoom || !['lobby','board'].includes(currentState?.phase)) return;
+    fetch('/health', {cache: 'no-store'}).catch(() => {});
+  }, 4 * 60_000);
   socket.on('connect', () => {setConnected(true);startHost();});
   socket.on('disconnect', () => {setConnected(false);if ($('connectionLabel')) $('connectionLabel').textContent='DISCONNECTED · SERVER MAY BE WAKING';});
   socket.on('room:state', state => {if(activeRoom && state.code === activeRoom) render(state);});
@@ -223,6 +273,7 @@
   $('timerSpeed').onchange = e => updateSettings({timerSpeed:e.target.value});
   $('familyFriendly').onchange = e => updateSettings({familyFriendly:e.target.checked});
   $('reduceMotion').onchange = e => updateSettings({reduceMotion:e.target.checked});
+  $('colourBlindSafe').onchange = e => updateSettings({colourBlindSafe:e.target.checked});
   $('newRoom').onclick = async () => {
     if (!socket.connected) return;
     if (!confirm('Close this room and disconnect every contestant?')) return;
@@ -230,7 +281,7 @@
       if (activeRoom) await U.request(socket,'room:close',{});
       U.clearSession(sessionKey); activeRoom=null;
       const result=await U.request(socket,'room:create',{});
-      U.saveSession(sessionKey,{code:result.code,token:result.token});showCreated(result);
+      U.saveSession(sessionKey,{code:result.code,token:result.token,lastSeen:Date.now(),phase:'lobby'});showCreated(result);$('restartBanner').classList.add('hidden');
     } catch(err){error(err.message);}
   };
   $('showPause').onclick=async()=>{
@@ -266,7 +317,11 @@
   setInterval(()=>{boardView?.updateClock();if(!currentState?.board||audio.muted)return;
     const b=currentState.board;if(b.paused)return;const at=b.showdown?.deadline||b.minigame?.deadline||b.challenge?.deadline;
     if(!at)return;const sec=Math.ceil((at-(currentState.serverNow+Date.now()-((window.__nogginStateAt)||Date.now())))/1000);
-    if(sec>=1&&sec<=3&&sec!==lastBeat){lastBeat=sec;audio.play('sfx-countdown');}if(sec>3)lastBeat=-1;
+    // D11: the countdown sound is one 3.8-second clip, so play it ONCE when 3 seconds
+    // remain. Skip it for rounds shorter than 5 seconds (e.g. Colour Clash).
+    const remainingMs=sec*1000;
+    if(at!==beatFor){beatFor=at;beatDone=false;beatSkip=remainingMs<5000;}
+    if(!beatSkip&&!beatDone&&sec>=1&&sec<=3){beatDone=true;audio.play('sfx-countdown');}
   },160);
   try {
     const response = await fetch('/shared/avatars.json');

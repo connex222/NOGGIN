@@ -85,11 +85,11 @@ class NogginBoardView {
       });
       options.append(crowd);
     }
-    if(m.phase==='intro'){const card=this.howToCard(m.kind,'showdown',state,'',m.participants);if(card){prompt.textContent='';options.append(card);if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · EARN 1 DIRECTOR CUE','mini-preview');return;}
-      if(state.settings.rules==='showtime'&&m.kind!=='tiebreak')label('AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID HOW MANY YOU CAN NAME · OR CHALLENGE':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
+    if(m.phase==='intro'){const card=this.howToCard(m.kind,'showdown',state,'',m.participants);if(card){prompt.textContent='';options.append(card);if(m.kind!=='tiebreak')label(state.settings.rules==='showtime'?'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · EARN 1 DIRECTOR CUE':'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · +1 SPARK IF YOU’RE OUTSIDE THE TOP TWO','mini-preview');return;}
+      if(m.kind!=='tiebreak')label(state.settings.rules==='showtime'?'AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE':'AUDIENCE: PREDICT THE WINNER NOW · +1 SPARK IF YOU’RE OUTSIDE THE TOP TWO','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID HOW MANY YOU CAN NAME · OR CHALLENGE':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
     if(m.kind==='buzzer'){
       const pts=m.participants.map(id=>m.display.points[id]);label(`${names[0]} ${pts[0]} : ${pts[1]} ${names[1]}`,'p4-big');
-      label(`QUESTION ${m.round} OF 7 · ${m.phase==='buzz'?'BUZZ TO ANSWER':m.phase==='answer'?'FIRST BUZZER IS ANSWERING':'SECOND CHALLENGER GETS A CHANCE'}`);
+      label(`QUESTION ${m.round} OF ${m.totalRounds||5} · FIRST TO 3 · ${m.phase==='buzz'?'BUZZ TO ANSWER':m.phase==='answer'?'FIRST BUZZER IS ANSWERING':'SECOND CHALLENGER GETS A CHANCE'}`);
       for(const c of m.display.choices||[])label(c,'showdown-choice');
     }else if(m.kind==='tug'){
       const rope=document.createElement('div');rope.className='duel-rope';const mark=document.createElement('span');mark.className='duel-knot';mark.style.left=`${50+m.display.rope*8}%`;rope.append(mark);options.append(rope);
@@ -104,6 +104,8 @@ class NogginBoardView {
     }else if(m.kind==='tiebreak'){
       label(`${m.display.answered.length} OF ${m.participants.length} GUESSES IN`,'p4-big');
       label(`ANSWER IN ${m.display.unit||'A WHOLE NUMBER'} · CLOSEST WINS`);
+      // Q1: the players know the replay is the last question and how a tie is settled.
+      if((m.display.attempt||1)>1)label('FINAL REPLAY · STILL LEVEL? THE FIRST ANSWER IN WINS','mini-preview');
     }
   }
 
@@ -132,8 +134,13 @@ class NogginBoardView {
     }else if(m.id==='fib-factory'){
       prompt.textContent=m.question;if(m.phase==='vote')for(const c of m.display.options||[])span(c,'p4-ballot');else span(`${m.display.entryCount||0} FIBS IN · TRUTH IS HIDDEN`);
     }else if(m.id==='mind-meld'){
-      prompt.textContent=m.question;const p=state.players.find(p=>p.id===m.display.partnerId);span(`${actor?.name||'Host'}  +  ${p?.name||'CHOOSING PARTNER'}`,'p4-big');
-      if(m.phase==='reveal')span(`They wrote: ${(m.lastResult?.words||[]).join(' / ')}`,'p4-ballot');else span(`ATTEMPT ${m.round} OF ${m.totalRounds} · NO TALKING`);
+      // G6: every pair (and a group of three if numbers are odd) plays at once.
+      prompt.textContent=m.question;const name=id=>state.players.find(p=>p.id===id)?.name||'Player';
+      const groups=m.display.groups||[];
+      if(!groups.length){const p=state.players.find(p=>p.id===m.display.partnerId);span(`${actor?.name||'Host'}  +  ${p?.name||'CHOOSING PARTNER'}`,'p4-big');}
+      groups.forEach((g,i)=>{const done=(m.display.matched||[]).includes(i);const r=m.phase==='reveal'?(m.lastResult?.groups||[]).find(x=>x.ids.join()===g.join()):null;
+        span(`${done?'✓ ':''}${g.map(name).join(' + ')}${r?` · ${r.words.join(' / ')}`:''}`,done?'p4-ballot meld-done':'p4-ballot');});
+      span(`ATTEMPT ${m.round} OF ${m.totalRounds} · NO TALKING`);
     }else if(m.id==='majority-rules'){
       prompt.textContent=m.question;for(const c of m.display.options||[])span(c,'p4-ballot');span(`${m.answered.length}/${state.players.length} VOTES RECEIVED`);
     }else if(m.id==='relay-sums'){
@@ -148,8 +155,19 @@ class NogginBoardView {
 
   // The title card shown while a game's intro clock runs: category banner, three
   // animated "how to play" steps, and who is hosting (or who is duelling).
+  shapeSvg(shape,word){
+    const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('class','shape-clash-tv');svg.setAttribute('role','img');svg.setAttribute('aria-label',`The word ${word} inside a ${shape.toLowerCase()}`);
+    const star=Array.from({length:10},(_,i)=>{const r=i%2?20:46,a=-Math.PI/2+i*Math.PI/5;return `${(50+r*Math.cos(a)).toFixed(1)},${(53+r*Math.sin(a)).toFixed(1)}`;}).join(' ');
+    const el=shape==='CIRCLE'?['circle',{cx:50,cy:50,r:43}]:shape==='SQUARE'?['rect',{x:9,y:9,width:82,height:82}]:shape==='TRIANGLE'?['polygon',{points:'50,6 95,92 5,92'}]:['polygon',{points:star}];
+    const outline=document.createElementNS(ns,el[0]);for(const [k,v] of Object.entries(el[1]))outline.setAttribute(k,v);outline.setAttribute('class','shape-outline');
+    const text=document.createElementNS(ns,'text');text.setAttribute('x','50');text.setAttribute('y',shape==='TRIANGLE'?'72':'57');text.setAttribute('text-anchor','middle');text.setAttribute('class','shape-word');text.textContent=word;
+    svg.append(outline,text);return svg;
+  }
   howToCard(id,category,state,rule='',duelists=null){
-    const steps=this.howto?.[id]?.steps;if(!steps)return null;
+    const entry=this.howto?.[id];
+    // D8: Shape Clash has its own steps when the room is colour-blind safe.
+    // G9: Classic uses classicSteps where Showtime adds a twist (Memory Lane, Count Flash).
+    const steps=id==='colour-clash'&&state?.settings?.colourBlindSafe&&entry?.colourBlindSteps?entry.colourBlindSteps:state?.settings?.rules!=='showtime'&&entry?.classicSteps?entry.classicSteps:entry?.steps;if(!steps)return null;
     const card=document.createElement('div');card.className='howto-card';card.dataset.cat=category;
     const banner=document.createElement('div');banner.className='howto-banner';
     banner.textContent=category==='showdown'?(id==='tiebreak'?'★ NOGGIN-OFF ★':'★ SHOWDOWN ★'):`${({speed:'⚡',brain:'◆',create:'✎',together:'✚'})[category]||'★'} ${category.toUpperCase()} GAME`;
@@ -183,11 +201,28 @@ class NogginBoardView {
       prompt.textContent='ROUND '+m.round+' RESULTS';
       const result=m.lastRoundResult||{};
       const answer=result.answer;
-      if(answer!==undefined)span(`ANSWER: ${answer}`,'p4-big');
+      if(answer!==undefined)span(`ANSWER: ${typeof answer==='number'?answer.toLocaleString('en-GB'):answer}${result.unit?` ${result.unit}`:''}`,'p4-big');
       else span('ROUND COMPLETE','p4-big');
       const winners=(result.winners||[]).map(id=>state.players.find(p=>p.id===id)?.name).filter(Boolean);
       span(winners.length?`WINNERS: ${winners.join(' · ')}`:'NO ROUND WINNER','p4-ballot');
-      span('NEXT ROUND IN A MOMENT','p4-ballot');return;
+      // D7: Quick Draw shows each player's own reaction time.
+      if(Array.isArray(result.reactions)&&result.reactions.length){
+        const list=document.createElement('ol');list.className=result.reactions.length>4?'close-call-guesses many':'close-call-guesses';
+        for(const r of result.reactions){const li=document.createElement('li');li.textContent=`${state.players.find(p=>p.id===r.id)?.name||'Player'}: ${(r.reactionMs/1000).toFixed(3)} s`;list.append(li);}
+        options.append(list);return;
+      }
+      // Q8: Close Call shows every guess next to the true answer, closest first.
+      if(Array.isArray(result.guesses)&&result.guesses.length){
+        const list=document.createElement('ol');list.className=result.guesses.length>4?'close-call-guesses many':'close-call-guesses';
+        for(const g of result.guesses){
+          const li=document.createElement('li');const who=state.players.find(p=>p.id===g.id)?.name||'Player';
+          li.textContent=`${who}: ${Number(g.guess).toLocaleString('en-GB')} ${result.unit||''} · ${g.distance===0?'SPOT ON!':`off by ${Number(g.distance).toLocaleString('en-GB')}`}`;
+          list.append(li);
+        }
+        options.append(list);
+        return; // the ranked list already fills the panel on a 720p TV
+      }
+      span(m.finalReveal?'FINAL SCORES NEXT':'NEXT ROUND IN A MOMENT','p4-ballot');return;
     }
     if(m.phase==='intro'){
       document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
@@ -199,7 +234,12 @@ class NogginBoardView {
       return;
     }
     if(m.id==='odd-spot'){
-      const grid=document.createElement('div');grid.className='mini-tv-grid';m.display.grid.forEach((sym,i)=>{const e=document.createElement('span');e.className='odd-tv-cell';const icon=document.createElement('b');icon.textContent=sym;const style=m.display.styles?.[i];if(style?.rotation)icon.style.transform=`rotate(${style.rotation}deg)`;if(style?.tone)icon.style.color=style.tone;e.append(icon);grid.append(e);});options.append(grid);
+      const grid=document.createElement('div');grid.className='mini-tv-grid';m.display.grid.forEach((sym,i)=>{const e=document.createElement('span');e.className='odd-tv-cell';const icon=document.createElement('b');icon.textContent=sym;const style=m.display.styles?.[i];if(style?.rotation)icon.style.transform=`rotate(${style.rotation}deg)`;if(style?.scale)icon.style.transform=`scale(${style.scale})`;e.append(icon);grid.append(e);});options.append(grid);
+    }else if(m.id==='colour-clash'&&m.display.mode==='shape'){
+      // D8: Shape Clash — the shape word drawn inside a different outline shape.
+      prompt.classList.remove('stroop-tv');prompt.style.color='';prompt.textContent='';
+      options.append(this.shapeSvg(m.display.shape,m.display.word));
+      span('TAP THE SHAPE YOU SEE — NOT THE WORD','mini-help shape-clash-help');
     }else if(m.id==='colour-clash'){
       prompt.classList.add('stroop-tv');prompt.style.color=({RED:'#ff7284',BLUE:'#78c7ff',GREEN:'#a5f480',YELLOW:'#ffe37a'})[m.display.ink];
     }else if(m.id==='higher-lower'){
@@ -278,6 +318,8 @@ class NogginBoardView {
       },`move-${b.lastMove.revision}`);
     }
     const presenting=this.presenting();
+    // G8: the CALL badge follows the current caller, but only once their token has landed.
+    if(!presenting)this.callerShown=(b.step==='round_moving'?b.round?.callerId:b.roundGame?.callerId)||null;
     document.getElementById('stageTurn').textContent=b.lastOrders?`🍺 LAST ORDERS · ROUND ${b.roundNumber} OF ${b.totalRounds}`:`ROUND ${b.roundNumber} OF ${b.totalRounds}`;
     const target=document.getElementById('stageTarget');target.textContent=this.nextGameLabel(b,state);target.title=target.textContent;
     const actor=state.players.find(p=>p.id===b.activeId);
@@ -285,7 +327,9 @@ class NogginBoardView {
     document.getElementById('stageActive').textContent=b.paused?'⏸ SHOW PAUSED':b.step==='finished'?'THE SHOW IS OVER':`${mover?.name||'Contestant'} IS IN THE SPOTLIGHT`;
     document.getElementById('stageEvent').textContent=b.paused?'Show paused':presenting?`${mover?.name||'Contestant'} is on the move…`:b.step==='round_roll'?'EVERYONE ROLL NOW!':b.step==='round_moving'?(b.event?.text||'Moving contestants'):b.step==='await_roll'?`${actor?.name||'Contestant'} · roll the dice!`:b.event?.text||`${actor?.name||'Contestant'} · use your head!`;
     document.getElementById('stageHelp').textContent=b.paused?b.pauseReason:presenting?'Watch the board…':'The next turn starts automatically after results.';
-    document.getElementById('boardMessage').textContent=b.paused?'⏸ SHOW PAUSED':presenting?`🎲 ${mover?.name?.toUpperCase()||'ROLLING'}…`:b.step==='choose_route'?'🎬 DIRECTOR’S CUT · PICK A LANDING':b.step==='finished'?'★ WE HAVE A WINNER ★':b.step==='result'?b.result?.text:actor?`${actor.name.toUpperCase()} · ${b.step==='await_roll'?'ROLL THE DICE!':'USE YOUR HEAD'}`:'NOGGIN';
+    document.getElementById('boardMessage').textContent=b.paused?'⏸ SHOW PAUSED':presenting?`🎲 ${mover?.name?.toUpperCase()||'ROLLING'}…`:b.step==='choose_route'?'🎬 DIRECTOR’S CUT · PICK A LANDING':
+      b.step==='choose_game'?`🎮 ${actor?.name?.toUpperCase()||'CALLER'} PICKS: ${(b.gameOptions||[]).map(g=>g.name.toUpperCase()).join('  OR  ')}`:
+      b.step==='choose_opponent'?`★ ${actor?.name?.toUpperCase()||'CHALLENGER'} PICKS A RIVAL`:b.step==='finished'?'★ WE HAVE A WINNER ★':b.step==='result'?b.result?.text:actor?`${actor.name.toUpperCase()} · ${b.step==='await_roll'?'ROLL THE DICE!':'USE YOUR HEAD'}`:'NOGGIN';
     // Scores stay as they were until the token has landed.
     if(!presenting)this.renderScores(state);
     const hero=document.getElementById('arenaActiveAvatar');
@@ -310,10 +354,35 @@ class NogginBoardView {
     if(presenting){document.getElementById('resultSpotlight')?.classList.add('hidden');}
     else this.renderResultSpotlight(b,state);
     if(!freshMove&&!presenting)this.paintTokens(state.players);
+    if(!presenting){this.showExplainer(b,state);this.showStandings(b,state);}
     if(!freshMove && ['choose_die','choose_route'].includes(b.step)){
       this.showDie(b.rolls,true,null,`choice-${b.turn}-${b.activeId}-${b.rolls.join('-')}`,true,
         b.step==='choose_route'?'DIRECTOR’S CUT · PICK A LANDING':'CHOOSE YOUR DIE');
     }else if(!freshMove && !presenting && !['choose_die','choose_route'].includes(b.step))this.hideDie();
+  }
+  // G11: a one-line explainer the first time anyone lands on a special space (3 s).
+  showExplainer(b,state){
+    const el=document.getElementById('spaceExplainer'),x=b.explainer;if(!el)return;
+    const key=x?`${x.type}-${x.until}`:'';
+    if(!x||key===this.explainerKey||state.serverNow-x.until>15000)return;
+    this.explainerKey=key;el.textContent=x.text;el.classList.remove('hidden');
+    clearTimeout(this.explainerTimer);this.explainerTimer=setTimeout(()=>el.classList.add('hidden'),3000);
+  }
+  // G12: a 4 s standings sting before Last Orders: ranked avatars and Sparks.
+  showStandings(b,state){
+    const el=document.getElementById('standingsSting'),s=b.standings;if(!el)return;
+    const key=s?String(s.until):'';
+    if(!s||key===this.standingsKey||state.serverNow>=s.until)return;
+    this.standingsKey=key;el.replaceChildren();
+    const h=document.createElement('h2');h.textContent='🍺 LAST ORDERS · THE STANDINGS';
+    const list=document.createElement('ol');
+    for(const r of s.ranks){const p=state.players.find(x=>x.id===r.id);if(!p)continue;
+      const li=document.createElement('li');const img=document.createElement('img');img.alt='';img.src=this.avatars.find(a=>a.id===p.avatarId)?.think||'';img.onerror=()=>{img.style.display='none';};
+      const name=document.createElement('span');name.textContent=p.name;const sparks=document.createElement('strong');sparks.textContent=`✦ ${r.sparks}`;
+      li.append(img,name,sparks);list.append(li);}
+    const line=document.createElement('p');line.textContent=s.line;
+    el.append(h,list,line);el.classList.remove('hidden');
+    clearTimeout(this.standingsTimer);this.standingsTimer=setTimeout(()=>el.classList.add('hidden'),Math.max(1000,s.until-state.serverNow));
   }
   // Called when a token finishes hopping: draw everything the move was hiding.
   presentationDone(){this.movingMove=null;if(this.latestState&&!this.presenting()){this.render(this.latestState);this.onPresented?.();}}
@@ -323,6 +392,8 @@ class NogginBoardView {
     if(b.step==='finished')return 'THE SHOW IS OVER';
     if(b.stage==='noggin-off')return '★ NOGGIN-OFF ★';
     if(b.stage==='round-game')return `ROUND GAME · ${(b.minigame?.category||cat||'').toUpperCase()}`;
+    if(b.step==='round_moving'&&b.round?.callerId){const c=state.players.find(p=>p.id===b.round.callerId);if(c)return `CALL: ${c.name.toUpperCase()}`;}
+    if(host&&!cat)return `NEXT: HOST ${host.name.toUpperCase()} (STOLE THE CALL)`;
     if(!cat||!host)return 'NEXT GAME: NOT CALLED YET';
     return `${b.roundGame.locked?'🔒 ':''}NEXT: ${cat.toUpperCase()} · HOST: ${host.name.toUpperCase()}`;
   }
@@ -395,7 +466,8 @@ class NogginBoardView {
       if(avatar?.think)g.append(E('image',{href:avatar.think,x:-r+2,y:-r+2,width:2*r-4,height:2*r-4,preserveAspectRatio:'xMidYMid slice','clip-path':`url(#${clipId})`}));
       else g.append(E('circle',{r:r-2,fill:'#28345d'}));
       g.append(E('circle',{r:r-1,fill:'none',stroke:rings[(p.seat-1)%8],'stroke-width':active?4:3}));
-      g.append(E('title',{},`${p.name}, space ${pos+1}`));
+      if(p.id===this.callerShown){const badge=E('g',{class:'call-badge',transform:`translate(0,${r+9})`});badge.append(E('rect',{x:-24,y:-11,width:48,height:20,rx:10}));badge.append(E('text',{x:0,y:4,'text-anchor':'middle'},'CALL'));g.append(badge);}
+      g.append(E('title',{},`${p.name}, space ${pos+1}${p.id===this.callerShown?' — has the call':''}`));
       this.tokenGroup.append(g);
     }
   }

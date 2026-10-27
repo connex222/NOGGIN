@@ -244,3 +244,32 @@ body.tv .challenge-choices .howto-card .howto-steps li{padding-top:clamp(18px,2.
 
 /* Caption This picture */
 body.tv .caption-avatars .caption-scene{width:auto;height:auto;max-width:min(100%,760px);max-height:38vh;border-radius:16px;border:4px solid #ffe477;box-shadow:0 10px 30px #0008;object-fit:contain}
+/* v3.5.0 Q8: Close Call reveal — every guess, closest first, readable from the sofa. */
+.close-call-guesses{list-style:none;margin:10px auto 4px;padding:0;display:grid;gap:6px;width:min(92%,900px);counter-reset:place}
+.close-call-guesses li{counter-increment:place;display:flex;gap:10px;align-items:center;padding:5px 12px;border-radius:12px;background:#0b2363;border:2px solid #62c9ff88;color:#fff;font-weight:800;font-size:clamp(15px,1.35vw,26px);line-height:1.2;text-align:left}
+/* Five or more guesses: two columns, filled top-to-bottom, so eight players fit on a 720p TV. */
+.close-call-guesses.many{grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(4,auto);column-gap:12px;row-gap:5px}
+.close-call-guesses li::before{content:counter(place);flex:0 0 1.6em;height:1.6em;border-radius:50%;display:grid;place-items:center;background:#ffd34d;color:#071233}
+.close-call-guesses li:first-child{border-color:#ffd34d;background:#2b2a6b}
+/* v3.5.0 D8 — Shape Clash on the TV. */
+.shape-clash-tv{display:block;flex:0 0 100%;width:auto;height:min(38vh,400px);margin:0 auto}
+.shape-clash-help{flex:0 0 100%;text-align:center}
+.shape-clash-tv .shape-outline{fill:none;stroke:#ffe37a;stroke-width:6;stroke-linejoin:round}
+.shape-clash-tv .shape-word{fill:#fff;font-weight:900;font-size:14px;letter-spacing:.06em;paint-order:stroke;stroke:#071233;stroke-width:3px}
+/* v3.5.0 G8 — CALL badge on the current caller's token. */
+.call-badge rect{fill:#ffd34d;stroke:#071233;stroke-width:2}
+.call-badge text{fill:#071233;font:900 12px 'Noggin Display',system-ui,sans-serif;letter-spacing:.06em}
+/* v3.5.0 G11 — first-time explainer for a special space (3 s). */
+.space-explainer{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);z-index:40;padding:14px 26px;border-radius:18px;background:#130b3a;border:3px solid #ffd34d;color:#fff;font-weight:900;font-size:clamp(18px,2vw,32px);text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.55);max-width:80%}
+.space-explainer.hidden,.standings-sting.hidden{display:none}
+/* v3.5.0 G12 — standings sting before Last Orders (4 s). */
+.standings-sting{position:absolute;inset:8% 12%;z-index:45;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:24px;background:rgba(10,8,40,.96);border:4px solid #ffd34d;color:#fff;text-align:center}
+.standings-sting h2{margin:0;font-size:clamp(22px,2.6vw,42px);color:#ffd34d}
+.standings-sting ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;width:100%}
+.standings-sting li{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px;border-radius:14px;background:#1d1a5c}
+.standings-sting li:first-child{background:#3d3290;outline:3px solid #ffd34d}
+.standings-sting img{width:clamp(56px,6vw,96px);height:clamp(56px,6vw,96px);border-radius:50%;object-fit:cover;background:#28345d}
+.standings-sting span{font-weight:900;font-size:clamp(14px,1.4vw,22px)}
+.standings-sting strong{color:#ffd34d;font-size:clamp(18px,1.8vw,30px)}
+.standings-sting p{margin:4px 0 0;font-weight:900;font-size:clamp(18px,2vw,32px)}
+.meld-done{border-color:#a5f480!important}

@@ -4,630 +4,720 @@
     "question": "How many minutes are in 2 hours?",
     "answer": 120,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-3",
     "question": "How many minutes are in 3 hours?",
     "answer": 180,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-4",
     "question": "How many minutes are in 4 hours?",
     "answer": 240,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-5",
     "question": "How many minutes are in 5 hours?",
     "answer": 300,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-6",
     "question": "How many minutes are in 6 hours?",
     "answer": 360,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-7",
     "question": "How many minutes are in 7 hours?",
     "answer": 420,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-8",
     "question": "How many minutes are in 8 hours?",
     "answer": 480,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-9",
     "question": "How many minutes are in 9 hours?",
     "answer": 540,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-10",
     "question": "How many minutes are in 10 hours?",
     "answer": 600,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-11",
     "question": "How many minutes are in 11 hours?",
     "answer": 660,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-12",
     "question": "How many minutes are in 12 hours?",
     "answer": 720,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-14",
     "question": "How many minutes are in 14 hours?",
     "answer": 840,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-15",
     "question": "How many minutes are in 15 hours?",
     "answer": 900,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-16",
     "question": "How many minutes are in 16 hours?",
     "answer": 960,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-18",
     "question": "How many minutes are in 18 hours?",
     "answer": 1080,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-20",
     "question": "How many minutes are in 20 hours?",
     "answer": 1200,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-21",
     "question": "How many minutes are in 21 hours?",
     "answer": 1260,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-24",
     "question": "How many minutes are in 24 hours?",
     "answer": 1440,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-25",
     "question": "How many minutes are in 25 hours?",
     "answer": 1500,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-min-28",
     "question": "How many minutes are in 28 hours?",
     "answer": 1680,
     "unit": "minutes",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-2",
     "question": "How many seconds are in 2 minutes?",
     "answer": 120,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-3",
     "question": "How many seconds are in 3 minutes?",
     "answer": 180,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-4",
     "question": "How many seconds are in 4 minutes?",
     "answer": 240,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-5",
     "question": "How many seconds are in 5 minutes?",
     "answer": 300,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-6",
     "question": "How many seconds are in 6 minutes?",
     "answer": 360,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-7",
     "question": "How many seconds are in 7 minutes?",
     "answer": 420,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-8",
     "question": "How many seconds are in 8 minutes?",
     "answer": 480,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-9",
     "question": "How many seconds are in 9 minutes?",
     "answer": 540,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-10",
     "question": "How many seconds are in 10 minutes?",
     "answer": 600,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-11",
     "question": "How many seconds are in 11 minutes?",
     "answer": 660,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-12",
     "question": "How many seconds are in 12 minutes?",
     "answer": 720,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-14",
     "question": "How many seconds are in 14 minutes?",
     "answer": 840,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-15",
     "question": "How many seconds are in 15 minutes?",
     "answer": 900,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-16",
     "question": "How many seconds are in 16 minutes?",
     "answer": 960,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-18",
     "question": "How many seconds are in 18 minutes?",
     "answer": 1080,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-20",
     "question": "How many seconds are in 20 minutes?",
     "answer": 1200,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-21",
     "question": "How many seconds are in 21 minutes?",
     "answer": 1260,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-24",
     "question": "How many seconds are in 24 minutes?",
     "answer": 1440,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-25",
     "question": "How many seconds are in 25 minutes?",
     "answer": 1500,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-sec-28",
     "question": "How many seconds are in 28 minutes?",
     "answer": 1680,
     "unit": "seconds",
-    "source": "Exact time conversion"
+    "source": "Exact time conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-2",
     "question": "How many centimetres are in 2 metres?",
     "answer": 200,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-3",
     "question": "How many centimetres are in 3 metres?",
     "answer": 300,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-4",
     "question": "How many centimetres are in 4 metres?",
     "answer": 400,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-5",
     "question": "How many centimetres are in 5 metres?",
     "answer": 500,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-6",
     "question": "How many centimetres are in 6 metres?",
     "answer": 600,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-7",
     "question": "How many centimetres are in 7 metres?",
     "answer": 700,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-8",
     "question": "How many centimetres are in 8 metres?",
     "answer": 800,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-9",
     "question": "How many centimetres are in 9 metres?",
     "answer": 900,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-10",
     "question": "How many centimetres are in 10 metres?",
     "answer": 1000,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-11",
     "question": "How many centimetres are in 11 metres?",
     "answer": 1100,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-12",
     "question": "How many centimetres are in 12 metres?",
     "answer": 1200,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-14",
     "question": "How many centimetres are in 14 metres?",
     "answer": 1400,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-15",
     "question": "How many centimetres are in 15 metres?",
     "answer": 1500,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-16",
     "question": "How many centimetres are in 16 metres?",
     "answer": 1600,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-18",
     "question": "How many centimetres are in 18 metres?",
     "answer": 1800,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-20",
     "question": "How many centimetres are in 20 metres?",
     "answer": 2000,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-21",
     "question": "How many centimetres are in 21 metres?",
     "answer": 2100,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-24",
     "question": "How many centimetres are in 24 metres?",
     "answer": 2400,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-25",
     "question": "How many centimetres are in 25 metres?",
     "answer": 2500,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-cm-28",
     "question": "How many centimetres are in 28 metres?",
     "answer": 2800,
     "unit": "cm",
-    "source": "Exact metric conversion"
+    "source": "Exact metric conversion",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-13",
     "question": "How many seconds are in 13 minutes?",
     "answer": 780,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-17",
     "question": "How many seconds are in 17 minutes?",
     "answer": 1020,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-19",
     "question": "How many seconds are in 19 minutes?",
     "answer": 1140,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-22",
     "question": "How many seconds are in 22 minutes?",
     "answer": 1320,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-23",
     "question": "How many seconds are in 23 minutes?",
     "answer": 1380,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-26",
     "question": "How many seconds are in 26 minutes?",
     "answer": 1560,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-27",
     "question": "How many seconds are in 27 minutes?",
     "answer": 1620,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-29",
     "question": "How many seconds are in 29 minutes?",
     "answer": 1740,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-30",
     "question": "How many seconds are in 30 minutes?",
     "answer": 1800,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-31",
     "question": "How many seconds are in 31 minutes?",
     "answer": 1860,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-32",
     "question": "How many seconds are in 32 minutes?",
     "answer": 1920,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-33",
     "question": "How many seconds are in 33 minutes?",
     "answer": 1980,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-34",
     "question": "How many seconds are in 34 minutes?",
     "answer": 2040,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-35",
     "question": "How many seconds are in 35 minutes?",
     "answer": 2100,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-36",
     "question": "How many seconds are in 36 minutes?",
     "answer": 2160,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-37",
     "question": "How many seconds are in 37 minutes?",
     "answer": 2220,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-38",
     "question": "How many seconds are in 38 minutes?",
     "answer": 2280,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-39",
     "question": "How many seconds are in 39 minutes?",
     "answer": 2340,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-40",
     "question": "How many seconds are in 40 minutes?",
     "answer": 2400,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-41",
     "question": "How many seconds are in 41 minutes?",
     "answer": 2460,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-42",
     "question": "How many seconds are in 42 minutes?",
     "answer": 2520,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-43",
     "question": "How many seconds are in 43 minutes?",
     "answer": 2580,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-44",
     "question": "How many seconds are in 44 minutes?",
     "answer": 2640,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-45",
     "question": "How many seconds are in 45 minutes?",
     "answer": 2700,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-46",
     "question": "How many seconds are in 46 minutes?",
     "answer": 2760,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-47",
     "question": "How many seconds are in 47 minutes?",
     "answer": 2820,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-48",
     "question": "How many seconds are in 48 minutes?",
     "answer": 2880,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-49",
     "question": "How many seconds are in 49 minutes?",
     "answer": 2940,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-50",
     "question": "How many seconds are in 50 minutes?",
     "answer": 3000,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "cc-seconds-51",
     "question": "How many seconds are in 51 minutes?",
     "answer": 3060,
     "unit": "seconds",
-    "source": "Exact definition: 60 seconds per minute"
+    "source": "Exact definition: 60 seconds per minute",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-001",
@@ -635,7 +725,8 @@
     "answer": 72,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-002",
@@ -643,7 +734,8 @@
     "answer": 96,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-003",
@@ -651,7 +743,8 @@
     "answer": 120,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-004",
@@ -659,7 +752,8 @@
     "answer": 144,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-005",
@@ -667,7 +761,8 @@
     "answer": 168,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-006",
@@ -675,7 +770,8 @@
     "answer": 192,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-007",
@@ -683,7 +779,8 @@
     "answer": 216,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-008",
@@ -691,7 +788,8 @@
     "answer": 264,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-009",
@@ -699,7 +797,8 @@
     "answer": 288,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-010",
@@ -707,7 +806,8 @@
     "answer": 336,
     "unit": "hours",
     "source": "SI-defined time conversion: 24 hours per day",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-011",
@@ -715,7 +815,8 @@
     "answer": 2000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-012",
@@ -723,7 +824,8 @@
     "answer": 3000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-013",
@@ -731,7 +833,8 @@
     "answer": 4000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-014",
@@ -739,7 +842,8 @@
     "answer": 5000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-015",
@@ -747,7 +851,8 @@
     "answer": 6000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-016",
@@ -755,7 +860,8 @@
     "answer": 7000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-017",
@@ -763,7 +869,8 @@
     "answer": 8000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-018",
@@ -771,7 +878,8 @@
     "answer": 9000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-019",
@@ -779,7 +887,8 @@
     "answer": 11000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-clo-020",
@@ -787,7 +896,8 @@
     "answer": 12000,
     "unit": "grams",
     "source": "SI metric conversion: 1,000 grams per kilogram",
-    "verification": "exact arithmetic"
+    "verification": "exact arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-001",
@@ -795,7 +905,8 @@
     "answer": 39600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-002",
@@ -803,7 +914,8 @@
     "answer": 43200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-003",
@@ -811,7 +923,8 @@
     "answer": 46800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-004",
@@ -819,7 +932,8 @@
     "answer": 50400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-005",
@@ -827,7 +941,8 @@
     "answer": 54000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-006",
@@ -835,7 +950,8 @@
     "answer": 57600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-007",
@@ -843,7 +959,8 @@
     "answer": 61200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-008",
@@ -851,7 +968,8 @@
     "answer": 64800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-009",
@@ -859,7 +977,8 @@
     "answer": 68400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-010",
@@ -867,7 +986,8 @@
     "answer": 72000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-011",
@@ -875,7 +995,8 @@
     "answer": 75600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-012",
@@ -883,7 +1004,8 @@
     "answer": 79200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-013",
@@ -891,7 +1013,8 @@
     "answer": 82800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-014",
@@ -899,7 +1022,8 @@
     "answer": 86400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-015",
@@ -907,7 +1031,8 @@
     "answer": 90000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-016",
@@ -915,7 +1040,8 @@
     "answer": 93600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-017",
@@ -923,7 +1049,8 @@
     "answer": 97200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-018",
@@ -931,7 +1058,8 @@
     "answer": 100800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-019",
@@ -939,7 +1067,8 @@
     "answer": 104400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-020",
@@ -947,7 +1076,8 @@
     "answer": 108000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-021",
@@ -955,7 +1085,8 @@
     "answer": 111600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-022",
@@ -963,7 +1094,8 @@
     "answer": 115200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-023",
@@ -971,7 +1103,8 @@
     "answer": 118800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-024",
@@ -979,7 +1112,8 @@
     "answer": 122400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-025",
@@ -987,7 +1121,8 @@
     "answer": 126000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-026",
@@ -995,7 +1130,8 @@
     "answer": 129600,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-027",
@@ -1003,7 +1139,8 @@
     "answer": 133200,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-028",
@@ -1011,7 +1148,8 @@
     "answer": 136800,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-029",
@@ -1019,7 +1157,8 @@
     "answer": 140400,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-cc-030",
@@ -1027,7 +1166,8 @@
     "answer": 144000,
     "unit": "seconds",
     "source": "Exact unit definition: 60 minutes per hour and 60 seconds per minute",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-001",
@@ -1040,7 +1180,8 @@
       "type": "rectangle",
       "a": 7,
       "b": 9
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-002",
@@ -1053,7 +1194,8 @@
       "type": "rectangle",
       "a": 11,
       "b": 12
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-003",
@@ -1066,7 +1208,8 @@
       "type": "rectangle",
       "a": 13,
       "b": 14
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-004",
@@ -1079,7 +1222,8 @@
       "type": "rectangle",
       "a": 16,
       "b": 19
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-005",
@@ -1092,7 +1236,8 @@
       "type": "rectangle",
       "a": 21,
       "b": 23
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-006",
@@ -1105,7 +1250,8 @@
       "type": "rectangle",
       "a": 24,
       "b": 26
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-007",
@@ -1118,7 +1264,8 @@
       "type": "rectangle",
       "a": 28,
       "b": 31
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-008",
@@ -1131,7 +1278,8 @@
       "type": "rectangle",
       "a": 32,
       "b": 35
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-009",
@@ -1144,7 +1292,8 @@
       "type": "stools",
       "a": 6,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-010",
@@ -1157,7 +1306,8 @@
       "type": "stools",
       "a": 9,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-011",
@@ -1170,7 +1320,8 @@
       "type": "stools",
       "a": 12,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-012",
@@ -1183,7 +1334,8 @@
       "type": "stools",
       "a": 15,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-013",
@@ -1196,7 +1348,8 @@
       "type": "stools",
       "a": 18,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-014",
@@ -1209,7 +1362,8 @@
       "type": "stools",
       "a": 21,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-015",
@@ -1222,7 +1376,8 @@
       "type": "stools",
       "a": 24,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-016",
@@ -1235,7 +1390,8 @@
       "type": "hours",
       "a": 7,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-017",
@@ -1248,7 +1404,8 @@
       "type": "hours",
       "a": 11,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-018",
@@ -1261,7 +1418,8 @@
       "type": "hours",
       "a": 16,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-019",
@@ -1274,7 +1432,8 @@
       "type": "hours",
       "a": 19,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-020",
@@ -1287,7 +1446,8 @@
       "type": "hours",
       "a": 23,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6b6-cc-021",
@@ -1300,7 +1460,8 @@
       "type": "hours",
       "a": 27,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0000",
@@ -1313,7 +1474,8 @@
       "type": "area",
       "a": 4,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0001",
@@ -1326,7 +1488,8 @@
       "type": "mm",
       "a": 13,
       "b": 16
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0002",
@@ -1339,7 +1502,8 @@
       "type": "minutes",
       "a": 22,
       "b": 29
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0003",
@@ -1352,7 +1516,8 @@
       "type": "cm",
       "a": 31,
       "b": 42
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0004",
@@ -1365,7 +1530,8 @@
       "type": "area",
       "a": 40,
       "b": 55
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0005",
@@ -1378,7 +1544,8 @@
       "type": "area",
       "a": 49,
       "b": 8
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0006",
@@ -1391,7 +1558,8 @@
       "type": "mm",
       "a": 58,
       "b": 21
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0007",
@@ -1404,7 +1572,8 @@
       "type": "minutes",
       "a": 67,
       "b": 34
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0008",
@@ -1417,7 +1586,8 @@
       "type": "cm",
       "a": 76,
       "b": 47
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0009",
@@ -1430,7 +1600,8 @@
       "type": "area",
       "a": 85,
       "b": 60
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0010",
@@ -1443,7 +1614,8 @@
       "type": "area",
       "a": 94,
       "b": 13
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0011",
@@ -1456,7 +1628,8 @@
       "type": "mm",
       "a": 8,
       "b": 26
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0012",
@@ -1469,7 +1642,8 @@
       "type": "minutes",
       "a": 17,
       "b": 39
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0013",
@@ -1482,7 +1656,8 @@
       "type": "cm",
       "a": 26,
       "b": 52
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0014",
@@ -1495,7 +1670,8 @@
       "type": "area",
       "a": 35,
       "b": 5
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0015",
@@ -1508,7 +1684,8 @@
       "type": "area",
       "a": 44,
       "b": 18
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0016",
@@ -1521,7 +1698,8 @@
       "type": "mm",
       "a": 53,
       "b": 31
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0017",
@@ -1534,7 +1712,8 @@
       "type": "minutes",
       "a": 62,
       "b": 44
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0018",
@@ -1547,7 +1726,8 @@
       "type": "cm",
       "a": 71,
       "b": 57
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0019",
@@ -1560,7 +1740,8 @@
       "type": "area",
       "a": 80,
       "b": 10
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0020",
@@ -1573,7 +1754,8 @@
       "type": "area",
       "a": 89,
       "b": 23
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0021",
@@ -1586,7 +1768,8 @@
       "type": "mm",
       "a": 98,
       "b": 36
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0022",
@@ -1599,7 +1782,8 @@
       "type": "minutes",
       "a": 12,
       "b": 49
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0024",
@@ -1612,7 +1796,8 @@
       "type": "area",
       "a": 30,
       "b": 15
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0025",
@@ -1625,7 +1810,8 @@
       "type": "area",
       "a": 39,
       "b": 28
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0026",
@@ -1638,7 +1824,8 @@
       "type": "mm",
       "a": 48,
       "b": 41
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0027",
@@ -1651,7 +1838,8 @@
       "type": "minutes",
       "a": 57,
       "b": 54
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0028",
@@ -1664,7 +1852,8 @@
       "type": "cm",
       "a": 66,
       "b": 7
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0029",
@@ -1677,7 +1866,8 @@
       "type": "area",
       "a": 75,
       "b": 20
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0030",
@@ -1690,7 +1880,8 @@
       "type": "area",
       "a": 84,
       "b": 33
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0031",
@@ -1703,7 +1894,8 @@
       "type": "mm",
       "a": 93,
       "b": 46
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0032",
@@ -1716,7 +1908,8 @@
       "type": "minutes",
       "a": 7,
       "b": 59
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0034",
@@ -1729,7 +1922,8 @@
       "type": "area",
       "a": 25,
       "b": 25
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0035",
@@ -1742,7 +1936,8 @@
       "type": "area",
       "a": 34,
       "b": 38
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0036",
@@ -1755,7 +1950,8 @@
       "type": "mm",
       "a": 43,
       "b": 51
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0037",
@@ -1768,7 +1964,8 @@
       "type": "minutes",
       "a": 52,
       "b": 4
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0038",
@@ -1781,7 +1978,8 @@
       "type": "cm",
       "a": 61,
       "b": 17
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0039",
@@ -1794,7 +1992,8 @@
       "type": "area",
       "a": 70,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-cc-0040",
@@ -1807,6 +2006,907 @@
       "type": "area",
       "a": 79,
       "b": 43
-    }
+    },
+    "kind": "arithmetic"
+  },
+  {
+    "id": "v35-cc-001",
+    "question": "How tall is Blackpool Tower, in metres?",
+    "answer": 158,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Blackpool_Tower",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-002",
+    "question": "How tall is the London Eye, in metres?",
+    "answer": 135,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/London_Eye",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-003",
+    "question": "How tall is The Shard in London, to the nearest metre?",
+    "answer": 310,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/The_Shard",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-004",
+    "question": "What is the wingspan of the Angel of the North, in metres?",
+    "answer": 54,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Angel_of_the_North",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-005",
+    "question": "How many steps climb to the top of the Monument in London?",
+    "answer": 311,
+    "unit": "steps",
+    "source": "https://en.wikipedia.org/wiki/Monument_to_the_Great_Fire_of_London",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-006",
+    "question": "How tall is the Monument in London, in feet?",
+    "answer": 202,
+    "unit": "feet",
+    "source": "https://en.wikipedia.org/wiki/Monument_to_the_Great_Fire_of_London",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-007",
+    "question": "How many rooms does Buckingham Palace have?",
+    "answer": 775,
+    "unit": "rooms",
+    "source": "https://en.wikipedia.org/wiki/Buckingham_Palace",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-008",
+    "question": "How many seats does Wembley Stadium have?",
+    "answer": 90000,
+    "unit": "seats",
+    "source": "https://en.wikipedia.org/wiki/Wembley_Stadium",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-009",
+    "question": "How wide is the span of the Wembley arch, in metres?",
+    "answer": 315,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Wembley_Stadium",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-010",
+    "question": "How long is the Channel Tunnel, to the nearest kilometre?",
+    "answer": 50,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Channel_Tunnel",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-011",
+    "question": "How long is Hadrian’s Wall, in miles?",
+    "answer": 73,
+    "unit": "miles",
+    "source": "https://en.wikipedia.org/wiki/Hadrian%27s_Wall",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-012",
+    "question": "How long is the River Thames, in miles?",
+    "answer": 215,
+    "unit": "miles",
+    "source": "https://en.wikipedia.org/wiki/River_Thames",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-013",
+    "question": "How long is the River Severn, in miles?",
+    "answer": 220,
+    "unit": "miles",
+    "source": "https://en.wikipedia.org/wiki/River_Severn",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-014",
+    "question": "How far is Land’s End to John o’ Groats by the traditional road route, in miles?",
+    "answer": 874,
+    "unit": "miles",
+    "source": "https://en.wikipedia.org/wiki/Land%27s_End_to_John_o%27_Groats",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-015",
+    "question": "How many London boroughs are there (not counting the City of London)?",
+    "answer": 32,
+    "unit": "boroughs",
+    "source": "https://en.wikipedia.org/wiki/London_boroughs",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-016",
+    "question": "How many letters are in the full name of the Welsh village Llanfairpwllgwyngyll…gogogoch?",
+    "answer": 58,
+    "unit": "letters",
+    "source": "https://en.wikipedia.org/wiki/Llanfairpwllgwyngyll",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-017",
+    "question": "How fast does sound travel in air at 20°C, in metres per second?",
+    "answer": 343,
+    "unit": "m/s",
+    "source": "https://en.wikipedia.org/wiki/Speed_of_sound",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-018",
+    "question": "How fast does light travel, in kilometres per second (to the nearest km)?",
+    "answer": 299792,
+    "unit": "km/s",
+    "source": "https://en.wikipedia.org/wiki/Speed_of_light",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-019",
+    "question": "At what temperature does water boil at sea level, in degrees Fahrenheit?",
+    "answer": 212,
+    "unit": "°F",
+    "source": "https://en.wikipedia.org/wiki/Fahrenheit",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-020",
+    "question": "What is the average distance from the Earth to the Moon, in kilometres?",
+    "answer": 384400,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Lunar_distance",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-021",
+    "question": "How many Earth days does it take Mars to orbit the Sun?",
+    "answer": 687,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Mars",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-022",
+    "question": "Roughly how far is the Earth from the Sun, in millions of kilometres?",
+    "answer": 150,
+    "unit": "million km",
+    "source": "https://en.wikipedia.org/wiki/Astronomical_unit",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-023",
+    "question": "How many bones are in the adult human body?",
+    "answer": 206,
+    "unit": "bones",
+    "source": "https://en.wikipedia.org/wiki/Human_skeleton",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-024",
+    "question": "How many teeth does an adult human usually have, including wisdom teeth?",
+    "answer": 32,
+    "unit": "teeth",
+    "source": "https://en.wikipedia.org/wiki/Human_tooth",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-025",
+    "question": "How many teeth does an adult dog have?",
+    "answer": 42,
+    "unit": "teeth",
+    "source": "https://en.wikipedia.org/wiki/Dog_teeth",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-026",
+    "question": "How many teeth does an adult cat have?",
+    "answer": 30,
+    "unit": "teeth",
+    "source": "https://en.wikipedia.org/wiki/Cat_anatomy",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-027",
+    "question": "How many months is an African elephant pregnant for, roughly?",
+    "answer": 22,
+    "unit": "months",
+    "source": "https://en.wikipedia.org/wiki/African_elephant",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-028",
+    "question": "How many hearts does an octopus have?",
+    "answer": 3,
+    "unit": "hearts",
+    "source": "https://en.wikipedia.org/wiki/Octopus",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-029",
+    "question": "Roughly how long can a blue whale grow, in metres?",
+    "answer": 30,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Blue_whale",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-030",
+    "question": "How many eyes does a honeybee have?",
+    "answer": 5,
+    "unit": "eyes",
+    "source": "https://en.wikipedia.org/wiki/Western_honey_bee",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-031",
+    "question": "How many legs does a lobster have?",
+    "answer": 10,
+    "unit": "legs",
+    "source": "https://en.wikipedia.org/wiki/Lobster",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-032",
+    "question": "How many bones are in a giraffe’s neck?",
+    "answer": 7,
+    "unit": "bones",
+    "source": "https://en.wikipedia.org/wiki/Giraffe",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-033",
+    "question": "What is the maximum break in snooker?",
+    "answer": 147,
+    "unit": "points",
+    "source": "https://en.wikipedia.org/wiki/Maximum_break",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-034",
+    "question": "What is the highest possible checkout in darts?",
+    "answer": 170,
+    "unit": "points",
+    "source": "https://en.wikipedia.org/wiki/Darts",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-035",
+    "question": "What is the highest score possible with three darts?",
+    "answer": 180,
+    "unit": "points",
+    "source": "https://en.wikipedia.org/wiki/Darts",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-036",
+    "question": "How long is a cricket pitch, in yards?",
+    "answer": 22,
+    "unit": "yards",
+    "source": "https://en.wikipedia.org/wiki/Cricket_pitch",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-037",
+    "question": "What is the maximum length of a cricket bat, in inches?",
+    "answer": 38,
+    "unit": "inches",
+    "source": "https://en.wikipedia.org/wiki/Cricket_bat",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-038",
+    "question": "How high is a tennis net at the centre, in inches?",
+    "answer": 36,
+    "unit": "inches",
+    "source": "https://en.wikipedia.org/wiki/Tennis_court",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-039",
+    "question": "How high is a basketball hoop, in feet?",
+    "answer": 10,
+    "unit": "feet",
+    "source": "https://en.wikipedia.org/wiki/Basketball",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-040",
+    "question": "How long is an Olympic swimming pool, in metres?",
+    "answer": 50,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Olympic-size_swimming_pool",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-041",
+    "question": "How wide is a full-size football goal, in feet?",
+    "answer": 24,
+    "unit": "feet",
+    "source": "https://en.wikipedia.org/wiki/Football_pitch",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-042",
+    "question": "How far is the penalty spot from the goal line, in yards?",
+    "answer": 12,
+    "unit": "yards",
+    "source": "https://en.wikipedia.org/wiki/Penalty_kick_(association_football)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-043",
+    "question": "How long is a full-size snooker table, in feet?",
+    "answer": 12,
+    "unit": "feet",
+    "source": "https://en.wikipedia.org/wiki/Snooker",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-044",
+    "question": "How high is the centre of a dartboard bullseye from the floor, in inches?",
+    "answer": 68,
+    "unit": "inches",
+    "source": "https://en.wikipedia.org/wiki/Darts",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-045",
+    "question": "How many fences are jumped in the Grand National?",
+    "answer": 30,
+    "unit": "fences",
+    "source": "https://en.wikipedia.org/wiki/Grand_National",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-046",
+    "question": "How far is a marathon, in metres?",
+    "answer": 42195,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Marathon",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-047",
+    "question": "How many points is a try worth in rugby union?",
+    "answer": 5,
+    "unit": "points",
+    "source": "https://en.wikipedia.org/wiki/Try_(rugby)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-048",
+    "question": "How many cards are in a standard Uno deck?",
+    "answer": 108,
+    "unit": "cards",
+    "source": "https://en.wikipedia.org/wiki/Uno_(card_game)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-049",
+    "question": "How many squares are on a Scrabble board?",
+    "answer": 225,
+    "unit": "squares",
+    "source": "https://en.wikipedia.org/wiki/Scrabble",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-050",
+    "question": "How many coloured stickers are on a classic Rubik’s Cube?",
+    "answer": 54,
+    "unit": "stickers",
+    "source": "https://en.wikipedia.org/wiki/Rubik%27s_Cube",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-051",
+    "question": "How many spots are there altogether in a double-six domino set?",
+    "answer": 168,
+    "unit": "spots",
+    "source": "https://en.wikipedia.org/wiki/Dominoes",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-052",
+    "question": "How many pieces start a game of chess?",
+    "answer": 32,
+    "unit": "pieces",
+    "source": "https://en.wikipedia.org/wiki/Chess",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-053",
+    "question": "How many questions must you answer to win the top prize on the original UK “Who Wants to Be a Millionaire?”?",
+    "answer": 15,
+    "unit": "questions",
+    "source": "https://en.wikipedia.org/wiki/Who_Wants_to_Be_a_Millionaire%3F_(British_game_show)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-054",
+    "question": "How many keys are on a standard piano?",
+    "answer": 88,
+    "unit": "keys",
+    "source": "https://en.wikipedia.org/wiki/Piano",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-055",
+    "question": "How many lines are in a sonnet?",
+    "answer": 14,
+    "unit": "lines",
+    "source": "https://en.wikipedia.org/wiki/Sonnet",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-056",
+    "question": "How many letters are in “supercalifragilisticexpialidocious”?",
+    "answer": 34,
+    "unit": "letters",
+    "source": "https://en.wikipedia.org/wiki/Supercalifragilisticexpialidocious",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-057",
+    "question": "How many sides does a 50p coin have?",
+    "answer": 7,
+    "unit": "sides",
+    "source": "https://en.wikipedia.org/wiki/Fifty_pence_(British_coin)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-058",
+    "question": "How many sides does the 12-sided pound coin have?",
+    "answer": 12,
+    "unit": "sides",
+    "source": "https://en.wikipedia.org/wiki/One_pound_(British_coin)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-059",
+    "question": "Before decimalisation, how many old pennies made a pound?",
+    "answer": 240,
+    "unit": "pennies",
+    "source": "https://en.wikipedia.org/wiki/Decimal_Day",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-060",
+    "question": "How many stripes are on the flag of the United States?",
+    "answer": 13,
+    "unit": "stripes",
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-061",
+    "question": "How many stars are on the flag of the United States?",
+    "answer": 50,
+    "unit": "stars",
+    "source": "https://en.wikipedia.org/wiki/Flag_of_the_United_States",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-062",
+    "question": "How many pints are in a UK gallon?",
+    "answer": 8,
+    "unit": "pints",
+    "source": "https://en.wikipedia.org/wiki/Gallon",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-063",
+    "question": "How many millilitres are in a UK pint, to the nearest ml?",
+    "answer": 568,
+    "unit": "ml",
+    "source": "https://en.wikipedia.org/wiki/Pint",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-064",
+    "question": "How many grams are in a pound, to the nearest gram?",
+    "answer": 454,
+    "unit": "grams",
+    "source": "https://en.wikipedia.org/wiki/Pound_(mass)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-065",
+    "question": "How many pounds are in a stone?",
+    "answer": 14,
+    "unit": "pounds",
+    "source": "https://en.wikipedia.org/wiki/Stone_(unit)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-066",
+    "question": "How many grams are in a stone, to the nearest 10 grams?",
+    "answer": 6350,
+    "unit": "grams",
+    "source": "https://en.wikipedia.org/wiki/Stone_(unit)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-067",
+    "question": "How many metres are in a mile, to the nearest metre?",
+    "answer": 1609,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Mile",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-068",
+    "question": "How many yards are in a mile?",
+    "answer": 1760,
+    "unit": "yards",
+    "source": "https://en.wikipedia.org/wiki/Mile",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-069",
+    "question": "How many feet are in a mile?",
+    "answer": 5280,
+    "unit": "feet",
+    "source": "https://en.wikipedia.org/wiki/Mile",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-070",
+    "question": "How many metres are in a nautical mile?",
+    "answer": 1852,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Nautical_mile",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-071",
+    "question": "How many metres are in a furlong, to the nearest metre?",
+    "answer": 201,
+    "unit": "metres",
+    "source": "https://en.wikipedia.org/wiki/Furlong",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-072",
+    "question": "How many acres are in a square mile?",
+    "answer": 640,
+    "unit": "acres",
+    "source": "https://en.wikipedia.org/wiki/Acre",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-073",
+    "question": "In what year was the Battle of Hastings?",
+    "answer": 1066,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Battle_of_Hastings",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-074",
+    "question": "In what year was Magna Carta sealed?",
+    "answer": 1215,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Magna_Carta",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-075",
+    "question": "In what year was William Shakespeare born?",
+    "answer": 1564,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/William_Shakespeare",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-076",
+    "question": "In what year did the Spanish Armada sail against England?",
+    "answer": 1588,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Spanish_Armada",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-077",
+    "question": "In what year was the Gunpowder Plot?",
+    "answer": 1605,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Gunpowder_Plot",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-078",
+    "question": "In what year was the Great Fire of London?",
+    "answer": 1666,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Great_Fire_of_London",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-079",
+    "question": "In what year did the first FIFA World Cup take place?",
+    "answer": 1930,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-080",
+    "question": "In what year was “Blue Peter” first shown on TV?",
+    "answer": 1958,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Blue_Peter",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-081",
+    "question": "In what year was the original Mini car launched?",
+    "answer": 1959,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Mini",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-082",
+    "question": "In what year was “Coronation Street” first broadcast?",
+    "answer": 1960,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Coronation_Street",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-083",
+    "question": "In what year did the Beatles release their first single, “Love Me Do”?",
+    "answer": 1962,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Love_Me_Do",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-084",
+    "question": "In what year was the first episode of “Doctor Who” shown?",
+    "answer": 1963,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Doctor_Who",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-085",
+    "question": "In what year did England win the football World Cup?",
+    "answer": 1966,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/1966_FIFA_World_Cup",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-086",
+    "question": "In what year did the first Severn Bridge open?",
+    "answer": 1966,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Severn_Bridge",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-087",
+    "question": "In what year did people first walk on the Moon?",
+    "answer": 1969,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Apollo_11",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-088",
+    "question": "In what year was the first Glastonbury Festival held?",
+    "answer": 1970,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Glastonbury_Festival",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-089",
+    "question": "In what year did the UK switch to decimal currency?",
+    "answer": 1971,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Decimal_Day",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-090",
+    "question": "In what year was the first men’s Cricket World Cup?",
+    "answer": 1975,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/1975_Cricket_World_Cup",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-091",
+    "question": "In what year did the Humber Bridge open?",
+    "answer": 1981,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Humber_Bridge",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-092",
+    "question": "In what year was “EastEnders” first broadcast?",
+    "answer": 1985,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/EastEnders",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-093",
+    "question": "In what year was the first Rugby World Cup?",
+    "answer": 1987,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/1987_Rugby_World_Cup",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-094",
+    "question": "In what year did the football Premier League kick off?",
+    "answer": 1992,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Premier_League",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-095",
+    "question": "In what year did the Channel Tunnel open?",
+    "answer": 1994,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Channel_Tunnel",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-096",
+    "question": "In what year was Dolly the cloned sheep born?",
+    "answer": 1996,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Dolly_(sheep)",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-097",
+    "question": "In what year was the first Harry Potter book published?",
+    "answer": 1997,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-098",
+    "question": "In what year did the new Wembley Stadium open?",
+    "answer": 2007,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/Wembley_Stadium",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-099",
+    "question": "In what year did the first Football League season begin?",
+    "answer": 1888,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/English_Football_League",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
+  },
+  {
+    "id": "v35-cc-100",
+    "question": "In what year did the first modern Olympic Games take place?",
+    "answer": 1896,
+    "unit": "year",
+    "source": "https://en.wikipedia.org/wiki/1896_Summer_Olympics",
+    "verified": "needs-owner-check",
+    "kind": "estimate"
   }
 ]

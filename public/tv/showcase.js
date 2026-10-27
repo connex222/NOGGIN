@@ -55,16 +55,24 @@
       }
     });
 
+  // D17: there is no #target element. "Start" focuses the START button when it is
+  // usable, otherwise the room code (made focusable for this).
+  function startFocusId() {
+    const ready = $('stageReady');
+    if (ready && !ready.disabled) return 'stageReady';
+    const code = $('roomCode'); if (code) code.tabIndex = -1;
+    return 'roomCode';
+  }
   function goToLobby(focusId) {
     splash.classList.add('welcome-dismissed');
     splash.setAttribute('aria-hidden', 'true');
     window.setTimeout(() => {
       splash.hidden = true;
-      $(focusId)?.focus();
+      $(focusId === 'start' ? startFocusId() : focusId)?.focus();
     }, 180);
   }
 
-  $('welcomeStart').addEventListener('click', () => goToLobby('target'));
+  $('welcomeStart').addEventListener('click', () => goToLobby('start'));
   $('welcomeJoin').addEventListener('click', () => goToLobby('roomCode'));
 
   const rules = $('welcomeRulesDialog');
@@ -87,7 +95,7 @@
   });
   $('welcomeRulesPlay').addEventListener('click', () => {
     rules.hidden = true;
-    goToLobby('target');
+    goToLobby('start');
   });
 
   // These values mirror the active TV room, never a hard-coded example room.

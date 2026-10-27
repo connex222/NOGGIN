@@ -1,16 +1,18 @@
 'use strict';
 // Local-first TV-only audio: dedicated /sounds file -> optional named substitute -> synthesised Web Audio.
 // The soundtrack works without third-party files, CDNs, cookies or audio permissions beyond a TV click.
+// D13: storage can be blocked (private browsing); sound settings then just aren't remembered.
+const soundStore={get(k){try{return localStorage.getItem(k);}catch{return null;}},set(k,v){try{localStorage.setItem(k,String(v));}catch{}}};
 class NogginSound {
- constructor(){this.context=null;this.enabled=false;this.muted=localStorage.getItem('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(localStorage.getItem('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.desiredMusic=null;this.timer=null;this.lastSound='';this.musicFiles={};this.musicAudio=null;this.sfxLive=new Set();this.musicVolume=Math.max(0,Math.min(1,Number(localStorage.getItem('noggin-music-volume')??'.25')));this.musicMuted=localStorage.getItem('noggin-music-muted')==='true';this.loadManifest();this.voiceLines={};this.voiceAudio=null;this.loadVoice();}
+ constructor(){this.context=null;this.enabled=false;this.muted=soundStore.get('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.desiredMusic=null;this.timer=null;this.lastSound='';this.musicFiles={};this.musicAudio=null;this.sfxLive=new Set();this.musicVolume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-music-volume')??'.25')));this.musicMuted=soundStore.get('noggin-music-muted')==='true';this.loadManifest();this.voiceLines={};this.voiceAudio=null;this.loadVoice();}
  async loadManifest(){try{const r=await fetch('/sounds/sound-manifest.json');if(r.ok){const x=await r.json();if(Array.isArray(x.files))this.files=new Set(x.files);if(x.music&&typeof x.music==='object')this.musicFiles=x.music;}}catch{}}
  async unlock(){const C=window.AudioContext||window.webkitAudioContext;if(!C)throw Error('Audio unsupported');this.context ||= new C();await this.context.resume();if(!this.master){this.master=this.context.createGain();this.master.connect(this.context.destination);}this.enabled=true;this.apply();}
  apply(){if(this.master)this.master.gain.setTargetAtTime(this.muted?0:this.volume*.33,this.context.currentTime,.025);}
- setVolume(v){this.volume=Math.max(0,Math.min(1,Number(v)));localStorage.setItem('noggin-volume',String(this.volume));this.apply();}
- setMusicVolume(v){this.musicVolume=Math.max(0,Math.min(1,Number(v)));localStorage.setItem('noggin-music-volume',String(this.musicVolume));this.applyMusicVolume();}
- setMusicMuted(v){this.musicMuted=Boolean(v);localStorage.setItem('noggin-music-muted',String(this.musicMuted));if(this.musicMuted)this.stopMusic();else if(this.desiredMusic)this.startMusic(this.desiredMusic,true);this.applyMusicVolume();}
+ setVolume(v){this.volume=Math.max(0,Math.min(1,Number(v)));soundStore.set('noggin-volume',String(this.volume));this.apply();}
+ setMusicVolume(v){this.musicVolume=Math.max(0,Math.min(1,Number(v)));soundStore.set('noggin-music-volume',String(this.musicVolume));this.applyMusicVolume();}
+ setMusicMuted(v){this.musicMuted=Boolean(v);soundStore.set('noggin-music-muted',String(this.musicMuted));if(this.musicMuted)this.stopMusic();else if(this.desiredMusic)this.startMusic(this.desiredMusic,true);this.applyMusicVolume();}
  applyMusicVolume(){if(this.musicAudio){this.musicAudio.volume=this.muted||this.musicMuted?0:Math.min(.35,this.musicVolume*.32)*(this.sfxLive.size?.5:1);}}
- setMuted(v){this.muted=Boolean(v);localStorage.setItem('noggin-muted',String(this.muted));this.apply();this.applyMusicVolume();if(this.muted)this.stopMusic();}
+ setMuted(v){this.muted=Boolean(v);soundStore.set('noggin-muted',String(this.muted));this.apply();this.applyMusicVolume();if(this.muted)this.stopMusic();}
  beep(freq,duration=.16,style='sine',delay=0,amp=.35){if(!this.enabled||this.muted)return;const ctx=this.context,start=ctx.currentTime+delay;
   const osc=ctx.createOscillator(),gain=ctx.createGain();osc.type=style;osc.frequency.setValueAtTime(freq,start);gain.gain.setValueAtTime(.001,start);gain.gain.exponentialRampToValueAtTime(Math.max(.001,amp),start+.013);gain.gain.exponentialRampToValueAtTime(.001,start+duration);osc.connect(gain).connect(this.master);osc.start(start);osc.stop(start+duration+.03);
  }

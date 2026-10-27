@@ -22,7 +22,7 @@ function nextResult(f){f.advance(6001);f.rooms.sweep();}
 test('28-space trapezium: a Showdown on all four corners, paired lifts and no doubled-up colours',()=>{
  assert.equal(board.SPACES.length,28);
  const counts={};for(const s of board.SPACES)counts[s]=(counts[s]||0)+1;
- assert.deepEqual(counts,{start:1,brain:4,speed:3,create:3,together:3,showdown:4,lift:2,drain:2,applause:2,swap:1,wildcard:2,pickpocket:1});
+ assert.deepEqual(counts,{start:1,brain:4,speed:3,create:3,together:3,showdown:4,lift:2,drain:2,applause:2,steal:1,wildcard:2,pickpocket:1}); // v3.5.0 G7: Steal the Call replaced Swap Seats
  assert.deepEqual(layout.CORNERS,[6,10,18,22]);
  for(const i of layout.CORNERS)assert.equal(board.SPACES[i],'showdown');
  assert.deepEqual(Object.keys(layout.SHOWDOWN_KINDS).map(Number),layout.CORNERS);
@@ -64,10 +64,9 @@ test('after everyone rolls, the called round game starts with the caller as host
  const f=fixture(3);const [a,b,c]=f.room.players;
  landOn(f,2);nextResult(f);         // A calls Speed
  landOn(f,5);nextResult(f);         // B: Applause
- landOn(f,13);                      // C: Swap
- f.rooms.chooseGame(f.code,f.people[2],{targetId:a.id});nextResult(f);
+ landOn(f,13);nextResult(f);        // C: Steal the Call (v3.5.0 G7) — C now hosts A's Speed game
  assert.equal(f.room.board.stage,'round-game');assert.equal(f.room.board.step,'minigame');
- assert.equal(f.room.board.minigame.category,'speed');assert.equal(f.room.board.activeId,a.id);
+ assert.equal(f.room.board.minigame.category,'speed');assert.equal(f.room.board.activeId,c.id);
  assert.match(f.room.board.event.text,/ROUND 1 GAME/);
  assert.throws(()=>f.rooms.rollGame(f.code,f.people[0]),e=>e.code==='STEP');
  board.finishTurn(f.room,f.now(),'Round game over.',[]);nextResult(f);
@@ -105,12 +104,11 @@ test('Stage Lifts jump across the stage without triggering the destination',()=>
  nextResult(f);const q=landOn(f,20);assert.equal(q.position,8);
 });
 
-test('Swap exchanges tokens; Pickpocket robs the leader and never goes below zero',()=>{
- const f=fixture(3);f.room.players[1].position=20;landOn(f,13);
- assert.equal(f.room.board.step,'choose_target');
- assert.throws(()=>f.rooms.chooseGame(f.code,f.people[0],{targetId:f.room.players[0].id}),e=>e.code==='TARGET');
- f.rooms.chooseGame(f.code,f.people[0],{targetId:f.room.players[1].id});
- assert.equal(f.room.players[0].position,20);assert.equal(f.room.players[1].position,13);
+test('Steal the Call makes the lander host; Pickpocket robs the leader and never goes below zero',()=>{
+ // v3.5.0 G7: Swap Seats was replaced by Steal the Call.
+ const f=fixture(3);landOn(f,13);
+ assert.equal(f.room.board.step,'result');assert.equal(f.room.board.roundCaller,f.room.players[0].id);
+ assert.match(f.room.board.result.text,/STEALS THE CALL/);
  const g=fixture(3);g.room.players[1].sparks=4;g.room.players[2].sparks=5;landOn(g,16);
  assert.equal(g.room.players[0].sparks,1);assert.equal(g.room.players[2].sparks,4);
  const h=fixture(2);landOn(h,16);assert.equal(h.room.players[0].sparks,0);assert.match(h.room.board.result.text,/nobody has a Spark/);
@@ -128,7 +126,8 @@ test('corner Showdown steals up to 2 Sparks; only one Showdown per round, later 
  assert.equal(f.room.board.step,'choose_opponent');f.rooms.chooseGame(f.code,f.people[0],{targetId:f.room.players[1].id});
  assert.equal(f.room.board.showdown.kind,'buzzer');assert.equal(f.room.board.showdown.title,'Buzzer Battle');
  f.advance(5001);f.rooms.sweep();
- for(let i=0;i<4;i++){let m=f.room.board.showdown;f.rooms.inputGame(f.code,f.people[0],'buzz',m.roundKey);m=f.room.board.showdown;f.rooms.inputGame(f.code,f.people[0],m.question.correct,m.roundKey);}
+ // v3.5.0 D7: a buzz is awarded after a 150 ms collection window. G2: first to 3.
+ for(let i=0;i<3;i++){let m=f.room.board.showdown;f.rooms.inputGame(f.code,f.people[0],'buzz',m.roundKey);f.advance(151);f.rooms.sweep();m=f.room.board.showdown;f.rooms.inputGame(f.code,f.people[0],m.question.correct,m.roundKey);}
  assert.equal(f.room.players[0].sparks,1);assert.equal(f.room.players[1].sparks,0);
  nextResult(f);landOn(f,22);
  assert.equal(f.room.board.step,'result');assert.equal(f.room.players[1].sparks,1);assert.match(f.room.board.result.text,/Corner Bonus/);
@@ -191,7 +190,7 @@ test('the verdict waits for the dice and token hops; it carries each player\'s S
 test('Brain Drain\'s five seconds start only after the token lands; decisions get the same allowance',()=>{
  const f=fixture(2);landOn(f,3,2);
  assert.equal(f.room.board.challenge.deadline,f.now()+board.presentMs(2)+5000);
- const g=fixture(3);landOn(g,13,4);
+ const g=fixture(3);landOn(g,14,4); // Wildcard (Swap Seats no longer exists)
  assert.equal(g.room.board.deadline,g.now()+board.presentMs(4)+12000);
 });
 test('the round-game result reports gains and losses for everyone involved',()=>{

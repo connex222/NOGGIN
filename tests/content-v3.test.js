@@ -21,8 +21,9 @@ test('a Buzzer Battle never asks a sum while general questions remain, and never
  let r=0;const rng=n=>(r++*7)%n;
  phase5.start(room,'corner',1000,'b',rng);const m=room.board.showdown;assert.equal(m.kind,'buzzer');
  let t=1000;for(let i=0;i<40&&room.board.showdown;i++){t=(room.board.showdown.deadline||t)+1;phase5.tick(room,t,()=>{room.board.showdown=null;});}
- assert.equal(m.used.length,7,'seven questions asked by timeout');
- assert.equal(new Set(m.used).size,7,'no repeats');
+ // v3.5.0 G2: a Buzzer Battle is at most five questions.
+ assert.equal(m.used.length,5,'five questions asked by timeout');
+ assert.equal(new Set(m.used).size,5,'no repeats');
  for(const id of m.used)assert.notEqual(bank.find(q=>q.id===id).topic,'maths',id);
 });
 test('Fib Factory plays the v3 obscure-fact bank: short answers, a blank in every prompt, review flags until checked',()=>{
@@ -35,7 +36,9 @@ test('Fib Factory plays the v3 obscure-fact bank: short answers, a blank in ever
 test('Brain Drain asks general knowledge, not sums',()=>{
  const src=require('node:fs').readFileSync(require('node:path').join(__dirname,'../server/board.js'),'utf8');
  assert.match(src,/DRAIN_QUESTIONS = require\('\.\.\/data\/buzzer-questions\.json'\)\.filter\(q => q\.topic !== 'maths'\)/);
- assert.match(src,/kind === 'drain' \? DRAIN_QUESTIONS : QUESTIONS/);
+ // v3.5.0 D17: the old demo bank and board-level tie-break were removed; Brain Drain is the only board challenge.
+ assert.match(src,/sampleQuestion\(b, randomInt, DRAIN_QUESTIONS\)/);
+ assert.doesNotMatch(src,/demo-questions/);
 });
 test('Caption This shows a picture when public/art/captions/<scene id> exists',()=>{
  const fs=require('node:fs'),path=require('node:path');

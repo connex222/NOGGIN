@@ -15,7 +15,9 @@ test('Phase 6 batch 6 exact-answer problems are recalculated independently', () 
 });
 test('Phase 6 batch 6 multiple-choice bank has a unique correct answer', () => {
   const rows = read('buzzer-questions').filter(row => row.id.startsWith('p6b6-'));
-  assert.equal(rows.length, 14);
+  // v3.5.0 Q6: planet questions are capped at five across the bank, so only one of
+  // this batch's planet set remains (the rest were duplicates or near-duplicates).
+  assert.equal(rows.length, 1);
   for (const row of rows) {
     assert.equal(row.choices.length, 4);
     assert.equal(new Set(row.choices.map(s => s.toLowerCase())).size, 4);
@@ -26,10 +28,10 @@ test('Phase 6 batch 6 multiple-choice bank has a unique correct answer', () => {
 });
 test('Phase 6 batch 6 bid categories carry distinct illustrative answers', () => {
   const rows = read('bid-categories').filter(row => row.id.startsWith('p6b6-'));
-  assert.equal(rows.length, 10);
+  assert.equal(rows.length, 5); // v3.5.0 Q7: 5 removed as vague, thin or silly
   for (const row of rows) {
-    assert.equal(row.answers.length, 8);
-    assert.equal(new Set(row.answers.map(s => s.toLowerCase())).size, 8);
+    assert.ok(row.answers.length >= 8);
+    assert.equal(new Set(row.answers.map(s => s.toLowerCase())).size, row.answers.length);
     assert.equal(row.review, true);
   }
 });

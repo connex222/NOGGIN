@@ -22,13 +22,15 @@ test('Classic rejects Director Cues and Plan a Landing (even crafted network req
  assert.notEqual(f.room.board.step,'choose_die');assert.notEqual(f.room.board.step,'choose_route');
  assert.equal(f.room.board.lastMove.die,1);
 });
-test('Classic cannot gain a Director Cue from a win, and cannot make Spotlight Picks',()=>{
+test('Classic cannot gain a Director Cue from a win; Spotlight Picks are open but pay no Cue',()=>{
+ // v3.5.0 G2: Spotlight Picks now work in Classic too (catch-up Spark, not a Cue).
  const f=game();f.room.players[0].cues=0;
  require('../server/board').finishTurn(f.room,f.now(),'won',[f.room.players[0].id]);
  assert.equal(f.room.players[0].cues,0);
  f.room.board.landing=6;phase5.start(f.room,'corner',f.now(),f.room.players[1].id,()=>0);
- assert.equal(f.rooms.state(f.code).board.showdown.cheerOpen,false);
- assert.throws(()=>f.rooms.cheerGame(f.code,'p2',f.room.players[0].id),{code:'RULES'});
+ assert.equal(f.rooms.state(f.code).board.showdown.cheerOpen,true);
+ f.rooms.cheerGame(f.code,'p2',f.room.players[0].id);
+ assert.equal(f.room.players[2].cues||0,0);
 });
 test('Classic Count Flash shows the target before the flash ends',()=>{
  const f=game();phase3.start(f.room,'speed',f.now(),()=>0,'count-flash');

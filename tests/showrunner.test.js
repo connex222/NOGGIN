@@ -169,10 +169,16 @@ test('saved manual pause survives restart; animation clocks and session tokens r
 
 
 test('skipping an interrupted contested mini-game voids an eligible Headline Bet',()=>{
+ // v3.5.0 D5: games that do not need the host keep running, so there is nothing to skip.
+ const q=setup();speed.start(q.room,'speed',q.now(),()=>0,'quick-draw');
+ q.rooms.disconnect(q.code,'p0');
+ assert.throws(()=>q.rooms.skipDisconnectedGame(q.code,'tv'),{code:'ONLINE'});
+ // A host-critical game with nobody left to take over is still cancelled at no cost.
  const h=setup();const active=h.room.players[0];active.sparks=5;
- speed.start(h.room,'speed',h.now(),()=>0,'quick-draw');
+ require('../server/games/phase4').start(h.room,'together',h.now(),()=>0,'bomb-squad');
  h.room.board.headline=true;h.room.board.headlineEligible=true;
- h.rooms.disconnect(h.code,'p0');h.rooms.skipDisconnectedGame(h.code,'tv');
+ for(let i=0;i<4;i++)h.rooms.disconnect(h.code,'p'+i);
+ h.rooms.skipDisconnectedGame(h.code,'tv');
  assert.equal(active.sparks,5,'disconnection must not count as losing the wager');
  assert.equal(h.room.board.minigame,null);
  assert.equal(h.room.board.step,'result');

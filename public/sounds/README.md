@@ -1,5 +1,13 @@
 # NOGGIN local audio inventory and licence review
 
+> ## ⚠️ Before public release
+> **Do not sell, publish to an app store, or share NOGGIN publicly until every file below has a known source and licence.**
+> Private play with family and friends is fine. Before any public release:
+> 1. For each file, record where it came from (your own recording, a named library, a commissioned musician) in the *Source / author* column.
+> 2. Record the licence and keep proof (a licence page saved as PDF, a receipt, or an email) in the *Licence / proof* column.
+> 3. Replace any file whose origin you cannot prove with one you made yourself or one under a licence that allows commercial use (for example CC0 or a paid royalty-free licence).
+> 4. Check the host-voice clips in `public/voice/` the same way: you need the speaker's permission to distribute them.
+
 All listed media files are bundled locally. **Their authorship and licensing have not been independently verified.** Older claims that every cue was original synthesis are withdrawn. Do not assume commercial redistribution rights until you document evidence for each file.
 
 | File | Size (bytes) | Duration (seconds) | Source / author | Licence / proof |

@@ -1,209 +1,5 @@
 [
   {
-    "id": "bid-01",
-    "prompt": "Name months of the year",
-    "answers": [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December"
-    ]
-  },
-  {
-    "id": "bid-02",
-    "prompt": "Name days of the week",
-    "answers": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ]
-  },
-  {
-    "id": "bid-03",
-    "prompt": "Name the four UK constituent countries",
-    "answers": [
-      "England",
-      "Scotland",
-      "Wales",
-      "Northern Ireland"
-    ]
-  },
-  {
-    "id": "bid-04",
-    "prompt": "Name the four capital cities of the UK constituent countries",
-    "answers": [
-      "London",
-      "Edinburgh",
-      "Cardiff",
-      "Belfast"
-    ]
-  },
-  {
-    "id": "bid-05",
-    "prompt": "Name the eight planets in our Solar System",
-    "answers": [
-      "Mercury",
-      "Venus",
-      "Earth",
-      "Mars",
-      "Jupiter",
-      "Saturn",
-      "Uranus",
-      "Neptune"
-    ]
-  },
-  {
-    "id": "bid-06",
-    "prompt": "Name the five oceans",
-    "answers": [
-      "Pacific Ocean",
-      "Atlantic Ocean",
-      "Indian Ocean",
-      "Southern Ocean",
-      "Arctic Ocean"
-    ]
-  },
-  {
-    "id": "bid-07",
-    "prompt": "Name the seven continents",
-    "answers": [
-      "Africa",
-      "Antarctica",
-      "Asia",
-      "Europe",
-      "North America",
-      "South America",
-      "Australia"
-    ]
-  },
-  {
-    "id": "bid-08",
-    "prompt": "Name the four cardinal compass directions",
-    "answers": [
-      "North",
-      "East",
-      "South",
-      "West"
-    ]
-  },
-  {
-    "id": "bid-09",
-    "prompt": "Name eight things used in a pottery studio",
-    "answers": [
-      "Clay",
-      "Kiln",
-      "Pottery wheel",
-      "Slip",
-      "Glaze",
-      "Rib",
-      "Sponge",
-      "Wire cutter"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-10",
-    "prompt": "Name the five senses traditionally taught at school",
-    "answers": [
-      "Sight",
-      "Hearing",
-      "Smell",
-      "Taste",
-      "Touch"
-    ]
-  },
-  {
-    "id": "bid-11",
-    "prompt": "Name six letters in the word GUITAR",
-    "answers": [
-      "G",
-      "U",
-      "I",
-      "T",
-      "A",
-      "R"
-    ]
-  },
-  {
-    "id": "bid-12",
-    "prompt": "Name the seven letters used for musical notes",
-    "answers": [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G"
-    ]
-  },
-  {
-    "id": "bid-13",
-    "prompt": "Name the four suits in a standard deck of cards",
-    "answers": [
-      "Hearts",
-      "Diamonds",
-      "Clubs",
-      "Spades"
-    ]
-  },
-  {
-    "id": "bid-14",
-    "prompt": "Name six faces of a standard numbered die",
-    "answers": [
-      "One",
-      "Two",
-      "Three",
-      "Four",
-      "Five",
-      "Six"
-    ]
-  },
-  {
-    "id": "bid-15",
-    "prompt": "Name the five Olympic rings colours",
-    "answers": [
-      "Blue",
-      "Yellow",
-      "Black",
-      "Green",
-      "Red"
-    ]
-  },
-  {
-    "id": "bid-16",
-    "prompt": "Name the six letters in the word NOGGIN, without repeats",
-    "answers": [
-      "N",
-      "O",
-      "G",
-      "I"
-    ]
-  },
-  {
-    "id": "bid-17",
-    "prompt": "Name the four seasons",
-    "answers": [
-      "Spring",
-      "Summer",
-      "Autumn",
-      "Winter"
-    ]
-  },
-  {
     "id": "bid-18",
     "prompt": "Name the twelve Chinese zodiac animals",
     "answers": [
@@ -219,11 +15,32 @@
       "Rooster",
       "Dog",
       "Pig"
-    ]
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Goat": [
+        "sheep",
+        "ram"
+      ],
+      "Rooster": [
+        "chicken",
+        "cockerel"
+      ],
+      "Rabbit": [
+        "hare"
+      ],
+      "Ox": [
+        "cow",
+        "bull"
+      ]
+    }
   },
   {
     "id": "bid-19",
-    "prompt": "Name the eight main moon phases",
+    "prompt": "Name the eight main phases of the Moon",
     "answers": [
       "New Moon",
       "Waxing Crescent",
@@ -233,203 +50,20 @@
       "Waning Gibbous",
       "Last Quarter",
       "Waning Crescent"
-    ]
-  },
-  {
-    "id": "bid-20",
-    "prompt": "Name the five vowels in English",
-    "answers": [
-      "A",
-      "E",
-      "I",
-      "O",
-      "U"
-    ]
-  },
-  {
-    "id": "bid-21",
-    "prompt": "Name the first ten positive integers (use digits)",
-    "answers": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10"
-    ]
-  },
-  {
-    "id": "bid-22",
-    "prompt": "Name even positive numbers below 20 (use digits)",
-    "answers": [
-      "2",
-      "4",
-      "6",
-      "8",
-      "10",
-      "12",
-      "14",
-      "16",
-      "18"
-    ]
-  },
-  {
-    "id": "bid-23",
-    "prompt": "Name odd positive numbers below 20 (use digits)",
-    "answers": [
-      "1",
-      "3",
-      "5",
-      "7",
-      "9",
-      "11",
-      "13",
-      "15",
-      "17",
-      "19"
-    ]
-  },
-  {
-    "id": "bid-24",
-    "prompt": "Name eight types of building material",
-    "answers": [
-      "Brick",
-      "Concrete",
-      "Slate",
-      "Timber",
-      "Steel",
-      "Glass",
-      "Plaster",
-      "Stone"
     ],
+    "kind": "closed",
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-25",
-    "prompt": "Name the square numbers from 1 to 100 (use digits)",
-    "answers": [
-      "1",
-      "4",
-      "9",
-      "16",
-      "25",
-      "36",
-      "49",
-      "64",
-      "81",
-      "100"
-    ]
-  },
-  {
-    "id": "bid-26",
-    "prompt": "Name common chess pieces",
-    "answers": [
-      "King",
-      "Queen",
-      "Rook",
-      "Bishop",
-      "Knight",
-      "Pawn"
-    ]
-  },
-  {
-    "id": "bid-27",
-    "prompt": "Name eight types of furniture apart from chairs",
-    "answers": [
-      "Wardrobe",
-      "Bed",
-      "Bookcase",
-      "Chest of drawers",
-      "Sideboard",
-      "Desk",
-      "Coffee table",
-      "Dresser"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-28",
-    "prompt": "Name eight pieces of astronomy equipment or observatory apparatus",
-    "answers": [
-      "Telescope",
-      "Eyepiece",
-      "Tripod",
-      "Star chart",
-      "Spectrograph",
-      "Mount",
-      "Finder scope",
-      "Dome"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-29",
-    "prompt": "Name eight wild animals commonly found in Britain",
-    "answers": [
-      "Fox",
-      "Badger",
-      "Hedgehog",
-      "Otter",
-      "Stoat",
-      "Weasel",
-      "Roe deer",
-      "Red squirrel"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-30",
-    "prompt": "Name eight common British garden vegetables",
-    "answers": [
-      "Carrot",
-      "Parsnip",
-      "Leek",
-      "Pea",
-      "Broad bean",
-      "Beetroot",
-      "Turnip",
-      "Courgette"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-31",
-    "prompt": "Name eight types of cheese",
-    "answers": [
-      "Cheddar",
-      "Brie",
-      "Stilton",
-      "Gouda",
-      "Feta",
-      "Mozzarella",
-      "Parmesan",
-      "Camembert"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-32",
-    "prompt": "Name the four Beatles",
-    "answers": [
-      "John Lennon",
-      "Paul McCartney",
-      "George Harrison",
-      "Ringo Starr"
-    ]
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Last Quarter": [
+        "third quarter"
+      ]
+    }
   },
   {
     "id": "bid-33",
-    "prompt": "Name the six official UN languages",
+    "prompt": "Name the six official languages of the United Nations",
     "answers": [
       "Arabic",
       "Chinese",
@@ -437,63 +71,16 @@
       "French",
       "Russian",
       "Spanish"
-    ]
-  },
-  {
-    "id": "bid-34",
-    "prompt": "Name the first eight chemical elements",
-    "answers": [
-      "Hydrogen",
-      "Helium",
-      "Lithium",
-      "Beryllium",
-      "Boron",
-      "Carbon",
-      "Nitrogen",
-      "Oxygen"
-    ]
-  },
-  {
-    "id": "bid-35",
-    "prompt": "Name eight types of biscuit",
-    "answers": [
-      "Digestive",
-      "Custard cream",
-      "Bourbon",
-      "Shortbread",
-      "Ginger nut",
-      "Rich tea",
-      "Garibaldi",
-      "Hobnob"
     ],
+    "kind": "closed",
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-36",
-    "prompt": "Name eight card-game terms",
-    "answers": [
-      "Trump",
-      "Trick",
-      "Dealer",
-      "Hand",
-      "Discard",
-      "Shuffle",
-      "Suit",
-      "Bid"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-37",
-    "prompt": "Name the four basic arithmetic operations",
-    "answers": [
-      "Addition",
-      "Subtraction",
-      "Multiplication",
-      "Division"
-    ]
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Chinese": [
+        "mandarin"
+      ]
+    }
   },
   {
     "id": "bid-38",
@@ -506,36 +93,23 @@
       "Kelvin",
       "Mole",
       "Candela"
-    ]
-  },
-  {
-    "id": "bid-39",
-    "prompt": "Name the first eight multiples of three",
-    "answers": [
-      "3",
-      "6",
-      "9",
-      "12",
-      "15",
-      "18",
-      "21",
-      "24"
-    ]
-  },
-  {
-    "id": "bid-40",
-    "prompt": "Name the five fingers of one hand",
-    "answers": [
-      "Thumb",
-      "Index",
-      "Middle",
-      "Ring",
-      "Little"
-    ]
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Metre": [
+        "meter"
+      ],
+      "Ampere": [
+        "amp"
+      ]
+    }
   },
   {
     "id": "bid-p6-002",
-    "prompt": "Name eight members of the cat family",
+    "prompt": "Name wild members of the cat family",
     "answers": [
       "Lion",
       "Tiger",
@@ -544,14 +118,51 @@
       "Cheetah",
       "Lynx",
       "Puma",
-      "Ocelot"
+      "Ocelot",
+      "Snow leopard",
+      "Clouded leopard",
+      "Serval",
+      "Caracal",
+      "Bobcat",
+      "Wildcat",
+      "Sand cat",
+      "Margay",
+      "Jaguarundi",
+      "Fishing cat",
+      "Pallas’s cat",
+      "Black-footed cat",
+      "Rusty-spotted cat",
+      "Leopard cat",
+      "Oncilla",
+      "Iberian lynx",
+      "Canada lynx",
+      "Marbled cat",
+      "Flat-headed cat",
+      "Kodkod"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Puma": [
+        "cougar",
+        "mountain lion",
+        "panther"
+      ],
+      "Pallas’s cat": [
+        "pallas cat",
+        "manul"
+      ],
+      "Wildcat": [
+        "scottish wildcat",
+        "wild cat"
+      ]
+    }
   },
   {
     "id": "bid-p6-003",
-    "prompt": "Name eight types of needlework or fibre craft",
+    "prompt": "Name types of needlework or fibre craft",
     "answers": [
       "Knitting",
       "Crochet",
@@ -560,31 +171,46 @@
       "Quilting",
       "Weaving",
       "Tatting",
-      "Macramé"
+      "Macramé",
+      "Needlepoint",
+      "Patchwork",
+      "Appliqué",
+      "Smocking",
+      "Lace-making",
+      "Felting",
+      "Sewing",
+      "Darning",
+      "Tapestry",
+      "Spinning",
+      "Rug hooking",
+      "Beadwork"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "bid-p6-004",
-    "prompt": "Name eight types of fruit used in jam",
-    "answers": [
-      "Strawberry",
-      "Raspberry",
-      "Blackcurrant",
-      "Apricot",
-      "Plum",
-      "Blackberry",
-      "Cherry",
-      "Gooseberry"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Appliqué": [
+        "applique"
+      ],
+      "Lace-making": [
+        "lacemaking",
+        "lace making",
+        "bobbin lace"
+      ]
+    }
   },
   {
     "id": "bid-p6-006",
-    "prompt": "Name eight metric prefixes used in SI units",
+    "prompt": "Name metric prefixes used in SI units",
     "answers": [
+      "Quecto",
+      "Ronto",
+      "Yocto",
+      "Zepto",
+      "Atto",
+      "Femto",
+      "Pico",
       "Nano",
       "Micro",
       "Milli",
@@ -592,30 +218,50 @@
       "Deci",
       "Deca",
       "Hecto",
-      "Kilo"
+      "Kilo",
+      "Mega",
+      "Giga",
+      "Tera",
+      "Peta",
+      "Exa",
+      "Zetta",
+      "Yotta",
+      "Ronna",
+      "Quetta"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Deca": [
+        "deka"
+      ]
+    }
   },
   {
     "id": "bid-p6-007",
-    "prompt": "Name eight common cloud types",
+    "prompt": "Name the ten main cloud types",
     "answers": [
       "Cirrus",
-      "Cirrostratus",
       "Cirrocumulus",
-      "Altostratus",
+      "Cirrostratus",
       "Altocumulus",
-      "Stratus",
+      "Altostratus",
+      "Nimbostratus",
       "Stratocumulus",
-      "Cumulus"
+      "Stratus",
+      "Cumulus",
+      "Cumulonimbus"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check"
   },
   {
     "id": "bid-p6-008",
-    "prompt": "Name eight different types of boat or watercraft",
+    "prompt": "Name types of boat or ship",
     "answers": [
       "Canoe",
       "Kayak",
@@ -624,14 +270,85 @@
       "Ferry",
       "Yacht",
       "Catamaran",
-      "Coracle"
+      "Coracle",
+      "Rowing boat",
+      "Speedboat",
+      "Sailing boat",
+      "Narrowboat",
+      "Houseboat",
+      "Gondola",
+      "Punt",
+      "Raft",
+      "Lifeboat",
+      "Tugboat",
+      "Trawler",
+      "Fishing boat",
+      "Cruise ship",
+      "Ocean liner",
+      "Cargo ship",
+      "Container ship",
+      "Oil tanker",
+      "Submarine",
+      "Aircraft carrier",
+      "Destroyer",
+      "Frigate",
+      "Battleship",
+      "Hovercraft",
+      "Jet ski",
+      "Pedalo",
+      "Junk",
+      "Dhow",
+      "Sampan",
+      "Longship",
+      "Galleon",
+      "Clipper",
+      "Paddle steamer",
+      "Trimaran",
+      "Schooner",
+      "Ketch",
+      "Sloop",
+      "Dragon boat",
+      "Inflatable dinghy",
+      "Lightship",
+      "Icebreaker",
+      "Motorboat",
+      "Water taxi"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Tugboat": [
+        "tug"
+      ],
+      "Rowing boat": [
+        "rowboat"
+      ],
+      "Sailing boat": [
+        "sailboat"
+      ],
+      "Narrowboat": [
+        "canal boat"
+      ],
+      "Ocean liner": [
+        "liner"
+      ],
+      "Oil tanker": [
+        "tanker"
+      ],
+      "Longship": [
+        "viking ship",
+        "longboat"
+      ],
+      "Cruise ship": [
+        "cruise liner"
+      ]
+    }
   },
   {
     "id": "bid-p6-009",
-    "prompt": "Name eight styles of painting or drawing",
+    "prompt": "Name painting or drawing media and techniques",
     "answers": [
       "Watercolour",
       "Oil painting",
@@ -640,14 +357,50 @@
       "Ink wash",
       "Acrylic painting",
       "Gouache",
-      "Pencil drawing"
+      "Pencil drawing",
+      "Fresco",
+      "Tempera",
+      "Encaustic",
+      "Spray paint",
+      "Airbrush",
+      "Crayon",
+      "Chalk",
+      "Pen and ink",
+      "Finger painting",
+      "Mural",
+      "Impasto",
+      "Pointillism",
+      "Sgraffito",
+      "Collage"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Watercolour": [
+        "watercolor",
+        "watercolours"
+      ],
+      "Oil painting": [
+        "oils",
+        "oil paint"
+      ],
+      "Acrylic painting": [
+        "acrylics",
+        "acrylic"
+      ],
+      "Pencil drawing": [
+        "pencil"
+      ],
+      "Spray paint": [
+        "graffiti"
+      ]
+    }
   },
   {
     "id": "bid-p6-010",
-    "prompt": "Name eight parts of a flowering plant",
+    "prompt": "Name parts of a flowering plant",
     "answers": [
       "Root",
       "Stem",
@@ -656,14 +409,44 @@
       "Sepal",
       "Stamen",
       "Pistil",
-      "Seed"
+      "Seed",
+      "Anther",
+      "Filament",
+      "Stigma",
+      "Style",
+      "Ovary",
+      "Ovule",
+      "Pollen",
+      "Bud",
+      "Node",
+      "Petiole",
+      "Nectary",
+      "Receptacle",
+      "Fruit",
+      "Root hair",
+      "Carpel",
+      "Flower",
+      "Tendril"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Leaf": [
+        "leaves"
+      ],
+      "Petiole": [
+        "leaf stalk"
+      ],
+      "Root": [
+        "roots"
+      ]
+    }
   },
   {
     "id": "p6b2-bid-001",
-    "prompt": "Name eight human skeletal bones",
+    "prompt": "Name bones of the human skeleton",
     "answers": [
       "Femur",
       "Tibia",
@@ -672,10 +455,102 @@
       "Radius",
       "Ulna",
       "Scapula",
-      "Clavicle"
+      "Clavicle",
+      "Patella",
+      "Sternum",
+      "Rib",
+      "Vertebra",
+      "Skull",
+      "Mandible",
+      "Maxilla",
+      "Pelvis",
+      "Sacrum",
+      "Coccyx",
+      "Carpals",
+      "Metacarpals",
+      "Phalanges",
+      "Tarsals",
+      "Metatarsals",
+      "Calcaneus",
+      "Talus",
+      "Ilium",
+      "Ischium",
+      "Pubis",
+      "Hyoid",
+      "Stapes",
+      "Incus",
+      "Malleus",
+      "Frontal bone",
+      "Parietal bone",
+      "Temporal bone",
+      "Occipital bone",
+      "Sphenoid",
+      "Ethmoid",
+      "Zygomatic bone",
+      "Nasal bone",
+      "Atlas",
+      "Axis",
+      "Scaphoid",
+      "Lunate"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Scapula": [
+        "shoulder blade"
+      ],
+      "Clavicle": [
+        "collarbone",
+        "collar bone"
+      ],
+      "Patella": [
+        "kneecap",
+        "knee cap"
+      ],
+      "Sternum": [
+        "breastbone"
+      ],
+      "Mandible": [
+        "jawbone",
+        "jaw"
+      ],
+      "Coccyx": [
+        "tailbone"
+      ],
+      "Rib": [
+        "ribs"
+      ],
+      "Vertebra": [
+        "vertebrae",
+        "spine"
+      ],
+      "Skull": [
+        "cranium"
+      ],
+      "Pelvis": [
+        "hip bone"
+      ],
+      "Femur": [
+        "thigh bone"
+      ],
+      "Calcaneus": [
+        "heel bone"
+      ],
+      "Stapes": [
+        "stirrup"
+      ],
+      "Incus": [
+        "anvil"
+      ],
+      "Malleus": [
+        "hammer"
+      ],
+      "Zygomatic bone": [
+        "cheekbone"
+      ]
+    }
   },
   {
     "id": "p6b2-bid-003",
@@ -688,28 +563,14 @@
       "B",
       "High E"
     ],
-    "editorialStatus": "reworked-pending-source-review",
-    "review": true
-  },
-  {
-    "id": "p6b2-bid-004",
-    "prompt": "Name six types of triangle and two types of angle",
-    "answers": [
-      "Acute triangle",
-      "Obtuse triangle",
-      "Right triangle",
-      "Equilateral triangle",
-      "Isosceles triangle",
-      "Scalene triangle",
-      "Acute angle",
-      "Reflex angle"
-    ],
+    "editorialStatus": "review-pending",
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "kind": "closed",
+    "verified": "needs-owner-check"
   },
   {
     "id": "p6b2-bid-006",
-    "prompt": "Name eight common geometric plane shapes",
+    "prompt": "Name flat (2D) shapes",
     "answers": [
       "Triangle",
       "Square",
@@ -718,14 +579,44 @@
       "Hexagon",
       "Heptagon",
       "Octagon",
-      "Circle"
+      "Circle",
+      "Nonagon",
+      "Decagon",
+      "Hendecagon",
+      "Dodecagon",
+      "Oval",
+      "Ellipse",
+      "Rhombus",
+      "Kite",
+      "Parallelogram",
+      "Trapezium",
+      "Semicircle",
+      "Crescent",
+      "Star",
+      "Quadrilateral"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Rhombus": [
+        "diamond"
+      ],
+      "Trapezium": [
+        "trapezoid"
+      ],
+      "Hendecagon": [
+        "undecagon"
+      ],
+      "Heptagon": [
+        "septagon"
+      ]
+    }
   },
   {
     "id": "p6b2-bid-008",
-    "prompt": "Name eight Greek alphabet letters",
+    "prompt": "Name letters of the Greek alphabet",
     "answers": [
       "Alpha",
       "Beta",
@@ -734,14 +625,32 @@
       "Epsilon",
       "Zeta",
       "Eta",
-      "Theta"
+      "Theta",
+      "Iota",
+      "Kappa",
+      "Lambda",
+      "Mu",
+      "Nu",
+      "Xi",
+      "Omicron",
+      "Pi",
+      "Rho",
+      "Sigma",
+      "Tau",
+      "Upsilon",
+      "Phi",
+      "Chi",
+      "Psi",
+      "Omega"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check"
   },
   {
     "id": "p6b2-bid-009",
-    "prompt": "Name eight Olympic athletics track race events, including the steeplechase",
+    "prompt": "Name Olympic athletics track events, including hurdles and relays",
     "answers": [
       "100 metres",
       "200 metres",
@@ -750,373 +659,66 @@
       "1500 metres",
       "5000 metres",
       "10000 metres",
-      "3000 metres steeplechase"
+      "3000 metres steeplechase",
+      "100 metres hurdles",
+      "110 metres hurdles",
+      "400 metres hurdles",
+      "4 x 100 metres relay",
+      "4 x 400 metres relay"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6b2-bid-010",
-    "prompt": "Name the four strokes in an individual medley swimming event",
-    "answers": [
-      "Butterfly",
-      "Backstroke",
-      "Breaststroke",
-      "Freestyle"
-    ],
-    "editorialStatus": "reworked-pending-source-review",
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "100 metres hurdles": [
+        "100m hurdles"
+      ],
+      "110 metres hurdles": [
+        "110m hurdles"
+      ],
+      "400 metres hurdles": [
+        "400m hurdles"
+      ],
+      "4 x 100 metres relay": [
+        "4x100",
+        "4x100m",
+        "4x100 relay",
+        "sprint relay"
+      ],
+      "4 x 400 metres relay": [
+        "4x400",
+        "4x400m",
+        "4x400 relay"
+      ]
+    }
   },
   {
     "id": "p6b2-bid-011",
-    "prompt": "Name eight traditional musical tempo markings",
+    "prompt": "Name traditional musical tempo markings",
     "answers": [
+      "Grave",
       "Largo",
+      "Larghetto",
+      "Lento",
       "Adagio",
       "Andante",
+      "Andantino",
       "Moderato",
+      "Allegretto",
       "Allegro",
       "Vivace",
       "Presto",
       "Prestissimo"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6b4-bid-001",
-    "prompt": "Name eight things you might pack for a beach day",
-    "answers": [
-      "Towel",
-      "Sun cream",
-      "Sunglasses",
-      "Hat",
-      "Swimsuit",
-      "Water bottle",
-      "Beach ball",
-      "Sandals"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-002",
-    "prompt": "Name eight things commonly found in a kitchen",
-    "answers": [
-      "Kettle",
-      "Toaster",
-      "Saucepan",
-      "Frying pan",
-      "Plate",
-      "Mug",
-      "Spoon",
-      "Fridge"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-003",
-    "prompt": "Name eight types of footwear",
-    "answers": [
-      "Trainers",
-      "Boots",
-      "Sandals",
-      "Slippers",
-      "Wellies",
-      "Loafers",
-      "Flip-flops",
-      "High heels"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-004",
-    "prompt": "Name eight items you might find in a school classroom",
-    "answers": [
-      "Desk",
-      "Chair",
-      "Whiteboard",
-      "Pencil",
-      "Ruler",
-      "Textbook",
-      "Eraser",
-      "Clock"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-005",
-    "prompt": "Name eight kinds of weather",
-    "answers": [
-      "Rain",
-      "Snow",
-      "Hail",
-      "Fog",
-      "Mist",
-      "Sunshine",
-      "Wind",
-      "Sleet"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-006",
-    "prompt": "Name eight things people can do at a playground",
-    "answers": [
-      "Swing",
-      "Slide",
-      "Climb",
-      "Run",
-      "Jump",
-      "Balance",
-      "Spin",
-      "Seesaw"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-007",
-    "prompt": "Name eight ways to travel",
-    "answers": [
-      "Walk",
-      "Cycle",
-      "Drive",
-      "Train",
-      "Bus",
-      "Boat",
-      "Fly",
-      "Tram"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-008",
-    "prompt": "Name eight items used for cleaning",
-    "answers": [
-      "Broom",
-      "Mop",
-      "Sponge",
-      "Cloth",
-      "Brush",
-      "Vacuum cleaner",
-      "Dustpan",
-      "Bucket"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-009",
-    "prompt": "Name eight places you might sit",
-    "answers": [
-      "Sofa",
-      "Chair",
-      "Bench",
-      "Stool",
-      "Armchair",
-      "Beanbag",
-      "Car seat",
-      "Swing"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-010",
-    "prompt": "Name eight musical instruments",
-    "answers": [
-      "Piano",
-      "Guitar",
-      "Violin",
-      "Flute",
-      "Trumpet",
-      "Drums",
-      "Clarinet",
-      "Trombone"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-011",
-    "prompt": "Name eight things you can buy at a garden centre",
-    "answers": [
-      "Plants",
-      "Seeds",
-      "Compost",
-      "Pots",
-      "Watering can",
-      "Spade",
-      "Gloves",
-      "Hose"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-012",
-    "prompt": "Name eight materials used to make clothes",
-    "answers": [
-      "Cotton",
-      "Wool",
-      "Linen",
-      "Silk",
-      "Denim",
-      "Leather",
-      "Polyester",
-      "Nylon"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-013",
-    "prompt": "Name eight things found in a bathroom",
-    "answers": [
-      "Sink",
-      "Bath",
-      "Shower",
-      "Toilet",
-      "Towel",
-      "Mirror",
-      "Soap",
-      "Toothbrush"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-014",
-    "prompt": "Name eight things on a bicycle",
-    "answers": [
-      "Handlebars",
-      "Pedals",
-      "Wheels",
-      "Chain",
-      "Saddle",
-      "Brakes",
-      "Bell",
-      "Tyres"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b4-bid-015",
-    "prompt": "Name eight pieces of sports equipment",
-    "answers": [
-      "Ball",
-      "Racket",
-      "Bat",
-      "Helmet",
-      "Net",
-      "Goal",
-      "Gloves",
-      "Whistle"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-001",
-    "prompt": "Name eight things in a sewing kit",
-    "answers": [
-      "Needle",
-      "Thread",
-      "Scissors",
-      "Pins",
-      "Thimble",
-      "Tape measure",
-      "Buttons",
-      "Seam ripper"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-002",
-    "prompt": "Name eight items you might take camping",
-    "answers": [
-      "Tent",
-      "Sleeping bag",
-      "Torch",
-      "Water bottle",
-      "Camping stove",
-      "Rucksack",
-      "Groundsheet",
-      "Map"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-003",
-    "prompt": "Name eight types of hat",
-    "answers": [
-      "Beret",
-      "Bowler",
-      "Fedora",
-      "Beanie",
-      "Sombrero",
-      "Top hat",
-      "Panama",
-      "Bucket hat"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6b6-bid-004",
-    "prompt": "Name eight things a gardener might use",
-    "answers": [
-      "Spade",
-      "Rake",
-      "Hoe",
-      "Trowel",
-      "Watering can",
-      "Secateurs",
-      "Gloves",
-      "Wheelbarrow"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-005",
-    "prompt": "Name eight objects you might find in a workshop",
-    "answers": [
-      "Hammer",
-      "Screwdriver",
-      "Spanner",
-      "Saw",
-      "Vice",
-      "Drill",
-      "Pliers",
-      "Tape measure"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-006",
-    "prompt": "Name eight items commonly found in a first-aid kit",
-    "answers": [
-      "Plasters",
-      "Bandages",
-      "Sterile gauze",
-      "Adhesive tape",
-      "Safety pins",
-      "Disposable gloves",
-      "Antiseptic wipes",
-      "Dressing pads"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6b6-bid-007",
-    "prompt": "Name eight items that might be on a breakfast table",
-    "answers": [
-      "Plate",
-      "Bowl",
-      "Spoon",
-      "Knife",
-      "Mug",
-      "Toast",
-      "Cereal",
-      "Jam"
-    ],
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check"
   },
   {
     "id": "p6b6-bid-008",
-    "prompt": "Name eight different types of bridge",
+    "prompt": "Name types of bridge",
     "answers": [
       "Arch",
       "Beam",
@@ -1125,166 +727,46 @@
       "Cable-stayed",
       "Cantilever",
       "Bascule",
-      "Pontoon"
+      "Pontoon",
+      "Swing",
+      "Vertical-lift",
+      "Tied-arch",
+      "Rope",
+      "Footbridge",
+      "Viaduct",
+      "Aqueduct",
+      "Transporter",
+      "Covered",
+      "Drawbridge",
+      "Tilt",
+      "Clapper"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6b6-bid-009",
-    "prompt": "Name eight common woodworking tools",
-    "answers": [
-      "Chisel",
-      "Plane",
-      "Mallet",
-      "Handsaw",
-      "Clamps",
-      "Try square",
-      "Marking gauge",
-      "Spirit level"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6b6-bid-010",
-    "prompt": "Name eight different chess piece types distinguished by colour",
-    "answers": [
-      "White king",
-      "White queen",
-      "White rook",
-      "White bishop",
-      "White knight",
-      "White pawn",
-      "Black king",
-      "Black queen"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-000",
-    "prompt": "Name things in a first-aid kit",
-    "answers": [
-      "bandage",
-      "plaster",
-      "gauze",
-      "tape",
-      "scissors",
-      "tweezers",
-      "gloves",
-      "wipes"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-001",
-    "prompt": "Name things you might see in a garden",
-    "answers": [
-      "flower",
-      "tree",
-      "grass",
-      "spade",
-      "rake",
-      "watering-can",
-      "hose",
-      "fence"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-002",
-    "prompt": "Name things you might pack for a hike",
-    "answers": [
-      "map",
-      "compass",
-      "water",
-      "snacks",
-      "torch",
-      "jacket",
-      "whistle",
-      "boots"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-003",
-    "prompt": "Name common kitchen utensils",
-    "answers": [
-      "spoon",
-      "fork",
-      "knife",
-      "spatula",
-      "whisk",
-      "ladle",
-      "tongs",
-      "peeler"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-004",
-    "prompt": "Name eight types of bread",
-    "answers": [
-      "Baguette",
-      "Ciabatta",
-      "Focaccia",
-      "Brioche",
-      "Pitta",
-      "Sourdough",
-      "Naan",
-      "Bagel"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6final-bid-005",
-    "prompt": "Name things at a birthday party",
-    "answers": [
-      "cake",
-      "candles",
-      "balloons",
-      "presents",
-      "cards",
-      "plates",
-      "music",
-      "decorations"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-006",
-    "prompt": "Name types of transport",
-    "answers": [
-      "car",
-      "bus",
-      "train",
-      "tram",
-      "bicycle",
-      "ferry",
-      "aeroplane",
-      "taxi"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-007",
-    "prompt": "Name things you can buy at a stationer",
-    "answers": [
-      "pen",
-      "pencil",
-      "ruler",
-      "notebook",
-      "eraser",
-      "envelopes",
-      "glue",
-      "folder"
-    ],
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Pontoon": [
+        "floating bridge",
+        "floating"
+      ],
+      "Vertical-lift": [
+        "lift bridge",
+        "lift"
+      ],
+      "Rope": [
+        "rope bridge",
+        "simple suspension"
+      ],
+      "Tilt": [
+        "tilting",
+        "tilt bridge"
+      ]
+    }
   },
   {
     "id": "p6final-bid-008",
-    "prompt": "Name eight punctuation marks used in English writing",
+    "prompt": "Name punctuation marks used in English writing",
     "answers": [
       "Full stop",
       "Comma",
@@ -1293,165 +775,42 @@
       "Colon",
       "Semicolon",
       "Apostrophe",
-      "Hyphen"
+      "Hyphen",
+      "Dash",
+      "Brackets",
+      "Quotation marks",
+      "Ellipsis",
+      "Slash",
+      "Bullet point"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6final-bid-009",
-    "prompt": "Name eight different types of dance",
-    "answers": [
-      "Waltz",
-      "Tango",
-      "Salsa",
-      "Ballet",
-      "Tap",
-      "Foxtrot",
-      "Flamenco",
-      "Breakdance"
-    ],
-    "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6final-bid-010",
-    "prompt": "Name objects on a picnic table",
-    "answers": [
-      "plate",
-      "cup",
-      "napkin",
-      "spoon",
-      "fork",
-      "sandwich",
-      "bottle",
-      "basket"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-011",
-    "prompt": "Name things found on a playground",
-    "answers": [
-      "swing",
-      "slide",
-      "roundabout",
-      "seesaw",
-      "climbing-frame",
-      "bench",
-      "sandpit",
-      "trampoline"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-012",
-    "prompt": "Name things you might use for painting",
-    "answers": [
-      "brush",
-      "roller",
-      "tray",
-      "paint",
-      "palette",
-      "easel",
-      "canvas",
-      "apron"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-013",
-    "prompt": "Name things used for baking",
-    "answers": [
-      "flour",
-      "sugar",
-      "eggs",
-      "butter",
-      "bowl",
-      "whisk",
-      "oven",
-      "tray"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-014",
-    "prompt": "Name things people wear in winter",
-    "answers": [
-      "coat",
-      "scarf",
-      "hat",
-      "gloves",
-      "boots",
-      "jumper",
-      "socks",
-      "earmuffs"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-015",
-    "prompt": "Name items commonly found at a library",
-    "answers": [
-      "book",
-      "shelf",
-      "desk",
-      "chair",
-      "computer",
-      "catalogue",
-      "card",
-      "printer"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-016",
-    "prompt": "Name things to take on a camping trip",
-    "answers": [
-      "tent",
-      "sleeping-bag",
-      "torch",
-      "stove",
-      "matches",
-      "map",
-      "water",
-      "lantern"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-017",
-    "prompt": "Name things you might see on a beach",
-    "answers": [
-      "sand",
-      "sea",
-      "shells",
-      "pebbles",
-      "bucket",
-      "spade",
-      "gulls",
-      "towels"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-018",
-    "prompt": "Name objects at a football match",
-    "answers": [
-      "ball",
-      "goal",
-      "whistle",
-      "corner-flag",
-      "boots",
-      "shirt",
-      "net",
-      "scoreboard"
-    ],
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Brackets": [
+        "parentheses",
+        "round brackets",
+        "square brackets"
+      ],
+      "Quotation marks": [
+        "speech marks",
+        "inverted commas",
+        "quotes"
+      ],
+      "Slash": [
+        "forward slash",
+        "stroke",
+        "oblique"
+      ],
+      "Exclamation mark": [
+        "exclamation point"
+      ]
+    }
   },
   {
     "id": "p6final-bid-019",
-    "prompt": "Name eight engine components found in at least some petrol or diesel car engines",
+    "prompt": "Name parts found in at least some petrol or diesel car engines",
     "answers": [
       "Piston",
       "Cylinder",
@@ -1460,74 +819,54 @@
       "Spark plug",
       "Valve",
       "Connecting rod",
-      "Timing belt"
+      "Timing belt",
+      "Timing chain",
+      "Cylinder head",
+      "Head gasket",
+      "Sump",
+      "Oil pump",
+      "Water pump",
+      "Fuel injector",
+      "Carburettor",
+      "Turbocharger",
+      "Flywheel",
+      "Glow plug",
+      "Rocker arm",
+      "Piston ring",
+      "Inlet manifold",
+      "Exhaust manifold",
+      "Distributor",
+      "Starter motor",
+      "Oil filter",
+      "Air filter",
+      "Throttle body",
+      "Engine block",
+      "Alternator"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6final-bid-020",
-    "prompt": "Name items on a dinner table",
-    "answers": [
-      "plate",
-      "fork",
-      "knife",
-      "spoon",
-      "glass",
-      "napkin",
-      "salt",
-      "pepper"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-021",
-    "prompt": "Name things found at a farm",
-    "answers": [
-      "tractor",
-      "barn",
-      "hay",
-      "fence",
-      "sheep",
-      "cow",
-      "gate",
-      "field"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-022",
-    "prompt": "Name things at a concert",
-    "answers": [
-      "stage",
-      "microphone",
-      "speakers",
-      "lights",
-      "tickets",
-      "audience",
-      "instruments",
-      "cables"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-023",
-    "prompt": "Name things used to write a letter",
-    "answers": [
-      "paper",
-      "pen",
-      "envelope",
-      "stamp",
-      "address",
-      "ink",
-      "desk",
-      "postbox"
-    ],
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Carburettor": [
+        "carburetor",
+        "carb"
+      ],
+      "Turbocharger": [
+        "turbo"
+      ],
+      "Connecting rod": [
+        "con rod",
+        "conrod"
+      ],
+      "Inlet manifold": [
+        "intake manifold"
+      ]
+    }
   },
   {
     "id": "p6final-bid-024",
-    "prompt": "Name eight standard computer keyboard keys besides letters and numbers",
+    "prompt": "Name computer keyboard keys that are not letters or numbers",
     "answers": [
       "Enter",
       "Escape",
@@ -1536,59 +875,2205 @@
       "Control",
       "Alt",
       "Backspace",
-      "Space"
+      "Space bar",
+      "Caps Lock",
+      "Delete",
+      "Insert",
+      "Home",
+      "End",
+      "Page Up",
+      "Page Down",
+      "Up arrow",
+      "Down arrow",
+      "Left arrow",
+      "Right arrow",
+      "Function key",
+      "Print Screen",
+      "Scroll Lock",
+      "Pause",
+      "Num Lock",
+      "Windows key",
+      "Command",
+      "Option",
+      "Fn",
+      "Menu key",
+      "Alt Gr"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
+    "editorialStatus": "review-pending",
+    "kind": "closed",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Enter": [
+        "return"
+      ],
+      "Escape": [
+        "esc"
+      ],
+      "Control": [
+        "ctrl"
+      ],
+      "Space bar": [
+        "space",
+        "spacebar"
+      ],
+      "Delete": [
+        "del"
+      ],
+      "Insert": [
+        "ins"
+      ],
+      "Function key": [
+        "f1",
+        "f12",
+        "function keys"
+      ],
+      "Print Screen": [
+        "prtsc",
+        "print scrn"
+      ],
+      "Pause": [
+        "break",
+        "pause break"
+      ],
+      "Command": [
+        "cmd"
+      ],
+      "Windows key": [
+        "windows",
+        "start key"
+      ]
+    }
   },
   {
-    "id": "p6final-bid-025",
-    "prompt": "Name things at a swimming pool",
+    "id": "bid-29",
+    "prompt": "Name wild mammals, reptiles or amphibians found in Britain",
     "answers": [
-      "water",
-      "lanes",
-      "goggles",
-      "towel",
-      "ladder",
-      "lifeguard",
-      "float",
-      "shower"
+      "Fox",
+      "Badger",
+      "Hedgehog",
+      "Otter",
+      "Stoat",
+      "Weasel",
+      "Roe deer",
+      "Red squirrel",
+      "Grey squirrel",
+      "Red deer",
+      "Fallow deer",
+      "Muntjac",
+      "Sika deer",
+      "Rabbit",
+      "Brown hare",
+      "Mountain hare",
+      "Mole",
+      "Common shrew",
+      "Water vole",
+      "Field vole",
+      "Bank vole",
+      "Wood mouse",
+      "House mouse",
+      "Hazel dormouse",
+      "Harvest mouse",
+      "Brown rat",
+      "Pipistrelle bat",
+      "Pine marten",
+      "Polecat",
+      "Mink",
+      "Wildcat",
+      "Beaver",
+      "Grey seal",
+      "Common seal",
+      "Bottlenose dolphin",
+      "Harbour porpoise",
+      "Adder",
+      "Grass snake",
+      "Smooth snake",
+      "Slow worm",
+      "Common lizard",
+      "Sand lizard",
+      "Common frog",
+      "Common toad",
+      "Natterjack toad",
+      "Great crested newt",
+      "Smooth newt",
+      "Wild boar",
+      "Feral goat"
     ],
-    "review": true
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Fox": [
+        "red fox"
+      ],
+      "Hedgehog": [
+        "hedgehogs"
+      ],
+      "Roe deer": [
+        "roe"
+      ],
+      "Muntjac": [
+        "muntjac deer",
+        "barking deer"
+      ],
+      "Brown hare": [
+        "hare"
+      ],
+      "Common shrew": [
+        "shrew",
+        "pygmy shrew",
+        "water shrew"
+      ],
+      "Water vole": [
+        "vole"
+      ],
+      "Wood mouse": [
+        "field mouse",
+        "fieldmouse"
+      ],
+      "Hazel dormouse": [
+        "dormouse"
+      ],
+      "Brown rat": [
+        "rat"
+      ],
+      "Pipistrelle bat": [
+        "bat",
+        "pipistrelle",
+        "long-eared bat"
+      ],
+      "Grey seal": [
+        "seal"
+      ],
+      "Common seal": [
+        "harbour seal"
+      ],
+      "Bottlenose dolphin": [
+        "dolphin"
+      ],
+      "Harbour porpoise": [
+        "porpoise"
+      ],
+      "Adder": [
+        "viper"
+      ],
+      "Common lizard": [
+        "lizard",
+        "viviparous lizard"
+      ],
+      "Common frog": [
+        "frog"
+      ],
+      "Common toad": [
+        "toad"
+      ],
+      "Great crested newt": [
+        "newt"
+      ],
+      "Wildcat": [
+        "scottish wildcat"
+      ],
+      "Mink": [
+        "american mink"
+      ]
+    }
   },
   {
-    "id": "p6final-bid-026",
-    "prompt": "Name eight types of packaging or paper that may be recyclable (check local collection rules)",
+    "id": "bid-31",
+    "prompt": "Name types of cheese",
     "answers": [
+      "Cheddar",
+      "Brie",
+      "Stilton",
+      "Gouda",
+      "Feta",
+      "Mozzarella",
+      "Parmesan",
+      "Camembert",
+      "Edam",
+      "Emmental",
+      "Gruyère",
+      "Roquefort",
+      "Gorgonzola",
+      "Halloumi",
+      "Ricotta",
+      "Mascarpone",
+      "Wensleydale",
+      "Red Leicester",
+      "Double Gloucester",
+      "Lancashire",
+      "Cheshire",
+      "Caerphilly",
+      "Manchego",
+      "Pecorino",
+      "Paneer",
+      "Cottage cheese",
+      "Cream cheese",
+      "Monterey Jack",
+      "Jarlsberg",
+      "Comté",
+      "Raclette",
+      "Burrata",
+      "Provolone",
+      "Havarti",
+      "Danish Blue",
+      "Dolcelatte",
+      "Shropshire Blue",
+      "Swaledale",
+      "Taleggio",
+      "Fontina",
+      "Reblochon",
+      "Cornish Yarg",
+      "Stinking Bishop",
+      "Colby",
+      "Quark",
+      "Leerdammer",
+      "Port Salut",
+      "Goat’s cheese",
+      "Blue cheese"
+    ],
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Gruyère": [
+        "gruyere"
+      ],
+      "Comté": [
+        "comte"
+      ],
+      "Parmesan": [
+        "parmigiano",
+        "parmigiano reggiano"
+      ],
+      "Emmental": [
+        "emmenthal",
+        "swiss cheese"
+      ],
+      "Halloumi": [
+        "haloumi"
+      ],
+      "Goat’s cheese": [
+        "goats cheese",
+        "goat cheese",
+        "chevre"
+      ],
+      "Cream cheese": [
+        "philadelphia",
+        "soft cheese"
+      ]
+    }
+  },
+  {
+    "id": "bid-35",
+    "prompt": "Name types of biscuit",
+    "answers": [
+      "Digestive",
+      "Chocolate digestive",
+      "Custard cream",
+      "Bourbon",
+      "Shortbread",
+      "Ginger nut",
+      "Rich tea",
+      "Garibaldi",
+      "Hobnob",
+      "Jammie Dodger",
+      "Nice",
+      "Malted milk",
+      "Pink wafer",
+      "Fig roll",
+      "Jaffa Cake",
+      "Oreo",
+      "Party ring",
+      "Viscount",
+      "Penguin",
+      "Club",
+      "Wagon Wheel",
+      "Chocolate chip cookie",
+      "Oat biscuit",
+      "Shortcake",
+      "Lincoln",
+      "Morning coffee",
+      "Fruit shortcake",
+      "Gingerbread",
+      "Macaron",
+      "Coconut macaroon",
+      "Amaretti",
+      "Biscotti",
+      "Florentine",
+      "Brandy snap",
+      "Viennese whirl",
+      "Empire biscuit",
+      "Abernethy",
+      "Snickerdoodle",
+      "Anzac biscuit",
+      "Langue de chat",
+      "Sponge finger",
+      "Bath Oliver",
+      "Cracker",
+      "Oatcake",
+      "Water biscuit",
+      "Chocolate finger",
+      "Teacake",
+      "Lemon puff",
+      "Ginger snap"
+    ],
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Ginger nut": [
+        "gingernut",
+        "ginger biscuit"
+      ],
+      "Hobnob": [
+        "hob nob",
+        "hobnobs"
+      ],
+      "Jaffa Cake": [
+        "jaffa cakes",
+        "jaffa"
+      ],
+      "Chocolate chip cookie": [
+        "cookie",
+        "choc chip cookie"
+      ],
+      "Sponge finger": [
+        "ladyfinger",
+        "boudoir"
+      ],
+      "Teacake": [
+        "tunnocks teacake",
+        "tea cake"
+      ],
+      "Chocolate finger": [
+        "chocolate fingers"
+      ],
+      "Macaron": [
+        "macarons"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-002",
+    "prompt": "Name things found in a kitchen",
+    "answers": [
+      "Kettle",
+      "Toaster",
+      "Saucepan",
+      "Frying pan",
+      "Plate",
+      "Mug",
+      "Spoon",
+      "Fridge",
+      "Freezer",
+      "Oven",
+      "Hob",
+      "Microwave",
+      "Sink",
+      "Tap",
+      "Dishwasher",
+      "Cupboard",
+      "Drawer",
+      "Knife",
+      "Fork",
+      "Bowl",
+      "Cup",
+      "Glass",
+      "Chopping board",
+      "Colander",
+      "Sieve",
+      "Whisk",
+      "Ladle",
+      "Spatula",
+      "Tongs",
+      "Peeler",
+      "Grater",
+      "Rolling pin",
+      "Baking tray",
+      "Casserole dish",
+      "Wok",
+      "Blender",
+      "Food processor",
+      "Food mixer",
+      "Kitchen scales",
+      "Oven glove",
+      "Tea towel",
+      "Teapot",
+      "Cafétière",
+      "Tin opener",
+      "Bottle opener",
+      "Corkscrew",
+      "Kitchen timer",
+      "Apron",
+      "Kitchen roll",
+      "Measuring jug",
+      "Bread bin",
+      "Washing-up bowl",
+      "Salt and pepper",
+      "Air fryer",
+      "Slow cooker"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Fridge": [
+        "refrigerator"
+      ],
+      "Hob": [
+        "stove",
+        "cooker"
+      ],
+      "Frying pan": [
+        "skillet"
+      ],
+      "Cafétière": [
+        "cafetiere",
+        "french press",
+        "coffee maker",
+        "coffee machine"
+      ],
+      "Tin opener": [
+        "can opener"
+      ],
+      "Kitchen roll": [
+        "paper towel",
+        "paper towels"
+      ],
+      "Tea towel": [
+        "dish towel",
+        "dishcloth"
+      ],
+      "Sieve": [
+        "strainer"
+      ],
+      "Spatula": [
+        "fish slice"
+      ],
+      "Salt and pepper": [
+        "salt",
+        "pepper",
+        "pepper mill",
+        "salt shaker"
+      ],
+      "Kitchen scales": [
+        "scales"
+      ],
+      "Food mixer": [
+        "mixer",
+        "stand mixer"
+      ],
+      "Microwave": [
+        "microwave oven"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-003",
+    "prompt": "Name types of footwear",
+    "answers": [
+      "Trainers",
+      "Boots",
+      "Sandals",
+      "Slippers",
+      "Wellies",
+      "Loafers",
+      "Flip-flops",
+      "High heels",
+      "Brogues",
+      "Oxfords",
+      "Moccasins",
+      "Espadrilles",
+      "Clogs",
+      "Plimsolls",
+      "Ballet flats",
+      "Court shoes",
+      "Stilettos",
+      "Wedges",
+      "Mules",
+      "Chelsea boots",
+      "Ankle boots",
+      "Knee-high boots",
+      "Cowboy boots",
+      "Hiking boots",
+      "Football boots",
+      "Rugby boots",
+      "Golf shoes",
+      "Ice skates",
+      "Roller skates",
+      "Ski boots",
+      "Snow boots",
+      "Deck shoes",
+      "Platform shoes",
+      "Kitten heels",
+      "Mary Janes",
+      "Slingbacks",
+      "Gladiator sandals",
+      "Jelly shoes",
+      "Ballet shoes",
+      "Tap shoes",
+      "Running spikes",
+      "Climbing shoes",
+      "Desert boots",
+      "Chukka boots",
+      "Doc Martens",
+      "Crocs",
+      "Uggs",
+      "Dress shoes",
+      "School shoes",
+      "Waders"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Trainers": [
+        "sneakers",
+        "running shoes",
+        "trainer"
+      ],
+      "Wellies": [
+        "wellington boots",
+        "wellingtons"
+      ],
+      "Flip-flops": [
+        "flip flops",
+        "thongs"
+      ],
+      "High heels": [
+        "heels"
+      ],
+      "Plimsolls": [
+        "pumps",
+        "sandshoes"
+      ],
+      "Hiking boots": [
+        "walking boots"
+      ],
+      "Football boots": [
+        "football shoes",
+        "cleats",
+        "studs"
+      ],
+      "Deck shoes": [
+        "boat shoes"
+      ],
+      "Doc Martens": [
+        "dms",
+        "docs",
+        "doc marten boots"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-004",
+    "prompt": "Name things you might find in a school classroom",
+    "answers": [
+      "Desk",
+      "Chair",
+      "Whiteboard",
+      "Pencil",
+      "Ruler",
+      "Textbook",
+      "Rubber",
+      "Clock",
+      "Pen",
+      "Whiteboard pen",
+      "Scissors",
+      "Glue stick",
+      "Pencil case",
+      "Pencil sharpener",
+      "Calculator",
+      "Exercise book",
+      "Notebook",
       "Paper",
-      "Cardboard",
-      "Aluminium cans",
-      "Steel cans",
-      "Glass bottles",
-      "Glass jars",
-      "Drink cartons",
-      "Magazines"
+      "Projector",
+      "Computer",
+      "Laptop",
+      "Tablet",
+      "Bookshelf",
+      "Globe",
+      "Map",
+      "Poster",
+      "Display board",
+      "Noticeboard",
+      "Register",
+      "Bin",
+      "Coat hook",
+      "Stapler",
+      "Hole punch",
+      "Crayons",
+      "Felt-tip pens",
+      "Paint",
+      "Paintbrush",
+      "Protractor",
+      "Compass",
+      "Set square",
+      "Highlighter",
+      "Sticky notes",
+      "Tray",
+      "Timetable",
+      "Interactive whiteboard",
+      "Worksheet",
+      "Blackboard",
+      "Chalk",
+      "Teacher",
+      "Pupils"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Rubber": [
+        "eraser"
+      ],
+      "Whiteboard pen": [
+        "board pen",
+        "dry wipe marker",
+        "marker"
+      ],
+      "Felt-tip pens": [
+        "felt tips",
+        "felt tip",
+        "markers"
+      ],
+      "Sticky notes": [
+        "post-it notes",
+        "post its",
+        "post-its"
+      ],
+      "Pupils": [
+        "students",
+        "children",
+        "pupil"
+      ],
+      "Interactive whiteboard": [
+        "smartboard",
+        "smart board"
+      ],
+      "Glue stick": [
+        "glue",
+        "pritt stick"
+      ]
+    }
   },
   {
-    "id": "p6final-bid-027",
-    "prompt": "Name things at a café",
+    "id": "p6b4-bid-005",
+    "prompt": "Name kinds of weather",
     "answers": [
-      "coffee",
-      "tea",
-      "cake",
-      "sandwich",
-      "mug",
-      "saucer",
-      "menu",
-      "till"
+      "Rain",
+      "Snow",
+      "Hail",
+      "Fog",
+      "Mist",
+      "Sunshine",
+      "Wind",
+      "Sleet",
+      "Drizzle",
+      "Thunder",
+      "Lightning",
+      "Storm",
+      "Hurricane",
+      "Tornado",
+      "Blizzard",
+      "Frost",
+      "Ice",
+      "Dew",
+      "Cloud",
+      "Gale",
+      "Breeze",
+      "Heatwave",
+      "Drought",
+      "Flood",
+      "Rainbow",
+      "Monsoon",
+      "Typhoon",
+      "Cyclone",
+      "Sandstorm",
+      "Hailstorm",
+      "Thunderstorm",
+      "Black ice",
+      "Freezing fog",
+      "Smog",
+      "Haze",
+      "Overcast",
+      "Showers",
+      "Downpour",
+      "Squall",
+      "Whiteout",
+      "Sunny spells",
+      "Humidity",
+      "Snowstorm",
+      "Cold snap"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Sunshine": [
+        "sunny",
+        "sun"
+      ],
+      "Wind": [
+        "windy"
+      ],
+      "Cloud": [
+        "cloudy",
+        "clouds"
+      ],
+      "Rain": [
+        "rainy",
+        "raining"
+      ],
+      "Snow": [
+        "snowy",
+        "snowing"
+      ],
+      "Fog": [
+        "foggy"
+      ],
+      "Storm": [
+        "stormy"
+      ],
+      "Frost": [
+        "frosty"
+      ],
+      "Overcast": [
+        "grey"
+      ],
+      "Humidity": [
+        "humid",
+        "muggy"
+      ],
+      "Heatwave": [
+        "heat wave",
+        "hot"
+      ],
+      "Cold snap": [
+        "freezing",
+        "cold"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-007",
+    "prompt": "Name ways to travel",
+    "answers": [
+      "Walk",
+      "Run",
+      "Cycle",
+      "Car",
+      "Train",
+      "Bus",
+      "Boat",
+      "Aeroplane",
+      "Tram",
+      "Taxi",
+      "Coach",
+      "Motorbike",
+      "Scooter",
+      "Ferry",
+      "Ship",
+      "Helicopter",
+      "Hot-air balloon",
+      "Horse",
+      "Canoe",
+      "Kayak",
+      "Skateboard",
+      "Roller skates",
+      "Underground",
+      "Monorail",
+      "Cable car",
+      "Hovercraft",
+      "Submarine",
+      "Rickshaw",
+      "Tuk-tuk",
+      "Camper van",
+      "Lorry",
+      "Van",
+      "Gondola",
+      "Sledge",
+      "Skis",
+      "Snowmobile",
+      "Yacht",
+      "Glider",
+      "Jet ski",
+      "Segway",
+      "Unicycle",
+      "Zip wire",
+      "Rowing boat",
+      "Paddleboard",
+      "Hitchhike",
+      "Horse and carriage",
+      "Camel",
+      "Narrowboat",
+      "Rocket",
+      "Funicular"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Walk": [
+        "walking",
+        "on foot"
+      ],
+      "Run": [
+        "running",
+        "jogging"
+      ],
+      "Cycle": [
+        "bike",
+        "bicycle",
+        "cycling"
+      ],
+      "Car": [
+        "drive",
+        "driving"
+      ],
+      "Aeroplane": [
+        "plane",
+        "airplane",
+        "fly",
+        "flying"
+      ],
+      "Motorbike": [
+        "motorcycle"
+      ],
+      "Underground": [
+        "tube",
+        "subway",
+        "metro"
+      ],
+      "Lorry": [
+        "truck"
+      ],
+      "Sledge": [
+        "sled",
+        "toboggan"
+      ],
+      "Camper van": [
+        "campervan",
+        "motorhome"
+      ],
+      "Hot-air balloon": [
+        "balloon",
+        "hot air balloon"
+      ],
+      "Skis": [
+        "ski",
+        "skiing"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-008",
+    "prompt": "Name things used for cleaning",
+    "answers": [
+      "Broom",
+      "Mop",
+      "Sponge",
+      "Cloth",
+      "Brush",
+      "Vacuum cleaner",
+      "Dustpan",
+      "Bucket",
+      "Duster",
+      "Feather duster",
+      "Scrubbing brush",
+      "Toilet brush",
+      "Squeegee",
+      "Rubber gloves",
+      "Bleach",
+      "Washing-up liquid",
+      "Furniture polish",
+      "Spray cleaner",
+      "Scourer",
+      "Wire wool",
+      "Kitchen roll",
+      "Wet wipes",
+      "Disinfectant",
+      "Carpet cleaner",
+      "Steam cleaner",
+      "Window cleaner",
+      "Washing powder",
+      "Fabric softener",
+      "Dishwasher tablet",
+      "Lint roller",
+      "Bin bags",
+      "Dish brush",
+      "Bottle brush",
+      "Limescale remover",
+      "Oven cleaner",
+      "Chamois",
+      "Microfibre cloth",
+      "Mop bucket",
+      "Handheld vacuum",
+      "Toilet cleaner",
+      "Old toothbrush",
+      "Soap"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Vacuum cleaner": [
+        "hoover",
+        "vacuum",
+        "hoovers"
+      ],
+      "Dustpan": [
+        "dustpan and brush"
+      ],
+      "Washing-up liquid": [
+        "washing up liquid",
+        "fairy liquid",
+        "dish soap"
+      ],
+      "Kitchen roll": [
+        "paper towels"
+      ],
+      "Wet wipes": [
+        "wipes",
+        "cleaning wipes"
+      ],
+      "Washing powder": [
+        "laundry detergent",
+        "detergent",
+        "washing liquid"
+      ],
+      "Chamois": [
+        "shammy",
+        "chamois leather"
+      ],
+      "Scourer": [
+        "scouring pad",
+        "brillo pad"
+      ],
+      "Spray cleaner": [
+        "surface spray",
+        "multi-surface spray"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-010",
+    "prompt": "Name musical instruments",
+    "answers": [
+      "Piano",
+      "Guitar",
+      "Violin",
+      "Flute",
+      "Trumpet",
+      "Drums",
+      "Clarinet",
+      "Trombone",
+      "Cello",
+      "Double bass",
+      "Viola",
+      "Harp",
+      "Saxophone",
+      "Oboe",
+      "Bassoon",
+      "French horn",
+      "Tuba",
+      "Cornet",
+      "Euphonium",
+      "Recorder",
+      "Piccolo",
+      "Harmonica",
+      "Accordion",
+      "Bagpipes",
+      "Banjo",
+      "Ukulele",
+      "Mandolin",
+      "Sitar",
+      "Xylophone",
+      "Glockenspiel",
+      "Triangle",
+      "Tambourine",
+      "Cymbals",
+      "Maracas",
+      "Bongos",
+      "Timpani",
+      "Organ",
+      "Keyboard",
+      "Synthesiser",
+      "Bass guitar",
+      "Electric guitar",
+      "Harpsichord",
+      "Lute",
+      "Tin whistle",
+      "Didgeridoo",
+      "Steel drum",
+      "Castanets",
+      "Kazoo",
+      "Marimba",
+      "Bodhrán",
+      "Fiddle",
+      "Ocarina",
+      "Pan pipes",
+      "Tabla"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Saxophone": [
+        "sax"
+      ],
+      "Drums": [
+        "drum kit",
+        "drum"
+      ],
+      "Synthesiser": [
+        "synthesizer",
+        "synth"
+      ],
+      "Double bass": [
+        "upright bass",
+        "contrabass"
+      ],
+      "Timpani": [
+        "kettle drums",
+        "kettledrum"
+      ],
+      "Bodhrán": [
+        "bodhran"
+      ],
+      "Pan pipes": [
+        "panpipes",
+        "pan flute"
+      ],
+      "Steel drum": [
+        "steel pan",
+        "steel drums"
+      ],
+      "Harmonica": [
+        "mouth organ"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-012",
+    "prompt": "Name fabrics or materials used to make clothes",
+    "answers": [
+      "Cotton",
+      "Wool",
+      "Linen",
+      "Silk",
+      "Denim",
+      "Leather",
+      "Polyester",
+      "Nylon",
+      "Velvet",
+      "Corduroy",
+      "Tweed",
+      "Cashmere",
+      "Fleece",
+      "Lycra",
+      "Satin",
+      "Chiffon",
+      "Lace",
+      "Suede",
+      "Viscose",
+      "Acrylic",
+      "Felt",
+      "Flannel",
+      "Jersey",
+      "Mohair",
+      "Angora",
+      "Alpaca",
+      "Merino",
+      "Hemp",
+      "Bamboo",
+      "Gore-Tex",
+      "PVC",
+      "Canvas",
+      "Chambray",
+      "Tulle",
+      "Organza",
+      "Taffeta",
+      "Crepe",
+      "Muslin",
+      "Poplin",
+      "Seersucker",
+      "Chenille",
+      "Terry towelling",
+      "Neoprene",
+      "Faux fur",
+      "Sheepskin",
+      "Fur",
+      "Gabardine",
+      "Calico",
+      "Jute"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Lycra": [
+        "spandex",
+        "elastane"
+      ],
+      "Viscose": [
+        "rayon"
+      ],
+      "Terry towelling": [
+        "towelling",
+        "terry cloth"
+      ],
+      "Gore-Tex": [
+        "goretex"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-013",
+    "prompt": "Name things found in a bathroom",
+    "answers": [
+      "Sink",
+      "Bath",
+      "Shower",
+      "Toilet",
+      "Towel",
+      "Mirror",
+      "Soap",
+      "Toothbrush",
+      "Toothpaste",
+      "Shampoo",
+      "Conditioner",
+      "Shower gel",
+      "Sponge",
+      "Flannel",
+      "Bath mat",
+      "Toilet roll",
+      "Toilet brush",
+      "Razor",
+      "Shaving foam",
+      "Deodorant",
+      "Hairbrush",
+      "Comb",
+      "Hairdryer",
+      "Bathroom cabinet",
+      "Tap",
+      "Plug",
+      "Shower curtain",
+      "Bathrobe",
+      "Bathroom scales",
+      "Bin",
+      "Laundry basket",
+      "Rubber duck",
+      "Cotton buds",
+      "Cotton wool",
+      "Mouthwash",
+      "Dental floss",
+      "Nail clippers",
+      "Bubble bath",
+      "Bath bomb",
+      "Towel rail",
+      "Extractor fan",
+      "Tiles",
+      "Loofah",
+      "Hand wash",
+      "Moisturiser",
+      "Tweezers",
+      "Bath toys",
+      "Electric toothbrush"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Sink": [
+        "basin",
+        "washbasin"
+      ],
+      "Toilet": [
+        "loo",
+        "lavatory",
+        "wc"
+      ],
+      "Toilet roll": [
+        "toilet paper",
+        "loo roll"
+      ],
+      "Flannel": [
+        "face cloth",
+        "facecloth",
+        "washcloth"
+      ],
+      "Bathrobe": [
+        "dressing gown",
+        "robe"
+      ],
+      "Bathroom cabinet": [
+        "cabinet",
+        "medicine cabinet"
+      ],
+      "Cotton buds": [
+        "q-tips",
+        "cotton swabs"
+      ],
+      "Dental floss": [
+        "floss"
+      ],
+      "Moisturiser": [
+        "moisturizer",
+        "cream",
+        "lotion"
+      ],
+      "Hand wash": [
+        "handwash",
+        "liquid soap"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-014",
+    "prompt": "Name parts of a bicycle",
+    "answers": [
+      "Handlebars",
+      "Pedals",
+      "Wheels",
+      "Chain",
+      "Saddle",
+      "Brakes",
+      "Bell",
+      "Tyres",
+      "Frame",
+      "Spokes",
+      "Gears",
+      "Derailleur",
+      "Cassette",
+      "Chainring",
+      "Crank",
+      "Inner tube",
+      "Valve",
+      "Rim",
+      "Hub",
+      "Fork",
+      "Headset",
+      "Stem",
+      "Seat post",
+      "Brake levers",
+      "Brake pads",
+      "Brake cable",
+      "Gear cable",
+      "Mudguard",
+      "Pannier rack",
+      "Kickstand",
+      "Lights",
+      "Reflector",
+      "Bottle cage",
+      "Grips",
+      "Quick release",
+      "Bottom bracket",
+      "Sprocket",
+      "Gear shifter",
+      "Suspension",
+      "Basket",
+      "Stabilisers",
+      "Freewheel",
+      "Disc brake",
+      "Top tube",
+      "Down tube"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Handlebars": [
+        "handlebar"
+      ],
+      "Pedals": [
+        "pedal"
+      ],
+      "Wheels": [
+        "wheel"
+      ],
+      "Saddle": [
+        "seat"
+      ],
+      "Brakes": [
+        "brake"
+      ],
+      "Tyres": [
+        "tyre",
+        "tires",
+        "tire"
+      ],
+      "Gears": [
+        "gear"
+      ],
+      "Mudguard": [
+        "mudguards",
+        "fender"
+      ],
+      "Pannier rack": [
+        "rack",
+        "carrier"
+      ],
+      "Kickstand": [
+        "stand"
+      ],
+      "Lights": [
+        "light",
+        "lamp"
+      ],
+      "Stabilisers": [
+        "stabilizers",
+        "training wheels"
+      ]
+    }
+  },
+  {
+    "id": "p6b4-bid-015",
+    "prompt": "Name pieces of sports equipment",
+    "answers": [
+      "Ball",
+      "Racket",
+      "Bat",
+      "Helmet",
+      "Net",
+      "Goal",
+      "Gloves",
+      "Whistle",
+      "Shin pads",
+      "Stumps",
+      "Bails",
+      "Hockey stick",
+      "Golf club",
+      "Golf tee",
+      "Puck",
+      "Ice skates",
+      "Skis",
+      "Ski poles",
+      "Snowboard",
+      "Surfboard",
+      "Paddle",
+      "Oar",
+      "Javelin",
+      "Discus",
+      "Shot put",
+      "Hammer",
+      "Hurdles",
+      "Starting blocks",
+      "Relay baton",
+      "Vaulting pole",
+      "Gym mat",
+      "Trampoline",
+      "Gymnastic rings",
+      "Balance beam",
+      "Pommel horse",
+      "Dumbbell",
+      "Barbell",
+      "Kettlebell",
+      "Skipping rope",
+      "Shuttlecock",
+      "Frisbee",
+      "Snooker cue",
+      "Darts",
+      "Dartboard",
+      "Bow",
+      "Arrow",
+      "Archery target",
+      "Gum shield",
+      "Boxing gloves",
+      "Punchbag",
+      "Swimming goggles",
+      "Swim cap",
+      "Float",
+      "Corner flag",
+      "Scoreboard",
+      "Stopwatch",
+      "Cones"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Racket": [
+        "racquet",
+        "tennis racket",
+        "badminton racket"
+      ],
+      "Shin pads": [
+        "shin guards"
+      ],
+      "Golf club": [
+        "club",
+        "golf clubs"
+      ],
+      "Shot put": [
+        "shot"
+      ],
+      "Relay baton": [
+        "baton"
+      ],
+      "Vaulting pole": [
+        "pole"
+      ],
+      "Snooker cue": [
+        "cue",
+        "pool cue"
+      ],
+      "Gum shield": [
+        "mouthguard",
+        "mouth guard"
+      ],
+      "Punchbag": [
+        "punching bag",
+        "punch bag"
+      ],
+      "Swimming goggles": [
+        "goggles"
+      ],
+      "Swim cap": [
+        "swimming cap"
+      ],
+      "Dumbbell": [
+        "dumbbells",
+        "weights"
+      ]
+    }
+  },
+  {
+    "id": "p6b6-bid-002",
+    "prompt": "Name things you might take camping",
+    "answers": [
+      "Tent",
+      "Sleeping bag",
+      "Torch",
+      "Water bottle",
+      "Camping stove",
+      "Rucksack",
+      "Groundsheet",
+      "Map",
+      "Compass",
+      "Tent pegs",
+      "Mallet",
+      "Roll mat",
+      "Air bed",
+      "Pillow",
+      "Lantern",
+      "Head torch",
+      "Matches",
+      "Lighter",
+      "Kettle",
+      "Saucepan",
+      "Mess tin",
+      "Cutlery",
+      "Plates",
+      "Mug",
+      "Cool box",
+      "Folding chair",
+      "Camping table",
+      "Windbreak",
+      "Waterproof jacket",
+      "Wellies",
+      "Walking boots",
+      "First-aid kit",
+      "Insect repellent",
+      "Sun cream",
+      "Toilet roll",
+      "Trowel",
+      "Bin bags",
+      "Penknife",
+      "Rope",
+      "Tarpaulin",
+      "Hammock",
+      "Gas canister",
+      "Batteries",
+      "Power bank",
+      "Washing-up bowl",
+      "Towel",
+      "Toothbrush",
+      "Marshmallows",
+      "Firewood",
+      "Playing cards"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Torch": [
+        "flashlight"
+      ],
+      "Rucksack": [
+        "backpack"
+      ],
+      "Roll mat": [
+        "sleeping mat",
+        "camping mat"
+      ],
+      "Air bed": [
+        "airbed",
+        "air mattress",
+        "lilo"
+      ],
+      "Cool box": [
+        "cooler",
+        "cool bag"
+      ],
+      "Insect repellent": [
+        "bug spray",
+        "midge repellent"
+      ],
+      "Sun cream": [
+        "sunscreen",
+        "suncream"
+      ],
+      "Penknife": [
+        "pocket knife",
+        "swiss army knife"
+      ],
+      "Head torch": [
+        "headlamp"
+      ],
+      "Tarpaulin": [
+        "tarp"
+      ],
+      "Power bank": [
+        "portable charger",
+        "charger"
+      ]
+    }
+  },
+  {
+    "id": "p6b6-bid-003",
+    "prompt": "Name types of hat",
+    "answers": [
+      "Beret",
+      "Bowler",
+      "Fedora",
+      "Beanie",
+      "Sombrero",
+      "Top hat",
+      "Panama",
+      "Bucket hat",
+      "Baseball cap",
+      "Flat cap",
+      "Trilby",
+      "Deerstalker",
+      "Stetson",
+      "Boater",
+      "Fez",
+      "Balaclava",
+      "Bobble hat",
+      "Sun hat",
+      "Cloche",
+      "Pillbox",
+      "Tam o’ shanter",
+      "Glengarry",
+      "Busby",
+      "Bearskin",
+      "Hard hat",
+      "Crown",
+      "Tiara",
+      "Mortarboard",
+      "Chef’s hat",
+      "Party hat",
+      "Witch’s hat",
+      "Tricorn",
+      "Bicorne",
+      "Trapper hat",
+      "Snapback",
+      "Visor",
+      "Fascinator",
+      "Homburg",
+      "Pork pie",
+      "Straw hat",
+      "Sou’wester",
+      "Jester’s hat",
+      "Nightcap",
+      "Swimming cap",
+      "Bonnet",
+      "Conical hat",
+      "Helmet",
+      "Cowboy hat",
+      "Bush hat"
+    ],
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Stetson": [
+        "ten-gallon hat"
+      ],
+      "Bowler": [
+        "bowler hat",
+        "derby"
+      ],
+      "Bobble hat": [
+        "pom pom hat",
+        "woolly hat"
+      ],
+      "Tam o’ shanter": [
+        "tam o shanter",
+        "tam"
+      ],
+      "Chef’s hat": [
+        "chefs hat",
+        "toque"
+      ],
+      "Witch’s hat": [
+        "witches hat",
+        "witch hat"
+      ],
+      "Tricorn": [
+        "tricorne",
+        "pirate hat"
+      ],
+      "Trapper hat": [
+        "ushanka"
+      ],
+      "Pork pie": [
+        "porkpie",
+        "pork pie hat"
+      ],
+      "Sou’wester": [
+        "souwester"
+      ],
+      "Jester’s hat": [
+        "jester hat"
+      ],
+      "Mortarboard": [
+        "graduation cap"
+      ],
+      "Visor": [
+        "sun visor"
+      ],
+      "Baseball cap": [
+        "cap"
+      ]
+    }
+  },
+  {
+    "id": "p6b6-bid-004",
+    "prompt": "Name tools or kit a gardener might use",
+    "answers": [
+      "Spade",
+      "Rake",
+      "Hoe",
+      "Trowel",
+      "Watering can",
+      "Secateurs",
+      "Gardening gloves",
+      "Wheelbarrow",
+      "Garden fork",
+      "Hand fork",
+      "Shears",
+      "Loppers",
+      "Hedge trimmer",
+      "Lawnmower",
+      "Strimmer",
+      "Leaf blower",
+      "Hose",
+      "Sprinkler",
+      "Dibber",
+      "Kneeler",
+      "Pruning saw",
+      "Edging iron",
+      "Bulb planter",
+      "Rotavator",
+      "Compost bin",
+      "Plant pots",
+      "Seed trays",
+      "Bamboo canes",
+      "Garden twine",
+      "Plant labels",
+      "Garden sieve",
+      "Besom broom",
+      "Leaf rake",
+      "Scarifier",
+      "Lawn aerator",
+      "Wellies",
+      "Propagator",
+      "Cloche",
+      "Netting",
+      "Horticultural fleece",
+      "Garden line",
+      "Seeds",
+      "Compost",
+      "Fertiliser",
+      "Ladder",
+      "Weed killer",
+      "Shed"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Gardening gloves": [
+        "gloves"
+      ],
+      "Wheelbarrow": [
+        "barrow"
+      ],
+      "Garden fork": [
+        "fork"
+      ],
+      "Lawnmower": [
+        "mower",
+        "lawn mower"
+      ],
+      "Strimmer": [
+        "weed whacker",
+        "line trimmer"
+      ],
+      "Hose": [
+        "hosepipe",
+        "garden hose"
+      ],
+      "Dibber": [
+        "dibble"
+      ],
+      "Edging iron": [
+        "half-moon edger",
+        "edger"
+      ],
+      "Rotavator": [
+        "rotovator",
+        "tiller",
+        "cultivator"
+      ],
+      "Fertiliser": [
+        "fertilizer",
+        "plant food",
+        "feed"
+      ],
+      "Plant pots": [
+        "pots",
+        "flower pots"
+      ],
+      "Bamboo canes": [
+        "canes"
+      ],
+      "Garden twine": [
+        "twine",
+        "string"
+      ]
+    }
+  },
+  {
+    "id": "p6b6-bid-005",
+    "prompt": "Name tools or things found in a workshop",
+    "answers": [
+      "Hammer",
+      "Screwdriver",
+      "Spanner",
+      "Saw",
+      "Vice",
+      "Drill",
+      "Pliers",
+      "Tape measure",
+      "Chisel",
+      "Plane",
+      "Mallet",
+      "Clamp",
+      "File",
+      "Rasp",
+      "Sandpaper",
+      "Electric sander",
+      "Jigsaw",
+      "Circular saw",
+      "Workbench",
+      "Spirit level",
+      "Try square",
+      "Nails",
+      "Screws",
+      "Bolts",
+      "Nuts",
+      "Washers",
+      "Wood glue",
+      "Timber",
+      "Pencil",
+      "Safety goggles",
+      "Ear defenders",
+      "Work gloves",
+      "Toolbox",
+      "Socket set",
+      "Allen keys",
+      "Crowbar",
+      "Hacksaw",
+      "Soldering iron",
+      "Angle grinder",
+      "Router",
+      "Lathe",
+      "Craft knife",
+      "Staple gun",
+      "Paint",
+      "Paintbrush",
+      "Wire cutters",
+      "Stepladder",
+      "Extension lead",
+      "Marking gauge",
+      "Handsaw",
+      "Bench grinder",
+      "Mitre saw"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Spanner": [
+        "wrench",
+        "adjustable spanner"
+      ],
+      "Drill": [
+        "power drill",
+        "electric drill",
+        "cordless drill"
+      ],
+      "Tape measure": [
+        "measuring tape"
+      ],
+      "Clamp": [
+        "clamps",
+        "g-clamp"
+      ],
+      "Electric sander": [
+        "sander"
+      ],
+      "Spirit level": [
+        "level"
+      ],
+      "Safety goggles": [
+        "goggles",
+        "safety glasses"
+      ],
+      "Ear defenders": [
+        "ear muffs",
+        "ear protectors"
+      ],
+      "Allen keys": [
+        "allen key",
+        "hex key"
+      ],
+      "Crowbar": [
+        "jemmy",
+        "pry bar"
+      ],
+      "Craft knife": [
+        "stanley knife",
+        "utility knife"
+      ],
+      "Angle grinder": [
+        "grinder"
+      ],
+      "Wood glue": [
+        "glue"
+      ],
+      "Timber": [
+        "wood"
+      ]
+    }
+  },
+  {
+    "id": "p6final-bid-004",
+    "prompt": "Name types of bread",
+    "answers": [
+      "Baguette",
+      "Ciabatta",
+      "Focaccia",
+      "Brioche",
+      "Pitta",
+      "Sourdough",
+      "Naan",
+      "Bagel",
+      "Bloomer",
+      "Cob",
+      "Tin loaf",
+      "Farmhouse loaf",
+      "Wholemeal",
+      "Granary",
+      "Rye bread",
+      "Pumpernickel",
+      "Soda bread",
+      "Cornbread",
+      "Chapati",
+      "Roti",
+      "Paratha",
+      "Tortilla",
+      "Crumpet",
+      "English muffin",
+      "Teacake",
+      "Bap",
+      "Barm cake",
+      "Stottie",
+      "Challah",
+      "Panettone",
+      "Croissant",
+      "Pain au chocolat",
+      "Matzo",
+      "Flatbread",
+      "Lavash",
+      "Injera",
+      "Malt loaf",
+      "Fruit loaf",
+      "Brown bread",
+      "White bread",
+      "Seeded loaf",
+      "Spelt bread",
+      "Milk loaf",
+      "Bread roll",
+      "Breadsticks",
+      "Pretzel",
+      "Potato farl",
+      "Stollen",
+      "Cottage loaf",
+      "Split tin"
+    ],
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Naan": [
+        "nan"
+      ],
+      "Pitta": [
+        "pita",
+        "pita bread",
+        "pitta bread"
+      ],
+      "Wholemeal": [
+        "wholewheat",
+        "whole wheat"
+      ],
+      "Granary": [
+        "granary loaf"
+      ],
+      "Chapati": [
+        "chapatti"
+      ],
+      "Bread roll": [
+        "roll",
+        "rolls",
+        "batch"
+      ],
+      "Breadsticks": [
+        "grissini"
+      ],
+      "Potato farl": [
+        "potato bread",
+        "farl",
+        "tattie scone"
+      ],
+      "Barm cake": [
+        "barm",
+        "oven bottom"
+      ],
+      "Matzo": [
+        "matzah",
+        "matzoh"
+      ]
+    }
+  },
+  {
+    "id": "p6final-bid-009",
+    "prompt": "Name types of dance",
+    "answers": [
+      "Waltz",
+      "Tango",
+      "Salsa",
+      "Ballet",
+      "Tap",
+      "Foxtrot",
+      "Flamenco",
+      "Breakdance",
+      "Quickstep",
+      "Cha-cha",
+      "Rumba",
+      "Samba",
+      "Jive",
+      "Paso doble",
+      "Viennese waltz",
+      "Charleston",
+      "Jitterbug",
+      "Lindy hop",
+      "Swing",
+      "Hip hop",
+      "Jazz",
+      "Contemporary",
+      "Street dance",
+      "Irish dancing",
+      "Ceilidh",
+      "Scottish country dancing",
+      "Morris dancing",
+      "Line dancing",
+      "Square dancing",
+      "Barn dance",
+      "Bachata",
+      "Merengue",
+      "Zumba",
+      "Belly dancing",
+      "Bhangra",
+      "Kathak",
+      "Bollywood",
+      "Can-can",
+      "Conga",
+      "Limbo",
+      "Macarena",
+      "The twist",
+      "Disco",
+      "Polka",
+      "Mambo",
+      "Maypole dancing",
+      "Clog dancing",
+      "Highland fling",
+      "Krumping",
+      "Voguing",
+      "Cossack dance"
+    ],
+    "review": true,
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Breakdance": [
+        "breakdancing",
+        "breaking"
+      ],
+      "Cha-cha": [
+        "cha cha cha",
+        "cha cha"
+      ],
+      "Hip hop": [
+        "hiphop"
+      ],
+      "Irish dancing": [
+        "riverdance",
+        "irish dance"
+      ],
+      "Morris dancing": [
+        "morris"
+      ],
+      "Line dancing": [
+        "line dance"
+      ],
+      "Belly dancing": [
+        "belly dance"
+      ],
+      "Highland fling": [
+        "highland dancing"
+      ]
+    }
+  },
+  {
+    "id": "p6final-bid-014",
+    "prompt": "Name things people wear in cold weather",
+    "answers": [
+      "Coat",
+      "Scarf",
+      "Woolly hat",
+      "Gloves",
+      "Boots",
+      "Jumper",
+      "Thick socks",
+      "Earmuffs",
+      "Mittens",
+      "Thermal vest",
+      "Long johns",
+      "Fleece",
+      "Cardigan",
+      "Hoodie",
+      "Parka",
+      "Puffer jacket",
+      "Anorak",
+      "Duffle coat",
+      "Overcoat",
+      "Snood",
+      "Balaclava",
+      "Ski jacket",
+      "Salopettes",
+      "Snow boots",
+      "Wellies",
+      "Leg warmers",
+      "Poncho",
+      "Gilet",
+      "Polo neck",
+      "Woolly tights",
+      "Thermal leggings",
+      "Hand warmers",
+      "Trench coat",
+      "Pea coat",
+      "Neck warmer",
+      "Bobble hat",
+      "Trapper hat",
+      "Waterproof trousers",
+      "Base layer",
+      "Shawl",
+      "Furry slippers",
+      "Onesie"
+    ],
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Jumper": [
+        "sweater",
+        "pullover",
+        "jersey"
+      ],
+      "Woolly hat": [
+        "hat",
+        "beanie"
+      ],
+      "Thermal vest": [
+        "thermals",
+        "thermal"
+      ],
+      "Gilet": [
+        "body warmer",
+        "bodywarmer"
+      ],
+      "Polo neck": [
+        "turtleneck",
+        "roll neck"
+      ],
+      "Puffer jacket": [
+        "puffa jacket",
+        "puffer",
+        "down jacket"
+      ],
+      "Salopettes": [
+        "ski trousers",
+        "ski pants"
+      ],
+      "Snood": [
+        "neck warmer snood"
+      ],
+      "Hoodie": [
+        "hooded top",
+        "hoody"
+      ]
+    }
   },
   {
     "id": "p6final-bid-028",
-    "prompt": "Name eight types of pasta",
+    "prompt": "Name types of pasta",
     "answers": [
       "Penne",
       "Fusilli",
@@ -1597,159 +3082,1531 @@
       "Macaroni",
       "Linguine",
       "Tagliatelle",
-      "Spaghetti"
+      "Spaghetti",
+      "Lasagne",
+      "Ravioli",
+      "Tortellini",
+      "Cannelloni",
+      "Orzo",
+      "Conchiglie",
+      "Gnocchi",
+      "Fettuccine",
+      "Pappardelle",
+      "Orecchiette",
+      "Cavatappi",
+      "Ziti",
+      "Bucatini",
+      "Vermicelli",
+      "Capellini",
+      "Rotini",
+      "Campanelle",
+      "Ditalini",
+      "Paccheri",
+      "Gemelli",
+      "Radiatori",
+      "Ruote",
+      "Stelline",
+      "Alphabet pasta",
+      "Tortelloni",
+      "Agnolotti",
+      "Mafalde",
+      "Trofie",
+      "Strozzapreti",
+      "Casarecce",
+      "Lumaconi",
+      "Manicotti",
+      "Cappelletti",
+      "Anelli",
+      "Spaghettini",
+      "Fregola",
+      "Tagliolini"
     ],
     "review": true,
-    "editorialStatus": "reworked-pending-source-review"
-  },
-  {
-    "id": "p6final-bid-029",
-    "prompt": "Name things on a boat",
-    "answers": [
-      "anchor",
-      "rope",
-      "sail",
-      "mast",
-      "deck",
-      "rudder",
-      "cabin",
-      "lifejacket"
-    ],
-    "review": true
-  },
-  {
-    "id": "p6final-bid-030",
-    "prompt": "Name things at a wedding",
-    "answers": [
-      "rings",
-      "cake",
-      "flowers",
-      "guests",
-      "music",
-      "invitations",
-      "tablecloth",
-      "photographer"
-    ],
-    "review": true
+    "editorialStatus": "review-pending",
+    "kind": "open",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Lasagne": [
+        "lasagna"
+      ],
+      "Farfalle": [
+        "bow ties",
+        "bows"
+      ],
+      "Conchiglie": [
+        "shells",
+        "pasta shells"
+      ],
+      "Capellini": [
+        "angel hair"
+      ],
+      "Ruote": [
+        "wheels",
+        "cartwheels"
+      ],
+      "Fettuccine": [
+        "fettucine"
+      ],
+      "Fusilli": [
+        "twists",
+        "spirals"
+      ]
+    }
   },
   {
     "id": "p6final-bid-031",
-    "prompt": "Name objects used in a science lab",
+    "prompt": "Name objects used in a school science lab",
     "answers": [
-      "beaker",
-      "flask",
-      "pipette",
-      "microscope",
-      "goggles",
-      "gloves",
-      "funnel",
-      "thermometer"
+      "Beaker",
+      "Flask",
+      "Pipette",
+      "Microscope",
+      "Safety goggles",
+      "Gloves",
+      "Funnel",
+      "Thermometer",
+      "Test tube",
+      "Test-tube rack",
+      "Bunsen burner",
+      "Tripod",
+      "Gauze",
+      "Heatproof mat",
+      "Measuring cylinder",
+      "Burette",
+      "Conical flask",
+      "Evaporating dish",
+      "Crucible",
+      "Tongs",
+      "Spatula",
+      "Stirring rod",
+      "Filter paper",
+      "Petri dish",
+      "Microscope slide",
+      "Balance",
+      "Stopwatch",
+      "Lab coat",
+      "Clamp stand",
+      "Magnet",
+      "Battery",
+      "Wires",
+      "Ammeter",
+      "Voltmeter",
+      "Pestle and mortar",
+      "Watch glass",
+      "Dropper",
+      "Syringe",
+      "Centrifuge",
+      "Fume cupboard",
+      "Condenser",
+      "Litmus paper",
+      "Splint",
+      "Boiling tube",
+      "Spirit burner",
+      "Light gate"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Safety goggles": [
+        "goggles",
+        "safety glasses"
+      ],
+      "Measuring cylinder": [
+        "graduated cylinder"
+      ],
+      "Stirring rod": [
+        "glass rod"
+      ],
+      "Balance": [
+        "scales",
+        "electronic balance"
+      ],
+      "Clamp stand": [
+        "retort stand",
+        "boss and clamp"
+      ],
+      "Heatproof mat": [
+        "heat mat",
+        "heat-proof mat"
+      ],
+      "Dropper": [
+        "dropping pipette"
+      ],
+      "Fume cupboard": [
+        "fume hood"
+      ],
+      "Battery": [
+        "power pack",
+        "cell"
+      ]
+    }
   },
   {
     "id": "p6final-bid-032",
-    "prompt": "Name garden birds in Britain",
+    "prompt": "Name birds you might see in a British garden",
     "answers": [
-      "robin",
-      "blackbird",
-      "sparrow",
-      "starling",
-      "finch",
-      "magpie",
-      "crow",
-      "pigeon"
+      "Robin",
+      "Blackbird",
+      "House sparrow",
+      "Starling",
+      "Chaffinch",
+      "Goldfinch",
+      "Greenfinch",
+      "Bullfinch",
+      "Magpie",
+      "Carrion crow",
+      "Woodpigeon",
+      "Blue tit",
+      "Great tit",
+      "Coal tit",
+      "Long-tailed tit",
+      "Wren",
+      "Dunnock",
+      "Song thrush",
+      "Mistle thrush",
+      "Collared dove",
+      "Jackdaw",
+      "Jay",
+      "Rook",
+      "Great spotted woodpecker",
+      "Green woodpecker",
+      "Nuthatch",
+      "Treecreeper",
+      "Siskin",
+      "Redwing",
+      "Fieldfare",
+      "Blackcap",
+      "Chiffchaff",
+      "House martin",
+      "Swallow",
+      "Swift",
+      "Pied wagtail",
+      "Grey wagtail",
+      "Goldcrest",
+      "Sparrowhawk",
+      "Tawny owl",
+      "Barn owl",
+      "Kestrel",
+      "Pheasant",
+      "Grey heron",
+      "Herring gull",
+      "Waxwing",
+      "Brambling",
+      "Linnet",
+      "Yellowhammer",
+      "Red kite",
+      "Feral pigeon"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "House sparrow": [
+        "sparrow"
+      ],
+      "Carrion crow": [
+        "crow"
+      ],
+      "Woodpigeon": [
+        "wood pigeon",
+        "pigeon"
+      ],
+      "Feral pigeon": [
+        "town pigeon",
+        "rock dove"
+      ],
+      "Great spotted woodpecker": [
+        "woodpecker"
+      ],
+      "Herring gull": [
+        "seagull",
+        "gull"
+      ],
+      "Grey heron": [
+        "heron"
+      ],
+      "Dunnock": [
+        "hedge sparrow"
+      ],
+      "Song thrush": [
+        "thrush"
+      ]
+    }
   },
   {
     "id": "p6final-bid-033",
     "prompt": "Name types of fruit",
     "answers": [
-      "apple",
-      "pear",
-      "banana",
-      "orange",
-      "peach",
-      "mango",
-      "plum",
-      "grape"
+      "Apple",
+      "Pear",
+      "Banana",
+      "Orange",
+      "Peach",
+      "Mango",
+      "Plum",
+      "Grape",
+      "Strawberry",
+      "Raspberry",
+      "Blackberry",
+      "Blueberry",
+      "Cherry",
+      "Lemon",
+      "Lime",
+      "Grapefruit",
+      "Pineapple",
+      "Watermelon",
+      "Melon",
+      "Kiwi",
+      "Apricot",
+      "Nectarine",
+      "Fig",
+      "Date",
+      "Pomegranate",
+      "Papaya",
+      "Passion fruit",
+      "Lychee",
+      "Coconut",
+      "Cranberry",
+      "Gooseberry",
+      "Blackcurrant",
+      "Redcurrant",
+      "Clementine",
+      "Satsuma",
+      "Tangerine",
+      "Kumquat",
+      "Guava",
+      "Dragon fruit",
+      "Star fruit",
+      "Persimmon",
+      "Quince",
+      "Damson",
+      "Greengage",
+      "Rhubarb",
+      "Avocado",
+      "Tomato",
+      "Olive",
+      "Elderberry",
+      "Mulberry",
+      "Loganberry",
+      "Physalis",
+      "Durian",
+      "Jackfruit"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Kiwi": [
+        "kiwi fruit",
+        "kiwifruit"
+      ],
+      "Melon": [
+        "cantaloupe",
+        "honeydew",
+        "galia"
+      ],
+      "Passion fruit": [
+        "passionfruit"
+      ],
+      "Lychee": [
+        "litchi"
+      ],
+      "Star fruit": [
+        "carambola"
+      ],
+      "Persimmon": [
+        "sharon fruit"
+      ],
+      "Physalis": [
+        "cape gooseberry"
+      ]
+    }
   },
   {
     "id": "p6final-bid-034",
-    "prompt": "Name different vegetables",
+    "prompt": "Name vegetables",
     "answers": [
-      "carrot",
-      "potato",
-      "cabbage",
-      "leek",
-      "pea",
-      "onion",
-      "beetroot",
-      "parsnip"
+      "Carrot",
+      "Potato",
+      "Cabbage",
+      "Leek",
+      "Pea",
+      "Onion",
+      "Beetroot",
+      "Parsnip",
+      "Turnip",
+      "Swede",
+      "Broccoli",
+      "Cauliflower",
+      "Brussels sprout",
+      "Spinach",
+      "Lettuce",
+      "Cucumber",
+      "Courgette",
+      "Aubergine",
+      "Pepper",
+      "Sweetcorn",
+      "Green bean",
+      "Runner bean",
+      "Broad bean",
+      "Celery",
+      "Asparagus",
+      "Kale",
+      "Radish",
+      "Garlic",
+      "Spring onion",
+      "Shallot",
+      "Mushroom",
+      "Butternut squash",
+      "Pumpkin",
+      "Marrow",
+      "Sweet potato",
+      "Celeriac",
+      "Fennel",
+      "Artichoke",
+      "Okra",
+      "Pak choi",
+      "Chard",
+      "Watercress",
+      "Rocket",
+      "Mangetout",
+      "Sugar snap pea",
+      "Chilli",
+      "Kohlrabi",
+      "Jerusalem artichoke",
+      "Yam",
+      "Cassava",
+      "Bean sprouts",
+      "Red cabbage"
     ],
-    "review": true
+    "review": true,
+    "kind": "open",
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Courgette": [
+        "zucchini"
+      ],
+      "Aubergine": [
+        "eggplant"
+      ],
+      "Pepper": [
+        "bell pepper",
+        "capsicum",
+        "red pepper",
+        "green pepper"
+      ],
+      "Sweetcorn": [
+        "corn",
+        "corn on the cob",
+        "maize"
+      ],
+      "Swede": [
+        "rutabaga",
+        "neep"
+      ],
+      "Spring onion": [
+        "scallion",
+        "green onion"
+      ],
+      "Brussels sprout": [
+        "sprouts",
+        "brussel sprouts",
+        "sprout"
+      ],
+      "Green bean": [
+        "french bean"
+      ],
+      "Rocket": [
+        "arugula"
+      ],
+      "Chilli": [
+        "chili",
+        "chilli pepper"
+      ],
+      "Pak choi": [
+        "bok choy"
+      ],
+      "Chard": [
+        "swiss chard"
+      ],
+      "Pea": [
+        "peas",
+        "garden pea"
+      ],
+      "Potato": [
+        "spud",
+        "potatoes"
+      ]
+    }
   },
   {
-    "id": "p6final-bid-035",
-    "prompt": "Name things in a toolbox",
+    "id": "v35-bid-001",
+    "prompt": "Name London Underground lines",
     "answers": [
-      "hammer",
-      "saw",
-      "pliers",
-      "screwdriver",
-      "drill",
-      "wrench",
-      "level",
-      "tape"
+      "Bakerloo",
+      "Central",
+      "Circle",
+      "District",
+      "Hammersmith & City",
+      "Jubilee",
+      "Metropolitan",
+      "Northern",
+      "Piccadilly",
+      "Victoria",
+      "Waterloo & City"
     ],
-    "review": true
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Hammersmith & City": [
+        "hammersmith and city"
+      ],
+      "Waterloo & City": [
+        "waterloo and city",
+        "the drain"
+      ]
+    }
   },
   {
-    "id": "p6final-bid-036",
-    "prompt": "Name things you might find at a fair",
+    "id": "v35-bid-002",
+    "prompt": "Name the twelve signs of the Western zodiac",
     "answers": [
-      "rides",
-      "stalls",
-      "prizes",
-      "tickets",
-      "candyfloss",
-      "lights",
-      "music",
-      "balloons"
+      "Aries",
+      "Taurus",
+      "Gemini",
+      "Cancer",
+      "Leo",
+      "Virgo",
+      "Libra",
+      "Scorpio",
+      "Sagittarius",
+      "Capricorn",
+      "Aquarius",
+      "Pisces"
     ],
-    "review": true
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
   },
   {
-    "id": "p6final-bid-037",
-    "prompt": "Name eight places, objects or facilities commonly associated with an airport",
+    "id": "v35-bid-003",
+    "prompt": "Name the nine rooms on the classic Cluedo board",
     "answers": [
-      "Runway",
-      "Terminal",
-      "Gate",
-      "Luggage",
-      "Passport",
-      "Check-in",
-      "Trolley",
-      "Aircraft"
+      "Kitchen",
+      "Ballroom",
+      "Conservatory",
+      "Dining Room",
+      "Billiard Room",
+      "Library",
+      "Lounge",
+      "Hall",
+      "Study"
     ],
-    "review": true
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
   },
   {
-    "id": "p6final-bid-038",
-    "prompt": "Name eight parts of a bicycle",
+    "id": "v35-bid-004",
+    "prompt": "Name the six suspects in classic Cluedo",
     "answers": [
-      "wheel",
-      "saddle",
-      "pedal",
-      "chain",
-      "handlebar",
-      "brake",
-      "frame",
-      "bell"
+      "Miss Scarlett",
+      "Colonel Mustard",
+      "Mrs White",
+      "Reverend Green",
+      "Mrs Peacock",
+      "Professor Plum"
     ],
-    "review": true
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Miss Scarlett": [
+        "scarlett",
+        "miss scarlet"
+      ],
+      "Colonel Mustard": [
+        "mustard"
+      ],
+      "Mrs White": [
+        "white"
+      ],
+      "Reverend Green": [
+        "green",
+        "reverend",
+        "mr green",
+        "rev green"
+      ],
+      "Mrs Peacock": [
+        "peacock"
+      ],
+      "Professor Plum": [
+        "plum",
+        "prof plum"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-005",
+    "prompt": "Name the six counties of Northern Ireland",
+    "answers": [
+      "Antrim",
+      "Armagh",
+      "Down",
+      "Fermanagh",
+      "Londonderry",
+      "Tyrone"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Londonderry": [
+        "derry",
+        "county derry"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-006",
+    "prompt": "Name the countries that share a land border with Germany",
+    "answers": [
+      "Denmark",
+      "Poland",
+      "Czechia",
+      "Austria",
+      "Switzerland",
+      "France",
+      "Luxembourg",
+      "Belgium",
+      "Netherlands"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Czechia": [
+        "czech republic"
+      ],
+      "Netherlands": [
+        "holland",
+        "the netherlands"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-007",
+    "prompt": "Name the countries that share a land border with mainland France",
+    "answers": [
+      "Belgium",
+      "Luxembourg",
+      "Germany",
+      "Switzerland",
+      "Italy",
+      "Monaco",
+      "Spain",
+      "Andorra"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "v35-bid-008",
+    "prompt": "Name the Seven Wonders of the Ancient World",
+    "answers": [
+      "Great Pyramid of Giza",
+      "Hanging Gardens of Babylon",
+      "Statue of Zeus at Olympia",
+      "Temple of Artemis at Ephesus",
+      "Mausoleum at Halicarnassus",
+      "Colossus of Rhodes",
+      "Lighthouse of Alexandria"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Great Pyramid of Giza": [
+        "great pyramid",
+        "pyramids",
+        "pyramid of giza",
+        "pyramids of giza"
+      ],
+      "Hanging Gardens of Babylon": [
+        "hanging gardens"
+      ],
+      "Statue of Zeus at Olympia": [
+        "statue of zeus"
+      ],
+      "Temple of Artemis at Ephesus": [
+        "temple of artemis"
+      ],
+      "Mausoleum at Halicarnassus": [
+        "mausoleum"
+      ],
+      "Colossus of Rhodes": [
+        "colossus"
+      ],
+      "Lighthouse of Alexandria": [
+        "pharos",
+        "pharos of alexandria",
+        "lighthouse"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-009",
+    "prompt": "Name the twelve independent countries of South America",
+    "answers": [
+      "Argentina",
+      "Bolivia",
+      "Brazil",
+      "Chile",
+      "Colombia",
+      "Ecuador",
+      "Guyana",
+      "Paraguay",
+      "Peru",
+      "Suriname",
+      "Uruguay",
+      "Venezuela"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "v35-bid-010",
+    "prompt": "Name the eight places in Scotland with city status",
+    "answers": [
+      "Aberdeen",
+      "Dundee",
+      "Dunfermline",
+      "Edinburgh",
+      "Glasgow",
+      "Inverness",
+      "Perth",
+      "Stirling"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "v35-bid-011",
+    "prompt": "Name the seven places in Wales with city status",
+    "answers": [
+      "Bangor",
+      "Cardiff",
+      "Newport",
+      "St Asaph",
+      "St Davids",
+      "Swansea",
+      "Wrexham"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "St Asaph": [
+        "saint asaph"
+      ],
+      "St Davids": [
+        "saint davids",
+        "st david’s"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-012",
+    "prompt": "Name plays by William Shakespeare",
+    "answers": [
+      "Hamlet",
+      "Macbeth",
+      "Othello",
+      "King Lear",
+      "Romeo and Juliet",
+      "A Midsummer Night’s Dream",
+      "The Tempest",
+      "Twelfth Night",
+      "Much Ado About Nothing",
+      "As You Like It",
+      "The Merchant of Venice",
+      "Julius Caesar",
+      "Antony and Cleopatra",
+      "The Taming of the Shrew",
+      "The Winter’s Tale",
+      "Richard III",
+      "Richard II",
+      "Henry V",
+      "Henry IV Part 1",
+      "Henry IV Part 2",
+      "Henry VI Part 1",
+      "Henry VI Part 2",
+      "Henry VI Part 3",
+      "Henry VIII",
+      "King John",
+      "Coriolanus",
+      "Titus Andronicus",
+      "Timon of Athens",
+      "Troilus and Cressida",
+      "Cymbeline",
+      "Pericles",
+      "Measure for Measure",
+      "All’s Well That Ends Well",
+      "The Comedy of Errors",
+      "The Two Gentlemen of Verona",
+      "Love’s Labour’s Lost",
+      "The Merry Wives of Windsor",
+      "The Two Noble Kinsmen"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "A Midsummer Night’s Dream": [
+        "midsummer nights dream",
+        "a midsummer nights dream"
+      ],
+      "The Tempest": [
+        "tempest"
+      ],
+      "Much Ado About Nothing": [
+        "much ado"
+      ],
+      "The Merchant of Venice": [
+        "merchant of venice"
+      ],
+      "The Taming of the Shrew": [
+        "taming of the shrew"
+      ],
+      "The Winter’s Tale": [
+        "winters tale",
+        "the winters tale"
+      ],
+      "Henry IV Part 1": [
+        "henry iv",
+        "henry the fourth"
+      ],
+      "Henry VI Part 1": [
+        "henry vi",
+        "henry the sixth"
+      ],
+      "Henry V": [
+        "henry the fifth"
+      ],
+      "Henry VIII": [
+        "henry the eighth"
+      ],
+      "Richard III": [
+        "richard the third"
+      ],
+      "Richard II": [
+        "richard the second"
+      ],
+      "The Comedy of Errors": [
+        "comedy of errors"
+      ],
+      "The Two Gentlemen of Verona": [
+        "two gentlemen of verona"
+      ],
+      "The Merry Wives of Windsor": [
+        "merry wives of windsor"
+      ],
+      "All’s Well That Ends Well": [
+        "alls well that ends well"
+      ],
+      "Love’s Labour’s Lost": [
+        "loves labours lost"
+      ],
+      "Troilus and Cressida": [
+        "troilus"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-013",
+    "prompt": "Name states of the USA",
+    "answers": [
+      "Alabama",
+      "Alaska",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Maine",
+      "Maryland",
+      "Massachusetts",
+      "Michigan",
+      "Minnesota",
+      "Mississippi",
+      "Missouri",
+      "Montana",
+      "Nebraska",
+      "Nevada",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "New York",
+      "North Carolina",
+      "North Dakota",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Vermont",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Wisconsin",
+      "Wyoming"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "v35-bid-014",
+    "prompt": "Name capital cities of countries in Europe",
+    "answers": [
+      "London",
+      "Paris",
+      "Berlin",
+      "Madrid",
+      "Rome",
+      "Lisbon",
+      "Dublin",
+      "Amsterdam",
+      "Brussels",
+      "Luxembourg",
+      "Bern",
+      "Vienna",
+      "Prague",
+      "Warsaw",
+      "Budapest",
+      "Bratislava",
+      "Ljubljana",
+      "Zagreb",
+      "Sarajevo",
+      "Belgrade",
+      "Podgorica",
+      "Tirana",
+      "Skopje",
+      "Sofia",
+      "Bucharest",
+      "Chișinău",
+      "Kyiv",
+      "Minsk",
+      "Vilnius",
+      "Riga",
+      "Tallinn",
+      "Helsinki",
+      "Stockholm",
+      "Oslo",
+      "Copenhagen",
+      "Reykjavik",
+      "Athens",
+      "Valletta",
+      "Nicosia",
+      "Andorra la Vella",
+      "Monaco",
+      "San Marino",
+      "Vatican City",
+      "Vaduz",
+      "Moscow",
+      "Pristina",
+      "Edinburgh",
+      "Cardiff",
+      "Belfast"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Chișinău": [
+        "chisinau"
+      ],
+      "Kyiv": [
+        "kiev"
+      ],
+      "Reykjavik": [
+        "reykjavík"
+      ],
+      "Bern": [
+        "berne"
+      ],
+      "Bucharest": [
+        "bucuresti"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-015",
+    "prompt": "Name chemical elements",
+    "answers": [
+      "Hydrogen",
+      "Helium",
+      "Lithium",
+      "Beryllium",
+      "Boron",
+      "Carbon",
+      "Nitrogen",
+      "Oxygen",
+      "Fluorine",
+      "Neon",
+      "Sodium",
+      "Magnesium",
+      "Aluminium",
+      "Silicon",
+      "Phosphorus",
+      "Sulfur",
+      "Chlorine",
+      "Argon",
+      "Potassium",
+      "Calcium",
+      "Scandium",
+      "Titanium",
+      "Vanadium",
+      "Chromium",
+      "Manganese",
+      "Iron",
+      "Cobalt",
+      "Nickel",
+      "Copper",
+      "Zinc",
+      "Gallium",
+      "Germanium",
+      "Arsenic",
+      "Selenium",
+      "Bromine",
+      "Krypton",
+      "Rubidium",
+      "Strontium",
+      "Yttrium",
+      "Zirconium",
+      "Niobium",
+      "Molybdenum",
+      "Technetium",
+      "Ruthenium",
+      "Rhodium",
+      "Palladium",
+      "Silver",
+      "Cadmium",
+      "Indium",
+      "Tin",
+      "Antimony",
+      "Tellurium",
+      "Iodine",
+      "Xenon",
+      "Caesium",
+      "Barium",
+      "Lanthanum",
+      "Cerium",
+      "Praseodymium",
+      "Neodymium",
+      "Promethium",
+      "Samarium",
+      "Europium",
+      "Gadolinium",
+      "Terbium",
+      "Dysprosium",
+      "Holmium",
+      "Erbium",
+      "Thulium",
+      "Ytterbium",
+      "Lutetium",
+      "Hafnium",
+      "Tantalum",
+      "Tungsten",
+      "Rhenium",
+      "Osmium",
+      "Iridium",
+      "Platinum",
+      "Gold",
+      "Mercury",
+      "Thallium",
+      "Lead",
+      "Bismuth",
+      "Polonium",
+      "Astatine",
+      "Radon",
+      "Francium",
+      "Radium",
+      "Actinium",
+      "Thorium",
+      "Protactinium",
+      "Uranium",
+      "Neptunium",
+      "Plutonium",
+      "Americium",
+      "Curium",
+      "Berkelium",
+      "Californium",
+      "Einsteinium",
+      "Fermium",
+      "Mendelevium",
+      "Nobelium",
+      "Lawrencium",
+      "Rutherfordium",
+      "Dubnium",
+      "Seaborgium",
+      "Bohrium",
+      "Hassium",
+      "Meitnerium",
+      "Darmstadtium",
+      "Roentgenium",
+      "Copernicium",
+      "Nihonium",
+      "Flerovium",
+      "Moscovium",
+      "Livermorium",
+      "Tennessine",
+      "Oganesson"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Aluminium": [
+        "aluminum"
+      ],
+      "Sulfur": [
+        "sulphur"
+      ],
+      "Caesium": [
+        "cesium"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-016",
+    "prompt": "Name dog breeds",
+    "answers": [
+      "Labrador",
+      "Golden retriever",
+      "German shepherd",
+      "Border collie",
+      "Beagle",
+      "Poodle",
+      "Bulldog",
+      "French bulldog",
+      "Pug",
+      "Dachshund",
+      "Chihuahua",
+      "Yorkshire terrier",
+      "Jack Russell",
+      "Staffordshire bull terrier",
+      "Cocker spaniel",
+      "Springer spaniel",
+      "Cavalier King Charles spaniel",
+      "Boxer",
+      "Rottweiler",
+      "Dobermann",
+      "Great Dane",
+      "Greyhound",
+      "Whippet",
+      "Dalmatian",
+      "Husky",
+      "Shih Tzu",
+      "Bichon frisé",
+      "Pomeranian",
+      "Schnauzer",
+      "West Highland terrier",
+      "Scottish terrier",
+      "Border terrier",
+      "Bull terrier",
+      "Corgi",
+      "Shetland sheepdog",
+      "Old English sheepdog",
+      "Bernese mountain dog",
+      "St Bernard",
+      "Newfoundland",
+      "Irish wolfhound",
+      "Bloodhound",
+      "Basset hound",
+      "Weimaraner",
+      "Vizsla",
+      "Pointer",
+      "Afghan hound",
+      "Akita",
+      "Shiba Inu",
+      "Chow Chow",
+      "Samoyed",
+      "Lhasa Apso",
+      "Maltese",
+      "Cockapoo",
+      "Labradoodle",
+      "Airedale terrier",
+      "Saluki",
+      "Bearded collie",
+      "Rough collie"
+    ],
+    "kind": "open",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Labrador": [
+        "labrador retriever",
+        "lab"
+      ],
+      "German shepherd": [
+        "alsatian"
+      ],
+      "Yorkshire terrier": [
+        "yorkie"
+      ],
+      "Jack Russell": [
+        "jack russell terrier"
+      ],
+      "Staffordshire bull terrier": [
+        "staffie",
+        "staffy",
+        "staffordshire"
+      ],
+      "Cavalier King Charles spaniel": [
+        "king charles spaniel",
+        "cavalier"
+      ],
+      "Dobermann": [
+        "doberman",
+        "doberman pinscher"
+      ],
+      "Husky": [
+        "siberian husky"
+      ],
+      "Bichon frisé": [
+        "bichon frise",
+        "bichon"
+      ],
+      "West Highland terrier": [
+        "westie",
+        "west highland white terrier"
+      ],
+      "Scottish terrier": [
+        "scottie"
+      ],
+      "Corgi": [
+        "welsh corgi"
+      ],
+      "Shetland sheepdog": [
+        "sheltie"
+      ],
+      "Rough collie": [
+        "lassie dog"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-017",
+    "prompt": "Name colours",
+    "answers": [
+      "Red",
+      "Orange",
+      "Yellow",
+      "Green",
+      "Blue",
+      "Indigo",
+      "Violet",
+      "Purple",
+      "Pink",
+      "Brown",
+      "Black",
+      "White",
+      "Grey",
+      "Gold",
+      "Silver",
+      "Bronze",
+      "Crimson",
+      "Scarlet",
+      "Maroon",
+      "Burgundy",
+      "Magenta",
+      "Turquoise",
+      "Teal",
+      "Navy",
+      "Cyan",
+      "Lilac",
+      "Lavender",
+      "Beige",
+      "Cream",
+      "Ivory",
+      "Khaki",
+      "Olive",
+      "Lime",
+      "Emerald",
+      "Mint",
+      "Coral",
+      "Peach",
+      "Salmon",
+      "Mustard",
+      "Amber",
+      "Ochre",
+      "Tan",
+      "Charcoal",
+      "Cobalt",
+      "Sky blue",
+      "Aquamarine",
+      "Fuchsia",
+      "Mauve",
+      "Plum",
+      "Ruby",
+      "Sapphire",
+      "Jade",
+      "Chocolate",
+      "Copper",
+      "Rust"
+    ],
+    "kind": "open",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Grey": [
+        "gray"
+      ],
+      "Navy": [
+        "navy blue"
+      ],
+      "Sky blue": [
+        "light blue",
+        "baby blue"
+      ],
+      "Fuchsia": [
+        "hot pink"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-018",
+    "prompt": "Name sports played with a ball",
+    "answers": [
+      "Football",
+      "Rugby union",
+      "Rugby league",
+      "Cricket",
+      "Tennis",
+      "Golf",
+      "Basketball",
+      "Netball",
+      "Volleyball",
+      "Hockey",
+      "Baseball",
+      "Rounders",
+      "Softball",
+      "Squash",
+      "Table tennis",
+      "Snooker",
+      "Pool",
+      "Billiards",
+      "Bowls",
+      "Ten-pin bowling",
+      "Handball",
+      "Water polo",
+      "Polo",
+      "Lacrosse",
+      "Hurling",
+      "Camogie",
+      "Gaelic football",
+      "American football",
+      "Australian rules football",
+      "Beach volleyball",
+      "Dodgeball",
+      "Korfball",
+      "Croquet",
+      "Petanque",
+      "Racketball",
+      "Padel",
+      "Futsal",
+      "Sepak takraw",
+      "Kickball",
+      "Paddleball",
+      "Goalball",
+      "Wheelchair basketball",
+      "Wheelchair rugby",
+      "Bandy",
+      "Fives",
+      "Real tennis",
+      "Cycle polo",
+      "Footgolf",
+      "Stoolball"
+    ],
+    "kind": "open",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Football": [
+        "soccer",
+        "association football"
+      ],
+      "Rugby union": [
+        "rugby"
+      ],
+      "Hockey": [
+        "field hockey"
+      ],
+      "Table tennis": [
+        "ping pong",
+        "ping-pong"
+      ],
+      "Bowls": [
+        "lawn bowls"
+      ],
+      "Ten-pin bowling": [
+        "bowling",
+        "tenpin bowling"
+      ],
+      "Petanque": [
+        "boules",
+        "pétanque"
+      ],
+      "Australian rules football": [
+        "aussie rules",
+        "afl"
+      ],
+      "Racketball": [
+        "racquetball"
+      ]
+    }
+  },
+  {
+    "id": "v35-bid-019",
+    "prompt": "Name board games",
+    "answers": [
+      "Chess",
+      "Draughts",
+      "Monopoly",
+      "Scrabble",
+      "Cluedo",
+      "Ludo",
+      "Snakes and Ladders",
+      "Backgammon",
+      "Risk",
+      "Trivial Pursuit",
+      "Connect Four",
+      "Battleships",
+      "Mouse Trap",
+      "Operation",
+      "Guess Who?",
+      "Pictionary",
+      "Articulate",
+      "Catan",
+      "Ticket to Ride",
+      "Carcassonne",
+      "Pandemic",
+      "Go",
+      "Othello",
+      "Chinese chequers",
+      "Mastermind",
+      "Boggle",
+      "Rummikub",
+      "Twister",
+      "The Game of Life",
+      "Frustration",
+      "Hungry Hippos",
+      "Stratego",
+      "KerPlunk",
+      "Buckaroo",
+      "Downfall",
+      "Sorry!",
+      "Cranium",
+      "Codenames",
+      "Taboo",
+      "Balderdash",
+      "Mahjong",
+      "Nine Men’s Morris",
+      "Mancala",
+      "Dominion",
+      "Azul",
+      "Cribbage",
+      "Kingdomino",
+      "Splendor",
+      "HeroQuest"
+    ],
+    "kind": "open",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {
+      "Draughts": [
+        "checkers"
+      ],
+      "Catan": [
+        "settlers of catan"
+      ],
+      "Othello": [
+        "reversi"
+      ],
+      "Chinese chequers": [
+        "chinese checkers"
+      ],
+      "Guess Who?": [
+        "guess who"
+      ],
+      "The Game of Life": [
+        "game of life",
+        "life"
+      ],
+      "Hungry Hippos": [
+        "hungry hungry hippos"
+      ],
+      "Sorry!": [
+        "sorry"
+      ],
+      "Battleships": [
+        "battleship"
+      ],
+      "Connect Four": [
+        "connect 4"
+      ],
+      "Cluedo": [
+        "clue"
+      ],
+      "Mancala": [
+        "oware",
+        "kalah"
+      ]
+    }
   }
 ]

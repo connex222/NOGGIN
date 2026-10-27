@@ -1,0 +1,131 @@
+{
+  "checked": 25,
+  "results": [
+    {
+      "check": "joined lobby",
+      "ok": true
+    },
+    {
+      "check": "D16 profile saved on join",
+      "ok": true,
+      "profile": {
+        "name": "GameNana",
+        "avatarId": 8
+      }
+    },
+    {
+      "check": "D6 avatar picker not rebuilt by a ready change",
+      "ok": true
+    },
+    {
+      "check": "D12 VIP dropdown not rebuilt by an unrelated broadcast",
+      "ok": true
+    },
+    {
+      "check": "D12 VIP controls refresh when a setting changes",
+      "ok": true
+    },
+    {
+      "check": "Odd Spot grid has 36 squares",
+      "ok": true
+    },
+    {
+      "check": "D15 every Odd Spot square is at least 48 x 48 px at 360 px",
+      "ok": true,
+      "smallest": [
+        53.3,
+        49
+      ]
+    },
+    {
+      "check": "D15 no sideways scrolling at 360 px",
+      "ok": true,
+      "overflow": 0
+    },
+    {
+      "check": "D15 level 5 shows exactly one smaller symbol",
+      "ok": true
+    },
+    {
+      "check": "D6 Odd Spot grid kept when someone else answers",
+      "ok": true
+    },
+    {
+      "check": "D6 own wrong-tap lock-out disables my grid",
+      "ok": true
+    },
+    {
+      "check": "D6 Nerve BANK button is never rebuilt while the counter ticks",
+      "ok": true
+    },
+    {
+      "check": "D6 Nerve counter text still updates",
+      "ok": true,
+      "text": "CURRENT COUNTER: 12\ud83c\udfe6 BANK NOW"
+    },
+    {
+      "check": "D6 a tapped pad is ready for the next tap",
+      "ok": true
+    },
+    {
+      "check": "D7 Quick Draw shows WAIT before DRAW time",
+      "ok": true
+    },
+    {
+      "check": "D7 Quick Draw switches to DRAW without waiting for the server",
+      "ok": true
+    },
+    {
+      "check": "D7 the server's own DRAW does not rebuild the button",
+      "ok": true
+    },
+    {
+      "check": "D7 Quick Draw sends the phone-measured reaction time",
+      "ok": true,
+      "sent": {
+        "value": {
+          "value": 1,
+          "reactionMs": 519
+        },
+        "roundKey": 9
+      }
+    },
+    {
+      "check": "D8 Shape Clash draws the outline shape",
+      "ok": true
+    },
+    {
+      "check": "D8 Shape Clash buttons name shapes, not colours",
+      "ok": true,
+      "labels": [
+        "\u25cf CIRCLE",
+        "\u25a0 SQUARE",
+        "\u25b2 TRIANGLE",
+        "\u2605 STAR"
+      ]
+    },
+    {
+      "check": "D15 all game buttons at least 48 px tall",
+      "ok": true,
+      "smallest": 58
+    },
+    {
+      "check": "no page errors",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "check": "D16 name prefilled",
+      "ok": true
+    },
+    {
+      "check": "D16 character preselected",
+      "ok": true
+    },
+    {
+      "check": "no page errors on prefill",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}

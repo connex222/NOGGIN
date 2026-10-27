@@ -3,10 +3,11 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const rows=require('../data/bid-categories.json');
 const normalise=s=>s.toLocaleLowerCase('en-GB').replace(/[^a-z0-9]/g,'');
-test('Bid to Win retains 120 unique playable categories',()=>{
- assert.equal(rows.length,120);
- assert.equal(new Set(rows.map(x=>x.id)).size,120);
- assert.equal(new Set(rows.map(x=>x.prompt.toLocaleLowerCase('en-GB'))).size,120);
+test('Bid to Win keeps 60+ unique playable categories',()=>{
+ // v3.5.0 Q7: trivial and vague categories were removed on purpose (quality over count).
+ assert.ok(rows.length>=60);
+ assert.equal(new Set(rows.map(x=>x.id)).size,rows.length);
+ assert.equal(new Set(rows.map(x=>x.prompt.toLocaleLowerCase('en-GB'))).size,rows.length);
  for(const x of rows){assert.ok(x.answers.length>=4,x.id);assert.equal(new Set(x.answers.map(normalise)).size,x.answers.length,x.id);}
 });
 test('Bid to Win avoids substantially overlapping answer lists',()=>{

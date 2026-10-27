@@ -30,10 +30,8 @@ test('bidding answers are distinguishable and prompts specify their scope', () =
   assert.equal(guitar.answers.length,6);
   assert.equal(new Set(guitar.answers.map(a=>a.toLowerCase())).size,6);
   assert.deepEqual(guitar.answers,['Low E','A','D','G','B','High E']);
-  const swim = byId(bids,'p6b2-bid-010');
-  assert.match(swim.prompt,/individual medley/i);
-  const recycle = byId(bids,'p6final-bid-026');
-  assert.match(recycle.prompt,/local collection rules/i);
+  // v3.5.0 Q7 removed p6b2-bid-010 (trivial) and p6final-bid-026 (depends on local rules).
+  assert.ok(!bids.some(b => ['p6b2-bid-010','p6final-bid-026'].includes(b.id)));
 });
 
 test('edited Fib questions record completed editorial review without claiming source verification', () => {
@@ -42,7 +40,7 @@ test('edited Fib questions record completed editorial review without claiming so
     assert.notEqual(byId(fib,id).editorialStatus,'review-pending');
     assert.notEqual(byId(fib,id).editorialStatus,'source-checked');
   }
-  for (const id of ['p6b2-bid-003','p6b2-bid-010','p6final-bid-026']) {
+  for (const id of ['p6b2-bid-003']) {
     assert.equal(byId(bids,id).review,true);
   }
 });

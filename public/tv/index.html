@@ -1,8 +1,9 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"><link rel="stylesheet" href="/tv/arena-board.css"></head>
+<title>NOGGIN — Use Your Head | TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"><link rel="stylesheet" href="/tv/arena-board.css"><link rel="stylesheet" href="/tv/tutorial.css"></head>
 <body class="tv">
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
+<div id="restartBanner" class="restart-banner hidden" role="alert"><span id="restartText"></span><button id="restartDismiss" type="button" class="button-secondary">OK</button></div>
 <div id="startupProblem" class="startup-problem" hidden role="alert"></div>
 <section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN welcome screen">
   <div class="stage-canvas welcome-canvas">
@@ -10,6 +11,7 @@
     <button id="welcomeStart" class="showcase-hit welcome-hit-start" type="button" aria-label="Start game — open the lobby"></button>
     <button id="welcomeJoin" class="showcase-hit welcome-hit-join" type="button" aria-label="Join with phones — show the lobby QR code"></button>
     <button id="welcomeHowTo" class="showcase-hit welcome-hit-rules" type="button" aria-label="How to play"></button>
+    <button id="welcomeHeadstart" class="welcome-headstart" type="button" aria-label="HEADSTART — watch the how-to-play tutorial on the TV"><span class="wh-icon" aria-hidden="true">🎓</span><span><strong>HEADSTART</strong><small>The 5-minute crash course · press to watch</small></span></button>
     <div class="welcome-live-join" aria-label="Live room and phone QR code">
       <img id="welcomeQR" alt="Live QR code for players to join" hidden>
       <div><span>SCAN WITH YOUR PHONE</span><strong id="welcomeRoomCode" aria-live="polite">····</strong><small id="welcomePhoneUrl">Preparing room…</small></div>
@@ -21,7 +23,7 @@
     <h2>HOW TO PLAY NOGGIN</h2>
     <ol><li>Leave this screen on your TV or computer.</li><li>Each player scans the QR code with their phone, picks a contestant and taps READY.</li><li>Once everyone is ready, the TV host starts the show.</li><li>Each round, everyone rolls once. Land on a coloured space to call the round’s game and host it. Then everyone plays that game together.</li><li>Corners are Showdowns: challenge a rival and steal up to 2 Sparks. The final round is LAST ORDERS — every Spark you win is doubled. Most Sparks at the end wins!</li></ol>
     <p>Use the TV lobby to choose Classic (default) or Showtime (Director Cues and catch-up dice), the game clock and the show length before starting. Sound and music controls are at the top.</p>
-    <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
+    <div class="welcome-rules-actions"><button id="welcomeRulesClose" class="welcome-dismiss-rules" type="button">BACK</button><button id="rulesHeadstart" class="welcome-dismiss-rules" type="button">🎓 WATCH HEADSTART</button><button id="welcomeRulesPlay" class="button-primary" type="button">LET'S PLAY!</button></div>
   </div>
 </div>
 <main class="tv-shell">
@@ -52,7 +54,7 @@
       <label for="rules">RULES<select id="rules"><option value="classic" selected>Classic · Roll, Move, Play</option><option value="showtime">Showtime · All Extras</option></select></label>
       <label for="roundStyle">ROUND STYLE<select id="roundStyle"><option value="everyone">Everyone rolls</option><option value="sequential">One at a time</option></select></label>
       <label for="timerSpeed">GAME CLOCK<select id="timerSpeed"><option value="normal">Normal</option><option value="relaxed">Relaxed</option></select></label>
-      <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label></div>
+      <div class="toggles"><label class="checkrow"><input id="familyFriendly" type="checkbox" checked> Family mode</label><label class="checkrow"><input id="reduceMotion" type="checkbox"> Reduce motion</label><label class="checkrow" title="Swaps Colour Clash for Shape Clash, so no game depends on telling colours apart"><input id="colourBlindSafe" type="checkbox"> Colour-blind safe</label></div>
       <button id="newRoom" class="button-secondary" type="button">NEW ROOM</button>
     </section>
   </section>
@@ -80,6 +82,8 @@
         </div>
       </div>
       <div id="resultSpotlight" class="result-spotlight hidden" aria-live="polite"></div>
+      <div id="spaceExplainer" class="space-explainer hidden" role="status"></div>
+      <div id="standingsSting" class="standings-sting hidden" role="status" aria-live="polite"></div>
       <div id="challengePanel" class="stage-challenge surface hidden"><p class="eyebrow" id="challengeType">QUICK CHOICE</p><h2 id="challengeTitle">Challenge</h2><div id="challengePrompt"></div><div id="challengeChoices" class="challenge-choices"></div><p id="challengeCountdown" class="challenge-clock"></p></div>
       <div class="stage-bottom surface">
         <div class="arena-live-info"><img id="arenaActiveAvatar" alt="" hidden><div><span id="stageEvent">Ready to play</span><small id="stageHelp">Players control the show on their phones.</small></div></div>
@@ -91,5 +95,5 @@
   <div id="message" class="error hidden" role="alert"></div>
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>
 </main>
-<script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/showcase.js"></script>
+<script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/showcase.js"></script><script src="/tv/tutorial.js"></script>
 </body></html>

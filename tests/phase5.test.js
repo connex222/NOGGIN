@@ -14,12 +14,13 @@ test('phase5 datasets have 100 distinct questions and 40 finite complete answer 
 test('four specified corners launch four different real challenge kinds',()=>{
  for(const [idx,kind] of [[6,'buzzer'],[10,'tug'],[18,'bid'],[22,'nerve']]){const f=fixture();const m=duel(f,idx);assert.equal(m.kind,kind);assert.equal(f.room.board.step,'showdown');assert.equal(f.rooms.state(f.code).board.showdown.kind,kind);assert.equal(f.room.board.challenge,null);}
 });
-test('Buzzer Battle: buzz first, wrong answer passes control, four correct wins and steals 2',()=>{
+test('Buzzer Battle: buzz first, wrong answer passes control, three correct wins and steals 2',()=>{ // v3.5.0 G2: first to 3
  const f=fixture();f.room.players[1].sparks=3;let m=duel(f,6);assert.equal(m.phase,'buzz');
  const first=f.room.players[0].id;assert(!JSON.stringify(f.rooms.state(f.code)).includes('correct'));
- f.input(0,'buzz');m=f.room.board.showdown;assert.equal(m.phase,'answer');assert.throws(()=>f.input(1,0),e=>e.code==='TURN');
+ // v3.5.0 D7: buzzes are collected for 150 ms, then the fastest reaction answers.
+ f.input(0,'buzz');f.advance(151);m=f.room.board.showdown;assert.equal(m.phase,'answer');assert.throws(()=>f.input(1,0),e=>e.code==='TURN');
  f.input(0,(m.question.correct+1)%4);assert.equal(m.phase,'pass');f.input(1,m.question.correct);assert.equal(m.points[f.room.players[1].id],1);
- for(let n=0;n<4;n++){m=f.room.board.showdown;f.input(0,'buzz');f.input(0,m.question.correct);}
+ for(let n=0;n<3;n++){m=f.room.board.showdown;f.input(0,'buzz');f.advance(151);f.input(0,m.question.correct);}
  assert.equal(f.room.board.step,'result');assert.equal(f.room.players[0].sparks,2);assert.equal(f.room.players[1].sparks,1);
 });
 test('Tug of Wits: only correct current qid accepted and rope reaches five',()=>{
@@ -31,16 +32,18 @@ test('Tug of Wits: only correct current qid accepted and rope reaches five',()=>
  assert.equal(f.room.board.step,'result');assert.equal(f.room.players[0].sparks,2);assert.equal(f.room.players[1].sparks,2);
 });
 test('Bid to Win: raise/challenge, correct distinct category names, success transfers Sparks',()=>{
- const f=fixture();f.room.players[1].sparks=2;let m=duel(f,18);assert(!JSON.stringify(f.rooms.state(f.code)).includes('answers'));
- f.input(0,{action:'bid',count:2});assert.throws(()=>f.input(0,{action:'challenge'}),e=>e.code==='TURN');
- f.input(1,{action:'challenge'});assert.equal(m.phase,'name');assert.throws(()=>f.input(1,'January'),e=>e.code==='TURN');
- f.input(0,m.category.answers[0]);assert.throws(()=>f.input(0,m.category.answers[0]),e=>e.code==='INPUT');
- f.input(0,m.category.answers[1]);assert.equal(f.room.board.step,'result');assert.equal(f.room.players[0].sparks,2);assert.equal(f.room.players[1].sparks,0);
+ // v3.5.0 G3: the rival (player 1) bids first; the lander (player 0) responds.
+ const f=fixture();f.room.players[0].sparks=2;let m=duel(f,18);assert(!JSON.stringify(f.rooms.state(f.code)).includes('answers'));
+ assert.throws(()=>f.input(0,{action:'bid',count:1}),e=>e.code==='TURN');
+ f.input(1,{action:'bid',count:2});assert.throws(()=>f.input(1,{action:'challenge'}),e=>e.code==='TURN');
+ f.input(0,{action:'challenge'});assert.equal(m.phase,'name');assert.throws(()=>f.input(0,'January'),e=>e.code==='TURN');
+ f.input(1,m.category.answers[0]);assert.throws(()=>f.input(1,m.category.answers[0]),e=>e.code==='INPUT');
+ f.input(1,m.category.answers[1]);assert.equal(f.room.board.step,'result');assert.equal(f.room.players[1].sparks,2);assert.equal(f.room.players[0].sparks,0);
 });
 test('Bid to Win: three invalid items lose the challenge, no guessed answers leaked',()=>{
- const f=fixture();f.room.players[0].sparks=2;const m=duel(f,18);f.input(0,{action:'bid',count:2});f.input(1,{action:'challenge'});
- for(const s of ['unlikely banana','unlikely pear','unlikely orange']){f.input(0,s);phase5.decideBid(f.room,false,f.now(),board.finishTurn);}
- assert.equal(f.room.board.step,'result');assert.equal(f.room.players[0].sparks,0);assert.equal(f.room.players[1].sparks,2);
+ const f=fixture();f.room.players[1].sparks=2;const m=duel(f,18);f.input(1,{action:'bid',count:2});f.input(0,{action:'challenge'});
+ for(const s of ['unlikely banana','unlikely pear','unlikely orange']){f.input(1,s);phase5.decideBid(f.room,false,f.now(),board.finishTurn);}
+ assert.equal(f.room.board.step,'result');assert.equal(f.room.players[1].sparks,0);assert.equal(f.room.players[0].sparks,2);
 });
 test('Nerve: bust point hidden, lower bank beats busted opponent, tie drawn',()=>{
  const f=fixture();f.room.players[1].sparks=3;let m=duel(f,22);assert.equal(m.bustAt,3);
@@ -60,28 +63,32 @@ test('Noggin-Off: numeric nearest guess and repeat ties without leaking answer',
 test('Showdown never permits input by a spectator, stale key, or after result',()=>{
  const f=fixture(3);const m=duel(f,6);assert.throws(()=>f.input(2,'buzz'),e=>e.code==='PLAYER');
  assert.throws(()=>f.rooms.inputGame(f.code,f.phones[0],'buzz',m.roundKey-1),e=>e.code==='STALE');
- f.input(0,'buzz');assert.throws(()=>f.input(1,'buzz'),e=>e.code==='TURN');
+ // v3.5.0 D7: a second buzz inside the 150 ms window is collected; buzzing twice is not.
+ f.input(0,'buzz');assert.throws(()=>f.input(0,'buzz'),e=>e.code==='ANSWERED');
+ f.input(1,'buzz');assert.equal(f.room.board.showdown.phase,'answer');assert.throws(()=>f.input(1,'buzz'),e=>e.code==='TURN');
 });
-test('Bid review: only VIP/TV host can decide, acceptance counts and rejection penalises',()=>{
- const f=fixture();let m=duel(f,18);
- f.input(0,{action:'bid',count:2});f.input(1,{action:'challenge'});
- f.input(0,'unlisted valid item');
+test('Bid review: only the TV or a non-duelling player can decide, acceptance counts and rejection penalises',()=>{
+ // v3.5.0 D10: neither duellist may judge, not even the VIP (phone 0).
+ const f=fixture(3);let m=duel(f,18);
+ f.input(1,{action:'bid',count:2});f.input(0,{action:'challenge'});
+ f.input(1,'unlisted valid item');
  assert.equal(m.phase,'review');
  assert.equal(f.rooms.state(f.code).board.showdown.display.review.answer,'unlistedvaliditem');
  assert.throws(()=>f.rooms.adjudicateBid(f.code,f.phones[1],true),{code:'AUTH'});
- assert.throws(()=>f.input(0,'another item'),{code:'WAIT'});
+ assert.throws(()=>f.input(1,'another item'),{code:'WAIT'});
  assert.throws(()=>f.rooms.adjudicateBid(f.code,f.phones[0],true),{code:'AUTH'});
- f.rooms.adjudicateBid(f.code,'host',true);
+ f.rooms.adjudicateBid(f.code,f.phones[2],true);
+ assert.throws(()=>f.rooms.adjudicateBid(f.code,'host',false),{code:'STEP'});
  assert.equal(m.phase,'name');assert.equal(m.guesses.length,1);
- f.input(0,m.category.answers[0]);assert.equal(f.room.board.step,'result');
+ f.input(1,m.category.answers[0]);assert.equal(f.room.board.step,'result');
 });
-test('Bid review: VIP can reject the opponent and timeout rejects unresolved answers',()=>{
- const f=fixture();let m=duel(f,18);
- f.input(0,{action:'bid',count:1});f.input(1,{action:'bid',count:2});f.input(0,{action:'challenge'});
- f.input(1,'unknown example');
- f.rooms.adjudicateBid(f.code,f.phones[0],false);
+test('Bid review: a non-duelling player can reject, and timeout rejects unresolved answers',()=>{
+ const f=fixture(3);let m=duel(f,18);
+ f.input(1,{action:'bid',count:1});f.input(0,{action:'bid',count:2});f.input(1,{action:'challenge'});
+ f.input(0,'unknown example');
+ f.rooms.adjudicateBid(f.code,f.phones[2],false);
  assert.equal(m.invalid,1);assert.equal(m.phase,'name');
- f.input(1,'another unknown example');
+ f.input(0,'another unknown example');
  f.advance(12001);
  assert.equal(m.invalid,2);assert.equal(m.phase,'name');
 });

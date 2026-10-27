@@ -14,7 +14,7 @@
 //   everyone   (default) — all phones roll at once on a shared countdown, the TV
 //              moves tokens one at a time, landings resolve automatically.
 //   sequential — "One at a time": each contestant rolls and resolves in turn,
-//              choosing swap targets and Showdown rivals themselves.
+//              choosing Showdown rivals themselves.
 const crypto = require('node:crypto');
 const layout = require('./layout');
 const {SPACES, COLORS, ICONS, LABELS, LIFTS, SHOWDOWNS, CATEGORIES} = layout;
@@ -31,6 +31,12 @@ const DIRECTORS_CUES = 2;
 const DIRECTORS_CHOICE_MS = 6000;
 const DECISION_MS = 12000;
 const ROUND_ROLL_MS = 12000;
+// G1: phone decisions in Everyone Rolls (rival pick, game pick) get 8 seconds.
+const PICK_MS = 8000;
+// G12: the standings sting before Last Orders.
+const STANDINGS_MS = 4000;
+// G11: one-line explainers the first time anyone lands on a special space.
+const EXPLAIN_MS = 3000;
 // Presentation timing. The TV tumbles the die for 1.24 s and hops a token every
 // 150 ms. The server waits for that before it starts any clock or advances, so
 // no result, question or countdown appears while the dice are still in the air.
@@ -48,10 +54,11 @@ const UNDERDOG_THRESHOLD = 3;
 const UNDERDOG_BONUS_SMALL = 1;
 const UNDERDOG_BONUS_EIGHT = 2;
 // Values used when the server makes a Director's Cut nudge on a player's behalf.
-const SPACE_VALUE = {applause: 6, start: 6, showdown: 5, wildcard: 4, pickpocket: 4, speed: 3, brain: 3, create: 3, together: 3, swap: 2, lift: 1, drain: -6};
-const QUESTIONS = require('../data/demo-questions.json');
+const SPACE_VALUE = {applause: 6, start: 6, showdown: 5, wildcard: 4, pickpocket: 4, speed: 3, brain: 3, create: 3, together: 3, steal: 3, lift: 1, drain: -6};
 // Brain Drain asks a quick general-knowledge question (the Buzzer bank without sums).
 const DRAIN_QUESTIONS = require('../data/buzzer-questions.json').filter(q => q.topic !== 'maths')
+  // v3.5.0 Q6: Brain Drain gives only five seconds, so it uses the easy questions.
+  .filter(q => (q.difficulty || 'easy') === 'easy')
   .map(q => ({id: q.id, prompt: q.question, options: q.choices, correct: q.correct}));
 const phase3 = require('./games/phase3');
 const phase4 = require('./games/phase4');
@@ -68,6 +75,43 @@ function plural(n, word) {return `${n} ${word}${n === 1 ? '' : 's'}`;}
 function presentationLeft(b, now) {return Math.max(0, (b.presentUntil || 0) - now);}
 function snapshot(room) {return Object.fromEntries(room.players.map(p => [p.id, p.sparks]));}
 function lastOrders(b) {return b.roundNo >= b.totalRounds;}
+function pickMs(room) {return Math.round(PICK_MS * (room.settings.timerSpeed === 'relaxed' ? 1.5 : 1));}
+const SPECIAL = new Set(['applause', 'pickpocket', 'drain', 'lift', 'wildcard', 'steal', 'showdown']);
+function explainText(room, type) {
+  return ({
+    applause: `APPLAUSE — land here for +${APPLAUSE_BONUS} Sparks`,
+    pickpocket: 'PICKPOCKET — steal 1 Spark from the leader',
+    drain: everyone(room) ? 'BRAIN DRAIN — lose 1 Spark' : 'BRAIN DRAIN — answer in five seconds or lose 1 Spark',
+    lift: 'STAGE LIFT — ride across the stage to the other lift',
+    wildcard: "WILDCARD — pick this round's game, lock it in and host it",
+    steal: "STEAL THE CALL — you host this round's game",
+    showdown: 'SHOWDOWN — challenge a rival; the winner takes up to 2 Sparks'
+  })[type];
+}
+// G11: remember which special spaces have been explained this match.
+function maybeExplain(room, type, now) {
+  const b = room.board; b.explained ??= [];
+  if (!SPECIAL.has(type) || b.explained.includes(type)) return;
+  b.explained.push(type); b.explainer = {type, text: explainText(room, type), until: now + EXPLAIN_MS};
+}
+// G12: a ranked standings moment just before Last Orders.
+function standingsSting(room, now) {
+  const ranks = [...room.players].sort((a, z) => z.sparks - a.sparks || a.seat - z.seat).map(p => ({id: p.id, sparks: p.sparks}));
+  room.board.standings = {until: now + STANDINGS_MS, ranks, line: 'Every Spark is doubled — last place can still win this!'};
+}
+// G1: two different games from the called category for the caller to choose between.
+function gameOptions(room, category, rng) {
+  const b = room.board, isQuick = category === 'speed' || category === 'brain';
+  const catalog = (isQuick ? phase3 : phase4).CATALOG.filter(g => g.category === category)
+    .filter(g => isQuick || room.players.length !== 2 || !phase4.TWO_PLAYER_UNAVAILABLE.includes(g.id)).map(g => g.id);
+  const fresh = catalog.filter(id => !b.seenGames?.includes(id) && id !== b.lastGame);
+  const pool = [...fresh];
+  for (const id of catalog) if (pool.length < 2 && !pool.includes(id)) pool.push(id);
+  const out = [];
+  while (out.length < 2 && pool.length) out.push(pool.splice(random(pool.length, rng), 1)[0]);
+  return out;
+}
+function gameName(room, id) {return phase4.SPECS[id] ? phase4.SPECS[id].name : phase3.titleFor(room, id);}
 function seats(room) {return [...room.players].sort((a, z) => a.seat - z.seat);}
 function leaderExcept(room, id) {return room.players.filter(x => x.id !== id).sort((a, z) => z.sparks - a.sparks || a.seat - z.seat)[0];}
 function boardTurnPlayer(room) {
@@ -81,7 +125,9 @@ function publicBoard(room, forTv = false, viewerId = null) {
   const r = b.round;
   const challenge = b.challenge ? {kind: b.challenge.kind, title: b.challenge.title, question: b.challenge.question, choices: b.challenge.choices, participants: b.challenge.participants, answered: Object.keys(b.challenge.answers), deadline: b.challenge.deadline} : null;
   return {
-    round: r ? {number: r.number, stage: r.stage, rolls: r.rolls, directors: r.directors, spotlightId: r.spotlightId, moveIndex: r.moveIndex, prioritySeat: r.prioritySeat} : null,
+    round: r ? {number: r.number, stage: r.stage, rolls: r.rolls, directors: r.directors, spotlightId: r.spotlightId, moveIndex: r.moveIndex, prioritySeat: r.prioritySeat, callerId: r.callerId || null} : null,
+    gameOptions: b.step === 'choose_game' ? (b.gameOptions || []).map(id => ({id, name: gameName(room, id), category: b.gameCategory})) : [],
+    explainer: b.explainer || null, standings: b.standings || null,
     roundNumber: b.roundNo, totalRounds: b.totalRounds, stage: b.stage, lastOrders: lastOrders(b), turnInRound: b.turnInRound,
     roundGame: {category: b.roundCategory, callerId: b.roundCaller, locked: b.roundLocked}, showdownPlayed: Boolean(b.showdownPlayed),
     routePlan: showtime(room) && Boolean(b.routePlan), routeOptions: b.step === 'choose_route' ? (b.routeOptions || []) : [],
@@ -89,13 +135,15 @@ function publicBoard(room, forTv = false, viewerId = null) {
     minigame: (b.minigame && phase4.SPECS[b.minigame.id] ? phase4.publicState(room, forTv, viewerId) : phase3.publicState(room, forTv)),
     step: b.step, turn: b.turn, activeId: b.activeId, rolls: b.rolls, landing: b.landing, lastMove: b.lastMove, event: b.event,
     deadline: b.deadline, nextAt: b.nextAt, presentUntil: b.presentUntil || null, challenge, result: b.result, leaderIds: b.leaderIds, finalists: b.finalists,
-    winnerIds: b.winnerIds, history: b.history.slice(-8), paused: Boolean(b.pausedAt), pauseReason: b.pauseReason
+    winnerIds: b.winnerIds, history: b.history.slice(-8), paused: Boolean(b.pausedAt), pauseKind: b.pauseKind || null, pauseReason: b.pauseReason
   };
 }
 
 function start(room, now = Date.now()) {
   if (room.phase !== 'lobby') fail('PHASE', 'Game already started.');
-  if (!room.hostSocketId || room.players.length < 2 || !room.players.every(p => p.ready && p.socketId)) fail('READY', 'Two to eight connected, ready players required.');
+  // D4: everyone must be READY; a ready phone that has briefly gone to sleep does not
+  // block the start (it reconnects into its seat). At least one phone must be online.
+  if (!room.hostSocketId || room.players.length < 2 || !room.players.every(p => p.ready) || !room.players.some(p => p.socketId)) fail('READY', 'Two to eight ready players required.');
   for (const p of room.players) {p.sparks = 0; p.position = 0; p.cues = showtime(room) ? DIRECTORS_CUES : 0;}
   const chosen = room.settings.rounds;
   const totalRounds = Number.isInteger(chosen) && ROUND_OPTIONS.includes(chosen) ? chosen : autoRounds(room.players.length, everyone(room) ? 'everyone' : 'sequential');
@@ -122,6 +170,8 @@ function beginRound(room, now) {
   b.deadline = now + ROUND_ROLL_MS; b.nextAt = null; b.result = null; b.lastMove = b.lastMove || null;
   b.event = {type: 'round', text: lastOrders(b) ? `LAST ORDERS! Final round — every Spark you win is doubled. Everyone roll now!` : `Round ${number} of ${b.totalRounds}: everyone roll now!`};
   b.turnStartSparks = snapshot(room);
+  // G12: show the standings first; rolling time starts after the sting.
+  if (lastOrders(b) && b.totalRounds > 1) {standingsSting(room, now); b.deadline += STANDINGS_MS;}
 }
 function catchUpDice(room, p, rng) {
   const lowest = Math.min(...room.players.map(x => x.sparks));
@@ -164,6 +214,15 @@ function advanceRoundMove(room, now, rng) {
   b.activeId = p.id; b.landing = to;
   b.lastMove = {playerId: p.id, from, to, path, die: entry.die, revision: ++b.moveRevision};
   b.event = {type: 'move', text: `Moving: ${p.name} (${entry.die})`};
+  // G8: a later colour (or Steal the Call) takes the call — shown live as tokens land.
+  const type = SPACES[to];
+  if (!b.roundLocked && (CATEGORIES.includes(type) || type === 'steal')) {
+    const prev = r.callerId;
+    r.callerId = p.id;
+    if (prev && prev !== p.id) b.event = {type: 'call-steal', text: `${p.name} steals the call from ${nameOf(room, prev)}!`};
+    else if (!prev) b.event = {type: 'call', text: `${p.name} has the call!`};
+  }
+  maybeExplain(room, type, now);
   r.moveIndex++; b.nextAt = now + presentMs(entry.die);
 }
 function resolveRoundLandings(room, now) {
@@ -178,7 +237,11 @@ function resolveRoundLandings(room, now) {
     else if (type === 'lift') {p.position = LIFTS[p.position]; lines.push(`${p.name} took the Stage Lift`);}
     else if (type === 'drain') {p.sparks = Math.max(0, p.sparks - 1); lines.push(`${p.name} was drained −1`);}
     else if (type === 'pickpocket') {const v = leaderExcept(room, p.id); if (v?.sparks > 0) {v.sparks--; p.sparks++; lines.push(`${p.name} pickpocketed ${v.name}`);} else lines.push(`${p.name} found nothing to pickpocket`);}
-    else if (type === 'swap') {const other = leaderExcept(room, p.id); if (other) {[p.position, other.position] = [other.position, p.position]; lines.push(`${p.name} swapped places with ${other.name}`);}}
+    else if (type === 'steal') {
+      // G7: Steal the Call — you host this round's game (the called category stays).
+      if (b.roundLocked) lines.push(`${p.name} tried to steal the call, but it is locked`);
+      else {const prev = b.roundCaller; b.roundCaller = p.id; lines.push(prev && prev !== p.id ? `${p.name} STEALS THE CALL from ${nameOf(room, prev)}` : `${p.name} STEALS THE CALL`);}
+    }
     else if (type === 'showdown') {
       if (!r.showdownId) {r.showdownId = p.id; r.showdownSpace = p.position; r.showdownPending = true; b.showdownPlayed = true; lines.push(`${p.name} takes the ${SHOWDOWNS[p.position]} corner`);}
       else {p.sparks += CORNER_BONUS; lines.push(`${p.name} Corner Bonus +${CORNER_BONUS}`);}
@@ -186,10 +249,11 @@ function resolveRoundLandings(room, now) {
     else if (type === 'wildcard') {
       if (!r.wildcardId && !b.roundLocked) {r.wildcardId = p.id; r.wildcardPending = true; lines.push(`${p.name} holds the WILDCARD`);}
     }
-    else if (CATEGORIES.includes(type) && !b.roundLocked) {b.roundCategory = type; b.roundCaller = p.id; lines.push(`${p.name} calls ${LABELS[type].toUpperCase()}`);}
+    else if (CATEGORIES.includes(type) && !b.roundLocked) {const prev = b.roundCaller; b.roundCategory = type; b.roundCaller = p.id; lines.push(prev && prev !== p.id ? `${p.name} calls ${LABELS[type].toUpperCase()}, stealing the call from ${nameOf(room, prev)}` : `${p.name} calls ${LABELS[type].toUpperCase()}`);}
   }
   r.stage = 'landed';
-  const pick = b.roundCategory ? ` · Round game: ${LABELS[b.roundCategory].toUpperCase()}, hosted by ${nameOf(room, b.roundCaller)}` : '';
+  const pick = b.roundCategory ? ` · Round game: ${LABELS[b.roundCategory].toUpperCase()}, hosted by ${nameOf(room, b.roundCaller)}` : b.roundCaller ? ` · ${nameOf(room, b.roundCaller)} hosts this round's game` : '';
+  r.callerId = b.roundCaller || null;
   b.activeId = r.spotlightId; b.step = 'round_landings';
   finishTurn(room, now, `${lines.length ? lines.join(' · ') : 'Everyone landed quietly'}${r.wildcardPending ? '' : pick}.`);
 }
@@ -201,13 +265,34 @@ function continueRound(room, now, rng) {
     b.event = {type: 'wildcard', text: `WILDCARD! ${nameOf(room, r.wildcardId)} picks this round's game, locks it in and hosts it.`}; return;
   }
   if (r.showdownPending) {
+    // G1: the lander picks their rival on their phone (8 s; the leader on timeout).
     r.showdownPending = false; r.stage = 'showdown';
-    const p = room.players.find(x => x.id === r.showdownId), rival = leaderExcept(room, p.id);
-    // The corner is remembered at landing time: a later Swap may have moved this player since.
+    const p = room.players.find(x => x.id === r.showdownId);
     b.activeId = p.id; b.landing = r.showdownSpace; resetTurnFlags(room);
-    phase5.start(room, 'corner', now, rival.id, rng); return;
+    b.step = 'choose_opponent'; b.deadline = now + pickMs(room);
+    b.event = {type: 'showdown', text: `${SHOWDOWNS[r.showdownSpace]} corner! ${p.name}, pick your rival — winner takes up to 2 Sparks.`}; return;
   }
-  startRoundGame(room, now, rng);
+  // G1: the caller picks 1 of 2 games from their category (8 s; random on timeout).
+  const caller = room.players.find(x => x.id === b.roundCaller);
+  if (caller && !r.gameOffered) {
+    r.gameOffered = true;
+    const category = b.roundCategory || CATEGORIES[random(CATEGORIES.length, rng)];
+    const options = gameOptions(room, category, rng);
+    if (options.length === 2) {
+      b.gameCategory = category; b.gameOptions = options; b.activeId = caller.id; resetTurnFlags(room);
+      b.step = 'choose_game'; b.deadline = now + pickMs(room);
+      b.event = {type: 'choose-game', text: `${caller.name}, choose this round's ${LABELS[category].toUpperCase()} game: ${options.map(id => gameName(room, id)).join(' or ')}?`}; return;
+    }
+  }
+  startRoundGame(room, now, rng, null, b.gameCategory || null);
+}
+// G1: start the round game the caller picked (or a random one of the two on timeout).
+function pickRoundGame(room, now, rng, gameId) {
+  const b = room.board;
+  if (!b.gameOptions?.includes(gameId)) fail('GAME', 'Choose one of the two games shown.');
+  b.lastGame = gameId; b.seenGames = [...(b.seenGames || []), gameId].slice(-16);
+  const category = b.gameCategory; b.gameOptions = []; b.gameCategory = null;
+  startRoundGame(room, now, rng, gameId, category);
 }
 function tickRound(room, now, rng) {
   const b = room.board, r = b.round;
@@ -255,20 +340,21 @@ function pickDie(room, id, index, now, rng = crypto.randomInt) {
   if (index !== 0 && index !== 1) fail('DIE', 'Choose die 1 or die 2.');
   beginMove(room, b.rolls[index], now, rng);
 }
-function sampleQuestion(b, randomInt, bank = QUESTIONS) {
+function sampleQuestion(b, randomInt, bank = DRAIN_QUESTIONS) {
   const pool = bank.filter(q => !b.seenQuestions.includes(q.id));
   const options = pool.length ? pool : bank;
   const chosen = options[random(options.length, randomInt)];
   b.seenQuestions.push(chosen.id); if (b.seenQuestions.length >= bank.length) b.seenQuestions = [];
   return chosen;
 }
+// Brain Drain is the only board challenge. (The Noggin-Off tie-break lives in
+// server/games/phase5.js; the old board-level tie-break was unreachable — D17.)
 function beginChallenge(room, kind, now, randomInt = crypto.randomInt) {
-  const b = room.board, q = sampleQuestion(b, randomInt, kind === 'drain' ? DRAIN_QUESTIONS : QUESTIONS);
-  const participants = kind === 'tiebreak' ? b.finalists.slice() : [b.activeId];
-  const ms = (kind === 'drain' ? 5_000 : (room.settings.timerSpeed === 'relaxed' ? 24_000 : 16_000)) + presentationLeft(b, now);
-  b.challenge = {kind, title: kind === 'drain' ? 'BRAIN DRAIN' : 'NOGGIN-OFF TIEBREAKER', question: q.prompt, choices: q.options, correct: q.correct, participants, answers: {}, deadline: now + ms};
+  const b = room.board, q = sampleQuestion(b, randomInt, DRAIN_QUESTIONS);
+  const ms = 5_000 + presentationLeft(b, now);
+  b.challenge = {kind, title: 'BRAIN DRAIN', question: q.prompt, choices: q.options, correct: q.correct, participants: [b.activeId], answers: {}, deadline: now + ms};
   b.step = 'challenge'; b.deadline = b.challenge.deadline;
-  b.event = {type: 'challenge', text: kind === 'drain' ? `${actor(room).name} hit BRAIN DRAIN! Answer in five seconds or lose one Spark.` : 'Closest to the tie-break target wins.'};
+  b.event = {type: 'challenge', text: `${actor(room).name} hit BRAIN DRAIN! Answer in five seconds or lose one Spark.`};
 }
 function callGame(room, p, category, locked) {
   const b = room.board;
@@ -276,6 +362,7 @@ function callGame(room, p, category, locked) {
 }
 function resolveLanding(room, now, passed, rng = crypto.randomInt) {
   const b = room.board, p = actor(room), type = SPACES[p.position]; b.result = null; b.deadline = null;
+  maybeExplain(room, type, now);
   const pass = passed ? ` (+${START_PASS_BONUS} for passing START)` : '';
   if (type === 'start') {p.sparks += START_LAND_BONUS; finishTurn(room, now, `${p.name} landed on START: +${START_LAND_BONUS} Sparks!`); return;}
   if (type === 'applause') {p.sparks += APPLAUSE_BONUS; finishTurn(room, now, `APPLAUSE! The studio loves ${p.name}: +${APPLAUSE_BONUS} Sparks${pass}.`); return;}
@@ -293,7 +380,13 @@ function resolveLanding(room, now, passed, rng = crypto.randomInt) {
     callGame(room, p, type, false);
     finishTurn(room, now, `${p.name} called a ${label} game for this round and will host it${stolen}${pass}.`); return;
   }
-  if (type === 'swap') {b.step = 'choose_target'; b.deadline = now + presentationLeft(b, now) + DECISION_MS; b.event = {type: 'swap', text: `${p.name}: choose a player to swap board positions with.`}; return;}
+  if (type === 'steal') {
+    // G7: Steal the Call — this player hosts the round's game (unless a Wildcard locked it).
+    if (b.roundLocked) {finishTurn(room, now, `${p.name} tried to steal the call, but the Wildcard has locked this round's game${pass}.`); return;}
+    const prev = b.roundCaller && b.roundCaller !== p.id ? ` from ${nameOf(room, b.roundCaller)}` : '';
+    b.roundCaller = p.id;
+    finishTurn(room, now, `${p.name} STEALS THE CALL${prev} and will host this round's game${pass}.`); return;
+  }
   if (type === 'wildcard') {b.step = 'choose_category'; b.deadline = now + presentationLeft(b, now) + DECISION_MS; b.event = {type: 'wildcard', text: `WILDCARD! ${p.name} picks this round's game, locks it in and hosts it.`}; return;}
   // One Showdown per round keeps the spotlight shared.
   if (type === 'showdown' && b.showdownPlayed) {p.sparks += CORNER_BONUS; finishTurn(room, now, `${SHOWDOWNS[p.position]} corner — this round's Showdown has already been played, so ${p.name} takes a +${CORNER_BONUS} Corner Bonus${pass}.`); return;}
@@ -329,13 +422,13 @@ function choose(room, id, payload, now, randomInt) {
     p.cues -= option.cost; b.routeOptions = []; b.routePlan = false;
     beginMove(room, option.steps, now, randomInt); return;
   }
-  if (b.step === 'choose_target' || b.step === 'choose_opponent') {
+  if (b.step === 'choose_opponent') {
     const target = room.players.find(p => p.id === payload?.targetId && p.id !== id);
     if (!target) fail('TARGET', 'Choose another contestant.');
-    if (b.step === 'choose_target') {const p = actor(room); [p.position, target.position] = [target.position, p.position]; finishTurn(room, now, `${p.name} swapped places with ${target.name}!`);}
-    else phase5.start(room, 'corner', now, target.id, randomInt);
+    phase5.start(room, 'corner', now, target.id, randomInt);
     return;
   }
+  if (b.step === 'choose_game') {pickRoundGame(room, now, randomInt, payload?.gameId); return;}
   if (b.step === 'choose_category') {
     if (!CATEGORIES.includes(payload?.category)) fail('CATEGORY', 'Choose Speed, Brain, Create or Together.');
     const p = actor(room); callGame(room, p, payload.category, true);
@@ -355,18 +448,6 @@ function answer(room, id, choice, now) {
 function resolveChallenge(room, now) {
   const b = room.board, c = b.challenge;
   if (!c || b.step !== 'challenge') return;
-  if (c.kind === 'tiebreak') {
-    const scored = Object.entries(c.answers).map(([id, a]) => ({id, distance: Math.abs(Number(c.choices[a.choice]) - Number(c.choices[c.correct]))}));
-    const best = Math.min(...scored.map(x => x.distance));
-    const winners = scored.filter(x => x.distance === best).map(x => x.id);
-    if (winners.length === 1) {
-      const text = `${nameOf(room, winners[0])} wins NOGGIN!`;
-      b.winnerIds = winners; b.step = 'finished'; room.phase = 'finished'; b.challenge = null; b.deadline = null;
-      b.result = {text, winners}; b.event = {type: 'finished', text}; return;
-    }
-    b.finalists = winners.length ? winners : c.participants; b.challenge = null;
-    beginChallenge(room, 'tiebreak', now); b.result = {text: 'Still tied! Another Close Call!', winners: []}; return;
-  }
   // Brain Drain is a penalty dodge, not a contest: surviving earns nothing extra.
   const p = actor(room), survived = Boolean(c.answers[p.id]?.correct);
   if (!survived) p.sparks = Math.max(0, p.sparks - 1);
@@ -425,16 +506,18 @@ function resetTurnFlags(room) {
   b.routePlan = false; b.routeOptions = []; b.rolls = []; b.result = null; b.deadline = null; b.nextAt = null;
   b.turnStartSparks = snapshot(room);
 }
-function startRoundGame(room, now, rng = crypto.randomInt) {
+function startRoundGame(room, now, rng = crypto.randomInt, forcedId = null, forcedCategory = null) {
   const b = room.board, n = room.players.length;
-  const called = Boolean(b.roundCategory && room.players.some(p => p.id === b.roundCaller));
-  const category = called ? b.roundCategory : CATEGORIES[random(CATEGORIES.length, rng)];
+  const hasCaller = room.players.some(p => p.id === b.roundCaller);
+  const called = Boolean(b.roundCategory && hasCaller);
+  // G7: a stolen call with no colour called still makes the stealer the host.
+  const category = forcedCategory || (called ? b.roundCategory : CATEGORIES[random(CATEGORIES.length, rng)]);
   const fallback = everyone(room) && b.round ? b.round.spotlightId : room.players[(b.roundNo - 1) % n].id;
-  const hostId = called ? b.roundCaller : fallback;
+  const hostId = hasCaller ? b.roundCaller : fallback;
   b.stage = 'round-game'; b.activeId = hostId; b.turn++; resetTurnFlags(room);
   if (b.round) b.round.stage = 'minigame';
-  (category === 'speed' || category === 'brain' ? phase3 : phase4).start(room, category, now, rng);
-  const intro = called ? `${nameOf(room, hostId)} called it and hosts` : `Nobody called a game, so the studio picked ${LABELS[category].toUpperCase()}. ${nameOf(room, hostId)} hosts`;
+  (category === 'speed' || category === 'brain' ? phase3 : phase4).start(room, category, now, rng, forcedId);
+  const intro = called ? `${nameOf(room, hostId)} called it and hosts` : hasCaller ? `${nameOf(room, hostId)} stole the call and hosts ${LABELS[category].toUpperCase()}` : `Nobody called a game, so the studio picked ${LABELS[category].toUpperCase()}. ${nameOf(room, hostId)} hosts`;
   b.event = {...b.event, text: `${lastOrders(b) ? 'LAST ORDERS · ' : ''}ROUND ${b.roundNo} GAME · ${intro}. ${b.event?.text || ''}`};
 }
 function endGame(room, now) {
@@ -451,7 +534,7 @@ function endGame(room, now) {
 }
 function nextRoundState(b) {
   b.roundNo++; b.turnInRound = 0; b.stage = 'board';
-  b.roundCategory = null; b.roundCaller = null; b.roundLocked = false; b.showdownPlayed = false;
+  b.roundCategory = null; b.roundCaller = null; b.roundLocked = false; b.showdownPlayed = false; b.gameOptions = []; b.gameCategory = null;
 }
 function nextTurn(room, now, rng = crypto.randomInt) {
   const b = room.board;
@@ -465,6 +548,7 @@ function nextTurn(room, now, rng = crypto.randomInt) {
     if (b.turnInRound >= room.players.length) {startRoundGame(room, now, rng); return;}
   }
   b.activeId = boardTurnPlayer(room).id; b.turn++; resetTurnFlags(room); b.step = 'await_roll';
+  if (b.turnInRound === 0 && lastOrders(b) && b.totalRounds > 1) standingsSting(room, now);
   const p = actor(room);
   b.event = {type: 'turn', text: b.turnInRound === 0
     ? (lastOrders(b) ? `LAST ORDERS! Final round — every Spark you win is doubled. ${p.name} rolls first.` : `ROUND ${b.roundNo} OF ${b.totalRounds}. ${p.name} rolls first.`)
@@ -506,8 +590,33 @@ function hostResume(room, now) {
   resumeClocks(room, now, {preserveGrace: true});
   b.event = {type: 'resume', text: 'BACK ON AIR · The show continues!'};
 }
+// D5: only these round games genuinely need the host's phone (artist, performer,
+// partner chooser, bomb owner). Every other game carries on without the host.
+const HOST_CRITICAL = new Set(['sketch-sabotage', 'noise-annoys', 'mind-meld', 'bomb-squad']);
+function hostCanBeOffline(b) {return b.step === 'minigame' && Boolean(b.minigame) && !HOST_CRITICAL.has(b.minigame.id);}
+// D5: hand a host-critical game to the next online player by seat and restart it.
+// Returns false when nobody else is online (the old cancel behaviour then applies).
+function handOverHost(room, now, rng = crypto.randomInt) {
+  const b = room.board, m = b.minigame, old = actor(room);
+  if (b.step !== 'minigame' || !m || !HOST_CRITICAL.has(m.id) || !old) return false;
+  const bySeat = [...room.players].sort((a, z) => a.seat - z.seat);
+  const start = bySeat.findIndex(p => p.id === old.id);
+  let next = null;
+  for (let i = 1; i < bySeat.length; i++) {
+    const p = bySeat[(start + i) % bySeat.length];
+    if (p.socketId) {next = p; break;}
+  }
+  if (!next) return false;
+  const {id, category} = m;
+  b.activeId = next.id; b.minigame = null;
+  phase4.start(room, category, now, rng, id);
+  b.event = {type: 'handover', text: `${old.name}'s phone dropped, so ${next.name} now hosts ${phase4.SPECS[id].name}. Starting again!`};
+  return true;
+}
 function forfeitDisconnected(room, now) {
   const b = room.board, p = actor(room);
+  // G1: an offline caller's game pick falls back to a random one of the two.
+  if (b.step === 'choose_game' && b.gameOptions?.length) {pickRoundGame(room, now, crypto.randomInt, b.gameOptions[random(b.gameOptions.length, crypto.randomInt)]); return;}
   b.challenge = null; b.minigame = null; b.showdown = null; b.deadline = null;
   finishTurn(room, now, b.stage === 'round-game' ? `${p.name} disconnected, so this round's game was cancelled.` : `${p.name} disconnected. Their turn was skipped.`);
 }
@@ -517,7 +626,9 @@ function skipDisconnected(room, now) {
   const p = actor(room);
   if (p?.socketId || !Number.isFinite(p?.offlineSince)) fail('ONLINE', 'Only the disconnected active contestant can be skipped.');
   if (b.pauseKind === 'manual') fail('PAUSED', 'Resume the show before skipping the disconnected player.');
+  if (hostCanBeOffline(b)) fail('ONLINE', 'This game carries on without its host, so there is nothing to skip.');
   resumeClocks(room, now);
+  if (handOverHost(room, now)) return;
   forfeitDisconnected(room, now);
 }
 function tick(room, now, rng = crypto.randomInt) {
@@ -531,9 +642,13 @@ function tick(room, now, rng = crypto.randomInt) {
     return tickRound(room, now, rng);
   }
   const p = actor(room);
-  if (p && !p.socketId && !['result', 'finished'].includes(b.step) && b.stage !== 'noggin-off') {
-    if (p.offlineSince !== null && now - p.offlineSince >= 30_000) {resumeClocks(room, now); forfeitDisconnected(room, now); return true;}
-    if (!Number.isFinite(b.pausedAt)) {b.pausedAt = now; b.pauseKind = 'player'; b.pauseReason = 'Waiting up to 30 seconds for the active player to reconnect.'; return true;}
+  if (p && !p.socketId && !['result', 'finished'].includes(b.step) && b.stage !== 'noggin-off' && !hostCanBeOffline(b)) {
+    if (p.offlineSince !== null && now - p.offlineSince >= 30_000) {
+      resumeClocks(room, now);
+      if (!handOverHost(room, now, rng)) forfeitDisconnected(room, now);
+      return true;
+    }
+    if (!Number.isFinite(b.pausedAt)) {b.pausedAt = now; b.pauseKind = 'player'; b.pauseReason = b.step === 'minigame' ? `Waiting up to 30 seconds for ${p.name} (the host) to reconnect.` : 'Waiting up to 30 seconds for the active player to reconnect.'; return true;}
     return false;
   }
   if (Number.isFinite(b.pausedAt)) {resumeClocks(room, now); return true;}
@@ -545,7 +660,8 @@ function tick(room, now, rng = crypto.randomInt) {
     if (b.step === 'choose_die') {beginMove(room, b.rolls[0], now, rng); return true;}
     if (b.step === 'choose_route') {const i = b.routeOptions.findIndex(o => o.cost === 0); choose(room, b.activeId, {option: i < 0 ? 0 : i}, now, rng); return true;}
     if (b.step === 'choose_category') {choose(room, b.activeId, {category: CATEGORIES[random(CATEGORIES.length, rng)]}, now, rng); return true;}
-    if (b.step === 'choose_target' || b.step === 'choose_opponent') {
+    if (b.step === 'choose_game') {pickRoundGame(room, now, rng, b.gameOptions[random(b.gameOptions.length, rng)]); return true;}
+    if (b.step === 'choose_opponent') {
       const t = leaderExcept(room, b.activeId);
       if (!t) {finishTurn(room, now, 'No opponent available.'); return true;}
       choose(room, b.activeId, {targetId: t.id}, now, rng); return true;
@@ -557,7 +673,7 @@ function tick(room, now, rng = crypto.randomInt) {
 module.exports = {
   SPACES, COLORS, ICONS, LABELS, LIFTS, SHOWDOWNS, CATEGORIES, ROUND_OPTIONS, DEFAULT_ROUNDS, autoRounds,
   publicBoard, start, beginRound, roundRoll, roll, pickDie, choose, answer, tick, finishTurn, nextTurn, startRoundGame, endGame, beginMove, resolveChallenge,
-  minigameInput, minigameDraw, hostPause, hostResume, skipDisconnected, resumeClocks,
-  DIRECTORS_CUES, DIRECTORS_CHOICE_MS, ROUND_ROLL_MS, ROUND_MOVE_MS, DICE_SHOW_MS, HOP_MS, SETTLE_MS, presentMs, START_LAND_BONUS, START_PASS_BONUS, APPLAUSE_BONUS, ROUND_GAME_BONUS, CORNER_BONUS,
+  minigameInput, minigameDraw, hostPause, hostResume, skipDisconnected, resumeClocks, HOST_CRITICAL, handOverHost,
+  PICK_MS, STANDINGS_MS, EXPLAIN_MS, gameOptions, DIRECTORS_CUES, DIRECTORS_CHOICE_MS, ROUND_ROLL_MS, ROUND_MOVE_MS, DICE_SHOW_MS, HOP_MS, SETTLE_MS, presentMs, START_LAND_BONUS, START_PASS_BONUS, APPLAUSE_BONUS, ROUND_GAME_BONUS, CORNER_BONUS,
   UNDERDOG_THRESHOLD, UNDERDOG_BONUS_SMALL, UNDERDOG_BONUS_EIGHT
 };

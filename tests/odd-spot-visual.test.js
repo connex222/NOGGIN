@@ -14,5 +14,6 @@ for(let level=1;level<=5;level++)test(`Odd Spot level ${level} has matching publ
  assert.equal(JSON.stringify(phone).includes('"index"'),false);
  assert.equal(phone.display.grid.length,36);
  if(level===3||level===4)assert.equal(phone.display.styles.filter(x=>x.rotation!==0).length,1);
- if(level===5)assert.equal(new Set(phone.display.styles.map(x=>x.tone)).size,2);
+ // v3.5.0 D15: level 5 is a size difference (one smaller symbol), not a faint shade.
+ if(level===5)assert.equal(phone.display.styles.filter(x=>x.scale&&x.scale<1).length,1);
 });

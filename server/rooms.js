@@ -11,6 +11,9 @@ const AVATAR_IDS = new Set(avatars.map(a => a.id));
 const MAX_PLAYERS = 8;
 const MIN_PLAYERS = 2;
 const SEAT_GRACE_MS = 30_000;
+// D4: phones auto-lock while people wait in the lobby, so a lobby seat (name,
+// avatar, ready state) is held for 10 minutes. In-game turns still use 30 s.
+const LOBBY_GRACE_MS = 10 * 60_000;
 const EMPTY_ROOM_TTL_MS = 60 * 60_000;
 const MAX_ROOMS = 500;
 
@@ -61,10 +64,10 @@ class GameRooms {
     const room = {
       code, phase: 'lobby', createdAt: this.now(), updatedAt: this.now(),
       hostToken: crypto.randomBytes(24).toString('base64url'), hostSocketId,
-      players: [], vipId: null, vipOfflineSince: null, settings: {rounds: board.DEFAULT_ROUNDS, familyFriendly: true, timerSpeed: 'normal', reduceMotion: false, rules: 'classic', roundStyle: 'everyone'}
+      players: [], vipId: null, vipOfflineSince: null, settings: {rounds: board.DEFAULT_ROUNDS, familyFriendly: true, timerSpeed: 'normal', reduceMotion: false, rules: 'classic', roundStyle: 'everyone', colourBlindSafe: false}
     };
     this.rooms.set(code, room);
-    return {code, token: room.hostToken, state: this.state(code)};
+    return {code, token: room.hostToken, state: this.state(code, true)};
   }
 
   find(code) {
@@ -78,7 +81,8 @@ class GameRooms {
     return {
       code: room.code, phase: room.phase, hostOnline: Boolean(room.hostSocketId),
       vipId: room.vipId || null, vipName: room.players.find(p => p.id === room.vipId)?.name || null, settings: {...room.settings}, minPlayers: MIN_PLAYERS, maxPlayers: MAX_PLAYERS,
-      canStart: Boolean(room.hostSocketId) && room.players.length >= MIN_PLAYERS && room.players.every(p => p.ready && p.socketId),
+      // D4: offline-but-ready players do not block the start; they reconnect into their seat.
+      canStart: Boolean(room.hostSocketId) && room.players.length >= MIN_PLAYERS && room.players.every(p => p.ready) && room.players.some(p => p.socketId),
       serverNow: this.now(), board: board.publicBoard(room,forTv,viewerId),
       players: room.players.map(p => ({id: p.id, name: p.name, avatarId: p.avatarId, seat: p.seat, ready: p.ready, online: Boolean(p.socketId), position:p.position ?? 0, sparks:p.sparks ?? 0, cues:p.cues ?? 0}))
     };
@@ -101,7 +105,7 @@ class GameRooms {
     room.players.push(player);
     if (!room.vipId) room.vipId = player.id;
     room.updatedAt = this.now();
-    return {code: room.code, playerId: player.id, token: player.token, state: this.state(room.code)};
+    return {code: room.code, playerId: player.id, token: player.token, state: this.state(room.code, false, player.id)};
   }
 
   resume({code, token, socketId, role}) {
@@ -112,22 +116,46 @@ class GameRooms {
       const oldSocketId = room.hostSocketId;
       room.hostSocketId = socketId;
       room.updatedAt = this.now();
-      return {code: room.code, role: 'host', oldSocketId, state: this.state(room.code)};
+      return {code: room.code, role: 'host', oldSocketId, state: this.state(room.code, true)};
     }
     assert(role === 'player', 'AUTH', 'Invalid session.');
     const player = room.players.find(p => safeTokenEquals(token, p.token));
     assert(player, 'AUTH', 'Your previous seat is no longer available. Please join again.');
-    if (room.phase === 'lobby' && !player.socketId && player.offlineSince !== null && this.now() - player.offlineSince > SEAT_GRACE_MS) {
+    if (room.phase === 'lobby' && !player.socketId && player.offlineSince !== null && this.now() - player.offlineSince > LOBBY_GRACE_MS) {
       room.players = room.players.filter(p => p !== player);
     if (room.vipId === player.id) {room.vipId = room.players.find(p => p.socketId)?.id || null; room.vipOfflineSince = null;}
-      throw new LobbyError('EXPIRED', 'The 30-second reconnect window expired. Please join again.');
+      throw new LobbyError('EXPIRED', 'Your seat was held for 10 minutes and has now been released. Please join again.');
     }
     const oldSocketId = player.socketId;
     player.socketId = socketId;
     player.offlineSince = null;
     if (room.vipId === player.id) room.vipOfflineSince = null;
     room.updatedAt = this.now();
-    return {code: room.code, role: 'player', playerId: player.id, oldSocketId, state: this.state(room.code)};
+    return {code: room.code, role: 'player', playerId: player.id, oldSocketId, state: this.state(room.code, false, player.id)};
+  }
+
+  // D1: a phone may ask to resume twice on one connection. If this socket already
+  // holds exactly the seat the token belongs to, confirm it instead of rejecting.
+  confirmSeat({code, token, role, socketId}) {
+    const room = typeof code === 'string' ? this.rooms.get(code.toUpperCase()) : null;
+    if (!room || typeof socketId !== 'string' || !socketId) return null;
+    if (role === 'host') {
+      if (room.hostSocketId !== socketId || !safeTokenEquals(token, room.hostToken)) return null;
+      return {code: room.code, role: 'host', state: this.state(room.code, true)};
+    }
+    if (role !== 'player') return null;
+    const player = room.players.find(p => p.socketId === socketId);
+    if (!player || !safeTokenEquals(token, player.token)) return null;
+    return {code: room.code, role: 'player', playerId: player.id, state: this.state(room.code, false, player.id)};
+  }
+
+  // D9: the state returned to whoever made a request. Only the TV socket gets
+  // TV-only cues; a phone (including the VIP) gets its own private view.
+  callerState(code, socketId) {
+    const room = this.find(code);
+    const isTv = Boolean(socketId) && room.hostSocketId === socketId;
+    const player = isTv ? null : room.players.find(p => p.socketId === socketId);
+    return this.state(room.code, isTv, player ? player.id : null);
   }
 
   requirePlayer(code, socketId) {
@@ -152,7 +180,7 @@ class GameRooms {
     player.avatarId = avatarId;
     player.ready = false;
     room.updatedAt = this.now();
-    return this.state(code);
+    return this.callerState(code,socketId);
   }
 
   setReady(code, socketId, ready) {
@@ -161,7 +189,7 @@ class GameRooms {
     assert(typeof ready === 'boolean', 'VALUE', 'Invalid ready status.');
     player.ready = ready;
     room.updatedAt = this.now();
-    return this.state(code);
+    return this.callerState(code,socketId);
   }
 
   setSettings(code, socketId, patch) {
@@ -169,17 +197,17 @@ class GameRooms {
     assert(room.phase === 'lobby', 'PHASE', 'Game settings are locked while playing.');
     assert(patch && typeof patch === 'object' && !Array.isArray(patch), 'SETTINGS', 'Invalid game settings.');
     const keys = Object.keys(patch);
-    assert(keys.length > 0 && keys.every(k => ['rounds', 'familyFriendly', 'timerSpeed', 'reduceMotion', 'rules', 'roundStyle'].includes(k)), 'SETTINGS', 'Unknown game setting.');
+    assert(keys.length > 0 && keys.every(k => ['rounds', 'familyFriendly', 'timerSpeed', 'reduceMotion', 'rules', 'roundStyle', 'colourBlindSafe'].includes(k)), 'SETTINGS', 'Unknown game setting.');
     for (const [key, value] of Object.entries(patch)) {
       if (key === 'rounds') assert(board.ROUND_OPTIONS.includes(value), 'SETTINGS', 'Choose Auto, 6, 8, 10 or 12 rounds.');
       if (key === 'timerSpeed') assert(['normal', 'relaxed'].includes(value), 'SETTINGS', 'Invalid timer speed.');
       if (key === 'roundStyle') assert(['everyone','sequential'].includes(value), 'SETTINGS', 'Choose Everyone Rolls or One at a Time.');
       if (key === 'rules') assert(['classic','showtime'].includes(value),'SETTINGS','Choose Classic or Showtime.');
-      if (['familyFriendly', 'reduceMotion'].includes(key)) assert(typeof value === 'boolean', 'SETTINGS', 'Invalid toggle value.');
+      if (['familyFriendly', 'reduceMotion', 'colourBlindSafe'].includes(key)) assert(typeof value === 'boolean', 'SETTINGS', 'Invalid toggle value.');
     }
     Object.assign(room.settings, patch);
     room.updatedAt = this.now();
-    return this.state(code);
+    return this.callerState(code,socketId);
   }
 
   disconnect(code, socketId) {
@@ -206,28 +234,34 @@ class GameRooms {
     room.players = room.players.filter(p => p !== player);
     if (room.vipId === player.id) {room.vipId = room.players.find(p => p.socketId)?.id || null; room.vipOfflineSince = null;}
     room.updatedAt = this.now();
-    return this.state(code);
+    return this.callerState(code,socketId);
   }
 
-  startGame(code,socketId) {const room=this.requireHost(code,socketId);board.start(room,this.now());room.updatedAt=this.now();matchReport.start(room,this.now());return this.state(code);}
-  rollGame(code,socketId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.roll(room,player.id,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.state(code);}
-  pickGameDie(code,socketId,index) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.pickDie(room,player.id,index,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.state(code);}
-  chooseGame(code,socketId,payload) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.choose(room,player.id,payload,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.state(code);}
-  answerGame(code,socketId,choice) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.answer(room,player.id,choice,this.now());matchReport.observe(room,this.now());return this.state(code);}
-  pauseGame(code,socketId) {const room=this.requireHost(code,socketId);board.hostPause(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.state(code,true);}
-  resumeGame(code,socketId) {const room=this.requireHost(code,socketId);board.hostResume(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.state(code,true);}
-  skipDisconnectedGame(code,socketId) {const room=this.requireHost(code,socketId);board.skipDisconnected(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.state(code,true);}
-  cheerGame(code,socketId,targetId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);require('./games/phase5').cheer(room,player.id,targetId);matchReport.observe(room,this.now());return this.state(code,false,player.id);}
-  inputGame(code,socketId,value,roundKey) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.minigameInput(room,player.id,value,roundKey,this.now());matchReport.observe(room,this.now());return this.state(code,false,player.id);}
+  startGame(code,socketId) {const room=this.requireHost(code,socketId);board.start(room,this.now());room.updatedAt=this.now();matchReport.start(room,this.now());return this.callerState(code,socketId);}
+  rollGame(code,socketId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.roll(room,player.id,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  pickGameDie(code,socketId,index) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.pickDie(room,player.id,index,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  chooseGame(code,socketId,payload) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.choose(room,player.id,payload,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  answerGame(code,socketId,choice) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.answer(room,player.id,choice,this.now());matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  pauseGame(code,socketId) {const room=this.requireHost(code,socketId);board.hostPause(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  resumeGame(code,socketId) {const room=this.requireHost(code,socketId);board.hostResume(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  skipDisconnectedGame(code,socketId) {const room=this.requireHost(code,socketId);board.skipDisconnected(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  cheerGame(code,socketId,targetId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);require('./games/phase5').cheer(room,player.id,targetId);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  inputGame(code,socketId,value,roundKey) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.minigameInput(room,player.id,value,roundKey,this.now());matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  // D10: Bid to Win answers are judged by the TV host or by any player who is NOT
+  // in the duel. Neither duellist may judge (not even the VIP). First decision wins.
   adjudicateBid(code,socketId,accept) {
-    const room=this.requireHost(code,socketId);this.assertGame(room);
-    const review=room.board?.showdown?.pendingReview;
-    assert(!review || socketId===room.hostSocketId || room.vipId!==review.submittedBy, 'AUTH', 'The bidder cannot approve their own answer; ask the TV host.');
+    const room=this.find(code);this.assertGame(room);
+    if(socketId!==room.hostSocketId){
+      const judge=room.players.find(p=>p.socketId===socketId);
+      assert(judge,'AUTH','You are not seated in this room.');
+      const duel=room.board?.showdown;
+      assert(!duel || !duel.participants.includes(judge.id),'AUTH','Duellists cannot judge Bid to Win answers. The TV or another player will judge.');
+    }
     require('./games/phase5').decideBid(room,accept,this.now(),board.finishTurn);
     matchReport.observe(room,this.now());
-    return this.state(code);
+    return this.callerState(code,socketId);
   }
-  drawGame(code,socketId,points,roundKey) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.minigameDraw(room,player.id,points,roundKey,this.now());matchReport.observe(room,this.now());return this.state(code,false,player.id);}
+  drawGame(code,socketId,points,roundKey) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.minigameDraw(room,player.id,points,roundKey,this.now());matchReport.observe(room,this.now());return this.callerState(code,socketId);}
   assertGame(room) {assert(room.phase === 'board' && room.hostSocketId, 'PHASE', 'The NOGGIN board is not running.');assert(!Number.isFinite(room.board.pausedAt),'PAUSED','The game is paused for reconnection.');}
   getMatchReport(code,socketId) {const room=this.requireHost(code,socketId);assert(room.matchReport,'PHASE','Start a game before exporting a report.');return matchReport.report(room,this.now());}
   close(code, socketId) {
@@ -243,7 +277,7 @@ class GameRooms {
         if (candidate) {room.vipId = candidate.id; room.vipOfflineSince = null; changed.push(room.code);}
       }
       const oldLength = room.players.length;
-      if (room.phase === 'lobby') room.players = room.players.filter(p => p.socketId || p.offlineSince === null || this.now() - p.offlineSince <= SEAT_GRACE_MS);
+      if (room.phase === 'lobby') room.players = room.players.filter(p => p.socketId || p.offlineSince === null || this.now() - p.offlineSince <= LOBBY_GRACE_MS);
       if (!room.players.some(p => p.id === room.vipId)) {room.vipId = room.players.find(p => p.socketId)?.id || null; room.vipOfflineSince = null;}
       if (room.players.length !== oldLength) changed.push(room.code);
       if (board.tick(room,this.now(),this.randomInt)) changed.push(room.code);
@@ -257,4 +291,4 @@ class GameRooms {
   }
 }
 
-module.exports = {GameRooms, LobbyError, normalizeName, normalizeCode, safeTokenEquals, SEAT_GRACE_MS, MAX_PLAYERS};
+module.exports = {GameRooms, LobbyError, normalizeName, normalizeCode, safeTokenEquals, SEAT_GRACE_MS, LOBBY_GRACE_MS, MAX_PLAYERS};

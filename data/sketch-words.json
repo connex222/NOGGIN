@@ -22,7 +22,12 @@
   {
     "id": "sk-005",
     "word": "REMOTE CONTROL",
-    "category": "Home"
+    "category": "Home",
+    "accept": [
+      "remote",
+      "tv remote",
+      "controller"
+    ]
   },
   {
     "id": "sk-006",
@@ -32,7 +37,11 @@
   {
     "id": "sk-007",
     "word": "VACUUM CLEANER",
-    "category": "Home"
+    "category": "Home",
+    "accept": [
+      "vacuum",
+      "hoover"
+    ]
   },
   {
     "id": "sk-008",
@@ -47,7 +56,11 @@
   {
     "id": "sk-010",
     "word": "COAT HANGER",
-    "category": "Home"
+    "category": "Home",
+    "accept": [
+      "hanger",
+      "clothes hanger"
+    ]
   },
   {
     "id": "sk-011",
@@ -62,7 +75,12 @@
   {
     "id": "sk-013",
     "word": "ICE CREAM CONE",
-    "category": "Food"
+    "category": "Food",
+    "accept": [
+      "ice cream",
+      "cornet",
+      "ice cream cornet"
+    ]
   },
   {
     "id": "sk-014",
@@ -92,7 +110,10 @@
   {
     "id": "sk-019",
     "word": "BANANA PEEL",
-    "category": "Food"
+    "category": "Food",
+    "accept": [
+      "banana skin"
+    ]
   },
   {
     "id": "sk-020",
@@ -140,9 +161,9 @@
     "category": "Animals"
   },
   {
-    "id": "sk-029",
-    "word": "BEAVER",
-    "category": "Animals"
+    "id": "v35-sk-001",
+    "word": "SANDCASTLE",
+    "category": "Seaside"
   },
   {
     "id": "sk-030",
@@ -167,7 +188,12 @@
   {
     "id": "sk-034",
     "word": "TENNIS RACKET",
-    "category": "Sports"
+    "category": "Sports",
+    "accept": [
+      "racket",
+      "racquet",
+      "tennis racquet"
+    ]
   },
   {
     "id": "sk-035",
@@ -237,7 +263,10 @@
   {
     "id": "sk-048",
     "word": "HOT AIR BALLOON",
-    "category": "Outdoors"
+    "category": "Outdoors",
+    "accept": [
+      "balloon"
+    ]
   },
   {
     "id": "sk-049",
@@ -302,7 +331,12 @@
   {
     "id": "sk-061",
     "word": "DOUBLE-DECKER BUS",
-    "category": "Transport"
+    "category": "Transport",
+    "accept": [
+      "double decker",
+      "bus",
+      "london bus"
+    ]
   },
   {
     "id": "sk-062",
@@ -337,7 +371,12 @@
   {
     "id": "sk-068",
     "word": "STEAM TRAIN",
-    "category": "Transport"
+    "category": "Transport",
+    "accept": [
+      "train",
+      "steam engine",
+      "locomotive"
+    ]
   },
   {
     "id": "sk-069",
@@ -357,7 +396,10 @@
   {
     "id": "sk-072",
     "word": "BOW TIE",
-    "category": "Clothes"
+    "category": "Clothes",
+    "accept": [
+      "dicky bow"
+    ]
   },
   {
     "id": "sk-073",
@@ -397,7 +439,10 @@
   {
     "id": "sk-080",
     "word": "FOOTBALL BOOTS",
-    "category": "Clothes"
+    "category": "Clothes",
+    "accept": [
+      "boots"
+    ]
   },
   {
     "id": "sk-081",
@@ -407,7 +452,11 @@
   {
     "id": "sk-082",
     "word": "DISCO BALL",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "mirror ball",
+      "glitter ball"
+    ]
   },
   {
     "id": "sk-083",
@@ -417,7 +466,11 @@
   {
     "id": "sk-084",
     "word": "DRUM KIT",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "drums",
+      "drum set"
+    ]
   },
   {
     "id": "sk-085",
@@ -427,7 +480,12 @@
   {
     "id": "sk-086",
     "word": "CINEMA TICKET",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "ticket",
+      "movie ticket",
+      "film ticket"
+    ]
   },
   {
     "id": "sk-087",
@@ -437,17 +495,26 @@
   {
     "id": "sk-088",
     "word": "CIRCUS TENT",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "big top"
+    ]
   },
   {
     "id": "sk-089",
     "word": "CLOWN NOSE",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "red nose"
+    ]
   },
   {
     "id": "sk-090",
     "word": "MAGIC WAND",
-    "category": "Entertainment"
+    "category": "Entertainment",
+    "accept": [
+      "wand"
+    ]
   },
   {
     "id": "sk-091",
@@ -467,7 +534,10 @@
   {
     "id": "sk-094",
     "word": "CLOCK TOWER",
-    "category": "Buildings"
+    "category": "Buildings",
+    "accept": [
+      "big ben"
+    ]
   },
   {
     "id": "sk-095",
@@ -487,12 +557,18 @@
   {
     "id": "sk-098",
     "word": "WIND FARM",
-    "category": "Buildings"
+    "category": "Buildings",
+    "accept": [
+      "wind turbines"
+    ]
   },
   {
     "id": "sk-099",
     "word": "GARDEN SHED",
-    "category": "Buildings"
+    "category": "Buildings",
+    "accept": [
+      "shed"
+    ]
   },
   {
     "id": "sk-100",
@@ -517,17 +593,30 @@
   {
     "id": "sk-104",
     "word": "SUBMARINE SANDWICH",
-    "category": "Underwater"
+    "category": "Underwater",
+    "accept": [
+      "sub",
+      "sub sandwich",
+      "baguette"
+    ]
   },
   {
     "id": "sk-105",
     "word": "TREASURE CHEST",
-    "category": "Underwater"
+    "category": "Underwater",
+    "accept": [
+      "treasure",
+      "chest"
+    ]
   },
   {
     "id": "sk-106",
     "word": "PIRATE SHIP",
-    "category": "Underwater"
+    "category": "Underwater",
+    "accept": [
+      "ship",
+      "galleon"
+    ]
   },
   {
     "id": "sk-107",
@@ -542,7 +631,11 @@
   {
     "id": "sk-109",
     "word": "DIVING MASK",
-    "category": "Underwater"
+    "category": "Underwater",
+    "accept": [
+      "snorkel mask",
+      "mask"
+    ]
   },
   {
     "id": "sk-110",
@@ -562,7 +655,10 @@
   {
     "id": "sk-113",
     "word": "GIANT BEANSTALK",
-    "category": "Fairy tales"
+    "category": "Fairy tales",
+    "accept": [
+      "beanstalk"
+    ]
   },
   {
     "id": "sk-114",
@@ -577,7 +673,10 @@
   {
     "id": "sk-116",
     "word": "FAIRY WINGS",
-    "category": "Fairy tales"
+    "category": "Fairy tales",
+    "accept": [
+      "wings"
+    ]
   },
   {
     "id": "sk-117",
@@ -587,52 +686,85 @@
   {
     "id": "sk-118",
     "word": "GOLDEN EGG",
-    "category": "Fairy tales"
+    "category": "Fairy tales",
+    "accept": [
+      "gold egg"
+    ]
   },
   {
     "id": "sk-119",
     "word": "GLASS SLIPPER",
-    "category": "Fairy tales"
+    "category": "Fairy tales",
+    "accept": [
+      "slipper"
+    ]
   },
   {
     "id": "sk-120",
     "word": "ENCHANTED FOREST",
-    "category": "Fairy tales"
+    "category": "Fairy tales",
+    "accept": [
+      "forest",
+      "magic forest"
+    ]
   },
   {
     "id": "sk-121",
-    "word": "RED POSTBOX",
-    "category": "British life"
+    "word": "LADYBIRD",
+    "category": "Minibeasts"
   },
   {
     "id": "sk-122",
     "word": "TELEPHONE BOX",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "phone box",
+      "telephone booth",
+      "phone booth"
+    ]
   },
   {
     "id": "sk-123",
     "word": "TEA COSY",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "tea cozy"
+    ]
   },
   {
     "id": "sk-124",
     "word": "BLACK CAB",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "taxi",
+      "cab",
+      "london taxi"
+    ]
   },
   {
     "id": "sk-125",
     "word": "TRAFFIC CONE",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "cone"
+    ]
   },
   {
     "id": "sk-126",
     "word": "FISH AND CHIPS",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "fish n chips",
+      "fish chips"
+    ]
   },
   {
     "id": "sk-127",
     "word": "BOWLER HAT",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "bowler"
+    ]
   },
   {
     "id": "sk-128",
@@ -647,7 +779,11 @@
   {
     "id": "sk-130",
     "word": "SHOPPING TROLLEY",
-    "category": "British life"
+    "category": "British life",
+    "accept": [
+      "trolley",
+      "shopping cart"
+    ]
   },
   {
     "id": "sk-131",
@@ -677,7 +813,12 @@
   {
     "id": "sk-136",
     "word": "GAME CONTROLLER",
-    "category": "Technology"
+    "category": "Technology",
+    "accept": [
+      "controller",
+      "joypad",
+      "gamepad"
+    ]
   },
   {
     "id": "sk-137",
@@ -692,7 +833,11 @@
   {
     "id": "sk-139",
     "word": "CHARGING CABLE",
-    "category": "Technology"
+    "category": "Technology",
+    "accept": [
+      "cable",
+      "charger cable"
+    ]
   },
   {
     "id": "sk-140",
@@ -722,7 +867,11 @@
   {
     "id": "sk-145",
     "word": "GIFT BOX",
-    "category": "Celebrations"
+    "category": "Celebrations",
+    "accept": [
+      "present",
+      "gift"
+    ]
   },
   {
     "id": "sk-146",
@@ -732,17 +881,26 @@
   {
     "id": "sk-147",
     "word": "CONFETTI CANNON",
-    "category": "Celebrations"
+    "category": "Celebrations",
+    "accept": [
+      "confetti"
+    ]
   },
   {
     "id": "sk-148",
     "word": "CHRISTMAS CRACKER",
-    "category": "Celebrations"
+    "category": "Celebrations",
+    "accept": [
+      "cracker"
+    ]
   },
   {
     "id": "sk-149",
     "word": "PARTY POPPER",
-    "category": "Celebrations"
+    "category": "Celebrations",
+    "accept": [
+      "popper"
+    ]
   },
   {
     "id": "sk-150",
@@ -752,7 +910,10 @@
   {
     "id": "sk-151",
     "word": "GARDEN GNOME",
-    "category": "Garden"
+    "category": "Garden",
+    "accept": [
+      "gnome"
+    ]
   },
   {
     "id": "sk-152",
@@ -797,12 +958,19 @@
   {
     "id": "sk-160",
     "word": "LAWNMOWER",
-    "category": "Garden"
+    "category": "Garden",
+    "accept": [
+      "mower"
+    ]
   },
   {
     "id": "sk-161",
     "word": "LIGHTNING BOLT",
-    "category": "Weather"
+    "category": "Weather",
+    "accept": [
+      "lightning",
+      "thunderbolt"
+    ]
   },
   {
     "id": "sk-162",
@@ -947,7 +1115,11 @@
   {
     "id": "sk-190",
     "word": "RECORD PLAYER",
-    "category": "Musical"
+    "category": "Musical",
+    "accept": [
+      "turntable",
+      "gramophone"
+    ]
   },
   {
     "id": "sk-191",
@@ -997,12 +1169,20 @@
   {
     "id": "sk-200",
     "word": "FLYING SAUCER",
-    "category": "Wild things"
+    "category": "Wild things",
+    "accept": [
+      "ufo"
+    ]
   },
   {
     "id": "sk-p6-001",
     "word": "WELLINGTON BOOT",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "welly",
+      "wellie",
+      "wellington"
+    ]
   },
   {
     "id": "sk-p6-002",
@@ -1012,7 +1192,12 @@
   {
     "id": "sk-p6-003",
     "word": "POST BOX",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "red postbox",
+      "pillar box",
+      "letterbox"
+    ]
   },
   {
     "id": "sk-p6-008",
@@ -1027,7 +1212,11 @@
   {
     "id": "sk-p6-010",
     "word": "BICYCLE BELL",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bike bell",
+      "bell"
+    ]
   },
   {
     "id": "sk-p6-011",
@@ -1042,7 +1231,12 @@
   {
     "id": "sk-p6-015",
     "word": "ICE LOLLY",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "lolly",
+      "ice pop",
+      "popsicle"
+    ]
   },
   {
     "id": "sk-p6-018",
@@ -1052,7 +1246,10 @@
   {
     "id": "sk-p6-019",
     "word": "BIRD FEEDER",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bird table"
+    ]
   },
   {
     "id": "sk-p6-020",
@@ -1072,12 +1269,20 @@
   {
     "id": "sk-p6-025",
     "word": "FISHING ROD",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "fishing pole",
+      "rod"
+    ]
   },
   {
     "id": "sk-p6-026",
     "word": "WASHING LINE",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "clothes line",
+      "clothesline"
+    ]
   },
   {
     "id": "sk-p6-027",
@@ -1102,7 +1307,10 @@
   {
     "id": "sk-p6-035",
     "word": "LIFE JACKET",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "life vest"
+    ]
   },
   {
     "id": "sk-p6-036",
@@ -1112,27 +1320,42 @@
   {
     "id": "sk-p6-037",
     "word": "SNOW GLOBE",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "snow dome"
+    ]
   },
   {
     "id": "sk-p6-038",
     "word": "CLOTHES PEG",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "peg"
+    ]
   },
   {
     "id": "sk-p6-039",
     "word": "BUS STOP",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bus shelter"
+    ]
   },
   {
     "id": "sk-p6-040",
     "word": "PENCIL SHARPENER",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "sharpener"
+    ]
   },
   {
     "id": "sk-p6-041",
     "word": "CHEESE GRATER",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "grater"
+    ]
   },
   {
     "id": "sk-p6-042",
@@ -1142,67 +1365,104 @@
   {
     "id": "sk-p6-043",
     "word": "PARK BENCH",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bench"
+    ]
   },
   {
     "id": "sk-p6-044",
     "word": "FIRE ENGINE",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "fire truck",
+      "firetruck"
+    ]
   },
   {
     "id": "sk-p6-046",
     "word": "SAFETY PIN",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "pin"
+    ]
   },
   {
     "id": "sk-p6-047",
     "word": "TIN OPENER",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "can opener"
+    ]
   },
   {
     "id": "sk-p6-048",
     "word": "PIGGY BANK",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "money box"
+    ]
   },
   {
     "id": "sk-p6-049",
     "word": "DESK LAMP",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "lamp"
+    ]
   },
   {
     "id": "sk-p6-050",
     "word": "WOODEN SPOON",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "spoon"
+    ]
   },
   {
     "id": "p6b2-ske-001",
-    "word": "WELLINGTON BOOTS",
-    "category": "Everyday objects"
+    "word": "CATERPILLAR",
+    "category": "Minibeasts"
   },
   {
     "id": "p6b2-ske-002",
     "word": "ICE CREAM VAN",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "ice cream truck"
+    ]
   },
   {
     "id": "p6b2-ske-003",
     "word": "PAPER AEROPLANE",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "paper plane",
+      "paper airplane"
+    ]
   },
   {
     "id": "p6b2-ske-004",
     "word": "BICYCLE HELMET",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bike helmet",
+      "cycle helmet",
+      "cycling helmet"
+    ]
   },
   {
     "id": "p6b2-ske-005",
     "word": "HOT WATER BOTTLE",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "hottie"
+    ]
   },
   {
-    "id": "p6b2-ske-006",
-    "word": "DOOR KNOCKER",
-    "category": "Everyday objects"
+    "id": "v35-sk-002",
+    "word": "SPINNING TOP",
+    "category": "Toys"
   },
   {
     "id": "p6b2-ske-007",
@@ -1212,7 +1472,10 @@
   {
     "id": "p6b2-ske-008",
     "word": "CAMPING TENT",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "tent"
+    ]
   },
   {
     "id": "p6b2-ske-009",
@@ -1221,8 +1484,8 @@
   },
   {
     "id": "p6b2-ske-010",
-    "word": "LAWN MOWER",
-    "category": "Everyday objects"
+    "word": "SUNDIAL",
+    "category": "Garden"
   },
   {
     "id": "p6b2-ske-011",
@@ -1257,12 +1520,19 @@
   {
     "id": "p6b2-ske-017",
     "word": "HULA HOOP",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "hoop"
+    ]
   },
   {
     "id": "p6b2-ske-018",
     "word": "DRESSING GOWN",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "bathrobe",
+      "robe"
+    ]
   },
   {
     "id": "p6b2-ske-019",
@@ -1297,7 +1567,11 @@
   {
     "id": "p6b2-ske-025",
     "word": "SUN LOUNGER",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "lounger",
+      "sunbed"
+    ]
   },
   {
     "id": "p6b4-ske-001",
@@ -1337,7 +1611,10 @@
   {
     "id": "p6b4-ske-010",
     "word": "LEMON SQUEEZER",
-    "category": "Kitchen objects"
+    "category": "Kitchen objects",
+    "accept": [
+      "juicer"
+    ]
   },
   {
     "id": "p6b4-ske-011",
@@ -1347,12 +1624,19 @@
   {
     "id": "p6b4-ske-014",
     "word": "MAGNIFYING GLASS",
-    "category": "Everyday objects"
+    "category": "Everyday objects",
+    "accept": [
+      "magnifier"
+    ]
   },
   {
     "id": "p6b4-ske-015",
     "word": "CAMPING STOVE",
-    "category": "Outdoors"
+    "category": "Outdoors",
+    "accept": [
+      "stove",
+      "camp stove"
+    ]
   },
   {
     "id": "p6b4-ske-016",
@@ -1362,7 +1646,11 @@
   {
     "id": "p6b4-ske-017",
     "word": "CLOTHES HORSE",
-    "category": "Household objects"
+    "category": "Household objects",
+    "accept": [
+      "clothes airer",
+      "airer"
+    ]
   },
   {
     "id": "p6b4-ske-018",
@@ -1372,22 +1660,36 @@
   {
     "id": "p6b4-ske-021",
     "word": "JIGSAW PUZZLE",
-    "category": "Games"
+    "category": "Games",
+    "accept": [
+      "jigsaw",
+      "puzzle"
+    ]
   },
   {
     "id": "p6b4-ske-024",
     "word": "BARBECUE TONGS",
-    "category": "Kitchen objects"
+    "category": "Kitchen objects",
+    "accept": [
+      "tongs",
+      "bbq tongs"
+    ]
   },
   {
     "id": "p6b4-ske-026",
     "word": "HEDGE TRIMMER",
-    "category": "Garden objects"
+    "category": "Garden objects",
+    "accept": [
+      "hedge cutter"
+    ]
   },
   {
     "id": "p6b4-ske-027",
     "word": "PAINT ROLLER",
-    "category": "DIY objects"
+    "category": "DIY objects",
+    "accept": [
+      "roller"
+    ]
   },
   {
     "id": "p6b4-ske-028",
@@ -1402,7 +1704,10 @@
   {
     "id": "p6b4-ske-030",
     "word": "LAUNDRY BASKET",
-    "category": "Household objects"
+    "category": "Household objects",
+    "accept": [
+      "washing basket"
+    ]
   },
   {
     "id": "p6b4-ske-031",
@@ -1417,17 +1722,28 @@
   {
     "id": "p6b4-ske-033",
     "word": "WINDSCREEN WIPER",
-    "category": "Car parts"
+    "category": "Car parts",
+    "accept": [
+      "wiper",
+      "windshield wiper"
+    ]
   },
   {
     "id": "p6b4-ske-034",
     "word": "PHONE CHARGER",
-    "category": "Technology"
+    "category": "Technology",
+    "accept": [
+      "charger"
+    ]
   },
   {
     "id": "p6b4-ske-035",
     "word": "RUBBER DUCK",
-    "category": "Toys"
+    "category": "Toys",
+    "accept": [
+      "duck",
+      "rubber ducky"
+    ]
   },
   {
     "id": "p6b4-ske-036",
@@ -1447,7 +1763,10 @@
   {
     "id": "p6b4-ske-040",
     "word": "FIRE EXTINGUISHER",
-    "category": "Safety objects"
+    "category": "Safety objects",
+    "accept": [
+      "extinguisher"
+    ]
   },
   {
     "id": "p6b5-ske-001",
@@ -1456,8 +1775,8 @@
   },
   {
     "id": "p6b5-ske-002",
-    "word": "SAND TIMER",
-    "category": "Objects"
+    "word": "SAXOPHONE",
+    "category": "Music"
   },
   {
     "id": "p6b5-ske-003",
@@ -1486,8 +1805,8 @@
   },
   {
     "id": "p6b5-ske-013",
-    "word": "BIKE HELMET",
-    "category": "Transport"
+    "word": "KANGAROO",
+    "category": "Animals"
   },
   {
     "id": "p6b5-ske-014",
@@ -1502,7 +1821,10 @@
   {
     "id": "p6b5-ske-017",
     "word": "TENT PEG",
-    "category": "Camping"
+    "category": "Camping",
+    "accept": [
+      "peg"
+    ]
   },
   {
     "id": "p6b5-ske-020",
@@ -1517,7 +1839,10 @@
   {
     "id": "p6b5-ske-024",
     "word": "WIND TURBINE",
-    "category": "Technology"
+    "category": "Technology",
+    "accept": [
+      "turbine"
+    ]
   },
   {
     "id": "p6b5-ske-026",
@@ -1582,7 +1907,10 @@
   {
     "id": "p6b5-ske-044",
     "word": "SKIPPING ROPE",
-    "category": "Games"
+    "category": "Games",
+    "accept": [
+      "jump rope"
+    ]
   },
   {
     "id": "p6b5-ske-045",
@@ -1592,7 +1920,10 @@
   {
     "id": "p6b5-ske-046",
     "word": "COOKIE CUTTER",
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "accept": [
+      "biscuit cutter"
+    ]
   },
   {
     "id": "p6b5-ske-048",
@@ -1601,8 +1932,11 @@
   },
   {
     "id": "p6b5-ske-049",
-    "word": "ROLLER SKATE",
-    "category": "Sport"
+    "word": "BUNK BED",
+    "category": "Bedroom",
+    "accept": [
+      "bunks"
+    ]
   },
   {
     "id": "p6b5-ske-050",
@@ -1631,13 +1965,19 @@
   },
   {
     "id": "p6b7-ske-005",
-    "word": "LUNCH BOX",
-    "category": "School"
+    "word": "WALKING STICK",
+    "category": "Everyday objects",
+    "accept": [
+      "cane"
+    ]
   },
   {
     "id": "p6b7-ske-006",
     "word": "SPIDER WEB",
-    "category": "Nature"
+    "category": "Nature",
+    "accept": [
+      "cobweb"
+    ]
   },
   {
     "id": "p6b7-ske-007",
@@ -1667,7 +2007,10 @@
   {
     "id": "p6b7-ske-012",
     "word": "FERRIS WHEEL",
-    "category": "Places"
+    "category": "Places",
+    "accept": [
+      "big wheel"
+    ]
   },
   {
     "id": "p6b7-ske-013",
@@ -1682,27 +2025,43 @@
   {
     "id": "p6b7-ske-015",
     "word": "CHOCOLATE BAR",
-    "category": "Food"
+    "category": "Food",
+    "accept": [
+      "chocolate"
+    ]
   },
   {
     "id": "p6b7-ske-016",
     "word": "FISH TANK",
-    "category": "Pets"
+    "category": "Pets",
+    "accept": [
+      "aquarium"
+    ]
   },
   {
     "id": "p6b7-ske-017",
     "word": "PIZZA SLICE",
-    "category": "Food"
+    "category": "Food",
+    "accept": [
+      "pizza",
+      "slice of pizza"
+    ]
   },
   {
     "id": "p6b7-ske-018",
     "word": "SHOPPING BAG",
-    "category": "Shopping"
+    "category": "Shopping",
+    "accept": [
+      "bag"
+    ]
   },
   {
     "id": "p6b7-ske-019",
     "word": "SAFETY GOGGLES",
-    "category": "Clothes"
+    "category": "Clothes",
+    "accept": [
+      "goggles"
+    ]
   },
   {
     "id": "p6b7-ske-020",
@@ -1717,7 +2076,10 @@
   {
     "id": "p6b7-ske-022",
     "word": "SOAP BUBBLES",
-    "category": "Play"
+    "category": "Play",
+    "accept": [
+      "bubbles"
+    ]
   },
   {
     "id": "p6final-sk-000",
@@ -1791,7 +2153,7 @@
   },
   {
     "id": "p6final-sk-017",
-    "word": "BEACHBALL",
+    "word": "BEACH BALL",
     "category": "Everyday objects and animals"
   },
   {
@@ -1811,8 +2173,11 @@
   },
   {
     "id": "p6final-sk-022",
-    "word": "BIRTHDAYCAKE",
-    "category": "Everyday objects and animals"
+    "word": "HELTER SKELTER",
+    "category": "Seaside",
+    "accept": [
+      "slide"
+    ]
   },
   {
     "id": "p6final-sk-023",
@@ -1836,8 +2201,8 @@
   },
   {
     "id": "p6final-sk-028",
-    "word": "BOWTIE",
-    "category": "Everyday objects and animals"
+    "word": "STETHOSCOPE",
+    "category": "Jobs"
   },
   {
     "id": "p6final-sk-029",
@@ -2091,23 +2456,33 @@
   },
   {
     "id": "p6final-sk-087",
-    "word": "FERRISWHEEL",
-    "category": "Everyday objects and animals"
+    "word": "SEESAW",
+    "category": "Playground",
+    "accept": [
+      "teeter totter"
+    ]
   },
   {
     "id": "p6final-sk-088",
-    "word": "FIREENGINE",
-    "category": "Everyday objects and animals"
+    "word": "ZEBRA CROSSING",
+    "category": "Streets",
+    "accept": [
+      "crossing",
+      "pedestrian crossing"
+    ]
   },
   {
     "id": "p6final-sk-089",
-    "word": "FIREWORK",
-    "category": "Everyday objects and animals"
+    "word": "CANDYFLOSS",
+    "category": "Funfair",
+    "accept": [
+      "cotton candy"
+    ]
   },
   {
     "id": "p6final-sk-090",
-    "word": "FISHINGROD",
-    "category": "Everyday objects and animals"
+    "word": "PADLOCK",
+    "category": "Everyday objects"
   },
   {
     "id": "p6final-sk-092",
@@ -2141,8 +2516,12 @@
   },
   {
     "id": "p6final-sk-098",
-    "word": "FRYINGPAN",
-    "category": "Everyday objects and animals"
+    "word": "FRYING PAN",
+    "category": "Everyday objects and animals",
+    "accept": [
+      "pan",
+      "skillet"
+    ]
   },
   {
     "id": "p6final-sk-099",
@@ -2151,8 +2530,11 @@
   },
   {
     "id": "p6final-sk-100",
-    "word": "GARDENHOSE",
-    "category": "Everyday objects and animals"
+    "word": "JACK-IN-THE-BOX",
+    "category": "Toys",
+    "accept": [
+      "jack in a box"
+    ]
   },
   {
     "id": "p6final-sk-101",
@@ -2176,8 +2558,11 @@
   },
   {
     "id": "p6final-sk-105",
-    "word": "GOLFCLUB",
-    "category": "Everyday objects and animals"
+    "word": "GOLF CLUB",
+    "category": "Everyday objects and animals",
+    "accept": [
+      "club"
+    ]
   },
   {
     "id": "p6final-sk-106",
@@ -2216,7 +2601,7 @@
   },
   {
     "id": "p6final-sk-121",
-    "word": "ICECREAM",
+    "word": "ICE CREAM",
     "category": "Everyday objects and animals"
   },
   {
@@ -2231,7 +2616,7 @@
   },
   {
     "id": "p6final-sk-125",
-    "word": "IRONINGBOARD",
+    "word": "IRONING BOARD",
     "category": "Everyday objects and animals"
   },
   {
@@ -2306,8 +2691,11 @@
   },
   {
     "id": "p6final-sk-147",
-    "word": "MAGNIFYINGGLASS",
-    "category": "Everyday objects and animals"
+    "word": "TEDDY BEAR",
+    "category": "Toys",
+    "accept": [
+      "teddy"
+    ]
   },
   {
     "id": "p6final-sk-149",
@@ -2316,8 +2704,11 @@
   },
   {
     "id": "p6final-sk-150",
-    "word": "MARACA",
-    "category": "Everyday objects and animals"
+    "word": "TOTEM POLE",
+    "category": "Landmarks",
+    "accept": [
+      "totem"
+    ]
   },
   {
     "id": "p6final-sk-151",
@@ -2336,8 +2727,8 @@
   },
   {
     "id": "p6final-sk-155",
-    "word": "MITTEN",
-    "category": "Everyday objects and animals"
+    "word": "TRAFFIC LIGHTS",
+    "category": "Streets"
   },
   {
     "id": "p6final-sk-156",
@@ -2426,12 +2817,12 @@
   },
   {
     "id": "p6final-sk-179",
-    "word": "PICNICBASKET",
+    "word": "PICNIC BASKET",
     "category": "Everyday objects and animals"
   },
   {
     "id": "p6final-sk-180",
-    "word": "PICTUREFRAME",
+    "word": "PICTURE FRAME",
     "category": "Everyday objects and animals"
   },
   {
@@ -2441,7 +2832,7 @@
   },
   {
     "id": "p6final-sk-184",
-    "word": "PLANTPOT",
+    "word": "PLANT POT",
     "category": "Everyday objects and animals"
   },
   {
@@ -2451,7 +2842,7 @@
   },
   {
     "id": "p6final-sk-186",
-    "word": "POCKETWATCH",
+    "word": "POCKET WATCH",
     "category": "Everyday objects and animals"
   },
   {
@@ -2461,8 +2852,8 @@
   },
   {
     "id": "p6final-sk-189",
-    "word": "POSTBOX",
-    "category": "Everyday objects and animals"
+    "word": "SNOWBOARD",
+    "category": "Winter sports"
   },
   {
     "id": "p6final-sk-190",

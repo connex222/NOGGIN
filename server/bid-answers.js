@@ -66,6 +66,10 @@ function acceptedAnswer(category, entered) {
  for (const [index, answer] of category.answers.entries()) {
   if (normalise(answer) === key || (variants[normalise(answer)] || variants[answer.toLowerCase()] || []).some(v => normalise(v) === key)) return index;
  }
+ // Q7: per-category aliases (other spellings, brand names, US English).
+ for (const [answer, list] of Object.entries(category.aliases || {})) {
+  if (list.some(v => normalise(v) === key)) return category.answers.indexOf(answer);
+ }
  return -1;
 }
 module.exports={normalise,acceptedAnswer};

@@ -34,7 +34,7 @@ function setup(options = {}) {
   const ids = [
     'welcomeScreen', 'welcomeStart', 'welcomeJoin', 'welcomeHowTo',
     'welcomeRulesDialog', 'welcomeRulesClose', 'welcomeRulesPlay',
-    'welcomeCast', 'lobbyCast', 'target', 'roomCode', 'qrImage',
+    'welcomeCast', 'lobbyCast', 'stageReady', 'roomCode', 'qrImage',
     'welcomeQR', 'welcomeRoomCode', 'joinUrl', 'welcomePhoneUrl'
   ];
   const elements = Object.fromEntries(ids.map(id => [id, new Element(id)]));
@@ -73,8 +73,10 @@ function setup(options = {}) {
 }
 
 test('Welcome actions reveal lobby and put keyboard focus on the requested control', () => {
-  for (const [button, focusId] of [['welcomeStart', 'target'], ['welcomeJoin', 'roomCode']]) {
+  // v3.5.0 D17: "Start" focuses START when usable, otherwise the room code (#target never existed).
+  for (const [button, focusId, ready] of [['welcomeStart', 'roomCode', false], ['welcomeStart', 'stageReady', true], ['welcomeJoin', 'roomCode', false]]) {
     const {elements, flushTimers} = setup();
+    elements.stageReady.disabled = !ready;
     elements[button].click();
     assert.equal(elements.welcomeScreen.attributes['aria-hidden'], 'true');
     assert.ok(elements.welcomeScreen.classList.values.has('welcome-dismissed'));
@@ -116,9 +118,11 @@ test('Live room updates replace join placeholder and toggle QR visibility', () =
 
 test('Rules Play button closes dialogue and starts lobby transition', () => {
   const {elements, flushTimers} = setup();
+  elements.stageReady.disabled = true;
   elements.welcomeRulesDialog.hidden = false;
   elements.welcomeRulesPlay.click();
   assert.equal(elements.welcomeRulesDialog.hidden, true);
   flushTimers();
-  assert.equal(elements.target.focused, true);
+  // v3.5.0 D17: no START yet (no players), so the room code takes focus.
+  assert.equal(elements.roomCode.focused, true);
 });

@@ -2,12 +2,18 @@
 (async () => {
   const U = window.Noggin, $ = U.el;
   const key = 'noggin-player-session-v1';
+  // D16: last name and character, kept separately from the seat so they survive a closed room.
+  const profileKey = 'noggin-player-profile-v1';
+  function saveProfile(name, avatarId) {U.saveSession(profileKey, {name, avatarId});}
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
   let lastStateRef = null, stateLocalAt = 0, presentTimer = null, howto = {};
   // The same three how-to-play steps the TV animates, as a compact list on the phone.
-  function howToList(id){const steps=howto[id]?.steps;if(!steps)return null;const list=document.createElement('ol');list.className='phone-howto';
+  function howToSteps(id){const e=howto[id];if(id==='colour-clash'&&roomState?.settings?.colourBlindSafe&&e?.colourBlindSteps)return e.colourBlindSteps;
+    // G9: Classic-only wording where Showtime adds a twist.
+    if(roomState?.settings?.rules!=='showtime'&&e?.classicSteps)return e.classicSteps;return e?.steps;}
+  function howToList(id){const steps=howToSteps(id);if(!steps)return null;const list=document.createElement('ol');list.className='phone-howto';
     for(const [icon,text] of steps){const li=document.createElement('li');const i=document.createElement('span');i.textContent=icon;i.setAttribute('aria-hidden','true');li.append(i,document.createTextNode(' '+text));list.append(li);}return list;}
-  let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', currentlyResuming = false, currentDeadline = null, clockServer = null, clockLocal = null;
+  let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', resumePromise = null, resumeRetry = null, boundSocketId = null, currentDeadline = null, clockServer = null, clockLocal = null;
   let entryDraft={key:null,text:''};
   let interactionKey=null;
   let clockInitialMs=0;
@@ -33,18 +39,25 @@
   function controlKey(player,b){
     if(b.step==='minigame'&&b.minigame){
       const m=b.minigame;
-      return [b.step,m.id,m.phase,m.roundKey,m.private?.role,m.private?.strokesLeft,
+      // D6: everything that changes WHICH controls this phone shows. Text-only
+      // changes (counters, scores, clocks) are patched in place without a rebuild.
+      const blocked=Boolean(m.blocked?.[player.id]&&m.blocked[player.id]>roomState.serverNow);
+      // D7: Quick Draw's WAIT→DRAW switch happens on the phone itself, so the server's
+      // own switch must not rebuild the button just as someone taps it.
+      const phase=m.id==='quick-draw'&&['wait','play'].includes(m.phase)?'quick':m.phase;
+      return [b.step,m.id,phase,m.roundKey,m.private?.role,m.private?.strokesLeft,
         m.private?.prompt,m.answered?.includes(player.id),m.voted?.includes(player.id),
+        m.eliminated?.includes(player.id),blocked,
         m.display?.keypadReady,m.display?.partnerId,m.display?.progress?.join?.(','),
-        m.display?.options?.length].join('|');
+        m.display?.cut?.join?.(','),m.display?.options?.length].join('|');
     }
     if(b.step==='showdown'&&b.showdown){
       const m=b.showdown;
-      return [b.step,m.kind,m.phase,m.roundKey,m.private?.qid,m.myCheer,
-        m.display?.turnId,m.display?.bidderId,m.display?.banks?.includes(player.id),
-        m.display?.answered?.includes(player.id)].join('|');
+      return [b.step,m.kind,m.phase,m.roundKey,m.private?.qid,m.myCheer,m.cheerOpen,
+        m.display?.turnId,m.display?.bidderId,m.display?.bid,m.display?.answerId,m.display?.banks?.includes(player.id),
+        m.display?.answered?.includes(player.id),m.display?.buzzed?.includes(player.id)].join('|');
     }
-    return [b.step,b.turn,b.paused].join('|');
+    return [b.step,b.turn,b.paused,b.round?.rolls?.[player.id]?1:0,b.round?.directors?.[player.id]?1:0,b.routePlan?1:0].join('|');
   }
   function deadlineFor(b){
     if(b.step==='minigame'&&b.minigame)return b.minigame.phase==='intro'?b.minigame.introUntil:b.minigame.deadline;
@@ -71,7 +84,15 @@
   function currentPlayer() {return roomState?.players?.find(p => p.id === session?.playerId) || null;}
 
   function buildPicker(target, isChange) {
-    const grid=$(target);grid.replaceChildren();
+    const grid=$(target);
+    const takenIds=(roomState?.players||[]).filter(p=>p.id!==session?.playerId).map(p=>p.avatarId).sort((a,z)=>a-z);
+    // D16: a remembered character someone else now has is quietly unselected.
+    if(!isChange&&!session&&selectedId&&takenIds.includes(selectedId)){selectedId=null;$('joinButton').disabled=true;}
+    // D6: skip the rebuild unless the catalogue, taken list or selection changed.
+    const pickerKey=[avatars.length,takenIds.join(','),selectedId,isChange].join('|');
+    if(grid.dataset.pickerKey===pickerKey&&grid.childElementCount)return;
+    grid.dataset.pickerKey=pickerKey;
+    grid.replaceChildren();
     for(const avatar of avatars){
       const taken=Boolean(roomState?.players?.find(p=>p.avatarId===avatar.id && p.id!==session?.playerId));
       const button=document.createElement('button');button.type='button';button.className=`avatar-choice ${selectedId===avatar.id?'selected':''} ${taken?'taken':''}`;
@@ -90,20 +111,23 @@
     if(!session || !socket.connected)return;
     try {
       const result=await U.request(socket,'room:avatar',{avatarId:id});
-      selectedId=id;roomState=result.state;
+      selectedId=id;roomState=result.state;saveProfile(session.name,id);
       $('swapPanel').classList.add('hidden');error('');render();
     } catch(err){error(err.message);}
   }
 
+  // D6: buttons that survive a broadcast must not stay disabled after their request.
+  // data-busy marks a request in flight so a broadcast cannot re-enable it mid-tap.
+  async function sendTap(btn,event,payload,vibrate=35){
+    if(!socket.connected||btn.dataset.busy==='1')return;
+    btn.dataset.busy='1';btn.disabled=true;
+    try{const r=await U.request(socket,event,payload);delete btn.dataset.busy;btn.disabled=!socket.connected;roomState=r.state;render();error('');if(vibrate&&navigator.vibrate)navigator.vibrate(vibrate);}
+    catch(e){delete btn.dataset.busy;btn.disabled=!socket.connected;error(e.message);}
+  }
   function gameButton(text,event,payload={},style='button-blue') {
     const btn=document.createElement('button');btn.type='button';btn.textContent=text;btn.className=style;
     btn.disabled=!socket.connected;
-    btn.onclick=async()=>{
-      if(!socket.connected)return;
-      btn.disabled=true;
-      try{const r=await U.request(socket,event,payload);roomState=r.state;render();error('');if(navigator.vibrate)navigator.vibrate(35);}
-      catch(e){error(e.message);btn.disabled=false;}
-    };
+    btn.onclick=()=>sendTap(btn,event,payload);
     $('gameButtons').append(btn);
   }
   function numericOrWordControl(m,integer) {
@@ -117,7 +141,7 @@
       e.preventDefault();const value=integer?Number(input.value):input.value.trim();
       if(integer&&(!Number.isSafeInteger(value)||input.value.trim()==='')){error('Enter a valid whole number.');return;}
       submit.disabled=true;
-      try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});roomState=r.state;error('');render();}
+      try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});submit.disabled=false;if(!integer)input.select();roomState=r.state;error('');render();}
       catch(err){error(err.message);submit.disabled=false;}
     };
     $('gameButtons').append(form);
@@ -138,7 +162,7 @@
       e.preventDefault();const v=numeric?Number(input.value):input.value.trim();
       if(numeric&&(!Number.isSafeInteger(v)||input.value.trim()==='')){error('Enter a whole number.');return;}
       button.disabled=true;
-      try{const r=await U.request(socket,'game:input',{value:v,roundKey:m.roundKey});entryDraft={key:null,text:''};roomState=r.state;render();error('');}
+      try{const r=await U.request(socket,'game:input',{value:v,roundKey:m.roundKey});entryDraft={key:null,text:''};input.value='';button.disabled=false;roomState=r.state;render();error('');}
       catch(ex){error(ex.message);button.disabled=false;}
     };
     $('gameButtons').append(wrap);
@@ -166,15 +190,19 @@
     if(m.phase==='intro'){const list=howToList(m.id);if(list){$('gameButtons').replaceChildren(list);}else $('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';return;}
     const info=(text)=>{const d=document.createElement('div');d.className='mini-help';d.textContent=text;$('gameButtons').append(d);};
     const sent=m.answered.includes(id),voted=m.voted?.includes(id);
+    // Q4: private feedback on your last guess. "Close!" never reveals the answer.
+    const guessFeedback=(mm)=>{const fb=mm.private?.guessFeedback;if(!fb)return;
+      const d=document.createElement('div');d.className=`mini-help guess-feedback ${fb.result}`;
+      d.textContent=fb.result==='close'?'🔥 CLOSE! You share a word with the answer — keep going.':'✗ NOT IT — TRY AGAIN.';$('gameButtons').append(d);};
     const pick=(text,value,style='button-blue')=>gameButton(text,'game:input',{value,roundKey:m.roundKey},style);
     if(m.id==='sketch-sabotage'){
       if(m.private?.role==='artist'||m.private?.role==='saboteur'){
         if(m.private.role==='saboteur'&&m.private.strokesLeft===0){info('THREE SABOTAGE STROKES USED — NOW WATCH THE TV');return;}
         p4DrawCanvas(m);
-      }else{info(`Category: ${m.display.category}`);p4Entry(m,{label:'GUESS THE DRAWING',placeholder:'WHAT IS IT?',max:55});}
+      }else{info(`Category: ${m.display.category}`);guessFeedback(m);p4Entry(m,{label:'GUESS THE DRAWING',placeholder:'WHAT IS IT?',max:55});}
     }else if(m.id==='noise-annoys'){
       if(id===host){info(`YOUR SECRET SOUND: ${m.private?.clue||'Look for your clue'}`);info('Make the noise aloud. No words and no miming.');}
-      else{info('LISTEN TO THE HOST IN THE ROOM');p4Entry(m,{label:'SUBMIT GUESS',placeholder:'WHAT WAS THAT SOUND?',max:65});}
+      else{info('LISTEN TO THE HOST IN THE ROOM');guessFeedback(m);p4Entry(m,{label:'SUBMIT GUESS',placeholder:'WHAT WAS THAT SOUND?',max:65});}
     }else if(m.id==='caption-this'){
       info('SCENE: '+m.question);
       if(m.phase==='play'){if(sent)info('CAPTION LOCKED IN — WAIT FOR VOTING');else p4Entry(m,{label:'SEND YOUR CAPTION',placeholder:'YOUR FUNNIEST CAPTION',max:110});}
@@ -187,12 +215,20 @@
       else (m.display.options||[]).forEach((c,i)=>{if(m.private?.myEntryIndex===i)return;pick(`${i+1}. ${c}`,i,'button-blue small');});
     }else if(m.id==='mind-meld'){
       info(m.question);
+      // G6: everyone plays in pairs (or one group of three).
+      const name=pid=>roomState.players.find(p=>p.id===pid)?.name||'Contestant';
+      const groups=m.display.groups||(m.display.partnerId?[[host,m.display.partnerId]]:[]),gi=groups.findIndex(g=>g.includes(id)),mine=gi>=0?groups[gi]:null;
+      const matched=(m.display.matched||[]).includes(gi);
       if(m.phase==='partner'){
-        if(id!==host)info('THE HOST IS PICKING A PARTNER');
-        else (m.display.partners||[]).forEach((pid,i)=>{const name=roomState.players.find(p=>p.id===pid)?.name||'Contestant';pick(`PARTNER: ${name}`,i);});
-      }else if(m.phase==='reveal'){info(`PREVIOUS WORDS: ${(m.lastResult?.words||[]).join(' / ')}`);info('ANOTHER ATTEMPT STARTS SHORTLY');}
-      else if(id===host||id===m.display.partnerId){if(sent)info('WORD LOCKED IN — DO NOT TELL YOUR PARTNER!');else p4Entry(m,{label:'LOCK IN WORD',placeholder:'ONE WORD OR SHORT PHRASE',max:32});}
-      else info('WATCH THE TV — ONLY THE TWO PARTNERS PLAY THIS ROUND');
+        if(id!==host)info('THE HOST IS PICKING A PARTNER · EVERYONE ELSE IS PAIRED BY SEAT');
+        else (m.display.partners||[]).forEach((pid,i)=>pick(`PARTNER: ${name(pid)}`,i));
+      }else{
+        if(mine)info(`YOUR ${mine.length>2?'GROUP':'PARTNER'}: ${mine.filter(x=>x!==id).map(name).join(' & ')}`);
+        if(m.phase==='reveal'){const r=(m.lastResult?.groups||[]).find(g=>g.ids.includes(id));if(r)info(`YOUR WORDS: ${r.words.join(' / ')}`);info(matched?'★ YOU MATCHED!':'ANOTHER ATTEMPT STARTS SHORTLY');}
+        else if(matched)info('★ YOU MATCHED! WAIT FOR THE OTHERS.');
+        else if(mine){if(sent)info(`WORD LOCKED IN — DON’T TELL YOUR ${mine.length>2?'GROUP':'PARTNER'}!`);else p4Entry(m,{label:'LOCK IN WORD',placeholder:'ONE WORD OR SHORT PHRASE',max:32});}
+        else info('WATCH THE TV');
+      }
     }else if(m.id==='majority-rules'){
       info(m.question);if(sent)info('SECRET VOTE LOCKED IN');else (m.display.options||[]).forEach((v,i)=>pick(v,i,'button-primary'));
     }else if(m.id==='relay-sums'){
@@ -211,6 +247,7 @@
     }
   }
 
+  let buzzSeen={key:null,at:0};
   function renderShowdown(player,m){
     const mine=m.participants.includes(player.id);
     const info=t=>{const x=document.createElement('div');x.className='mini-help';x.textContent=t;$('gameButtons').append(x);};
@@ -221,7 +258,7 @@
       const button=document.createElement('button');button.className='button-primary';button.type='submit';button.textContent=label;
       form.append(input,button);form.onsubmit=async e=>{e.preventDefault();const v=numeric?Number(input.value):input.value.trim();if(numeric&&(!Number.isSafeInteger(v)||v<0||!input.value.trim())){error('Enter a valid whole number.');return;}
         const value=m.kind==='tug'?{answer:v,qid:m.private?.qid}:v;button.disabled=true;
-        try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});roomState=r.state;render();error('');if(navigator.vibrate)navigator.vibrate(35);}
+        try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});input.value='';button.disabled=false;roomState=r.state;render();error('');if(navigator.vibrate)navigator.vibrate(35);}
         catch(e){error(e.message);button.disabled=false;}
       };$('gameButtons').append(form);
     };
@@ -229,19 +266,22 @@
     $('gameDescription').textContent=m.question;
     currentDeadline=m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
     if(m.kind==='bid' && m.phase==='review'){
-      info('ANSWER UNDER REVIEW — THE VIP WILL DECIDE.');
-      if(roomState.vipId===player.id && m.display.bidderId===player.id) info('AS BIDDER, YOU CANNOT JUDGE YOUR OWN ANSWER. THE TV HOST MUST DECIDE.');
-      if(roomState.vipId===player.id && m.display.bidderId!==player.id){
-        info(`PROPOSED ANSWER: ${m.display.review?.answer||''}`);
-        gameButton('✓ ACCEPT ANSWER','game:bid-review',{accept:true},'button-primary');
-        gameButton('✕ REJECT ANSWER','game:bid-review',{accept:false},'button-blue');
-      }
+      // D10: duellists never judge. The TV or ANY other player decides; first tap counts.
+      const said=m.display.review?.text||m.display.review?.answer||'';
+      if(mine){info(`“${said}” IS NOT ON THE LIST — IT IS BEING JUDGED.`);info('THE TV OR ANOTHER PLAYER WILL JUDGE.');return;}
+      info(`CATEGORY: ${m.question}`);
+      info(`PROPOSED ANSWER: “${said}”`);
+      gameButton('✓ ACCEPT ANSWER','game:bid-review',{accept:true},'button-primary');
+      gameButton('✕ REJECT ANSWER','game:bid-review',{accept:false},'button-blue');
+      info('YOU ARE A JUDGE · THE FIRST DECISION COUNTS');
       return;
     }
     if(!mine){
       if(m.kind==='tiebreak'){info('SUDDEN DEATH — WATCH THE FINALISTS');return;}
-      if(roomState.settings.rules!=='showtime'){info('WATCH THE SHOWDOWN ON THE TV');return;}
-      info('🎬 SPOTLIGHT PICK · Back the winner BEFORE the duel. Earn 1 Director Cue if correct (max 2); no Sparks at risk.');
+      // G2: Spotlight Picks work in both modes. Classic pays a catch-up Spark.
+      info(roomState.settings.rules==='showtime'
+        ?'🎬 SPOTLIGHT PICK · Back the winner BEFORE the duel. Earn 1 Director Cue if correct (max 2); no Sparks at risk.'
+        :'🎬 SPOTLIGHT PICK · Back the winner BEFORE the duel. Correct pick: +1 Spark if you are outside the top two. No Sparks at risk.');
       if(m.myCheer)info(`PREDICTION LOCKED: ${roomState.players.find(p=>p.id===m.myCheer)?.name||'CHALLENGER'}`);
       else if(m.cheerOpen)for(const id of m.participants){
         const contestant=roomState.players.find(p=>p.id===id);
@@ -251,8 +291,15 @@
     }
     if(m.phase==='intro'){const list=howToList(m.kind);if(list)$('gameButtons').append(list);info('THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
     if(m.kind==='buzzer'){
-      info(`QUESTION ${m.round}/7 · ${Object.entries(m.display.points).map(([id,v])=>`${roomState.players.find(p=>p.id===id)?.name}: ${v}`).join(' vs ')}`);
-      if(m.phase==='buzz')choose('⚡ BUZZ!','buzz');
+      info(`QUESTION ${m.round}/${m.totalRounds||5} · FIRST TO 3 · ${Object.entries(m.display.points).map(([id,v])=>`${roomState.players.find(p=>p.id===id)?.name}: ${v}`).join(' vs ')}`);
+      if(m.phase==='buzz'){
+        // D7: time the buzz from when the question appeared on THIS phone.
+        if(buzzSeen.key!==m.roundKey)buzzSeen={key:m.roundKey,at:performance.now()};
+        if(m.display.buzzed?.includes(player.id))info('BUZZED! CHECKING WHO WAS QUICKEST…');
+        else{const btn=document.createElement('button');btn.type='button';btn.className='button-primary';btn.textContent='⚡ BUZZ!';btn.disabled=!socket.connected;
+          btn.onclick=()=>sendTap(btn,'game:input',{value:{action:'buzz',reactionMs:Math.round(performance.now()-buzzSeen.at)},roundKey:m.roundKey},60);
+          $('gameButtons').append(btn);}
+      }
       else if(m.display.answerId===player.id){info('YOU BUZZED FIRST. ANSWER NOW!');m.display.choices.forEach((choice,i)=>choose(choice,i));}
       else info('WAIT — THE OTHER CHALLENGER IS ANSWERING.');
     }else if(m.kind==='tug'){
@@ -262,6 +309,7 @@
       info(`CURRENT BID: ${m.display.bid} · MAXIMUM: ${m.display.max}`);
       if(m.phase==='auction'){
         if(m.display.turnId!==player.id){info('OTHER PLAYER IS BIDDING.');return;}
+        if(!m.display.bidderId)info('YOU BID FIRST — HOW MANY CAN YOU NAME?');
         for(let n=m.display.bid+1;n<=Math.min(m.display.max,m.display.bid+4);n++)choose(`I CAN NAME ${n}`,{action:'bid',count:n});
         if(m.display.bidderId)choose('CHALLENGE THAT BID!',{action:'challenge'});
       }else if(m.phase==='name'){
@@ -275,11 +323,45 @@
       else choose('🏦 BANK NOW','bank');
     }else if(m.kind==='tiebreak'){
       info(`ENTER YOUR CLOSEST GUESS (${m.display.unit||'NUMBER'})`);
+      if((m.display.attempt||1)>1)info('FINAL REPLAY — IF STILL LEVEL, THE FIRST ANSWER IN WINS.');
       if(m.display.answered.includes(player.id))info('GUESS LOCKED IN');
       else numberForm('LOCK IN MY GUESS','YOUR BEST NUMBER');
     }
   }
 
+  // D7: Quick Draw times each player's reaction on their OWN phone, from the moment
+  // this phone showed DRAW (worked out from the server's DRAW time and clock).
+  let quickDraw={key:null,shownAt:null,timer:null};
+  const QD_WAIT='✋ WAIT FOR DRAW!',QD_GO='⚡ DRAW! TAP NOW!';
+  function quickDrawButton(m){
+    if(quickDraw.key!==m.roundKey){clearTimeout(quickDraw.timer);quickDraw={key:m.roundKey,shownAt:null,timer:null};}
+    const localOpen=clockLocal+(m.openAt-clockServer);
+    const go=()=>{
+      if(quickDraw.shownAt===null)quickDraw.shownAt=performance.now()-Math.max(0,Date.now()-localOpen);
+      for(const b of document.querySelectorAll('#gameButtons .quick-draw-button')){b.textContent=QD_GO;b.classList.add('drawn');}
+      if(navigator.vibrate)navigator.vibrate(40);
+    };
+    const drawn=quickDraw.shownAt!==null||Date.now()>=localOpen||m.phase==='play';
+    const btn=document.createElement('button');btn.type='button';btn.className='button-primary quick-draw-button'+(drawn?' drawn':'');
+    btn.textContent=drawn?QD_GO:QD_WAIT;btn.disabled=!socket.connected;
+    if(drawn&&quickDraw.shownAt===null)quickDraw.shownAt=performance.now()-Math.max(0,Date.now()-localOpen);
+    if(!drawn&&!quickDraw.timer)quickDraw.timer=setTimeout(go,Math.max(0,localOpen-Date.now()));
+    btn.onclick=()=>{
+      // A tap while WAIT shows is a misfire: no reaction time is sent.
+      const value=quickDraw.shownAt===null?{value:1}:{value:1,reactionMs:Math.round(performance.now()-quickDraw.shownAt)};
+      sendTap(btn,'game:input',{value,roundKey:m.roundKey});
+    };
+    $('gameButtons').append(btn);
+  }
+  // D8: Shape Clash draws the shape word inside a DIFFERENT outline shape.
+  function shapeSvg(shape,word){
+    const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 100 100');svg.setAttribute('class','shape-clash');svg.setAttribute('role','img');svg.setAttribute('aria-label',`The word ${word} inside a ${shape.toLowerCase()}`);
+    const star=Array.from({length:10},(_,i)=>{const r=i%2?20:46,a=-Math.PI/2+i*Math.PI/5;return `${(50+r*Math.cos(a)).toFixed(1)},${(53+r*Math.sin(a)).toFixed(1)}`;}).join(' ');
+    const el=shape==='CIRCLE'?['circle',{cx:50,cy:50,r:43}]:shape==='SQUARE'?['rect',{x:9,y:9,width:82,height:82}]:shape==='TRIANGLE'?['polygon',{points:'50,6 95,92 5,92'}]:['polygon',{points:star}];
+    const outline=document.createElementNS(ns,el[0]);for(const [k,v] of Object.entries(el[1]))outline.setAttribute(k,v);outline.setAttribute('class','shape-outline');
+    const text=document.createElementNS(ns,'text');text.setAttribute('x','50');text.setAttribute('y',shape==='TRIANGLE'?'72':'57');text.setAttribute('text-anchor','middle');text.setAttribute('class','shape-word');text.textContent=word;
+    svg.append(outline,text);return svg;
+  }
   function renderMiniGame(player,m) {
     const eligible=m.participants.includes(player.id)&&!m.eliminated.includes(player.id);
     const answered=m.answered.includes(player.id);
@@ -291,23 +373,29 @@
       const result=m.lastRoundResult||{},answer=result.answer;
       $('gameDescription').textContent=answer===undefined?'ROUND COMPLETE':`CORRECT ANSWER: ${answer}`;
       const win=(result.winners||[]).includes(player.id);
-      $('gameButtons').textContent=win?'★ YOU WON THIS ROUND! ★':'ROUND OVER — NEXT ONE STARTS SHORTLY';return;
+      const mine=(result.guesses||[]).find(g=>g.id===player.id);
+      const extra=mine?` · YOUR GUESS ${Number(mine.guess).toLocaleString('en-GB')} (${mine.distance===0?'SPOT ON':`OFF BY ${Number(mine.distance).toLocaleString('en-GB')}`})`:'';
+      $('gameButtons').textContent=(win?'★ YOU WON THIS ROUND! ★':m.finalReveal?'GAME OVER — RESULTS NEXT':'ROUND OVER — NEXT ONE STARTS SHORTLY')+extra;return;
     }
     if(!eligible){$('gameButtons').textContent='YOU ARE OUT — WATCH THE TV';return;}
     if(answered){$('gameButtons').textContent='✓ LOCKED IN — WATCH THE TV';return;}
     const send=(text,value,style='button-blue')=>gameButton(text,'game:input',{value,roundKey:m.roundKey},style);
     if(m.id==='quick-draw'){
-      send(m.phase==='wait'?'✋ WAIT FOR DRAW!':'⚡ DRAW! TAP NOW!',1,'button-primary');
+      quickDrawButton(m);
     } else if(m.phase==='flash'){
       $('gameButtons').textContent='👀 WATCH THE TV FIRST';
     } else if(m.id==='count-flash'||m.id==='close-call') numericOrWordControl(m,true);
     else if(m.id==='unscramble') numericOrWordControl(m,false);
     else if(m.id==='odd-spot'){
+      // A wrong tap locks this player's grid for three seconds.
+      const locked=Boolean(m.blocked[player.id]&&m.blocked[player.id]>roomState.serverNow);
       const grid=document.createElement('div');grid.className='mini-grid';
-      Array.from({length:36},(_,i)=>i).forEach(i=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';const glyph=document.createElement('span');glyph.textContent=m.display.grid[i];btn.append(glyph);const style=m.display.styles?.[i];if(style?.rotation)glyph.style.transform=`rotate(${style.rotation}deg)`;if(style?.tone)glyph.style.color=style.tone;btn.setAttribute('aria-label',`Square ${i+1}: ${m.display.grid[i]}`);btn.disabled=!socket.connected;
-        btn.onclick=async()=>{btn.disabled=true;try{const r=await U.request(socket,'game:input',{value:i,roundKey:m.roundKey});roomState=r.state;render();error('');}
-          catch(e){error(e.message);btn.disabled=false;}};grid.append(btn);});
+      Array.from({length:36},(_,i)=>i).forEach(i=>{const btn=document.createElement('button');btn.type='button';btn.className='mini-grid-button';const glyph=document.createElement('span');glyph.textContent=m.display.grid[i];btn.append(glyph);const style=m.display.styles?.[i];if(style?.rotation)glyph.style.transform=`rotate(${style.rotation}deg)`;if(style?.tone)glyph.style.color=style.tone;if(style?.scale)glyph.style.transform=`scale(${style.scale})`;btn.setAttribute('aria-label',`Square ${i+1}: ${m.display.grid[i]}`);btn.disabled=!socket.connected||locked;
+        btn.onclick=()=>sendTap(btn,'game:input',{value:i,roundKey:m.roundKey},0);grid.append(btn);});
       $('gameButtons').append(grid);
+    }else if(m.id==='colour-clash'&&m.display.mode==='shape'){
+      $('gameButtons').append(shapeSvg(m.display.shape,m.display.word));
+      ['● CIRCLE','■ SQUARE','▲ TRIANGLE','★ STAR'].forEach((v,i)=>send(v,i));
     }else if(m.id==='colour-clash'){
       const word=document.createElement('div');word.className='stroop-word';word.textContent=m.display.word;word.style.color=({RED:'#ff7284',BLUE:'#78c7ff',GREEN:'#a5f480',YELLOW:'#ffe37a'})[m.display.ink];$('gameButtons').append(word);
       ['RED','BLUE','GREEN','YELLOW'].forEach((v,i)=>send(v,i));
@@ -319,7 +407,7 @@
       const hint=document.createElement('div');hint.className='mini-help';hint.textContent=`${m.display.reverse?'FINAL ROUND — REPEAT THE PATTERN BACKWARDS!':'Repeat in the same order'} · ${prog} of ${m.display.sequenceLength} pads`;
       $('gameButtons').append(hint);const grid=document.createElement('div');grid.className='memory-pads';
       const symbols=['●','◆','▲','■','★','✦'];
-      symbols.forEach((v,i)=>{const btn=document.createElement('button');btn.type='button';btn.className=`memory-pad pad-${i}`;btn.textContent=v;btn.onclick=async()=>{btn.disabled=true;try{const r=await U.request(socket,'game:input',{value:i,roundKey:m.roundKey});roomState=r.state;render();error('');}catch(e){error(e.message);btn.disabled=false;}};grid.append(btn);});
+      symbols.forEach((v,i)=>{const btn=document.createElement('button');btn.type='button';btn.className=`memory-pad pad-${i}`;btn.textContent=v;btn.disabled=!socket.connected;btn.onclick=()=>sendTap(btn,'game:input',{value:i,roundKey:m.roundKey},20);grid.append(btn);});
       $('gameButtons').append(grid);
     }
     if(m.blocked[player.id]&&m.blocked[player.id]>roomState.serverNow){
@@ -339,16 +427,69 @@
     'noise-annoys':'Make or guess sounds; do not use words.',
     'caption-this':'Write a funny caption, then vote for another.',
     'fib-factory':'Invent a believable fib, then spot the truth.',
-    'mind-meld':'Write the same word as your partner without talking.',
+    'mind-meld':'Everyone plays in pairs: write the same word as your partner.',
     'majority-rules':'Vote secretly; matching the majority earns points.',
     'relay-sums':'Solve your sum to unlock the next teammate.',
     'bomb-squad':'Share clues, cut wires in order, then enter the code.'
   });
+  // D6: compare a freshly drawn set of controls with what is on screen. If the
+  // layout is the same, keep every existing button/form/canvas (so a tap that is
+  // already landing is never lost) and only swap plain text. Otherwise rebuild.
+  function isInteractive(node){return node.nodeType===1&&(node.matches('button,form,input,select,canvas')||Boolean(node.querySelector('button,input,select,canvas')));}
+  function signature(node){return node.nodeType===1?`${node.tagName}.${node.className}#${isInteractive(node)?node.querySelectorAll('button,input,select,canvas').length:''}`:'#text';}
+  function syncButton(old,fresh){
+    // A button whose label changed is a different control: replace it outright.
+    if(old.textContent!==fresh.textContent){old.replaceWith(fresh);return;}
+    if(old.dataset.busy!=='1')old.disabled=fresh.disabled;
+    if(old.className!==fresh.className)old.className=fresh.className;
+  }
+  function syncInteractive(old,fresh){
+    if(old.tagName==='BUTTON'){syncButton(old,fresh);return;}
+    if(old.tagName==='FORM'||old.tagName==='CANVAS'||old.tagName==='INPUT'||old.tagName==='SELECT')return; // keep typing and drawing
+    const a=[...old.children],z=[...fresh.children];
+    if(a.length!==z.length||a.some((n,i)=>signature(n)!==signature(z[i]))){old.replaceWith(fresh);return;}
+    a.forEach((n,i)=>isInteractive(n)?syncInteractive(n,z[i]):(n.outerHTML!==z[i].outerHTML&&n.replaceWith(z[i])));
+  }
+  function patchControls(real,scratch){
+    const a=[...real.childNodes],z=[...scratch.childNodes];
+    if(a.length!==z.length||a.some((n,i)=>signature(n)!==signature(z[i]))){real.replaceChildren(...z);return;}
+    a.forEach((old,i)=>{
+      const fresh=z[i];
+      if(old.nodeType!==1){if(old.textContent!==fresh.textContent)old.textContent=fresh.textContent;return;}
+      if(isInteractive(old))syncInteractive(old,fresh);
+      else if(old.outerHTML!==fresh.outerHTML)old.replaceWith(fresh);
+    });
+  }
+  // Draw the controls into a hidden stand-in that temporarily owns the id, then patch.
+  function drawControlsPatched(draw){
+    const real=$('gameButtons'),scratch=document.createElement('div');
+    scratch.className=real.className;scratch.hidden=true;
+    real.id='gameButtonsLive';scratch.id='gameButtons';real.after(scratch);
+    try{draw();}
+    finally{scratch.remove();scratch.id='';real.id='gameButtons';}
+    patchControls(real,scratch);
+  }
+  // Q9/G12: in the final three rounds (and during the standings sting) each phone
+  // shows the player's gap to the leader, to keep the last-placed player in it.
+  function gapText(player,b){
+    if(!b||!player||b.step==='finished')return '';
+    const finalStretch=b.roundNumber>b.totalRounds-3||Boolean(b.standings&&b.standings.until>roomState.serverNow);
+    if(!finalStretch||b.totalRounds<2)return '';
+    const max=Math.max(...roomState.players.map(p=>p.sparks)),gap=max-player.sparks;
+    const leaders=roomState.players.filter(p=>p.sparks===max).length;
+    const tail=b.lastOrders?'Last Orders: every Spark you win is doubled.':'Last Orders doubles everything.';
+    if(gap>0)return `You're ${gap} behind — ${tail}`;
+    if(leaders>1)return `You're joint leader — ${tail}`;
+    const second=Math.max(...roomState.players.filter(p=>p.id!==player.id).map(p=>p.sparks));
+    return `You lead by ${max-second} — hold on! ${tail}`;
+  }
   function renderGame(player) {
+    const gapLine=$('gapLine'),gap=gapText(player,roomState.board);
+    gapLine.textContent=gap;gapLine.classList.toggle('hidden',!gap);
     document.body.classList.add('game-mode');notice('');
     $('joinScreen').classList.add('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.remove('hidden');
     const b=roomState.board;document.body.classList.toggle('mini-mode',['minigame','showdown'].includes(b.step));
-    const instruction=$('gameMiniInstruction');instruction.textContent=b.step==='minigame'?shortInstructions[b.minigame?.id]||'':'';instruction.classList.toggle('hidden',!instruction.textContent);
+    const instruction=$('gameMiniInstruction');instruction.textContent=b.step==='minigame'?(b.minigame?.id==='colour-clash'&&roomState.settings.colourBlindSafe?'Tap the shape you see, not the word.':shortInstructions[b.minigame?.id]||''):'';instruction.classList.toggle('hidden',!instruction.textContent);
     setPhonePresentation(b);
     const active=roomState.players.find(p=>p.id===b.activeId),me=player.id===b.activeId;
     const avatar=avatars.find(a=>a.id===player.avatarId),won=(b.result?.winners||b.winnerIds||[]).includes(player.id);
@@ -356,7 +497,7 @@
     // While the TV is still rolling the die or hopping a token, the phone keeps
     // the outcome hidden too, then re-renders the moment the TV lands.
     const presentLeft=b.presentUntil?b.presentUntil-serverNowEstimate():0;
-    const presenting=presentLeft>0&&['result','challenge','choose_target','choose_opponent','choose_category'].includes(b.step);
+    const presenting=presentLeft>0&&['result','challenge','choose_opponent','choose_category'].includes(b.step);
     clearTimeout(presentTimer);if(presenting)presentTimer=setTimeout(render,presentLeft+60);
     const image=presenting?avatar?.think:b.step==='finished'?(b.winnerIds.includes(player.id)?avatar?.images?.win:avatar?.images?.lose):b.step==='result'?(won||myDelta>0?avatar?.images?.win:myDelta<0||(b.result?.winners||[]).length?avatar?.images?.lose:avatar?.think):avatar?.think;
     $('gameAvatar').src=image||'';$('gameAvatar').alt=avatar?.name||player.name;
@@ -367,14 +508,15 @@
     const priorFocused=Boolean(priorInput&&document.activeElement===priorInput);
     const activeCanvas=$('gameButtons').querySelector('canvas.sketch-canvas');
     const freshKey=controlKey(player,b);
-    const keepInteraction=!b.paused&&freshKey===interactionKey&&(priorFocused||Boolean(activeCanvas));
-    if(keepInteraction){
+    const sameControls=!b.paused&&freshKey===interactionKey;
+    // A drawing in progress is never redrawn; only new strokes from others are painted on.
+    if(sameControls&&activeCanvas){
       currentDeadline=deadlineFor(b);clockServer=roomState.serverNow;clockLocal=Date.now();
       if(b.step==='minigame'&&b.minigame){
         const m=b.minigame;
         $('gameHeadline').textContent=phase4Ids.has(m.id)?m.title.toUpperCase():`${m.title.toUpperCase()} · ${m.round}/${m.totalRounds}`;
         $('gameDescription').textContent=phase4Ids.has(m.id)?m.rule:`${m.rule}  ${m.question}`;
-        if(activeCanvas&&activeCanvas.dataset.drawing!=='true'){
+        if(activeCanvas.dataset.drawing!=='true'){
           const strokes=m.display?.strokes||[],seen=Number(activeCanvas.dataset.strokeCount||0);
           if(strokes.length>seen){
             const ctx=activeCanvas.getContext('2d');ctx.strokeStyle='#152447';ctx.lineWidth=9;ctx.lineCap='round';ctx.lineJoin='round';
@@ -387,16 +529,20 @@
             activeCanvas.dataset.strokeCount=String(strokes.length);
           }
         }
-      }else if(b.step==='showdown'&&b.showdown){
-        $('gameHeadline').textContent=b.showdown.title;
-        $('gameDescription').textContent=b.showdown.question;
       }
       return;
     }
-    interactionKey=freshKey;
-    clockInitialMs=Math.max(1000,Number(deadlineFor(b))-Number(roomState.serverNow));
+    if(!sameControls){
+      interactionKey=freshKey;
+      clockInitialMs=Math.max(1000,Number(deadlineFor(b))-Number(roomState.serverNow));
+    }
     if(priorInput)entryDraft={key:entryDraft.key,text:priorInput.value};
+    if(sameControls){drawControlsPatched(()=>drawGameControls(player,b,active,me,presenting,myDelta,won,priorFocused));return;}
     $('gameButtons').replaceChildren();currentDeadline=null;
+    drawGameControls(player,b,active,me,presenting,myDelta,won,priorFocused);
+  }
+  function drawGameControls(player,b,active,me,presenting,myDelta,won,priorFocused){
+    currentDeadline=null;
     const title=$('gameHeadline'),detail=$('gameDescription');
     if(b.paused){title.textContent='GAME PAUSED';detail.textContent=b.pauseReason||'Waiting for a player to reconnect.';return;}
     if(b.step==='finished'){
@@ -431,15 +577,22 @@
     } else if(b.step==='choose_route'){
       title.textContent='🎬 DIRECTOR’S CUT';detail.textContent=me?'Choose where to land. Your normal roll is FREE; ±1 space costs one Cue. Make the crowd gasp!':`${active?.name} is selecting their landing.`;
       currentDeadline=b.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
-      const spaceName={speed:'CALL SPEED',brain:'CALL BRAIN',create:'CALL CREATE',together:'CALL TOGETHER',showdown:'SHOWDOWN',start:'START +2',applause:'APPLAUSE +2',swap:'SWAP SEATS',pickpocket:'PICKPOCKET',drain:'BRAIN DRAIN',wildcard:'WILDCARD',lift:'STAGE LIFT'};
+      const spaceName={speed:'CALL SPEED',brain:'CALL BRAIN',create:'CALL CREATE',together:'CALL TOGETHER',showdown:'SHOWDOWN',start:'START +2',applause:'APPLAUSE +2',steal:'STEAL THE CALL',pickpocket:'PICKPOCKET',drain:'BRAIN DRAIN',wildcard:'WILDCARD',lift:'STAGE LIFT'};
       if(me)b.routeOptions.forEach((o,index)=>gameButton(`${o.cost?'🎬':'✓'} ${o.steps} STEPS · ${spaceName[o.type]||o.type.toUpperCase()} ${o.cost?'(−1 CUE)':'(FREE)'}`, 'game:choose',{option:index},o.cost?'button-director':'button-primary'));
     } else if(b.step==='choose_die'){
       title.textContent=me?'PICK YOUR DIE':'CATCH-UP ROLL';detail.textContent=me?'You are behind: choose either die to move with.':'The current contestant picks one die.';
       if(me)b.rolls.forEach((die,index)=>gameButton(`DIE ${index+1}: ${die} SPACES`,'game:pick-die',{index},'button-primary'));
-    } else if(['choose_target','choose_opponent'].includes(b.step)) {
-      const swap=b.step==='choose_target';title.textContent=swap?'SWAP SEATS!':'CHALLENGE A RIVAL!';
-      detail.textContent=me?(swap?'Choose whose board position to swap with.':'Pick another contestant to face in the showdown.'):b.event?.text;
+    } else if(b.step==='choose_opponent') {
+      // G1: the lander picks their rival (the leader is picked if time runs out).
+      title.textContent='CHALLENGE A RIVAL!';
+      detail.textContent=me?'Pick another contestant to face in the Showdown. If time runs out, you face the leader.':b.event?.text;
       if(me)roomState.players.filter(p=>p.id!==player.id).forEach(p=>gameButton(`${p.name} · ${p.sparks} SPARKS`,'game:choose',{targetId:p.id},'button-blue small'));
+    } else if(b.step==='choose_game') {
+      // G1: the caller picks 1 of 2 games from their category.
+      title.textContent=me?'PICK THE GAME!':'CALLER’S CHOICE';
+      detail.textContent=me?'Choose this round’s game. If time runs out, the studio picks one of these two.':b.event?.text;
+      if(me)(b.gameOptions||[]).forEach(g=>gameButton(`▶ ${g.name.toUpperCase()}`,'game:choose',{gameId:g.id},'button-primary'));
+      else for(const g of b.gameOptions||[]){const d=document.createElement('div');d.className='mini-help';d.textContent=`• ${g.name}`;$('gameButtons').append(d);}
     } else if(b.step==='choose_category'){
       title.textContent='WILDCARD!';detail.textContent=me?'Pick this round’s game. It’s locked in — nobody can change it — and you host it.':b.event?.text;
       if(me)['speed','brain','create','together'].forEach(cat=>gameButton(cat.toUpperCase(),'game:choose',{category:cat},'button-blue small'));
@@ -465,9 +618,15 @@
       document.body.classList.toggle('time-critical',seconds>0&&seconds<=5);
     }else{$('gameCountdown').textContent='';document.body.classList.remove('time-critical');}
   }
+  let vipKey='';
   function renderVipControls() {
     const player = currentPlayer();
     const isVip = player && roomState?.vipId === player.id;
+    // D12: rebuilding on every broadcast snapped open dropdowns shut. Only rebuild
+    // when the settings, phase, pause state, VIP or connection actually change.
+    const nextKey=[isVip,roomState?.phase,JSON.stringify(roomState?.settings||{}),Boolean(roomState?.board?.paused),socket.connected].join('|');
+    if(nextKey===vipKey)return;
+    vipKey=nextKey;
     for (const id of ['vipControls', 'vipGameControls']) {
       const panel = $(id);
       panel.replaceChildren();
@@ -493,6 +652,7 @@
               link.download=`noggin-match-${session.code}.json`;link.click();
               setTimeout(() => URL.revokeObjectURL(url),1000);
             }
+            button.disabled = !socket.connected;
             if (event !== 'room:close') {error('');render();}
           } catch(e) {error(e.message);button.disabled = false;}
         };
@@ -503,14 +663,15 @@
           roundStyle: [['everyone','Everyone rolls'],['sequential','One at a time']],
           rules: [['classic','Classic'],['showtime','Showtime']],
           rounds: [['auto','Auto length'],[6,'6 rounds'],[8,'8 rounds'],[10,'10 rounds'],[12,'12 rounds']],
-          timerSpeed: [['normal','Normal'],['relaxed','Relaxed']]
+          timerSpeed: [['normal','Normal'],['relaxed','Relaxed']],
+          colourBlindSafe: [['false','Off'],['true','On · Shape Clash']]
         })) {
           const label = document.createElement('label');
-          label.textContent = ({roundStyle:'ROUND STYLE',rules:'GAME MODE',rounds:'SHOW LENGTH',timerSpeed:'TIMERS'})[setting];
+          label.textContent = ({roundStyle:'ROUND STYLE',rules:'GAME MODE',rounds:'SHOW LENGTH',timerSpeed:'TIMERS',colourBlindSafe:'COLOUR-BLIND SAFE'})[setting];
           const select = document.createElement('select');select.setAttribute('aria-label',label.textContent);
           for (const [value,name] of choices) {const option=document.createElement('option');option.value=value;option.textContent=name;select.append(option);}
           select.value=String(roomState.settings[setting]);
-          select.onchange=async()=>{try{const value=setting==='rounds'&&select.value!=='auto'?Number(select.value):select.value;const r=await U.request(socket,'room:settings',{patch:{[setting]:value}});roomState=r.state;render();error('');}catch(e){error(e.message);render();}};
+          select.onchange=async()=>{try{const value=setting==='colourBlindSafe'?select.value==='true':setting==='rounds'&&select.value!=='auto'?Number(select.value):select.value;const r=await U.request(socket,'room:settings',{patch:{[setting]:value}});roomState=r.state;render();error('');}catch(e){error(e.message);vipKey='';render();}};
           label.append(select);panel.append(label);
         }
         add('▶ START SHOW','game:start');
@@ -520,6 +681,16 @@
         add('DOWNLOAD MATCH REPORT','game:report');
       }
       add('CLOSE ROOM','room:close');
+    }
+  }
+  // D16: put the last name and character back on the join screen.
+  function prefillProfile(){
+    if(session)return;
+    const profile=U.readSession(profileKey);
+    if(!profile)return;
+    if(typeof profile.name==='string'&&!$('playerName').value)$('playerName').value=profile.name.slice(0,20);
+    if(Number.isInteger(profile.avatarId)&&avatars.some(a=>a.id===profile.avatarId)&&!selectedId){
+      selectedId=profile.avatarId;$('joinButton').textContent='JOIN THE SHOW!';$('joinButton').disabled=!socket.connected;
     }
   }
   // Estimated server time now, from the last state the server sent.
@@ -546,28 +717,63 @@
     buildPicker('swapAvatarGrid',true);
     renderVipControls();
     if(!roomState.hostOnline) notice('The TV host is disconnected. Your seat is being held temporarily.');
-    else notice(roomState.canStart ? 'Everyone is ready! Watch the TV for the next step.' : 'Waiting for the rest of the panel.');
+    else notice(roomState.canStart ? 'Everyone is ready! Watch the TV for the next step.' : 'Waiting for the rest of the panel. Keep this page open — your seat is held for 10 minutes.');
   }
   function saveSession(result, name, avatarId) {
     session={code:result.code,token:result.token,playerId:result.playerId,name,avatarId};
-    U.saveSession(key,session);roomState=result.state;
+    saveProfile(name,avatarId);
+    boundSocketId=socket.id;
+    U.saveSession(key,session);roomState=result.state;keepAwake();
   }
-  async function resumeSession() {
-    if(currentlyResuming) return;
+  // D4: the Screen Wake Lock asks the browser to stop the screen sleeping while
+  // seated. It only works over HTTPS (Render), so it is optional: if the browser
+  // refuses, nothing breaks and the seat is still held for 10 minutes in the lobby.
+  let wakeLock=null;
+  async function keepAwake(){
+    if(!session||wakeLock||document.visibilityState!=='visible'||!('wakeLock' in navigator))return;
+    try{wakeLock=await navigator.wakeLock.request('screen');wakeLock.addEventListener('release',()=>{wakeLock=null;});}
+    catch{wakeLock=null;}
+  }
+  function releaseWake(){try{wakeLock?.release();}catch{}wakeLock=null;}
+  // Browsers drop the lock when the page is hidden; ask again when it comes back.
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')keepAwake();});
+  // D1: only these server codes mean the seat is really gone. Timeouts, rate
+  // limits and server hiccups keep the saved seat and retry automatically.
+  const SEAT_GONE=new Set(['AUTH','EXPIRED','ROOM']);
+  function showJoinScreen(){
+    $('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.add('hidden');
+  }
+  function resumeSession() {
+    // Already seated on this exact connection: nothing to do.
+    if(session && boundSocketId===socket.id) return Promise.resolve();
+    // A resume is already on its way: share it rather than sending a second one.
+    if(resumePromise) return resumePromise;
     const prior=U.readSession(key);
-    if(!prior?.token||!prior?.code)return;
-    currentlyResuming=true;
-    try {
-      const r=await U.request(socket,'room:resume',{code:prior.code,token:prior.token,role:'player'});
-      session=prior;roomState=r.state;
-      const player=currentPlayer();selectedId=player?.avatarId || prior.avatarId;
-      $('code').value=prior.code;$('playerName').value=prior.name;
-      render();error('');
-    } catch(err) {
-      session=null;roomState=null;U.clearSession(key);
-      $('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.add('hidden');
-      error(`Your previous seat is unavailable: ${err.message}`);
-    } finally {currentlyResuming=false;}
+    if(!prior?.token||!prior?.code) return Promise.resolve();
+    clearTimeout(resumeRetry);resumeRetry=null;
+    resumePromise=(async()=>{
+      try {
+        const r=await U.request(socket,'room:resume',{code:prior.code,token:prior.token,role:'player'});
+        session=prior;boundSocketId=socket.id;roomState=r.state;keepAwake();
+        const player=currentPlayer();selectedId=player?.avatarId || prior.avatarId;
+        $('code').value=prior.code;$('playerName').value=prior.name;
+        render();error('');
+      } catch(err) {
+        if(SEAT_GONE.has(err.code)) {
+          session=null;roomState=null;boundSocketId=null;U.clearSession(key);releaseWake();
+          showJoinScreen();
+          // D3: the room no longer exists, which almost always means the server restarted.
+          error(err.code==='ROOM'
+            ? 'The game was reset on the TV — scan the new QR code.'
+            : `Your previous seat is unavailable: ${err.message}`);
+        } else {
+          // Keep the saved seat; try again shortly while the connection is up.
+          error(`Reconnecting to your seat… (${err.message})`);
+          resumeRetry=setTimeout(()=>{if(socket.connected)resumeSession().then(()=>{if(!session)peekRoom();});},3000);
+        }
+      } finally {resumePromise=null;}
+    })();
+    return resumePromise;
   }
   async function peekRoom() {
     const code=roomCode();
@@ -608,24 +814,27 @@
   $('changeAvatarButton').onclick=()=>{$('swapPanel').classList.toggle('hidden');};
   $('leaveButton').onclick=async()=>{
     try{if(socket.connected)await U.request(socket,'room:leave',{});}catch{}
-    U.clearSession(key);session=null;roomState=null;selectedId=null;
+    U.clearSession(key);session=null;roomState=null;selectedId=null;boundSocketId=null;releaseWake();vipKey='';
     $('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('swapPanel').classList.add('hidden');$('gameScreen').classList.add('hidden');
-    buildPicker('avatarGrid',false);error('');notice('You left the room.');
+    prefillProfile();buildPicker('avatarGrid',false);error('');notice('You left the room.');
   };
   socket.on('connect',()=>{setConnected(true);resumeSession().then(()=>{if(!session)peekRoom();});});
-  socket.on('disconnect',()=>{setConnected(false);if(session)notice('Connection lost. Your seat is reserved for 30 seconds while we reconnect…');});
+  socket.on('disconnect',()=>{setConnected(false);boundSocketId=null;if(session)notice(roomState?.phase==='lobby'
+    ? 'Connection lost — reconnecting… Your seat is held for 10 minutes.'
+    : 'Connection lost — reconnecting… If it is your turn, the game waits 30 seconds for you.');});
   socket.on('room:state',state=>{
     if(session && state.code!==session.code)return;
     if(!session && roomCode()!==state.code)return;
     roomState=state;if(session)render();else buildPicker('avatarGrid',false);
   });
-  socket.on('room:closed',()=>{U.clearSession(key);session=null;roomState=null;error('The TV host closed this room. Enter the new code to rejoin.');$('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.add('hidden');});
-  socket.on('room:session-replaced',()=>{U.clearSession(key);session=null;error('Your player session opened on another device or tab. Reload if you want to take it back.');socket.disconnect();});
+  socket.on('room:closed',()=>{U.clearSession(key);session=null;roomState=null;boundSocketId=null;releaseWake();error('The TV host closed this room. Enter the new code to rejoin.');$('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('gameScreen').classList.add('hidden');});
+  socket.on('room:session-replaced',()=>{U.clearSession(key);session=null;boundSocketId=null;error('Your player session opened on another device or tab. Reload if you want to take it back.');socket.disconnect();});
   setInterval(updateGameClock,200);
   try {
     const r=await fetch('/shared/avatars.json');if(!r.ok)throw new Error('Unable to load avatar catalogue.');
-    avatars=await r.json();buildPicker('avatarGrid',false);
+    avatars=await r.json();prefillProfile();buildPicker('avatarGrid',false);
     try{const h=await fetch('/shared/howto.json');if(h.ok)howto=await h.json();}catch{}
+    // Safe to call again: resumeSession() does nothing if this connection is already seated.
     if(socket.connected){await resumeSession();if(!session)peekRoom();}
   }catch(err){error(err.message);}
 })();

@@ -95,10 +95,10 @@
   },
   {
     "index": 13,
-    "type": "swap",
+    "type": "steal",
     "color": "#be95ff",
-    "icon": "⇄",
-    "label": "Swap Seats"
+    "icon": "⚑",
+    "label": "Steal the Call"
   },
   {
     "index": 14,

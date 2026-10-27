@@ -5,9 +5,19 @@ const {enforceFamilyText}=require('../content-filter');
 const BUZZER = require('../../data/buzzer-questions.json');
 const BID = require('../../data/bid-categories.json');
 const {acceptedAnswer} = require('../bid-answers');
-const CLOSE = require('../../data/close-call.json');
+// Q1: the Noggin-Off only ever uses real estimation questions, never sums or
+// unit conversions that two finalists with a calculator would tie on exactly.
+const CLOSE = require('../../data/close-call.json').filter(q => q.kind !== 'arithmetic');
+// Q1: one replay at most. A tie on the replay goes to the closest, then the earliest answer.
+const NOGGIN_OFF_MAX = 2;
 const {SHOWDOWNS,SHOWDOWN_KINDS} = require('../layout');
 const BID_REVIEW_MS = 12000;
+// D7: after the first buzz, wait this long for other buzzes, then award the buzz to the
+// fastest REACTION (measured on each phone from when the question appeared on it).
+// Living-room game: trusting the phone's own timing is acceptable.
+const BUZZ_WINDOW_MS = 150, MIN_BUZZ_MS = 100;
+// G2: Buzzer Battle is first to 3 points, at most 5 questions (shorter, so the room isn't idle).
+const BUZZER_TARGET = 3, BUZZER_QUESTIONS = 5;
 const DURATION = {buzzer:84000,tug:50000,bid:75000,nerve:25000,tiebreak:25000};
 function error(code,msg){const e=new Error(msg);e.code=code;throw e;}
 function pick(items,rand=crypto.randomInt){return items[rand(items.length)];}
@@ -28,14 +38,19 @@ function start(room,kind,now,opponentId=null,randomInt=crypto.randomInt){
  const which=kind==='tiebreak'?'tiebreak':SHOWDOWN_KINDS[b.landing];
  if(!which)error('SPACE','This is not a showdown corner.');
  const m=base(room,which,title,participants,now);
- if(which==='buzzer'){m.points={};participants.forEach(id=>m.points[id]=0);m.questionIndex=0;m.totalRounds=7;m.used=[];m.phase='intro';}
+ if(which==='buzzer'){m.points={};participants.forEach(id=>m.points[id]=0);m.questionIndex=0;m.totalRounds=BUZZER_QUESTIONS;m.used=[];m.phase='intro';}
  if(which==='tug'){m.rope=0;m.correctCount={};m.sums={};participants.forEach(id=>{m.correctCount[id]=0;nextSum(m,id);});}
- if(which==='bid'){m.category=pick(BID,randomInt);m.phase='intro';m.bid=0;m.bidderId=null;m.turnId=participants[0];m.guesses=[];m.invalid=0;m.pendingReview=null;m.reviewCount=0;}
+ if(which==='bid'){m.category=pick(BID,randomInt);m.phase='intro';m.bid=0;m.bidderId=null;m.guesses=[];m.invalid=0;m.pendingReview=null;m.reviewCount=0;
+   // G3: the rival (the player who did NOT land on the corner) bids first, so the
+   // lander no longer gets to set the price and then always win the auction.
+   m.turnId=participants[1];}
  if(which==='nerve'){m.bustAt=3+randomInt(8);m.banks={};m.number=1;}
  if(which==='tiebreak'){
    const available=CLOSE.filter(x=>!b.tieQuestions.includes(x.id));if(!available.length)b.tieQuestions=[];
    const pool=available.length?available:CLOSE;
-   m.questionData=pick(pool,randomInt);b.tieQuestions.push(m.questionData.id);m.answers={};
+   m.questionData=pick(pool,randomInt);b.tieQuestions.push(m.questionData.id);m.answers={};m.answerAt={};
+   b.nogginOffRound=(b.nogginOffRound||0)+1;m.attempt=b.nogginOffRound;
+   if(m.attempt>1)m.title='NOGGIN-OFF · REPLAY';
  }
  return m;
 }
@@ -48,30 +63,48 @@ function open(room,now){const m=room.board.showdown;if(!m||m.phase!=='intro')ret
 // Buzzer Battle is a general-knowledge quiz. Quick-sum questions are only used if every
 // general question has been seen; questions are not repeated within a match.
 const BUZZER_GENERAL=BUZZER.filter(q=>q.topic!=='maths');
+// Q6: each duel climbs easy → medium → hard. With 7 questions: 2 easy, 3 medium, 2 hard.
+function buzzerLevel(index,total){return index<=Math.round(total*0.3)?'easy':index<=Math.round(total*0.7)?'medium':'hard';}
+const LEVEL_FALLBACK={easy:['easy','medium','hard'],medium:['medium','easy','hard'],hard:['hard','medium','easy']};
+// Q6: shuffle the four answers every time a question is asked, so the right answer
+// is never more likely to be in one particular position.
+function shuffled(q,rand=crypto.randomInt){
+ const order=[0,1,2,3].slice(0,q.choices.length);
+ for(let i=order.length-1;i>0;i--){const j=rand(i+1);[order[i],order[j]]=[order[j],order[i]];}
+ return {...q,choices:order.map(i=>q.choices[i]),correct:order.indexOf(q.correct)};
+}
 function nextBuzzer(room,now){const m=room.board.showdown,seen=room.board.seenBuzzer||(room.board.seenBuzzer=[]);
- const fresh=BUZZER_GENERAL.filter(q=>!m.used.includes(q.id)&&!seen.includes(q.id));
- const pool=fresh.length?fresh:BUZZER_GENERAL.filter(q=>!m.used.includes(q.id));
- const q=pick(pool.length?pool:BUZZER.filter(q=>!m.used.includes(q.id)));
+ const level=buzzerLevel(m.questionIndex+1,m.totalRounds||7);
+ const unseen=BUZZER_GENERAL.filter(q=>!m.used.includes(q.id)&&!seen.includes(q.id));
+ const unused=BUZZER_GENERAL.filter(q=>!m.used.includes(q.id));
+ let q=null;
+ for(const pool of [unseen,unused]){
+  for(const l of LEVEL_FALLBACK[level]){const at=pool.filter(x=>(x.difficulty||'easy')===l);if(at.length){q=pick(at);break;}}
+  if(q)break;
+ }
+ if(!q)q=pick(BUZZER.filter(x=>!m.used.includes(x.id)));
  seen.push(q.id);if(seen.length>=BUZZER_GENERAL.length)room.board.seenBuzzer=[];
- m.used.push(q.id);m.question=q;m.phase='buzz';m.buzzId=null;m.passId=null;m.questionIndex++;m.answered=[];m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,6000,8000));room.board.deadline=m.deadline;
+ m.used.push(q.id);m.question=shuffled(q);m.questionAt=now;m.buzzes={};m.buzzWindowUntil=null;m.buzzReactions=null;m.phase='buzz';m.buzzId=null;m.passId=null;m.questionIndex++;m.answered=[];m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,6000,8000));room.board.deadline=m.deadline;
 }
 function allIds(m,arr){return m.participants.every(id=>Object.hasOwn(arr,id));}
 function resolve(room,now,winners,message,finishTurn){const b=room.board,m=b.showdown;const unique=[...new Set(winners)].filter(id=>m.participants.includes(id));
- // Locked early audience predictions award a capped Cue, not Sparks.
- const predictors=[];
- if(room.settings.rules==='showtime' && m.kind!=='tiebreak' && unique.length===1){
+ // Locked early audience predictions. Showtime: a capped Director Cue.
+ // G2 Classic: +1 Spark, but only for players outside the current top two (catch-up).
+ const predictors=[],catchUp=[];
+ if(m.kind!=='tiebreak' && unique.length===1){
    for(const [id,pick] of Object.entries(m.cheers||{})){
      const spectator=player(room,id);
-     if(spectator && !m.participants.includes(id) && pick===unique[0] && (spectator.cues||0)<2){
-       spectator.cues=(spectator.cues||0)+1;predictors.push(spectator.name);
-     }
+     if(!spectator || m.participants.includes(id) || pick!==unique[0])continue;
+     if(room.settings.rules==='showtime'){if((spectator.cues||0)<2){spectator.cues=(spectator.cues||0)+1;predictors.push(spectator.name);}}
+     else if(room.players.filter(p=>p.sparks>spectator.sparks).length>=2){spectator.sparks+=1;catchUp.push(spectator.name);}
    }
  }
  if(predictors.length)message+=` Spotlight Picks: ${predictors.join(', ')} earn${predictors.length===1?'s':''} a Director Cue for predicting the winner.`;
+ if(catchUp.length)message+=` Spotlight Picks: ${catchUp.join(', ')} +1 Spark for backing the winner.`;
  b.showdown=null;b.deadline=null;
  if(m.kind==='tiebreak'){
    if(unique.length===1){b.winnerIds=unique;b.finalists=unique;room.phase='finished';b.step='finished';b.nextAt=null;b.result={text:message,winners:unique};b.event={type:'finished',text:message};return;}
-   b.finalists=unique.length?unique:m.participants;start(room,'tiebreak',now);b.event={type:'noggin-off',text:'Still tied! Another number question.'};return;
+   b.finalists=unique.length?unique:m.participants;start(room,'tiebreak',now);b.event={type:'noggin-off',text:'Still tied! One replay — closest wins, and if it is still level, the first answer in wins.'};return;
  }
  if(unique.length===1){const winner=player(room,unique[0]);const loser=player(room,m.participants.find(id=>id!==unique[0]));const stolen=Math.min(2,loser.sparks);loser.sparks-=stolen;winner.sparks+=stolen;message+=` ${winner.name} takes ${stolen} Spark${stolen===1?'':'s'} from ${loser.name}.`;
  }else message+=' Draw: nobody loses Sparks.';
@@ -80,9 +113,14 @@ function resolve(room,now,winners,message,finishTurn){const b=room.board,m=b.sho
 function finishBuzzer(room,now,finishTurn){const m=room.board.showdown;const a=m.participants;const x=m.points[a[0]],y=m.points[a[1]];const winners=x===y?[]:[x>y?a[0]:a[1]];resolve(room,now,winners,`Buzzer Battle ended ${x}–${y}.`,finishTurn);}
 function finishTug(room,now,finishTurn){const m=room.board.showdown;const winners=m.rope===0?[]:[m.participants[m.rope>0?0:1]];resolve(room,now,winners,`Tug of Wits: rope moved ${Math.abs(m.rope)} notch${Math.abs(m.rope)===1?'':'es'}.`,finishTurn);}
 function finishNerve(room,now,finishTurn){const m=room.board.showdown;const scores=m.participants.map(id=>({id,amount:m.banks[id]||0}));const best=Math.max(...scores.map(x=>x.amount));const winners=best>0?scores.filter(s=>s.amount===best).map(s=>s.id):[];resolve(room,now,winners,`Nerve: hidden bust was ${m.bustAt}. ${best>0?'Best safe bank: '+best+'.':'Nobody banked safely.'}`,finishTurn);}
-function endBuzzerQuestion(room,now,finishTurn){const m=room.board.showdown;if(Object.values(m.points).some(x=>x>=4)||m.questionIndex>=7||now>=m.hardStop){finishBuzzer(room,now,finishTurn);}else nextBuzzer(room,now);}
+function settleBuzz(room,now){const b=room.board,m=b.showdown;if(!m||m.phase!=='buzz'||!m.buzzes)return;
+ const order=Object.entries(m.buzzes).sort((x,y)=>x[1].reactionMs-y[1].reactionMs||x[1].at-y[1].at);
+ if(!order.length)return;
+ m.buzzId=order[0][0];m.buzzReactions=order.map(([id,v])=>({id,reactionMs:v.reactionMs}));m.buzzWindowUntil=null;
+ m.phase='answer';m.deadline=Math.min(m.hardStop,now+ms(room,5500,7500));b.deadline=m.deadline;
+}
+function endBuzzerQuestion(room,now,finishTurn){const m=room.board.showdown;if(Object.values(m.points).some(x=>x>=BUZZER_TARGET)||m.questionIndex>=BUZZER_QUESTIONS||now>=m.hardStop){finishBuzzer(room,now,finishTurn);}else nextBuzzer(room,now);}
 function cheer(room,id,targetId){
- if(room.settings.rules!=='showtime')error('RULES','Spotlight Picks are disabled in Classic.');
  const m=room.board.showdown;
  if(!m||room.board.step!=='showdown'||m.kind==='tiebreak')error('STEP','There is no corner Showdown to predict.');
  if(m.phase!=='intro')error('LATE','Spotlight Picks close when the duel begins.');
@@ -100,8 +138,16 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
  if(now>m.deadline||now>m.hardStop)error('LATE','Time is up.');
  if(m.kind==='buzzer'){
    if(m.phase==='buzz'){
-     if(value!== 'buzz')error('INPUT','Press the buzzer.');
-     m.buzzId=id;m.phase='answer';m.deadline=Math.min(m.hardStop,now+ms(room,5500,7500));b.deadline=m.deadline;return;
+     const tap=value==='buzz'?{}:(value&&typeof value==='object'&&value.action==='buzz'?value:null);
+     if(!tap)error('INPUT','Press the buzzer.');
+     m.buzzes??={};
+     if(Object.hasOwn(m.buzzes,id))error('ANSWERED','You have already buzzed.');
+     const windowMs=m.deadline-m.questionAt,claimed=Number(tap.reactionMs);
+     const reactionMs=Number.isFinite(claimed)&&claimed>=MIN_BUZZ_MS&&claimed<=windowMs?Math.round(claimed):Math.max(MIN_BUZZ_MS,now-m.questionAt);
+     m.buzzes[id]={reactionMs,at:now};
+     if(!m.buzzWindowUntil)m.buzzWindowUntil=now+BUZZ_WINDOW_MS;
+     if(allIds(m,m.buzzes))settleBuzz(room,now);
+     return;
    }
    if(m.phase==='answer' && id===m.buzzId || m.phase==='pass'&&id===m.passId){
      if(!Number.isInteger(value)||value<0||value>=m.question.choices.length)error('INPUT','Choose an answer.');
@@ -131,7 +177,7 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
      if(value.action!=='bid'||!Number.isInteger(value.count)||value.count<=m.bid||value.count>m.category.answers.length)error('BID','Bid higher, up to the complete category size.');
      m.bid=value.count;m.bidderId=id;m.turnId=m.participants.find(x=>x!==id);m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,13000,19000));b.deadline=m.deadline;return;
    }
-   if(m.phase==='review')error('WAIT','The VIP is reviewing the proposed answer.');
+   if(m.phase==='review')error('WAIT','Your answer is being judged by the TV or another player.');
    if(m.phase!=='name'||id!==m.bidderId)error('TURN','Only the highest bidder can name answers.');
    if(typeof value!=='string'||value.length>70)error('INPUT','Enter an item name.');
    const answer=normalize(enforceFamilyText(room,value));if(answer.length<1||m.guesses.includes(answer))error('INPUT','Type a new answer.');
@@ -139,8 +185,9 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
    const allowed=matchIndex>=0 && !(m.usedBidAnswers||[]).includes(matchIndex);
    if(allowed)(m.usedBidAnswers|| (m.usedBidAnswers=[])).push(matchIndex);
    if(allowed){m.guesses.push(answer);if(m.guesses.length>=m.bid){resolve(room,now,[id],`Bid to Win: delivered ${m.bid} correct names!`,finishTurn);return;}}
-   else if (matchIndex < 0 && m.reviewCount < 3) {
-     m.reviewCount++;m.pendingReview={answer,submittedBy:id,submittedAt:now};
+   // Q7/D10: every unlisted answer is judged by the TV or a non-duelling player.
+   else if (matchIndex < 0) {
+     m.reviewCount++;m.pendingReview={answer,text:String(value).trim().slice(0,70),submittedBy:id,submittedAt:now};
      m.phase='review';m.deadline=Math.min(m.hardStop,now+BID_REVIEW_MS);b.deadline=m.deadline;
      m.roundKey++;return;
    } else {m.invalid++;if(m.invalid>=3){resolve(room,now,[m.participants.find(x=>x!==id)],'Bid to Win: three invalid answers; challenger wins.',finishTurn);return;}}
@@ -156,15 +203,27 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
  if(m.kind==='tiebreak'){
    if(m.phase!=='guess'||Object.hasOwn(m.answers,id))error('ANSWERED','You already answered.');
    if(!Number.isSafeInteger(value)||value<0||value>100000000)error('INPUT','Enter a whole number.');
-   m.answers[id]=value;
+   m.answers[id]=value;m.answerAt[id]=now;
    if(allIds(m,m.answers))finishTiebreak(room,now,finishTurn);return;
  }
  error('INPUT','Invalid game action.');
 }
-function finishTiebreak(room,now,finishTurn){const m=room.board.showdown,values=Object.entries(m.answers);if(!values.length){resolve(room,now,[], 'Nobody answered; another Noggin-Off.',finishTurn);return;}
- const correct=m.questionData.answer;const best=Math.min(...values.map(([,v])=>Math.abs(v-correct)));
- const winners=values.filter(([,v])=>Math.abs(v-correct)===best).map(([id])=>id);
- resolve(room,now,winners,`Noggin-Off: answer ${correct} ${m.questionData.unit||''}. ${winners.length===1?player(room,winners[0]).name+' wins NOGGIN!':'Still tied!'}`,finishTurn);
+function finishTiebreak(room,now,finishTurn){
+ const m=room.board.showdown,values=Object.entries(m.answers),final=(m.attempt||1)>=NOGGIN_OFF_MAX;
+ const correct=m.questionData.answer,unit=m.questionData.unit||'';
+ if(!values.length){
+   if(!final){resolve(room,now,[],'Nobody answered; one more Noggin-Off question.',finishTurn);return;}
+   // Nobody answered the replay either: the studio draws a finalist so the show ends.
+   const drawn=pick(m.participants);
+   resolve(room,now,[drawn],`Nobody answered the replay, so the studio drew a name: ${player(room,drawn).name} wins NOGGIN!`,finishTurn);return;
+ }
+ const best=Math.min(...values.map(([,v])=>Math.abs(v-correct)));
+ const closest=values.filter(([,v])=>Math.abs(v-correct)===best).map(([id])=>id);
+ if(closest.length===1){resolve(room,now,closest,`Noggin-Off: answer ${correct} ${unit}. ${player(room,closest[0]).name} wins NOGGIN!`,finishTurn);return;}
+ if(!final){resolve(room,now,closest,`Noggin-Off: answer ${correct} ${unit}. Still tied — one replay!`,finishTurn);return;}
+ // Q1: second tie in a row — the earliest of the closest answers wins. No third question.
+ const first=[...closest].sort((a,z)=>(m.answerAt[a]??Infinity)-(m.answerAt[z]??Infinity))[0];
+ resolve(room,now,[first],`Noggin-Off replay: answer ${correct} ${unit}. Still level, so ${player(room,first).name} wins NOGGIN for answering first!`,finishTurn);
 }
 function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board.step!=='showdown')return false;
  if(m.phase==='intro' && now>=m.deadline){open(room,now);return true;}
@@ -173,6 +232,7 @@ function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board
      if(v>=m.bustAt){for(const id of m.participants)if(!Object.hasOwn(m.banks,id))m.banks[id]=0;finishNerve(room,now,finishTurn);}return true;
    }
  }
+ if(m.kind==='buzzer'&&m.phase==='buzz'&&m.buzzWindowUntil&&now>=m.buzzWindowUntil){settleBuzz(room,now);return true;}
  if(now<m.deadline&&now<m.hardStop)return false;
  if(m.kind==='buzzer'){
    if(m.phase==='answer'){m.phase='pass';m.passId=m.participants.find(x=>x!==m.buzzId);m.deadline=Math.min(m.hardStop,now+ms(room,5000,7000));room.board.deadline=m.deadline;return true;}
@@ -192,24 +252,25 @@ function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board
 function publicState(room,forTv=false,viewerId=null){const m=room.board.showdown;if(!m)return null;
  const pub={kind:m.kind,title:m.title,phase:m.phase,participants:m.participants,openAt:m.openAt,deadline:m.deadline,hardStop:m.hardStop,roundKey:m.roundKey,answered:m.answered||[],question:'',display:{},private:null};
  if(m.kind!=='tiebreak'){
-  pub.cheerOpen=room.settings.rules==='showtime'&&m.phase==='intro';
+  pub.cheerOpen=m.kind!=='tiebreak'&&m.phase==='intro';
   pub.cheerCounts=Object.fromEntries(m.participants.map(id=>[id,Object.values(m.cheers||{}).filter(v=>v===id).length]));
   if(viewerId&&Object.hasOwn(m.cheers||{},viewerId))pub.myCheer=m.cheers[viewerId];
  }
  const reveal= m.phase!=='intro';
- if(m.kind==='buzzer'){pub.round=m.questionIndex;pub.totalRounds=7;pub.question=reveal?m.question?.question||'':'Buzz first, then choose the correct answer.';
-   pub.display={choices:reveal?m.question?.choices:[],points:m.points,buzzId:m.buzzId,passId:m.passId,canBuzz:m.phase==='buzz',answerId:m.phase==='answer'?m.buzzId:m.phase==='pass'?m.passId:null};
+ if(m.kind==='buzzer'){pub.round=m.questionIndex;pub.totalRounds=BUZZER_QUESTIONS;pub.question=reveal?m.question?.question||'':'Buzz first, then choose the correct answer.';
+   pub.display={choices:reveal?m.question?.choices:[],points:m.points,buzzId:m.buzzId,passId:m.passId,canBuzz:m.phase==='buzz',answerId:m.phase==='answer'?m.buzzId:m.phase==='pass'?m.passId:null,buzzed:Object.keys(m.buzzes||{}),buzzReactions:m.phase==='buzz'?null:m.buzzReactions||null};
  }
  if(m.kind==='tug'){pub.question='Answer the maths problems on your phone to pull the rope five notches.';pub.display={rope:m.rope,correctCount:m.correctCount};if(viewerId&&m.participants.includes(viewerId))pub.private={prompt:m.sums[viewerId].prompt,qid:m.sums[viewerId].n};}
  if(m.kind==='bid'){pub.question=reveal?m.category.prompt:'Bid how many category items you can name.';pub.display={bid:m.bid,bidderId:m.bidderId,turnId:m.turnId,correct:m.guesses.length,max:m.category.answers.length,invalid:m.invalid};
-  if(m.phase==='review')pub.display.review={answer:m.pendingReview.answer,deadline:m.deadline};}
+  if(m.phase==='review')pub.display.review={answer:m.pendingReview.answer,text:m.pendingReview.text||m.pendingReview.answer,submittedBy:m.pendingReview.submittedBy,deadline:m.deadline};}
  if(m.kind==='nerve'){pub.question='Bank before the unseen bust point. Highest safe bank wins.';pub.display={number:m.number,banks:Object.keys(m.banks)};}
- if(m.kind==='tiebreak'){pub.question=reveal?m.questionData.question:'Nearest guess wins NOGGIN!';pub.display={unit:m.questionData.unit,answered:Object.keys(m.answers)};}
+ if(m.kind==='tiebreak'){pub.question=reveal?m.questionData.question:'Nearest guess wins NOGGIN!';pub.display={unit:m.questionData.unit,answered:Object.keys(m.answers),attempt:m.attempt||1,maxAttempts:NOGGIN_OFF_MAX};}
  return pub;
 }
 function decideBid(room,accept,now,finishTurn){
  const b=room.board,m=b.showdown;
- if(!m||m.kind!=='bid'||m.phase!=='review'||!m.pendingReview)error('STEP','No answer is awaiting review.');
+ // D10: the first decision wins; anyone pressing a moment later is told it is done.
+ if(!m||m.kind!=='bid'||m.phase!=='review'||!m.pendingReview)error('STEP','That answer has already been judged.');
  if(typeof accept!=='boolean')error('INPUT','Choose accept or reject.');
  if(now>m.deadline||now>m.hardStop)accept=false;
  const {answer,submittedBy}=m.pendingReview;
@@ -224,4 +285,4 @@ function decideBid(room,accept,now,finishTurn){
  }
  m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,14000,19000));b.deadline=m.deadline;
 }
-module.exports={start,submit,cheer,tick,publicState,decideBid,normalize,DURATION};
+module.exports={BUZZER_TARGET,BUZZER_QUESTIONS,BUZZ_WINDOW_MS,settleBuzz,start,submit,cheer,tick,publicState,decideBid,normalize,DURATION,buzzerLevel,shuffled};

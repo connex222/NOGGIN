@@ -145,3 +145,31 @@ body.game-mode .game-mini-instruction{font-size:14px;color:#fff1ad;font-weight:8
 .phone-howto li{counter-increment:step;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:#0b2363;border:2px solid #62c9ff66;color:#fff;font-weight:900;font-size:17px;line-height:1.2}
 .phone-howto li::before{content:counter(step);flex:0 0 26px;height:26px;border-radius:50%;background:#ffd34d;color:#071233;display:grid;place-items:center;font-size:15px}
 .phone-howto li span{font-size:24px}
+
+/* v3.5.0 D15 — every phone tap target is at least 48 × 48 px (the accessibility
+   minimum for a fingertip). These rules come last so they win over older sizes. */
+button,select,input[type="checkbox"]{min-height:48px}
+.game-buttons button,.phone-shell button,.vip-panel select,.vip-control{min-height:48px;min-width:48px}
+/* Odd Spot: let the 6 × 6 grid use the card's side padding so each square is 48 px
+   wide even on a 360 px phone, and keep only a hairline gap between squares. */
+.game-buttons .mini-grid,body.mini-mode .game-buttons .mini-grid{gap:2px;width:calc(100% + 20px);max-width:none;margin-left:-10px;margin-right:-10px;grid-template-columns:repeat(6,minmax(48px,1fr))}
+.game-buttons .mini-grid-button,body.mini-mode .game-buttons .mini-grid-button{min-width:48px!important;min-height:clamp(48px,13.6vw,58px)!important}
+.game-buttons .mini-grid-button span{display:inline-block;line-height:1;transition:none}
+
+/* v3.5.0 Q4 — private "Close!" feedback for Sketch and Noise guessers. */
+.game-buttons .guess-feedback{padding:8px 12px;border-radius:12px;text-align:center;font-weight:900}
+.game-buttons .guess-feedback.close{background:#5a2a00;color:#ffd34d;border:2px solid #ffb02e}
+.game-buttons .guess-feedback.miss{background:#1d1f45;color:#dfe6ff;border:2px solid #6b7bd6}
+
+/* v3.5.0 D8 — Shape Clash: the word sits inside a different outline shape.
+   Bright yellow outline + white text on navy: readable in sunlight and in the dark. */
+.game-buttons .shape-clash{display:block;width:min(62vw,220px);height:auto;margin:4px auto 2px}
+.shape-clash .shape-outline{fill:none;stroke:#ffe37a;stroke-width:6;stroke-linejoin:round}
+.shape-clash .shape-word{fill:#fff;font-weight:900;font-size:14px;letter-spacing:.06em;paint-order:stroke;stroke:#071233;stroke-width:3px}
+/* v3.5.0 D7 — Quick Draw: an unmistakable change at DRAW. */
+.game-buttons .quick-draw-button{min-height:120px;font-size:clamp(24px,8vw,38px)}
+.game-buttons .quick-draw-button:not(.drawn){background:#3a3f63;color:#dfe6ff;border-color:#6b7bd6}
+
+/* v3.5.0 Q9/G12 — gap to the leader in the final three rounds. */
+.gap-line{margin:0 0 8px;padding:7px 12px;border-radius:12px;background:#24124a;border:2px solid #ffd34d;color:#ffe9a8;font-weight:800;text-align:center;font-size:clamp(14px,4vw,17px)}
+.gap-line.hidden{display:none}

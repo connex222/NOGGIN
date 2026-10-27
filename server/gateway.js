@@ -104,17 +104,31 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
       return result;
     }));
 
+    async function hostLink(roomCode) {
+      const link=joinUrl(socket.request,roomCode);
+      const qrDataUrl=await QRCode.toDataURL(link,{margin:2,errorCorrectionLevel:'M',width:256,color:{dark:'#13213C',light:'#FFFFFFFF'}});
+      return {joinUrl:link,qrDataUrl};
+    }
+
     socket.on('room:resume', wrap(async ({code, token, role}) => {
-      if (bindings.has(socket.id)) throw new LobbyError('AUTH','Leave your current session before resuming another.');
+      const existing = bindings.get(socket.id);
+      if (existing) {
+        // D1: the same connection asking for the same seat again (for example a
+        // second resume once the page has finished loading) is confirmed, not
+        // rejected. Anything else still has to leave its current session first.
+        const same = rooms.confirmSeat({code, token, role, socketId: socket.id});
+        if (!same || same.code !== existing.code || same.role !== existing.role) {
+          throw new LobbyError('BOUND','Leave your current session before resuming another.');
+        }
+        return {...same, ...(same.role === 'host' ? await hostLink(same.code) : {})};
+      }
       // Validate the host token and generate the QR BEFORE taking the session
       // over. A QR encoder failure must not strand the original host socket.
       let extra = {};
       if (role === 'host') {
         const previous=rooms.find(code);
         if (!safeTokenEquals(token,previous.hostToken)) throw new LobbyError('AUTH','Your host session is no longer available.');
-        const link=joinUrl(socket.request,previous.code);
-        const qrDataUrl=await QRCode.toDataURL(link,{margin:2,errorCorrectionLevel:'M',width:256,color:{dark:'#13213C',light:'#FFFFFFFF'}});
-        extra={joinUrl:link,qrDataUrl};
+        extra=await hostLink(previous.code);
       }
       const result = rooms.resume({code, token, role, socketId: socket.id});
       if (result.oldSocketId && result.oldSocketId !== socket.id) {
@@ -156,7 +170,11 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
     socket.on('game:answer', wrap(async ({choice}) => {const code=getBound(socket,'player');const state=rooms.answerGame(code,socket.id,choice);broadcast(code);return {state};}));
     socket.on('game:cheer', wrap(async ({targetId}) => {const code=getBound(socket,'player');const state=rooms.cheerGame(code,socket.id,targetId);broadcast(code);return {state};}));
     socket.on('game:bid-review', wrap(async ({accept}) => {const code=getBound(socket);const state=rooms.adjudicateBid(code,socket.id,accept);broadcast(code);return {state};}));
-    socket.on('game:input', wrap(async ({value,roundKey}) => {const code=getBound(socket,'player');const state=rooms.inputGame(code,socket.id,value,roundKey);broadcast(code);return {state};}));
+    socket.on('game:input', wrap(async ({value,roundKey}) => {const code=getBound(socket,'player');const state=rooms.inputGame(code,socket.id,value,roundKey);broadcast(code);
+      // D7: settle a Buzzer collection window on time instead of waiting for the next 250 ms sweep.
+      const until=rooms.rooms.get(code)?.board?.showdown?.buzzWindowUntil;
+      if(until){const wait=Math.max(0,until-Date.now())+5;setTimeout(()=>{if(!rooms.rooms.has(code))return;const changed=rooms.sweep();if(changed.includes(code))broadcast(code);},wait).unref?.();}
+      return {state};}));
     socket.on('game:draw', wrap(async ({points,roundKey}) => {
       const code = getBound(socket, 'player');
       // rooms.drawGame validates the session, round, role, deadline and points.

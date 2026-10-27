@@ -16,6 +16,7 @@ test('invalid guesses and unrelated words are rejected',()=>{
  assert.equal(acceptedAnswer({answers:['Piano','Guitar']},'rhinoceros'),-1);
 });
 test('review flags remain when open-ended categories cannot yet be fairly judged',()=>{
- assert.equal(bid.filter(x=>x.review===true).length,89);
+ // v3.5.0 Q7: every rebuilt category stays flagged until the owner checks it.
+ assert.equal(bid.filter(x=>x.review===true).length,bid.length);
  assert.equal(bid.filter(x=>x.editorialStatus==='scope-checked').length,0);
 });

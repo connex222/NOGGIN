@@ -63,39 +63,43 @@ steps=[
  'Scan its QR code with each phone; choose an untaken avatar and tap Ready.',
  'Each round, every player rolls once on their phone — all at once (Everyone Rolls, the default) or one at a time.',
  'Land on a coloured space to CALL that category for the round’s game — and host it. A later colour steals the call.',
- 'When everyone has rolled, the whole panel plays the round’s game together.'
+ 'The caller picks 1 of 2 games on their phone; then the whole panel plays it together.'
 ]
 for i,s in enumerate(steps,1):
- text(L+3,ly,str(i)+'.',8.8,BLUE,True);ly=para(L+21,ly,s,CW-23,8.65,12.4);ly-=7
-ly-=8
+ text(L+3,ly,str(i)+'.',8.6,BLUE,True);ly=para(L+21,ly,s,CW-23,8.3,11.3);ly-=4
+ly-=3
 ly=heading(L,ly,'2  WIN SPARKS',CW)
-for s in [f'Round game: the host wins +{data["roundScore"]["hostWin"]}; any other winner +{data["roundScore"]["otherWinner"]}. A host who finishes last loses one Spark (never below zero).',
+# G10 (v3.5.0): payouts per game type, including the round-game bonus.
+bonus=data["roundGameBonus"]
+for s in [f'Round game: the host wins +{data["roundScore"]["hostWin"]}; any other winner +{data["roundScore"]["otherWinner"]}. A host who finishes last loses one Spark — but never when everyone ties.',
+          f'Team games — Relay Sums (first team to finish) and Mind Meld (every matching pair): each winner +{1+bonus}.',
+          f'Bomb Squad defused: everyone +{1+bonus}, host +{2+bonus}; if it blows up, the host loses one. Sketch & Sabotage: artist +{2+bonus} and first correct guesser +{1+bonus}; if nobody guesses, the secret saboteur +{2+bonus}.',
           f'Applause +{data["applause"]}. Pass Start +{data["bonusStart"]["pass"]}; land exactly on Start +{data["bonusStart"]["land"]}.',
           'LAST ORDERS: in the final round, every Spark you gain is doubled.',
           f'Showtime only — last place rolls two dice and picks one. Director’s Cut: start with {data["directorsCut"]["cues"]} Cues; nudge your landing by one space for 1 Cue. Win a contest or pass Start to earn 1 back (max 2).']:
- ly=para(L+8,ly,s,CW-13,8.2,11.4);ly-=5
-ly-=2
+ ly=para(L+8,ly,s,CW-13,7.8,10.5);ly-=3
+ly-=1
 ly=heading(L,ly,'3  THE UNDERDOG RULE',CW)
-ly=para(L+8,ly,f'With four or more players, a mini-game or Showdown winner who started the turn {data["catchUp"]["threshold"]}+ Sparks behind the leader earns an extra {data["catchUp"]["extraSmall"]} Spark. In an eight-player match, the bonus is {data["catchUp"]["extraEight"]} Sparks.',CW-13,8.6,12.2);ly-=12
+ly=para(L+8,ly,f'With four or more players, a mini-game or Showdown winner who started the turn {data["catchUp"]["threshold"]}+ Sparks behind the leader earns an extra {data["catchUp"]["extraSmall"]} Spark. In an eight-player match, the bonus is {data["catchUp"]["extraEight"]} Sparks.',CW-13,8.0,10.8);ly-=8
 ly=heading(L,ly,'4  SPECIAL SPACES',CW)
-for s in ['Wildcard — pick the round’s game, lock it so nobody can change it, and host it.', 'Swap Seats — exchange board positions.', 'Pickpocket — steal one Spark from the leader.', 'Brain Drain — answer in five seconds or lose one.', 'Stage Lift — jump across the stage to the other lift.']:
- ly=para(L+8,ly,s,CW-13,8.35,11.6);ly-=5
+for s in ['Wildcard — pick the round’s game, lock it so nobody can change it, and host it.', 'Steal the Call — you host this round’s game (unless a Wildcard has locked it).', 'Pickpocket — steal one Spark from the leader.', 'Brain Drain — answer in five seconds or lose one.', 'Stage Lift — jump across the stage to the other lift.']:
+ ly=para(L+8,ly,s,CW-13,8.1,11.0);ly-=4
 # right column
 ry=heading(R,y,'THE 16 MINI-GAMES',CW)
 colors={'speed':'#D74A68','brain':'#4184CD','create':'#CF9A2C','together':'#388D5B'}
 for category,names in data['categories'].items():
- text(R+8,ry,category.upper(),9,HexColor(colors[category]),True);ry-=16
- ry=para(R+8,ry,'  •  '.join(names),CW-13,8.4,12.3);ry-=14
+ text(R+8,ry,category.upper(),9,HexColor(colors[category]),True);ry-=14
+ ry=para(R+8,ry,'  •  '.join(names),CW-13,8.2,11.4);ry-=10
 ry-=7
 ry=heading(R,ry,'CORNER SHOWDOWNS',CW)
-ry=para(R+8,ry,f'Every corner is a Showdown: challenge one rival; the winner takes up to {data["showdownTransfer"]} Sparks. One Showdown per round — later corner landings that round earn +{data["cornerBonus"]}.',CW-13,8.55,12.3);ry-=11
+ry=para(R+8,ry,f'Every corner is a Showdown: pick a rival on your phone; the winner takes up to {data["showdownTransfer"]} Sparks. Buzzer Battle is first to 3. In Bid to Win the rival bids first. One Showdown per round — later corner landings that round earn +{data["cornerBonus"]}.',CW-13,8.4,11.8);ry-=10
 for n in data['showdowns']:
  ry=tag(R+4,ry,n,CW-8)
 ry-=8
 ry=heading(R,ry,'GAME OVER',CW)
-ry=para(R+8,ry,f'Most Sparks after the final round wins; a tie goes to a nearest-number Noggin-Off. Auto length: {data["autoRounds"]["everyoneSmall"]} rounds (2–5 players) or {data["autoRounds"]["everyoneLarge"]} (6–8) with Everyone Rolls.',CW-13,8.6,12.5);ry-=14
+ry=para(R+8,ry,f'Most Sparks after the final round wins; a tie goes to a nearest-number Noggin-Off (one replay at most, then the first answer in wins). Auto length: {data["autoRounds"]["everyoneSmall"]} rounds (2–5 players) or {data["autoRounds"]["everyoneLarge"]} (6–8) with Everyone Rolls.',CW-13,8.6,12.5);ry-=14
 ry=heading(R,ry,'PLAYING TOGETHER',CW)
-ry=para(R+8,ry,'Discuss team clues aloud. In Showtime, spectators can predict a Showdown winner for 1 Director Cue. Two-player rooms skip '+', '.join(data['twoPlayerSkips'])+'.',CW-13,8.35,12.0)
+ry=para(R+8,ry,'Discuss team clues aloud. Spectators can predict a Showdown winner: in Classic a correct pick earns +1 Spark if you are outside the top two; in Showtime it earns 1 Director Cue. Colour-blind safe mode swaps Colour Clash for Shape Clash. Two-player rooms skip '+', '.join(data['twoPlayerSkips'])+'.',CW-13,8.2,11.6)
 # footer
 footer=42
 c.setStrokeColor(LIGHT);c.line(34,footer+25,W-34,footer+25)

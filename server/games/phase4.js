@@ -27,7 +27,7 @@ const SPECS = Object.freeze({
  'noise-annoys': {name:'Noise Annoys',category:'create',rule:'The host performs sound effects aloud in the room—no words or mime. First correct guess wins.'},
  'caption-this': {name:'Caption This',category:'create',rule:'Write a funny caption for the TV scene, then vote anonymously. You cannot vote for yourself.'},
  'fib-factory': {name:'Fib Factory',category:'create',rule:'Invent a convincing wrong answer, then try to find the truth amongst the bluffs.'},
- 'mind-meld': {name:'Mind Meld',category:'together',rule:'The host picks a partner. Write the same word without talking, within three tries.'},
+ 'mind-meld': {name:'Mind Meld',category:'together',rule:'Everyone plays in pairs. The host picks a partner; everyone else is paired by seat. Write the same word as your partner without talking.'},
  'majority-rules': {name:'Majority Rules',category:'together',rule:'Vote secretly on three silly questions. Score when you join the largest group.'},
  'relay-sums': {name:'Relay Sums',category:'together',rule:'Solve your team’s maths in seat order. Each answer unlocks the next teammate’s sum.'},
  'bomb-squad': {name:'Bomb Squad',category:'together',rule:'Talk to share private clues. Cut four wires in order, then enter the four-digit code before time runs out.'}
@@ -37,7 +37,13 @@ const CATALOG=Object.entries(SPECS).map(([id,x])=>({id,...x}));
 function fail(code,message){const e=new Error(message);e.code=code;throw e;}
 function choose(pool,rng){return pool[rng(pool.length)];}
 function normalize(text){return String(text).normalize('NFKC').toLocaleLowerCase('en-GB').replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');}
-function isClueGuess(guess,answer){const a=normalize(answer),g=normalize(guess);return g===a||(g.length>=5&&a.includes(g))||(a.length>=7&&g.includes(a));}
+// Q4: a guess wins only by naming the answer (or a listed alternative / key noun).
+// Fragments of the clue ("water", "night") no longer win on their own.
+const match=require('../answer-match');
+function isClueGuess(guess,answer){return match.same(guess,answer);}
+// Private feedback for the guesser only: "close" when the guess shares a real word
+// with the answer, otherwise "miss". The answer itself is never revealed.
+function feedback(m,id,close){m.guessFeedback??={};const n=(m.guessFeedback[id]?.n||0)+1;m.guessFeedback[id]={result:close?'close':'miss',n};}
 function clean(value,max=85){
  if(typeof value!=='string'||value.trim().length<1||value.length>max||/[<>\u0000-\u001f\u007f]/u.test(value))fail('INPUT',`Please enter 1–${max} characters without markup.`);
  return value.normalize('NFKC').trim().replace(/\s+/g,' ');
@@ -56,7 +62,10 @@ function chooseGame(b,category,rng=crypto.randomInt,playerCount=4){
 }
 function makeSums(players,rng){
  const teams=[players.filter((_,i)=>i%2===0),players.filter((_,i)=>i%2===1)];
- const tasks=teams.map(group=>Array.from({length:Math.max(4,group.length*2)},(_,i)=>{
+ // G4: both teams always get the SAME number of sums. With 5 or 7 players the
+ // smaller team simply takes extra turns (the sums cycle round its members).
+ const length=Math.max(4,Math.max(...teams.map(group=>group.length))*2);
+ const tasks=teams.map(group=>Array.from({length},(_,i)=>{
   const a=3+rng(25),c=2+rng(18),isSubtract=rng(3)===0;
   return {id:group[i%group.length],prompt:isSubtract?`${a+c} − ${a} = ?`:`${a} + ${c} = ?`,answer:isSubtract?c:a+c};
  }));
@@ -91,7 +100,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
   case 'sketch-sabotage':{
    const word=pickFresh(m,sketch,rng);const opponents=participants.filter(x=>x!==host);
    const saboteur=opponents.length>=2?choose(opponents,rng):null;
-   m.secret={word:word.word,saboteur};m.privateById[host]={role:'artist',word:word.word};
+   m.secret={word:word.word,accept:word.accept||[],saboteur};m.privateById[host]={role:'artist',word:word.word};
    if(saboteur)m.privateById[saboteur]={role:'saboteur',strokesLeft:3};
    m.display={category:word.category,strokes:[],maxSaboteurStrokes:3};m.seconds=60;m.question=`DRAW: ${word.category} · Watch the live sketch.`;break;
   }
@@ -147,7 +156,7 @@ function makeVoting(room,now,rng=crypto.randomInt){
   for(let i=originals.length-1;i>0;i--){const j=rng(i+1);[originals[i],originals[j]]=[originals[j],originals[i]];}
   m.optionOwners=originals;m.choices=originals.map(o=>o.text);
  } else {
-  const truth={owner:null,text:m.secret.answer};const originals=[truth,...Object.entries(m.answers).filter(([,v])=>v.text&&normalize(v.text)!==normalize(truth.text)).map(([id,v])=>({owner:id,text:v.text}))];
+  const truth={owner:null,text:m.secret.answer};const originals=[truth,...Object.entries(m.answers).filter(([,v])=>v.text&&!match.same(v.text,truth.text)).map(([id,v])=>({owner:id,text:v.text}))];
   for(let i=originals.length-1;i>0;i--){const j=rng(i+1);[originals[i],originals[j]]=[originals[j],originals[i]];}
   m.optionOwners=originals;m.choices=originals.map(o=>o.text);
  }
@@ -178,10 +187,22 @@ function finishMajorityRound(room,now,finishTurn,rng=crypto.randomInt){
  if(m.round>=m.totalRounds){const top=Math.max(...Object.values(m.scores));const winners=top>0?m.players.filter(id=>m.scores[id]===top):[];finish(room,now,finishTurn,winners,`Majority Rules: ${winners.length?winners.map(id=>room.players.find(p=>p.id===id).name).join(' & ')+' know the crowd!':'No majority vote this time.'}`);return;}
  m.round++;prepareMajority(room,rng);setPhase(room,'play',now,15);
 }
-function finishRelay(room,now,finishTurn){
- const m=room.board.minigame,progress=m.display.progress,top=Math.max(...progress);const winningTeams=progress.map((n,i)=>n===top?i:-1).filter(i=>i>=0);
- const winners=top>0&&winningTeams.length===1?m.display.teams[winningTeams[0]]:[];
- finish(room,now,finishTurn,winners,winners.length?`Relay victory: Team ${winningTeams[0]+1} completed ${top} sums!`:'Relay finished without a clear winning team.',{team:true});
+// G4: the first team to finish every sum wins outright. If time runs out,
+// the team with the larger share of its sums completed wins; equal shares draw.
+function finishRelay(room,now,finishTurn,finisher=null){
+ const m=room.board.minigame,progress=m.display.progress,totals=m.display.totals;
+ let team=-1;
+ if(Number.isInteger(finisher))team=finisher;
+ else{
+  const share=progress.map((n,i)=>totals[i]?n/totals[i]:0),top=Math.max(...share);
+  const leaders=share.map((x,i)=>x===top?i:-1).filter(i=>i>=0);
+  if(top>0&&leaders.length===1)team=leaders[0];
+ }
+ const winners=team>=0?m.display.teams[team]:[];
+ const text=team<0?'Relay finished without a clear winning team.'
+  :Number.isInteger(finisher)?`Relay victory: Team ${team+1} finished all ${totals[team]} sums first!`
+  :`Relay victory: Team ${team+1} completed ${progress[team]} of ${totals[team]} sums before time ran out!`;
+ finish(room,now,finishTurn,winners,text,{team:true});
 }
 function finishBomb(room,now,finishTurn,success){finish(room,now,finishTurn,success?room.players.map(p=>p.id):[],success?'Bomb defused! Everybody earns a Spark; the host earns two.':'BOOM! The bomb went off. The host loses one Spark.',{bomb:true});}
 function validActor(m,id){if(!m.players.includes(id))fail('AUTH','You are not a participant.');}
@@ -195,20 +216,25 @@ function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
  case 'sketch-sabotage':{
   if(m.phase!=='play'||id===m.host||id===m.secret.saboteur)fail('ROLE','Only players guessing the picture can submit words.');
   const guess=enforceFamilyText(room,clean(value,55));m.guessCounts??={};m.guessCounts[id]=(m.guessCounts[id]||0)+1;if(m.guessCounts[id]>14)fail('LIMIT','Too many guesses.');
-  if(normalize(guess)===normalize(m.secret.word)){m.secret.guesser=id;finishSketch(room,now,finishTurn);}break;
+  const targets=[m.secret.word,...(m.secret.accept||[])];
+  if(match.sameAsAny(guess,targets)){m.secret.guesser=id;finishSketch(room,now,finishTurn);}
+  else feedback(m,id,targets.some(t=>match.sharesKeyWord(guess,t)));break;
  }
  case 'noise-annoys':{
   if(id===m.host)fail('ROLE','You are acting out the sound, not guessing it.');
   const guess=enforceFamilyText(room,clean(value,65));m.guessCounts??={};m.guessCounts[id]=(m.guessCounts[id]||0)+1;if(m.guessCounts[id]>12)fail('LIMIT','Too many guesses.');
-  if(isClueGuess(guess,m.secret.answer)||m.secret.aliases.some(alias=>isClueGuess(guess,alias))){m.secret.guesser=id;finishNoise(room,now,finishTurn);}break;
+  const aliases=m.secret.aliases.length?m.secret.aliases:[m.secret.answer];
+  if(match.same(guess,m.secret.answer)||aliases.some(alias=>match.same(guess,alias)||match.containsPhrase(guess,alias))){m.secret.guesser=id;finishNoise(room,now,finishTurn);}
+  else feedback(m,id,match.sharesKeyWord(guess,m.secret.answer));break;
  }
  case 'caption-this':case 'fib-factory':{
   if(m.phase==='play'){
    received('entry');const text=enforceFamilyText(room,clean(value,m.id==='caption-this'?110:65));
-   if(Object.values(m.answers).some(v=>v.text&&normalize(v.text)===normalize(text)))fail('INPUT','Please try a different answer.');
+   // Q5: "5" and "five" are the same answer (numbers 0–9999 as digits or words).
+   if(Object.values(m.answers).some(v=>v.text&&match.same(v.text,text)))fail('INPUT','Please try a different answer.');
    // Accept an accidentally correct fib without revealing that it is correct.
    // It joins as a hidden truth prediction, not a duplicate ballot option.
-   m.answers[id]=m.id==='fib-factory'&&normalize(text)===normalize(m.secret.answer)?{text:null,guessedTruth:true}:{text};
+   m.answers[id]=m.id==='fib-factory'&&match.same(text,m.secret.answer)?{text:null,guessedTruth:true}:{text};
    if(Object.keys(m.answers).length===m.players.length)makeVoting(room,now,rng);
   }else if(m.phase==='vote'){
    if(Object.hasOwn(m.voters,id))fail('ANSWERED','You already voted.');
@@ -223,11 +249,13 @@ function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
    if(id!==m.host)fail('ROLE','Only the host chooses a partner.');
    const ids=m.players.filter(pid=>pid!==m.host);
    if(!Number.isInteger(value)||value<0||value>=ids.length)fail('INPUT','Choose a fellow contestant.');
-   m.partner=ids[value];m.display.partnerId=m.partner;m.answers={};setPhase(room,'play',now,13);
+   formMeldGroups(room,ids[value]);setPhase(room,'play',now,13);
   }else if(m.phase==='play'){
-   if(id!==m.host&&id!==m.partner)fail('ROLE','Only the two partners enter words.');received();
+   const group=activeMeldGroup(m,id);
+   if(!group)fail('ROLE',m.groups?.some(g=>g.includes(id))?'Your pair has already matched.':'You are not in a Mind Meld pair.');received();
    const word=enforceFamilyText(room,clean(value,32));if(!/^[\p{L}0-9 -]+$/u.test(word))fail('INPUT','Enter a simple word or short phrase.');
-   m.answers[id]={text:word};if(Object.keys(m.answers).length===2)finishMeldRound(room,now,finishTurn);
+   m.answers[id]={text:word};
+   if(meldPlayers(m).every(pid=>Object.hasOwn(m.answers,pid)))finishMeldRound(room,now,finishTurn);
   }else fail('STEP','Wait for the next attempt.');break;
  }
  case 'majority-rules':{
@@ -240,7 +268,7 @@ function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
   const team=m.display.teams.findIndex(ids=>ids.includes(id)),index=m.display.progress[team],task=m.secret.tasks[team]?.[index];
   if(!task||task.id!==id)fail('TURN','Your teammate is answering the current sum.');
   if(!Number.isInteger(value)||value<0||value>1000)fail('INPUT','Enter an integer answer.');
-  if(value===task.answer){m.display.progress[team]++;if(m.display.progress[team]>=m.secret.tasks[team].length)finishRelay(room,now,finishTurn);}
+  if(value===task.answer){m.display.progress[team]++;if(m.display.progress[team]>=m.secret.tasks[team].length)finishRelay(room,now,finishTurn,team);}
   else {m.misses??={};m.misses[id]=(m.misses[id]||0)+1;if(m.misses[id]>18)fail('LIMIT','Too many incorrect attempts.');}break;
  }
  case 'bomb-squad':{
@@ -258,14 +286,44 @@ function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
  }
  }
 }
+// G6: everyone plays Mind Meld in pairs at once. The host picks a partner; everyone
+// else is paired by seat. An odd player out joins a group of three, where any two
+// matching words count. Every matching group earns +1 each (the host's pair as before).
+function formMeldGroups(room,partner){
+ const m=room.board.minigame,host=m.host;
+ const others=m.players.filter(id=>id!==host&&id!==partner);
+ const groups=[[host,partner]];
+ for(let i=0;i+1<others.length;i+=2)groups.push([others[i],others[i+1]]);
+ if(others.length%2===1)groups[groups.length-1].push(others.at(-1));
+ m.partner=partner;m.groups=groups;m.matched=[];m.matchedWords={};m.answers={};
+ m.display={...m.display,partnerId:partner,groups,matched:[]};
+}
+function meldPlayers(m){return (m.groups||[]).filter((_,i)=>!m.matched.includes(i)).flat();}
+function activeMeldGroup(m,id){return (m.groups||[]).find((g,i)=>!m.matched.includes(i)&&g.includes(id))||null;}
+function groupMatch(m,group){
+ const words=group.map(id=>m.answers[id]?.text||'');
+ for(let a=0;a<words.length;a++)for(let z=a+1;z<words.length;z++)if(words[a]&&words[z]&&match.same(words[a],words[z]))return words[a];
+ return null;
+}
 function finishMeldRound(room,now,finishTurn){
  const m=room.board.minigame;if(!m)return;
- const one=m.answers[m.host]?.text||'',two=m.answers[m.partner]?.text||'';
- if(one&&two&&normalize(one)===normalize(two)){
-  finish(room,now,finishTurn,[m.host,m.partner],`${room.players.find(p=>p.id===m.host).name} and ${room.players.find(p=>p.id===m.partner).name} matched “${one}”!`,{team:true});return;
+ if(!m.groups)formMeldGroups(room,m.players.find(id=>id!==m.host));
+ const name=id=>room.players.find(p=>p.id===id)?.name||'Player';
+ const results=[];
+ m.groups.forEach((group,i)=>{
+  if(m.matched.includes(i))return;
+  const word=groupMatch(m,group); // "cat" and "cats" count as the same word
+  if(word){m.matched.push(i);m.matchedWords[i]=word;}
+  results.push({ids:group,words:group.map(id=>m.answers[id]?.text||'(no word)'),matched:Boolean(word)});
+ });
+ m.display.matched=[...m.matched];
+ m.lastResult={attempt:m.round,groups:results,words:results[0]?.words||[]};
+ const allDone=m.matched.length===m.groups.length;
+ if(allDone||m.round>=m.totalRounds){
+  const winners=m.matched.flatMap(i=>m.groups[i]);
+  const text=m.matched.length?`Mind Meld: ${m.matched.map(i=>`${m.groups[i].map(name).join(' & ')} matched “${m.matchedWords[i]}”`).join('; ')}!`:`Mind Meld: ${m.totalRounds} tries and no group matched.`;
+  finish(room,now,finishTurn,winners,text,{team:true});return;
  }
- m.lastResult={words:[one||'(no word)',two||'(no word)'],attempt:m.round};
- if(m.round>=m.totalRounds){finish(room,now,finishTurn,[],`Mind Meld: ${m.totalRounds} tries and no matching word.`,{team:true});return;}
  m.phase='reveal';m.deadline=now+3000;room.board.deadline=m.deadline;
 }
 function draw(room,id,points,roundKey,now){
@@ -288,7 +346,7 @@ function tick(room,now,finishTurn,rng=crypto.randomInt){
   else finishVoting(room,now,finishTurn);return true;
  }
  if(m.id==='mind-meld'){
-  if(m.phase==='partner'){m.partner=m.players.find(id=>id!==m.host);m.display.partnerId=m.partner;m.answers={};setPhase(room,'play',now,13);}
+  if(m.phase==='partner'){formMeldGroups(room,m.players.find(id=>id!==m.host));setPhase(room,'play',now,13);}
   else if(m.phase==='play')finishMeldRound(room,now,finishTurn);
   else {m.round++;m.roundKey++;m.display.attempt=m.round;m.answers={};m.lastResult=null;setPhase(room,'play',now,13);}
   return true;
@@ -316,6 +374,7 @@ function publicState(room,forTv=false,viewerId=null){
   if(m.phase==='vote'&&viewerId)safe.private={myEntryIndex:m.optionOwners.findIndex(o=>o.owner===viewerId)};
  }
  if(viewerId&&m.privateById[viewerId])safe.private={...(safe.private||{}),...m.privateById[viewerId]};
+ if(viewerId&&m.guessFeedback?.[viewerId])safe.private={...(safe.private||{}),guessFeedback:m.guessFeedback[viewerId]};
  if(m.id==='bomb-squad'&&viewerId===m.host)safe.private={...(safe.private||{}),role:'defuser'};
  return safe;
 }

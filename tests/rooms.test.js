@@ -55,7 +55,7 @@ test('VIP or host may change settings but others may not; invalid patches fail a
   assert.throws(()=>f.rooms.setSettings(f.code,'phone-B',{rounds:10}),e=>e.code==='AUTH');
   assert.equal(f.rooms.setSettings(f.code,'phone-A',{rounds:8}).settings.rounds,8);
   assert.throws(()=>f.rooms.setSettings(f.code,'tv-1',{rounds:999}),e=>e.code==='SETTINGS');
-  assert.deepEqual(f.rooms.state(f.code).settings,{rounds:8,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic',roundStyle:'sequential'});
+  assert.deepEqual(f.rooms.state(f.code).settings,{rounds:8,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic',roundStyle:'sequential',colourBlindSafe:false}); // v3.5.0 D8 adds the colour-blind setting
   f.rooms.setSettings(f.code,'tv-1',{rounds:10,timerSpeed:'relaxed',reduceMotion:true});
   assert.equal(f.rooms.state(f.code).settings.rounds,10);
   assert.equal(f.rooms.state(f.code).settings.reduceMotion,true);
@@ -78,15 +78,18 @@ test('30-second temporary disconnect can resume same seat with opaque token',()=
   assert.equal(f.rooms.state(f.code).players[0].ready,true);
   assert.equal(f.rooms.state(f.code).players[0].online,true);
 });
-test('after 30 seconds disconnected players are freed by sweep',()=>{
+test('after 10 minutes disconnected lobby players are freed by sweep',()=>{
+  // v3.5.0 D4: the lobby grace period changed from 30 seconds to 10 minutes.
   const f=fixture();join(f);
   f.rooms.disconnect(f.code,'phone-A');f.advance(30_001);
+  assert.deepEqual(f.rooms.sweep(),[]);
+  f.advance(10*60_000);
   assert.deepEqual(f.rooms.sweep(),[f.code]);
   assert.equal(f.rooms.state(f.code).players.length,0);
 });
 test('expired player token cannot resume',()=>{
   const f=fixture();const p=join(f);
-  f.rooms.disconnect(f.code,'phone-A');f.advance(30_001);
+  f.rooms.disconnect(f.code,'phone-A');f.advance(10*60_000+1);
   assert.throws(()=>f.rooms.resume({code:f.code,token:p.token,role:'player',socketId:'new'}),e=>e.code==='EXPIRED');
 });
 test('invalid reconnect token cannot impersonate a host or player',()=>{

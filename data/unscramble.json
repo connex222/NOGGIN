@@ -47,7 +47,10 @@
   {
     "id": "word-uk-places-reading",
     "word": "READING",
-    "category": "UK places"
+    "category": "UK places",
+    "accept": [
+      "GRAINED"
+    ]
   },
   {
     "id": "word-uk-places-swansea",
@@ -72,7 +75,10 @@
   {
     "id": "word-animals-badger",
     "word": "BADGER",
-    "category": "Animals"
+    "category": "Animals",
+    "accept": [
+      "BARGED"
+    ]
   },
   {
     "id": "word-animals-rabbit",
@@ -95,8 +101,8 @@
     "category": "Animals"
   },
   {
-    "id": "word-animals-beaver",
-    "word": "BEAVER",
+    "id": "v35-uns-003",
+    "word": "GIBBON",
     "category": "Animals"
   },
   {
@@ -182,7 +188,10 @@
   {
     "id": "word-food-and-drink-sausage",
     "word": "SAUSAGE",
-    "category": "Food and drink"
+    "category": "Food and drink",
+    "accept": [
+      "ASSUAGE"
+    ]
   },
   {
     "id": "word-food-and-drink-pastry",
@@ -287,517 +296,561 @@
   {
     "id": "word-things-and-objects-cushion",
     "word": "CUSHION",
-    "category": "Things and objects"
+    "category": "Sofa"
   },
   {
     "id": "word-things-and-objects-blanket",
     "word": "BLANKET",
-    "category": "Things and objects"
+    "category": "Bedding"
   },
   {
     "id": "word-things-and-objects-mirror",
     "word": "MIRROR",
-    "category": "Things and objects"
+    "category": "Bathroom"
   },
   {
     "id": "word-things-and-objects-kettle",
     "word": "KETTLE",
-    "category": "Things and objects"
+    "category": "Kitchen"
   },
   {
     "id": "word-things-and-objects-planner",
     "word": "PLANNER",
-    "category": "Things and objects"
+    "category": "Stationery"
   },
   {
     "id": "word-things-and-objects-camera",
     "word": "CAMERA",
-    "category": "Things and objects"
+    "category": "Photography"
   },
   {
     "id": "word-things-and-objects-lantern",
     "word": "LANTERN",
-    "category": "Things and objects"
+    "category": "Lights"
   },
   {
     "id": "word-things-and-objects-jumper",
     "word": "JUMPER",
-    "category": "Things and objects"
+    "category": "Clothing"
   },
   {
     "id": "word-things-and-objects-football",
     "word": "FOOTBALL",
-    "category": "Things and objects"
+    "category": "Sports"
   },
   {
     "id": "word-things-and-objects-compass",
     "word": "COMPASS",
-    "category": "Things and objects"
+    "category": "Navigation"
   },
   {
     "id": "word-things-and-objects-goggles",
     "word": "GOGGLES",
-    "category": "Things and objects"
+    "category": "Swimming"
   },
   {
     "id": "word-things-and-objects-bagpipe",
     "word": "BAGPIPE",
-    "category": "Things and objects"
+    "category": "Musical instruments"
   },
   {
     "id": "word-things-and-objects-trumpet",
     "word": "TRUMPET",
-    "category": "Things and objects"
+    "category": "Musical instruments"
   },
   {
     "id": "word-things-and-objects-violin",
     "word": "VIOLIN",
-    "category": "Things and objects"
+    "category": "Musical instruments"
   },
   {
     "id": "word-things-and-objects-hammer",
     "word": "HAMMER",
-    "category": "Things and objects"
+    "category": "Tools"
   },
   {
     "id": "word-things-and-objects-ladder",
     "word": "LADDER",
-    "category": "Things and objects"
+    "category": "DIY"
   },
   {
     "id": "word-things-and-objects-bottle",
     "word": "BOTTLE",
-    "category": "Things and objects"
+    "category": "Containers"
   },
   {
     "id": "word-things-and-objects-button",
     "word": "BUTTON",
-    "category": "Things and objects"
+    "category": "Sewing"
   },
   {
     "id": "word-things-and-objects-zipper",
     "word": "ZIPPER",
-    "category": "Things and objects"
+    "category": "Clothing"
   },
   {
     "id": "word-things-and-objects-battery",
     "word": "BATTERY",
-    "category": "Things and objects"
+    "category": "Electricity"
   },
   {
     "id": "word-things-and-objects-trophy",
     "word": "TROPHY",
-    "category": "Things and objects"
+    "category": "Winning"
   },
   {
     "id": "word-things-and-objects-jacket",
     "word": "JACKET",
-    "category": "Things and objects"
+    "category": "Clothing"
   },
   {
     "id": "word-things-and-objects-balloon",
     "word": "BALLOON",
-    "category": "Things and objects"
+    "category": "Parties"
   },
   {
     "id": "word-things-and-objects-keyboard",
     "word": "KEYBOARD",
-    "category": "Things and objects"
+    "category": "Computers"
   },
   {
     "id": "word-nature-and-space-planet",
     "word": "PLANET",
-    "category": "Nature and space"
+    "category": "Space",
+    "accept": [
+      "PLATEN"
+    ]
   },
   {
     "id": "word-nature-and-space-comets",
     "word": "COMETS",
-    "category": "Nature and space"
+    "category": "Space"
   },
   {
     "id": "word-nature-and-space-nebula",
     "word": "NEBULA",
-    "category": "Nature and space"
+    "category": "Space",
+    "accept": [
+      "UNABLE"
+    ]
   },
   {
     "id": "word-nature-and-space-galaxy",
     "word": "GALAXY",
-    "category": "Nature and space"
+    "category": "Space"
   },
   {
     "id": "word-nature-and-space-rocket",
     "word": "ROCKET",
-    "category": "Nature and space"
+    "category": "Space travel"
   },
   {
     "id": "word-nature-and-space-saturn",
     "word": "SATURN",
-    "category": "Nature and space"
+    "category": "Planets"
   },
   {
     "id": "word-nature-and-space-jupiter",
     "word": "JUPITER",
-    "category": "Nature and space"
+    "category": "Planets"
   },
   {
     "id": "word-nature-and-space-mercury",
     "word": "MERCURY",
-    "category": "Nature and space"
+    "category": "Planets"
   },
   {
     "id": "word-nature-and-space-meteor",
     "word": "METEOR",
-    "category": "Nature and space"
+    "category": "Space",
+    "accept": [
+      "REMOTE"
+    ]
   },
   {
     "id": "word-nature-and-space-asteroid",
     "word": "ASTEROID",
-    "category": "Nature and space"
+    "category": "Space"
   },
   {
     "id": "word-nature-and-space-sunrise",
     "word": "SUNRISE",
-    "category": "Nature and space"
+    "category": "Times of day",
+    "accept": [
+      "INSURES"
+    ]
   },
   {
     "id": "word-nature-and-space-rainbow",
     "word": "RAINBOW",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-thunder",
     "word": "THUNDER",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-drought",
     "word": "DROUGHT",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-tornado",
     "word": "TORNADO",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-blizzard",
     "word": "BLIZZARD",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-glacier",
     "word": "GLACIER",
-    "category": "Nature and space"
+    "category": "Ice"
   },
   {
     "id": "word-nature-and-space-iceberg",
     "word": "ICEBERG",
-    "category": "Nature and space"
+    "category": "Ice"
   },
   {
     "id": "word-nature-and-space-volcano",
     "word": "VOLCANO",
-    "category": "Nature and space"
+    "category": "Mountains"
   },
   {
     "id": "word-nature-and-space-oceans",
     "word": "OCEANS",
-    "category": "Nature and space"
+    "category": "Seas",
+    "accept": [
+      "CANOES"
+    ]
   },
   {
     "id": "word-nature-and-space-forest",
     "word": "FOREST",
-    "category": "Nature and space"
+    "category": "Woodland",
+    "accept": [
+      "FORTES",
+      "FOSTER",
+      "SOFTER"
+    ]
   },
   {
     "id": "word-nature-and-space-meadow",
     "word": "MEADOW",
-    "category": "Nature and space"
+    "category": "Countryside"
   },
   {
     "id": "word-nature-and-space-daisies",
     "word": "DAISIES",
-    "category": "Nature and space"
+    "category": "Flowers"
   },
   {
     "id": "word-nature-and-space-flowers",
     "word": "FLOWERS",
-    "category": "Nature and space"
+    "category": "Garden"
   },
   {
     "id": "word-nature-and-space-mountain",
     "word": "MOUNTAIN",
-    "category": "Nature and space"
+    "category": "Landscape"
   },
   {
     "id": "word-nature-and-space-moonlit",
     "word": "MOONLIT",
-    "category": "Nature and space"
+    "category": "Night-time"
   },
   {
     "id": "word-nature-and-space-stardust",
     "word": "STARDUST",
-    "category": "Nature and space"
+    "category": "Space"
   },
   {
     "id": "word-nature-and-space-sunbeam",
     "word": "SUNBEAM",
-    "category": "Nature and space"
+    "category": "Sunshine"
   },
   {
     "id": "word-nature-and-space-rainfall",
     "word": "RAINFALL",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-snowfall",
     "word": "SNOWFALL",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-fogbound",
     "word": "FOGBOUND",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-storming",
     "word": "STORMING",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-eclipse",
     "word": "ECLIPSE",
-    "category": "Nature and space"
+    "category": "Space"
   },
   {
     "id": "word-nature-and-space-skyline",
     "word": "SKYLINE",
-    "category": "Nature and space"
+    "category": "Cities"
   },
   {
     "id": "word-nature-and-space-drizzle",
     "word": "DRIZZLE",
-    "category": "Nature and space"
+    "category": "Weather"
   },
   {
     "id": "word-nature-and-space-freezing",
     "word": "FREEZING",
-    "category": "Nature and space"
+    "category": "Winter"
   },
   {
     "id": "word-nature-and-space-dolphin",
     "word": "DOLPHIN",
-    "category": "Nature and space"
+    "category": "Sea creatures"
   },
   {
     "id": "word-nature-and-space-seashell",
     "word": "SEASHELL",
-    "category": "Nature and space"
+    "category": "Seaside"
   },
   {
     "id": "word-nature-and-space-wildfire",
     "word": "WILDFIRE",
-    "category": "Nature and space"
+    "category": "Fire"
   },
   {
     "id": "word-p6-001",
     "word": "ABACUS",
-    "category": "Everyday words"
+    "category": "Counting tools"
   },
   {
     "id": "word-p6-002",
     "word": "BALCONY",
-    "category": "Everyday words"
+    "category": "Parts of a building"
   },
   {
     "id": "word-p6-003",
     "word": "CARAVAN",
-    "category": "Everyday words"
+    "category": "Holidays"
   },
   {
     "id": "word-p6-005",
     "word": "EMERALD",
-    "category": "Everyday words"
+    "category": "Gemstones"
   },
   {
     "id": "word-p6-006",
     "word": "FEATHER",
-    "category": "Everyday words"
+    "category": "Birds"
   },
   {
     "id": "word-p6-007",
     "word": "GALLERY",
-    "category": "Everyday words"
+    "category": "Art",
+    "accept": [
+      "ALLERGY",
+      "LARGELY"
+    ]
   },
   {
     "id": "word-p6-008",
     "word": "HARBOUR",
-    "category": "Everyday words"
+    "category": "Seaside"
   },
   {
     "id": "word-p6-010",
     "word": "JUBILEE",
-    "category": "Everyday words"
+    "category": "Royal celebrations"
   },
   {
     "id": "word-p6-013",
     "word": "MARBLE",
-    "category": "Everyday words"
+    "category": "Rocks and stone",
+    "accept": [
+      "AMBLER",
+      "RAMBLE"
+    ]
   },
   {
     "id": "word-p6-014",
     "word": "NECKLACE",
-    "category": "Everyday words"
+    "category": "Jewellery"
   },
   {
     "id": "word-p6-015",
     "word": "OCTAGON",
-    "category": "Everyday words"
+    "category": "Shapes"
   },
   {
     "id": "word-p6-016",
     "word": "PARCEL",
-    "category": "Everyday words"
+    "category": "Post",
+    "accept": [
+      "PLACER"
+    ]
   },
   {
     "id": "word-p6-017",
     "word": "QUARTET",
-    "category": "Everyday words"
+    "category": "Music"
   },
   {
     "id": "word-p6-020",
     "word": "TADPOLE",
-    "category": "Everyday words"
+    "category": "Pond life"
   },
   {
     "id": "word-p6-021",
     "word": "UNICORN",
-    "category": "Everyday words"
+    "category": "Myths and legends"
   },
   {
     "id": "word-p6-022",
     "word": "VILLAGE",
-    "category": "Everyday words"
+    "category": "Places to live"
   },
   {
     "id": "word-p6-023",
     "word": "WHISTLE",
-    "category": "Everyday words"
+    "category": "Sounds"
   },
   {
     "id": "word-p6-025",
     "word": "ZEPPELIN",
-    "category": "Everyday words"
+    "category": "Flying machines"
   },
   {
     "id": "word-p6-026",
     "word": "APRICOT",
-    "category": "Everyday words"
+    "category": "Fruit"
   },
   {
     "id": "word-p6-029",
     "word": "DAFFODIL",
-    "category": "Everyday words"
+    "category": "Flowers"
   },
   {
     "id": "word-p6-030",
     "word": "ENVELOPE",
-    "category": "Everyday words"
+    "category": "Post"
   },
   {
     "id": "word-p6-033",
     "word": "HAMMOCK",
-    "category": "Everyday words"
+    "category": "Garden"
   },
   {
-    "id": "word-p6-034",
-    "word": "INSECT",
-    "category": "Everyday words"
+    "id": "v35-uns-002",
+    "word": "WALNUTS",
+    "category": "Nuts and seeds"
   },
   {
     "id": "word-p6-035",
     "word": "JIGSAW",
-    "category": "Everyday words"
+    "category": "Puzzles"
   },
   {
     "id": "word-p6-037",
     "word": "LEOPARD",
-    "category": "Everyday words"
+    "category": "Big cats",
+    "accept": [
+      "PAROLED",
+      "PRELOAD"
+    ]
   },
   {
     "id": "word-p6-038",
     "word": "MUSHROOM",
-    "category": "Everyday words"
+    "category": "Fungi"
   },
   {
     "id": "word-p6-039",
     "word": "NOTEBOOK",
-    "category": "Everyday words"
+    "category": "Stationery"
   },
   {
     "id": "word-p6-040",
     "word": "ORCHARD",
-    "category": "Everyday words"
+    "category": "Countryside"
   },
   {
     "id": "word-p6-042",
     "word": "QUESTION",
-    "category": "Everyday words"
+    "category": "Quizzes"
   },
   {
     "id": "word-p6-044",
     "word": "SANDWICH",
-    "category": "Everyday words"
+    "category": "Lunch"
   },
   {
     "id": "word-p6-045",
     "word": "TRIANGLE",
-    "category": "Everyday words"
+    "category": "Shapes",
+    "accept": [
+      "ALERTING",
+      "ALTERING",
+      "INTEGRAL",
+      "RELATING"
+    ]
   },
   {
     "id": "word-p6-046",
     "word": "UMBRELLA",
-    "category": "Everyday words"
+    "category": "Rainy days"
   },
   {
     "id": "word-p6-048",
     "word": "WARDROBE",
-    "category": "Everyday words"
+    "category": "Bedroom furniture"
   },
   {
     "id": "p6b2-uns-001",
     "word": "MARIGOLD",
-    "category": "Everyday words"
+    "category": "Flowers"
   },
   {
     "id": "p6b2-uns-005",
     "word": "HEDGEHOG",
-    "category": "Everyday words"
+    "category": "Garden wildlife"
   },
   {
     "id": "p6b2-uns-011",
     "word": "LADYBIRD",
-    "category": "Everyday words"
+    "category": "Insects"
   },
   {
     "id": "p6b2-uns-019",
     "word": "STARFISH",
-    "category": "Everyday words"
+    "category": "Seaside"
   },
   {
     "id": "p6b2-uns-031",
     "word": "CUPBOARD",
-    "category": "Everyday words"
+    "category": "Kitchen"
   },
   {
     "id": "p6b2-uns-032",
     "word": "RAINCOAT",
-    "category": "Everyday words"
+    "category": "Rainy days",
+    "accept": [
+      "CROATIAN"
+    ]
   },
   {
     "id": "p6b2-uns-034",
     "word": "WINDMILL",
-    "category": "Everyday words"
+    "category": "Buildings"
   },
   {
     "id": "p6b4-uns-001",
@@ -837,7 +890,10 @@
   {
     "id": "p6b4-uns-012",
     "word": "SEAHORSE",
-    "category": "Animals"
+    "category": "Animals",
+    "accept": [
+      "SEASHORE"
+    ]
   },
   {
     "id": "p6b4-uns-013",
@@ -872,7 +928,11 @@
   {
     "id": "p6b4-uns-024",
     "word": "STAPLER",
-    "category": "Stationery"
+    "category": "Stationery",
+    "accept": [
+      "PLASTER",
+      "PSALTER"
+    ]
   },
   {
     "id": "p6b4-uns-025",
@@ -897,7 +957,10 @@
   {
     "id": "p6b5-uns-001",
     "word": "MARBLES",
-    "category": "Games"
+    "category": "Games",
+    "accept": [
+      "RAMBLES"
+    ]
   },
   {
     "id": "p6b5-uns-002",
@@ -917,7 +980,11 @@
   {
     "id": "p6b5-uns-011",
     "word": "PAINTER",
-    "category": "Jobs"
+    "category": "Jobs",
+    "accept": [
+      "PERTAIN",
+      "REPAINT"
+    ]
   },
   {
     "id": "p6b5-uns-012",
@@ -932,17 +999,26 @@
   {
     "id": "p6b5-uns-014",
     "word": "FARMERS",
-    "category": "Jobs"
+    "category": "Jobs",
+    "accept": [
+      "FRAMERS"
+    ]
   },
   {
     "id": "p6b5-uns-015",
     "word": "SEASIDE",
-    "category": "Places"
+    "category": "Places",
+    "accept": [
+      "DISEASE"
+    ]
   },
   {
     "id": "p6b5-uns-017",
     "word": "FORESTS",
-    "category": "Nature"
+    "category": "Nature",
+    "accept": [
+      "FOSTERS"
+    ]
   },
   {
     "id": "p6b5-uns-025",
@@ -1002,12 +1078,19 @@
   {
     "id": "p6b5-uns-039",
     "word": "CARPETS",
-    "category": "Home"
+    "category": "Home",
+    "accept": [
+      "PRECAST",
+      "SPECTRA"
+    ]
   },
   {
     "id": "p6b5-uns-040",
     "word": "TOASTER",
-    "category": "Kitchen"
+    "category": "Kitchen",
+    "accept": [
+      "ROTATES"
+    ]
   },
   {
     "id": "p6b5-uns-042",
@@ -1077,7 +1160,10 @@
   {
     "id": "p6b7-uns-007",
     "word": "CAPSULE",
-    "category": "Objects"
+    "category": "Space travel",
+    "accept": [
+      "UPSCALE"
+    ]
   },
   {
     "id": "p6b7-uns-008",
@@ -1097,7 +1183,11 @@
   {
     "id": "p6b7-uns-011",
     "word": "EARRING",
-    "category": "Clothing"
+    "category": "Clothing",
+    "accept": [
+      "ANGRIER",
+      "REARING"
+    ]
   },
   {
     "id": "p6b7-uns-012",
@@ -1110,9 +1200,9 @@
     "category": "Jobs"
   },
   {
-    "id": "p6b7-uns-014",
-    "word": "FLASHER",
-    "category": "Objects"
+    "id": "v35-uns-001",
+    "word": "PADDOCK",
+    "category": "Countryside"
   },
   {
     "id": "p6b7-uns-015",
@@ -1162,12 +1252,15 @@
   {
     "id": "p6b7-uns-024",
     "word": "LOBSTER",
-    "category": "Animals"
+    "category": "Animals",
+    "accept": [
+      "BOLSTER"
+    ]
   },
   {
     "id": "p6b7-uns-025",
     "word": "MACHINE",
-    "category": "Objects"
+    "category": "Technology"
   },
   {
     "id": "p6b7-uns-026",
@@ -1182,12 +1275,15 @@
   {
     "id": "p6b7-uns-028",
     "word": "PACKAGE",
-    "category": "Objects"
+    "category": "Post"
   },
   {
     "id": "p6b7-uns-029",
     "word": "PARROTS",
-    "category": "Animals"
+    "category": "Animals",
+    "accept": [
+      "RAPTORS"
+    ]
   },
   {
     "id": "p6b7-uns-030",
@@ -1202,7 +1298,12 @@
   {
     "id": "p6b7-uns-032",
     "word": "POSTERS",
-    "category": "Objects"
+    "category": "Wall decorations",
+    "accept": [
+      "ESPORTS",
+      "PRESTOS",
+      "REPOSTS"
+    ]
   },
   {
     "id": "p6b7-uns-033",
@@ -1232,7 +1333,10 @@
   {
     "id": "p6b7-uns-038",
     "word": "SILENCE",
-    "category": "Sounds"
+    "category": "Sounds",
+    "accept": [
+      "LICENSE"
+    ]
   },
   {
     "id": "p6b7-uns-039",
@@ -1247,7 +1351,7 @@
   {
     "id": "p6b7-uns-041",
     "word": "TORCHES",
-    "category": "Objects"
+    "category": "Lights"
   },
   {
     "id": "p6b7-uns-042",
@@ -1272,481 +1376,526 @@
   {
     "id": "p6final-uns-000",
     "word": "ACORNS",
-    "category": "Everyday words"
+    "category": "Trees"
   },
   {
     "id": "p6final-uns-001",
     "word": "ALMONDS",
-    "category": "Everyday words"
+    "category": "Nuts"
   },
   {
     "id": "p6final-uns-002",
     "word": "ANCHORS",
-    "category": "Everyday words"
+    "category": "Ships",
+    "accept": [
+      "ARCHONS"
+    ]
   },
   {
     "id": "p6final-uns-003",
     "word": "ANKLES",
-    "category": "Everyday words"
+    "category": "Body parts"
   },
   {
     "id": "p6final-uns-004",
     "word": "APRONS",
-    "category": "Everyday words"
+    "category": "Cooking",
+    "accept": [
+      "PARSON"
+    ]
   },
   {
     "id": "p6final-uns-005",
     "word": "ARTISTS",
-    "category": "Everyday words"
+    "category": "Jobs",
+    "accept": [
+      "STRAITS",
+      "TSARIST"
+    ]
   },
   {
     "id": "p6final-uns-006",
     "word": "AUTUMN",
-    "category": "Everyday words"
+    "category": "Seasons"
   },
   {
     "id": "p6final-uns-008",
     "word": "BAKERS",
-    "category": "Everyday words"
+    "category": "Jobs",
+    "accept": [
+      "BRAKES",
+      "BREAKS"
+    ]
   },
   {
     "id": "p6final-uns-011",
     "word": "BAMBOO",
-    "category": "Everyday words"
+    "category": "Plants"
   },
   {
     "id": "p6final-uns-013",
     "word": "BANANAS",
-    "category": "Everyday words"
+    "category": "Fruit"
   },
   {
     "id": "p6final-uns-014",
     "word": "BANDAGE",
-    "category": "Everyday words"
+    "category": "First aid"
   },
   {
     "id": "p6final-uns-015",
     "word": "BARBERS",
-    "category": "Everyday words"
+    "category": "Jobs"
   },
   {
     "id": "p6final-uns-016",
     "word": "BARRELS",
-    "category": "Everyday words"
+    "category": "Containers"
   },
   {
     "id": "p6final-uns-017",
     "word": "BASILICA",
-    "category": "Everyday words"
+    "category": "Churches"
   },
   {
     "id": "p6final-uns-018",
     "word": "BASKETS",
-    "category": "Everyday words"
+    "category": "Containers"
   },
   {
     "id": "p6final-uns-019",
     "word": "BATHROOM",
-    "category": "Everyday words"
+    "category": "Rooms"
   },
   {
     "id": "p6final-uns-020",
     "word": "BEACHES",
-    "category": "Everyday words"
+    "category": "Seaside"
   },
   {
     "id": "p6final-uns-021",
     "word": "BEACONS",
-    "category": "Everyday words"
+    "category": "Lights"
   },
   {
-    "id": "p6final-uns-022",
-    "word": "BEAVERS",
-    "category": "Everyday words"
+    "id": "v35-uns-004",
+    "word": "OSPREY",
+    "category": "Birds"
   },
   {
     "id": "p6final-uns-023",
     "word": "BEDROOM",
-    "category": "Everyday words"
+    "category": "Rooms",
+    "accept": [
+      "BOREDOM"
+    ]
   },
   {
     "id": "p6final-uns-024",
     "word": "BEETLES",
-    "category": "Everyday words"
+    "category": "Insects"
   },
   {
     "id": "p6final-uns-026",
     "word": "BICYCLE",
-    "category": "Everyday words"
+    "category": "Transport"
   },
   {
     "id": "p6final-uns-028",
     "word": "BISCUITS",
-    "category": "Everyday words"
+    "category": "Teatime"
   },
   {
     "id": "p6final-uns-030",
     "word": "BLOSSOM",
-    "category": "Everyday words"
+    "category": "Spring"
   },
   {
     "id": "p6final-uns-031",
     "word": "BLUEBELL",
-    "category": "Everyday words"
+    "category": "Flowers"
   },
   {
     "id": "p6final-uns-032",
     "word": "BOATMAN",
-    "category": "Everyday words"
+    "category": "Jobs"
   },
   {
     "id": "p6final-uns-033",
     "word": "BONFIRE",
-    "category": "Everyday words"
+    "category": "Bonfire Night"
   },
   {
     "id": "p6final-uns-034",
     "word": "BOOKCASE",
-    "category": "Everyday words"
+    "category": "Furniture",
+    "accept": [
+      "CASEBOOK"
+    ]
   },
   {
     "id": "p6final-uns-035",
     "word": "BOOKMARK",
-    "category": "Everyday words"
+    "category": "Reading"
   },
   {
     "id": "p6final-uns-036",
     "word": "BOTTLES",
-    "category": "Everyday words"
+    "category": "Containers"
   },
   {
     "id": "p6final-uns-037",
     "word": "BOWLING",
-    "category": "Everyday words"
+    "category": "Sports",
+    "accept": [
+      "BLOWING"
+    ]
   },
   {
     "id": "p6final-uns-038",
     "word": "BRACKETS",
-    "category": "Everyday words"
+    "category": "Punctuation"
   },
   {
     "id": "p6final-uns-040",
     "word": "BRIDGES",
-    "category": "Everyday words"
+    "category": "Structures"
   },
   {
     "id": "p6final-uns-042",
     "word": "BROOMS",
-    "category": "Everyday words"
+    "category": "Cleaning"
   },
   {
     "id": "p6final-uns-043",
     "word": "BUBBLES",
-    "category": "Everyday words"
+    "category": "Bath time"
   },
   {
     "id": "p6final-uns-044",
     "word": "BUCKETS",
-    "category": "Everyday words"
+    "category": "Containers"
   },
   {
     "id": "p6final-uns-045",
     "word": "BUILDING",
-    "category": "Everyday words"
+    "category": "Construction"
   },
   {
     "id": "p6final-uns-046",
     "word": "BUTTONS",
-    "category": "Everyday words"
+    "category": "Sewing"
   },
   {
     "id": "p6final-uns-048",
     "word": "CABBAGE",
-    "category": "Everyday words"
+    "category": "Vegetables"
   },
   {
     "id": "p6final-uns-049",
     "word": "CAMERAS",
-    "category": "Everyday words"
+    "category": "Photography"
   },
   {
     "id": "p6final-uns-051",
     "word": "CANDLES",
-    "category": "Everyday words"
+    "category": "Birthday cakes"
   },
   {
     "id": "p6final-uns-055",
     "word": "CARTOON",
-    "category": "Everyday words"
+    "category": "Television"
   },
   {
     "id": "p6final-uns-056",
     "word": "CASTLES",
-    "category": "Everyday words"
+    "category": "History"
   },
   {
     "id": "p6final-uns-057",
     "word": "CATFISH",
-    "category": "Everyday words"
+    "category": "Fish"
   },
   {
     "id": "p6final-uns-059",
     "word": "CEREAL",
-    "category": "Everyday words"
+    "category": "Breakfast"
   },
   {
     "id": "p6final-uns-060",
     "word": "CHAIRS",
-    "category": "Everyday words"
+    "category": "Furniture",
+    "accept": [
+      "RACHIS"
+    ]
   },
   {
     "id": "p6final-uns-061",
     "word": "CHEESES",
-    "category": "Everyday words"
+    "category": "Dairy"
   },
   {
     "id": "p6final-uns-065",
     "word": "CHURCH",
-    "category": "Everyday words"
+    "category": "Buildings"
   },
   {
     "id": "p6final-uns-066",
     "word": "CIRCLES",
-    "category": "Everyday words"
+    "category": "Shapes",
+    "accept": [
+      "CLERICS"
+    ]
   },
   {
     "id": "p6final-uns-067",
     "word": "CLARINET",
-    "category": "Everyday words"
+    "category": "Musical instruments"
   },
   {
     "id": "p6final-uns-068",
     "word": "CLOTHES",
-    "category": "Everyday words"
+    "category": "Wardrobe"
   },
   {
     "id": "p6final-uns-069",
     "word": "CLOUDS",
-    "category": "Everyday words"
+    "category": "Weather"
   },
   {
     "id": "p6final-uns-070",
     "word": "COASTAL",
-    "category": "Everyday words"
+    "category": "Seaside"
   },
   {
     "id": "p6final-uns-071",
     "word": "COOKERS",
-    "category": "Everyday words"
+    "category": "Kitchen appliances"
   },
   {
     "id": "p6final-uns-072",
     "word": "CORNERS",
-    "category": "Everyday words"
+    "category": "Football"
   },
   {
     "id": "p6final-uns-073",
     "word": "COSTUME",
-    "category": "Everyday words"
+    "category": "Fancy dress"
   },
   {
     "id": "p6final-uns-074",
     "word": "CRAYONS",
-    "category": "Everyday words"
+    "category": "Drawing"
   },
   {
     "id": "p6final-uns-076",
     "word": "CRISPS",
-    "category": "Everyday words"
+    "category": "Snacks"
   },
   {
     "id": "p6final-uns-077",
     "word": "CROWNS",
-    "category": "Everyday words"
+    "category": "Royalty"
   },
   {
     "id": "p6final-uns-079",
     "word": "CURTAINS",
-    "category": "Everyday words"
+    "category": "Windows"
   },
   {
     "id": "p6final-uns-080",
     "word": "CYCLING",
-    "category": "Everyday words"
+    "category": "Sports"
   },
   {
     "id": "p6final-uns-082",
     "word": "DANCERS",
-    "category": "Everyday words"
+    "category": "Performers"
   },
   {
     "id": "p6final-uns-083",
     "word": "DECIMAL",
-    "category": "Everyday words"
+    "category": "Maths",
+    "accept": [
+      "CLAIMED",
+      "MEDICAL"
+    ]
   },
   {
     "id": "p6final-uns-085",
     "word": "DESKTOP",
-    "category": "Everyday words"
+    "category": "Computers"
   },
   {
     "id": "p6final-uns-086",
     "word": "DIAMOND",
-    "category": "Everyday words"
+    "category": "Gemstones"
   },
   {
     "id": "p6final-uns-087",
     "word": "DINNERS",
-    "category": "Everyday words"
+    "category": "Meals"
   },
   {
     "id": "p6final-uns-088",
     "word": "DOCTORS",
-    "category": "Everyday words"
+    "category": "Jobs"
   },
   {
     "id": "p6final-uns-090",
     "word": "DOORMAT",
-    "category": "Everyday words"
+    "category": "Front door"
   },
   {
     "id": "p6final-uns-092",
     "word": "DRAWING",
-    "category": "Everyday words"
+    "category": "Art",
+    "accept": [
+      "WARDING"
+    ]
   },
   {
     "id": "p6final-uns-093",
     "word": "DRESSER",
-    "category": "Everyday words"
+    "category": "Furniture",
+    "accept": [
+      "REDRESS"
+    ]
   },
   {
     "id": "p6final-uns-094",
     "word": "DRIVERS",
-    "category": "Everyday words"
+    "category": "Motoring"
   },
   {
     "id": "p6final-uns-095",
     "word": "DRIVING",
-    "category": "Everyday words"
+    "category": "Motoring"
   },
   {
     "id": "p6final-uns-097",
     "word": "ELEPHANT",
-    "category": "Everyday words"
+    "category": "Safari animals"
   },
   {
     "id": "p6final-uns-099",
     "word": "ENGINES",
-    "category": "Everyday words"
+    "category": "Machines"
   },
   {
     "id": "p6final-uns-100",
     "word": "EVENING",
-    "category": "Everyday words"
+    "category": "Times of day"
   },
   {
     "id": "p6final-uns-101",
     "word": "FACTORY",
-    "category": "Everyday words"
+    "category": "Workplaces"
   },
   {
     "id": "p6final-uns-102",
     "word": "FALCONS",
-    "category": "Everyday words"
+    "category": "Birds of prey"
   },
   {
     "id": "p6final-uns-105",
     "word": "FENCING",
-    "category": "Everyday words"
+    "category": "Sports"
   },
   {
     "id": "p6final-uns-106",
     "word": "FERRETS",
-    "category": "Everyday words"
+    "category": "Pets"
   },
   {
     "id": "p6final-uns-107",
     "word": "FIREFLY",
-    "category": "Everyday words"
+    "category": "Insects"
   },
   {
     "id": "p6final-uns-109",
     "word": "FLAMINGO",
-    "category": "Everyday words"
+    "category": "Birds"
   },
   {
     "id": "p6final-uns-110",
     "word": "FLANNEL",
-    "category": "Everyday words"
+    "category": "Bath time"
   },
   {
     "id": "p6final-uns-111",
     "word": "FLAVOUR",
-    "category": "Everyday words"
+    "category": "Taste"
   },
   {
     "id": "p6final-uns-113",
     "word": "FLUTES",
-    "category": "Everyday words"
+    "category": "Musical instruments"
   },
   {
     "id": "p6final-uns-115",
     "word": "FOOTPATH",
-    "category": "Everyday words"
+    "category": "Countryside walks"
   },
   {
     "id": "p6final-uns-117",
     "word": "FOUNTAIN",
-    "category": "Everyday words"
+    "category": "Parks"
   },
   {
     "id": "p6final-uns-118",
     "word": "FRIDGES",
-    "category": "Everyday words"
+    "category": "Kitchen appliances"
   },
   {
     "id": "p6final-uns-119",
     "word": "FROGLET",
-    "category": "Everyday words"
+    "category": "Pond life"
   },
   {
     "id": "p6final-uns-120",
     "word": "FURNACE",
-    "category": "Everyday words"
+    "category": "Heat"
   },
   {
     "id": "p6final-uns-121",
     "word": "GADGETS",
-    "category": "Everyday words"
+    "category": "Technology"
   },
   {
     "id": "p6final-uns-122",
     "word": "GARDENS",
-    "category": "Everyday words"
+    "category": "Outdoors",
+    "accept": [
+      "DANGERS"
+    ]
   },
   {
     "id": "p6final-uns-125",
     "word": "GLOVES",
-    "category": "Everyday words"
+    "category": "Winter wear"
   },
   {
     "id": "p6final-uns-126",
     "word": "GOBLETS",
-    "category": "Everyday words"
+    "category": "Drinking vessels"
   },
   {
     "id": "p6final-uns-127",
     "word": "GOLDFISH",
-    "category": "Everyday words"
+    "category": "Pets"
   },
   {
     "id": "p6final-uns-129",
     "word": "GOSLING",
-    "category": "Everyday words"
+    "category": "Baby animals"
   },
   {
     "id": "p6final-uns-130",
     "word": "GRAPES",
-    "category": "Everyday words"
+    "category": "Fruit",
+    "accept": [
+      "PAGERS"
+    ]
   }
 ]

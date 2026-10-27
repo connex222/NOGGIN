@@ -1,7 +1,7 @@
 'use strict';
 // Local-only, privacy-minimal match performance report. Do not store player
 // names, room credentials, answers, drawing strokes, or IP addresses here.
-const TRACKED_STEPS = new Set(['await_roll','choose_die','choose_route','choose_target','choose_opponent','choose_category','minigame','showdown','challenge','result','finished']);
+const TRACKED_STEPS = new Set(['await_roll','choose_die','choose_route','choose_opponent','choose_category','choose_game','minigame','showdown','challenge','result','finished']);
 function start(room, now) {
   room.matchReport = {
     version: 1, startedAt: now, lastObservedAt: now,
@@ -38,7 +38,7 @@ function report(room,now){
   const m=room.matchReport;
   if(!m) return null;
   const duration=Object.values(m.stageMs).reduce((a,b)=>a+b,0);
-  const waiting=['await_roll','choose_die','choose_route','choose_target','choose_opponent','choose_category','result'].reduce((a,k)=>a+(m.stageMs[k]||0),0);
+  const waiting=['await_roll','choose_die','choose_route','choose_opponent','choose_category','choose_game','result'].reduce((a,k)=>a+(m.stageMs[k]||0),0);
   return {
     schema:'noggin.match-report.v1', version:require('../package.json').version,
     startedAt:new Date(m.startedAt).toISOString(),finished:room.phase==='finished',

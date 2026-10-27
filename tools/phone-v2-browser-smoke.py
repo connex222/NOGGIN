@@ -45,6 +45,7 @@ def mini_state(ident):
  now=int(time.time()*1000)
  base={'id':ident,'title':ident.replace('-',' ').title(),'round':2,'totalRounds':5,'roundKey':2,'phase':'play','rule':'Pick the best answer and use your head!','question':'Look closely at the TV to solve this challenge.','introUntil':now-3000,'deadline':now+32000,'participants':['p1','p2'],'eliminated':[],'answered':[],'voted':[],'progress':{'p1':1},'scores':{},'strikes':{},'blocked':{},'private':{},'display':{'word':'BLUE','ink':'GREEN','reverse':False,'sequenceLength':5,'strokes':[],'category':'Objects','options':['The first answer','The second answer','The third answer'],'partners':['p2'],'teams':[['p1'],['p2']],'totals':[4,4],'progress':[0,0],'wires':['RED','BLUE','GREEN'],'cut':[],'keypadReady':False}}
  if ident=='odd-spot':base['display']['grid']=['●']*35+['◆']
+ if ident=='mind-meld':base['display'].update({'groups':[['p1','p2']],'partnerId':'p2','matched':[]})  # v3.5.0 G6: everyone plays in pairs
  if ident=='sketch-sabotage':base['private']={'role':'artist','word':'A GUITAR'}
  if ident=='noise-annoys':base['private']={'clue':'CRASHING WAVES'}
  if ident=='relay-sums':base['private']={'role':'relay-solver','prompt':'18 + 19 = ?'}

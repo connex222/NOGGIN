@@ -8,7 +8,7 @@
     {"id": "brain-drain",    "when": "Brain Drain question", "say": ["Brain Drain! Five seconds. Go!", "Brain Drain! Quick — think!"]},
     {"id": "applause",       "when": "Someone lands on Applause", "say": ["Give them a round of applause!", "The studio loves you. Two Sparks!"]},
     {"id": "pickpocket",     "when": "Someone lands on Pickpocket", "say": ["Pickpocket! Hands where I can see them.", "Cheeky! A Spark straight out of the leader's pocket."]},
-    {"id": "swap",           "when": "Someone lands on Swap Seats", "say": ["Swap seats! All change.", "Swap! Somebody's not happy about that."]},
+    {"id": "steal",          "when": "Someone lands on Steal the Call", "say": ["Steal the call! You're hosting this one.", "Cheeky! Somebody just stole the call."]},
     {"id": "lift",           "when": "Someone takes the Stage Lift", "say": ["Going up! Mind the doors.", "Stage Lift — all the way across."]},
     {"id": "verdict-big",    "when": "Someone gains 3 or more Sparks", "say": ["Now THAT is how you play NOGGIN!", "Massive! Somebody's having a good night."]},
     {"id": "verdict-gain",   "when": "Someone gains Sparks", "say": ["Lovely stuff.", "Sparks for you!"]},

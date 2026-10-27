@@ -81,7 +81,7 @@ test('existing socket cannot silently change player role using a host token',asy
  const h=harness();try{
   const {created,players}=await four(h);
   const r=await players[0].send('room:resume',{code:created.code,token:created.token,role:'host'});
-  assert.equal(r.ok,false);assert.equal(r.code,'AUTH');
+  assert.equal(r.ok,false);assert.equal(r.code,'BOUND');
   assert.equal(h.rooms.find(created.code).hostSocketId,'tv');
   assert.equal(h.rooms.find(created.code).players[0].socketId,'phone0');
   assert.equal((await players[0].send('room:ready',{ready:true})).ok,true);

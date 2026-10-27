@@ -87,13 +87,17 @@ test('Fib Factory does not reveal an accidentally correct fake through validatio
  assert.equal(f.m().phase,'vote');assert(!f.m().optionOwners.some(o=>o.owner===f.id(0)));
  assert(!JSON.stringify(f.state(1)).includes('guessedTruth'));
 });
-test('mind meld: host chooses partner, no cross-phone word leakage, three tries and match',()=>{
+test('mind meld: host chooses partner, everyone else pairs up, no cross-phone word leakage, three tries and match',()=>{
+ // v3.5.0 G6: players 1 and 2 now play as the second pair instead of watching.
  const f=fixture('mind-meld',4);f.enter();f.play(0,2);const m=f.m();assert.equal(m.partner,f.id(3));
- assert.throws(()=>f.play(1,'horse'),e=>e.code==='ROLE');
+ assert.deepEqual(m.groups,[[f.id(0),f.id(3)],[f.id(1),f.id(2)]]);
  f.play(0,'Castle');assert(!JSON.stringify(f.state(3)).includes('Castle'));f.play(3,'cat');
- assert.equal(f.m().phase,'reveal');f.advance(3100);assert.equal(f.m().round,2);
+ f.play(1,'horse');f.play(2,'Horses');
+ assert.equal(f.m().phase,'reveal');assert.deepEqual(f.m().matched,[1]);
+ f.advance(3100);assert.equal(f.m().round,2);
+ assert.throws(()=>f.play(1,'again'),e=>e.code==='ROLE');
  f.play(0,'PEAR');f.play(3,'pear');assert.equal(f.room.board.step,'result');
- assert.equal(f.room.players[0].sparks,1);assert.equal(f.room.players[3].sparks,1);
+ for(const i of [0,1,2,3])assert.equal(f.room.players[i].sparks,1,`player ${i}`);
 });
 test('majority rules: three secret vote rounds and tied-majority scoring',()=>{
  const f=fixture('majority-rules',4);f.enter();let first=f.m().roundKey;

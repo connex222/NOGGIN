@@ -5,7 +5,8 @@
     "value": 1,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-002",
@@ -13,7 +14,8 @@
     "value": 2,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-003",
@@ -21,7 +23,8 @@
     "value": 3,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-004",
@@ -29,7 +32,8 @@
     "value": 4,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-005",
@@ -37,7 +41,8 @@
     "value": 5,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-006",
@@ -45,7 +50,8 @@
     "value": 6,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-007",
@@ -53,7 +59,8 @@
     "value": 7,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-008",
@@ -61,7 +68,8 @@
     "value": 8,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-009",
@@ -69,7 +77,8 @@
     "value": 9,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-010",
@@ -77,7 +86,8 @@
     "value": 10,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-011",
@@ -85,7 +95,8 @@
     "value": 11,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-012",
@@ -93,7 +104,8 @@
     "value": 12,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-013",
@@ -101,7 +113,8 @@
     "value": 13,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-014",
@@ -109,7 +122,8 @@
     "value": 14,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-015",
@@ -117,7 +131,8 @@
     "value": 15,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-016",
@@ -125,7 +140,8 @@
     "value": 16,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-017",
@@ -133,7 +149,8 @@
     "value": 17,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-018",
@@ -141,7 +158,8 @@
     "value": 18,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-019",
@@ -149,7 +167,8 @@
     "value": 19,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-020",
@@ -157,7 +176,8 @@
     "value": 20,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-021",
@@ -165,7 +185,8 @@
     "value": 21,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-022",
@@ -173,7 +194,8 @@
     "value": 22,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-023",
@@ -181,7 +203,8 @@
     "value": 23,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-024",
@@ -189,7 +212,8 @@
     "value": 24,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-025",
@@ -197,7 +221,8 @@
     "value": 25,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-026",
@@ -205,7 +230,8 @@
     "value": 26,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-027",
@@ -213,7 +239,8 @@
     "value": 27,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-028",
@@ -221,7 +248,8 @@
     "value": 28,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-029",
@@ -229,7 +257,8 @@
     "value": 29,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-030",
@@ -237,7 +266,8 @@
     "value": 30,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-031",
@@ -245,7 +275,8 @@
     "value": 31,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-032",
@@ -253,7 +284,8 @@
     "value": 32,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-033",
@@ -261,7 +293,8 @@
     "value": 33,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-034",
@@ -269,7 +302,8 @@
     "value": 34,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-035",
@@ -277,7 +311,8 @@
     "value": 35,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-036",
@@ -285,7 +320,8 @@
     "value": 36,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-037",
@@ -293,7 +329,8 @@
     "value": 37,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-038",
@@ -301,7 +338,8 @@
     "value": 38,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-039",
@@ -309,7 +347,8 @@
     "value": 39,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-040",
@@ -317,7 +356,8 @@
     "value": 40,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-041",
@@ -325,7 +365,8 @@
     "value": 41,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-042",
@@ -333,7 +374,8 @@
     "value": 42,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-043",
@@ -341,7 +383,8 @@
     "value": 43,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-044",
@@ -349,7 +392,8 @@
     "value": 44,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-045",
@@ -357,7 +401,8 @@
     "value": 45,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-046",
@@ -365,7 +410,8 @@
     "value": 46,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-047",
@@ -373,7 +419,8 @@
     "value": 47,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-048",
@@ -381,7 +428,8 @@
     "value": 48,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-049",
@@ -389,7 +437,8 @@
     "value": 49,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-050",
@@ -397,7 +446,8 @@
     "value": 50,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-051",
@@ -405,7 +455,8 @@
     "value": 51,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-052",
@@ -413,7 +464,8 @@
     "value": 52,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-053",
@@ -421,7 +473,8 @@
     "value": 53,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-054",
@@ -429,7 +482,8 @@
     "value": 54,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-055",
@@ -437,7 +491,8 @@
     "value": 55,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-056",
@@ -445,7 +500,8 @@
     "value": 56,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-057",
@@ -453,7 +509,8 @@
     "value": 57,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-058",
@@ -461,7 +518,8 @@
     "value": 58,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-059",
@@ -469,7 +527,8 @@
     "value": 59,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-060",
@@ -477,7 +536,8 @@
     "value": 60,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-061",
@@ -485,7 +545,8 @@
     "value": 61,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-062",
@@ -493,7 +554,8 @@
     "value": 62,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-063",
@@ -501,7 +563,8 @@
     "value": 63,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-064",
@@ -509,7 +572,8 @@
     "value": 64,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-065",
@@ -517,7 +581,8 @@
     "value": 65,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-066",
@@ -525,7 +590,8 @@
     "value": 66,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-067",
@@ -533,7 +599,8 @@
     "value": 67,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-068",
@@ -541,7 +608,8 @@
     "value": 68,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-069",
@@ -549,7 +617,8 @@
     "value": 69,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-070",
@@ -557,7 +626,8 @@
     "value": 70,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-071",
@@ -565,7 +635,8 @@
     "value": 71,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-072",
@@ -573,7 +644,8 @@
     "value": 72,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-073",
@@ -581,7 +653,8 @@
     "value": 73,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-074",
@@ -589,7 +662,8 @@
     "value": 74,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-075",
@@ -597,7 +671,8 @@
     "value": 75,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-076",
@@ -605,7 +680,8 @@
     "value": 76,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-077",
@@ -613,7 +689,8 @@
     "value": 77,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-078",
@@ -621,7 +698,8 @@
     "value": 78,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-079",
@@ -629,7 +707,8 @@
     "value": 79,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-080",
@@ -637,7 +716,8 @@
     "value": 80,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-081",
@@ -645,7 +725,8 @@
     "value": 81,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-082",
@@ -653,7 +734,8 @@
     "value": 82,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-083",
@@ -661,7 +743,8 @@
     "value": 83,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-084",
@@ -669,7 +752,8 @@
     "value": 84,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-085",
@@ -677,7 +761,8 @@
     "value": 85,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-086",
@@ -685,7 +770,8 @@
     "value": 86,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-087",
@@ -693,7 +779,8 @@
     "value": 87,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-088",
@@ -701,7 +788,8 @@
     "value": 88,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-089",
@@ -709,7 +797,8 @@
     "value": 89,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-090",
@@ -717,7 +806,8 @@
     "value": 90,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-091",
@@ -725,7 +815,8 @@
     "value": 91,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "element-092",
@@ -733,7 +824,8 @@
     "value": 92,
     "unit": "",
     "source": "Royal Society of Chemistry periodic table: https://periodic-table.rsc.org/",
-    "verified": "derived-from-reference"
+    "verified": "derived-from-reference",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-1",
@@ -741,7 +833,8 @@
     "value": 100,
     "unit": "pence",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-2",
@@ -749,7 +842,8 @@
     "value": 60,
     "unit": "minutes",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-3",
@@ -757,7 +851,8 @@
     "value": 60,
     "unit": "seconds",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-4",
@@ -765,7 +860,8 @@
     "value": 24,
     "unit": "hours",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-5",
@@ -773,7 +869,8 @@
     "value": 7,
     "unit": "days",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-6",
@@ -781,7 +878,8 @@
     "value": 12,
     "unit": "months",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-7",
@@ -789,7 +887,8 @@
     "value": 10,
     "unit": "mm",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-8",
@@ -797,7 +896,8 @@
     "value": 100,
     "unit": "cm",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-9",
@@ -805,7 +905,8 @@
     "value": 1000,
     "unit": "m",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-10",
@@ -813,7 +914,8 @@
     "value": 1000,
     "unit": "g",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-11",
@@ -821,7 +923,8 @@
     "value": 1000,
     "unit": "ml",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-12",
@@ -829,7 +932,8 @@
     "value": 12,
     "unit": "inches",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-13",
@@ -837,7 +941,8 @@
     "value": 3,
     "unit": "feet",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-14",
@@ -845,7 +950,8 @@
     "value": 16,
     "unit": "ounces",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-15",
@@ -853,7 +959,8 @@
     "value": 52,
     "unit": "cards",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-16",
@@ -861,7 +968,8 @@
     "value": 8,
     "unit": "sides",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-17",
@@ -869,7 +977,8 @@
     "value": 90,
     "unit": "degrees",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-18",
@@ -877,7 +986,8 @@
     "value": 360,
     "unit": "degrees",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-19",
@@ -885,7 +995,8 @@
     "value": 11,
     "unit": "players",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-20",
@@ -893,7 +1004,8 @@
     "value": 22,
     "unit": "balls",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-21",
@@ -901,7 +1013,8 @@
     "value": 64,
     "unit": "squares",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-22",
@@ -909,7 +1022,8 @@
     "value": 16,
     "unit": "pawns",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-23",
@@ -917,7 +1031,8 @@
     "value": 88,
     "unit": "keys",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "unit-24",
@@ -925,7 +1040,8 @@
     "value": 21,
     "unit": "spots",
     "source": "Fixed unit definition or standard game equipment",
-    "verified": "definition"
+    "verified": "definition",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-1",
@@ -933,7 +1049,8 @@
     "value": 120,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-2",
@@ -941,7 +1058,8 @@
     "value": 180,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-3",
@@ -949,7 +1067,8 @@
     "value": 240,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-4",
@@ -957,7 +1076,8 @@
     "value": 300,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-5",
@@ -965,7 +1085,8 @@
     "value": 360,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-6",
@@ -973,7 +1094,8 @@
     "value": 420,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-7",
@@ -981,7 +1103,8 @@
     "value": 480,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-8",
@@ -989,7 +1112,8 @@
     "value": 540,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-9",
@@ -997,7 +1121,8 @@
     "value": 600,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-10",
@@ -1005,7 +1130,8 @@
     "value": 720,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-11",
@@ -1013,7 +1139,8 @@
     "value": 900,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-12",
@@ -1021,7 +1148,8 @@
     "value": 1080,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-13",
@@ -1029,7 +1157,8 @@
     "value": 1200,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-14",
@@ -1037,7 +1166,8 @@
     "value": 1440,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-15",
@@ -1045,7 +1175,8 @@
     "value": 1800,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-16",
@@ -1053,7 +1184,8 @@
     "value": 2160,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-17",
@@ -1061,7 +1193,8 @@
     "value": 2400,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-18",
@@ -1069,7 +1202,8 @@
     "value": 2880,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-19",
@@ -1077,7 +1211,8 @@
     "value": 3000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-20",
@@ -1085,7 +1220,8 @@
     "value": 3600,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-21",
@@ -1093,7 +1229,8 @@
     "value": 4320,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-22",
@@ -1101,7 +1238,8 @@
     "value": 5400,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-23",
@@ -1109,7 +1247,8 @@
     "value": 6000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-24",
@@ -1117,7 +1256,8 @@
     "value": 7200,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-25",
@@ -1125,7 +1265,8 @@
     "value": 9000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-26",
@@ -1133,7 +1274,8 @@
     "value": 10800,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-27",
@@ -1141,7 +1283,8 @@
     "value": 12000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-28",
@@ -1149,7 +1292,8 @@
     "value": 14400,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-29",
@@ -1157,7 +1301,8 @@
     "value": 18000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-30",
@@ -1165,7 +1310,8 @@
     "value": 21600,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-31",
@@ -1173,7 +1319,8 @@
     "value": 25200,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-32",
@@ -1181,7 +1328,8 @@
     "value": 28800,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-33",
@@ -1189,7 +1337,8 @@
     "value": 32400,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "duration-34",
@@ -1197,7 +1346,8 @@
     "value": 36000,
     "unit": "minutes",
     "source": "Exact arithmetic (NIST time unit reference: https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-5-units-outside-si)",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-3",
@@ -1205,7 +1355,8 @@
     "value": 9,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-4",
@@ -1213,7 +1364,8 @@
     "value": 16,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-5",
@@ -1221,7 +1373,8 @@
     "value": 25,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-6",
@@ -1229,7 +1382,8 @@
     "value": 36,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-7",
@@ -1237,7 +1391,8 @@
     "value": 49,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-8",
@@ -1245,7 +1400,8 @@
     "value": 64,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-9",
@@ -1253,7 +1409,8 @@
     "value": 81,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-10",
@@ -1261,7 +1418,8 @@
     "value": 100,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-11",
@@ -1269,7 +1427,8 @@
     "value": 121,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-12",
@@ -1277,7 +1436,8 @@
     "value": 144,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-13",
@@ -1285,7 +1445,8 @@
     "value": 169,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-14",
@@ -1293,7 +1454,8 @@
     "value": 196,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-15",
@@ -1301,7 +1463,8 @@
     "value": 225,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-16",
@@ -1309,7 +1472,8 @@
     "value": 256,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-17",
@@ -1317,7 +1481,8 @@
     "value": 289,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-18",
@@ -1325,7 +1490,8 @@
     "value": 324,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-19",
@@ -1333,7 +1499,8 @@
     "value": 361,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-20",
@@ -1341,7 +1508,8 @@
     "value": 400,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-21",
@@ -1349,7 +1517,8 @@
     "value": 441,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-22",
@@ -1357,7 +1526,8 @@
     "value": 484,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-23",
@@ -1365,7 +1535,8 @@
     "value": 529,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-24",
@@ -1373,7 +1544,8 @@
     "value": 576,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-25",
@@ -1381,7 +1553,8 @@
     "value": 625,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-26",
@@ -1389,7 +1562,8 @@
     "value": 676,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-27",
@@ -1397,7 +1571,8 @@
     "value": 729,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-28",
@@ -1405,7 +1580,8 @@
     "value": 784,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-29",
@@ -1413,7 +1589,8 @@
     "value": 841,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-30",
@@ -1421,7 +1598,8 @@
     "value": 900,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-31",
@@ -1429,7 +1607,8 @@
     "value": 961,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-32",
@@ -1437,7 +1616,8 @@
     "value": 1024,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-33",
@@ -1445,7 +1625,8 @@
     "value": 1089,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-34",
@@ -1453,7 +1634,8 @@
     "value": 1156,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-35",
@@ -1461,7 +1643,8 @@
     "value": 1225,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-36",
@@ -1469,7 +1652,8 @@
     "value": 1296,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-37",
@@ -1477,7 +1661,8 @@
     "value": 1369,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-38",
@@ -1485,7 +1670,8 @@
     "value": 1444,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-39",
@@ -1493,7 +1679,8 @@
     "value": 1521,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-40",
@@ -1501,7 +1688,8 @@
     "value": 1600,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-41",
@@ -1509,7 +1697,8 @@
     "value": 1681,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-42",
@@ -1517,7 +1706,8 @@
     "value": 1764,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-43",
@@ -1525,7 +1715,8 @@
     "value": 1849,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-44",
@@ -1533,7 +1724,8 @@
     "value": 1936,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-45",
@@ -1541,7 +1733,8 @@
     "value": 2025,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-46",
@@ -1549,7 +1742,8 @@
     "value": 2116,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-47",
@@ -1557,7 +1751,8 @@
     "value": 2209,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-48",
@@ -1565,7 +1760,8 @@
     "value": 2304,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-49",
@@ -1573,7 +1769,8 @@
     "value": 2401,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-50",
@@ -1581,7 +1778,8 @@
     "value": 2500,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-51",
@@ -1589,7 +1787,8 @@
     "value": 2601,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "area-52",
@@ -1597,7 +1796,8 @@
     "value": 2704,
     "unit": "square centimetres",
     "source": "Exact rectangle-area arithmetic",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-001",
@@ -1605,7 +1805,8 @@
     "value": 660,
     "unit": "minutes",
     "source": "Exact time conversion: 60 minutes per hour",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-002",
@@ -1613,7 +1814,8 @@
     "value": 780,
     "unit": "minutes",
     "source": "Exact time conversion: 60 minutes per hour",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-003",
@@ -1621,7 +1823,8 @@
     "value": 30,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-004",
@@ -1629,7 +1832,8 @@
     "value": 40,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-005",
@@ -1637,7 +1841,8 @@
     "value": 50,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-006",
@@ -1645,7 +1850,8 @@
     "value": 60,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-007",
@@ -1653,7 +1859,8 @@
     "value": 70,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-008",
@@ -1661,7 +1868,8 @@
     "value": 80,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-009",
@@ -1669,7 +1877,8 @@
     "value": 90,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-010",
@@ -1677,7 +1886,8 @@
     "value": 110,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-011",
@@ -1685,7 +1895,8 @@
     "value": 120,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-012",
@@ -1693,7 +1904,8 @@
     "value": 130,
     "unit": "millimetres",
     "source": "Exact metric conversion: 10 millimetres per centimetre",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-013",
@@ -1701,7 +1913,8 @@
     "value": 180,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-014",
@@ -1709,7 +1922,8 @@
     "value": 270,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-015",
@@ -1717,7 +1931,8 @@
     "value": 360,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-016",
@@ -1725,7 +1940,8 @@
     "value": 450,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-017",
@@ -1733,7 +1949,8 @@
     "value": 540,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-018",
@@ -1741,7 +1958,8 @@
     "value": 630,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-019",
@@ -1749,7 +1967,8 @@
     "value": 720,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-020",
@@ -1757,7 +1976,8 @@
     "value": 810,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-021",
@@ -1765,7 +1985,8 @@
     "value": 990,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b2-hig-022",
@@ -1773,7 +1994,8 @@
     "value": 1080,
     "unit": "degrees",
     "source": "Euclidean geometry: a right angle measures 90 degrees",
-    "verified": "calculated"
+    "verified": "calculated",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-001",
@@ -1781,7 +2003,8 @@
     "value": 75600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-002",
@@ -1789,7 +2012,8 @@
     "value": 79200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-003",
@@ -1797,7 +2021,8 @@
     "value": 82800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-004",
@@ -1805,7 +2030,8 @@
     "value": 86400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-005",
@@ -1813,7 +2039,8 @@
     "value": 90000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-006",
@@ -1821,7 +2048,8 @@
     "value": 93600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-007",
@@ -1829,7 +2057,8 @@
     "value": 97200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-008",
@@ -1837,7 +2066,8 @@
     "value": 100800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-009",
@@ -1845,7 +2075,8 @@
     "value": 104400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-010",
@@ -1853,7 +2084,8 @@
     "value": 108000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-011",
@@ -1861,7 +2093,8 @@
     "value": 111600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-012",
@@ -1869,7 +2102,8 @@
     "value": 115200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-013",
@@ -1877,7 +2111,8 @@
     "value": 118800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-014",
@@ -1885,7 +2120,8 @@
     "value": 122400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-015",
@@ -1893,7 +2129,8 @@
     "value": 126000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-016",
@@ -1901,7 +2138,8 @@
     "value": 129600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-017",
@@ -1909,7 +2147,8 @@
     "value": 133200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-018",
@@ -1917,7 +2156,8 @@
     "value": 136800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-019",
@@ -1925,7 +2165,8 @@
     "value": 140400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-020",
@@ -1933,7 +2174,8 @@
     "value": 144000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-021",
@@ -1941,7 +2183,8 @@
     "value": 147600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-022",
@@ -1949,7 +2192,8 @@
     "value": 151200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-023",
@@ -1957,7 +2201,8 @@
     "value": 154800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-024",
@@ -1965,7 +2210,8 @@
     "value": 158400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-025",
@@ -1973,7 +2219,8 @@
     "value": 162000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-026",
@@ -1981,7 +2228,8 @@
     "value": 165600,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-027",
@@ -1989,7 +2237,8 @@
     "value": 169200,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-028",
@@ -1997,7 +2246,8 @@
     "value": 172800,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-029",
@@ -2005,7 +2255,8 @@
     "value": 176400,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6b3-hl-030",
@@ -2013,7 +2264,8 @@
     "value": 180000,
     "unit": "seconds",
     "source": "Exact unit definition",
-    "verified": "arithmetic"
+    "verified": "arithmetic",
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0000",
@@ -2026,7 +2278,8 @@
       "type": "multiply",
       "a": 3,
       "b": 2
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0001",
@@ -2039,7 +2292,8 @@
       "type": "km",
       "a": 20,
       "b": 13
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0002",
@@ -2052,7 +2306,8 @@
       "type": "minutes",
       "a": 37,
       "b": 24
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0003",
@@ -2065,7 +2320,8 @@
       "type": "cm",
       "a": 54,
       "b": 35
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0004",
@@ -2078,7 +2334,8 @@
       "type": "seconds",
       "a": 71,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0005",
@@ -2091,7 +2348,8 @@
       "type": "multiply",
       "a": 88,
       "b": 14
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0006",
@@ -2104,7 +2362,8 @@
       "type": "multiply",
       "a": 13,
       "b": 25
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0007",
@@ -2117,7 +2376,8 @@
       "type": "km",
       "a": 30,
       "b": 36
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0008",
@@ -2130,7 +2390,8 @@
       "type": "minutes",
       "a": 47,
       "b": 4
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0009",
@@ -2143,7 +2404,8 @@
       "type": "cm",
       "a": 64,
       "b": 15
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0010",
@@ -2156,7 +2418,8 @@
       "type": "seconds",
       "a": 81,
       "b": 26
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0011",
@@ -2169,7 +2432,8 @@
       "type": "multiply",
       "a": 6,
       "b": 37
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0012",
@@ -2182,7 +2446,8 @@
       "type": "multiply",
       "a": 23,
       "b": 5
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0013",
@@ -2195,7 +2460,8 @@
       "type": "km",
       "a": 40,
       "b": 16
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0014",
@@ -2208,7 +2474,8 @@
       "type": "minutes",
       "a": 57,
       "b": 27
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0015",
@@ -2221,7 +2488,8 @@
       "type": "cm",
       "a": 74,
       "b": 38
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0016",
@@ -2234,7 +2502,8 @@
       "type": "seconds",
       "a": 91,
       "b": 6
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0017",
@@ -2247,7 +2516,8 @@
       "type": "multiply",
       "a": 16,
       "b": 17
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0018",
@@ -2260,7 +2530,8 @@
       "type": "multiply",
       "a": 33,
       "b": 28
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0019",
@@ -2273,7 +2544,8 @@
       "type": "km",
       "a": 50,
       "b": 39
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0020",
@@ -2286,7 +2558,8 @@
       "type": "minutes",
       "a": 67,
       "b": 7
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0021",
@@ -2299,7 +2572,8 @@
       "type": "cm",
       "a": 84,
       "b": 18
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0022",
@@ -2312,7 +2586,8 @@
       "type": "seconds",
       "a": 9,
       "b": 29
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0023",
@@ -2325,7 +2600,8 @@
       "type": "multiply",
       "a": 26,
       "b": 40
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0024",
@@ -2338,7 +2614,8 @@
       "type": "multiply",
       "a": 43,
       "b": 8
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0025",
@@ -2351,7 +2628,8 @@
       "type": "km",
       "a": 60,
       "b": 19
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0026",
@@ -2364,7 +2642,8 @@
       "type": "minutes",
       "a": 77,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0027",
@@ -2377,7 +2656,8 @@
       "type": "cm",
       "a": 94,
       "b": 41
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0028",
@@ -2390,7 +2670,8 @@
       "type": "seconds",
       "a": 19,
       "b": 9
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0029",
@@ -2403,7 +2684,8 @@
       "type": "multiply",
       "a": 36,
       "b": 20
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0030",
@@ -2416,7 +2698,8 @@
       "type": "multiply",
       "a": 53,
       "b": 31
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0031",
@@ -2429,7 +2712,8 @@
       "type": "km",
       "a": 70,
       "b": 42
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0032",
@@ -2442,7 +2726,8 @@
       "type": "minutes",
       "a": 87,
       "b": 10
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0033",
@@ -2455,7 +2740,8 @@
       "type": "cm",
       "a": 12,
       "b": 21
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0034",
@@ -2468,7 +2754,8 @@
       "type": "seconds",
       "a": 29,
       "b": 32
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0035",
@@ -2481,7 +2768,8 @@
       "type": "multiply",
       "a": 46,
       "b": 43
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0036",
@@ -2494,7 +2782,8 @@
       "type": "multiply",
       "a": 63,
       "b": 11
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0037",
@@ -2507,7 +2796,8 @@
       "type": "km",
       "a": 80,
       "b": 22
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0038",
@@ -2520,7 +2810,8 @@
       "type": "minutes",
       "a": 5,
       "b": 33
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0039",
@@ -2533,7 +2824,8 @@
       "type": "cm",
       "a": 22,
       "b": 44
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0040",
@@ -2546,7 +2838,8 @@
       "type": "seconds",
       "a": 39,
       "b": 12
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0041",
@@ -2559,7 +2852,8 @@
       "type": "multiply",
       "a": 56,
       "b": 23
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0042",
@@ -2572,7 +2866,8 @@
       "type": "multiply",
       "a": 73,
       "b": 34
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0043",
@@ -2585,7 +2880,8 @@
       "type": "km",
       "a": 90,
       "b": 2
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0044",
@@ -2598,7 +2894,8 @@
       "type": "minutes",
       "a": 15,
       "b": 13
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0045",
@@ -2611,7 +2908,8 @@
       "type": "cm",
       "a": 32,
       "b": 24
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0046",
@@ -2624,7 +2922,8 @@
       "type": "seconds",
       "a": 49,
       "b": 35
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0047",
@@ -2637,7 +2936,8 @@
       "type": "multiply",
       "a": 66,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0048",
@@ -2650,7 +2950,8 @@
       "type": "multiply",
       "a": 83,
       "b": 14
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0049",
@@ -2663,7 +2964,8 @@
       "type": "km",
       "a": 8,
       "b": 25
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0050",
@@ -2676,7 +2978,8 @@
       "type": "minutes",
       "a": 25,
       "b": 36
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0051",
@@ -2689,7 +2992,8 @@
       "type": "cm",
       "a": 42,
       "b": 4
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0052",
@@ -2702,7 +3006,8 @@
       "type": "seconds",
       "a": 59,
       "b": 15
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0053",
@@ -2715,7 +3020,8 @@
       "type": "multiply",
       "a": 76,
       "b": 26
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0054",
@@ -2728,7 +3034,8 @@
       "type": "multiply",
       "a": 93,
       "b": 37
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0055",
@@ -2741,7 +3048,8 @@
       "type": "km",
       "a": 18,
       "b": 5
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0056",
@@ -2754,7 +3062,8 @@
       "type": "minutes",
       "a": 35,
       "b": 16
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0057",
@@ -2767,7 +3076,8 @@
       "type": "cm",
       "a": 52,
       "b": 27
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0058",
@@ -2780,7 +3090,8 @@
       "type": "seconds",
       "a": 69,
       "b": 38
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0059",
@@ -2793,7 +3104,8 @@
       "type": "multiply",
       "a": 86,
       "b": 6
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0060",
@@ -2806,7 +3118,8 @@
       "type": "multiply",
       "a": 11,
       "b": 17
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0061",
@@ -2819,7 +3132,8 @@
       "type": "km",
       "a": 28,
       "b": 28
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0062",
@@ -2832,7 +3146,8 @@
       "type": "minutes",
       "a": 45,
       "b": 39
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0063",
@@ -2845,7 +3160,8 @@
       "type": "cm",
       "a": 62,
       "b": 7
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0064",
@@ -2858,7 +3174,8 @@
       "type": "seconds",
       "a": 79,
       "b": 18
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0065",
@@ -2871,7 +3188,8 @@
       "type": "multiply",
       "a": 4,
       "b": 29
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0066",
@@ -2884,7 +3202,8 @@
       "type": "multiply",
       "a": 21,
       "b": 40
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0067",
@@ -2897,7 +3216,8 @@
       "type": "km",
       "a": 38,
       "b": 8
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0068",
@@ -2910,7 +3230,8 @@
       "type": "minutes",
       "a": 55,
       "b": 19
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0069",
@@ -2923,7 +3244,8 @@
       "type": "cm",
       "a": 72,
       "b": 30
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0070",
@@ -2936,7 +3258,8 @@
       "type": "seconds",
       "a": 89,
       "b": 41
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0071",
@@ -2949,7 +3272,8 @@
       "type": "multiply",
       "a": 14,
       "b": 9
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0072",
@@ -2962,7 +3286,8 @@
       "type": "multiply",
       "a": 31,
       "b": 20
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0073",
@@ -2975,7 +3300,8 @@
       "type": "km",
       "a": 48,
       "b": 31
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0074",
@@ -2988,7 +3314,8 @@
       "type": "minutes",
       "a": 65,
       "b": 42
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0075",
@@ -3001,7 +3328,8 @@
       "type": "cm",
       "a": 82,
       "b": 10
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0076",
@@ -3014,7 +3342,8 @@
       "type": "seconds",
       "a": 7,
       "b": 21
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0077",
@@ -3027,7 +3356,8 @@
       "type": "multiply",
       "a": 24,
       "b": 32
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0078",
@@ -3040,7 +3370,8 @@
       "type": "multiply",
       "a": 41,
       "b": 43
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0079",
@@ -3053,7 +3384,8 @@
       "type": "km",
       "a": 58,
       "b": 11
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0080",
@@ -3066,7 +3398,8 @@
       "type": "minutes",
       "a": 75,
       "b": 22
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0081",
@@ -3079,7 +3412,8 @@
       "type": "cm",
       "a": 92,
       "b": 33
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0082",
@@ -3092,7 +3426,8 @@
       "type": "seconds",
       "a": 17,
       "b": 44
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0083",
@@ -3105,7 +3440,8 @@
       "type": "multiply",
       "a": 34,
       "b": 12
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0084",
@@ -3118,7 +3454,8 @@
       "type": "multiply",
       "a": 51,
       "b": 23
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0085",
@@ -3131,7 +3468,8 @@
       "type": "km",
       "a": 68,
       "b": 34
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0086",
@@ -3144,7 +3482,8 @@
       "type": "minutes",
       "a": 85,
       "b": 2
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0087",
@@ -3157,7 +3496,8 @@
       "type": "cm",
       "a": 10,
       "b": 13
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0088",
@@ -3170,7 +3510,8 @@
       "type": "seconds",
       "a": 27,
       "b": 24
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0089",
@@ -3183,7 +3524,8 @@
       "type": "multiply",
       "a": 44,
       "b": 35
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0090",
@@ -3196,7 +3538,8 @@
       "type": "multiply",
       "a": 61,
       "b": 3
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0091",
@@ -3209,7 +3552,8 @@
       "type": "km",
       "a": 78,
       "b": 14
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0092",
@@ -3222,7 +3566,8 @@
       "type": "minutes",
       "a": 3,
       "b": 25
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0093",
@@ -3235,7 +3580,8 @@
       "type": "cm",
       "a": 20,
       "b": 36
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0094",
@@ -3248,7 +3594,8 @@
       "type": "seconds",
       "a": 37,
       "b": 4
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0095",
@@ -3261,7 +3608,8 @@
       "type": "multiply",
       "a": 54,
       "b": 15
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0096",
@@ -3274,7 +3622,8 @@
       "type": "multiply",
       "a": 71,
       "b": 26
-    }
+    },
+    "kind": "arithmetic"
   },
   {
     "id": "p6final-hl-0097",
@@ -3287,6 +3636,1527 @@
       "type": "km",
       "a": 88,
       "b": 37
-    }
+    },
+    "kind": "arithmetic"
+  },
+  {
+    "id": "v35-hl-uk-peaks-01",
+    "label": "Height of Ben Nevis",
+    "value": 1345,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Ben_Nevis",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-02",
+    "label": "Height of Ben Macdui",
+    "value": 1309,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Ben_Macdui",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-03",
+    "label": "Height of Braeriach",
+    "value": 1296,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Braeriach",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-04",
+    "label": "Height of Cairn Gorm",
+    "value": 1245,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Cairn_Gorm",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-05",
+    "label": "Height of Ben Lawers",
+    "value": 1214,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Ben_Lawers",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-06",
+    "label": "Height of Snowdon (Yr Wyddfa)",
+    "value": 1085,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Snowdon",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-07",
+    "label": "Height of Carrauntoohil, Ireland’s highest mountain",
+    "value": 1039,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Carrauntoohil",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-08",
+    "label": "Height of Scafell Pike",
+    "value": 978,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Scafell_Pike",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-09",
+    "label": "Height of Ben Lomond",
+    "value": 974,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Ben_Lomond",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-10",
+    "label": "Height of Helvellyn",
+    "value": 950,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Helvellyn",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-11",
+    "label": "Height of Skiddaw",
+    "value": 931,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Skiddaw",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-12",
+    "label": "Height of Cadair Idris",
+    "value": 893,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Cadair_Idris",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-13",
+    "label": "Height of Pen y Fan",
+    "value": 886,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Pen_y_Fan",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-peaks-14",
+    "label": "Height of Slieve Donard",
+    "value": 850,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Slieve_Donard",
+    "verified": "needs-owner-check",
+    "group": "uk-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-01",
+    "label": "Height of Mount Everest (2020 survey)",
+    "value": 8849,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-02",
+    "label": "Height of K2",
+    "value": 8611,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/K2",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-03",
+    "label": "Height of Kangchenjunga",
+    "value": 8586,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Kangchenjunga",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-04",
+    "label": "Height of Aconcagua",
+    "value": 6961,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Aconcagua",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-05",
+    "label": "Height of Denali",
+    "value": 6190,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Denali",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-06",
+    "label": "Height of Kilimanjaro",
+    "value": 5895,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mount_Kilimanjaro",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-07",
+    "label": "Height of Mount Elbrus",
+    "value": 5642,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mount_Elbrus",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-08",
+    "label": "Height of the Matterhorn",
+    "value": 4478,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Matterhorn",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-09",
+    "label": "Height of Mauna Kea above sea level",
+    "value": 4207,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mauna_Kea",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-10",
+    "label": "Height of Mount Fuji",
+    "value": 3776,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mount_Fuji",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-world-peaks-11",
+    "label": "Height of Mount Kosciuszko",
+    "value": 2228,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Mount_Kosciuszko",
+    "verified": "needs-owner-check",
+    "group": "world-peaks",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-01",
+    "label": "Height of One Canada Square, Canary Wharf",
+    "value": 235,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/One_Canada_Square",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-02",
+    "label": "Height of 30 St Mary Axe (the Gherkin)",
+    "value": 180,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/30_St_Mary_Axe",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-03",
+    "label": "Height of Portsmouth’s Spinnaker Tower",
+    "value": 170,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Spinnaker_Tower",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-04",
+    "label": "Height of the Wembley Stadium arch",
+    "value": 133,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Wembley_Stadium",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-05",
+    "label": "Height of Salisbury Cathedral’s spire",
+    "value": 123,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Salisbury_Cathedral",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-06",
+    "label": "Height of St Paul’s Cathedral to the top of its cross",
+    "value": 111,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/St_Paul%27s_Cathedral",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-07",
+    "label": "Height of the Elizabeth Tower (Big Ben)",
+    "value": 96,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Big_Ben",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-08",
+    "label": "Height of the Statue of Liberty from the ground to the torch",
+    "value": 93,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-09",
+    "label": "Height of Tower Bridge’s towers",
+    "value": 65,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Tower_Bridge",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-uk-structures-10",
+    "label": "Height of Nelson’s Column, including the statue",
+    "value": 52,
+    "unit": "m",
+    "source": "https://en.wikipedia.org/wiki/Nelson%27s_Column",
+    "verified": "needs-owner-check",
+    "group": "uk-structures",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-01",
+    "label": "Year of the Battle of Waterloo",
+    "value": 1815,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-02",
+    "label": "Year the Stockton and Darlington Railway opened",
+    "value": 1825,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Stockton_and_Darlington_Railway",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-03",
+    "label": "Year the Liverpool and Manchester Railway opened",
+    "value": 1830,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Liverpool_and_Manchester_Railway",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-04",
+    "label": "Year Queen Victoria came to the throne",
+    "value": 1837,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Queen_Victoria",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-05",
+    "label": "Year of the first Grand National",
+    "value": 1839,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Grand_National",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-06",
+    "label": "Year the Penny Black stamp was issued",
+    "value": 1840,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Penny_Black",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-07",
+    "label": "Year the Big Ben clock first started keeping time",
+    "value": 1859,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Big_Ben",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-08",
+    "label": "Year the first London Underground line opened",
+    "value": 1863,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/London_Underground",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-09",
+    "label": "Year the Clifton Suspension Bridge opened",
+    "value": 1864,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Clifton_Suspension_Bridge",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-10",
+    "label": "Year of the first FA Cup final",
+    "value": 1872,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/1872_FA_Cup_final",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-11",
+    "label": "Year of the first Wimbledon Championships",
+    "value": 1877,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/1877_Wimbledon_Championship",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-12",
+    "label": "Year the Forth Bridge opened",
+    "value": 1890,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Forth_Bridge",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-13",
+    "label": "Year Tower Bridge opened",
+    "value": 1894,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Tower_Bridge",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-14",
+    "label": "Year Blackpool Tower opened",
+    "value": 1894,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Blackpool_Tower",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-15",
+    "label": "Year the Titanic sank",
+    "value": 1912,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Titanic",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-16",
+    "label": "Year women first voted in a UK general election",
+    "value": 1918,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Representation_of_the_People_Act_1918",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-17",
+    "label": "Year the BBC (British Broadcasting Company) was founded",
+    "value": 1922,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/BBC",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-18",
+    "label": "Year the locomotive Mallard set its steam speed record",
+    "value": 1938,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/LNER_Class_A4_4468_Mallard",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-1800s-1900s-19",
+    "label": "Year the NHS was founded",
+    "value": 1948,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/National_Health_Service",
+    "verified": "needs-owner-check",
+    "group": "years-1800s-1900s",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-01",
+    "label": "Year of the Wright brothers’ first powered flight",
+    "value": 1903,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Wright_Flyer",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-02",
+    "label": "Year John Logie Baird first demonstrated television",
+    "value": 1926,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/John_Logie_Baird",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-03",
+    "label": "Year Alexander Fleming discovered penicillin",
+    "value": 1928,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Penicillin",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-04",
+    "label": "Year the structure of DNA was published",
+    "value": 1953,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/DNA",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-05",
+    "label": "Year Everest was first climbed",
+    "value": 1953,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/1953_British_Mount_Everest_expedition",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-06",
+    "label": "Year Roger Bannister ran the first four-minute mile",
+    "value": 1954,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Roger_Bannister",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-07",
+    "label": "Year Sputnik 1 was launched",
+    "value": 1957,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Sputnik_1",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-08",
+    "label": "Year Yuri Gagarin became the first person in space",
+    "value": 1961,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Yuri_Gagarin",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-09",
+    "label": "Year of the first handheld mobile phone call",
+    "value": 1973,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Mobile_phone",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-10",
+    "label": "Year Concorde began passenger flights",
+    "value": 1976,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Concorde",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-11",
+    "label": "Year the first IVF baby was born",
+    "value": 1978,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Louise_Brown",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-12",
+    "label": "Year Tim Berners-Lee proposed the World Wide Web",
+    "value": 1989,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/World_Wide_Web",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-13",
+    "label": "Year the Berlin Wall fell",
+    "value": 1989,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-14",
+    "label": "Year the Hubble Space Telescope was launched",
+    "value": 1990,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-15",
+    "label": "Year Google was founded",
+    "value": 1998,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Google",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-16",
+    "label": "Year Wikipedia was launched",
+    "value": 2001,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Wikipedia",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-17",
+    "label": "Year YouTube was launched",
+    "value": 2005,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/YouTube",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-18",
+    "label": "Year the first text message was sent",
+    "value": 1992,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/SMS",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-19",
+    "label": "Year euro notes and coins came into use",
+    "value": 2002,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Euro_banknotes",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-years-modern-firsts-20",
+    "label": "Year the first iPhone was released",
+    "value": 2007,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/IPhone_(1st_generation)",
+    "verified": "needs-owner-check",
+    "group": "years-modern-firsts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-01",
+    "label": "Length of Elizabeth II’s reign (whole years)",
+    "value": 70,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Elizabeth_II",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-02",
+    "label": "Length of Queen Victoria’s reign",
+    "value": 63,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Queen_Victoria",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-03",
+    "label": "Length of George III’s reign",
+    "value": 59,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/George_III",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-04",
+    "label": "Length of Henry III’s reign",
+    "value": 56,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Henry_III_of_England",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-05",
+    "label": "Length of Edward III’s reign",
+    "value": 50,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Edward_III",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-06",
+    "label": "Length of Elizabeth I’s reign",
+    "value": 44,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Elizabeth_I",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-07",
+    "label": "Length of Henry VIII’s reign",
+    "value": 37,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Henry_VIII",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-08",
+    "label": "Length of George V’s reign",
+    "value": 25,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/George_V",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-09",
+    "label": "Length of Charles II’s reign after the Restoration",
+    "value": 24,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Charles_II_of_England",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-10",
+    "label": "Length of George VI’s reign",
+    "value": 15,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/George_VI",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-reign-lengths-11",
+    "label": "Length of Edward VII’s reign",
+    "value": 9,
+    "unit": "years",
+    "source": "https://en.wikipedia.org/wiki/Edward_VII",
+    "verified": "needs-owner-check",
+    "group": "reign-lengths",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-01",
+    "label": "Typical pregnancy of a giraffe",
+    "value": 450,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Giraffe",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-02",
+    "label": "Typical pregnancy of a horse",
+    "value": 340,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Horse",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-03",
+    "label": "Typical pregnancy of a cow",
+    "value": 283,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Cattle",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-04",
+    "label": "Typical human pregnancy (from last period)",
+    "value": 280,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Pregnancy",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-05",
+    "label": "Typical pregnancy of a goat",
+    "value": 150,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Goat",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-06",
+    "label": "Typical pregnancy of a sheep",
+    "value": 147,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Sheep",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-07",
+    "label": "Typical pregnancy of a pig",
+    "value": 114,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Pig",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-08",
+    "label": "Typical pregnancy of a cat",
+    "value": 65,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Cat",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-09",
+    "label": "Typical pregnancy of a dog",
+    "value": 63,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Dog",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-10",
+    "label": "Typical pregnancy of a rabbit",
+    "value": 31,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Rabbit",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-gestation-11",
+    "label": "Typical pregnancy of a hamster",
+    "value": 16,
+    "unit": "days",
+    "source": "https://en.wikipedia.org/wiki/Golden_hamster",
+    "verified": "needs-owner-check",
+    "group": "gestation",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-01",
+    "label": "Players per side on the pitch in Australian rules football",
+    "value": 18,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Australian_rules_football",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-02",
+    "label": "Players per side on the pitch in rugby union",
+    "value": 15,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Rugby_union",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-03",
+    "label": "Players per side on the pitch in Gaelic football",
+    "value": 15,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Gaelic_football",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-04",
+    "label": "Players per side on the pitch in rugby league",
+    "value": 13,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Rugby_league",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-05",
+    "label": "Players per side on the pitch in football",
+    "value": 11,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Association_football",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-06",
+    "label": "Players per side on the field in hockey",
+    "value": 11,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Field_hockey",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-07",
+    "label": "Players per side on the field in men’s lacrosse",
+    "value": 10,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Lacrosse",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-08",
+    "label": "Players per side on the field in baseball",
+    "value": 9,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Baseball",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-09",
+    "label": "Players per side on court in netball",
+    "value": 7,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Netball",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-10",
+    "label": "Players per side in the water in water polo",
+    "value": 7,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Water_polo",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-11",
+    "label": "Players per side on court in volleyball",
+    "value": 6,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Volleyball",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-12",
+    "label": "Players per side on the ice in ice hockey",
+    "value": 6,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Ice_hockey",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-13",
+    "label": "Players per side on court in basketball",
+    "value": 5,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Basketball",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-14",
+    "label": "Players per side in a cricket team",
+    "value": 11,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Cricket",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-team-sizes-15",
+    "label": "Players per side in polo",
+    "value": 4,
+    "unit": "players",
+    "source": "https://en.wikipedia.org/wiki/Polo",
+    "verified": "needs-owner-check",
+    "group": "team-sizes",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-01",
+    "label": "Letter tiles in an English Scrabble set",
+    "value": 100,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Scrabble",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-02",
+    "label": "Squares on a Snakes and Ladders board",
+    "value": 100,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Snakes_and_ladders",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-03",
+    "label": "Cards in a standard deck (no jokers)",
+    "value": 52,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Standard_52-card_deck",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-04",
+    "label": "Blocks in a standard Jenga set",
+    "value": 54,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Jenga",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-05",
+    "label": "Checkers (counters) in a backgammon set",
+    "value": 30,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Backgammon",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-06",
+    "label": "Tiles in a double-six domino set",
+    "value": 28,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Dominoes",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-07",
+    "label": "Properties to buy on a UK Monopoly board",
+    "value": 28,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-08",
+    "label": "Counters in a game of draughts",
+    "value": 24,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/English_draughts",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-09",
+    "label": "Rooms on the classic Cluedo board",
+    "value": 9,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Cluedo",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-10",
+    "label": "Weapons in classic Cluedo",
+    "value": 6,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Cluedo",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-11",
+    "label": "Dice used in Yahtzee",
+    "value": 5,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Yahtzee",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-12",
+    "label": "Pins in ten-pin bowling",
+    "value": 10,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Ten-pin_bowling",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-game-kit-13",
+    "label": "Spaces around a UK Monopoly board",
+    "value": 40,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+    "verified": "needs-owner-check",
+    "group": "game-kit",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-01",
+    "label": "Vertebrae in a typical human spine",
+    "value": 33,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Vertebral_column",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-02",
+    "label": "Bones in a human hand and wrist",
+    "value": 27,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Hand",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-03",
+    "label": "Bones in a human foot",
+    "value": 26,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Foot",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-04",
+    "label": "Ribs in a typical human",
+    "value": 24,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Rib_cage",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-05",
+    "label": "Bones in the human skull",
+    "value": 22,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Skull",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-06",
+    "label": "Bones in the human ear (both ears)",
+    "value": 6,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Ossicles",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-07",
+    "label": "Lobes in the human lungs altogether",
+    "value": 5,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Lung",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-08",
+    "label": "Chambers in the human heart",
+    "value": 4,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Heart",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-body-counts-09",
+    "label": "Teeth in a child’s first (milk) set",
+    "value": 20,
+    "unit": "",
+    "source": "https://en.wikipedia.org/wiki/Deciduous_teeth",
+    "verified": "needs-owner-check",
+    "group": "body-counts",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-01",
+    "label": "Diameter of Jupiter",
+    "value": 139820,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Jupiter",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-02",
+    "label": "Diameter of Saturn",
+    "value": 116460,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Saturn",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-03",
+    "label": "Diameter of Uranus",
+    "value": 50724,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Uranus",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-04",
+    "label": "Diameter of Neptune",
+    "value": 49244,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Neptune",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-05",
+    "label": "Diameter of the Earth",
+    "value": 12742,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Earth",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-06",
+    "label": "Diameter of Venus",
+    "value": 12104,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Venus",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-07",
+    "label": "Diameter of Mars",
+    "value": 6779,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Mars",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-08",
+    "label": "Diameter of Ganymede, Jupiter’s largest moon",
+    "value": 5268,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Ganymede_(moon)",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-09",
+    "label": "Diameter of Titan, Saturn’s largest moon",
+    "value": 5150,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Titan_(moon)",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-10",
+    "label": "Diameter of Mercury",
+    "value": 4879,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Mercury_(planet)",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-11",
+    "label": "Diameter of the Moon",
+    "value": 3474,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Moon",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-moons-planets-size-12",
+    "label": "Diameter of Pluto",
+    "value": 2377,
+    "unit": "km",
+    "source": "https://en.wikipedia.org/wiki/Pluto",
+    "verified": "needs-owner-check",
+    "group": "moons-planets-size",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-01",
+    "label": "Top speed of Concorde",
+    "value": 1354,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/Concorde",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-02",
+    "label": "Land speed record set by Thrust SSC in 1997",
+    "value": 763,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/ThrustSSC",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-03",
+    "label": "Water speed record set by Donald Campbell in 1964",
+    "value": 276,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/Bluebird_K7",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-04",
+    "label": "Steam record set by the locomotive Mallard",
+    "value": 126,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/LNER_Class_A4_4468_Mallard",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-05",
+    "label": "First officially recorded 100 mph steam run (Flying Scotsman, 1934)",
+    "value": 100,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/LNER_Class_A3_4472_Flying_Scotsman",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-06",
+    "label": "National speed limit on UK motorways",
+    "value": 70,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/Speed_limits_in_the_United_Kingdom",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
+  },
+  {
+    "id": "v35-hl-record-speeds-07",
+    "label": "Default speed limit in built-up areas of England",
+    "value": 30,
+    "unit": "mph",
+    "source": "https://en.wikipedia.org/wiki/Speed_limits_in_the_United_Kingdom",
+    "verified": "needs-owner-check",
+    "group": "record-speeds",
+    "kind": "fact"
   }
 ]
