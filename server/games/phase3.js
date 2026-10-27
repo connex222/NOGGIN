@@ -309,7 +309,7 @@ function winners(m){
 }
 function advance(room,now,finishTurn,rng=crypto.randomInt){
  const b=room.board,m=b.minigame;if(!m)return;
- // Server-owned 1.8s reveal: no client receives correct answers before this.
+ // Server-owned 2.8s reveal (4.0s relaxed): correct answers stay hidden until reveal.
  // The round key remains stable during reveal; late inputs are rejected.
  if(m.phase==='reveal'){if(!m.finalReveal){nextRound(room,now,rng);return;}}
  else{
