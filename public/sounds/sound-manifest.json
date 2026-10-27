@@ -1,5 +1,5 @@
 {
-  "description": "Local audio cues and loops; origins and redistribution licences require verification (see README.md).",
+  "description": "NOGGIN local Creative Claw premium sound effects and music; no third-party audio hosting required.",
   "files": [
     "sfx-join.mp3",
     "sfx-dice-roll.mp3",
@@ -23,8 +23,8 @@
     "mus-victory.mp3"
   ],
   "music": {
-    "lobby": "mus-lobby.ogg",
-    "board": "mus-board.ogg",
-    "tension": "mus-tension.ogg"
+    "lobby": "creativeclaw-lobby.mp3",
+    "board": "creativeclaw-board.mp3",
+    "tension": "creativeclaw-tension.mp3"
   }
 }
