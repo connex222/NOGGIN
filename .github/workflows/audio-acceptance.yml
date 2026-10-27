@@ -8,6 +8,13 @@ on:
       - tests/batch3-regression.test.js
       - tests/batch4-content-reveal.test.js
       - tests/batch5-bid-fairness.test.js
+      - tests/batch6-answer-quality.test.js
+      - data/unscramble.json
+      - data/noise-clues.json
+      - data/sketch-words.json
+      - data/buzzer-questions.json
+      - server/answer-match.js
+      - server/games/phase4.js
       - data/bid-categories.json
       - server/games/phase5.js
       - server/rooms.js
