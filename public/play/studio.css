@@ -88,7 +88,7 @@ body.time-critical .game-countdown{color:#ffe188}
 .game-buttons .mini-answer input{width:100%;min-height:58px;font-size:21px}
 .game-buttons .mini-answer button{min-height:62px}
 .game-buttons .mini-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;width:100%;margin:3px 0 0;min-width:0}
-.game-buttons .mini-grid-button{padding:0!important;min-width:0!important;min-height:clamp(45px,13.6vw,58px)!important;font-family:'Noggin Display',sans-serif;border:2px solid #56c8ff!important;border-radius:9px;font-size:clamp(17px,5vw,24px)!important;color:white!important;background:linear-gradient(155deg,#167bdb,#063c9d 55%,#0e2d72)!important;box-shadow:inset 0 1px 4px #acf5ff50,0 2px 2px #0009,0 0 7px #06beff32}
+.game-buttons .mini-grid-button{padding:0!important;min-width:0!important;min-height:clamp(48px,13.6vw,58px)!important;font-family:'Noggin Display',sans-serif;border:2px solid #56c8ff!important;border-radius:9px;font-size:clamp(17px,5vw,24px)!important;color:white!important;background:linear-gradient(155deg,#167bdb,#063c9d 55%,#0e2d72)!important;box-shadow:inset 0 1px 4px #acf5ff50,0 2px 2px #0009,0 0 7px #06beff32}
 .game-buttons .mini-grid-button:active{background:#ffbb39!important;color:#071133!important}
 .game-buttons .memory-pads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .game-buttons .memory-pad{min-height:clamp(82px,24vw,120px)!important;border:3px solid #ffe38b!important;border-radius:17px;font-size:clamp(36px,10vw,50px)!important;box-shadow:0 0 11px #ffd24f67,inset 0 2px 3px #ffffffbd,0 5px 0 #683a19}
