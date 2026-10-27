@@ -8,7 +8,7 @@ One page. Tick it off on the day.
 - [ ] Charge the laptop you'll use as the backup (see the bottom of this page).
 
 ## 5 minutes before guests arrive
-- [ ] Open the TV page (`https://YOUR-SERVICE.onrender.com/tv/`). The free Render server goes to sleep when nobody uses it. The first visit wakes it, which can take up to a minute.
+- [ ] Open the TV page (`https://noggin-0u32.onrender.com/tv/`). The free Render server goes to sleep when nobody uses it. The first visit wakes it, which can take up to a minute.
 - [ ] Wait until the room code and QR code appear.
 - [ ] Click **▶ Enable sound** once on the TV. Browsers stay silent until someone clicks.
 
