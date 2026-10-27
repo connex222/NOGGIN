@@ -1,6 +1,6 @@
 ## NOGGIN ALPHA — v3.5.0-alpha.0 (single development baseline)
 
-**Alpha release:** the consolidated, playable v3.5.0 game, kept on GitHub `main` and automatically deployed to Render. This is not yet a fully acceptance-tested production release. The 2026 v3.5.0 rules and content are unchanged. A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
+**Alpha release:** the consolidated, playable v3.5.0 game, kept on GitHub `main` and automatically deployed to Render. The owner confirms multiplayer acceptance testing, editorial fact-checking and commercial audio/artwork licensing clearance have been completed. These are owner-attested sign-offs; supporting test reports and rights evidence have not been independently inspected in this update. The 2026 v3.5.0 rules and content are unchanged. A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
 
 ### HEADSTART — the tutorial on the TV
 Press **🎓 HEADSTART** on the TV's front page (bottom left) for a five-minute crash course that plays itself. Use ◀ ▶ (or a remote's arrows) to skip, Space to pause, Esc to leave, and 🔊 to switch read-aloud narration on or off. It works before anyone has joined, so new players can watch it while others arrive.
@@ -74,5 +74,5 @@ For complete Windows/network/cloud installation help, see [INSTALL.md](INSTALL.m
 
 The game runs without CDNs or external runtime resources. Starting a new Windows install requires `npm install` if dependencies are not already installed. Node.js/Express/Socket.IO serve the game from this folder; only one active server should host a given room.
 
-### Audio and artwork licensing — before public release (D18)
-NOGGIN is currently intended for private games nights. **Do not assume the bundled music, sound effects, narration, avatar art or fonts are licensed for public or commercial redistribution.** Check each asset's creator and licence, keep receipts or permission records, and replace anything with unverified rights before selling or publicly publishing the game. See [the audio licence inventory](public/sounds/README.md) for the unresolved audio entries. Generated recordings still require the relevant service's usage terms to be reviewed.
+### Audio and artwork licensing — owner sign-off (D18)
+On 27 October 2026 the owner confirmed that commercial audio/artwork licensing clearance, editorial fact-checking and multiplayer acceptance testing were completed. This is a recorded owner approval, **not an independent inspection of licences, source documents or test results**. Keep the underlying permission records and acceptance evidence with the release. The [historical audio inventory](public/sounds/README.md) records pre-clearance concerns and should be reconciled against the retained proof before external distribution.
