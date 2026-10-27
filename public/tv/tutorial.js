@@ -325,7 +325,7 @@
     root.addEventListener('keydown', onKey);
     voiceLabel();
   }
-  function voiceLabel() {const b = $('htVoice'); b.textContent = readAloud ? '🔊 READ ALOUD: ON' : '🔈 READ ALOUD: OFF'; b.setAttribute('aria-pressed', String(readAloud));}
+  function voiceLabel() {const b = $('htVoice'); b.textContent = readAloud ? '🔊 STUDIO VOICE ON' : '🔈 VOICE OFF'; b.setAttribute('aria-pressed', String(readAloud));}
   function onKey(e) {
     const k = e.key;
     if (['ArrowRight', 'PageDown', 'MediaTrackNext'].includes(k) || (k === 'Enter' && e.target === root)) {e.preventDefault(); show(index + 1);}
