@@ -5,6 +5,9 @@ on:
     paths:
       - tests/audio-end-to-end.test.js
       - tests/batch2-regression.test.js
+      - tests/batch3-regression.test.js
+      - public/play/play.css
+      - public/play/studio.css
       - server/board.js
       - server/rooms.js
       - public/play/play.js
