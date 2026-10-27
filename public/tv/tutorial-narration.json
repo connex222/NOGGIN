@@ -1,0 +1,86 @@
+{
+  "provider": "Creative Claw",
+  "model": "speech/elevenlabs-v4",
+  "voice": "Dan — British male",
+  "sceneCount": 19,
+  "hosting": "Creative Claw CDN; browser speech fallback",
+  "notes": "Files are remotely hosted; premium voice requires internet.",
+  "slides": [
+    {
+      "index": 0,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/0a1d95ee-db73-4266-a0b4-291f6d90799c.mp3"
+    },
+    {
+      "index": 1,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/406de0c2-7d83-4531-abb3-93ed316067ea.mp3"
+    },
+    {
+      "index": 2,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/771405a1-5d0b-40ee-9143-3cbbd037b956.mp3"
+    },
+    {
+      "index": 3,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/d3e658c0-6c60-4a13-8fa3-f19f0932722a.mp3"
+    },
+    {
+      "index": 4,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/b79648a5-3704-41da-8f5f-b97f69dfc4f9.mp3"
+    },
+    {
+      "index": 5,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/73a63734-0ee1-410f-819a-de0ca3beb14c.mp3"
+    },
+    {
+      "index": 6,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/775cb29a-dca9-4f4f-91dc-62f097fb8343.mp3"
+    },
+    {
+      "index": 7,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/1f1487b4-bdda-419a-b8f0-ac1706cda1ef.mp3"
+    },
+    {
+      "index": 8,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/dfa8b761-04c9-45d5-b28c-171375d63517.mp3"
+    },
+    {
+      "index": 9,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/ff053472-b69f-4b6d-b134-4398a3f82597.mp3"
+    },
+    {
+      "index": 10,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/02cb31e8-f814-4621-b2fb-82e364d07ff4.mp3"
+    },
+    {
+      "index": 11,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/bea920ac-f1e3-4e72-bb91-4544b5f1cc20.mp3"
+    },
+    {
+      "index": 12,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/3b548c04-831d-4b11-8553-294181a26112.mp3"
+    },
+    {
+      "index": 13,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/080fd6a6-607e-4735-a7d3-6551f12483f8.mp3"
+    },
+    {
+      "index": 14,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/208d4f27-f624-4d67-9ffa-13a71e0a2e2a.mp3"
+    },
+    {
+      "index": 15,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/5a606af1-f1d1-4175-8755-880f145837c6.mp3"
+    },
+    {
+      "index": 16,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/2dff8dca-2afe-4acd-b5bd-f909a196e58a.mp3"
+    },
+    {
+      "index": 17,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/e109d774-3d43-46c5-9922-f06ea98378c9.mp3"
+    },
+    {
+      "index": 18,
+      "url": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/fbae06e5-4ff8-46eb-971c-917f77b0c42e.mp3"
+    }
+  ]
+}
