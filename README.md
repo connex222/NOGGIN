@@ -1,6 +1,6 @@
-## NOGGIN v3.5.0 — Game-night ready
+## NOGGIN ALPHA — v3.5.0-alpha.0 (single development baseline)
 
-A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
+**Alpha release:** the consolidated, playable v3.5.0 game, kept on GitHub `main` and automatically deployed to Render. This is not yet a fully acceptance-tested production release. The 2026 v3.5.0 rules and content are unchanged. A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
 
 ### HEADSTART — the tutorial on the TV
 Press **🎓 HEADSTART** on the TV's front page (bottom left) for a five-minute crash course that plays itself. Use ◀ ▶ (or a remote's arrows) to skip, Space to pause, Esc to leave, and 🔊 to switch read-aloud narration on or off. It works before anyone has joined, so new players can watch it while others arrive.
