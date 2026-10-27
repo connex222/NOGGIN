@@ -10,6 +10,11 @@ on:
       - tests/batch5-bid-fairness.test.js
       - tests/batch6-answer-quality.test.js
       - tests/batch7-speed-accessibility.test.js
+      - tests/batch8-board-engagement.test.js
+      - server/board.js
+      - server/games/phase4.js
+      - server/games/phase5.js
+      - public/shared/board-data.json
       - public/tv/board-view.js
       - data/unscramble.json
       - data/noise-clues.json
