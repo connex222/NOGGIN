@@ -1,0 +1,36 @@
+name: NOGGIN Audio and Batch 1 Acceptance
+on:
+  push:
+    branches: [main]
+    paths:
+      - tests/audio-end-to-end.test.js
+      - .github/workflows/audio-acceptance.yml
+      - public/voice/**
+      - public/sounds/**
+      - public/audio/tutorial/**
+      - public/shared/creativeclaw-audio.json
+      - public/tv/sound.js
+      - public/tv/tutorial.js
+      - server/games/**
+      - server/rooms.js
+      - server/gateway.js
+      - data/unscramble.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install production dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Static syntax checks
+        run: npm run check
+      - name: Run full regression suite, including server audio endpoint testing
+        run: npm test
