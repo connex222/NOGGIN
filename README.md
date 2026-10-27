@@ -73,3 +73,6 @@ NOGGIN is a local-first party board game for **2–8 players**. The TV or laptop
 For complete Windows/network/cloud installation help, see [INSTALL.md](INSTALL.md). For game rules, see [HOW-TO-PLAY.pdf](HOW-TO-PLAY.pdf). For verification results see [TEST-RESULTS.md](TEST-RESULTS.md).
 
 The game runs without CDNs or external runtime resources. Starting a new Windows install requires `npm install` if dependencies are not already installed. Node.js/Express/Socket.IO serve the game from this folder; only one active server should host a given room.
+
+### Audio and artwork licensing — before public release (D18)
+NOGGIN is currently intended for private games nights. **Do not assume the bundled music, sound effects, narration, avatar art or fonts are licensed for public or commercial redistribution.** Check each asset's creator and licence, keep receipts or permission records, and replace anything with unverified rights before selling or publicly publishing the game. See [the audio licence inventory](public/sounds/README.md) for the unresolved audio entries. Generated recordings still require the relevant service's usage terms to be reviewed.
