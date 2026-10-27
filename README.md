@@ -1,3 +1,23 @@
+## NOGGIN v3.5.0 — Game-night ready
+
+A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
+
+### HEADSTART — the tutorial on the TV
+Press **🎓 HEADSTART** on the TV's front page (bottom left) for a five-minute crash course that plays itself. Use ◀ ▶ (or a remote's arrows) to skip, Space to pause, Esc to leave, and 🔊 to switch read-aloud narration on or off. It works before anyone has joined, so new players can watch it while others arrive.
+
+### Developer-only folders (do not deploy, do not delete)
+- `source-art/` — original artwork and the full-size font used to make the shipped files. Not served to players.
+- `docs/previews/` — screenshots written by the browser smoke tests in `tools/`. Safe to regenerate.
+
+### Making the body font smaller again (D14)
+`public/shared/fonts/lato-regular.woff2` now ships as a Latin subset (about 27 KB, down from 212 KB). It covers English, Welsh (ŵ ŷ), and most European accents; anything else (e.g. emoji, Vietnamese) falls back to the device's own font automatically. The full original is kept at `source-art/fonts/lato-regular-full.woff2`. To rebuild the subset yourself:
+1. Install Python 3 from python.org (tick **Add python.exe to PATH**).
+2. Open **Command Prompt** and run: `pip install fonttools brotli`
+3. In the project folder, run this one line:
+   `pyftsubset source-art/fonts/lato-regular-full.woff2 --flavor=woff2 --output-file=public/shared/fonts/lato-regular.woff2 --unicodes="U+0000-00FF,U+0100-017F,U+0218-021B,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2193,U+2212,U+2215,U+FEFF,U+FFFD" --layout-features="kern,liga,clig,calt,ccmp,locl,mark,mkmk" --no-hinting --desubroutinize`
+4. Check the file is about 25–30 KB, then refresh the TV page.
+   (No Python? The free web tool *Everything Fonts → Font Subsetter* can do the same job: upload the full font, choose "Latin" and "Latin Extended-A", download as WOFF2.)
+
 ## NOGGIN v3 — The Round Loop
 
 Each round, everyone rolls once on a 28-space trapezium. Land on a coloured space to **call** the round's game and host it; corners are Showdowns. Then the whole panel plays that game together. After the final round — **Last Orders**, where Spark gains are doubled — the most Sparks wins. See [CHANGELOG.md](CHANGELOG.md) and [HOW-TO-PLAY.pdf](HOW-TO-PLAY.pdf).

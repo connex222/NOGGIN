@@ -15,7 +15,7 @@ Tips: record on your phone in a quiet room, about 20 cm from your mouth. Big ene
 | ⬜ | `brain-drain.mp3` | Brain Drain question | “Brain Drain! Five seconds. Go!”<br>“Brain Drain! Quick — think!” |
 | ⬜ | `applause.mp3` | Someone lands on Applause | “Give them a round of applause!”<br>“The studio loves you. Two Sparks!” |
 | ⬜ | `pickpocket.mp3` | Someone lands on Pickpocket | “Pickpocket! Hands where I can see them.”<br>“Cheeky! A Spark straight out of the leader's pocket.” |
-| ⬜ | `swap.mp3` | Someone lands on Swap Seats | “Swap seats! All change.”<br>“Swap! Somebody's not happy about that.” |
+| ⬜ | `steal.mp3` | Someone lands on Steal the Call (replaced Swap Seats in v3.5.0) | “Steal the call! You're hosting this one.”<br>“Cheeky! Somebody just stole the call.” |
 | ⬜ | `lift.mp3` | Someone takes the Stage Lift | “Going up! Mind the doors.”<br>“Stage Lift — all the way across.” |
 | ⬜ | `verdict-big.mp3` | Someone gains 3 or more Sparks | “Now THAT is how you play NOGGIN!”<br>“Massive! Somebody's having a good night.” |
 | ⬜ | `verdict-gain.mp3` | Someone gains Sparks | “Lovely stuff.”<br>“Sparks for you!” |

@@ -1,3 +1,14 @@
+# NOGGIN v3.5.0 — game-night ready (26 October 2026)
+
+- `npm test`: **378 pass, 0 fail, 1 skipped** (the skip is unchanged from v3.4.0).
+- `npm run check`: all server and client files parse.
+- `node tools/simulate.js 150`: 600 / 600 simulated games finish (2, 4, 6 and 8 players).
+- `npm run audit`: no errors; editorial items awaiting owner checks are listed in `docs/editorial/`.
+- Browser checks in Chromium: phone layouts (72 scenes at 360/390/430 px), phone input (25 checks), TV arena board (3 viewports).
+- Not tested here: real phones on a real home network, and Render hosting. Use `GAME-NIGHT-CHECKLIST.md` before the first night.
+
+---
+
 # NOGGIN v3.4.0 — content pass 1
 
 - Node.js tests: **284 passed, 0 failed** (1 live-HTTP test skipped without `npm install`). `npm run check` passed. Release audit **106/106**; 342 content items await editorial sign-off (including the 253 new ones).

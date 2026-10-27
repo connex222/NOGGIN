@@ -1,3 +1,70 @@
+# NOGGIN v3.5.0 — Game-night ready (26 October 2026)
+
+Fairness, reliability and content fixes from the v3.5.0 review brief, delivered in nine batches. Every new fact and question is flagged `needs-owner-check` until checked against its source (see `docs/editorial/`).
+
+## Batch 1 — Game-night blockers
+- **D2** Speed and Brain games now show their how-to card, voice line and reel sound; answers are refused until the card ends (a comment had swallowed the code).
+- **D1** Refreshing a phone (or a second resume on one connection) no longer deletes the seat; temporary failures retry instead of clearing the session.
+- **Q2** FLASHER and INSECT removed; other words with rude UK second meanings replaced; scrambled letters can never spell a rude word.
+- **G5** The host no longer loses a Spark when everyone ties a Speed/Brain game.
+- **G4** Relay Sums: both teams get the same number of sums; first team to finish wins, otherwise the bigger share.
+- **D9** Every request gets the right view back; only the TV receives TV-only cues.
+
+## Batch 2 — Connections and interruptions
+- **D4** Lobby seats are held for 10 minutes; ready-but-asleep phones no longer block START; phones request a screen wake lock.
+- **D3** The TV explains a server restart with a banner and the new room code; phones say "scan the new QR code"; the TV pings `/health` every 4 minutes; new `GAME-NIGHT-CHECKLIST.md`.
+- **D5** Only Sketch & Sabotage, Noise Annoys, Mind Meld and Bomb Squad wait for an offline host; after 30 s hosting passes to the next player and the game restarts.
+- **D13** Blocked browser storage (private browsing) never stops joining or sound.
+
+## Batch 3 — Phone input reliability
+- **D6** Phone controls are patched in place instead of rebuilt, so taps are never lost; the avatar picker rebuilds only when needed.
+- **D12** VIP dropdowns no longer snap shut on every update.
+- **D15** Every phone tap target is at least 48 × 48 px; Odd Spot level 5 uses size, not a faint shade.
+- **D16** The phone remembers your last name and character.
+- **D11** The countdown sound plays once, and not on rounds shorter than 5 s.
+
+## Batch 4 — Brain content and tie-breaks
+- **Q1** 100 estimation Close Call questions and 152 Higher-or-Lower facts in comparable groups (old arithmetic kept as a fallback only); Close Call ties go to the earlier answer; the Noggin-Off never uses sums and allows one replay, then the earliest answer wins.
+- **Q8** Reveals last 2.8 s (4 s relaxed) with a sting, including the final round; Close Call lists every guess, closest first.
+
+## Batch 5 — Bid to Win fairness
+- **G3** The rival bids first.
+- **D10** Only the TV or a player outside the duel can judge an answer (never a duellist, not even the VIP); first decision wins.
+- **Q7** Unlimited reviews; trivial, silly and vague categories removed (120 → 66); open categories accept 40+ answers with aliases; new checkable categories added.
+
+## Batch 6 — Answer matching
+- **Q3** Unscramble accepts real-word anagrams (OCEANS/CANOES…) and every word has a specific category clue.
+- **Q4** Sketch accepts fair alternative names; Noise wins only on key nouns; a private "Close!" hint for near misses; duplicate Sketch prompts replaced.
+- **Q5** Numbers typed as digits or words match ("5" = "five").
+- **Q6** Every general Buzzer question is tagged easy/medium/hard (≈40/40/20); 128 new medium/hard questions; duels climb in difficulty; answers reshuffled every time; duplicates and extra planet questions removed.
+
+## Batch 7 — Fair speed and accessibility
+- **D7** Quick Draw and Buzzer Battle reward the fastest reaction measured on each phone, not the phone nearest the router (150 ms buzz window).
+- **D8** New Colour-blind safe setting: Colour Clash becomes Shape Clash.
+
+## Batch 8 — Board decisions and engagement
+- **G1** Everyone Rolls: the lander picks their Showdown rival; the caller picks 1 of 2 games (8 s each).
+- **G2** Spotlight Picks work in Classic (+1 Spark outside the top two); Buzzer Battle is first to 3, at most 5 questions.
+- **G6** Mind Meld: everyone plays in pairs at once.
+- **G7** Steal the Call replaces Swap Seats.
+- **G8** A live CALL badge and "steals the call" line as tokens land.
+- **G11** First-time explainers for special spaces.
+- **G12** A standings sting before Last Orders.
+- **Q9** Phones show the gap to the leader in the final three rounds.
+
+## New — HEADSTART, the TV tutorial
+- **HEADSTART** ("the NOGGIN crash course"): a 19-slide, self-running tutorial played on the TV, with live mini-board animations (rolling, calling and stealing the call), every game's rules card, scoring, Showdowns, special spaces, Last Orders and house tips. Optional read-aloud narration, keyboard/remote controls (◀ ▶, Space, Esc), and a **START A ROOM** finale. Opened from a new button on the front page or from the How to Play box. Every number and game name it quotes is checked against the server by `tests/tutorial.test.js`.
+
+## Batch 9 — Rules, docs and tidy-up
+- **G9** How-to cards use Classic wording for Memory Lane and Count Flash.
+- **G10** `HOW-TO-PLAY.pdf` scoring updated (team games, Bomb Squad, Sketch saboteur, Steal the Call, Spotlight Picks, Noggin-Off replay, Shape Clash).
+- **D14** Body font subset to Latin (212 KB → 27 KB); README explains how to rebuild it.
+- **D17** Removed the unreachable board tie-break code, the unused `data/demo-questions.json`, `sfx-hop .mp3` and the roulette sound; the welcome screen focuses a real control.
+- **D18** "Before public release" licence note in `public/sounds/README.md`.
+- Version bumped to **3.5.0**.
+
+---
+
 # NOGGIN v3.4.0 — Content pass 1: real quizzing, real bluffing (24 October 2026)
 
 - **Host voice installed and levelled.** All 56 recorded clips (36 of 36 lines) are in. They were loudness-matched so no line is much quieter than another (spread cut from about 9 dB to under 4).
