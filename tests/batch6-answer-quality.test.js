@@ -7,9 +7,9 @@ const root=path.join(__dirname,'..');
 const json=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const text=p=>fs.readFileSync(path.join(root,p),'utf8');
 
-test('Q3: all 350 Unscramble entries have specific clues and avoid known family-safety problems',()=>{
+test('Q3: all 375 Unscramble entries have specific clues and avoid known family-safety problems',()=>{
  const data=json('data/unscramble.json');
- assert.equal(data.length,350);
+ assert.equal(data.length,375);
  for(const item of data){
   assert.ok(item.word&&item.category&&item.category.toLowerCase()!=='everyday words',item.id);
   assert.ok(!['FLASHER','INSECT'].includes(item.word.toUpperCase()),item.id);
@@ -19,9 +19,9 @@ test('Q3: all 350 Unscramble entries have specific clues and avoid known family-
  assert.match(engine,/accept:\[item\.word,\.\.\.\(item\.accept\|\|\[\]\)\]/);
 });
 
-test('Q4: all 250 Noise clues have declared aliases, Sketch has alternative answers',()=>{
+test('Q4: all 280 Noise clues have declared aliases, Sketch has alternative answers',()=>{
  const noises=json('data/noise-clues.json'),words=json('data/sketch-words.json');
- assert.equal(noises.length,250);
+ assert.equal(noises.length,280);
  for(const n of noises)assert.ok(Array.isArray(n.aliases)&&n.aliases.length,n.id);
  assert.ok(words.length>=500&&words.some(w=>w.accept?.length));
  const code=text('server/games/phase4.js');
