@@ -7,7 +7,7 @@ const root=path.join(__dirname,'..');
 const read=p=>fs.readFileSync(path.join(root,p),'utf8');
 test('Batch 9: published version and release notes document all brief items',()=>{
  const pkg=JSON.parse(read('package.json'));
- assert.equal(pkg.version,'3.5.0-alpha.0');
+ assert.equal(pkg.version,'3.5.0-alpha.1');
  const changes=read('CHANGELOG.md');
  assert.match(changes,/Batch 9 — Rules, docs and tidy-up/);
  for(const id of ['G9','G10','D14','D17','D18']) assert.match(changes,new RegExp('\\b'+id+'\\b'));
