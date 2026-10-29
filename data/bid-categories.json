@@ -4608,5 +4608,186 @@
         "kalah"
       ]
     }
+  },
+  {
+    "id": "alpha250-bid-001",
+    "prompt": "Name the six wives of Henry VIII",
+    "answers": [
+      "Catherine of Aragon",
+      "Anne Boleyn",
+      "Jane Seymour",
+      "Anne of Cleves",
+      "Catherine Howard",
+      "Catherine Parr"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-002",
+    "prompt": "Name the nine Muses of Greek mythology",
+    "answers": [
+      "Calliope",
+      "Clio",
+      "Erato",
+      "Euterpe",
+      "Melpomene",
+      "Polyhymnia",
+      "Terpsichore",
+      "Thalia",
+      "Urania"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-003",
+    "prompt": "Name the seven traditional deadly sins",
+    "answers": [
+      "Pride",
+      "Greed",
+      "Lust",
+      "Envy",
+      "Gluttony",
+      "Wrath",
+      "Sloth"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-004",
+    "prompt": "Name the seven novels in the Harry Potter series",
+    "answers": [
+      "Philosopher’s Stone",
+      "Chamber of Secrets",
+      "Prisoner of Azkaban",
+      "Goblet of Fire",
+      "Order of the Phoenix",
+      "Half-Blood Prince",
+      "Deathly Hallows"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-005",
+    "prompt": "Name the eight reindeer in the familiar modern Santa Claus tradition",
+    "answers": [
+      "Dasher",
+      "Dancer",
+      "Prancer",
+      "Vixen",
+      "Comet",
+      "Cupid",
+      "Donner",
+      "Blitzen"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-006",
+    "prompt": "Name the seven dwarfs in the Disney animated film Snow White",
+    "answers": [
+      "Doc",
+      "Grumpy",
+      "Happy",
+      "Sleepy",
+      "Bashful",
+      "Sneezy",
+      "Dopey"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-007",
+    "prompt": "Name the eight planets of the Solar System",
+    "answers": [
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-008",
+    "prompt": "Name the ten plagues of Egypt in the Book of Exodus",
+    "answers": [
+      "Water to blood",
+      "Frogs",
+      "Lice",
+      "Flies",
+      "Diseased livestock",
+      "Boils",
+      "Hail",
+      "Locusts",
+      "Darkness",
+      "Death of firstborn"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-009",
+    "prompt": "Name the four Teenage Mutant Ninja Turtles",
+    "answers": [
+      "Leonardo",
+      "Donatello",
+      "Raphael",
+      "Michelangelo"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
+  },
+  {
+    "id": "alpha250-bid-010",
+    "prompt": "Name the five main Great Lakes of North America",
+    "answers": [
+      "Superior",
+      "Michigan",
+      "Huron",
+      "Erie",
+      "Ontario"
+    ],
+    "kind": "closed",
+    "review": true,
+    "editorialStatus": "review-pending",
+    "verified": "needs-owner-check",
+    "aliases": {}
   }
 ]
