@@ -1,4 +1,6 @@
-## NOGGIN ALPHA — v3.5.0-alpha.0 (single development baseline)
+## NOGGIN ALPHA — v3.5.0-alpha.1 (single development baseline)
+
+**Content release (29 October 2026):** Added 250 owner-verified items across seven game libraries (80 Buzzer, 35 Close Call, 40 Higher or Lower, 25 Unscramble, 30 Sketch, 30 Noise, 10 Bid), raising those libraries from 2,626 to 2,876 items. Existing gameplay and art remain unchanged.
 
 **Alpha release:** the consolidated, playable v3.5.0 game, kept on GitHub `main` and automatically deployed to Render. The owner confirms multiplayer acceptance testing, editorial fact-checking and commercial audio/artwork licensing clearance have been completed. These are owner-attested sign-offs; supporting test reports and rights evidence have not been independently inspected in this update. The 2026 v3.5.0 rules and content are unchanged. A fairness, reliability and content release. Everything is listed by item in [CHANGELOG.md](CHANGELOG.md). Before a game night, run through [GAME-NIGHT-CHECKLIST.md](GAME-NIGHT-CHECKLIST.md).
 
