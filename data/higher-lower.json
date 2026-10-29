@@ -5158,5 +5158,405 @@
     "verified": "needs-owner-check",
     "group": "record-speeds",
     "kind": "fact"
+  },
+  {
+    "id": "alpha250-hl-01-1",
+    "label": "Atomic number of Hydrogen",
+    "value": 1,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-01-2",
+    "label": "Atomic number of Helium",
+    "value": 2,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-02-1",
+    "label": "Atomic number of Lithium",
+    "value": 3,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-02-2",
+    "label": "Atomic number of Beryllium",
+    "value": 4,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-03-1",
+    "label": "Atomic number of Boron",
+    "value": 5,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-03-2",
+    "label": "Atomic number of Carbon",
+    "value": 6,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-04-1",
+    "label": "Atomic number of Nitrogen",
+    "value": 7,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-04-2",
+    "label": "Atomic number of Oxygen",
+    "value": 8,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-05-1",
+    "label": "Atomic number of Fluorine",
+    "value": 9,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-05-2",
+    "label": "Atomic number of Neon",
+    "value": 10,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-06-1",
+    "label": "Atomic number of Sodium",
+    "value": 11,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-06-2",
+    "label": "Atomic number of Magnesium",
+    "value": 12,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-07-1",
+    "label": "Atomic number of Aluminium",
+    "value": 13,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-07-2",
+    "label": "Atomic number of Silicon",
+    "value": 14,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-08-1",
+    "label": "Atomic number of Phosphorus",
+    "value": 15,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-08-2",
+    "label": "Atomic number of Sulfur",
+    "value": 16,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-09-1",
+    "label": "Atomic number of Chlorine",
+    "value": 17,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-09-2",
+    "label": "Atomic number of Argon",
+    "value": 18,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-10-1",
+    "label": "Atomic number of Potassium",
+    "value": 19,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-10-2",
+    "label": "Atomic number of Calcium",
+    "value": 20,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-11-1",
+    "label": "Atomic number of Scandium",
+    "value": 21,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-11-2",
+    "label": "Atomic number of Titanium",
+    "value": 22,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-12-1",
+    "label": "Atomic number of Vanadium",
+    "value": 23,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-12-2",
+    "label": "Atomic number of Chromium",
+    "value": 24,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-13-1",
+    "label": "Atomic number of Manganese",
+    "value": 25,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-13-2",
+    "label": "Atomic number of Iron",
+    "value": 26,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-14-1",
+    "label": "Atomic number of Cobalt",
+    "value": 27,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-14-2",
+    "label": "Atomic number of Nickel",
+    "value": 28,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-15-1",
+    "label": "Atomic number of Copper",
+    "value": 29,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-15-2",
+    "label": "Atomic number of Zinc",
+    "value": 30,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-16-1",
+    "label": "Atomic number of Gallium",
+    "value": 31,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-16-2",
+    "label": "Atomic number of Germanium",
+    "value": 32,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-17-1",
+    "label": "Atomic number of Arsenic",
+    "value": 33,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-17-2",
+    "label": "Atomic number of Selenium",
+    "value": 34,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-18-1",
+    "label": "Atomic number of Bromine",
+    "value": 35,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-18-2",
+    "label": "Atomic number of Krypton",
+    "value": 36,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-19-1",
+    "label": "Atomic number of Rubidium",
+    "value": 37,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-19-2",
+    "label": "Atomic number of Strontium",
+    "value": 38,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-20-1",
+    "label": "Atomic number of Yttrium",
+    "value": 39,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-hl-20-2",
+    "label": "Atomic number of Zirconium",
+    "value": 40,
+    "unit": "atomic number",
+    "group": "alpha250-elements-atomic",
+    "source": "https://www.rsc.org/periodic-table",
+    "kind": "fact",
+    "verified": "needs-owner-check"
   }
 ]
