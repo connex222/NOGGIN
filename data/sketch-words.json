@@ -2889,5 +2889,155 @@
     "id": "p6final-sk-197",
     "word": "RADIATOR",
     "category": "Everyday objects and animals"
+  },
+  {
+    "id": "alpha250-sk-001",
+    "word": "PINECONE",
+    "category": "Nature"
+  },
+  {
+    "id": "alpha250-sk-002",
+    "word": "HUMMINGBIRD",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-sk-003",
+    "word": "CHAMELEON",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-sk-004",
+    "word": "RACCOON",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-sk-005",
+    "word": "SQUIRREL",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-sk-006",
+    "word": "ARTICHOKE",
+    "category": "Food"
+  },
+  {
+    "id": "alpha250-sk-007",
+    "word": "CROISSANT",
+    "category": "Food"
+  },
+  {
+    "id": "alpha250-sk-008",
+    "word": "TROMBONE",
+    "category": "Instruments"
+  },
+  {
+    "id": "alpha250-sk-009",
+    "word": "XYLOPHONE",
+    "category": "Instruments"
+  },
+  {
+    "id": "alpha250-sk-010",
+    "word": "UKULELE",
+    "category": "Instruments"
+  },
+  {
+    "id": "alpha250-sk-011",
+    "word": "KETTLEBELL",
+    "category": "Fitness"
+  },
+  {
+    "id": "alpha250-sk-012",
+    "word": "ROLLERBLADE",
+    "category": "Sport"
+  },
+  {
+    "id": "alpha250-sk-013",
+    "word": "SNORKEL",
+    "category": "Sport"
+  },
+  {
+    "id": "alpha250-sk-014",
+    "word": "SURFBOARD",
+    "category": "Sport"
+  },
+  {
+    "id": "alpha250-sk-015",
+    "word": "SPADE",
+    "category": "Gardening"
+  },
+  {
+    "id": "alpha250-sk-016",
+    "word": "MAGNIFIER",
+    "category": "Tools"
+  },
+  {
+    "id": "alpha250-sk-017",
+    "word": "LIGHTBULB",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-018",
+    "word": "CANDLESTICK",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-019",
+    "word": "HAIRDRYER",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-020",
+    "word": "WASHINGMACHINE",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-021",
+    "word": "COFFEEMAKER",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-022",
+    "word": "WHISK",
+    "category": "Kitchen"
+  },
+  {
+    "id": "alpha250-sk-023",
+    "word": "COLANDER",
+    "category": "Kitchen"
+  },
+  {
+    "id": "alpha250-sk-024",
+    "word": "LADLE",
+    "category": "Kitchen"
+  },
+  {
+    "id": "alpha250-sk-025",
+    "word": "ROCKINGCHAIR",
+    "category": "Furniture"
+  },
+  {
+    "id": "alpha250-sk-026",
+    "word": "CEILINGFAN",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-027",
+    "word": "DOORMAT",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-sk-028",
+    "word": "HANGINGBASKET",
+    "category": "Garden"
+  },
+  {
+    "id": "alpha250-sk-029",
+    "word": "FOOTBRIDGE",
+    "category": "Structures"
+  },
+  {
+    "id": "alpha250-sk-030",
+    "word": "VIADUCT",
+    "category": "Structures"
   }
 ]
