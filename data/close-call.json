@@ -2908,5 +2908,320 @@
     "source": "https://en.wikipedia.org/wiki/1896_Summer_Olympics",
     "verified": "needs-owner-check",
     "kind": "estimate"
+  },
+  {
+    "id": "alpha250-cc-001",
+    "question": "In what year did the Norman conquest of England occur?",
+    "answer": 1066,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/event/Norman-Conquest",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-002",
+    "question": "In what year did the signing of Magna Carta occur?",
+    "answer": 1215,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/topic/Magna-Carta",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-003",
+    "question": "In what year did the start of the Great Fire of London occur?",
+    "answer": 1666,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.londonmuseum.org.uk/collections/london-stories/great-fire-london/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-004",
+    "question": "In what year did the Battle of Hastings occur?",
+    "answer": 1066,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/battle-of-hastings/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-005",
+    "question": "In what year did the Battle of Waterloo occur?",
+    "answer": 1815,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/event/Battle-of-Waterloo",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-006",
+    "question": "In what year did the first modern Olympic Games occur?",
+    "answer": 1896,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://olympics.com/en/olympic-games/athens-1896",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-007",
+    "question": "In what year did the first powered flight by the Wright brothers occur?",
+    "answer": 1903,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.nasa.gov/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-008",
+    "question": "In what year did the sinking of RMS Titanic occur?",
+    "answer": 1912,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/topic/Titanic",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-009",
+    "question": "In what year did the start of the First World War occur?",
+    "answer": 1914,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.iwm.org.uk/history",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-010",
+    "question": "In what year did the end of the First World War occur?",
+    "answer": 1918,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.iwm.org.uk/history",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-011",
+    "question": "In what year did the Wall Street Crash occur?",
+    "answer": 1929,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/event/stock-market-crash-of-1929",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-012",
+    "question": "In what year did the start of the Second World War in Europe occur?",
+    "answer": 1939,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.iwm.org.uk/history",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-013",
+    "question": "In what year did the end of the Second World War in Europe occur?",
+    "answer": 1945,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.iwm.org.uk/history",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-014",
+    "question": "In what year did the launch of Sputnik 1 occur?",
+    "answer": 1957,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.nasa.gov/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-015",
+    "question": "In what year did the first human spaceflight by Yuri Gagarin occur?",
+    "answer": 1961,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.nasa.gov/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-016",
+    "question": "In what year did the Apollo 11 Moon landing occur?",
+    "answer": 1969,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.nasa.gov/mission/apollo-11/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-017",
+    "question": "In what year did the fall of the Berlin Wall occur?",
+    "answer": 1989,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/event/fall-of-the-Berlin-Wall",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-018",
+    "question": "In what year did the first iPhone announcement occur?",
+    "answer": 2007,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-019",
+    "question": "In what year did the first FIFA World Cup tournament occur?",
+    "answer": 1930,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.fifa.com/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-020",
+    "question": "In what year did England’s men’s FIFA World Cup victory occur?",
+    "answer": 1966,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.fifa.com/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-021",
+    "question": "In what year did the first Academy Awards ceremony occur?",
+    "answer": 1929,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.oscars.org/oscars/ceremonies/1929",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-022",
+    "question": "In what year did the opening of the Channel Tunnel occur?",
+    "answer": 1994,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.eurotunnel.com/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-023",
+    "question": "In what year did the first London Underground opening occur?",
+    "answer": 1863,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.ltmuseum.co.uk/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-024",
+    "question": "In what year did the opening of Tower Bridge occur?",
+    "answer": 1894,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.towerbridge.org.uk/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-025",
+    "question": "In what year did the opening of the Eiffel Tower occur?",
+    "answer": 1889,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.toureiffel.paris/en",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-026",
+    "question": "In what year did the opening of the Sydney Opera House occur?",
+    "answer": 1973,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.sydneyoperahouse.com/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-027",
+    "question": "In what year did the Great Exhibition in London occur?",
+    "answer": 1851,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.vam.ac.uk/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-028",
+    "question": "In what year did the first publication of A Christmas Carol occur?",
+    "answer": 1843,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.bl.uk/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-029",
+    "question": "In what year did the publication of Frankenstein occur?",
+    "answer": 1818,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.bl.uk/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-030",
+    "question": "In what year did the first publication of The Hobbit occur?",
+    "answer": 1937,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/topic/The-Hobbit",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-031",
+    "question": "In what year did the first publication of Pride and Prejudice occur?",
+    "answer": 1813,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/topic/Pride-and-Prejudice",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-032",
+    "question": "In what year did the first human to reach the South Pole occur?",
+    "answer": 1911,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/biography/Roald-Amundsen",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-033",
+    "question": "In what year did the opening of the Panama Canal occur?",
+    "answer": 1914,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://pancanal.com/en/",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-034",
+    "question": "In what year did the beginning of the American Civil War occur?",
+    "answer": 1861,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.nps.gov/civilwar/index.htm",
+    "verified": "needs-owner-check"
+  },
+  {
+    "id": "alpha250-cc-035",
+    "question": "In what year did the first successful ascent of Mount Everest occur?",
+    "answer": 1953,
+    "unit": "year",
+    "kind": "estimate",
+    "source": "https://www.britannica.com/place/Mount-Everest",
+    "verified": "needs-owner-check"
   }
 ]
