@@ -10437,5 +10437,1365 @@
     "verified": "needs-owner-check",
     "review": true,
     "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-001",
+    "question": "What is the chemical symbol for gold?",
+    "choices": [
+      "Au",
+      "Ag",
+      "Fe",
+      "Pb"
+    ],
+    "correct": 0,
+    "topic": "science",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-002",
+    "question": "What is the chemical symbol for platinum?",
+    "choices": [
+      "Pl",
+      "Pt",
+      "P",
+      "Pm"
+    ],
+    "correct": 1,
+    "topic": "science",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-003",
+    "question": "What is the chemical symbol for cobalt?",
+    "choices": [
+      "Cb",
+      "Ct",
+      "Co",
+      "C"
+    ],
+    "correct": 2,
+    "topic": "science",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-004",
+    "question": "What is the chemical symbol for calcium?",
+    "choices": [
+      "Cl",
+      "C",
+      "Cm",
+      "Ca"
+    ],
+    "correct": 3,
+    "topic": "science",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-005",
+    "question": "What is the chemical symbol for neon?",
+    "choices": [
+      "Ne",
+      "N",
+      "No",
+      "Na"
+    ],
+    "correct": 0,
+    "topic": "science",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-006",
+    "question": "What is the chemical symbol for mercury?",
+    "choices": [
+      "Me",
+      "Hg",
+      "Mc",
+      "Mn"
+    ],
+    "correct": 1,
+    "topic": "science",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-007",
+    "question": "What is the chemical symbol for copper?",
+    "choices": [
+      "Co",
+      "Ca",
+      "Cu",
+      "Cr"
+    ],
+    "correct": 2,
+    "topic": "science",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-008",
+    "question": "What is the chemical symbol for nickel?",
+    "choices": [
+      "Nk",
+      "Nc",
+      "N",
+      "Ni"
+    ],
+    "correct": 3,
+    "topic": "science",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-009",
+    "question": "What is the chemical symbol for zinc?",
+    "choices": [
+      "Zn",
+      "Zi",
+      "Zc",
+      "Z"
+    ],
+    "correct": 0,
+    "topic": "science",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-010",
+    "question": "What is the chemical symbol for tungsten?",
+    "choices": [
+      "Tu",
+      "W",
+      "T",
+      "Ta"
+    ],
+    "correct": 1,
+    "topic": "science",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.rsc.org/periodic-table",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-011",
+    "question": "What galaxy is the Sun part of?",
+    "choices": [
+      "Andromeda",
+      "Triangulum",
+      "Milky Way",
+      "Whirlpool"
+    ],
+    "correct": 2,
+    "topic": "space",
+    "difficulty": "hard",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-012",
+    "question": "What is the closest star to Earth?",
+    "choices": [
+      "Sirius",
+      "Vega",
+      "Polaris",
+      "The Sun"
+    ],
+    "correct": 3,
+    "topic": "space",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-013",
+    "question": "What is an icy small body with a tail near the Sun called?",
+    "choices": [
+      "Comet",
+      "Asteroid",
+      "Meteorite",
+      "Aurora"
+    ],
+    "correct": 0,
+    "topic": "space",
+    "difficulty": "easy",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-014",
+    "question": "What is the streak of light from a small object burning in the atmosphere called?",
+    "choices": [
+      "Comet",
+      "Meteor",
+      "Moonbeam",
+      "Aurora"
+    ],
+    "correct": 1,
+    "topic": "space",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-015",
+    "question": "What device makes distant stars appear larger through lenses or mirrors?",
+    "choices": [
+      "Microscope",
+      "Periscope",
+      "Telescope",
+      "Stethoscope"
+    ],
+    "correct": 2,
+    "topic": "space",
+    "difficulty": "hard",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-016",
+    "question": "Who was the first human to walk on the Moon?",
+    "choices": [
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "Michael Collins",
+      "Neil Armstrong"
+    ],
+    "correct": 3,
+    "topic": "space",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-017",
+    "question": "Which NASA mission first landed people on the Moon?",
+    "choices": [
+      "Apollo 11",
+      "Apollo 8",
+      "Apollo 13",
+      "Gemini 7"
+    ],
+    "correct": 0,
+    "topic": "space",
+    "difficulty": "easy",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-018",
+    "question": "Which element makes up most of the Sun by mass?",
+    "choices": [
+      "Helium",
+      "Hydrogen",
+      "Oxygen",
+      "Nitrogen"
+    ],
+    "correct": 1,
+    "topic": "space",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-019",
+    "question": "What do we call a large cloud of gas and dust in space?",
+    "choices": [
+      "Quasar",
+      "Pulsar",
+      "Nebula",
+      "Meteor"
+    ],
+    "correct": 2,
+    "topic": "space",
+    "difficulty": "hard",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-020",
+    "question": "What event occurs when the Moon blocks the Sun from view on Earth?",
+    "choices": [
+      "Lunar eclipse",
+      "Solstice",
+      "Equinox",
+      "Solar eclipse"
+    ],
+    "correct": 3,
+    "topic": "space",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/solar-system/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-021",
+    "question": "What is the capital of Slovenia?",
+    "choices": [
+      "Ljubljana",
+      "Maribor",
+      "Koper",
+      "Celje"
+    ],
+    "correct": 0,
+    "topic": "geography",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-022",
+    "question": "What is the capital of Austria?",
+    "choices": [
+      "Salzburg",
+      "Vienna",
+      "Graz",
+      "Linz"
+    ],
+    "correct": 1,
+    "topic": "geography",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-023",
+    "question": "What is the capital of Slovakia?",
+    "choices": [
+      "Košice",
+      "Žilina",
+      "Bratislava",
+      "Nitra"
+    ],
+    "correct": 2,
+    "topic": "geography",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-024",
+    "question": "What is the capital of Sweden?",
+    "choices": [
+      "Gothenburg",
+      "Malmö",
+      "Uppsala",
+      "Stockholm"
+    ],
+    "correct": 3,
+    "topic": "geography",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-025",
+    "question": "What is the capital of Denmark?",
+    "choices": [
+      "Copenhagen",
+      "Aarhus",
+      "Odense",
+      "Roskilde"
+    ],
+    "correct": 0,
+    "topic": "geography",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-026",
+    "question": "What is the capital of Finland?",
+    "choices": [
+      "Turku",
+      "Helsinki",
+      "Tampere",
+      "Oulu"
+    ],
+    "correct": 1,
+    "topic": "geography",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-027",
+    "question": "What is the capital of Poland?",
+    "choices": [
+      "Kraków",
+      "Gdańsk",
+      "Warsaw",
+      "Wrocław"
+    ],
+    "correct": 2,
+    "topic": "geography",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-028",
+    "question": "What is the capital of Hungary?",
+    "choices": [
+      "Debrecen",
+      "Szeged",
+      "Pécs",
+      "Budapest"
+    ],
+    "correct": 3,
+    "topic": "geography",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-029",
+    "question": "What is the capital of Czechia?",
+    "choices": [
+      "Prague",
+      "Brno",
+      "Ostrava",
+      "Plzeň"
+    ],
+    "correct": 0,
+    "topic": "geography",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-030",
+    "question": "What is the capital of Croatia?",
+    "choices": [
+      "Split",
+      "Zagreb",
+      "Rijeka",
+      "Dubrovnik"
+    ],
+    "correct": 1,
+    "topic": "geography",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-031",
+    "question": "Who wrote Middlemarch?",
+    "choices": [
+      "Jane Austen",
+      "Elizabeth Gaskell",
+      "George Eliot",
+      "Anne Brontë"
+    ],
+    "correct": 2,
+    "topic": "literature",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-032",
+    "question": "Who wrote Rebecca?",
+    "choices": [
+      "Agatha Christie",
+      "Virginia Woolf",
+      "Iris Murdoch",
+      "Daphne du Maurier"
+    ],
+    "correct": 3,
+    "topic": "literature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-033",
+    "question": "Who wrote The War of the Worlds?",
+    "choices": [
+      "H. G. Wells",
+      "Jules Verne",
+      "Arthur Conan Doyle",
+      "George Orwell"
+    ],
+    "correct": 0,
+    "topic": "literature",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-034",
+    "question": "Who created Sherlock Holmes?",
+    "choices": [
+      "Agatha Christie",
+      "Arthur Conan Doyle",
+      "Wilkie Collins",
+      "Edgar Allan Poe"
+    ],
+    "correct": 1,
+    "topic": "literature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-035",
+    "question": "Who wrote The Hobbit?",
+    "choices": [
+      "C. S. Lewis",
+      "Roald Dahl",
+      "J. R. R. Tolkien",
+      "Philip Pullman"
+    ],
+    "correct": 2,
+    "topic": "literature",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-036",
+    "question": "Who wrote Matilda?",
+    "choices": [
+      "Enid Blyton",
+      "Michael Morpurgo",
+      "David Walliams",
+      "Roald Dahl"
+    ],
+    "correct": 3,
+    "topic": "literature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-037",
+    "question": "Who wrote The Lion, the Witch and the Wardrobe?",
+    "choices": [
+      "C. S. Lewis",
+      "Lewis Carroll",
+      "Tolkien",
+      "Philip Pullman"
+    ],
+    "correct": 0,
+    "topic": "literature",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-038",
+    "question": "Who wrote Alice's Adventures in Wonderland?",
+    "choices": [
+      "A. A. Milne",
+      "Lewis Carroll",
+      "Kenneth Grahame",
+      "Beatrix Potter"
+    ],
+    "correct": 1,
+    "topic": "literature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-039",
+    "question": "Who wrote The Wind in the Willows?",
+    "choices": [
+      "A. A. Milne",
+      "Lewis Carroll",
+      "Kenneth Grahame",
+      "Richard Adams"
+    ],
+    "correct": 2,
+    "topic": "literature",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-040",
+    "question": "Who wrote The Tale of Peter Rabbit?",
+    "choices": [
+      "Enid Blyton",
+      "Jill Barklem",
+      "Jacqueline Wilson",
+      "Beatrix Potter"
+    ],
+    "correct": 3,
+    "topic": "literature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/English-literature",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-041",
+    "question": "What is the largest living land animal?",
+    "choices": [
+      "African bush elephant",
+      "Hippopotamus",
+      "Giraffe",
+      "Rhinoceros"
+    ],
+    "correct": 0,
+    "topic": "nature",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-042",
+    "question": "What is the fastest land mammal over a short sprint?",
+    "choices": [
+      "Lion",
+      "Cheetah",
+      "Greyhound",
+      "Antelope"
+    ],
+    "correct": 1,
+    "topic": "nature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-043",
+    "question": "Which animal undergoes metamorphosis from a tadpole?",
+    "choices": [
+      "Lizard",
+      "Hedgehog",
+      "Frog",
+      "Tortoise"
+    ],
+    "correct": 2,
+    "topic": "nature",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-044",
+    "question": "Which animal produces wool from its fleece?",
+    "choices": [
+      "Pig",
+      "Horse",
+      "Goatfish",
+      "Sheep"
+    ],
+    "correct": 3,
+    "topic": "nature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-045",
+    "question": "Which insect makes honey from nectar?",
+    "choices": [
+      "Honey bee",
+      "Wasp",
+      "Dragonfly",
+      "Ant"
+    ],
+    "correct": 0,
+    "topic": "nature",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-046",
+    "question": "Which bird is unable to fly and is native to Antarctica?",
+    "choices": [
+      "Puffin",
+      "Penguin",
+      "Gannet",
+      "Albatross"
+    ],
+    "correct": 1,
+    "topic": "nature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-047",
+    "question": "Which mammal uses echolocation to navigate at night?",
+    "choices": [
+      "Squirrel",
+      "Rabbit",
+      "Bat",
+      "Otter"
+    ],
+    "correct": 2,
+    "topic": "nature",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-048",
+    "question": "What does a caterpillar typically become after pupation?",
+    "choices": [
+      "Spider",
+      "Beetle larva",
+      "Earthworm",
+      "Butterfly or moth"
+    ],
+    "correct": 3,
+    "topic": "nature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-049",
+    "question": "Which animal carries its young in a pouch?",
+    "choices": [
+      "Kangaroo",
+      "Fox",
+      "Badger",
+      "Mole"
+    ],
+    "correct": 0,
+    "topic": "nature",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-050",
+    "question": "Which animal is known for changing skin colour and having independently moving eyes?",
+    "choices": [
+      "Iguana",
+      "Chameleon",
+      "Gecko",
+      "Skink"
+    ],
+    "correct": 1,
+    "topic": "nature",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/animal",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-051",
+    "question": "Which painter created the Mona Lisa?",
+    "choices": [
+      "Michelangelo",
+      "Raphael",
+      "Leonardo da Vinci",
+      "Caravaggio"
+    ],
+    "correct": 2,
+    "topic": "art",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-052",
+    "question": "Which painter is associated with The Starry Night?",
+    "choices": [
+      "Claude Monet",
+      "Paul Cézanne",
+      "Edgar Degas",
+      "Vincent van Gogh"
+    ],
+    "correct": 3,
+    "topic": "art",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-053",
+    "question": "Who painted The Persistence of Memory?",
+    "choices": [
+      "Salvador Dalí",
+      "Pablo Picasso",
+      "Joan Miró",
+      "René Magritte"
+    ],
+    "correct": 0,
+    "topic": "art",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-054",
+    "question": "Which painter is famous for Water Lilies?",
+    "choices": [
+      "Paul Gauguin",
+      "Claude Monet",
+      "Edvard Munch",
+      "Georges Seurat"
+    ],
+    "correct": 1,
+    "topic": "art",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-055",
+    "question": "Who painted The Scream?",
+    "choices": [
+      "Gustav Klimt",
+      "Vincent van Gogh",
+      "Edvard Munch",
+      "Henri Matisse"
+    ],
+    "correct": 2,
+    "topic": "art",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-056",
+    "question": "Who created the sculpture David in Florence?",
+    "choices": [
+      "Donatello",
+      "Bernini",
+      "Rodin",
+      "Michelangelo"
+    ],
+    "correct": 3,
+    "topic": "art",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-057",
+    "question": "Which artist painted Guernica?",
+    "choices": [
+      "Pablo Picasso",
+      "Salvador Dalí",
+      "Paul Klee",
+      "Henri Matisse"
+    ],
+    "correct": 0,
+    "topic": "art",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-058",
+    "question": "Who painted Girl with a Pearl Earring?",
+    "choices": [
+      "Rembrandt",
+      "Johannes Vermeer",
+      "Frans Hals",
+      "Rubens"
+    ],
+    "correct": 1,
+    "topic": "art",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-059",
+    "question": "Which painter is associated with Campbell's Soup Cans?",
+    "choices": [
+      "Roy Lichtenstein",
+      "Jackson Pollock",
+      "Andy Warhol",
+      "David Hockney"
+    ],
+    "correct": 2,
+    "topic": "art",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-060",
+    "question": "Which British artist painted The Fighting Temeraire?",
+    "choices": [
+      "John Constable",
+      "William Blake",
+      "Thomas Gainsborough",
+      "J. M. W. Turner"
+    ],
+    "correct": 3,
+    "topic": "art",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/visual-arts",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-061",
+    "question": "Which instrument typically has 88 keys on a full-size modern model?",
+    "choices": [
+      "Piano",
+      "Clarinet",
+      "Violin",
+      "Flute"
+    ],
+    "correct": 0,
+    "topic": "music",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-062",
+    "question": "Which instrument is played with a bow across strings?",
+    "choices": [
+      "Trumpet",
+      "Violin",
+      "Trombone",
+      "Oboe"
+    ],
+    "correct": 1,
+    "topic": "music",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-063",
+    "question": "Which brass instrument uses a slide to change pitch?",
+    "choices": [
+      "Trumpet",
+      "French horn",
+      "Trombone",
+      "Tuba"
+    ],
+    "correct": 2,
+    "topic": "music",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-064",
+    "question": "Which instrument uses a double reed?",
+    "choices": [
+      "Clarinet",
+      "Flute",
+      "Saxophone",
+      "Oboe"
+    ],
+    "correct": 3,
+    "topic": "music",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-065",
+    "question": "Which percussion instrument has wooden bars arranged like a keyboard?",
+    "choices": [
+      "Xylophone",
+      "Tambourine",
+      "Triangle",
+      "Snare drum"
+    ],
+    "correct": 0,
+    "topic": "music",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-066",
+    "question": "Which composer wrote the Ninth Symphony with the Ode to Joy finale?",
+    "choices": [
+      "Mozart",
+      "Ludwig van Beethoven",
+      "Bach",
+      "Haydn"
+    ],
+    "correct": 1,
+    "topic": "music",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-067",
+    "question": "Who wrote the opera Carmen?",
+    "choices": [
+      "Verdi",
+      "Puccini",
+      "Georges Bizet",
+      "Rossini"
+    ],
+    "correct": 2,
+    "topic": "music",
+    "difficulty": "hard",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-068",
+    "question": "Which composer wrote The Magic Flute?",
+    "choices": [
+      "Beethoven",
+      "Chopin",
+      "Liszt",
+      "Wolfgang Amadeus Mozart"
+    ],
+    "correct": 3,
+    "topic": "music",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-069",
+    "question": "Which composer wrote the Water Music suites?",
+    "choices": [
+      "George Frideric Handel",
+      "J. S. Bach",
+      "Vivaldi",
+      "Schubert"
+    ],
+    "correct": 0,
+    "topic": "music",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-070",
+    "question": "Which composer wrote the ballet Swan Lake?",
+    "choices": [
+      "Stravinsky",
+      "Pyotr Ilyich Tchaikovsky",
+      "Prokofiev",
+      "Rimsky-Korsakov"
+    ],
+    "correct": 1,
+    "topic": "music",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.britannica.com/art/music",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-071",
+    "question": "How many players from one football team are normally on the pitch at kick-off?",
+    "choices": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "correct": 2,
+    "topic": "sport",
+    "difficulty": "hard",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-072",
+    "question": "How many players make up a cricket side?",
+    "choices": [
+      "9",
+      "10",
+      "12",
+      "11"
+    ],
+    "correct": 3,
+    "topic": "sport",
+    "difficulty": "medium",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-073",
+    "question": "How many points is a try worth in rugby union?",
+    "choices": [
+      "5",
+      "3",
+      "4",
+      "6"
+    ],
+    "correct": 0,
+    "topic": "sport",
+    "difficulty": "easy",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-074",
+    "question": "How many rings are on the Olympic symbol?",
+    "choices": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct": 1,
+    "topic": "sport",
+    "difficulty": "medium",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-075",
+    "question": "In tennis, what comes after deuce if a player wins the next point?",
+    "choices": [
+      "Game",
+      "Love",
+      "Advantage",
+      "Forty"
+    ],
+    "correct": 2,
+    "topic": "sport",
+    "difficulty": "hard",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-076",
+    "question": "Which sport is played with a foil, épée or sabre?",
+    "choices": [
+      "Archery",
+      "Boxing",
+      "Judo",
+      "Fencing"
+    ],
+    "correct": 3,
+    "topic": "sport",
+    "difficulty": "medium",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-077",
+    "question": "Which sport features the pommel horse?",
+    "choices": [
+      "Artistic gymnastics",
+      "Fencing",
+      "Rowing",
+      "Cycling"
+    ],
+    "correct": 0,
+    "topic": "sport",
+    "difficulty": "easy",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-078",
+    "question": "In golf, what is one stroke below par on a hole called?",
+    "choices": [
+      "Bogey",
+      "Birdie",
+      "Eagle",
+      "Albatross"
+    ],
+    "correct": 1,
+    "topic": "sport",
+    "difficulty": "medium",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-079",
+    "question": "What is the standard maximum break in snooker?",
+    "choices": [
+      "155",
+      "100",
+      "147",
+      "135"
+    ],
+    "correct": 2,
+    "topic": "sport",
+    "difficulty": "hard",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
+  },
+  {
+    "id": "alpha250-buz-080",
+    "question": "Which sport uses stones and brooms on ice?",
+    "choices": [
+      "Ice hockey",
+      "Luge",
+      "Bobsleigh",
+      "Curling"
+    ],
+    "correct": 3,
+    "topic": "sport",
+    "difficulty": "medium",
+    "sourceUrl": "https://olympics.com/en/sports/",
+    "verified": "needs-owner-check",
+    "review": true,
+    "editorialStatus": "review-pending"
   }
 ]
