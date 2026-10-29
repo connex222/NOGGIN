@@ -2057,5 +2057,245 @@
       "coin",
       "spinning coin"
     ]
+  },
+  {
+    "id": "alpha250-no-001",
+    "clue": "a violin string being plucked",
+    "aliases": [
+      "plucked violin",
+      "violin string"
+    ]
+  },
+  {
+    "id": "alpha250-no-002",
+    "clue": "a microwave oven beeping",
+    "aliases": [
+      "microwave",
+      "microwave beep"
+    ]
+  },
+  {
+    "id": "alpha250-no-003",
+    "clue": "a chair scraping across the floor",
+    "aliases": [
+      "chair scraping",
+      "dragging a chair"
+    ]
+  },
+  {
+    "id": "alpha250-no-004",
+    "clue": "a zipper opening and closing",
+    "aliases": [
+      "zip",
+      "zipper"
+    ]
+  },
+  {
+    "id": "alpha250-no-005",
+    "clue": "a page turning in a big book",
+    "aliases": [
+      "turning a page",
+      "book pages"
+    ]
+  },
+  {
+    "id": "alpha250-no-006",
+    "clue": "a dog shaking water off its fur",
+    "aliases": [
+      "wet dog shaking",
+      "dog shaking"
+    ]
+  },
+  {
+    "id": "alpha250-no-007",
+    "clue": "a metal spring boinging",
+    "aliases": [
+      "spring",
+      "boing"
+    ]
+  },
+  {
+    "id": "alpha250-no-008",
+    "clue": "a small bell being rung",
+    "aliases": [
+      "handbell",
+      "ringing bell"
+    ]
+  },
+  {
+    "id": "alpha250-no-009",
+    "clue": "a stapler clicking shut",
+    "aliases": [
+      "stapler",
+      "stapling paper"
+    ]
+  },
+  {
+    "id": "alpha250-no-010",
+    "clue": "a door creaking open",
+    "aliases": [
+      "creaky door",
+      "door creaking"
+    ]
+  },
+  {
+    "id": "alpha250-no-011",
+    "clue": "a paper bag being scrunched up",
+    "aliases": [
+      "paper bag",
+      "scrunching bag"
+    ]
+  },
+  {
+    "id": "alpha250-no-012",
+    "clue": "a match being struck",
+    "aliases": [
+      "striking a match",
+      "match lighting"
+    ]
+  },
+  {
+    "id": "alpha250-no-013",
+    "clue": "a bottle cork popping",
+    "aliases": [
+      "cork popping",
+      "opening a bottle"
+    ]
+  },
+  {
+    "id": "alpha250-no-014",
+    "clue": "a tap dripping into a sink",
+    "aliases": [
+      "dripping tap",
+      "tap dripping"
+    ]
+  },
+  {
+    "id": "alpha250-no-015",
+    "clue": "a vacuum cleaner starting up",
+    "aliases": [
+      "vacuum cleaner",
+      "hoover"
+    ]
+  },
+  {
+    "id": "alpha250-no-016",
+    "clue": "a motorbike engine revving",
+    "aliases": [
+      "motorbike",
+      "motorcycle engine"
+    ]
+  },
+  {
+    "id": "alpha250-no-017",
+    "clue": "a lawn sprinkler clicking",
+    "aliases": [
+      "sprinkler",
+      "water sprinkler"
+    ]
+  },
+  {
+    "id": "alpha250-no-018",
+    "clue": "a squeaky wheel turning",
+    "aliases": [
+      "squeaky wheel",
+      "wheel squeaking"
+    ]
+  },
+  {
+    "id": "alpha250-no-019",
+    "clue": "a horse snorting",
+    "aliases": [
+      "horse snort",
+      "horse"
+    ]
+  },
+  {
+    "id": "alpha250-no-020",
+    "clue": "a cat purring",
+    "aliases": [
+      "cat purr",
+      "purring cat"
+    ]
+  },
+  {
+    "id": "alpha250-no-021",
+    "clue": "a woodpecker pecking",
+    "aliases": [
+      "woodpecker",
+      "bird pecking"
+    ]
+  },
+  {
+    "id": "alpha250-no-022",
+    "clue": "a pigeon cooing",
+    "aliases": [
+      "pigeon",
+      "cooing bird"
+    ]
+  },
+  {
+    "id": "alpha250-no-023",
+    "clue": "a frog croaking",
+    "aliases": [
+      "frog",
+      "croaking frog"
+    ]
+  },
+  {
+    "id": "alpha250-no-024",
+    "clue": "a sheep bleating",
+    "aliases": [
+      "sheep",
+      "bleating sheep"
+    ]
+  },
+  {
+    "id": "alpha250-no-025",
+    "clue": "a donkey braying",
+    "aliases": [
+      "donkey",
+      "braying donkey"
+    ]
+  },
+  {
+    "id": "alpha250-no-026",
+    "clue": "a crow cawing",
+    "aliases": [
+      "crow",
+      "cawing crow"
+    ]
+  },
+  {
+    "id": "alpha250-no-027",
+    "clue": "a goose honking",
+    "aliases": [
+      "goose",
+      "honking goose"
+    ]
+  },
+  {
+    "id": "alpha250-no-028",
+    "clue": "a pair of scissors snipping",
+    "aliases": [
+      "scissors",
+      "cutting with scissors"
+    ]
+  },
+  {
+    "id": "alpha250-no-029",
+    "clue": "a ping pong ball bouncing",
+    "aliases": [
+      "table tennis ball",
+      "ping pong ball"
+    ]
+  },
+  {
+    "id": "alpha250-no-030",
+    "clue": "a wooden ruler vibrating on a desk",
+    "aliases": [
+      "ruler",
+      "vibrating ruler"
+    ]
   }
 ]
