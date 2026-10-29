@@ -1897,5 +1897,130 @@
     "accept": [
       "PAGERS"
     ]
+  },
+  {
+    "id": "alpha250-uns-001",
+    "word": "BOBCAT",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-uns-002",
+    "word": "CASTLE",
+    "category": "Buildings"
+  },
+  {
+    "id": "alpha250-uns-003",
+    "word": "DRAGON",
+    "category": "Mythical creatures"
+  },
+  {
+    "id": "alpha250-uns-004",
+    "word": "MARKET",
+    "category": "Places"
+  },
+  {
+    "id": "alpha250-uns-005",
+    "word": "NEEDLE",
+    "category": "Sewing tools"
+  },
+  {
+    "id": "alpha250-uns-006",
+    "word": "PARROT",
+    "category": "Birds"
+  },
+  {
+    "id": "alpha250-uns-007",
+    "word": "TURKEY",
+    "category": "Birds"
+  },
+  {
+    "id": "alpha250-uns-008",
+    "word": "SCHOOL",
+    "category": "Buildings"
+  },
+  {
+    "id": "alpha250-uns-009",
+    "word": "TUNNEL",
+    "category": "Structures"
+  },
+  {
+    "id": "alpha250-uns-010",
+    "word": "WALNUT",
+    "category": "Food"
+  },
+  {
+    "id": "alpha250-uns-011",
+    "word": "ANCHOR",
+    "category": "Maritime"
+  },
+  {
+    "id": "alpha250-uns-012",
+    "word": "BALLET",
+    "category": "Dance"
+  },
+  {
+    "id": "alpha250-uns-013",
+    "word": "PENCIL",
+    "category": "Stationery"
+  },
+  {
+    "id": "alpha250-uns-014",
+    "word": "DANCER",
+    "category": "People"
+  },
+  {
+    "id": "alpha250-uns-015",
+    "word": "GARLIC",
+    "category": "Food"
+  },
+  {
+    "id": "alpha250-uns-016",
+    "word": "HELMET",
+    "category": "Clothing"
+  },
+  {
+    "id": "alpha250-uns-017",
+    "word": "JUNGLE",
+    "category": "Habitats"
+  },
+  {
+    "id": "alpha250-uns-018",
+    "word": "COYOTE",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-uns-019",
+    "word": "PILLOW",
+    "category": "Household"
+  },
+  {
+    "id": "alpha250-uns-020",
+    "word": "MARMOT",
+    "category": "Animals"
+  },
+  {
+    "id": "alpha250-uns-021",
+    "word": "NAPKIN",
+    "category": "Tableware"
+  },
+  {
+    "id": "alpha250-uns-022",
+    "word": "ORCHID",
+    "category": "Flowers"
+  },
+  {
+    "id": "alpha250-uns-023",
+    "word": "PICNIC",
+    "category": "Activities"
+  },
+  {
+    "id": "alpha250-uns-024",
+    "word": "SUMMIT",
+    "category": "Geography"
+  },
+  {
+    "id": "alpha250-uns-025",
+    "word": "TICKET",
+    "category": "Travel"
   }
 ]
