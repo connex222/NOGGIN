@@ -1,3 +1,9 @@
+# NOGGIN Alpha v3.5.0-alpha.1 — 250 content expansion (29 October 2026)
+
+- Integrated 250 owner-verified new items directly on the canonical GitHub main branch, preserving existing content and gameplay: 80 Buzzer Battle, 35 Close Call, 40 Higher or Lower, 25 Unscramble, 30 Sketch & Sabotage, 30 Noise Annoys, 10 Bid to Win.
+- Libraries now contain 2,876 items in total; exact duplicate IDs and normalised primary prompts checked before the upload.
+- Updated count-sensitive regression tests and release version. Real-device E2E and current CI outcomes are separate post-deployment checks.
+
 # NOGGIN ALPHA — v3.5.0-alpha.0 (27 October 2026)
 
 - **Single baseline:** Consolidated the existing v3.5.0 code into NOGGIN Alpha on GitHub `main`; the published package version now marks its pre-release status.
