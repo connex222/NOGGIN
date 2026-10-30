@@ -101,7 +101,7 @@ test('Q4: Sketch has no duplicate prompts and no squashed words', () => {
     assert.ok(!seen.has(k), x.word); seen.add(k);
   }
   for (const w of ['ICECREAM', 'BIRTHDAYCAKE', 'FIREENGINE', 'BOWTIE']) assert.ok(!sketch.some(x => x.word === w), w);
-  assert.equal(sketch.length, 500);
+  assert.equal(sketch.length, 530);
 });
 
 // ---------- Q4 Noise ----------

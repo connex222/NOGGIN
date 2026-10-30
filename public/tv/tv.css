@@ -291,3 +291,24 @@ body.tv.playing .stage-challenge.mini-on-tv:has(.tv-sketch) .tv-sketch{
 .restart-banner{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;align-items:center;justify-content:center;gap:24px;padding:20px 28px;background:#ffd968;color:#13213c;font-weight:800;font-size:clamp(18px,2.2vw,30px);line-height:1.25;text-align:center;border-bottom:6px solid #13213c;box-shadow:0 8px 30px rgba(0,0,0,.45)}
 .restart-banner.hidden{display:none}
 .restart-banner button{min-width:96px;min-height:48px;font-size:20px;flex:0 0 auto}
+
+
+/* Isolated cinematic splash: no modifications to existing game layout. */
+.gn-cinema{position:fixed;inset:0;z-index:11000;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,#25365d 0%,#081124 55%,#03060d 100%);color:#fff;text-align:center;isolation:isolate;animation:gn-fade-in .35s ease-out}
+.gn-cinema::before{content:"";position:absolute;inset:-30%;pointer-events:none;background:conic-gradient(from 30deg,transparent 0 32%,#e6bc6433 38%,transparent 45% 70%,#b9d8ff1c 79%,transparent 85%);animation:gn-spin 10s linear infinite}
+.gn-cinema-inner{position:relative;z-index:1;padding:24px;max-width:min(96vw,950px);animation:gn-reveal .7s both}
+.gn-cinema-kicker{font:700 clamp(12px,1.4vw,18px) system-ui;letter-spacing:.37em;color:#e4c487}
+.gn-cinema-brand{font:900 clamp(52px,10vw,150px)/1.1 system-ui;letter-spacing:.07em;text-shadow:0 0 45px #d6aa4e70;margin:16px 0;color:#fff}
+.gn-cinema-brand span{color:#ebc979}
+.gn-cinema-brand img{width:min(82vw,680px);max-height:45vh;object-fit:contain;filter:drop-shadow(0 8px 35px #dbb65b77)}
+.gn-cinema-line{font:700 clamp(12px,1.5vw,19px) system-ui;letter-spacing:.25em;color:#e2d1ae}
+.gn-cinema-actions{position:absolute;top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right));display:flex;gap:10px;z-index:2}
+.gn-cinema-actions button{font:700 14px system-ui;color:white;border:1px solid #d4b77b77;border-radius:10px;background:#0d1a34e8;min-height:46px;padding:12px 16px;cursor:pointer}
+.gn-cinema-actions button:focus-visible{outline:3px solid #ffe29d;outline-offset:3px}
+.gn-noggin-phase{background:radial-gradient(ellipse at 50% 65%,#45381c 0%,#12152c 58%,#050915 100%)}
+.gn-noggin-phase .gn-cinema-inner{animation:gn-reveal .7s both}
+@keyframes gn-reveal{from{opacity:0;transform:translateY(22px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes gn-fade-in{from{opacity:0}to{opacity:1}}
+@keyframes gn-spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){.gn-cinema-actions{left:12px;right:12px;justify-content:space-between}.gn-cinema-actions button{font-size:12px}.gn-cinema-kicker{letter-spacing:.2em}.gn-cinema-line{letter-spacing:.12em}}
+@media(prefers-reduced-motion:reduce){.gn-cinema,.gn-cinema::before,.gn-cinema-inner,.gn-noggin-phase .gn-cinema-inner{animation:none}}

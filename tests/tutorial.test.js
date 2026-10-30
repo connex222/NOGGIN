@@ -75,7 +75,7 @@ test('The front page has a HEADSTART button and the TV page loads the tutorial',
   const html = read('public/tv/index.html');
   assert.match(html, /id="welcomeHeadstart"[^>]*>.*HEADSTART/);
   assert.match(html, /id="rulesHeadstart"/);
-  assert.match(html, /<script src="\/tv\/tutorial\.js"><\/script>/);
+  assert.match(html, /<script src="\/tv\/tutorial\.js(?:\?[^\"]+)?"><\/script>/);
   assert.match(html, /href="\/tv\/tutorial\.css"/);
 });
 

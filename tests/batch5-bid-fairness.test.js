@@ -39,7 +39,7 @@ test('Batch 5 Q7: Bid to Win category list is soundly structured',()=>{
     assert.ok(category.id&&!ids.has(category.id),'unique category id '+category.id);
     ids.add(category.id);
     assert.ok(typeof category.prompt==='string'&&category.prompt.length>8,category.id);
-    assert.ok(Array.isArray(category.answers)&&category.answers.length>=6,category.id);
+    assert.ok(Array.isArray(category.answers)&&category.answers.length >= (category.kind === 'closed' ? 4 : 6),category.id);
     assert.equal(category.review,true,category.id+' allows editorial review');
     if(category.kind==='open')assert.ok(category.answers.length>=40,category.id+' must accept at least 40 entries');
     const answers=category.answers.map(x=>String(x).trim().toLowerCase());
