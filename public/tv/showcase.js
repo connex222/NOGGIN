@@ -134,20 +134,19 @@
 })();
 
 
-/* GAME NIGHT cinematic introduction v2.0 — isolated presentation layer.
-   Does not intercept socket events, lobby actions, or reconnection. */
+/* GAME NIGHT cinematic introduction v3.0: 15-second studio broadcast sequence.
+   Isolated from the room, QR, gameplay, and reconnection layers. */
 (() => {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
-  // Browser URL APIs are absent in legacy VM test harnesses; leave existing welcome logic alone.
   if (typeof URLSearchParams === 'undefined' || typeof location === 'undefined') return;
   const query = new URLSearchParams(location.search);
   if (query.has('room') || query.has('token') || query.has('playerId') || query.has('reconnect') || query.has('skipIntro')) return;
   try { if (sessionStorage.getItem('gn-noggin-intro-seen') === '1') return; } catch (_) {}
   const overlay = document.createElement('div');
-  overlay.className = 'gn-cinema';
+  overlay.className = 'gn-cinema gn-v3 gn-scene-0';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-label', 'Game Night cinematic introduction');
-  overlay.innerHTML = '<div class="gn-cinema-beams" aria-hidden="true"></div><div class="gn-cinema-frame" aria-hidden="true"></div><div class="gn-cinema-actions"><button type="button" class="gn-cinema-mute" aria-label="Toggle introduction sound"></button><button type="button" class="gn-cinema-skip">SKIP INTRO →</button></div><div class="gn-cinema-inner"><p class="gn-cinema-edition">AN ORIGINAL GAME NIGHT PRODUCTION</p><div class="gn-cinema-kicker">THE COLLECTION PRESENTS</div><div class="gn-cinema-brand">GAME <span>NIGHT</span></div><div class="gn-cinema-rule" aria-hidden="true"></div><div class="gn-cinema-line">YOUR NIGHT. YOUR GAME.</div></div><div class="gn-cinema-progress" aria-hidden="true"></div>';
+  overlay.innerHTML = '<div class="gn-studio" aria-hidden="true"></div><div class="gn-v3-shade" aria-hidden="true"></div><div class="gn-v3-lights" aria-hidden="true"></div><div class="gn-cinema-actions"><button type="button" class="gn-cinema-mute" aria-label="Toggle introduction sound"></button><button type="button" class="gn-cinema-skip">SKIP INTRO →</button></div><div class="gn-cinema-inner"><p class="gn-cinema-edition">AN ORIGINAL GAME NIGHT PRODUCTION</p><div class="gn-cinema-kicker">THE COLLECTION PRESENTS</div><div class="gn-cinema-brand">GAME <span>NIGHT</span></div><div class="gn-cinema-rule" aria-hidden="true"></div><div class="gn-cinema-line">YOUR NIGHT. YOUR GAME.</div></div><div class="gn-cinema-progress" aria-hidden="true"></div>';
   document.body.appendChild(overlay);
   const muteButton = overlay.querySelector('.gn-cinema-mute');
   let muted = true;
@@ -166,26 +165,29 @@
       ctx ||= new AudioContextCtor();
       if (ctx.state === 'suspended') ctx.resume().catch(() => {});
       const now = ctx.currentTime;
-      for (const [i, freq] of [392, 493.88, 587.33].entries()) {
+      // Restrained three-note ident: sound remains optional and silent by default.
+      for (const [i, freq] of [196, 294, 392].entries()) {
         const oscillator = ctx.createOscillator();
         const gain = ctx.createGain();
         oscillator.type = 'sine';
         oscillator.frequency.value = freq;
-        gain.gain.setValueAtTime(0, now + i * 0.1);
-        gain.gain.linearRampToValueAtTime(0.045, now + i * 0.1 + 0.03);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.1 + 0.5);
+        gain.gain.setValueAtTime(0, now + i * 0.13);
+        gain.gain.linearRampToValueAtTime(0.032, now + i * 0.13 + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.13 + 0.9);
         oscillator.connect(gain).connect(ctx.destination);
-        oscillator.start(now + i * 0.1);
-        oscillator.stop(now + i * 0.1 + 0.52);
+        oscillator.start(now + i * 0.13);
+        oscillator.stop(now + i * 0.13 + 0.92);
       }
     } catch (_) { /* Optional audio must never prevent gameplay. */ }
   }
   let finished = false;
   let phaseTimer, doneTimer;
+  const stageTimers = [];
   function finish() {
     if (finished) return;
     finished = true;
     clearTimeout(phaseTimer); clearTimeout(doneTimer);
+    for (const timer of stageTimers) clearTimeout(timer);
     try { sessionStorage.setItem('gn-noggin-intro-seen', '1'); } catch (_) {}
     overlay.remove();
   }
@@ -197,13 +199,26 @@
   overlay.querySelector('.gn-cinema-skip').addEventListener('click', finish);
   overlay.addEventListener('keydown', e => { if (e.key === 'Escape') finish(); });
   overlay.querySelector('.gn-cinema-skip').focus({preventScroll:true});
+  const stage = (at, number, action) => stageTimers.push(setTimeout(() => {
+    if (finished) return;
+    overlay.className = 'gn-cinema gn-v3 gn-scene-' + number;
+    action?.();
+  }, at));
+  stage(1000, 1);
+  stage(3000, 2);
+  stage(6000, 3);
   phaseTimer = setTimeout(() => {
     if (finished) return;
-    overlay.classList.add('gn-noggin-phase');
+    overlay.className = 'gn-cinema gn-v3 gn-scene-4 gn-noggin-phase';
     overlay.querySelector('.gn-cinema-kicker').textContent = 'THE SHOW BEGINS';
     overlay.querySelector('.gn-cinema-brand').innerHTML = '<img src="/play/art/noggin-logo.webp" alt="NOGGIN">';
-    overlay.querySelector('.gn-cinema-line').textContent = 'USE YOUR HEAD. TRUST YOUR NERVE.';
+    overlay.querySelector('.gn-cinema-line').textContent = '';
     sting();
-  }, 5500);
-  doneTimer = setTimeout(finish, 12500);
+  }, 9500);
+  stage(12000, 5, () => {
+    overlay.classList.add('gn-noggin-phase');
+    overlay.querySelector('.gn-cinema-line').textContent = 'USE YOUR HEAD. TRUST YOUR NERVE.';
+  });
+  stage(14000, 6, () => { overlay.classList.add('gn-noggin-phase'); });
+  doneTimer = setTimeout(finish, 15000);
 })();
