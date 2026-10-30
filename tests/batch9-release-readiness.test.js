@@ -34,8 +34,8 @@ test('D14 and D18: font subset instructions and outstanding media rights are doc
  assert.match(readme,/pyftsubset/);
  assert.match(readme,/source-art\//);
  assert.match(readme,/docs\/previews\//);
- assert.match(readme,/before public release/i);
- assert.match(readme,/unverified rights/i);
+ assert.match(readme,/before (?:any )?public release|before external distribution/i);
+ assert.match(readme,/licensing clearance|rights evidence/i);
  assert.match(audio,/Before public release/);
  assert.match(audio,/licensing have not been independently verified/);
 });
