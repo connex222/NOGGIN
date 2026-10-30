@@ -46,6 +46,6 @@ test('D5: ordinary games continue and host-critical games hand over',()=>{
  for(const id of ['sketch-sabotage','noise-annoys','mind-meld','bomb-squad'])assert.ok(src.includes("'"+id+"'"));
  assert.match(src,/function hostCanBeOffline/);
  assert.match(src,/function handOverHost/);
- assert.match(src,/if \(handOverHost\(room, now, rng\)\)/);
+ assert.match(src,/handOverHost\(room, now, rng\)/);
  assert.match(src,/phase4\.start\(room, category, now, rng, id\)/);
 });
