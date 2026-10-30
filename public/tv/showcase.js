@@ -137,6 +137,7 @@
 /* GAME NIGHT cinematic introduction v2.0 — isolated presentation layer.
    Does not intercept socket events, lobby actions, or reconnection. */
 (() => {
+  if (window.NOGGIN_CINEMATIC_V4) return;
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
   // Browser URL APIs are absent in legacy VM test harnesses; leave existing welcome logic alone.
   if (typeof URLSearchParams === 'undefined' || typeof location === 'undefined') return;
