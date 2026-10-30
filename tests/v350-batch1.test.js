@@ -178,8 +178,8 @@ test('Q2: removed words are gone and replacements keep the bank sizes', () => {
   for (const word of ['FLASHER', 'INSECT', 'BEAVER', 'BEAVERS']) assert.ok(!words.has(word), word);
   const drawings = new Set(sketch.map(x => x.word));
   for (const word of ['BEAVER', 'DOOR KNOCKER']) assert.ok(!drawings.has(word), word);
-  assert.equal(unscramble.length, 350);
-  assert.equal(sketch.length, 500);
+  assert.equal(unscramble.length, 375);
+  assert.equal(sketch.length, 530);
 });
 
 test('Q2: scrambled letters never spell a rude word on the TV', () => {
