@@ -134,7 +134,7 @@
 })();
 
 
-/* GAME NIGHT cinematic introduction v1.1 — isolated presentation layer.
+/* GAME NIGHT cinematic introduction v2.0 — isolated presentation layer.
    Does not intercept socket events, lobby actions, or reconnection. */
 (() => {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
@@ -147,7 +147,7 @@
   overlay.className = 'gn-cinema';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-label', 'Game Night cinematic introduction');
-  overlay.innerHTML = '<div class="gn-cinema-actions"><button type="button" class="gn-cinema-mute" aria-label="Toggle introduction sound"></button><button type="button" class="gn-cinema-skip">SKIP INTRO →</button></div><div class="gn-cinema-inner"><div class="gn-cinema-kicker">THE COLLECTION PRESENTS</div><div class="gn-cinema-brand">GAME <span>NIGHT</span></div><div class="gn-cinema-line">YOUR NIGHT. YOUR GAME.</div></div>';
+  overlay.innerHTML = '<div class="gn-cinema-beams" aria-hidden="true"></div><div class="gn-cinema-frame" aria-hidden="true"></div><div class="gn-cinema-actions"><button type="button" class="gn-cinema-mute" aria-label="Toggle introduction sound"></button><button type="button" class="gn-cinema-skip">SKIP INTRO →</button></div><div class="gn-cinema-inner"><p class="gn-cinema-edition">AN ORIGINAL GAME NIGHT PRODUCTION</p><div class="gn-cinema-kicker">THE COLLECTION PRESENTS</div><div class="gn-cinema-brand">GAME <span>NIGHT</span></div><div class="gn-cinema-rule" aria-hidden="true"></div><div class="gn-cinema-line">YOUR NIGHT. YOUR GAME.</div></div><div class="gn-cinema-progress" aria-hidden="true"></div>';
   document.body.appendChild(overlay);
   const muteButton = overlay.querySelector('.gn-cinema-mute');
   let muted = true;
@@ -200,10 +200,10 @@
   phaseTimer = setTimeout(() => {
     if (finished) return;
     overlay.classList.add('gn-noggin-phase');
-    overlay.querySelector('.gn-cinema-kicker').textContent = 'THE LIVING-ROOM GAME SHOW';
+    overlay.querySelector('.gn-cinema-kicker').textContent = 'THE SHOW BEGINS';
     overlay.querySelector('.gn-cinema-brand').innerHTML = '<img src="/play/art/noggin-logo.webp" alt="NOGGIN">';
     overlay.querySelector('.gn-cinema-line').textContent = 'USE YOUR HEAD. TRUST YOUR NERVE.';
     sting();
-  }, 2000);
-  doneTimer = setTimeout(finish, 4400);
+  }, 5500);
+  doneTimer = setTimeout(finish, 12500);
 })();
