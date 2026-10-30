@@ -138,6 +138,8 @@
    Does not intercept socket events, lobby actions, or reconnection. */
 (() => {
   if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+  // Browser URL APIs are absent in legacy VM test harnesses; leave existing welcome logic alone.
+  if (typeof URLSearchParams === 'undefined' || typeof location === 'undefined') return;
   const query = new URLSearchParams(location.search);
   if (query.has('room') || query.has('token') || query.has('playerId') || query.has('reconnect') || query.has('skipIntro')) return;
   try { if (sessionStorage.getItem('gn-noggin-intro-seen') === '1') return; } catch (_) {}
