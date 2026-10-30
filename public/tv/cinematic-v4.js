@@ -54,7 +54,7 @@
     handles.forEach(clearTimeout);
     try {sessionStorage.setItem('gn-noggin-intro-seen','1')}catch(_){}
     root.classList.add('gn-v4-done');
-    setTimeout(()=>root.remove(),350);
+    setTimeout(()=>{root.remove();document.documentElement.classList.remove('gn-v4-starting')},350);
   }
   function schedule(t,fn){handles.push(setTimeout(()=>{if(!ended)fn()},t));}
   root.querySelector('.gn-v4-skip').addEventListener('click',end);
