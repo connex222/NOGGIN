@@ -204,6 +204,6 @@
     overlay.querySelector('.gn-cinema-brand').innerHTML = '<img src="/play/art/noggin-logo.webp" alt="NOGGIN">';
     overlay.querySelector('.gn-cinema-line').textContent = 'USE YOUR HEAD. TRUST YOUR NERVE.';
     sting();
-  }, 2000);
-  doneTimer = setTimeout(finish, 4400);
+  }, 5500);
+  doneTimer = setTimeout(finish, 12500);
 })();
