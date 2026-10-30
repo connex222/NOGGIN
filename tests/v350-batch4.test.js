@@ -26,7 +26,7 @@ function lobby(players = 3) {
 // ---------- Q1 content ----------
 test('Q1: 100 estimation Close Call questions, sourced and flagged for the owner', () => {
   const estimates = closeCall.filter(q => q.kind === 'estimate');
-  assert.equal(estimates.length, 100);
+  assert.equal(estimates.length, 135);
   for (const q of estimates) {
     assert.match(q.source, /^https:\/\//, q.id);
     assert.equal(q.verified, 'needs-owner-check', q.id);
