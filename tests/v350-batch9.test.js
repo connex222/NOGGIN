@@ -56,7 +56,7 @@ test('D18: the audio README warns before public release', () => {
 test('Version is 3.5.0 and the CHANGELOG lists every brief item', () => {
   assert.equal(JSON.parse(read('package.json')).version, '3.5.0-alpha.1');
   const top = read('CHANGELOG.md').split('# NOGGIN v3.4.0')[0];
-  assert.match(top, /^# NOGGIN v3\.5\.0/);
+  assert.match(top, /^# NOGGIN (?:Alpha )?v3\.5\.0/);
   const ids = [...Array(18).keys()].map(i => `D${i + 1}`).concat([...Array(12).keys()].map(i => `G${i + 1}`), [...Array(9).keys()].map(i => `Q${i + 1}`));
   for (const id of ids) assert.match(top, new RegExp(`\\*\\*${id}\\*\\*`), id);
 });
