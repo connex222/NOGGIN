@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="back"><stop stop-color="#243673"/><stop offset=".5" stop-color="#101d48"/><stop offset="1" stop-color="#030816"/></radialGradient>
+<linearGradient id="gold"><stop stop-color="#69421b"/><stop offset=".32" stop-color="#e0b66a"/><stop offset=".54" stop-color="#fff3ca"/><stop offset=".8" stop-color="#b17a37"/><stop offset="1" stop-color="#3b2214"/></linearGradient>
+<linearGradient id="floor" x2="0" y2="1"><stop stop-color="#192653"/><stop offset="1" stop-color="#02040d"/></linearGradient>
+<linearGradient id="beam" x2="0" y2="1"><stop stop-color="#b3d1ff" stop-opacity=".25"/><stop offset="1" stop-color="#4165cd" stop-opacity="0"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="24"/></filter>
+</defs>
+<rect width="1920" height="1080" fill="url(#back)"/>
+<ellipse cx="960" cy="420" rx="680" ry="400" fill="#2452ac" opacity=".17" filter="url(#blur)"/>
+<path d="M0 0H1920V105L1600 175H320L0 105Z" fill="#050b1b" stroke="#8f733e" stroke-width="6"/>
+<g stroke="#d6ad6b" stroke-opacity=".65" fill="none" stroke-width="8">
+<path d="M130 100L300 738M1790 100L1620 738M260 145L385 697M1660 145L1535 697"/>
+<path d="M340 170Q960 90 1580 170M440 220Q960 150 1480 220"/>
+</g>
+<g opacity=".8"><path d="M325 180L50 860L740 860Z" fill="url(#beam)"/><path d="M1595 180L1180 860L1900 860Z" fill="url(#beam)"/>
+<path d="M565 220L350 820L910 820Z" fill="#e6aa58" opacity=".075"/><path d="M1365 220L1010 820L1600 820Z" fill="#e6aa58" opacity=".075"/>
+</g>
+<path d="M0 720L960 575L1920 720V1080H0Z" fill="url(#floor)"/>
+<ellipse cx="960" cy="765" rx="680" ry="185" fill="#0f2257" stroke="url(#gold)" stroke-width="11"/>
+<ellipse cx="960" cy="765" rx="580" ry="143" fill="none" stroke="#6296f0" stroke-opacity=".6" stroke-width="5"/>
+<ellipse cx="960" cy="785" rx="425" ry="100" fill="#10204b" stroke="#c9a15f" stroke-width="5"/>
+<path d="M0 1000L960 835L1920 1000M240 1080L960 835L1680 1080M540 1080L960 835L1380 1080" fill="none" stroke="#4776c1" stroke-opacity=".28" stroke-width="5"/>
+<g fill="url(#gold)"><rect x="178" y="305" width="18" height="470" rx="8"/><rect x="1724" y="305" width="18" height="470" rx="8"/>
+<rect x="292" y="260" width="14" height="416"/><rect x="1614" y="260" width="14" height="416"/></g>
+<g fill="#f2c27a"><circle cx="325" cy="180" r="19"/><circle cx="565" cy="205" r="14"/><circle cx="960" cy="195" r="18"/><circle cx="1365" cy="205" r="14"/><circle cx="1595" cy="180" r="19"/></g>
+<g fill="#4e8cec"><circle cx="480" cy="198" r="12"/><circle cx="750" cy="220" r="9"/><circle cx="1170" cy="220" r="9"/><circle cx="1440" cy="198" r="12"/></g>
+<g fill="#dfaf66" opacity=".8"><rect x="445" y="450" width="8" height="280"/><rect x="1467" y="450" width="8" height="280"/></g>
+</svg>
