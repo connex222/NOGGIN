@@ -423,7 +423,7 @@ body.tv.playing .stage-challenge.mini-on-tv:has(.tv-sketch) .tv-sketch{
 .gn-v3.gn-scene-3 .gn-studio{opacity:1;transform:scale(1.03)}
 .gn-v3.gn-scene-3 .gn-cinema-inner{opacity:1;transform:translateY(0)}
 .gn-v3.gn-scene-4 .gn-studio{opacity:1;transform:scale(1.18)}
-.gn-v3.gn-scene-4 .gn-cinema-inner{opacity:0;transform:translateY(35px)}
+.gn-v3.gn-scene-4 .gn-cinema-inner{opacity:1;transform:translateY(0)}
 .gn-v3.gn-scene-4 .gn-v3-lights{opacity:1}
 .gn-v3.gn-scene-5 .gn-studio,.gn-v3.gn-scene-6 .gn-studio{opacity:1;transform:scale(1.2)}
 .gn-v3.gn-scene-5 .gn-cinema-inner,.gn-v3.gn-scene-6 .gn-cinema-inner{opacity:1;transform:none}
