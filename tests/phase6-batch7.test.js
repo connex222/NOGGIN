@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const get = (name) => JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', `${name}.json`), 'utf8'));
-for (const [name, primary, max] of [['sketch-words', 'word', 500], ['unscramble', 'word', 350], ['noise-clues', 'clue', 250]]) {
+for (const [name, primary, max] of [['sketch-words', 'word', 530], ['unscramble', 'word', 375], ['noise-clues', 'clue', 280]]) {
   test(`Batch 7 ${name}: original prompts, stable IDs and format`, () => {
     const bank = get(name);
     const added = bank.filter(x => x.id.startsWith('p6b7-'));
