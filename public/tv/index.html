@@ -6,7 +6,7 @@
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
 <div id="restartBanner" class="restart-banner hidden" role="alert"><span id="restartText"></span><button id="restartDismiss" type="button" class="button-secondary">OK</button></div>
 <div id="startupProblem" class="startup-problem" hidden role="alert"></div>
-<section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN welcome screen">
+<section id="welcomeScreen" class="welcome-screen" aria-label="NOGGIN welcome screen" hidden>
   <div class="stage-canvas welcome-canvas">
     <div id="welcomeCast" class="showcase-cast" aria-label="Twelve NOGGIN characters, a new expression each visit"></div>
     <button id="welcomeStart" class="showcase-hit welcome-hit-start" type="button" aria-label="Start game — open the lobby"></button>
@@ -51,6 +51,7 @@
     </div>
     <section class="controls surface" id="lobbyControls" aria-label="TV host game settings">
       <div class="control-heading"><h2>GAME SETTINGS</h2><p>Choose how to play.</p></div>
+      <button id="lobbyHeadstart" class="button-secondary" type="button">🎓 HOW TO PLAY · HEADSTART</button>
       <label for="rounds">SHOW LENGTH<select id="rounds"><option value="auto" selected>Auto · fits your panel</option><option value="6">Quick · 6 rounds</option><option value="8">Standard · 8 rounds</option><option value="10">Long · 10 rounds</option><option value="12">Marathon · 12 rounds</option></select></label>
       <label for="rules">RULES<select id="rules"><option value="classic" selected>Classic · Roll, Move, Play</option><option value="showtime">Showtime · All Extras</option></select></label>
       <label for="roundStyle">ROUND STYLE<select id="roundStyle"><option value="everyone">Everyone rolls</option><option value="sequential">One at a time</option></select></label>
@@ -96,6 +97,6 @@
   <div id="message" class="error hidden" role="alert"></div>
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>
 </main>
-<script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script>window.NOGGIN_CINEMATIC_V4=true;</script><script src="/tv/showcase.js"></script><script src="/tv/tutorial.js?v=20261027-audio2"></script>
+<script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script src="/tv/showcase.js"></script><script src="/tv/tutorial.js?v=20261027-audio2"></script>
 
 </body></html>
