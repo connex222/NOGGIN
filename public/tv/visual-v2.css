@@ -1,0 +1,21 @@
+/* NOGGIN Visual 2.0 review only; enabled by ?visual2=1. All original assets remain untouched. */
+html.noggin-visual2 body.tv .welcome-canvas {
+  background-image:url('/tv/art/visual-v2/lobby-stage-v2.webp');
+}
+html.noggin-visual2 body.tv:not(.playing) .tv-shell {
+  background-image:linear-gradient(#030b2699,#030b26b8),url('/tv/art/visual-v2/lobby-stage-v2.webp');
+  background-size:cover;
+  background-position:center;
+}
+html.noggin-visual2 body.tv.playing .board-container {
+  background-image:url('/tv/art/visual-v2/game-stage-v2.webp');
+}
+html.noggin-visual2 body.tv.playing .stage-challenge {
+  background:linear-gradient(#07112eac,#07112eac),url('/tv/art/visual-v2/answer-board-v2.webp') center / cover no-repeat;
+}
+html.noggin-visual2 body.tv.playing #resultSpotlight {
+  background:linear-gradient(#040a20bb,#040a20bb),url('/tv/art/visual-v2/winner-stage-v2.webp') center / cover no-repeat;
+}
+@media(prefers-reduced-motion:reduce) {
+ html.noggin-visual2 body.tv.playing #resultSpotlight { animation:none!important; }
+}

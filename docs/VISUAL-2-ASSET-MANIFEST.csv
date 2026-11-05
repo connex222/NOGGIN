@@ -1,0 +1,6 @@
+path,source,width,height,alpha,sha256,status
+public/tv/art/visual-v2/lobby-stage-v2.webp,gilded_noggin_game_show_stage.png,1672,941,no,2869be95512d36ddc68199b554bac8af2c44b486a333621a75d710b2050f33c0,"generated, awaiting integrated approval"
+public/tv/art/visual-v2/game-stage-v2.webp,noggin_golden_brain_game_show_stage.png,1672,941,no,82d686aef9ca606a015243584d33db988224b3c7b7e4147cf80fc0ae5f2df37f,"generated, awaiting integrated approval"
+public/tv/art/visual-v2/host-v2.webp,glittering_navy_and_gold_game_show_host.png,1122,1402,yes,1eba7752522365eaa04fc1a623a5d16772104c9e0ce4aee3c2d6421c822603c4,"generated, awaiting integrated approval"
+public/tv/art/visual-v2/answer-board-v2.webp,noggin_game_show_marquee_board.png,1672,941,no,5388539abad40e87cc29d241eafb7772ba07ca6a3bbf021c69fa8c97bf952259,"generated, awaiting integrated approval"
+public/tv/art/visual-v2/winner-stage-v2.webp,noggin_winner_s_reveal_stage.png,1672,941,no,70e26d9b89f93827730291196ba1ad9a3ecf1a72862518ba203ba15c645934a9,"generated, awaiting integrated approval"

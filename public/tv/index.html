@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOGGIN Alpha — TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"><link rel="stylesheet" href="/tv/arena-board.css"><link rel="stylesheet" href="/tv/tutorial.css"><style id="gn-v4-early-style">html.gn-v4-starting body.tv{background:#02040c!important}html.gn-v4-starting body.tv>:not(.gn-v4){visibility:hidden!important}</style>
-<script id="gn-v4-early-script">(function(){try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;var q=new URLSearchParams(location.search);if(['room','token','playerId','reconnect','skipIntro'].some(function(k){return q.has(k)}))return;if(sessionStorage.getItem('gn-noggin-intro-seen')==='1')return;document.documentElement.classList.add('gn-v4-starting');setTimeout(function(){document.documentElement.classList.remove('gn-v4-starting')},20000)}catch(e){document.documentElement.classList.remove('gn-v4-starting')}})();</script></head>
+<title>NOGGIN Alpha — TV Studio</title><link rel="stylesheet" href="/shared/theme.css"><link rel="stylesheet" href="/tv/tv.css"><link rel="stylesheet" href="/tv/showcase.css"><link rel="stylesheet" href="/tv/arena-board.css"><link rel="stylesheet" href="/tv/tutorial.css">
+<link rel="stylesheet" href="/tv/visual-v2.css"><script id="noggin-v2-preview">if(new URLSearchParams(location.search).get("visual2")==="1")document.documentElement.classList.add("noggin-visual2");</script></head>
 <body class="tv">
 <div id="offline" class="connection-banner hidden" role="alert">Connection lost — reconnecting to the NOGGIN studio…</div>
 <div id="restartBanner" class="restart-banner hidden" role="alert"><span id="restartText"></span><button id="restartDismiss" type="button" class="button-secondary">OK</button></div>
@@ -97,5 +97,5 @@
   <footer class="tv-footer"><span>★ BRING YOUR BEST BRAIN ★</span><span id="hostStatus">A game-show evening starts here</span></footer>
 </main>
 <script src="/tv/load-guard.js"></script><script src="/socket.io/socket.io.js"></script><script src="/tv/sound.js"></script><script src="/shared/client.js"></script><script src="/tv/board-view.js"></script><script src="/tv/tv.js"></script><script>window.NOGGIN_CINEMATIC_V4=true;</script><script src="/tv/showcase.js"></script><script src="/tv/tutorial.js?v=20261027-audio2"></script>
-<script src="/tv/cinematic-v4.js"></script>
+
 </body></html>
