@@ -22,3 +22,20 @@ test('HEADSTART remains reachable from the lobby after bypassing the welcome', (
   assert.match(html, /id="lobbyHeadstart"/);
   assert.match(tutorial, /'lobbyHeadstart'/);
 });
+
+test('settings tutorial button is inside settings and correctly wired', () => {
+  const block = html.slice(html.indexOf('id="lobbyControls"'),html.indexOf('</section>',html.indexOf('id="lobbyControls"')));
+  assert.match(block,/id="lobbyHeadstart"[^>]*aria-label="Open the NOGGIN How to Play tutorial"/);
+  assert.match(tutorial,/\['welcomeHeadstart', 'rulesHeadstart', 'lobbyHeadstart'\]/);
+  assert.match(tutorial,/Promise\.resolve\(open\(\)\)/);
+});
+test('decorative lobby avatars never obscure the approved game logo', () => {
+  const css=read('public/tv/showcase.css');
+  assert.match(css,/body\.tv:not\(\.playing\) #lobbyCast \{display:none!important;\}/);
+  assert.match(css,/#lobbyControls #lobbyHeadstart \{/);
+});
+test('HTML, JS and CSS are never cached over an updated release', () => {
+  const server=read('server/index.js');
+  assert.match(server,/setHeaders\(res, filePath\)/);
+  assert.match(server,/no-store, max-age=0/);
+});

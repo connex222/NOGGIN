@@ -458,7 +458,16 @@
     for (const id of ['welcomeHeadstart', 'rulesHeadstart', 'lobbyHeadstart']) {
       const b = $(id); if (!b || b.dataset.wired) continue;
       b.dataset.wired = '1';
-      b.addEventListener('click', () => {const d = $('welcomeRulesDialog'); if (d && !d.hidden) d.hidden = true; open();});
+      b.addEventListener('click', () => {
+        const d = $('welcomeRulesDialog');
+        if (d && !d.hidden) d.hidden = true;
+        // Use the same verified HEADSTART entrypoint for lobby and welcome actions.
+        Promise.resolve(open()).catch(error => {
+          console.error('NOGGIN HEADSTART could not open', error);
+          const message = $('startupProblem');
+          if (message) { message.textContent = 'How to Play could not open. Please refresh the page and try again.'; message.hidden = false; }
+        });
+      });
     }
   }
 })();

@@ -288,3 +288,26 @@ body.tv:not(.playing) #newRoom {
  body.tv:not(.playing) #lobbyGrid>.join-panel,
  body.tv:not(.playing) #lobbyGrid>#lobbyControls {overflow-y:visible!important;}
 }
+
+/* Visual 2.0 correction: top decorative cast overlapped the approved NOGGIN logo.
+   Keep the individual portraits in the player roster and on phones. */
+body.tv:not(.playing) #lobbyCast {display:none!important;}
+/* This is a genuine live tutorial control inside the settings card, not floating stage art. */
+body.tv:not(.playing) #lobbyControls #lobbyHeadstart {
+  position:relative!important; inset:auto!important;
+  display:block!important; width:100%!important; min-height:40px!important;
+  box-sizing:border-box; flex:0 0 auto; align-self:stretch;
+  padding:7px 10px; margin:3px 0 5px;
+  border:2px solid #ffcf66; border-radius:9px;
+  background:linear-gradient(180deg,#183879,#102459);
+  color:#fff5cc; font:800 clamp(11px,1vw,16px)/1.2 system-ui,sans-serif;
+  white-space:normal; text-align:center; cursor:pointer;
+  pointer-events:auto; z-index:2;
+}
+body.tv:not(.playing) #lobbyControls #lobbyHeadstart:hover,
+body.tv:not(.playing) #lobbyControls #lobbyHeadstart:focus-visible {
+  outline:3px solid #fff; outline-offset:1px; background:#214c9a;
+}
+@media(max-width:850px) {
+ body.tv:not(.playing) #lobbyControls #lobbyHeadstart {font-size:16px;min-height:48px!important;}
+}
