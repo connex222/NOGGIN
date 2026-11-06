@@ -455,7 +455,7 @@
   document.addEventListener('DOMContentLoaded', wire);
   if (document.readyState !== 'loading') wire();
   function wire() {
-    for (const id of ['welcomeHeadstart', 'rulesHeadstart']) {
+    for (const id of ['welcomeHeadstart', 'rulesHeadstart', 'lobbyHeadstart']) {
       const b = $(id); if (!b || b.dataset.wired) continue;
       b.dataset.wired = '1';
       b.addEventListener('click', () => {const d = $('welcomeRulesDialog'); if (d && !d.hidden) d.hidden = true; open();});
