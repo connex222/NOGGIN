@@ -1,3 +1,5 @@
+**ARCHIVE — historical local test report (5 November 2026).** Full 422/422 automated tests subsequently passed on the Windows release kit; PR #8 GitHub Actions succeeded and was deployed. Current release state and remaining visual acceptance limits: [NOGGIN-ALPHA-CONSOLIDATED.md](NOGGIN-ALPHA-CONSOLIDATED.md).
+
 # NOGGIN Visual 2.0 — local QA report (5 Nov 2026)
 
 ## Results

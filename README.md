@@ -1,3 +1,5 @@
+**Current Visual 2.0 / lobby release record (7 November 2026):** [NOGGIN Alpha consolidated baseline](docs/NOGGIN-ALPHA-CONSOLIDATED.md). Use this current-main record before older local preview or cinematic instructions.
+
 ## NOGGIN ALPHA — v3.5.0-alpha.1 (single development baseline)
 
 **Content release (29 October 2026):** Added 250 owner-verified items across seven game libraries (80 Buzzer, 35 Close Call, 40 Higher or Lower, 25 Unscramble, 30 Sketch, 30 Noise, 10 Bid), raising those libraries from 2,626 to 2,876 items. Existing gameplay and art remain unchanged.
