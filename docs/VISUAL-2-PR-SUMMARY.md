@@ -1,3 +1,5 @@
+**ARCHIVE — superseded release-status note.** For the current merged/deployed Alpha baseline see [NOGGIN-ALPHA-CONSOLIDATED.md](NOGGIN-ALPHA-CONSOLIDATED.md). The following describes only the original local preview and is not current deployment guidance.
+
 # NOGGIN Visual 2.0 — PR-ready local review package
 
 **Proposed branch:** `feature/noggin-visual-2-review` (local packaging only; NOT pushed to GitHub).
