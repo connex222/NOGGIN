@@ -3,7 +3,8 @@
 const fs=require('node:fs'),path=require('node:path');
 const MAX_AGE_MS=24*60*60*1000;
 function shiftTimes(b,delta){
- for(const key of ['deadline','nextAt','pausedAt'])if(typeof b[key]==='number')b[key]+=delta;
+ for(const key of ['deadline','nextAt','pausedAt','presentUntil'])if(typeof b[key]==='number')b[key]+=delta;
+ for(const stage of [b.explainer,b.standings])if(stage&&typeof stage.until==='number')stage.until+=delta;
  for(const obj of [b.challenge,b.showdown,b.minigame])if(obj){for(const key of ['deadline','hardStop','openAt','introUntil','startedAt','stageStarted'])if(typeof obj[key]==='number')obj[key]+=delta;}
  if(b.minigame?.display){for(const key of ['readyAt','flashEndsAt','revealAt'])if(typeof b.minigame.display[key]==='number')b.minigame.display[key]+=delta;}
 }
