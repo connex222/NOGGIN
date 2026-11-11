@@ -46,3 +46,14 @@ P1: profile all modes' elapsed time and idle time; adjust jointly coordinated TV
 P2: verify every audio clip and narrator path on actual TV browser.
 
 **Do not merge or deploy this branch until all P0 checks pass and the owner approves.**
+
+## Continuation — adaptive verdict pacing (11 November 2026)
+
+- `server/board.js`: normal-speed low-impact result holds changed from a flat 2,900 ms to 1,300 ms (no score change), 2,000 ms (minor score change), or the original 2,900 ms (large score movement, round-game winner or Last Orders). The corresponding relaxed holds are 2,600 / 3,400 / 4,200 ms. TV move presentation time is still added before verdict timing; server-authoritative scoring and timers are preserved.
+- The default Everyone Rolls mode generally groups player landings, so the saving applies **per result**, not automatically once for every contestant. Potential savings: 1.6 seconds for an empty verdict and 0.9 seconds for a small verdict versus the old normal setting, subject to full-game measurement.
+- `public/tv/sound.js` and `public/tv/tv.js`: incoming final-winner announcement now explicitly interrupts previous host narration and releases soundtrack ducking before the winner line.
+- `tests/flagship-verdict-pacing.test.js`: deterministic checks added for score-neutral, small, big, Last Orders, relaxed and movement-presentation results.
+- `docs/editorial/FLAGSHIP-DUPLICATE-REVIEW.md`: four within-bank repeated-prompt groups and four cross-game factual repeats documented for editorial owner review. Questions and answers are untouched.
+- CI remains unsuccessful: the latest runs fail in ~2 seconds without any recorded job steps or accessible logs; the untouched baseline exhibited the same pattern. Treat CI as an infrastructure/runner investigation **not a verified passing test**. Manual/local Node checks remain required.
+
+**Follow-up limitation:** No physical devices or full-game timing benchmark has been run. This remains a development branch, not a certified release.
