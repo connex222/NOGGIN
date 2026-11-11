@@ -70,3 +70,10 @@ P2: verify every audio clip and narrator path on actual TV browser.
 **CI:** The GitHub Actions runs complete as failures in a few seconds with no recorded job steps or runner name, including the pre-change `main` baseline. Neither a pass nor a specific underlying cause has been established.
 
 **Release state remains BLOCKED:** Tests must run on a machine with Node and dependencies available. Physical device acceptance and the full game-length benchmark must follow before merging or deploying.
+
+## Simulator instrumentation and Windows handoff (11 November 2026)
+
+- `tools/simulate.js` now emits `verdictCount` (quiet/minor/headline), `resultHoldsPerGame` and `estimatedResultTimeSavedSecondsPerGame`. The last value is a **counterfactual calculation**, comparing the new timings with the old flat 2,900 ms normal-mode result hold. It is not a stopwatch measurement or evidence of a real session being shorter. No random-number selection, scoring rule, difficulty threshold, asset, or voice line was changed.
+- `RUN-FLAGSHIP-QA.bat` is a development-only, one-click Windows test runner. In a Git checkout of this branch it verifies the branch, installs dependencies, runs syntax checks, Node tests, two 100-match model simulations and the repository release audit. Every stage and its failure code are recorded in `NOGGIN-FLAGSHIP-QA-RESULTS.txt`. It does not push, merge, or deploy.
+- A direct automated run in this assistant environment was not possible: the private repository can be inspected and edited via the connected GitHub account but is not available to the local Node toolchain. The GitHub Actions job itself still fails before any steps appear, so **local QA results remain a release requirement**.
+- Do not report simulation predictions as physical multiplayer acceptance. A real TV and multiple phones are still needed to check focus, latency, reconnection, audio start, pacing and winner flow.
