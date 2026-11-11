@@ -57,3 +57,16 @@ P2: verify every audio clip and narrator path on actual TV browser.
 - CI remains unsuccessful: the latest runs fail in ~2 seconds without any recorded job steps or accessible logs; the untouched baseline exhibited the same pattern. Treat CI as an infrastructure/runner investigation **not a verified passing test**. Manual/local Node checks remain required.
 
 **Follow-up limitation:** No physical devices or full-game timing benchmark has been run. This remains a development branch, not a certified release.
+
+## Follow-up reliability work — 11 November 2026
+**Confirmed source defect:** `server/board.js` shifted gameplay clocks on reconnection but did not shift `presentUntil`, `explainer.until` or `standings.until`. That could shorten or prematurely expire animation, explanations, or the Last Orders ranking following host downtime. These three timestamps are now shifted together with all gameplay deadlines by `resumeClocks`.
+
+**Checkpoint defect:** `server/state-store.js` shifted deadlines but omitted the same display timing fields. Checkpoint restoration now shifts these timestamps before pausing the recovered room. `tests/flagship-reconnect-timing.test.js` asserts both paths and idempotent second resume.
+
+**Multiplayer checks added:** `tests/flagship-multiplayer-resume.test.js` covers unique seats and start with 2, 4 and 8 phones, rejection of late NEW joins, host reconnect without resetting seat order, and a phone rejoining an in-progress game using its original token. These are **automated regression test source**, not claimed physical-device pass results.
+
+**Live baseline:** The documented Render `/health` and `/tv/` endpoints could not be reached from the available external retrieval environment. Deployment health is unverified. The free Render blueprint has no persistent `NOGGIN_STATE_FILE` configuration, so a server **process restart** may lose room state even though same-process browser refresh/reconnect is supported. Do not claim durable crash recovery.
+
+**CI:** The GitHub Actions runs complete as failures in a few seconds with no recorded job steps or runner name, including the pre-change `main` baseline. Neither a pass nor a specific underlying cause has been established.
+
+**Release state remains BLOCKED:** Tests must run on a machine with Node and dependencies available. Physical device acceptance and the full game-length benchmark must follow before merging or deploying.
