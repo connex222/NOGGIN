@@ -49,11 +49,20 @@ class NogginSound {
   audio.play().catch(()=>{cleanup();this.synth(name);});
  }
  // HEADSTART owns the audio stage while open. Stop the host and backing track.
+ interruptVoice(){
+  const clip=this.voiceAudio;
+  if(!clip)return;
+  clip.pause();
+  clip.onended?.(); // release music ducking and clear the active host reference
+  clip.removeAttribute('src');
+  clip.load();
+  if(this.voiceAudio===clip)this.voiceAudio=null;
+ }
  suspendForTutorial(){
   if(this.tutorialActive)return;
   this.tutorialActive=true;
   this.resumeMusicAfterTutorial=this.desiredMusic;
-  if(this.voiceAudio){this.voiceAudio.pause();this.voiceAudio.removeAttribute('src');this.voiceAudio.load();this.voiceAudio=null;}
+  this.interruptVoice();
   this.stopMusic();
  }
  resumeAfterTutorial(){
