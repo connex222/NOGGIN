@@ -15,6 +15,8 @@ function run(n,rounds,style){
  const room={phase:'lobby',hostSocketId:'tv',settings:{rounds,timerSpeed:'normal',rules:'showtime',roundStyle:style},players:Array.from({length:n},(_,i)=>({id:String(i),name:'P'+i,seat:i+1,sparks:0,position:0,ready:true,socketId:'phone'+i,offlineSince:null}))};
  board.start(room,1000);const started=1000;let now=started,steps=0;const scores=[];const kinds={};const spaces={};const selectedGames={};const visitedGames=new WeakSet();
  const rolls={};let showdowns=0,roundGames=0,laps=0;const visitedShowdowns=new WeakSet();
+ // Counterfactual against the former flat 2.9s result hold; scoring and RNG are unchanged.
+ const verdicts={quiet:0,minor:0,headline:0};let savedResultMs=0;
  let seenRevision=-1;
  while(room.phase==='board'&&steps++<20000){
  const b=room.board;
@@ -140,13 +142,20 @@ function run(n,rounds,style){
    board.answer(room,id,rand(100)<55?challenge.correct:(challenge.correct+1)%challenge.choices.length,now);
   }
  }else if(b.step==='result'){
-  if(b.stage==='round-game')scores.push(room.players.map(p=>p.sparks));now=b.nextAt;board.nextTurn(room,now,rand);
+  if(b.stage==='round-game')scores.push(room.players.map(p=>p.sparks));
+  const impact=Math.max(0,...Object.values(b.result?.deltas||{}).map(Math.abs));
+  const headline=impact>=3||(b.stage==='round-game'&&(b.result?.winners||[]).length>0)||b.roundNo>=b.totalRounds;
+  const className=headline?'headline':impact?'minor':'quiet';
+  verdicts[className]++;
+  savedResultMs+=headline?0:impact?900:1600;
+  now=b.nextAt;board.nextTurn(room,now,rand);
  }
  }
  const winner=room.board.winnerIds[0];const mid=scores[Math.floor((scores.length-1)/2)]||room.players.map(p=>p.sparks);const max=Math.max(...mid),min=Math.min(...mid);
  const index=room.players.findIndex(p=>p.id===winner);const final=room.players.map(p=>p.sparks).sort((a,z)=>z-a);
  return {rounds:room.board.round,minutes:(now-started)/60000,rollsPerPlayer:Object.values(rolls).reduce((a,x)=>a+x,0)/n,winnerAtHalfLeader:mid[index]===max,winnerAtHalfLast:mid[index]===min,
-  kinds,spaces,selectedGames,showdowns,roundGames,laps:laps/n,tiebreak:room.board.stage==='noggin-off',margin:final[0]-final[1],winningScore:final[0],finished:room.phase==='finished',steps};
+  kinds,spaces,selectedGames,showdowns,roundGames,laps:laps/n,tiebreak:room.board.stage==='noggin-off',margin:final[0]-final[1],winningScore:final[0],finished:room.phase==='finished',steps,
+  verdicts,savedResultMs};
 }
 const games=Number(process.argv[2]||1000);
 if(!Number.isSafeInteger(games)||games<1||games>10000)throw Error('Usage: node tools/simulate.js [games 1..10000] [auto|6|8|10|12] [--sequential]');
@@ -157,7 +166,8 @@ if(!board.ROUND_OPTIONS.includes(roundsArg))throw Error('Rounds must be one of '
 const avg=(xs)=>+(xs.reduce((a,x)=>a+x,0)/xs.length).toFixed(1);
 for(const count of [2,4,6,8]){
  const runs=[];for(let i=0;i<games;i++)runs.push(run(count,roundsArg,style));
- const kinds={},spaces={},miniGames={};
+ const kinds={},spaces={},miniGames={},verdictCounts={quiet:0,minor:0,headline:0};
+ for(const r of runs)for(const [k,v] of Object.entries(r.verdicts))verdictCounts[k]+=v;
  for(const r of runs){for(const [k,v] of Object.entries(r.kinds))kinds[k]=(kinds[k]||0)+v;for(const [k,v] of Object.entries(r.spaces))spaces[k]=(spaces[k]||0)+v;for(const [k,v] of Object.entries(r.selectedGames))miniGames[k]=(miniGames[k]||0)+v;}
  const landings=Object.values(spaces).reduce((a,x)=>a+x,0);
  const perSpace=Array.from({length:board.SPACES.length},(_,i)=>(spaces[i]||0)/landings*100);
@@ -166,6 +176,9 @@ for(const count of [2,4,6,8]){
   rollsPerPlayer:avg(runs.map(r=>r.rollsPerPlayer)),lapsPerPlayer:avg(runs.map(r=>r.laps)),
   minutesMedian:+minutes[Math.floor(games/2)].toFixed(1),minutesP90:+minutes[Math.floor(games*0.9)].toFixed(1),
   roundGamesPerGame:avg(runs.map(r=>r.roundGames)),showdownsPerGame:avg(runs.map(r=>r.showdowns)),
+  resultHoldsPerGame:avg(runs.map(r=>Object.values(r.verdicts).reduce((a,b)=>a+b,0))),
+  verdictCount:verdictCounts,
+  estimatedResultTimeSavedSecondsPerGame:+(runs.reduce((sum,r)=>sum+r.savedResultMs,0)/games/1000).toFixed(2),
   tiebreakPct:+(runs.filter(r=>r.tiebreak).length/games*100).toFixed(1),winningScore:avg(runs.map(r=>r.winningScore)),winningMargin:avg(runs.map(r=>r.margin)),
   leaderAtHalfWinsPct:+(runs.filter(r=>r.winnerAtHalfLeader).length/games*100).toFixed(1),lastAtHalfWinsPct:+(runs.filter(r=>r.winnerAtHalfLast).length/games*100).toFixed(1),
   spaceShareMinPct:+Math.min(...perSpace).toFixed(2),spaceShareMaxPct:+Math.max(...perSpace).toFixed(2),
