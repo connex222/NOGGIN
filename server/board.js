@@ -576,7 +576,9 @@ function resumeClocks(room, now, {preserveGrace = false} = {}) {
   if (!Number.isFinite(b?.pausedAt)) return 0;
   const delta = Math.max(0, now - b.pausedAt);
   const move = (obj, key) => {if (obj && Number.isFinite(obj[key])) obj[key] += delta;};
-  for (const key of ['deadline', 'nextAt']) move(b, key);
+  for (const key of ['deadline', 'nextAt', 'presentUntil']) move(b, key);
+  move(b.explainer, 'until');
+  move(b.standings, 'until');
   move(b.challenge, 'deadline');
   for (const key of ['deadline', 'hardStop', 'openAt', 'startedAt']) move(b.showdown, key);
   for (const key of ['deadline', 'openAt', 'introUntil', 'stageStarted']) move(b.minigame, key);
