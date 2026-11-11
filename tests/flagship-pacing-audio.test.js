@@ -38,6 +38,7 @@ test('HEADSTART takes exclusive ownership of TV host audio and restores it once'
   assert.equal(sound.say('winner'),false);
   sound.startMusic('board');
   assert.equal(sound.resumeMusicAfterTutorial,'board');
+  sound.enabled=false; // simulated browser with audio not unlocked after tutorial
   sound.resumeAfterTutorial();
   assert.equal(sound.tutorialActive,false);
   assert.equal(sound.resumeMusicAfterTutorial,null);
