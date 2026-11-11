@@ -7,7 +7,7 @@ set "FAILED=0"
 >> "%REPORT%" echo =====================================================
 >> "%REPORT%" echo Timestamp: %DATE% %TIME%
 >> "%REPORT%" echo Working directory: %CD%
->> "%REPORT%" echo Branch required: improvement/noggin-flagship
+>> "%REPORT%" echo Branch required: main or improvement/noggin-flagship
 >> "%REPORT%" echo No GitHub merge, push or Render deploy is performed.
 >> "%REPORT%" echo.
 where node >nul 2>&1
@@ -29,8 +29,8 @@ if not errorlevel 1 (
   for /f "delims=" %%B in ('git branch --show-current 2^>nul') do set "CURRENT_BRANCH=%%B"
   if defined CURRENT_BRANCH (
     >> "%REPORT%" echo Checked out branch: !CURRENT_BRANCH!
-    if /i not "!CURRENT_BRANCH!"=="improvement/noggin-flagship" (
-      echo ERROR: Checkout improvement/noggin-flagship first.
+    if /i not "!CURRENT_BRANCH!"=="improvement/noggin-flagship" if /i not "!CURRENT_BRANCH!"=="main" (
+      echo ERROR: Checkout main or improvement/noggin-flagship first.
       >> "%REPORT%" echo ERROR: Incorrect Git branch.
       set "FAILED=1"
       goto :done
