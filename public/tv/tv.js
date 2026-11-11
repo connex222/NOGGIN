@@ -68,7 +68,7 @@
          const board=$('boardCentre');board.classList.add('screen-shake');setTimeout(()=>board.classList.remove('screen-shake'),350);
        }
     }
-    if(b.step==='finished'){audio.stopMusic();audio.play('mus-victory');showConfetti();}
+    if(b.step==='finished'){audio.interruptVoice();audio.stopMusic();audio.play('mus-victory');showConfetti();}
     if(b.step==='await_roll'||b.step==='round_roll')audio.startMusic('board');
     if((b.step==='showdown'||b.step==='minigame')&&!audio.muted)audio.startMusic('tension');
     hostVoice(state);
