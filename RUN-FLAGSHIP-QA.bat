@@ -13,14 +13,29 @@ set "FAILED=0"
 where node >nul 2>&1
 if errorlevel 1 (
   echo ERROR: Node.js not installed.
+  set "FAILED=1"
   >> "%REPORT%" echo ERROR: Node.js not installed.
   goto :done
 )
 where npm >nul 2>&1
 if errorlevel 1 (
   echo ERROR: npm not installed.
+  set "FAILED=1"
   >> "%REPORT%" echo ERROR: npm not installed.
   goto :done
+)
+where git >nul 2>&1
+if not errorlevel 1 (
+  for /f "delims=" %%B in ('git branch --show-current 2^>nul') do set "CURRENT_BRANCH=%%B"
+  if defined CURRENT_BRANCH (
+    >> "%REPORT%" echo Checked out branch: !CURRENT_BRANCH!
+    if /i not "!CURRENT_BRANCH!"=="improvement/noggin-flagship" (
+      echo ERROR: Checkout improvement/noggin-flagship first.
+      >> "%REPORT%" echo ERROR: Incorrect Git branch.
+      set "FAILED=1"
+      goto :done
+    )
+  )
 )
 call :run "NODE VERSION" "node --version"
 call :run "NPM VERSION" "npm --version"
