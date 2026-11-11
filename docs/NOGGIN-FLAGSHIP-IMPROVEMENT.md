@@ -2,8 +2,8 @@
 
 **Date:** 11 November 2026
 **Source:** `main` at `82c91fbcbeb56936495d4a1b0281e2d3a933f9aa`
-**Development only:** `improvement/noggin-flagship`
-**Release status:** NOT ACCEPTED. No merge or deployment permitted without owner approval.
+**Original development branch:** `improvement/noggin-flagship`; owner authorised PR #10 for release on 11 November 2026
+**Release status:** Owner-authorised release despite incomplete CI and physical-device acceptance. See [canonical flagship release record](NOGGIN-FLAGSHIP-RELEASE.md).
 
 ## Inspected baseline
 - Server-authoritative 2–8 player rooms, Socket.IO TV/phone, 28-space board, game modes Classic and Showtime, Everyone Rolls and Sequential, special spaces, Showdowns, tie resolution, and HEADSTART tutorial.
@@ -45,7 +45,7 @@ P0: prove complete real-device session and recovery; obtain passing CI logs; ver
 P1: profile all modes' elapsed time and idle time; adjust jointly coordinated TV/server presentation with measured tests; review question ambiguity, semantic overlaps and references using the existing editorial queue.
 P2: verify every audio clip and narrator path on actual TV browser.
 
-**Do not merge or deploy this branch until all P0 checks pass and the owner approves.**
+**Historical pre-authorisation gate:** P0 was not completed before the owner authorised merge and deployment on 11 November 2026. The outstanding tests remain post-deploy obligations; see [release record](NOGGIN-FLAGSHIP-RELEASE.md).
 
 ## Continuation — adaptive verdict pacing (11 November 2026)
 
