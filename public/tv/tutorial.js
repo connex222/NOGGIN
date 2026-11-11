@@ -439,6 +439,7 @@
     if (!root) build();
     opener = document.activeElement;
     await load();
+    window.NogginTVAudio?.suspendForTutorial?.();
     root.hidden = false; document.body.classList.add('headstart-open');
     playing = true; show(0);
     $('htNext').focus();
@@ -448,6 +449,7 @@
     clearTimeout(timer); cancelAnimationFrame(raf); stopSpeech();
     try {cleanup?.();} catch {} cleanup = null;
     root.hidden = true; document.body.classList.remove('headstart-open');
+    window.NogginTVAudio?.resumeAfterTutorial?.();
     opener?.focus?.();
   }
 

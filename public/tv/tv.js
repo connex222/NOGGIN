@@ -5,7 +5,7 @@
   const sessionKey = 'noggin-tv-session-v1';
   const socket = io({reconnection:true,reconnectionDelay:500,reconnectionDelayMax:3000});
   let avatars = [], activeRoom = null, priorCount = 0, boardView = null, currentState = null;
-  const audio=new window.NogginSound();let lastFxKey='',pendingFx=null,beatFor=null,beatDone=false,beatSkip=false;
+  const audio=new window.NogginSound();window.NogginTVAudio=audio;let lastFxKey='',pendingFx=null,beatFor=null,beatDone=false,beatSkip=false;
   const message = $('message');
 
   function error(text) {
@@ -64,11 +64,11 @@
        const deltas=Object.values(b.result?.deltas||{}),gain=Math.max(0,...deltas),loss=deltas.some(d=>d<0);
        const won=(b.result?.winners||[]).length>0||gain>0;
        if(won)audio.play('sfx-spark-gain');else if(loss)audio.play('sfx-crowd-aww');
-       if(won)showConfetti();else if(loss&&!document.documentElement.classList.contains('reduce-motion')){
+       if(won&&gain>=3)showConfetti();else if(loss&&!document.documentElement.classList.contains('reduce-motion')){
          const board=$('boardCentre');board.classList.add('screen-shake');setTimeout(()=>board.classList.remove('screen-shake'),350);
        }
     }
-    if(b.step==='finished'){audio.stopMusic();audio.play('mus-victory');showConfetti();}
+    if(b.step==='finished'){audio.interruptVoice();audio.stopMusic();audio.play('mus-victory');showConfetti();}
     if(b.step==='await_roll'||b.step==='round_roll')audio.startMusic('board');
     if((b.step==='showdown'||b.step==='minigame')&&!audio.muted)audio.startMusic('tension');
     hostVoice(state);

@@ -489,9 +489,17 @@ function finishTurn(room, now, text, winners = []) {
     }
     if (doubled.length) text += ` · LAST ORDERS DOUBLES IT: ${doubled.join(', ')}.`;
   }
-  b.step = 'result'; b.deadline = null; b.nextAt = now + presentationLeft(b, now) + (room.settings.timerSpeed === 'relaxed' ? 4200 : 2900);
   // Per-player Spark change for this verdict, so the TV podium and each phone can show it.
   const deltas = Object.fromEntries(room.players.map(p => [p.id, p.sparks - (Number.isInteger(before[p.id]) ? before[p.id] : p.sparks)]).filter(([, d]) => d !== 0));
+  // Flagship pacing: quiet landings should not take as long as a meaningful verdict.
+  // Keep the deliberate hold for large Spark swings, Showdowns, and Last Orders.
+  // The server still waits for any unfinished TV dice/token presentation before advancing.
+  const impact = Math.max(0, ...Object.values(deltas).map(Math.abs));
+  const headline = impact >= 3 || (b.stage === 'round-game' && won.length > 0) || lastOrders(b);
+  const verdictMs = room.settings.timerSpeed === 'relaxed'
+    ? (headline ? 4200 : impact ? 3400 : 2600)
+    : (headline ? 2900 : impact ? 2000 : 1300);
+  b.step = 'result'; b.deadline = null; b.nextAt = now + presentationLeft(b, now) + verdictMs;
   b.result = {text, winners: won, underdogs, deltas}; b.event = {type: 'result', text};
   b.history.push({turn: b.turn, round: b.roundNo, name: actor(room)?.name || 'Show', text}); if (b.history.length > 60) b.history.shift();
   const max = Math.max(...room.players.map(p => p.sparks));
@@ -568,7 +576,9 @@ function resumeClocks(room, now, {preserveGrace = false} = {}) {
   if (!Number.isFinite(b?.pausedAt)) return 0;
   const delta = Math.max(0, now - b.pausedAt);
   const move = (obj, key) => {if (obj && Number.isFinite(obj[key])) obj[key] += delta;};
-  for (const key of ['deadline', 'nextAt']) move(b, key);
+  for (const key of ['deadline', 'nextAt', 'presentUntil']) move(b, key);
+  move(b.explainer, 'until');
+  move(b.standings, 'until');
   move(b.challenge, 'deadline');
   for (const key of ['deadline', 'hardStop', 'openAt', 'startedAt']) move(b.showdown, key);
   for (const key of ['deadline', 'openAt', 'introUntil', 'stageStarted']) move(b.minigame, key);

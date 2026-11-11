@@ -4,7 +4,7 @@
 // D13: storage can be blocked (private browsing); sound settings then just aren't remembered.
 const soundStore={get(k){try{return localStorage.getItem(k);}catch{return null;}},set(k,v){try{localStorage.setItem(k,String(v));}catch{}}};
 class NogginSound {
- constructor(){this.context=null;this.enabled=false;this.muted=soundStore.get('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.desiredMusic=null;this.timer=null;this.lastSound='';this.musicFiles={};this.musicAudio=null;this.sfxLive=new Set();this.musicVolume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-music-volume')??'.25')));this.musicMuted=soundStore.get('noggin-music-muted')==='true';this.loadManifest();this.voiceLines={};this.voiceAudio=null;this.loadVoice();}
+ constructor(){this.context=null;this.enabled=false;this.muted=soundStore.get('noggin-muted')!=='false';this.volume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-volume')??'.55')));this.master=null;this.files=new Set();this.music=null;this.desiredMusic=null;this.timer=null;this.lastSound='';this.musicFiles={};this.musicAudio=null;this.sfxLive=new Set();this.musicVolume=Math.max(0,Math.min(1,Number(soundStore.get('noggin-music-volume')??'.25')));this.musicMuted=soundStore.get('noggin-music-muted')==='true';this.loadManifest();this.voiceLines={};this.voiceAudio=null;this.tutorialActive=false;this.resumeMusicAfterTutorial=null;this.loadVoice();}
  async loadManifest(){try{const r=await fetch('/sounds/sound-manifest.json');if(r.ok){const x=await r.json();if(Array.isArray(x.files))this.files=new Set(x.files);if(x.music&&typeof x.music==='object')this.musicFiles=x.music;}}catch{}}
  async unlock(){const C=window.AudioContext||window.webkitAudioContext;if(!C)throw Error('Audio unsupported');this.context ||= new C();await this.context.resume();if(!this.master){this.master=this.context.createGain();this.master.connect(this.context.destination);}this.enabled=true;this.apply();}
  apply(){if(this.master)this.master.gain.setTargetAtTime(this.muted?0:this.volume*.33,this.context.currentTime,.025);}
@@ -48,11 +48,35 @@ class NogginSound {
   audio.onerror=()=>{cleanup();this.synth(name);};
   audio.play().catch(()=>{cleanup();this.synth(name);});
  }
+ // HEADSTART owns the audio stage while open. Stop the host and backing track.
+ interruptVoice(){
+  const clip=this.voiceAudio;
+  if(!clip)return;
+  clip.pause();
+  clip.onended?.(); // release music ducking and clear the active host reference
+  clip.removeAttribute('src');
+  clip.load();
+  if(this.voiceAudio===clip)this.voiceAudio=null;
+ }
+ suspendForTutorial(){
+  if(this.tutorialActive)return;
+  this.tutorialActive=true;
+  this.resumeMusicAfterTutorial=this.desiredMusic;
+  this.interruptVoice();
+  this.stopMusic();
+ }
+ resumeAfterTutorial(){
+  if(!this.tutorialActive)return;
+  this.tutorialActive=false;
+  const track=this.resumeMusicAfterTutorial;
+  this.resumeMusicAfterTutorial=null;
+  if(track)this.startMusic(track);
+ }
  // ── Host voice ── recorded lines from /voice, chosen at random per take. One line
  // at a time; music and effects duck while the host speaks. Silent if not recorded.
  async loadVoice(){try{const r=await fetch('/voice/voice-manifest.json',{cache:'no-store'});if(r.ok){const x=await r.json();this.voiceLines=x.lines&&typeof x.lines==='object'?x.lines:{};}}catch{this.voiceLines={};}}
  hasVoice(id){return Boolean(this.voiceLines?.[id]?.length);}
- say(id,fallback=''){if(!this.enabled||this.muted)return false;const key=this.hasVoice(id)?id:(fallback&&this.hasVoice(fallback)?fallback:null);if(!key)return false;
+ say(id,fallback=''){if(this.tutorialActive||!this.enabled||this.muted)return false;const key=this.hasVoice(id)?id:(fallback&&this.hasVoice(fallback)?fallback:null);if(!key)return false;
   if(this.voiceAudio&&!this.voiceAudio.ended&&!this.voiceAudio.paused)return false;
   const takes=this.voiceLines[key],premium=`${key}.mp3`;
   // Prefer the verified, consistent studio performance over legacy alternate takes.
@@ -61,7 +85,7 @@ class NogginSound {
   const id_=Symbol('voice');this.sfxLive.add(id_);this.applyMusicVolume();
   const done=()=>{this.sfxLive.delete(id_);this.applyMusicVolume();if(this.voiceAudio===clip)this.voiceAudio=null;};
   clip.onended=done;clip.onerror=done;clip.play().catch(done);return true;}
- startMusic(which,force=false){this.desiredMusic=which;if(this.music===which&&!force&&(this.musicAudio||this.timer))return;this.stopMusic();this.music=which;
+ startMusic(which,force=false){if(this.tutorialActive){this.resumeMusicAfterTutorial=which;return;}this.desiredMusic=which;if(this.music===which&&!force&&(this.musicAudio||this.timer))return;this.stopMusic();this.music=which;
   if(!this.enabled||this.muted||this.musicMuted)return;
   const filename=this.musicFiles[which];
   if(!filename){this.startSynthMusic(which);return;}

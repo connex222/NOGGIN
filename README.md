@@ -1,3 +1,5 @@
+> **NOGGIN Flagship — release record (11 November 2026).** The owner requested merge, Render deployment and consolidation of [PR #10](https://github.com/connex222/NOGGIN/pull/10). Changes preserve the approved 28-space board, rules, scoring, avatars, host voice and artwork. See [Flagship release record](docs/NOGGIN-FLAGSHIP-RELEASE.md), [targeted test evidence](docs/NOGGIN-FLAGSHIP-TARGETED-EXECUTION.md) and [full improvement audit](docs/NOGGIN-FLAGSHIP-IMPROVEMENT.md). **Important:** GitHub Actions jobs have not run, and physical multiplayer/restart recovery remain unverified; do not present the flagship release as fully accepted. The original v3.5.0-alpha.1 package version remains unchanged.
+
 **Current Visual 2.0 / lobby release record (7 November 2026):** [NOGGIN Alpha consolidated baseline](docs/NOGGIN-ALPHA-CONSOLIDATED.md). Use this current-main record before older local preview or cinematic instructions.
 
 ## NOGGIN ALPHA — v3.5.0-alpha.1 (single development baseline)
