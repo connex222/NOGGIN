@@ -3,3 +3,5 @@ node_modules/
 .DS_Store
 coverage/
 state/
+# Generated local QA output (do not commit machine-specific logs)
+NOGGIN-FLAGSHIP-QA-RESULTS.txt
