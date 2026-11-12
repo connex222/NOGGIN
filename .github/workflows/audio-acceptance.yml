@@ -65,8 +65,10 @@ jobs:
         with:
           node-version: '22'
           cache: npm
+      # No package-lock.json is checked in; npm ci fails without a lockfile.
+      # Keep this consistent with ci.yml until dependency locking is introduced.
       - name: Install production dependencies
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund
       - name: Static syntax checks
         run: npm run check
       - name: Run full regression suite, including server audio endpoint testing
