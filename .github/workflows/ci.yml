@@ -1,7 +1,16 @@
 name: NOGGIN tests
 on:
   push:
+    branches: [main]
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: noggin-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   node-tests:
     runs-on: ubuntu-latest
