@@ -54,6 +54,12 @@ test('live server serves TV and phones without redirect loops',
         assert.match(response.headers.get('content-type')||'',/text\/html/);
         assert.match(await response.text(),/<!doctype html|<html/i);
       }
+      // Client assets must never be stale after a deployment or hotfix.
+      for(const route of ['/tv/index.html','/tv/tv.js','/tv/tv.css','/play/index.html','/play/play.js']){
+        const response=await request(route);
+        assert.equal(response.status,200,`${route} must be served`);
+        assert.match(response.headers.get('cache-control')||'',/no-store/i,`${route} must not be cached`);
+      }
       for(const route of ['/tv','/play']){
         const response=await request(route);
         assert.equal(response.status,302,`${route} should redirect just once`);

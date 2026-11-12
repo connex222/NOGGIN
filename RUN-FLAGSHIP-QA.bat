@@ -7,7 +7,7 @@ set "FAILED=0"
 >> "%REPORT%" echo =====================================================
 >> "%REPORT%" echo Timestamp: %DATE% %TIME%
 >> "%REPORT%" echo Working directory: %CD%
->> "%REPORT%" echo Branch required: main or improvement/noggin-flagship
+>> "%REPORT%" echo Source: current local checkout or extracted repository snapshot
 >> "%REPORT%" echo No GitHub merge, push or Render deploy is performed.
 >> "%REPORT%" echo.
 where node >nul 2>&1
@@ -27,15 +27,15 @@ if errorlevel 1 (
 where git >nul 2>&1
 if not errorlevel 1 (
   for /f "delims=" %%B in ('git branch --show-current 2^>nul') do set "CURRENT_BRANCH=%%B"
+  for /f "delims=" %%H in ('git rev-parse --short HEAD 2^>nul') do set "CURRENT_COMMIT=%%H"
   if defined CURRENT_BRANCH (
     >> "%REPORT%" echo Checked out branch: !CURRENT_BRANCH!
-    if /i not "!CURRENT_BRANCH!"=="improvement/noggin-flagship" if /i not "!CURRENT_BRANCH!"=="main" (
-      echo ERROR: Checkout main or improvement/noggin-flagship first.
-      >> "%REPORT%" echo ERROR: Incorrect Git branch.
-      set "FAILED=1"
-      goto :done
-    )
+  ) else (
+    >> "%REPORT%" echo WARNING: No Git branch detected; test source identity manually.
   )
+  if defined CURRENT_COMMIT >> "%REPORT%" echo Commit: !CURRENT_COMMIT!
+) else (
+  >> "%REPORT%" echo WARNING: Git unavailable; this may be an extracted ZIP.
 )
 call :run "NODE VERSION" "node --version"
 call :run "NPM VERSION" "npm --version"
