@@ -177,14 +177,15 @@ test('gameplay reconnect keeps seat, pauses active turn, then skips after 30 sec
  f.rooms.resume({code:f.code,role:'player',token:p.token,socketId:'back'});assert.equal(f.room.players[0].socketId,'back');
 });
 
-// ───── v3.2 presentation timing: nothing is revealed while the dice are in the air ─────
+// ───── presentation timing: animation completes before the impact-based verdict hold ─────
 test('the verdict waits for the dice and token hops; it carries each player\'s Spark change',()=>{
  const f=fixture(2);const p=landOn(f,5,3);const b=f.room.board;
  assert.equal(b.presentUntil,f.now()+board.presentMs(3));
- assert.equal(b.nextAt,f.now()+board.presentMs(3)+2900);
+ // +2 Sparks uses a 2 s verdict; major swings and headline results use 2.9 s.
+ assert.equal(b.nextAt,f.now()+board.presentMs(3)+2000);
  assert.deepEqual(b.result.deltas,{[p.id]:2});
  assert.equal(f.rooms.state(f.code).board.presentUntil,b.presentUntil);
- f.advance(board.presentMs(3)+2800);f.rooms.sweep();assert.equal(b.step,'result');
+ f.advance(board.presentMs(3)+1900);f.rooms.sweep();assert.equal(b.step,'result');
  f.advance(201);f.rooms.sweep();assert.equal(b.step,'await_roll');assert.equal(b.presentUntil,null);
 });
 test('Brain Drain\'s five seconds start only after the token lands; decisions get the same allowance',()=>{
