@@ -38,7 +38,7 @@ app.use(express.static(publicDir,{
   dotfiles:'deny',
   maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0,
   setHeaders(res, filePath) {
-    if (/\\.(?:html|js|css)$/i.test(filePath)) {
+    if (/\.(?:html|js|css)$/i.test(filePath)) {
       res.setHeader('Cache-Control', 'no-store, max-age=0');
     }
   }
