@@ -32,10 +32,16 @@
       .filter(el => el !== control && !control.contains(el) && !el.contains(control))
       .filter(el => {
         const cs = getComputedStyle(el);
-        return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.opacity !== '0' && cs.pointerEvents !== 'none';
+        if (cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') return false;
+        const interactive = el.matches('button, a[href], input, select, textarea, summary, [role="button"], [role="link"], [tabindex]:not([tabindex="-1"])');
+        return !interactive || cs.pointerEvents !== 'none';
       })
-      .map(el => el.getBoundingClientRect())
-      .filter(r => r.width > 0 && r.height > 0 && r.width < width * .8 && r.height < height * .6 && r.bottom > 0 && r.top < height && r.right > 0 && r.left < width);
+      .map(el => ({
+        rect: el.getBoundingClientRect(),
+        interactive: el.matches('button, a[href], input, select, textarea, summary, [role="button"], [role="link"], [tabindex]:not([tabindex="-1"])')
+      }))
+      .filter(({rect:r, interactive}) => r.width > 0 && r.height > 0 && (interactive || (r.width < width * .8 && r.height < height * .6)) && r.bottom > 0 && r.top < height && r.right > 0 && r.left < width)
+      .map(({rect}) => rect);
     function findPosition(compact) {
       control.classList.toggle('collection-fullscreen-compact', compact);
       sync();
