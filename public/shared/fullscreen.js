@@ -64,10 +64,13 @@
       if (control.parentElement !== document.body) document.body.appendChild(control);
       control.style.position = 'fixed';
       control.style.visibility = '';
-      control.style.left = Math.round(position[0]) + 'px';
-      control.style.top = Math.round(position[1]) + 'px';
-      control.style.right = 'auto';
-      control.style.bottom = 'auto';
+      // CSS safe-area offsets protect notches and rounded mobile corners.
+      const onRight = Math.abs(position[0] - (width - control.offsetWidth - inset)) < 3;
+      const onBottom = Math.abs(position[1] - (height - control.offsetHeight - inset)) < 3;
+      control.style.left = onRight ? 'auto' : 'max(12px, env(safe-area-inset-left))';
+      control.style.right = onRight ? 'max(12px, env(safe-area-inset-right))' : 'auto';
+      control.style.top = onBottom ? 'auto' : position[1] === inset ? 'max(12px, env(safe-area-inset-top))' : Math.round(position[1]) + 'px';
+      control.style.bottom = onBottom ? 'max(12px, env(safe-area-inset-bottom))' : 'auto';
       sync();
       return;
     }
