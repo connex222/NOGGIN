@@ -10,3 +10,7 @@ Reviewed all 11 question/prompt JSON banks (3,724 entries at baseline). Removed 
 Structural QA: 100 standard arithmetic buzzer questions have correct numeric answer positions; no missing or malformed buzzer answer index; no identical drawing/unscramble words repeated in the same mode. No placeholder markers detected. Source and fact-level verification still outstanding for items already marked `review-pending` (530 before this clean-up). An obscure-but-valid item is not automatically an error. Do not mark remaining review-pending as Passed.
 
 Cross-mode shared facts remain by design: e.g. octopus hearts in Buzzer Battle and Close Call have different mechanics. Broader semantic duplicates may still exist.
+
+## Final 11-bank structural QA result
+
+All 3,720 retained entries passed required-field and per-bank duplicate checks. Numeric higher/lower entries contain finite values; Close Call answers are numeric; Fib Facts have blanks and answers; Buzzer Battle option indices are valid and its 100 standard arithmetic prompts have correct numeric keys. Unscramble and Sketch use distinct word entries within each mode. 530 review-pending flags remain and must not be silently approved. This verifies only the machine-checkable properties; it is not a line-by-line independent source verification.
