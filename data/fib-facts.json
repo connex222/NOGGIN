@@ -2328,8 +2328,11 @@
     "question": "Wombats are famous for producing droppings shaped like ___.",
     "answer": "cubes",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.smithsonianmag.com/smart-news/wombats-poop-cubes-and-scientists-finally-got-to-the-bottom-of-it-180976898/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-012",
@@ -2360,8 +2363,11 @@
     "question": "The national animal of Scotland is the ___.",
     "answer": "unicorn",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.scotland.org/inspiration/what-is-the-national-animal-of-scotland",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-016",
@@ -2400,8 +2406,11 @@
     "question": "The pleasant earthy smell after rain on dry ground is called ___.",
     "answer": "petrichor",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/rain",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-021",
@@ -2566,8 +2575,11 @@
     "question": "The Greenland ___ can live for around 400 years.",
     "answer": "shark",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nhm.ac.uk/discover/nine-types-of-sharks-in-the-ocean.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Natural History Museum describes Greenland sharks as living as long as 400 years."
   },
   {
     "id": "v3-fib-043",
@@ -2598,16 +2610,22 @@
     "question": "Among seahorses, it is the ___ who gives birth.",
     "answer": "male",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://ocean.si.edu/ocean-life/fish/longspine-seahorse",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Smithsonian confirms that male seahorses carry eggs and give birth."
   },
   {
     "id": "v3-fib-047",
     "question": "Underneath their white fur, polar bears have ___ skin.",
     "answer": "black",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.wwf.org.uk/learn/fascinating-facts/polar-bears",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "WWF confirms polar bear skin is black."
   },
   {
     "id": "v3-fib-048",
@@ -2694,8 +2712,11 @@
     "question": "The world's first webcam watched a coffee ___ at Cambridge University.",
     "answer": "pot",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.cst.cam.ac.uk/news/antiques-code-show",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-059",
@@ -2750,8 +2771,11 @@
     "question": "Nintendo was founded in 1889 to make playing ___.",
     "answer": "cards",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nintendo.com/en-gb/Corporate/Corporate-625946.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-066",
@@ -2766,16 +2790,22 @@
     "question": "The clouds of Venus are made of ___ acid.",
     "answer": "sulphuric",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-068",
     "question": "Jupiter spins so fast that its day lasts only about ___ hours.",
     "answer": "ten",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://spaceplace.nasa.gov/days/en/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-069",
@@ -2790,8 +2820,11 @@
     "question": "About 99.8 per cent of all the mass in our Solar System is in the ___.",
     "answer": "Sun",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/sun/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-071",
@@ -2814,8 +2847,11 @@
     "question": "In 1971, astronaut Alan Shepard hit golf balls on the ___.",
     "answer": "Moon",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nasa.gov/history/mercury-seven-astronaut-biographies/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-074",
@@ -2846,8 +2882,11 @@
     "question": "The scheduled flight from Westray to Papa Westray in Orkney takes about ___ minutes.",
     "answer": "two",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.loganair.co.uk/news/loganair-selected-as-orkney-inter-isles-transport-provider-for-further-four-years/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-079",
@@ -2894,8 +2933,11 @@
     "question": "The Eiffel Tower was meant to stand for only ___ years.",
     "answer": "20",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.toureiffel.paris/en/the-monument/eiffel-tower-and-science",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Official Eiffel Tower history confirms expected lifespan of 20 years."
   },
   {
     "id": "v3-fib-085",
@@ -2950,8 +2992,11 @@
     "question": "A day on Mars is called a ___.",
     "answer": "sol",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/mars/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-092",
@@ -2966,8 +3011,11 @@
     "question": "The first ever text message, sent in 1992, said 'Merry ___'.",
     "answer": "Christmas",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://blog.sciencemuseum.org.uk/sms-turns-20-with-a-touch-of-festive-cheer/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-094",
