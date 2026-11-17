@@ -6023,9 +6023,12 @@
     ],
     "correct": 3,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "medium"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "medium",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-002",
@@ -6038,9 +6041,12 @@
     ],
     "correct": 0,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "medium"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "medium",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-003",
@@ -6053,9 +6059,12 @@
     ],
     "correct": 0,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-004",
@@ -6068,9 +6077,12 @@
     ],
     "correct": 2,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-005",
@@ -6083,9 +6095,12 @@
     ],
     "correct": 3,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-006",
@@ -6098,9 +6113,12 @@
     ],
     "correct": 2,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-007",
@@ -6113,9 +6131,12 @@
     ],
     "correct": 2,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-008",
@@ -6128,9 +6149,12 @@
     ],
     "correct": 0,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-009",
@@ -6143,9 +6167,12 @@
     ],
     "correct": 1,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-010",
@@ -6158,9 +6185,12 @@
     ],
     "correct": 2,
     "topic": "geography",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v3-buz-011",
@@ -7208,9 +7238,12 @@
     ],
     "correct": 3,
     "topic": "science",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://science.nasa.gov/mars/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-083",
@@ -7298,9 +7331,12 @@
     ],
     "correct": 1,
     "topic": "science",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "medium"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "medium",
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v3-buz-089",
@@ -7313,9 +7349,12 @@
     ],
     "correct": 3,
     "topic": "science",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "hard"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "hard",
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v3-buz-091",
@@ -7433,9 +7472,12 @@
     ],
     "correct": 0,
     "topic": "science",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "medium"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "medium",
+    "sourceUrl": "https://science.nasa.gov/sun/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-099",
@@ -7463,9 +7505,12 @@
     ],
     "correct": 3,
     "topic": "history",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.english-heritage.org.uk/visit/places/1066-battle-of-hastings-abbey-and-battlefield/history-and-stories/history",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-101",
@@ -7478,9 +7523,12 @@
     ],
     "correct": 1,
     "topic": "history",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.nasa.gov/mission/apollo-11/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-102",
@@ -7673,9 +7721,12 @@
     ],
     "correct": 3,
     "topic": "sport",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.theifab.com/laws/2025-26/the-players/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-115",
@@ -7688,9 +7739,12 @@
     ],
     "correct": 0,
     "topic": "sport",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://passport.world.rugby/laws-of-the-game/foreword/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-116",
@@ -7718,9 +7772,12 @@
     ],
     "correct": 1,
     "topic": "sport",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "medium"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "medium",
+    "sourceUrl": "https://www.bbc.co.uk/sport/snooker/68854304",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-118",
@@ -7793,9 +7850,12 @@
     ],
     "correct": 0,
     "topic": "sport",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.olympics.com/ioc/faq/olympic-symbol-and-identity/what-is-the-meaning-of-the-olympic-rings",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-123",
@@ -7823,9 +7883,12 @@
     ],
     "correct": 2,
     "topic": "sport",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.icc-cricket.com/news/mens-odi-match-clause-17-the-over",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v3-buz-125",
@@ -8276,14 +8339,15 @@
     "correct": 1,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Wellington",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-003",
-    "question": "What is the capital of Switzerland?",
+    "question": "Which Swiss city is the seat of the federal government?",
     "choices": [
       "Zurich",
       "Geneva",
@@ -8293,10 +8357,11 @@
     "correct": 2,
     "topic": "geography",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Bern",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-004",
@@ -8310,10 +8375,11 @@
     "correct": 3,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Ankara",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-005",
@@ -8327,10 +8393,11 @@
     "correct": 0,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Bras%C3%ADlia",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-006",
@@ -8599,10 +8666,11 @@
     "correct": 0,
     "topic": "sport",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Snooker",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.bbc.co.uk/sport/snooker/68854304",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-022",
@@ -8701,10 +8769,11 @@
     "correct": 2,
     "topic": "sport",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Snooker",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.bbc.co.uk/sport/snooker/68854304",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-028",
@@ -8735,10 +8804,11 @@
     "correct": 0,
     "topic": "sport",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Rugby_union",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.world.rugby/the-game/beginners-guide/points",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-030",
@@ -8752,10 +8822,11 @@
     "correct": 1,
     "topic": "arts",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Pride_and_Prejudice",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://support.bl.uk/Book/Detail/e5a80caa-fdb6-4360-b8b8-9e7f00a580fe",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-031",
@@ -8769,10 +8840,11 @@
     "correct": 2,
     "topic": "arts",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Oliver_Twist",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://support.bl.uk/Book/BooksList?name=Seasonal",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-032",
@@ -8837,10 +8909,11 @@
     "correct": 2,
     "topic": "arts",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Frankenstein",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://support.bl.uk/Book/BooksList?name=Seasonal",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-036",
@@ -8922,10 +8995,11 @@
     "correct": 3,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Silver",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v35-buz-041",
@@ -9058,10 +9132,11 @@
     "correct": 3,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Milky_Way",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://science.nasa.gov/sun/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "v35-buz-049",
@@ -9738,10 +9813,11 @@
     "correct": 3,
     "topic": "geography",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Rabat",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-089",
@@ -9755,10 +9831,11 @@
     "correct": 0,
     "topic": "geography",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Hanoi",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "v35-buz-090",
@@ -9806,10 +9883,11 @@
     "correct": 3,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Potassium",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v35-buz-093",
@@ -9823,10 +9901,11 @@
     "correct": 0,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Tin",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v35-buz-094",
@@ -9840,10 +9919,11 @@
     "correct": 1,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Lead",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "v35-buz-095",
@@ -9857,10 +9937,11 @@
     "correct": 2,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Tungsten",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/element/74/tungsten",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry tungsten entry gives W."
   },
   {
     "id": "v35-buz-096",
@@ -10435,10 +10516,11 @@
     "correct": 1,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-003",
@@ -10452,10 +10534,11 @@
     "correct": 2,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-004",
@@ -10469,10 +10552,11 @@
     "correct": 3,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-005",
@@ -10486,10 +10570,11 @@
     "correct": 0,
     "topic": "science",
     "difficulty": "easy",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-006",
@@ -10503,10 +10588,11 @@
     "correct": 1,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-007",
@@ -10520,10 +10606,11 @@
     "correct": 2,
     "topic": "science",
     "difficulty": "hard",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-008",
@@ -10537,10 +10624,11 @@
     "correct": 3,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-009",
@@ -10554,10 +10642,11 @@
     "correct": 0,
     "topic": "science",
     "difficulty": "easy",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-010",
@@ -10571,10 +10660,11 @@
     "correct": 1,
     "topic": "science",
     "difficulty": "medium",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://periodic-table.rsc.org/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Royal Society of Chemistry periodic table confirms unique element-symbol pairing."
   },
   {
     "id": "alpha250-buz-011",
@@ -10588,10 +10678,11 @@
     "correct": 2,
     "topic": "space",
     "difficulty": "hard",
-    "sourceUrl": "https://science.nasa.gov/solar-system/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://science.nasa.gov/sun/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-013",
@@ -10656,10 +10747,11 @@
     "correct": 0,
     "topic": "space",
     "difficulty": "easy",
-    "sourceUrl": "https://science.nasa.gov/solar-system/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.nasa.gov/mission/apollo-11/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-018",
@@ -10724,10 +10816,11 @@
     "correct": 0,
     "topic": "geography",
     "difficulty": "easy",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-022",
@@ -10741,10 +10834,11 @@
     "correct": 1,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-023",
@@ -10758,10 +10852,11 @@
     "correct": 2,
     "topic": "geography",
     "difficulty": "hard",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-024",
@@ -10775,10 +10870,11 @@
     "correct": 3,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-025",
@@ -10792,10 +10888,11 @@
     "correct": 0,
     "topic": "geography",
     "difficulty": "easy",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-026",
@@ -10809,10 +10906,11 @@
     "correct": 1,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-027",
@@ -10826,10 +10924,11 @@
     "correct": 2,
     "topic": "geography",
     "difficulty": "hard",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-028",
@@ -10843,10 +10942,11 @@
     "correct": 3,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-029",
@@ -10860,10 +10960,11 @@
     "correct": 0,
     "topic": "geography",
     "difficulty": "easy",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-030",
@@ -10877,10 +10978,11 @@
     "correct": 1,
     "topic": "geography",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/topic/list-of-capitals-in-Europe-2003219",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://countries.world/capitals/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Checked against November 2026 published capitals list; Switzerland qualified as federal city, rather than a formally designated capital."
   },
   {
     "id": "alpha250-buz-031",
@@ -11234,10 +11336,11 @@
     "correct": 3,
     "topic": "art",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.metmuseum.org/exhibitions/van-gogh-cypresses",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-053",
@@ -11251,10 +11354,11 @@
     "correct": 0,
     "topic": "art",
     "difficulty": "easy",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.nga.gov/artists/1205-salvador-dali",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-054",
@@ -11285,10 +11389,11 @@
     "correct": 2,
     "topic": "art",
     "difficulty": "hard",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.nga.gov/exhibitions/edvard-munch-150th-anniversary-tribute",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-056",
@@ -11336,10 +11441,11 @@
     "correct": 1,
     "topic": "art",
     "difficulty": "medium",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.metmuseum.org/de/essays/johannes-vermeer-1632-1675",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-059",
@@ -11540,10 +11646,11 @@
     "correct": 3,
     "topic": "sport",
     "difficulty": "medium",
-    "sourceUrl": "https://olympics.com/en/sports/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.icc-cricket.com/news/mens-odi-match-clause-1-the-player",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-073",
@@ -11557,10 +11664,11 @@
     "correct": 0,
     "topic": "sport",
     "difficulty": "easy",
-    "sourceUrl": "https://olympics.com/en/sports/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.world.rugby/the-game/beginners-guide/points",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-074",
@@ -11574,10 +11682,11 @@
     "correct": 1,
     "topic": "sport",
     "difficulty": "medium",
-    "sourceUrl": "https://olympics.com/en/sports/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.olympics.com/ioc/faq/olympic-symbol-and-identity/what-is-the-meaning-of-the-olympic-rings",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Source confirms the specific factual answer; four displayed choices remain distinct."
   },
   {
     "id": "alpha250-buz-075",
