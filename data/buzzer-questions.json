@@ -6794,7 +6794,7 @@
   },
   {
     "id": "v3-buz-054",
-    "question": "What colour is the inside of a ripe kiwi fruit?",
+    "question": "What colour is the flesh of a ripe green kiwifruit?",
     "choices": [
       "Purple",
       "Green",
@@ -6839,7 +6839,7 @@
   },
   {
     "id": "v3-buz-057",
-    "question": "Which spice gives curry its yellow colour?",
+    "question": "Which spice is responsible for the yellow colour in many curry sauces?",
     "choices": [
       "Turmeric",
       "Cumin",
@@ -7102,21 +7102,6 @@
       "Blackbird"
     ],
     "correct": 2,
-    "topic": "animals",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
-  },
-  {
-    "id": "v3-buz-075",
-    "question": "What type of animal is a Shetland?",
-    "choices": [
-      "Pony",
-      "Sheep",
-      "Dog",
-      "Cow"
-    ],
-    "correct": 0,
     "topic": "animals",
     "review": true,
     "editorialStatus": "review-pending",
@@ -7754,7 +7739,7 @@
   },
   {
     "id": "v3-buz-119",
-    "question": "Which sport is played at Wimbledon?",
+    "question": "Which sport is contested at the Wimbledon Championships?",
     "choices": [
       "Cricket",
       "Croquet",
@@ -10049,7 +10034,7 @@
   },
   {
     "id": "v35-buz-106",
-    "question": "What is the largest bird of prey in the UK?",
+    "question": "Which bird of prey found in the UK has the greatest typical wingspan?",
     "choices": [
       "Golden eagle",
       "White-tailed eagle",
@@ -10439,23 +10424,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "alpha250-buz-001",
-    "question": "What is the chemical symbol for gold?",
-    "choices": [
-      "Au",
-      "Ag",
-      "Fe",
-      "Pb"
-    ],
-    "correct": 0,
-    "topic": "science",
-    "difficulty": "easy",
-    "sourceUrl": "https://www.rsc.org/periodic-table",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "alpha250-buz-002",
     "question": "What is the chemical symbol for platinum?",
     "choices": [
@@ -10626,23 +10594,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "alpha250-buz-012",
-    "question": "What is the closest star to Earth?",
-    "choices": [
-      "Sirius",
-      "Vega",
-      "Polaris",
-      "The Sun"
-    ],
-    "correct": 3,
-    "topic": "space",
-    "difficulty": "medium",
-    "sourceUrl": "https://science.nasa.gov/solar-system/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "alpha250-buz-013",
     "question": "What is an icy small body with a tail near the Sun called?",
     "choices": [
@@ -10688,23 +10639,6 @@
     "correct": 2,
     "topic": "space",
     "difficulty": "hard",
-    "sourceUrl": "https://science.nasa.gov/solar-system/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
-    "id": "alpha250-buz-016",
-    "question": "Who was the first human to walk on the Moon?",
-    "choices": [
-      "Buzz Aldrin",
-      "Yuri Gagarin",
-      "Michael Collins",
-      "Neil Armstrong"
-    ],
-    "correct": 3,
-    "topic": "space",
-    "difficulty": "medium",
     "sourceUrl": "https://science.nasa.gov/solar-system/",
     "verified": "needs-owner-check",
     "review": true,
@@ -11289,23 +11223,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "alpha250-buz-051",
-    "question": "Which painter created the Mona Lisa?",
-    "choices": [
-      "Michelangelo",
-      "Raphael",
-      "Leonardo da Vinci",
-      "Caravaggio"
-    ],
-    "correct": 2,
-    "topic": "art",
-    "difficulty": "hard",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "alpha250-buz-052",
     "question": "Which painter is associated with The Starry Night?",
     "choices": [
@@ -11436,23 +11353,6 @@
     "correct": 2,
     "topic": "art",
     "difficulty": "hard",
-    "sourceUrl": "https://www.britannica.com/art/visual-arts",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
-    "id": "alpha250-buz-060",
-    "question": "Which British artist painted The Fighting Temeraire?",
-    "choices": [
-      "John Constable",
-      "William Blake",
-      "Thomas Gainsborough",
-      "J. M. W. Turner"
-    ],
-    "correct": 3,
-    "topic": "art",
-    "difficulty": "medium",
     "sourceUrl": "https://www.britannica.com/art/visual-arts",
     "verified": "needs-owner-check",
     "review": true,
@@ -11629,23 +11529,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "alpha250-buz-071",
-    "question": "How many players from one football team are normally on the pitch at kick-off?",
-    "choices": [
-      "9",
-      "10",
-      "11",
-      "12"
-    ],
-    "correct": 2,
-    "topic": "sport",
-    "difficulty": "hard",
-    "sourceUrl": "https://olympics.com/en/sports/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "alpha250-buz-072",
     "question": "How many players make up a cricket side?",
     "choices": [
@@ -11742,23 +11625,6 @@
     "correct": 0,
     "topic": "sport",
     "difficulty": "easy",
-    "sourceUrl": "https://olympics.com/en/sports/",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
-    "id": "alpha250-buz-078",
-    "question": "In golf, what is one stroke below par on a hole called?",
-    "choices": [
-      "Bogey",
-      "Birdie",
-      "Eagle",
-      "Albatross"
-    ],
-    "correct": 1,
-    "topic": "sport",
-    "difficulty": "medium",
     "sourceUrl": "https://olympics.com/en/sports/",
     "verified": "needs-owner-check",
     "review": true,
