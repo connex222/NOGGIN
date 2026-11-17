@@ -28,7 +28,7 @@ test('Phase 6 batch 6 multiple-choice bank has a unique correct answer', () => {
 });
 test('Phase 6 batch 6 bid categories carry distinct illustrative answers', () => {
   const rows = read('bid-categories').filter(row => row.id.startsWith('p6b6-'));
-  assert.equal(rows.length, 5); // v3.5.0 Q7: 5 removed as vague, thin or silly
+  assert.equal(rows.length, 4); // Nov 2026 editorial QA: one further vague closed-set bridge category removed
   for (const row of rows) {
     assert.ok(row.answers.length >= 8);
     assert.equal(new Set(row.answers.map(s => s.toLowerCase())).size, row.answers.length);
