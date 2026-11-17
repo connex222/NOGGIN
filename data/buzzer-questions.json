@@ -7214,7 +7214,7 @@
   },
   {
     "id": "v3-buz-081",
-    "question": "What is the hardest natural substance?",
+    "question": "Which mineral has a hardness of 10 on the Mohs scale?",
     "choices": [
       "Granite",
       "Diamond",
@@ -7223,9 +7223,12 @@
     ],
     "correct": 1,
     "topic": "science",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://pubs.usgs.gov/gip/gemstones/mineral.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "USGS specifies diamond = 10 on Mohs scale; removes broader 'hardest natural substance' claim."
   },
   {
     "id": "v3-buz-082",
@@ -8081,9 +8084,12 @@
     ],
     "correct": 0,
     "topic": "everyday",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "difficulty": "easy"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "difficulty": "easy",
+    "sourceUrl": "https://www.royalmint.com/collect/get-into-coin-collecting/popular-coin-denominations/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Royal Mint states UK 50p has seven sides."
   },
   {
     "id": "v3-buz-140",
@@ -9276,7 +9282,7 @@
   },
   {
     "id": "v35-buz-057",
-    "question": "Which is the UK’s only venomous snake?",
+    "question": "Which is the UK's only native venomous snake?",
     "choices": [
       "Adder",
       "Grass snake",
@@ -9286,10 +9292,11 @@
     "correct": 0,
     "topic": "animals",
     "difficulty": "medium",
-    "sourceUrl": "https://en.wikipedia.org/wiki/Vipera_berus",
-    "verified": "needs-owner-check",
-    "review": true,
-    "editorialStatus": "review-pending"
+    "sourceUrl": "https://www.nhm.ac.uk/discover/should-we-be-scared-of-british-snakes.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "reviewNote": "Natural History Museum confirms adder is UK's only native venomous snake; wording made explicit."
   },
   {
     "id": "v35-buz-058",
