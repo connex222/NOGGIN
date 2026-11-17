@@ -3500,9 +3500,11 @@
       "Venezuela"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17-batch2",
+    "sourceUrl": "https://unstats.un.org/unsd/methodology/m49/",
+    "reviewNote": "Closed-set answer list compared with published institutional geographic, historical or scientific list."
   },
   {
     "id": "v35-bid-010",
@@ -4334,10 +4336,12 @@
       "Catherine Parr"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
-    "aliases": {}
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17-batch2",
+    "aliases": {},
+    "sourceUrl": "https://www.hrp.org.uk/hampton-court-palace/history-and-stories/henry-viii-s-wives-six-queens-six-women/",
+    "reviewNote": "Closed-set answer list compared with published institutional geographic, historical or scientific list."
   },
   {
     "id": "alpha250-bid-002",
@@ -4446,10 +4450,12 @@
       "Neptune"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
-    "aliases": {}
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17-batch2",
+    "aliases": {},
+    "sourceUrl": "https://science.nasa.gov/solar-system/planets/",
+    "reviewNote": "Closed-set answer list compared with published institutional geographic, historical or scientific list."
   },
   {
     "id": "alpha250-bid-008",
@@ -4498,9 +4504,11 @@
       "Ontario"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
-    "aliases": {}
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17-batch2",
+    "aliases": {},
+    "sourceUrl": "https://apps.glerl.noaa.gov/coastwatch/webdata/statistic/physical.html",
+    "reviewNote": "Closed-set answer list compared with published institutional geographic, historical or scientific list."
   }
 ]
