@@ -1308,14 +1308,6 @@
     "editorialStatus": "editorially-reviewed-not-independently-sourced"
   },
   {
-    "id": "p6final-fib-found-004",
-    "question": "A right angle measures ___ degrees.",
-    "answer": "90",
-    "familyFriendly": true,
-    "verified": "editorial-review-required",
-    "editorialStatus": "editorially-reviewed-not-independently-sourced"
-  },
-  {
     "id": "p6final-fib-found-005",
     "question": "A straight angle measures ___ degrees.",
     "answer": "180",
@@ -1407,22 +1399,6 @@
     "id": "p6final-fib-found-016",
     "question": "The Roman numeral C represents ___.",
     "answer": "100",
-    "familyFriendly": true,
-    "verified": "editorial-review-required",
-    "editorialStatus": "editorially-reviewed-not-independently-sourced"
-  },
-  {
-    "id": "p6final-fib-found-017",
-    "question": "The chemical symbol for oxygen is ___.",
-    "answer": "O",
-    "familyFriendly": true,
-    "verified": "editorial-review-required",
-    "editorialStatus": "editorially-reviewed-not-independently-sourced"
-  },
-  {
-    "id": "p6final-fib-found-018",
-    "question": "The chemical symbol for gold is ___.",
-    "answer": "Au",
     "familyFriendly": true,
     "verified": "editorial-review-required",
     "editorialStatus": "editorially-reviewed-not-independently-sourced"
