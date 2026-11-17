@@ -2328,8 +2328,11 @@
     "question": "Wombats are famous for producing droppings shaped like ___.",
     "answer": "cubes",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.smithsonianmag.com/smart-news/wombats-poop-cubes-and-scientists-finally-got-to-the-bottom-of-it-180976898/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-012",
@@ -2360,8 +2363,11 @@
     "question": "The national animal of Scotland is the ___.",
     "answer": "unicorn",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.scotland.org/inspiration/what-is-the-national-animal-of-scotland",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-016",
@@ -2400,8 +2406,11 @@
     "question": "The pleasant earthy smell after rain on dry ground is called ___.",
     "answer": "petrichor",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://weather.metoffice.gov.uk/learn-about/weather/types-of-weather/rain",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-021",
@@ -2694,8 +2703,11 @@
     "question": "The world's first webcam watched a coffee ___ at Cambridge University.",
     "answer": "pot",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.cst.cam.ac.uk/news/antiques-code-show",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-059",
@@ -2750,8 +2762,11 @@
     "question": "Nintendo was founded in 1889 to make playing ___.",
     "answer": "cards",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nintendo.com/en-gb/Corporate/Corporate-625946.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-066",
@@ -2766,16 +2781,22 @@
     "question": "The clouds of Venus are made of ___ acid.",
     "answer": "sulphuric",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-068",
     "question": "Jupiter spins so fast that its day lasts only about ___ hours.",
     "answer": "ten",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://spaceplace.nasa.gov/days/en/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-069",
@@ -2790,8 +2811,11 @@
     "question": "About 99.8 per cent of all the mass in our Solar System is in the ___.",
     "answer": "Sun",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/sun/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-071",
@@ -2814,8 +2838,11 @@
     "question": "In 1971, astronaut Alan Shepard hit golf balls on the ___.",
     "answer": "Moon",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nasa.gov/history/mercury-seven-astronaut-biographies/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-074",
@@ -2846,8 +2873,11 @@
     "question": "The scheduled flight from Westray to Papa Westray in Orkney takes about ___ minutes.",
     "answer": "two",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.loganair.co.uk/news/loganair-selected-as-orkney-inter-isles-transport-provider-for-further-four-years/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-079",
@@ -2950,8 +2980,11 @@
     "question": "A day on Mars is called a ___.",
     "answer": "sol",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/mars/facts/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-092",
@@ -2966,8 +2999,11 @@
     "question": "The first ever text message, sent in 1992, said 'Merry ___'.",
     "answer": "Christmas",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://blog.sciencemuseum.org.uk/sms-turns-20-with-a-touch-of-festive-cheer/",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Publisher, scientific or institutional reference confirms the stated claim and answer."
   },
   {
     "id": "v3-fib-094",
