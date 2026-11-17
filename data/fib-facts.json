@@ -2429,19 +2429,25 @@
   },
   {
     "id": "v3-fib-024",
-    "question": "A day on Venus is longer than a ___ on Venus.",
+    "question": "One sidereal rotation of Venus takes longer than one Venusian ___.",
     "answer": "year",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://science.nasa.gov/venus/venus-facts/",
+    "verified": "source-checked-2026-11-17",
+    "reviewNote": "NASA Venus sidereal rotation longer than orbital year; stem clarified"
   },
   {
     "id": "v3-fib-025",
     "question": "A 2015 study recorded 421 words for snow in the ___ language.",
     "answer": "Scots",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.gla.ac.uk/news/archiveofnews/2015/september/headline_424233_en.html",
+    "verified": "source-checked-2026-11-17",
+    "reviewNote": "University of Glasgow counted 421 Scots snow-related expressions in 2015"
   },
   {
     "id": "v3-fib-026",
@@ -2524,14 +2530,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "v3-fib-036",
-    "question": "Napoleon was once mobbed by a horde of ___ during a hunt.",
-    "answer": "rabbits",
-    "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "v3-fib-037",
     "question": "In Switzerland it is illegal to keep just one ___, because they get lonely.",
     "answer": "guinea pig",
@@ -2543,14 +2541,6 @@
     "id": "v3-fib-038",
     "question": "In medieval timekeeping, a 'moment' lasted ___ seconds.",
     "answer": "90",
-    "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
-    "id": "v3-fib-039",
-    "question": "The fingerprints of a ___ are so like a human's they could confuse a crime scene.",
-    "answer": "koala",
     "familyFriendly": true,
     "review": true,
     "editorialStatus": "review-pending"
@@ -2836,14 +2826,6 @@
     "editorialStatus": "review-pending"
   },
   {
-    "id": "v3-fib-075",
-    "question": "In the 1700s you could see the lions at the Tower of London free if you brought a cat or dog to ___ them.",
-    "answer": "feed",
-    "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
     "id": "v3-fib-076",
     "question": "The London Underground's first line opened in ___.",
     "answer": "1863",
@@ -2999,14 +2981,6 @@
     "id": "v3-fib-095",
     "question": "Scotland's 'Loch Ness' contains more fresh water than all the lakes in England and ___ combined.",
     "answer": "Wales",
-    "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
-  },
-  {
-    "id": "v3-fib-096",
-    "question": "The world's most-stolen food is reported to be ___.",
-    "answer": "cheese",
     "familyFriendly": true,
     "review": true,
     "editorialStatus": "review-pending"

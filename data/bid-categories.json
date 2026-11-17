@@ -52,14 +52,16 @@
       "Waning Crescent"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17",
     "aliases": {
       "Last Quarter": [
         "third quarter"
       ]
-    }
+    },
+    "sourceUrl": "https://science.nasa.gov/moon/moon-phases/",
+    "reviewNote": "NASA standard eight moon phases; Last/third quarter alias retained"
   },
   {
     "id": "bid-33",
@@ -73,14 +75,16 @@
       "Spanish"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17",
     "aliases": {
       "Chinese": [
         "mandarin"
       ]
-    }
+    },
+    "sourceUrl": "https://www.un.org/en/our-work/official-languages",
+    "reviewNote": "UN six official languages match record"
   },
   {
     "id": "bid-38",
@@ -95,9 +99,9 @@
       "Candela"
     ],
     "kind": "closed",
-    "review": true,
-    "editorialStatus": "review-pending",
-    "verified": "needs-owner-check",
+    "review": false,
+    "editorialStatus": "source-checked",
+    "verified": "source-checked-2026-11-17",
     "aliases": {
       "Metre": [
         "meter"
@@ -105,100 +109,9 @@
       "Ampere": [
         "amp"
       ]
-    }
-  },
-  {
-    "id": "bid-p6-002",
-    "prompt": "Name wild members of the cat family",
-    "answers": [
-      "Lion",
-      "Tiger",
-      "Leopard",
-      "Jaguar",
-      "Cheetah",
-      "Lynx",
-      "Puma",
-      "Ocelot",
-      "Snow leopard",
-      "Clouded leopard",
-      "Serval",
-      "Caracal",
-      "Bobcat",
-      "Wildcat",
-      "Sand cat",
-      "Margay",
-      "Jaguarundi",
-      "Fishing cat",
-      "Pallas’s cat",
-      "Black-footed cat",
-      "Rusty-spotted cat",
-      "Leopard cat",
-      "Oncilla",
-      "Iberian lynx",
-      "Canada lynx",
-      "Marbled cat",
-      "Flat-headed cat",
-      "Kodkod"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Puma": [
-        "cougar",
-        "mountain lion",
-        "panther"
-      ],
-      "Pallas’s cat": [
-        "pallas cat",
-        "manul"
-      ],
-      "Wildcat": [
-        "scottish wildcat",
-        "wild cat"
-      ]
-    }
-  },
-  {
-    "id": "bid-p6-003",
-    "prompt": "Name types of needlework or fibre craft",
-    "answers": [
-      "Knitting",
-      "Crochet",
-      "Embroidery",
-      "Cross-stitch",
-      "Quilting",
-      "Weaving",
-      "Tatting",
-      "Macramé",
-      "Needlepoint",
-      "Patchwork",
-      "Appliqué",
-      "Smocking",
-      "Lace-making",
-      "Felting",
-      "Sewing",
-      "Darning",
-      "Tapestry",
-      "Spinning",
-      "Rug hooking",
-      "Beadwork"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Appliqué": [
-        "applique"
-      ],
-      "Lace-making": [
-        "lacemaking",
-        "lace making",
-        "bobbin lace"
-      ]
-    }
+    },
+    "sourceUrl": "https://www.bipm.org/en/measurement-units",
+    "reviewNote": "BIPM seven SI base units match record"
   },
   {
     "id": "bid-p6-006",
@@ -229,15 +142,17 @@
       "Ronna",
       "Quetta"
     ],
-    "review": true,
-    "editorialStatus": "review-pending",
+    "review": false,
+    "editorialStatus": "source-checked",
     "kind": "closed",
-    "verified": "needs-owner-check",
+    "verified": "source-checked-2026-11-17",
     "aliases": {
       "Deca": [
         "deka"
       ]
-    }
+    },
+    "sourceUrl": "https://www.bipm.org/en/measurement-units/si-prefixes",
+    "reviewNote": "BIPM 24 SI prefixes match record"
   },
   {
     "id": "bid-p6-007",
@@ -343,104 +258,6 @@
       ],
       "Cruise ship": [
         "cruise liner"
-      ]
-    }
-  },
-  {
-    "id": "bid-p6-009",
-    "prompt": "Name painting or drawing media and techniques",
-    "answers": [
-      "Watercolour",
-      "Oil painting",
-      "Pastel",
-      "Charcoal",
-      "Ink wash",
-      "Acrylic painting",
-      "Gouache",
-      "Pencil drawing",
-      "Fresco",
-      "Tempera",
-      "Encaustic",
-      "Spray paint",
-      "Airbrush",
-      "Crayon",
-      "Chalk",
-      "Pen and ink",
-      "Finger painting",
-      "Mural",
-      "Impasto",
-      "Pointillism",
-      "Sgraffito",
-      "Collage"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Watercolour": [
-        "watercolor",
-        "watercolours"
-      ],
-      "Oil painting": [
-        "oils",
-        "oil paint"
-      ],
-      "Acrylic painting": [
-        "acrylics",
-        "acrylic"
-      ],
-      "Pencil drawing": [
-        "pencil"
-      ],
-      "Spray paint": [
-        "graffiti"
-      ]
-    }
-  },
-  {
-    "id": "bid-p6-010",
-    "prompt": "Name parts of a flowering plant",
-    "answers": [
-      "Root",
-      "Stem",
-      "Leaf",
-      "Petal",
-      "Sepal",
-      "Stamen",
-      "Pistil",
-      "Seed",
-      "Anther",
-      "Filament",
-      "Stigma",
-      "Style",
-      "Ovary",
-      "Ovule",
-      "Pollen",
-      "Bud",
-      "Node",
-      "Petiole",
-      "Nectary",
-      "Receptacle",
-      "Fruit",
-      "Root hair",
-      "Carpel",
-      "Flower",
-      "Tendril"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Leaf": [
-        "leaves"
-      ],
-      "Petiole": [
-        "leaf stalk"
-      ],
-      "Root": [
-        "roots"
       ]
     }
   },
@@ -717,54 +534,6 @@
     "verified": "needs-owner-check"
   },
   {
-    "id": "p6b6-bid-008",
-    "prompt": "Name types of bridge",
-    "answers": [
-      "Arch",
-      "Beam",
-      "Truss",
-      "Suspension",
-      "Cable-stayed",
-      "Cantilever",
-      "Bascule",
-      "Pontoon",
-      "Swing",
-      "Vertical-lift",
-      "Tied-arch",
-      "Rope",
-      "Footbridge",
-      "Viaduct",
-      "Aqueduct",
-      "Transporter",
-      "Covered",
-      "Drawbridge",
-      "Tilt",
-      "Clapper"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Pontoon": [
-        "floating bridge",
-        "floating"
-      ],
-      "Vertical-lift": [
-        "lift bridge",
-        "lift"
-      ],
-      "Rope": [
-        "rope bridge",
-        "simple suspension"
-      ],
-      "Tilt": [
-        "tilting",
-        "tilt bridge"
-      ]
-    }
-  },
-  {
     "id": "p6final-bid-008",
     "prompt": "Name punctuation marks used in English writing",
     "answers": [
@@ -805,62 +574,6 @@
       ],
       "Exclamation mark": [
         "exclamation point"
-      ]
-    }
-  },
-  {
-    "id": "p6final-bid-019",
-    "prompt": "Name parts found in at least some petrol or diesel car engines",
-    "answers": [
-      "Piston",
-      "Cylinder",
-      "Crankshaft",
-      "Camshaft",
-      "Spark plug",
-      "Valve",
-      "Connecting rod",
-      "Timing belt",
-      "Timing chain",
-      "Cylinder head",
-      "Head gasket",
-      "Sump",
-      "Oil pump",
-      "Water pump",
-      "Fuel injector",
-      "Carburettor",
-      "Turbocharger",
-      "Flywheel",
-      "Glow plug",
-      "Rocker arm",
-      "Piston ring",
-      "Inlet manifold",
-      "Exhaust manifold",
-      "Distributor",
-      "Starter motor",
-      "Oil filter",
-      "Air filter",
-      "Throttle body",
-      "Engine block",
-      "Alternator"
-    ],
-    "review": true,
-    "editorialStatus": "review-pending",
-    "kind": "closed",
-    "verified": "needs-owner-check",
-    "aliases": {
-      "Carburettor": [
-        "carburetor",
-        "carb"
-      ],
-      "Turbocharger": [
-        "turbo"
-      ],
-      "Connecting rod": [
-        "con rod",
-        "conrod"
-      ],
-      "Inlet manifold": [
-        "intake manifold"
       ]
     }
   },
