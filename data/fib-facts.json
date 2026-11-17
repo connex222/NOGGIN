@@ -2575,8 +2575,11 @@
     "question": "The Greenland ___ can live for around 400 years.",
     "answer": "shark",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.nhm.ac.uk/discover/nine-types-of-sharks-in-the-ocean.html",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Natural History Museum describes Greenland sharks as living as long as 400 years."
   },
   {
     "id": "v3-fib-043",
@@ -2607,16 +2610,22 @@
     "question": "Among seahorses, it is the ___ who gives birth.",
     "answer": "male",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://ocean.si.edu/ocean-life/fish/longspine-seahorse",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Smithsonian confirms that male seahorses carry eggs and give birth."
   },
   {
     "id": "v3-fib-047",
     "question": "Underneath their white fur, polar bears have ___ skin.",
     "answer": "black",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.wwf.org.uk/learn/fascinating-facts/polar-bears",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "WWF confirms polar bear skin is black."
   },
   {
     "id": "v3-fib-048",
@@ -2924,8 +2933,11 @@
     "question": "The Eiffel Tower was meant to stand for only ___ years.",
     "answer": "20",
     "familyFriendly": true,
-    "review": true,
-    "editorialStatus": "review-pending"
+    "review": false,
+    "editorialStatus": "source-checked",
+    "sourceUrl": "https://www.toureiffel.paris/en/the-monument/eiffel-tower-and-science",
+    "verified": "source-checked-2026-11-17-batch2",
+    "reviewNote": "Official Eiffel Tower history confirms expected lifespan of 20 years."
   },
   {
     "id": "v3-fib-085",
