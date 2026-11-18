@@ -426,3 +426,22 @@ body.tv.playing .stage-challenge.mini-on-tv:has(.tv-sketch) .tv-sketch{
 .gn-v4[data-scene="tagline"] .gn-v4-tagline{opacity:1}
 @media(max-width:650px){.gn-v4-controls{left:10px;right:10px;justify-content:space-between}.gn-v4-controls button{font-size:11px;padding:10px}.gn-v4-title strong{font-size:13vw}.gn-v4-image{background-position:center}.gn-v4-tagline{top:78%;font-size:4vw}}
 @media(prefers-reduced-motion:reduce){.gn-v4-image,.gn-v4-title,.gn-v4-logo,.gn-v4-tagline{transition:none!important;animation:none!important}.gn-v4-progress div{animation:none!important}}
+
+/* 2026-11-18: Game navigation stays IN the showrunner bar, never floating
+   over the player board, scoring or countdown. Permit the bar to wrap. */
+body.tv.playing .stage-bottom{min-height:0;flex-wrap:wrap;align-content:center}
+body.tv.playing .showrunner-tools{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px;min-width:0}
+body.tv.playing #showBackLobby{min-height:38px;white-space:nowrap;font-size:clamp(11px,.92vw,14px);border-color:#c5a35a}
+@media(max-width:1050px),(max-height:650px){
+  body.tv.playing .tv-shell{height:auto;min-height:100dvh;overflow:visible}
+  body.tv.playing .game-stage{min-height:max(480px,calc(100dvh - 158px));max-height:none}
+  body.tv.playing .board-container{min-height:420px;flex:1 1 auto}
+  body.tv.playing .stage-challenge{overflow-y:auto;overscroll-behavior:contain}
+  body.tv.playing .board-centre{overflow-y:auto;overscroll-behavior:contain}
+  body.tv.playing .stage-bottom{gap:5px}
+}
+@media(max-width:700px){
+ body.tv.playing .showrunner-tools{justify-content:flex-start;max-width:100%}
+ body.tv.playing .stage-bottom{align-items:stretch}
+ body.tv.playing #showBackLobby{min-height:44px}
+}
