@@ -58,3 +58,21 @@ test('phone drops and returns in-game to original seat and avatar without creati
  assert.equal(after.players[1].avatarId,before.players[1].avatarId);
  assert.equal(after.players[1].online,true);
 });
+
+test('TV can return to the same room lobby without losing seats or leaving old clocks live',()=>{
+ const f=studio(4), room=f.rooms.find(f.created.code);
+ assert.equal(room.phase,'board');
+ assert.throws(()=>f.rooms.backToLobby(f.created.code,'unrelated-phone'),e=>e.code==='AUTH');
+ assert.equal(room.phase,'board','Unauthorised phones cannot reset the game');
+ const lobby=f.rooms.backToLobby(f.created.code,'tv-original');
+ assert.equal(lobby.phase,'lobby');
+ assert.equal(lobby.code,f.created.code);
+ assert.equal(lobby.players.length,4);
+ assert.equal(room.board,null);
+ assert.equal(room.matchReport,null);
+ assert.ok(room.players.every(p=>!p.ready&&p.sparks===0&&p.cues===0));
+ for(const s of f.sessions)f.rooms.setReady(f.created.code,s.socketId,true);
+ const resumed=f.rooms.startGame(f.created.code,'tv-original');
+ assert.equal(resumed.phase,'board');
+ assert.equal(resumed.players.length,4,'A new show preserves the original four seats');
+});
