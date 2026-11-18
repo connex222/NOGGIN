@@ -8,7 +8,7 @@ test('every Buzzer question has a topic; at least 200 are general knowledge',()=
  assert.ok(bank.filter(q=>q.topic!=='maths').length>=200);
 });
 test('new v3 questions: four distinct choices, valid key, flagged for editorial review until source-checked',()=>{
- const v3=bank.filter(q=>q.id.startsWith('v3-buz-'));assert.ok(v3.length>=150);
+ const v3=bank.filter(q=>q.id.startsWith('v3-buz-'));assert.ok(v3.length>=140, 'retain the curated v3 general-knowledge bank after removing bad questions');
  for(const q of v3){assert.equal(q.choices.length,4,q.id);assert.equal(new Set(q.choices.map(c=>c.toLowerCase())).size,4,q.id);
   assert.ok(Number.isInteger(q.correct)&&q.correct>=0&&q.correct<4,q.id);
   if(q.editorialStatus!=='source-checked'){assert.equal(q.review,true,q.id);assert.equal(q.editorialStatus,'review-pending',q.id);}}

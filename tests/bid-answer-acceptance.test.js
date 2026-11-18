@@ -16,7 +16,16 @@ test('invalid guesses and unrelated words are rejected',()=>{
  assert.equal(acceptedAnswer({answers:['Piano','Guitar']},'rhinoceros'),-1);
 });
 test('review flags remain when open-ended categories cannot yet be fairly judged',()=>{
- // v3.5.0 Q7: every rebuilt category stays flagged until the owner checks it.
- assert.equal(bid.filter(x=>x.review===true).length,bid.length);
+ // Source-checked categories are cleared, while unverified categories stay flagged.
+ assert.ok(bid.some(x=>x.editorialStatus==='source-checked'), 'editorial progress must be recorded');
+ for (const category of bid) {
+   if (category.editorialStatus === 'source-checked') {
+     assert.equal(category.review, false, category.id);
+     assert.match(category.sourceUrl, /^https:\/\//, category.id);
+   } else {
+     assert.equal(category.editorialStatus, 'review-pending', category.id);
+     assert.equal(category.review, true, category.id);
+   }
+ }
  assert.equal(bid.filter(x=>x.editorialStatus==='scope-checked').length,0);
 });

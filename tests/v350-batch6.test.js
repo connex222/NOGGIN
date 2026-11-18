@@ -179,7 +179,14 @@ test('Q6: 120+ new sourced medium/hard questions with four distinct choices', ()
   for (const q of fresh) {
     assert.ok(['medium', 'hard'].includes(q.difficulty), q.id);
     assert.match(q.sourceUrl, /^https:\/\//);
-    assert.equal(q.verified, 'needs-owner-check');
+    if (q.editorialStatus === 'source-checked') {
+      assert.match(q.verified, /^source-checked-\d{4}-\d{2}-\d{2}(?:-batch\d+)?$/, q.id);
+      assert.equal(q.review, false, q.id);
+    } else {
+      assert.equal(q.editorialStatus, 'review-pending', q.id);
+      assert.equal(q.verified, 'needs-owner-check', q.id);
+      assert.equal(q.review, true, q.id);
+    }
     assert.equal(new Set(q.choices.map(c => c.toLowerCase())).size, 4, q.id);
   }
 });
