@@ -40,7 +40,13 @@ test('Batch 5 Q7: Bid to Win category list is soundly structured',()=>{
     ids.add(category.id);
     assert.ok(typeof category.prompt==='string'&&category.prompt.length>8,category.id);
     assert.ok(Array.isArray(category.answers)&&category.answers.length >= (category.kind === 'closed' ? 4 : 6),category.id);
-    assert.equal(category.review,true,category.id+' allows editorial review');
+    if (category.editorialStatus === 'source-checked') {
+      assert.equal(category.review, false, category.id+' must not remain flagged after source verification');
+      assert.match(category.sourceUrl, /^https:\/\//, category.id+' has source evidence');
+    } else {
+      assert.equal(category.editorialStatus, 'review-pending', category.id+' requires review');
+      assert.equal(category.review, true, category.id+' must remain flagged until checked');
+    }
     if(category.kind==='open')assert.ok(category.answers.length>=40,category.id+' must accept at least 40 entries');
     const answers=category.answers.map(x=>String(x).trim().toLowerCase());
     assert.equal(new Set(answers).size,answers.length,category.id+' has no duplicate canonical answers');
