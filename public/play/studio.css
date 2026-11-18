@@ -180,3 +180,10 @@ body.game-mode.typing .game-player,body.game-mode.typing .game-help,body.game-mo
 body.game-mode.typing .game-action{min-height:0;padding-top:10px}
 body.game-mode.typing #gameScreen{max-height:var(--vvh,100dvh);overflow:auto}
 body.game-mode.typing .game-buttons{margin-top:8px}
+
+/* In-flow lobby navigation, not an overlay on answers or the phone keyboard. */
+.phone-return-nav{display:flex;justify-content:flex-end;align-items:center;min-height:38px;max-width:100%;padding:3px max(12px,env(safe-area-inset-right));background:#070e2b;border-bottom:1px solid #355a8a}
+.phone-return-link{min-height:34px;display:inline-flex;align-items:center;padding:5px 11px;border:1px solid #6f8dc2;border-radius:9px;color:#fff1bf;background:#1b2c54;text-decoration:none;font:700 clamp(12px,3vw,14px)/1.25 system-ui,sans-serif}
+.phone-return-link:focus-visible{outline:3px solid #ffe17d;outline-offset:2px}
+body.game-mode .phone-return-nav{min-height:34px;padding-top:1px;padding-bottom:1px}
+@media(max-height:600px){body.game-mode .phone-return-nav{min-height:30px}.phone-return-link{min-height:30px;padding:3px 8px}}

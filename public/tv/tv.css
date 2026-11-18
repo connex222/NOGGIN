@@ -445,3 +445,22 @@ body.tv.playing #showBackLobby{min-height:38px;white-space:nowrap;font-size:clam
  body.tv.playing .stage-bottom{align-items:stretch}
  body.tv.playing #showBackLobby{min-height:44px}
 }
+
+/* Narrow TVs and tablet landscape: header controls wrap instead of clipping. */
+.tv-header{min-width:0;flex-wrap:wrap}
+.header-actions{min-width:0;max-width:100%;flex:0 1 auto}
+.header-actions .sound-tools{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap;min-width:0}
+.header-actions .sound-tools button{min-height:44px}
+@media(max-width:1000px){
+ .tv-header{gap:10px}
+ .header-actions{flex:1 1 100%;align-items:flex-start;gap:6px}
+ .header-actions .sound-tools{justify-content:flex-start}
+ .tv-shell{min-width:0}
+}
+@media(max-height:600px) and (min-width:800px){
+ body.tv.playing .tv-header{gap:5px}
+ body.tv.playing .header-actions .sound-tools{gap:4px}
+ body.tv.playing .header-actions .sound-tools button{min-height:36px}
+ body.tv.playing .stage-bottom{gap:7px}
+ body.tv.playing .showrunner-tools{flex-wrap:wrap}
+}
