@@ -155,9 +155,9 @@ test('Q1: even if nobody answers, the Noggin-Off ends after the replay', () => {
 });
 
 // ---------- Q8 ----------
-test('Q8: reveals last 2.8 s (4 s relaxed), including after the final round', () => {
+test('Q8: reveals last 2.8 s (5.5 s relaxed), including after the final round', () => {
   assert.equal(phase3.REVEAL_MS, 2800);
-  assert.equal(phase3.REVEAL_RELAXED_MS, 4000);
+  assert.equal(phase3.REVEAL_RELAXED_MS, 5500);
   for (const relaxed of [false, true]) {
     const f = lobby(2);
     if (relaxed) f.room.settings.timerSpeed = 'relaxed';
@@ -169,7 +169,7 @@ test('Q8: reveals last 2.8 s (4 s relaxed), including after the final round', ()
       f.to(end + 1);
       if (f.room.board.minigame?.phase === 'reveal') {
         reveals++;
-        assert.equal(f.room.board.minigame.deadline - (end + 1), relaxed ? 4000 : 2800);
+        assert.equal(f.room.board.minigame.deadline - (end + 1), relaxed ? 5500 : 2800);
       }
     }
     assert.equal(reveals, 3, 'every round, including the last, is revealed');

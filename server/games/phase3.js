@@ -1,4 +1,5 @@
 'use strict';
+const gate=require('../ready-gate');
 // Authoritative real-time round engine; no answer keys or counted objects go to phones.
 const crypto=require('node:crypto');
 const facts=require('../../data/higher-lower.json');
@@ -44,7 +45,7 @@ const SPECS=Object.freeze({
  'close-call':{name:'Close Call',category:'brain',rounds:3,rule:'Make a numerical guess. Closest scores the best placing across three questions. Same guess? The quicker answer ranks higher.'},
  'unscramble':{name:'Unscramble',category:'brain',rounds:3,rule:'Solve the anagram from its category clue. First correct answer scores.'}
 });
-const REVEAL_MS=2800,REVEAL_RELAXED_MS=4000;
+const REVEAL_MS=2800,REVEAL_RELAXED_MS=5500; // playtest: more breathing room to enjoy the answer
 // D7: below 100 ms is anticipation, not reaction. Phone clocks may be a little out, so
 // a tap up to 1 s before the server's DRAW time is allowed if the phone says it showed DRAW.
 const MIN_REACTION_MS=100,CLOCK_SLACK_MS=1000;
@@ -98,6 +99,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  m.introUntil=now+intro;m.resumePhase=m.phase;m.phase='intro';
  m.openAt+=intro;m.deadline+=intro;
  for(const key of ['readyAt','flashEndsAt','revealAt'])if(Number.isFinite(m.display[key]))m.display[key]+=intro;
+ gate.open(room,m,now,intro);
  b.deadline=m.deadline;
  b.event={type:'minigame',category,text:`${spec.name}: ${ruleFor(room,id)}`};
  return b.minigame;
@@ -188,7 +190,7 @@ function eligible(m,id){return m.players.includes(id)&&!m.eliminated.includes(id
 function finished(m){return m.players.filter(id=>eligible(m,id)).every(id=>m.roundAnswers[id]);}
 function submit(room,id,value,roundKey,now){
  const b=room.board,m=b.minigame;if(b.step!=='minigame'||!m)bad('STEP','No mini-game is running.');
- if(m.phase==='intro'||m.phase==='reveal')bad('WAIT',m.phase==='reveal'?'The answer is being revealed. Next round starts shortly.':'Watch the five-second game demo on the TV first.');
+ if(m.phase==='intro'||m.phase==='reveal')bad('WAIT',m.phase==='reveal'?'The answer is being revealed. Next round starts shortly.':'Read the rules, then tap GOT IT. The game starts when everyone is ready.');
  if(roundKey!==m.roundKey)bad('STALE','That mini-game round has already changed.');
  if(!eligible(m,id))bad('PLAYER','You are watching this round, not playing.');
  if(now>m.deadline)bad('LATE','This round has ended.');

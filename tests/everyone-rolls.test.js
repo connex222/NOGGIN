@@ -6,6 +6,7 @@ function fixture(count=4){
  let now=1000;
  const rooms=new GameRooms({now:()=>now,randomInt:()=>0});
  const {code}=rooms.create('tv');
+ Object.assign(rooms.find(code).settings,{readyCheck:false,timerSpeed:'normal'}); // legacy timing
  for(let i=0;i<count;i++){
   rooms.join({code,name:`Contestant ${i+1}`,avatarId:i+1,socketId:`phone${i}`});
   rooms.setReady(code,`phone${i}`,true);

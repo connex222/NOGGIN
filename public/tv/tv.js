@@ -186,7 +186,7 @@
       : state.canStart ? 'All contestants ready! Lobby check complete.' : 'Waiting for every contestant to tap READY on their phone…';
     $('stageReady').disabled = !state.canStart;
     $('stageReady').textContent = state.canStart ? '▶ START THE SHOW' : `WAITING FOR ${state.players.length < 2 ? '2 PLAYERS' : 'EVERYONE'}`;
-    for(const [id,val] of [['rounds',state.settings.rounds??'auto'],['timerSpeed',state.settings.timerSpeed],['rules',state.settings.rules||'classic'],['roundStyle',state.settings.roundStyle||'sequential']]) $(id).value=String(val);
+    for(const [id,val] of [['rounds',state.settings.rounds??'auto'],['timerSpeed',state.settings.timerSpeed],['readyCheck',state.settings.readyCheck===false?'off':'on'],['rules',state.settings.rules||'classic'],['roundStyle',state.settings.roundStyle||'sequential']]) $(id).value=String(val);
     $('familyFriendly').checked=state.settings.familyFriendly;
     $('reduceMotion').checked=state.settings.reduceMotion;
     $('colourBlindSafe').checked=Boolean(state.settings.colourBlindSafe);
@@ -271,6 +271,8 @@
   $('roundStyle').onchange = e => updateSettings({roundStyle:e.target.value});
   $('rounds').onchange = e => updateSettings({rounds:e.target.value==='auto'?'auto':Number(e.target.value)});
   $('timerSpeed').onchange = e => updateSettings({timerSpeed:e.target.value});
+  $('readyCheck').onchange = e => updateSettings({readyCheck:e.target.value==='on'});
+  window.addEventListener('noggin:start-now', async () => {try{const r=await U.request(socket,'game:start-now',{});render(r.state);error('');}catch(e){error(e.message);}});
   $('familyFriendly').onchange = e => updateSettings({familyFriendly:e.target.checked});
   $('reduceMotion').onchange = e => updateSettings({reduceMotion:e.target.checked});
   $('colourBlindSafe').onchange = e => updateSettings({colourBlindSafe:e.target.checked});

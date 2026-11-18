@@ -170,6 +170,8 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
     socket.on('game:answer', wrap(async ({choice}) => {const code=getBound(socket,'player');const state=rooms.answerGame(code,socket.id,choice);broadcast(code);return {state};}));
     socket.on('game:cheer', wrap(async ({targetId}) => {const code=getBound(socket,'player');const state=rooms.cheerGame(code,socket.id,targetId);broadcast(code);return {state};}));
     socket.on('game:bid-review', wrap(async ({accept}) => {const code=getBound(socket);const state=rooms.adjudicateBid(code,socket.id,accept);broadcast(code);return {state};}));
+    socket.on('game:ready', wrap(async () => {const code=getBound(socket,'player');const state=rooms.readyGame(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:start-now', wrap(async () => {const code=getBound(socket);const state=rooms.startNowGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:input', wrap(async ({value,roundKey}) => {const code=getBound(socket,'player');const state=rooms.inputGame(code,socket.id,value,roundKey);broadcast(code);
       // D7: settle a Buzzer collection window on time instead of waiting for the next 250 ms sweep.
       const until=rooms.rooms.get(code)?.board?.showdown?.buzzWindowUntil;

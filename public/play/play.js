@@ -13,6 +13,28 @@
     if(roomState?.settings?.rules!=='showtime'&&e?.classicSteps)return e.classicSteps;return e?.steps;}
   function howToList(id){const steps=howToSteps(id);if(!steps)return null;const list=document.createElement('ol');list.className='phone-howto';
     for(const [icon,text] of steps){const li=document.createElement('li');const i=document.createElement('span');i.textContent=icon;i.setAttribute('aria-hidden','true');li.append(i,document.createTextNode(' '+text));list.append(li);}return list;}
+  // READY CHECK: the rules stay up until every contestant taps GOT IT.
+  function readyKey(m,player){const r=m?.ready;if(!r)return '';return `${r.ids.includes(player.id)?'R':'r'}${r.released?'G':''}${r.waiting.length}`;}
+  function introClock(m){const r=m.ready;if(!r)return m.introUntil??m.deadline;return r.released?r.startsAt:null;}
+  function readyControls(player,m,isContestant=true){
+    const r=m.ready;if(!r)return;
+    const box=document.createElement('div');box.className='ready-box';
+    if(r.released){box.classList.add('ready-go');box.textContent='EVERYONE IS READY · GET SET…';$('gameButtons').append(box);return;}
+    if(isContestant&&!r.ids.includes(player.id)){
+      $('gameButtons').append(box);
+      const btn=document.createElement('button');btn.type='button';btn.className='button-primary ready-button';btn.textContent='👍  GOT IT — I’M READY';
+      btn.disabled=!socket.connected;btn.onclick=()=>sendTap(btn,'game:ready',{},40);box.append(btn);
+      const hint=document.createElement('div');hint.className='ready-hint';hint.textContent='Take your time. The game starts when everyone has tapped.';box.append(hint);
+    }else{
+      const names=r.waiting.map(id=>roomState.players.find(p=>p.id===id)?.name).filter(Boolean);
+      box.textContent=isContestant?(names.length?`✓ READY · WAITING FOR ${names.join(', ').toUpperCase()}`:'✓ READY · STARTING…'):(names.length?`WAITING FOR ${names.join(', ').toUpperCase()}`:'STARTING…');
+      $('gameButtons').append(box);
+    }
+    if(roomState.vipId===player.id&&r.waiting.length&&!r.waiting.every(id=>id===player.id)){
+      const go=document.createElement('button');go.type='button';go.className='button-blue ready-skip';go.textContent='▶ START WITHOUT WAITING (VIP)';
+      go.disabled=!socket.connected;go.onclick=()=>sendTap(go,'game:start-now',{},20);$('gameButtons').append(go);
+    }
+  }
   let avatars = [], roomState = null, selectedId = null, session = null, lastLookedUpCode = '', resumePromise = null, resumeRetry = null, boundSocketId = null, currentDeadline = null, clockServer = null, clockLocal = null;
   let entryDraft={key:null,text:''};
   let interactionKey=null;
@@ -49,19 +71,19 @@
         m.private?.prompt,m.answered?.includes(player.id),m.voted?.includes(player.id),
         m.eliminated?.includes(player.id),blocked,
         m.display?.keypadReady,m.display?.partnerId,m.display?.progress?.join?.(','),
-        m.display?.cut?.join?.(','),m.display?.options?.length].join('|');
+        m.display?.cut?.join?.(','),m.display?.options?.length,readyKey(m,player)].join('|');
     }
     if(b.step==='showdown'&&b.showdown){
       const m=b.showdown;
       return [b.step,m.kind,m.phase,m.roundKey,m.private?.qid,m.myCheer,m.cheerOpen,
         m.display?.turnId,m.display?.bidderId,m.display?.bid,m.display?.answerId,m.display?.banks?.includes(player.id),
-        m.display?.answered?.includes(player.id),m.display?.buzzed?.includes(player.id)].join('|');
+        m.display?.answered?.includes(player.id),m.display?.buzzed?.includes(player.id),readyKey(m,player)].join('|');
     }
     return [b.step,b.turn,b.paused,b.round?.rolls?.[player.id]?1:0,b.round?.directors?.[player.id]?1:0,b.routePlan?1:0].join('|');
   }
   function deadlineFor(b){
-    if(b.step==='minigame'&&b.minigame)return b.minigame.phase==='intro'?b.minigame.introUntil:b.minigame.deadline;
-    if(b.step==='showdown'&&b.showdown)return b.showdown.deadline;
+    if(b.step==='minigame'&&b.minigame)return b.minigame.phase==='intro'?introClock(b.minigame):b.minigame.deadline;
+    if(b.step==='showdown'&&b.showdown)return b.showdown.phase==='intro'?introClock(b.showdown):b.showdown.deadline;
     if(b.step==='result')return b.nextAt;
     if(b.step==='challenge')return b.challenge?.deadline;
     return b.deadline;
@@ -130,12 +152,69 @@
     btn.onclick=()=>sendTap(btn,event,payload);
     $('gameButtons').append(btn);
   }
+  // PHONE KEYBOARD FIX: numbers and codes use this on-screen pad, so the phone's
+  // own keyboard never opens and never covers the question.
+  function numberPad({label='LOCK IN',placeholder='YOUR NUMBER',maxDigits=9,asString=false,draftKey=null,send}){
+    const form=document.createElement('form');form.className='mini-answer numpad-form';
+    const shown=document.createElement('div');shown.className='numpad-display';shown.setAttribute('role','status');shown.setAttribute('aria-live','polite');
+    let value=draftKey&&entryDraft.key===draftKey?entryDraft.text:'';
+    const paint=()=>{shown.textContent=!value?placeholder:asString?value:Number(value).toLocaleString('en-GB');shown.classList.toggle('empty',!value);submit.disabled=!value||!socket.connected;if(draftKey)entryDraft={key:draftKey,text:value};};
+    const grid=document.createElement('div');grid.className='numpad-grid';
+    const key=(text,fn,cls='')=>{const b=document.createElement('button');b.type='button';b.className=`numpad-key ${cls}`;b.textContent=text;b.onclick=()=>{fn();paint();if(navigator.vibrate)navigator.vibrate(10);};grid.append(b);return b;};
+    for(const d of ['1','2','3','4','5','6','7','8','9'])key(d,()=>{if(value.length<maxDigits)value=(value==='0'&&!asString?'':value)+d;});
+    key('CLEAR',()=>{value='';},'numpad-fn').setAttribute('aria-label','Clear');
+    key('0',()=>{if(!asString&&(value===''||value==='0'))value='0';else if(value.length<maxDigits)value+='0';});
+    key('⌫',()=>{value=value.slice(0,-1);},'numpad-fn').setAttribute('aria-label','Delete last digit');
+    const submit=document.createElement('button');submit.type='submit';submit.className='button-primary';submit.textContent=label;
+    form.append(shown,grid,submit);paint();
+    form.onsubmit=async e=>{
+      e.preventDefault();if(!value)return;
+      const v=asString?value:Number(value);
+      if(!asString&&!Number.isSafeInteger(v)){error('Enter a valid whole number.');return;}
+      submit.disabled=true;
+      try{await send(v);value='';if(draftKey)entryDraft={key:null,text:''};error('');}
+      catch(err){error(err.message);}
+      finally{paint();}
+    };
+    return form;
+  }
+  // Unscramble: tap the letter tiles instead of typing.
+  function letterTiles(m){
+    const letters=String(m.question||'').replace(/\s+/g,'').split('');
+    const form=document.createElement('form');form.className='mini-answer tiles-form';
+    const shown=document.createElement('div');shown.className='tiles-display';shown.setAttribute('role','status');shown.setAttribute('aria-live','polite');
+    const row=document.createElement('div');row.className='tiles-row';
+    const used=[];const btns=[];
+    const submit=document.createElement('button');submit.type='submit';submit.className='button-primary';submit.textContent='LOCK IN ANSWER';
+    const paint=()=>{shown.textContent=used.length?used.map(i=>letters[i]).join(''):'TAP THE LETTERS';shown.classList.toggle('empty',!used.length);
+      btns.forEach((b,i)=>{b.disabled=used.includes(i);});submit.disabled=used.length<letters.length||!socket.connected;};
+    letters.forEach((ch,i)=>{const b=document.createElement('button');b.type='button';b.className='tile-key';b.textContent=ch;b.onclick=()=>{if(!used.includes(i))used.push(i);paint();if(navigator.vibrate)navigator.vibrate(10);};btns.push(b);row.append(b);});
+    const tools=document.createElement('div');tools.className='tiles-tools';
+    const undo=document.createElement('button');undo.type='button';undo.className='button-blue';undo.textContent='⌫ UNDO';undo.onclick=()=>{used.pop();paint();};
+    const clear=document.createElement('button');clear.type='button';clear.className='button-blue';clear.textContent='CLEAR';clear.onclick=()=>{used.length=0;paint();};
+    tools.append(undo,clear);
+    form.append(shown,row,tools,submit);paint();
+    form.onsubmit=async e=>{e.preventDefault();if(used.length<letters.length)return;submit.disabled=true;
+      try{const r=await U.request(socket,'game:input',{value:used.map(i=>letters[i]).join(''),roundKey:m.roundKey});used.length=0;roomState=r.state;error('');render();}
+      catch(err){error(err.message);used.length=0;paint();}};
+    return form;
+  }
+  // Free-text answers still need the phone keyboard. While typing, everything
+  // except the question and the answer box is hidden so nothing gets covered.
+  function typingFocus(input){
+    input.enterKeyHint='send';
+    input.addEventListener('focus',()=>{document.body.classList.add('typing');setTimeout(()=>input.closest('form')?.scrollIntoView({block:'start',behavior:'smooth'}),250);});
+    input.addEventListener('blur',()=>{setTimeout(()=>{if(!document.activeElement?.matches?.('input,textarea'))document.body.classList.remove('typing');},120);});
+  }
+  if(window.visualViewport){const fit=()=>document.documentElement.style.setProperty('--vvh',`${window.visualViewport.height}px`);window.visualViewport.addEventListener('resize',fit);fit();}
   function numericOrWordControl(m,integer) {
+    if(integer){$('gameButtons').append(numberPad({label:'LOCK IN ANSWER',placeholder:'YOUR NUMBER',draftKey:`${m.id}:${m.roundKey}`,send:async value=>{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});roomState=r.state;render();}}));return;}
+    if(m.id==='unscramble'&&String(m.question||'').trim()){$('gameButtons').append(letterTiles(m));return;}
     const form=document.createElement('form');form.className='mini-answer';
     const input=document.createElement('input');input.type=integer?'number':'text';input.required=true;input.autocomplete='off';input.autocapitalize=integer?'off':'characters';
     input.inputMode=integer?'numeric':'text';input.placeholder=integer?'YOUR NUMBER':'TYPE THE WORD';input.maxLength=40;
     if(integer){input.min='0';input.max='100000000';input.step='1';}
-    input.setAttribute('aria-label',integer?'Your numerical guess':'Unscrambled word');
+    input.setAttribute('aria-label',integer?'Your numerical guess':'Unscrambled word');typingFocus(input);
     const submit=document.createElement('button');submit.type='submit';submit.className='button-primary';submit.textContent='LOCK IN ANSWER';
     form.append(input,submit);form.onsubmit=async e=>{
       e.preventDefault();const value=integer?Number(input.value):input.value.trim();
@@ -148,11 +227,12 @@
   }
 
   const phase4Ids=new Set(['sketch-sabotage','noise-annoys','caption-this','fib-factory','mind-meld','majority-rules','relay-sums','bomb-squad']);
-  function p4Entry(m,{label='TYPE AN ANSWER',numeric=false,max=90,placeholder='YOUR ANSWER'}={}){
+  function p4Entry(m,{label='TYPE AN ANSWER',numeric=false,max=90,placeholder='YOUR ANSWER',pad=false}={}){
+    if(numeric||pad){$('gameButtons').append(numberPad({label,placeholder,maxDigits:max,asString:!numeric,draftKey:`${m.id}:${m.phase}:${m.roundKey}`,send:async v=>{const r=await U.request(socket,'game:input',{value:v,roundKey:m.roundKey});roomState=r.state;render();}}));return;}
     const wrap=document.createElement('form');wrap.className='mini-answer p4-form';
     const input=document.createElement('input');input.type=numeric?'number':'text';input.maxLength=max;input.required=true;input.autocomplete='off';input.inputMode=numeric?'numeric':'text';input.placeholder=placeholder;
     if(numeric){input.min='0';input.max='9999';input.step='1';}
-    input.setAttribute('aria-label',placeholder);
+    input.setAttribute('aria-label',placeholder);typingFocus(input);
     const k=`${m.id}:${m.phase}:${m.roundKey}`;
     if(entryDraft.key===k)input.value=entryDraft.text;
     input.oninput=()=>{entryDraft={key:k,text:input.value};};
@@ -186,8 +266,8 @@
     const id=player.id,host=roomState.board.activeId;
     $('gameHeadline').textContent=`${m.title.toUpperCase()}${m.totalRounds>1?` · ${m.round}/${m.totalRounds}`:''}`;
     $('gameDescription').textContent=m.rule;
-    currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
-    if(m.phase==='intro'){const list=howToList(m.id);if(list){$('gameButtons').replaceChildren(list);}else $('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';return;}
+    currentDeadline=m.phase==='intro'?introClock(m):m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
+    if(m.phase==='intro'){const list=howToList(m.id);if(list){$('gameButtons').replaceChildren(list);}else $('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';readyControls(player,m,m.participants.includes(id));return;}
     const info=(text)=>{const d=document.createElement('div');d.className='mini-help';d.textContent=text;$('gameButtons').append(d);};
     const sent=m.answered.includes(id),voted=m.voted?.includes(id);
     // Q4: private feedback on your last guess. "Close!" never reveals the answer.
@@ -239,7 +319,7 @@
       for(const clue of m.private?.clues||[])info(clue);
       if(id===host){
         if(!m.display.keypadReady){info('CUT THE WIRES IN THE ORDER REVEALED BY YOUR TEAM');for(const wire of m.display.wires||[])if(!m.display.cut.includes(wire))pick(`✂ CUT ${wire} WIRE`,wire,'button-blue');}
-        else{info('ALL WIRES CUT! ENTER THE FOUR-DIGIT CODE.');p4Entry(m,{label:'DEFUSE THE BOMB',numeric:false,max:4,placeholder:'4-DIGIT CODE'});}
+        else{info('ALL WIRES CUT! ENTER THE FOUR-DIGIT CODE.');p4Entry(m,{label:'DEFUSE THE BOMB',numeric:false,pad:true,max:4,placeholder:'4-DIGIT CODE'});}
       }else info('READ YOUR CLUE(S) ALOUD TO THE HOST!');
     }
     if(entryDraft.key===`${m.id}:${m.phase}:${m.roundKey}` && document.activeElement?.tagName==='BODY'){
@@ -253,8 +333,9 @@
     const info=t=>{const x=document.createElement('div');x.className='mini-help';x.textContent=t;$('gameButtons').append(x);};
     const choose=(label,value)=>gameButton(label,'game:input',{value,roundKey:m.roundKey},'button-primary');
     const numberForm=(label,placeholder,numeric=true)=>{
+      if(numeric){$('gameButtons').append(numberPad({label,placeholder,maxDigits:m.kind==='tug'?4:9,draftKey:`sd:${m.kind}:${m.roundKey}:${m.private?.qid||''}`,send:async v=>{const value=m.kind==='tug'?{answer:v,qid:m.private?.qid}:v;const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});roomState=r.state;render();if(navigator.vibrate)navigator.vibrate(35);}}));return;}
       const form=document.createElement('form');form.className='mini-answer p4-form';
-      const input=document.createElement('input');input.type=numeric?'number':'text';input.placeholder=placeholder;input.required=true;input.autocomplete='off';input.inputMode=numeric?'numeric':'text';input.maxLength=70;
+      const input=document.createElement('input');input.type=numeric?'number':'text';input.placeholder=placeholder;input.required=true;input.autocomplete='off';input.inputMode=numeric?'numeric':'text';input.maxLength=70;typingFocus(input);
       const button=document.createElement('button');button.className='button-primary';button.type='submit';button.textContent=label;
       form.append(input,button);form.onsubmit=async e=>{e.preventDefault();const v=numeric?Number(input.value):input.value.trim();if(numeric&&(!Number.isSafeInteger(v)||v<0||!input.value.trim())){error('Enter a valid whole number.');return;}
         const value=m.kind==='tug'?{answer:v,qid:m.private?.qid}:v;button.disabled=true;
@@ -289,7 +370,7 @@
       }else info('PREDICTIONS LOCKED — WATCH THE SHOWDOWN');
       return;
     }
-    if(m.phase==='intro'){const list=howToList(m.kind);if(list)$('gameButtons').append(list);info('THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
+    if(m.phase==='intro'){const list=howToList(m.kind);if(list)$('gameButtons').append(list);if(m.ready)readyControls(player,m,true);else info('THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
     if(m.kind==='buzzer'){
       info(`QUESTION ${m.round}/${m.totalRounds||5} · FIRST TO 3 · ${Object.entries(m.display.points).map(([id,v])=>`${roomState.players.find(p=>p.id===id)?.name}: ${v}`).join(' vs ')}`);
       if(m.phase==='buzz'){
@@ -367,8 +448,8 @@
     const answered=m.answered.includes(player.id);
     $('gameHeadline').textContent=`${m.title.toUpperCase()} · ${m.round}/${m.totalRounds}`;
     $('gameDescription').textContent=m.rule+'  '+m.question;
-    currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
-    if(m.phase==='intro'){$('gameDescription').textContent=m.rule;const list=howToList(m.id);if(list)$('gameButtons').replaceChildren(list);else $('gameButtons').textContent='GET READY — WATCH THE TV DEMO';return;}
+    currentDeadline=m.phase==='intro'?introClock(m):m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
+    if(m.phase==='intro'){$('gameDescription').textContent=m.rule;const list=howToList(m.id);if(list)$('gameButtons').replaceChildren(list);else $('gameButtons').textContent='GET READY — WATCH THE TV DEMO';readyControls(player,m,m.participants.includes(player.id));return;}
     if(m.phase==='reveal'){
       const result=m.lastRoundResult||{},answer=result.answer;
       $('gameDescription').textContent=answer===undefined?'ROUND COMPLETE':`CORRECT ANSWER: ${answer}`;
@@ -663,7 +744,7 @@
           roundStyle: [['everyone','Everyone rolls'],['sequential','One at a time']],
           rules: [['classic','Classic'],['showtime','Showtime']],
           rounds: [['auto','Auto length'],[6,'6 rounds'],[8,'8 rounds'],[10,'10 rounds'],[12,'12 rounds']],
-          timerSpeed: [['normal','Normal'],['relaxed','Relaxed']],
+          timerSpeed: [['relaxed','Relaxed'],['normal','Fast']],
           colourBlindSafe: [['false','Off'],['true','On · Shape Clash']]
         })) {
           const label = document.createElement('label');

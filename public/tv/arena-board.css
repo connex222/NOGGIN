@@ -273,3 +273,20 @@ body.tv .caption-avatars .caption-scene{width:auto;height:auto;max-width:min(100
 .standings-sting strong{color:#ffd34d;font-size:clamp(18px,1.8vw,30px)}
 .standings-sting p{margin:4px 0 0;font-weight:900;font-size:clamp(18px,2vw,32px)}
 .meld-done{border-color:#a5f480!important}
+
+/* ===== Playtest fix: Ready Check strip ===== */
+.howto-static .howto-steps li,.howto-static .howto-host{animation:none!important;opacity:1!important;transform:none!important}
+.ready-strip{display:flex;flex-direction:column;align-items:center;gap:clamp(6px,1.2vh,14px);width:min(100%,1100px);margin-top:clamp(6px,1.2vh,14px);padding:clamp(8px,1.4vh,16px);border-radius:20px;background:rgba(7,18,51,.72);border:2px solid rgba(93,232,245,.35)}
+.ready-strip.go{font-weight:1000;letter-spacing:.12em;color:#b5f87e;border-color:#b5f87e;font-size:clamp(18px,2.2vw,36px)}
+.ready-title{font-weight:1000;letter-spacing:.08em;color:#ffe682;font-size:clamp(14px,1.5vw,26px);text-align:center}
+.ready-row{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(6px,1vw,14px)}
+.ready-chip{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:99px;background:#1b2750;border:3px solid #4a5a8c;color:#fff;font-weight:900;font-size:clamp(13px,1.3vw,22px);opacity:.75;transition:background .2s,border-color .2s,opacity .2s}
+.ready-chip img{width:clamp(30px,3vw,48px);height:clamp(30px,3vw,48px);border-radius:50%;object-fit:cover;background:#0b102a}
+.ready-chip b{color:#ffd968;min-width:1.2em;text-align:center}
+.ready-chip.done{background:#1d3a24;border-color:#b5f87e;opacity:1}
+.ready-chip.done b{color:#b5f87e}
+.ready-chip.off{opacity:.4}
+.ready-chip.off b{font-size:.7em;letter-spacing:.08em;color:#c4d3eb}
+.ready-start{font-weight:900;letter-spacing:.08em;font-size:clamp(12px,1vw,17px);padding:8px 20px;border-radius:99px;background:transparent;color:#c4d3eb;border:2px solid #5269a2;cursor:pointer}
+.ready-start:hover,.ready-start:focus-visible{color:#fff;border-color:#5de8f5}
+@media (prefers-reduced-motion:reduce){.ready-chip{transition:none}}

@@ -69,7 +69,7 @@ class NogginBoardView {
     document.getElementById('challengeType').textContent=m.kind==='tiebreak'?'★ SUDDEN DEATH ★':'★ CORNER SHOWDOWN ★';
     document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
     prompt.textContent=m.question;prompt.classList.toggle('long-tv-prompt',String(m.question||'').length>85);
-    this.clockAt=m.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();
+    this.clockAt=m.phase==='intro'?this.introClock(m):m.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();
     const label=(text,cls='p4-ballot')=>{const x=document.createElement('div');x.className=cls;x.textContent=text;options.append(x);return x;};
     const names=m.participants.map(id=>state.players.find(p=>p.id===id)?.name||'Contestant');
     if(m.cheerCounts && Object.values(m.cheerCounts).some(Boolean)){
@@ -85,7 +85,7 @@ class NogginBoardView {
       });
       options.append(crowd);
     }
-    if(m.phase==='intro'){const card=this.howToCard(m.kind,'showdown',state,'',m.participants);if(card){prompt.textContent='';options.append(card);if(m.kind!=='tiebreak')label(state.settings.rules==='showtime'?'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · EARN 1 DIRECTOR CUE':'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · +1 SPARK IF YOU’RE OUTSIDE THE TOP TWO','mini-preview');return;}
+    if(m.phase==='intro'){const card=this.howToCard(m.kind,'showdown',state,'',m.participants);if(card){prompt.textContent='';options.append(card);this.readyStrip(m,state,options);if(m.kind!=='tiebreak')label(state.settings.rules==='showtime'?'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · EARN 1 DIRECTOR CUE':'AUDIENCE: PREDICT THE WINNER ON YOUR PHONE · +1 SPARK IF YOU’RE OUTSIDE THE TOP TWO','mini-preview');return;}
       if(m.kind!=='tiebreak')label(state.settings.rules==='showtime'?'AUDIENCE: PREDICT THE WINNER NOW · EARN 1 DIRECTOR CUE':'AUDIENCE: PREDICT THE WINNER NOW · +1 SPARK IF YOU’RE OUTSIDE THE TOP TWO','mini-preview');label(m.kind==='buzzer'?'BUZZ FIRST · ANSWER FAST':m.kind==='tug'?'FIRST TO PULL FIVE NOTCHES':m.kind==='bid'?'BID HOW MANY YOU CAN NAME · OR CHALLENGE':m.kind==='nerve'?'BANK BEFORE THE HIDDEN BUST':'CLOSEST NUMBER WINS','mini-preview');return;}
     if(m.kind==='buzzer'){
       const pts=m.participants.map(id=>m.display.points[id]);label(`${names[0]} ${pts[0]} : ${pts[1]} ${names[1]}`,'p4-big');
@@ -115,9 +115,9 @@ class NogginBoardView {
     if(m.phase==='intro'){
       document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
       const card=this.howToCard(m.id,m.category,state,m.rule);
-      if(card){prompt.textContent='';options.append(card);return;}
+      if(card){prompt.textContent='';options.append(card);this.readyStrip(m,state,options);return;}
       prompt.textContent=m.rule;
-      span({'sketch-sabotage':'✎  DRAW · GUESS · SABOTAGE','noise-annoys':'🔊  MAKE THE SOUND!','caption-this':'✍  WRITE · THEN VOTE','fib-factory':'🎭  BLUFF · THEN FIND THE TRUTH','mind-meld':'♥  THINK AS ONE','majority-rules':'👥  PICK THE CROWD FAVOURITE','relay-sums':'➕  PASS THE BATON','bomb-squad':'✂  SHARE CLUES · DEFUSE'}[m.id],'mini-preview');return;
+      span({'sketch-sabotage':'✎  DRAW · GUESS · SABOTAGE','noise-annoys':'🔊  MAKE THE SOUND!','caption-this':'✍  WRITE · THEN VOTE','fib-factory':'🎭  BLUFF · THEN FIND THE TRUTH','mind-meld':'♥  THINK AS ONE','majority-rules':'👥  PICK THE CROWD FAVOURITE','relay-sums':'➕  PASS THE BATON','bomb-squad':'✂  SHARE CLUES · DEFUSE'}[m.id],'mini-preview');this.readyStrip(m,state,options);return;
     }
     if(m.id==='sketch-sabotage'){
       prompt.textContent=`${actor?.name||'Artist'} draws · Category: ${m.display.category} · The Saboteur is hidden!`;
@@ -163,12 +163,38 @@ class NogginBoardView {
     const text=document.createElementNS(ns,'text');text.setAttribute('x','50');text.setAttribute('y',shape==='TRIANGLE'?'72':'57');text.setAttribute('text-anchor','middle');text.setAttribute('class','shape-word');text.textContent=word;
     svg.append(outline,text);return svg;
   }
+  introClock(m){const r=m.ready;if(!r)return m.introUntil??m.deadline;return r.released?r.startsAt:null;}
+  // READY CHECK strip: who has tapped GOT IT, plus a START NOW button for the host.
+  readyStrip(m,state,options){
+    const r=m.ready;if(!r)return;
+    const countdown=document.getElementById('challengeCountdown');
+    const strip=document.createElement('div');strip.className='ready-strip';
+    if(r.released){strip.classList.add('go');strip.textContent='EVERYONE’S READY · HERE WE GO!';options.append(strip);return;}
+    if(countdown)countdown.textContent='TAKE YOUR TIME';
+    const title=document.createElement('div');title.className='ready-title';title.textContent='READ THE RULES, THEN TAP “GOT IT” ON YOUR PHONE';
+    const row=document.createElement('div');row.className='ready-row';
+    for(const id of m.participants||[]){
+      const p=state.players.find(x=>x.id===id);if(!p)continue;
+      const done=r.ids.includes(id),off=!done&&!r.waiting.includes(id);
+      const chip=document.createElement('div');chip.className=`ready-chip${done?' done':''}${off?' off':''}`;
+      const a=this.avatars.find(x=>x.id===p.avatarId);const img=document.createElement('img');img.src=a?.think||'';img.alt='';img.onerror=()=>{img.style.display='none';};
+      const name=document.createElement('span');name.textContent=p.name;
+      const mark=document.createElement('b');mark.textContent=done?'✓':off?'OFFLINE':'…';
+      chip.append(img,name,mark);row.append(chip);
+    }
+    const go=document.createElement('button');go.type='button';go.className='ready-start';go.textContent='▶ START NOW';
+    go.onclick=()=>{go.disabled=true;window.dispatchEvent(new CustomEvent('noggin:start-now'));};
+    strip.append(title,row,go);options.append(strip);
+  }
   howToCard(id,category,state,rule='',duelists=null){
     const entry=this.howto?.[id];
     // D8: Shape Clash has its own steps when the room is colour-blind safe.
     // G9: Classic uses classicSteps where Showtime adds a twist (Memory Lane, Count Flash).
     const steps=id==='colour-clash'&&state?.settings?.colourBlindSafe&&entry?.colourBlindSteps?entry.colourBlindSteps:state?.settings?.rules!=='showtime'&&entry?.classicSteps?entry.classicSteps:entry?.steps;if(!steps)return null;
     const card=document.createElement('div');card.className='howto-card';card.dataset.cat=category;
+    // Ready-check taps redraw the panel; only animate the steps the first time.
+    const cacheKey=`${id}|${category}|${state?.board?.roundNumber}|${state?.board?.turn}|${(duelists||[]).join(',')}`;
+    if(this.howtoKey===cacheKey)card.classList.add('howto-static');this.howtoKey=cacheKey;
     const banner=document.createElement('div');banner.className='howto-banner';
     banner.textContent=category==='showdown'?(id==='tiebreak'?'★ NOGGIN-OFF ★':'★ SHOWDOWN ★'):`${({speed:'⚡',brain:'◆',create:'✎',together:'✚'})[category]||'★'} ${category.toUpperCase()} GAME`;
     const row=document.createElement('ol');row.className='howto-steps';
@@ -192,7 +218,7 @@ class NogginBoardView {
     document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
     const prompt=document.getElementById('challengePrompt'),options=document.getElementById('challengeChoices');
     prompt.textContent=m.question;prompt.classList.toggle('long-tv-prompt',String(m.question||'').length>85);options.replaceChildren();
-    this.clockAt=m.phase==='intro'?m.introUntil:m.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();
+    this.clockAt=m.phase==='intro'?this.introClock(m):m.deadline;this.clockServer=state.serverNow;this.clockLocal=Date.now();
     const span=(str,cls='')=>{const el=document.createElement('span');el.textContent=str;if(cls)el.className=cls;options.append(el);return el;};
     if(m.category==='create'||m.category==='together'){prompt.classList.remove('stroop-tv');prompt.style.color='';this.renderPhase4(m,state,prompt,options);return;}
     if(m.phase==='reveal'){
@@ -227,10 +253,10 @@ class NogginBoardView {
     if(m.phase==='intro'){
       document.getElementById('challengeTitle').textContent=m.title.toUpperCase();
       const card=this.howToCard(m.id,m.category,state,m.rule);
-      if(card){prompt.textContent='';options.append(card);return;}
+      if(card){prompt.textContent='';options.append(card);this.readyStrip(m,state,options);return;}
       prompt.textContent=m.rule;
       const preview={'quick-draw':'WAIT…   ⚡ DRAW!','count-flash':'⚽ ⚽ ⚽ ⚽   →   ?','odd-spot':'●  ●  ◆  ●','colour-clash':'RED  ≠  BLUE','higher-lower':'12   →   ?','memory-lane':'●  ◆  ▲  ★','close-call':'❓  ≈  100','unscramble':'K  E  T  T  L  E'}[m.id];
-      span(preview,'mini-preview');
+      span(preview,'mini-preview');this.readyStrip(m,state,options);
       return;
     }
     if(m.id==='odd-spot'){

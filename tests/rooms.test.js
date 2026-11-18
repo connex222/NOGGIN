@@ -55,7 +55,7 @@ test('VIP or host may change settings but others may not; invalid patches fail a
   assert.throws(()=>f.rooms.setSettings(f.code,'phone-B',{rounds:10}),e=>e.code==='AUTH');
   assert.equal(f.rooms.setSettings(f.code,'phone-A',{rounds:8}).settings.rounds,8);
   assert.throws(()=>f.rooms.setSettings(f.code,'tv-1',{rounds:999}),e=>e.code==='SETTINGS');
-  assert.deepEqual(f.rooms.state(f.code).settings,{rounds:8,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic',roundStyle:'sequential',colourBlindSafe:false}); // v3.5.0 D8 adds the colour-blind setting
+  assert.deepEqual(f.rooms.state(f.code).settings,{rounds:8,familyFriendly:true,timerSpeed:'normal',reduceMotion:false,rules:'classic',roundStyle:'sequential',colourBlindSafe:false,readyCheck:false}); // v3.5.0 D8 adds the colour-blind setting
   f.rooms.setSettings(f.code,'tv-1',{rounds:10,timerSpeed:'relaxed',reduceMotion:true});
   assert.equal(f.rooms.state(f.code).settings.rounds,10);
   assert.equal(f.rooms.state(f.code).settings.reduceMotion,true);

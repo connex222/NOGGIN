@@ -64,7 +64,7 @@ class GameRooms {
     const room = {
       code, phase: 'lobby', createdAt: this.now(), updatedAt: this.now(),
       hostToken: crypto.randomBytes(24).toString('base64url'), hostSocketId,
-      players: [], vipId: null, vipOfflineSince: null, settings: {rounds: board.DEFAULT_ROUNDS, familyFriendly: true, timerSpeed: 'normal', reduceMotion: false, rules: 'classic', roundStyle: 'everyone', colourBlindSafe: false}
+      players: [], vipId: null, vipOfflineSince: null, settings: {rounds: board.DEFAULT_ROUNDS, familyFriendly: true, timerSpeed: 'relaxed', reduceMotion: false, rules: 'classic', roundStyle: 'everyone', colourBlindSafe: false, readyCheck: true}
     };
     this.rooms.set(code, room);
     return {code, token: room.hostToken, state: this.state(code, true)};
@@ -197,13 +197,13 @@ class GameRooms {
     assert(room.phase === 'lobby', 'PHASE', 'Game settings are locked while playing.');
     assert(patch && typeof patch === 'object' && !Array.isArray(patch), 'SETTINGS', 'Invalid game settings.');
     const keys = Object.keys(patch);
-    assert(keys.length > 0 && keys.every(k => ['rounds', 'familyFriendly', 'timerSpeed', 'reduceMotion', 'rules', 'roundStyle', 'colourBlindSafe'].includes(k)), 'SETTINGS', 'Unknown game setting.');
+    assert(keys.length > 0 && keys.every(k => ['rounds', 'familyFriendly', 'timerSpeed', 'reduceMotion', 'rules', 'roundStyle', 'colourBlindSafe', 'readyCheck'].includes(k)), 'SETTINGS', 'Unknown game setting.');
     for (const [key, value] of Object.entries(patch)) {
       if (key === 'rounds') assert(board.ROUND_OPTIONS.includes(value), 'SETTINGS', 'Choose Auto, 6, 8, 10 or 12 rounds.');
       if (key === 'timerSpeed') assert(['normal', 'relaxed'].includes(value), 'SETTINGS', 'Invalid timer speed.');
       if (key === 'roundStyle') assert(['everyone','sequential'].includes(value), 'SETTINGS', 'Choose Everyone Rolls or One at a Time.');
       if (key === 'rules') assert(['classic','showtime'].includes(value),'SETTINGS','Choose Classic or Showtime.');
-      if (['familyFriendly', 'reduceMotion', 'colourBlindSafe'].includes(key)) assert(typeof value === 'boolean', 'SETTINGS', 'Invalid toggle value.');
+      if (['familyFriendly', 'reduceMotion', 'colourBlindSafe', 'readyCheck'].includes(key)) assert(typeof value === 'boolean', 'SETTINGS', 'Invalid toggle value.');
     }
     Object.assign(room.settings, patch);
     room.updatedAt = this.now();
@@ -246,6 +246,8 @@ class GameRooms {
   resumeGame(code,socketId) {const room=this.requireHost(code,socketId);board.hostResume(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.callerState(code,socketId);}
   skipDisconnectedGame(code,socketId) {const room=this.requireHost(code,socketId);board.skipDisconnected(room,this.now());room.updatedAt=this.now();matchReport.observe(room,this.now());return this.callerState(code,socketId);}
   cheerGame(code,socketId,targetId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);require('./games/phase5').cheer(room,player.id,targetId);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
+  readyGame(code,socketId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.readyUp(room,player.id,this.now());return this.callerState(code,socketId);}
+  startNowGame(code,socketId) {const room=this.requireHost(code,socketId);this.assertGame(room);board.startNow(room,this.now());return this.callerState(code,socketId);}
   inputGame(code,socketId,value,roundKey) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.minigameInput(room,player.id,value,roundKey,this.now());matchReport.observe(room,this.now());return this.callerState(code,socketId);}
   // D10: Bid to Win answers are judged by the TV host or by any player who is NOT
   // in the duel. Neither duellist may judge (not even the VIP). First decision wins.

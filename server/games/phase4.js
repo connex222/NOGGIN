@@ -1,4 +1,5 @@
 'use strict';
+const gate=require('../ready-gate');
 /** NOGGIN Phase 4: server-authoritative Create and Together games.
  * The public DTO never contains secret words, correct answers, saboteur IDs,
  * ballot ownership, bomb solutions, or another player's private clues.
@@ -126,6 +127,7 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
    m.display={wires:['RED','BLUE','GREEN','YELLOW'],cut:[],keypadReady:false};m.seconds=60;m.question='Share your clue scraps aloud. The host cuts the wires then enters the code.';break;
   }
  }
+ gate.open(room,m,now,timer(room,4.5));
  b.event={type:'minigame',category,text:`${spec.name}: ${spec.rule}`};return m;
 }
 function prepareMajority(room,rng){
@@ -208,7 +210,7 @@ function finishBomb(room,now,finishTurn,success){finish(room,now,finishTurn,succ
 function validActor(m,id){if(!m.players.includes(id))fail('AUTH','You are not a participant.');}
 function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
  const b=room.board,m=b.minigame;if(b.step!=='minigame'||!m||!SPECS[m.id])fail('STEP','No Create or Together game is active.');
- validActor(m,id);if(m.phase==='intro')fail('WAIT','The five-second TV introduction is still playing.');
+ validActor(m,id);if(m.phase==='intro')fail('WAIT','Read the rules, then tap GOT IT. The game starts when everyone is ready.');
  if(roundKey!==m.roundKey)fail('STALE','This phase has changed; use the current controls.');
  if(now>m.deadline)fail('LATE','Time is up.');
  const received=(kind='answer')=>{if(Object.hasOwn(m.answers,id))fail('ANSWERED',`You already submitted this ${kind}.`);};

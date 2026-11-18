@@ -173,3 +173,10 @@ button,select,input[type="checkbox"]{min-height:48px}
 /* v3.5.0 Q9/G12 — gap to the leader in the final three rounds. */
 .gap-line{margin:0 0 8px;padding:7px 12px;border-radius:12px;background:#24124a;border:2px solid #ffd34d;color:#ffe9a8;font-weight:800;text-align:center;font-size:clamp(14px,4vw,17px)}
 .gap-line.hidden{display:none}
+
+/* Playtest fix (loaded last so it wins over game-mode layout rules) */
+/* While the phone keyboard is open, show only the question and the answer box. */
+body.game-mode.typing .game-player,body.game-mode.typing .game-help,body.game-mode.typing #gapLine,body.game-mode.typing #gameMiniInstruction,body.game-mode.typing .game-action-head,body.game-mode.typing .phone-howto,body.game-mode.typing .phone-top,body.game-mode.typing .phone-footer,body.game-mode.typing #vipControls{display:none!important}
+body.game-mode.typing .game-action{min-height:0;padding-top:10px}
+body.game-mode.typing #gameScreen{max-height:var(--vvh,100dvh);overflow:auto}
+body.game-mode.typing .game-buttons{margin-top:8px}

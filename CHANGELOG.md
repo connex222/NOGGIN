@@ -1,3 +1,12 @@
+# NOGGIN Alpha — Playtest fixes (18 November 2026)
+
+Playtest feedback: too frantic, no time to read the rules, and the phone keyboard covered the screen.
+
+- **Ready Check:** every round game and showdown keeps its rules card up until each online contestant taps GOT IT on their phone, then runs a 3-second get-set. The TV shows who is ready. The TV (START NOW) or the VIP can start early; offline phones are skipped; a 45-second safety cap starts the game anyway. No clock ticks while people read. New `readyCheck` lobby setting (on by default). Server: `server/ready-gate.js`.
+- **Calmer pace:** new rooms default to Relaxed timers (lobby labels now "Relaxed (recommended)" / "Fast"). Relaxed answer reveal lengthened from 4 s to 5.5 s.
+- **No keyboard over the screen:** numbers and codes (Close Call, Count Flash, Relay Sums, Tug of Wits, Noggin-Off, Bomb Squad code) use a large on-screen number pad. Unscramble uses tap-to-place letter tiles. Free-text answers switch the phone into a typing mode that hides everything except the question and answer box.
+- Tests: new `tests/ready-check.test.js` (6 tests); legacy timing tests pin `readyCheck:false` and Fast timers. New browser check `tools/playtest-fixes-smoke.py` (20/20). Full suite: 442 pass; the 6 failures are pre-existing content-review tests.
+
 # NOGGIN Alpha v3.5.0-alpha.1 — 250 content expansion (29 October 2026)
 
 - Integrated 250 owner-verified new items directly on the canonical GitHub main branch, preserving existing content and gameplay: 80 Buzzer Battle, 35 Close Call, 40 Higher or Lower, 25 Unscramble, 30 Sketch & Sabotage, 30 Noise Annoys, 10 Bid to Win.

@@ -17,6 +17,7 @@
 //              choosing Showdown rivals themselves.
 const crypto = require('node:crypto');
 const layout = require('./layout');
+const gate = require('./ready-gate');
 const {SPACES, COLORS, ICONS, LABELS, LIFTS, SHOWDOWNS, CATEGORIES} = layout;
 // 'auto' sizes the show to the panel: small groups get more rounds so the
 // evening is not over in ten minutes; big groups get fewer so it is not three hours.
@@ -119,6 +120,7 @@ function boardTurnPlayer(room) {
   return room.players[(b.roundNo - 1 + b.turnInRound) % n];
 }
 
+function withReady(room, m, pub) {if (pub) pub.ready = gate.publicReady(room, m); return pub;}
 function publicBoard(room, forTv = false, viewerId = null) {
   const b = room.board;
   if (!b) return null;
@@ -131,8 +133,8 @@ function publicBoard(room, forTv = false, viewerId = null) {
     roundNumber: b.roundNo, totalRounds: b.totalRounds, stage: b.stage, lastOrders: lastOrders(b), turnInRound: b.turnInRound,
     roundGame: {category: b.roundCategory, callerId: b.roundCaller, locked: b.roundLocked}, showdownPlayed: Boolean(b.showdownPlayed),
     routePlan: showtime(room) && Boolean(b.routePlan), routeOptions: b.step === 'choose_route' ? (b.routeOptions || []) : [],
-    showdown: phase5.publicState(room, forTv, viewerId),
-    minigame: (b.minigame && phase4.SPECS[b.minigame.id] ? phase4.publicState(room, forTv, viewerId) : phase3.publicState(room, forTv)),
+    showdown: withReady(room, b.showdown, phase5.publicState(room, forTv, viewerId)),
+    minigame: withReady(room, b.minigame, b.minigame && phase4.SPECS[b.minigame.id] ? phase4.publicState(room, forTv, viewerId) : phase3.publicState(room, forTv)),
     step: b.step, turn: b.turn, activeId: b.activeId, rolls: b.rolls, landing: b.landing, lastMove: b.lastMove, event: b.event,
     deadline: b.deadline, nextAt: b.nextAt, presentUntil: b.presentUntil || null, challenge, result: b.result, leaderIds: b.leaderIds, finalists: b.finalists,
     winnerIds: b.winnerIds, history: b.history.slice(-8), paused: Boolean(b.pausedAt), pauseKind: b.pauseKind || null, pauseReason: b.pauseReason
@@ -568,6 +570,8 @@ function minigameInput(room, id, value, roundKey, now) {
   return room.board.minigame && phase4.SPECS[room.board.minigame.id] ? phase4.submit(room, id, value, roundKey, now, finishTurn) : phase3.submit(room, id, value, roundKey, now);
 }
 function minigameDraw(room, id, points, roundKey, now) {return phase4.draw(room, id, points, roundKey, now);}
+function readyUp(room, id, now) {if (Number.isFinite(room.board?.pausedAt)) fail('PAUSED', 'The show is paused.'); gate.markReady(room, id, now);}
+function startNow(room, now) {if (Number.isFinite(room.board?.pausedAt)) fail('PAUSED', 'Resume the show first.'); gate.hostStart(room, now);}
 
 // All live clocks are owned by the server. Pauses must shift BOTH deadlines and
 // the visual cue timestamps supplied to phones and the TV.
@@ -580,8 +584,8 @@ function resumeClocks(room, now, {preserveGrace = false} = {}) {
   move(b.explainer, 'until');
   move(b.standings, 'until');
   move(b.challenge, 'deadline');
-  for (const key of ['deadline', 'hardStop', 'openAt', 'startedAt']) move(b.showdown, key);
-  for (const key of ['deadline', 'openAt', 'introUntil', 'stageStarted']) move(b.minigame, key);
+  for (const key of ['deadline', 'hardStop', 'openAt', 'startedAt', 'introUntil', 'readyFrom']) move(b.showdown, key);
+  for (const key of ['deadline', 'openAt', 'introUntil', 'stageStarted', 'readyFrom']) move(b.minigame, key);
   for (const key of ['readyAt', 'flashEndsAt', 'revealAt']) move(b.minigame?.display, key);
   if (preserveGrace) for (const p of room.players) move(p, 'offlineSince');
   b.pausedAt = null; b.pauseKind = null; b.pauseReason = null;
@@ -662,8 +666,9 @@ function tick(room, now, rng = crypto.randomInt) {
     return false;
   }
   if (Number.isFinite(b.pausedAt)) {resumeClocks(room, now); return true;}
-  if (b.step === 'showdown') return phase5.tick(room, now, finishTurn);
-  if (b.step === 'minigame') return b.minigame && phase4.SPECS[b.minigame.id] ? phase4.tick(room, now, finishTurn, rng) : phase3.tick(room, now, finishTurn, rng);
+  const readied = gate.check(room, now);
+  if (b.step === 'showdown') return phase5.tick(room, now, finishTurn) || readied;
+  if (b.step === 'minigame') return (b.minigame && phase4.SPECS[b.minigame.id] ? phase4.tick(room, now, finishTurn, rng) : phase3.tick(room, now, finishTurn, rng)) || readied;
   if (b.step === 'challenge' && now >= b.challenge.deadline) {resolveChallenge(room, now); return true;}
   if (b.step === 'result' && now >= b.nextAt) {nextTurn(room, now, rng); return true;}
   if (b.deadline && now >= b.deadline) {
@@ -683,7 +688,7 @@ function tick(room, now, rng = crypto.randomInt) {
 module.exports = {
   SPACES, COLORS, ICONS, LABELS, LIFTS, SHOWDOWNS, CATEGORIES, ROUND_OPTIONS, DEFAULT_ROUNDS, autoRounds,
   publicBoard, start, beginRound, roundRoll, roll, pickDie, choose, answer, tick, finishTurn, nextTurn, startRoundGame, endGame, beginMove, resolveChallenge,
-  minigameInput, minigameDraw, hostPause, hostResume, skipDisconnected, resumeClocks, HOST_CRITICAL, handOverHost,
+  minigameInput, minigameDraw, readyUp, startNow, hostPause, hostResume, skipDisconnected, resumeClocks, HOST_CRITICAL, handOverHost,
   PICK_MS, STANDINGS_MS, EXPLAIN_MS, gameOptions, DIRECTORS_CUES, DIRECTORS_CHOICE_MS, ROUND_ROLL_MS, ROUND_MOVE_MS, DICE_SHOW_MS, HOP_MS, SETTLE_MS, presentMs, START_LAND_BONUS, START_PASS_BONUS, APPLAUSE_BONUS, ROUND_GAME_BONUS, CORNER_BONUS,
   UNDERDOG_THRESHOLD, UNDERDOG_BONUS_SMALL, UNDERDOG_BONUS_EIGHT
 };

@@ -1,4 +1,5 @@
 'use strict';
+const gate=require('../ready-gate');
 // Phase 5: authoritative corner duels and numeric Noggin-Off. No secrets in publicState.
 const crypto = require('node:crypto');
 const {enforceFamilyText}=require('../content-filter');
@@ -52,6 +53,7 @@ function start(room,kind,now,opponentId=null,randomInt=crypto.randomInt){
    b.nogginOffRound=(b.nogginOffRound||0)+1;m.attempt=b.nogginOffRound;
    if(m.attempt>1)m.title='NOGGIN-OFF · REPLAY';
  }
+ gate.open(room,m,now,ms(room,4500,7500));
  return m;
 }
 function open(room,now){const m=room.board.showdown;if(!m||m.phase!=='intro')return;
@@ -133,7 +135,7 @@ function cheer(room,id,targetId){
 function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.showdown;
  if(!m||b.step!=='showdown')error('STEP','No Showdown in progress.');
  if(!m.participants.includes(id))error('PLAYER','This round is not for you.');
- if(m.phase==='intro')error('WAIT','Watch the game introduction.');
+ if(m.phase==='intro')error('WAIT','Read the rules, then tap GOT IT.');
  if(roundKey!==m.roundKey)error('STALE','The question has moved on.');
  if(now>m.deadline||now>m.hardStop)error('LATE','Time is up.');
  if(m.kind==='buzzer'){

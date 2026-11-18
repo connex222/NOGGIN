@@ -48,10 +48,10 @@ test('Q1: Noggin-Off allows no third replay and breaks final equal guesses by su
  assert.match(engine,/const closest=values.filter/);
 });
 
-test('Q8: answer reveals last 2.8 or 4.0 seconds, with all Close Call guesses visible',()=>{
+test('Q8: answer reveals last 2.8 or 5.5 seconds, with all Close Call guesses visible',()=>{
  const engine=read('server/games/phase3.js');
  const tv=read('public/tv/board-view.js');
- assert.match(engine,/const REVEAL_MS=2800,REVEAL_RELAXED_MS=4000/);
+ assert.match(engine,/const REVEAL_MS=2800,REVEAL_RELAXED_MS=5500/);
  assert.match(engine,/m.phase='reveal';m.finalReveal=stop/);
  assert.match(engine,/m.revealGuesses=order.map/);
  assert.match(engine,/m.lastRoundResult=\{/);
