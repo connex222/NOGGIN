@@ -237,6 +237,18 @@ class GameRooms {
     return this.callerState(code,socketId);
   }
 
+  backToLobby(code,socketId) {
+    // Host only: preserve the existing room code, phone seats, avatar choices and
+    // settings while discarding all pending game state and deadlines.
+    const room=this.requireHost(code,socketId);
+    assert(['lobby','board','finished'].includes(room.phase),'PHASE','Cannot return to lobby from this state.');
+    room.phase='lobby';
+    room.board=null;
+    room.matchReport=null;
+    for(const player of room.players){player.ready=false;player.position=0;player.sparks=0;player.cues=0;}
+    room.updatedAt=this.now();
+    return this.callerState(code,socketId);
+  }
   startGame(code,socketId) {const room=this.requireHost(code,socketId);board.start(room,this.now());room.updatedAt=this.now();matchReport.start(room,this.now());return this.callerState(code,socketId);}
   rollGame(code,socketId) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.roll(room,player.id,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
   pickGameDie(code,socketId,index) {const {room,player}=this.requirePlayer(code,socketId);this.assertGame(room);board.pickDie(room,player.id,index,this.now(),this.randomInt);matchReport.observe(room,this.now());return this.callerState(code,socketId);}
