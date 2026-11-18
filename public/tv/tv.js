@@ -286,6 +286,12 @@
       U.saveSession(sessionKey,{code:result.code,token:result.token,lastSeen:Date.now(),phase:'lobby'});showCreated(result);$('restartBanner').classList.add('hidden');
     } catch(err){error(err.message);}
   };
+  $('showBackLobby').onclick=async()=>{
+    if(!activeRoom||!socket.connected||!currentState||currentState.phase==='lobby')return;
+    if(!confirm('Return all players to this room’s lobby? The current show, scores and progress will reset.'))return;
+    try {const result=await U.request(socket,'game:lobby',{});render(result.state);error('');}
+    catch(err){error(err.message);}
+  };
   $('showPause').onclick=async()=>{
     if(!activeRoom||!socket.connected)return;
     const isManual=currentState?.board?.paused&&currentState.board.pauseReason==='The TV host has paused the show.';
