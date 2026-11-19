@@ -50,12 +50,30 @@ const rooms=new GameRooms();
 const stateFile=process.env.NOGGIN_STATE_FILE||'';
 if(stateFile){try{console.log(`Restored ${stateStore.restore(rooms,stateFile)} saved room(s).`);}catch(e){console.error('Checkpoint restore failed:',e.message);}}
 attachGateway(io,{QRCode,rooms});
+const checkpoint=()=>{
+  if(!stateFile) return;
+  try{stateStore.save(rooms,stateFile);}catch(e){console.error('Checkpoint failed:',e.message);}
+};
 if(stateFile){
-  const checkpoint=()=>{try{stateStore.save(rooms,stateFile);}catch(e){console.error('Checkpoint failed:',e.message);}};
   const checkpointTimer=setInterval(checkpoint,5000);checkpointTimer.unref?.();
-  process.on('SIGTERM',()=>{checkpoint();server.close(()=>process.exit(0));});
-  process.on('SIGINT',()=>{checkpoint();server.close(()=>process.exit(0));});
 }
+let shuttingDown=false;
+function shutdown(signal){
+  if(shuttingDown) return;
+  shuttingDown=true;
+  console.log(`NOGGIN received ${signal}; notifying players and closing connections.`);
+  checkpoint();
+  // Inform clients before the transport closes. Socket.IO reconnects after its
+  // transport is closed, and the room/session recovery path remains unchanged.
+  io.emit('server:restarting',{message:'Server restarting, reconnecting…'});
+  const deadline=setTimeout(()=>process.exit(0),10_000);
+  deadline.unref?.();
+  io.close(()=>{
+    server.close(()=>process.exit(0));
+  });
+}
+process.on('SIGTERM',()=>shutdown('SIGTERM'));
+process.on('SIGINT',()=>shutdown('SIGINT'));
 listenWithFallback(server, {
   port: Number(process.env.PORT) || 3000,
   // Only the local Windows launcher enables automatic port changes.
