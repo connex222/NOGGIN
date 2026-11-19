@@ -899,6 +899,7 @@
     $('joinScreen').classList.remove('hidden');$('lobbyScreen').classList.add('hidden');$('swapPanel').classList.add('hidden');$('gameScreen').classList.add('hidden');
     prefillProfile();buildPicker('avatarGrid',false);error('');notice('You left the room.');
   };
+  socket.on('server:restarting',()=>{notice('Server restarting, reconnecting… Keep this page open.');});
   socket.on('connect',()=>{setConnected(true);resumeSession().then(()=>{if(!session)peekRoom();});});
   socket.on('disconnect',()=>{setConnected(false);boundSocketId=null;if(session)notice(roomState?.phase==='lobby'
     ? 'Connection lost — reconnecting… Your seat is held for 10 minutes.'
