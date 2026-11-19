@@ -255,7 +255,8 @@
     if (!activeRoom || !['lobby','board'].includes(currentState?.phase)) return;
     fetch('/health', {cache: 'no-store'}).catch(() => {});
   }, 4 * 60_000);
-  socket.on('connect', () => {setConnected(true);startHost();});
+  socket.on('server:restarting', () => {error('Server restarting, reconnecting… Keep this screen open.');$('connectionLabel').textContent='RECONNECTING…';});
+  socket.on('connect', () => {setConnected(true);error('');startHost();});
   socket.on('disconnect', () => {setConnected(false);if ($('connectionLabel')) $('connectionLabel').textContent='DISCONNECTED · SERVER MAY BE WAKING';});
   socket.on('room:state', state => {if(activeRoom && state.code === activeRoom) render(state);});
   socket.on('game:stroke', stroke => {if (stroke.code === activeRoom) boardView?.appendSketchStroke(stroke);});
