@@ -464,3 +464,28 @@ body.tv.playing #showBackLobby{min-height:38px;white-space:nowrap;font-size:clam
  body.tv.playing .stage-bottom{gap:7px}
  body.tv.playing .showrunner-tools{flex-wrap:wrap}
 }
+
+/* TV legibility: shrink the ring's visual footprint without altering its
+   28-space movement rules, and use the freed room for contestant portraits. */
+body.tv.playing #boardGraphic{
+  inset:5% 5% 7%;
+  width:90%;
+  height:88%;
+}
+body.tv.playing .board-centre{
+  left:25%;
+  right:25%;
+  top:30%;
+  max-height:55%;
+}
+body.tv.playing .stage-scoreboard{gap:clamp(4px,.55vw,10px)}
+body.tv.playing .score-seat{padding:clamp(4px,.55vw,9px);font-size:clamp(12px,1vw,17px)}
+body.tv.playing .score-seat img{
+  width:clamp(42px,4.4vw,80px);
+  height:clamp(42px,4.4vw,80px);
+}
+body.tv.playing .score-seat strong{font-size:clamp(15px,1.45vw,24px)}
+@media(max-width:800px){
+  body.tv.playing .board-centre{left:18%;right:18%;top:29%}
+  body.tv.playing .score-seat img{width:clamp(36px,6vw,58px);height:clamp(36px,6vw,58px)}
+}
