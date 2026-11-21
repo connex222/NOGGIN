@@ -482,8 +482,10 @@ class NogginBoardView {
     for(const [pos,list] of grouped)for(let j=0;j<list.length;j++){
       const p=list[j],point=this.points[pos];if(!point)continue;
       const cols=Math.min(4,list.length),row=Math.floor(j/4),col=j%4;
-      const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*34;
-      const dy=-49-row*37;const active=p.id===activeId,r=active?23:20;
+      // Larger portraits keep players recognisable from the sofa. Spread shared
+      // spaces across two rows so the pictures do not hide one another.
+      const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*47;
+      const dy=-58-row*49;const active=p.id===activeId,r=active?30:27;
       const g=E('g',{class:`stage-token ${active?'active-token':''}`,transform:`translate(${point[0]+dx},${point[1]+dy})`});
       const avatar=this.avatars.find(a=>a.id===p.avatarId);
       if(active)g.append(E('circle',{r:r+5,fill:'#ffed82',opacity:'.32'}));
