@@ -61,6 +61,8 @@ class NogginBoardView {
       edge.append(g);
     });svg.append(edge);
     this.routeLayer=E('g',{id:'directorRouteLayer','aria-hidden':'true'});svg.append(this.routeLayer);
+    // Dedicated overlay follows the current player without changing the board geometry.
+    this.activeSpaceSpotlight=E('g',{id:'activeSpaceSpotlight','aria-hidden':'true','pointer-events':'none'});svg.append(this.activeSpaceSpotlight);
     this.tokenGroup=E('g',{id:'boardTokens'});svg.append(this.tokenGroup);
   }
   renderShowdown(m,state){
@@ -476,6 +478,22 @@ class NogginBoardView {
   paintTokens(players,override=null){
     if(!this.tokenGroup)return;
     const E=this.el.bind(this),activeId=this.latestState?.board?.activeId;
+    // Illuminate the occupied square so viewers can follow the action from a sofa.
+    // During a move, use the same temporary position as the animated player token.
+    this.activeSpaceSpotlight?.replaceChildren();
+    const activePlayer=players.find(p=>p.id===activeId);
+    if(activePlayer&&this.activeSpaceSpotlight){
+      const pos=override?.playerId===activePlayer.id?override.position:activePlayer.position;
+      const point=this.points[pos];
+      if(point){
+        const [x,y]=point,corner=this.data[pos]?.type==='showdown';
+        const w=corner?104:88,h=corner?92:76;
+        this.activeSpaceSpotlight.append(
+          E('rect',{x:x-w/2-7,y:y-h/2-7,width:w+14,height:h+14,rx:20,fill:'#ffdf73','fill-opacity':'.16',stroke:'#fff3ab','stroke-width':6}),
+          E('rect',{x:x-w/2-14,y:y-h/2-14,width:w+28,height:h+28,rx:25,fill:'none',stroke:'#ffe270','stroke-opacity':'.75','stroke-width':3,'stroke-dasharray':'8 7'})
+        );
+      }
+    }
     this.tokenGroup.replaceChildren();
     const grouped=new Map();players.forEach(p=>{const position=override?.playerId===p.id?override.position:p.position;const list=grouped.get(position)||[];list.push({...p,position});grouped.set(position,list);});
     const rings=['#ffd968','#74f0eb','#ffa8c9','#a5ff88','#e0b2ff','#ffb178','#92baff','#fffcba'];
@@ -485,7 +503,7 @@ class NogginBoardView {
       // Larger portraits keep players recognisable from the sofa. Spread shared
       // spaces across two rows so the pictures do not hide one another.
       const dx=(col-(Math.min(cols,list.length-row*4)-1)/2)*47;
-      const dy=-58-row*49;const active=p.id===activeId,r=active?30:27;
+      const dy=-58-row*49;const active=p.id===activeId,r=active?34:27;
       const g=E('g',{class:`stage-token ${active?'active-token':''}`,transform:`translate(${point[0]+dx},${point[1]+dy})`});
       const avatar=this.avatars.find(a=>a.id===p.avatarId);
       if(active)g.append(E('circle',{r:r+5,fill:'#ffed82',opacity:'.32'}));
